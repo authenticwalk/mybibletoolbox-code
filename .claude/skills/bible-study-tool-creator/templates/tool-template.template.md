@@ -2,7 +2,7 @@
 
 ## Context
 
-You are an AI agent working on the Context-Grounded Bible project. The goal is to create AI-readable commentary that grounds text prediction models in truth when working with Biblical texts.
+You are an AI agent working on the myBibleToolbox project. The goal is to create AI-readable commentary that grounds text prediction models in truth when working with Biblical texts.
 
 ## Task
 

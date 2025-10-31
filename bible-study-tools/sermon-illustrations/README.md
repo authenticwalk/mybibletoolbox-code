@@ -533,4 +533,4 @@ Review from these perspectives:
 
 **Template Version:** 1.0.0
 **Last Updated:** 2025-10-29
-**Maintained By:** Context-Grounded Bible Project
+**Maintained By:** myBibleToolbox Project

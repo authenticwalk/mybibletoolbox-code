@@ -10,7 +10,7 @@ permissions:
 
 ## Overview
 
-This skill helps create new bible study tools for the Context-Grounded Bible project through an interactive, step-by-step process. Each tool generates specific types of AI-readable commentary data (YAML files) that ground AI systems in truth when working with Biblical texts.
+This skill helps create new bible study tools for the myBibleToolbox project through an interactive, step-by-step process. Each tool generates specific types of AI-readable commentary data (YAML files) that ground AI systems in truth when working with Biblical texts.
 
 ## When to Use
 

@@ -483,4 +483,4 @@ This skill DOES:
 **Version:** 1.0.0
 **Created:** 2025-10-29
 **Last Updated:** 2025-10-29
-**Maintained By:** Context-Grounded Bible Project
+**Maintained By:** myBibleToolbox Project

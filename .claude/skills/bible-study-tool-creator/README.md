@@ -2,7 +2,7 @@
 
 ## Overview
 
-This skill helps you create new bible study tools for the Context-Grounded Bible project. It provides a complete workflow for:
+This skill helps you create new bible study tools for the myBibleToolbox project. It provides a complete workflow for:
 
 1. Checking for duplicate tools
 2. Gathering tool requirements from users
