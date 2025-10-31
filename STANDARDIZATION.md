@@ -53,36 +53,38 @@ lat: Latin
 
 ### 3. Directory Structure
 
-**Commentary:** `/bible/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{type}.yaml`
+**Note:** All data paths are relative to the `mybibletoolbox-data` repository.
+
+**Commentary:** `/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{type}.yaml`
 
 **Examples:**
 
 **Commentary:**
 ```
-/bible/commentary/MAT/005/MAT.005.003-translations.yaml
-/bible/commentary/MAT/005/MAT.005.003-semantic-clusters.yaml
-/bible/commentary/GEN/001/GEN.001.001-translations.yaml
+/commentary/MAT/005/MAT.005.003-translations.yaml
+/commentary/MAT/005/MAT.005.003-semantic-clusters.yaml
+/commentary/GEN/001/GEN.001.001-translations.yaml
 ```
 
 **Topics:**
 ```
-/bible/topics/BT109/trinity/trinity.yaml
-/bible/topics/BT130/divine-attributes/omniscience/omniscience.yaml
-/bible/topics/BT750/salvation/justification/justification.yaml
-/bible/topics/BT819/eschatology/second-coming/second-coming.yaml
+/topics/BT109/trinity/trinity.yaml
+/topics/BT130/divine-attributes/omniscience/omniscience.yaml
+/topics/BT750/salvation/justification/justification.yaml
+/topics/BT819/eschatology/second-coming/second-coming.yaml
 ```
 
 **Words:**
 ```
-/bible/words/{ISO-639-3}/{word-root}/{word-inflected}.yaml
+/words/{ISO-639-3}/{word-root}/{word-inflected}.yaml
 ```
 
 **Strong's Concordance:**
 ```
-/bible/words/strongs/{strongs-number}/{strongs-number}.strongs.yaml
+/words/strongs/{strongs-number}/{strongs-number}.strongs.yaml
 ```
 
-See [strongs-format.md](strongs-format.md) for complete Strong's Concordance format specification.
+See [Strong's README](../mybibletoolbox-data/words/strongs/README.md) for complete Strong's Concordance format specification.
 
 **Rationale (Directory Structure):**
 - Book code visible in filename (easier to identify files out of context)
@@ -172,7 +174,7 @@ verses: [JHN.1.1]
 - **Hebrew:** Brown-Driver-Briggs (BDB) Lexicon, Strong's Concordance
 - **Greek:** BDAG Lexicon, Strong's Concordance, Thayer's Greek Lexicon
 - **Strong's Numbers:** Use as cross-reference (e.g., H0157 for אָהַב, G0026 for ἀγάπη)
-- **Strong's Format:** See [strongs-format.md](strongs-format.md) for complete specification
+- **Strong's Format:** See [Strong's README](../mybibletoolbox-data/words/strongs/README.md) for complete specification
 
 ### 5. Theological Topic Taxonomy
 

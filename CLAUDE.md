@@ -4,7 +4,12 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 ## Project Overview
 
-This is the Context-Grounded Bible project - an initiative to create the largest AI-readable commentary on the entire Bible. The goal is to provide extensive context data for AI systems to ground their responses in truth when working with Biblical texts, especially for Bible translators, pastors, and students.
+This is the myBibleToolbox project - an initiative to create the largest AI-readable commentary on the entire Bible. The goal is to provide extensive context data for AI systems to ground their responses in truth when working with Biblical texts, especially for Bible translators, pastors, and students.
+
+## AGENT behaviour
+ - NEVER write notes or summaries to the home directory, instead create a plan in ./plans/{your-plan}/README.md then update it with results.  Keep the home directory clean.
+ - When moving files always do a git commit before editing it so the git history is preserved
+ - Use subagents to protect your context, once you get above 60% context you'll start forget things so assign subagents tasks like planning, analyzing files, doing a bunch of work; you need to focus on overseeing it with the big picture and sharing progress in the plan files
 
 ### The Problem Being Solved
 
@@ -17,6 +22,26 @@ AI text prediction models tend to be more confident than accurate when dealing w
 
 By providing extensive contextual data (essentially "a book's worth of information") for every verse broken into smaller task focused files, AI systems can be grounded in truth rather than relying solely on compressed training data.
 
+### Really important files
+
+The following are key files you can load.  Don't load them automatically as it will fill your context, I've summarized the key points, read it for edge cases
+
+ - STANDARDIZATION.md
+   - 3 char ISO-639 language codes
+   - USFM 3.0 for Bible book codes
+   - pad numbers so they sort nicely
+   - /commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{tool}.yaml for commentary files
+   - /words/strongs/(G|H){strongs-number:04d}/{strongs-number}.strongs-{tool}.yaml for source language data
+   - /topics/{lcc-code}/{slug}/{slug}-{tool}.yaml for topics
+   - you must cite your sources so we know if it authoritative
+     - cite sources inline, adding incremental details (eng-NASB) `{lang}-{version}` → `{lang}-{version}-{year}`, quoted means direct quote and authoritatively from that source, without quotes for your summaries
+     - never misquote, hallucinate, add data to fill in a form, if you guess or use internal memory you must sign as {llm-cs45} meaning from an LLM, claude version 4.5.  Example: rationale: "This demonstrates theological emphasis" {llm-cs45} (it is your opinion, be clear so we know what is already validated)
+ - SCHEMA.md
+   - verse: BOOK.chapter.verse (required in every file)
+   - inline citations with {source-id} for all quotes and data
+   - standard sections: source, translation, words, grammar, context, themes, cross_refs
+   - unstructured data allowed, just follow naming conventions
+
 ## Repository Structure
 
 ### Data Organization
@@ -24,12 +49,12 @@ By providing extensive contextual data (essentially "a book's worth of informati
 All generated commentary data follows this strict directory structure:
 
 ```
-./bible/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-{task}.yaml
+./data/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-{task}.yaml
 ```
 
 Examples:
-- `./bible/MAT/5/3/MAT-5-3-greek-words.yaml`
-- `./bible/JHN/3/16/JHN-3-16-interpretations.yaml`
+- `./data/MAT/005/003/MAT-005-003-greek-words.yaml`
+- `./data/JHN/003/016/JHN-003-016-interpretations.yaml`
 
 ### File Formats
 
@@ -77,16 +102,18 @@ When committing changes to this repository, follow these guidelines:
 
 **Example:**
 ```bash
-# Commit 1: Code changes
-git add strongs-fetcher.py
+# Commit in code repo: Script changes
+git add src/ingest-data/strongs/strongs_fetcher.py
 git commit -m "feat: add Strong's dictionary fetcher script"
 
-# Commit 2: Generated data
-git add bible/words/strongs
-git commit -m "data: add Strong's dictionary entries (14,197 files)"
+# Commit in data repo: Generated data (separate repository)
+cd ../mybibletoolbox-data
+git add words/strongs
+git commit -m "data: add Strong's dictionary entries (14,466 files)"
 ```
 
 **Why this matters:**
+- Code and data are in separate repositories for better management
 - Enables cherry-picking data updates without code changes
 - Keeps git history clean and organized
 - Makes it easier to revert data without affecting code

@@ -80,7 +80,7 @@ git clone --filter=blob:none --sparse \
 
 # Add only what you need (e.g., specific books or Strong's numbers)
 cd data
-git sparse-checkout set bible/words/strongs bible/commentary/MAT bible/commentary/JHN
+git sparse-checkout set words/strongs commentary/MAT commentary/JHN
 ```
 
 ## What Goes Where?
