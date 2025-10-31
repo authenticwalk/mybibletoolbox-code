@@ -8,7 +8,7 @@
 
 ## Purpose
 
-The Context-Grounded Bible project creates scholarly tools for comparative translation analysis, linguistic research, and Bible study. This document establishes the methodology for utilizing copyrighted biblical resources (Bible translations, commentaries, lexicons, sermon collections, study notes, and other scholarly materials) in a manner consistent with fair use principles under U.S. Copyright Law (17 U.S.C. § 107) and international copyright frameworks.
+The myBibleToolbox project creates scholarly tools for comparative translation analysis, linguistic research, and Bible study. This document establishes the methodology for utilizing copyrighted biblical resources (Bible translations, commentaries, lexicons, sermon collections, study notes, and other scholarly materials) in a manner consistent with fair use principles under U.S. Copyright Law (17 U.S.C. § 107) and international copyright frameworks.
 
 ---
 

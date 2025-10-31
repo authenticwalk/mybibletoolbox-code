@@ -1,6 +1,6 @@
 # Attribution and Copyright Notices
 
-This document provides attribution for all sources used in the Context-Grounded Bible project.
+This document provides attribution for all sources used in the myBibleToolbox project.
 
 ---
 
@@ -240,7 +240,7 @@ This document provides attribution for all sources used in the Context-Grounded 
 
 **Original Content and Analysis**
 - Licensed under MIT License
-- Copyright © 2025 Context-Grounded Bible Project contributors
+- Copyright © 2025 myBibleToolbox Project contributors
 - See [LICENSE](LICENSE) file for full terms
 
 **Data Structure and Code**

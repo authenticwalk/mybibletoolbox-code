@@ -4,7 +4,7 @@
 Analyzing https://github.com/AllTheWord/tbta_db_export to understand:
 1. What problem it solves for Bible translators
 2. How it compares to Macula work in our project
-3. How it could benefit our context-grounded Bible project
+3. How it could benefit our myBibleToolbox project
 
 ## Status
 - [x] Fetch TBTA repository information
