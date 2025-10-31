@@ -33,14 +33,25 @@ The following are key files you can load.  Don't load them automatically as it w
    - /commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{tool}.yaml for commentary files
    - /words/strongs/(G|H){strongs-number:04d}/{strongs-number}.strongs-{tool}.yaml for source language data
    - /topics/{lcc-code}/{slug}/{slug}-{tool}.yaml for topics
-   - you must cite your sources so we know if it authoritative
-     - cite sources inline, adding incremental details (eng-NASB) `{lang}-{version}` → `{lang}-{version}-{year}`, quoted means direct quote and authoritatively from that source, without quotes for your summaries
-     - never misquote, hallucinate, add data to fill in a form, if you guess or use internal memory you must sign as {llm-cs45} meaning from an LLM, claude version 4.5.  Example: rationale: "This demonstrates theological emphasis" {llm-cs45} (it is your opinion, be clear so we know what is already validated)
  - SCHEMA.md
    - verse: BOOK.chapter.verse (required in every file)
-   - inline citations with {source-id} for all quotes and data
+   - cite sources inline with {source-id}: `{lang}-{version}` → `{lang}-{version}-{year}` for specificity
+   - NEVER hallucinate: if from your memory use {llm-cs45}, if uncertain omit it
    - standard sections: source, translation, words, grammar, context, themes, cross_refs
-   - unstructured data allowed, just follow naming conventions
+   - loosely structured for easy merging/filtering across tools
+ - REVIEW-GUIDELINES.md
+   - 3 validation levels: critical (must pass), high priority (80%+), medium (60%+)
+   - no fabrication, inline citations, no number predictions, data-file grounding only
+   - new sources must be in ATTRIBUTION.md
+ - ATTRIBUTION.md
+   - all sources with copyright notices and citation codes
+   - required for new sources: copyright, citation code, license type, purchase link
+ - bible-study-tools/TEMPLATE.md
+   - template for creating new Bible study tools
+   - 3-phase: data extraction first, then analysis, then validation
+   - output schema with required fields (verse, inline citations, metadata)
+   - define tool-specific Level 2 validation requirements
+
 
 ## Repository Structure
 
