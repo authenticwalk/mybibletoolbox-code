@@ -11,57 +11,49 @@ Retrieve and merge all available commentary data for Bible verses to enable comp
 
 ## Data Repository Setup
 
-This skill requires the **mybibletoolbox-commentary** repository for verse commentary data.
+This skill requires the **mybibletoolbox-data** repository for verse commentary data.
 
 ### Auto-Clone Commentary Data
 
-Before using this skill, check if commentary data exists for the requested book(s). If not, auto-clone with sparse checkout:
+Before using this skill, check if data exists for the requested book(s). If not, auto-clone with sparse checkout:
 
 ```bash
-# Function to ensure commentary book is available
-ensure_commentary_book() {
+# Function to ensure book data is available
+ensure_book_data() {
   local BOOK=$1  # e.g., "MAT", "JHN", "ROM"
 
-  # Check if commentary repo exists
-  if [ ! -d "data/commentary" ]; then
-    echo "Commentary data not found. Cloning mybibletoolbox-commentary with sparse checkout..."
-    git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-commentary data/commentary
-    cd data/commentary
+  # Check if data repo exists
+  if [ ! -d "data" ]; then
+    echo "Data not found. Cloning mybibletoolbox-data with sparse checkout..."
+    git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-data data
+    cd data
     git sparse-checkout init --cone
-    git sparse-checkout set commentary/${BOOK} commentaries/${BOOK}
-    cd ../..
-    echo "✓ Commentary data ready for ${BOOK}"
+    git sparse-checkout set bible/${BOOK}
+    cd ..
+    echo "✓ Data ready for ${BOOK}"
   else
     # Check if specific book is available
-    if [ ! -d "data/commentary/commentary/${BOOK}" ]; then
+    if [ ! -d "data/bible/${BOOK}" ]; then
       echo "Adding ${BOOK} to sparse checkout..."
-      cd data/commentary
-      git sparse-checkout add commentary/${BOOK} commentaries/${BOOK}
-      cd ../..
+      cd data
+      git sparse-checkout add bible/${BOOK}
+      cd ..
       echo "✓ ${BOOK} added"
     fi
   fi
 }
 
 # Example: For studying Matthew 5:3-10
-ensure_commentary_book "MAT"
+ensure_book_data "MAT"
 ```
 
 **Expected location:**
-- `data/commentary/commentary/{BOOK}/` - Verse commentary
-- `data/commentary/commentaries/{BOOK}/` - Additional commentary data
-
-**What it contains:**
-- ~2.5GB total (all books)
-- Sparse checkout downloads only requested books (~35MB per book average)
-- Multiple commentary types per verse (greek-words, interpretations, context, etc.)
+- `data/bible/{BOOK}/` - All verse data for book
 
 **Sparse checkout strategy:**
 - **Single book study**: Clone only that book
 - **Multiple books**: Add books as needed with `git sparse-checkout add`
 - **Sermon series**: Clone all needed books upfront
-
-**Note:** Scripts have been updated to use the new `data/commentary/` location.
 
 ## When to Use
 

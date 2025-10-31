@@ -22,183 +22,55 @@ So we fix this by providing extensive context so it is grounded in truth.
 
 # Repository Structure
 
-This project is split into 3 repositories for better performance:
+This project is split into 2 repositories:
 
-## 1. **mybibletoolbox-code** (this repo - ~10MB)
+## 1. **mybibletoolbox-code** (this repo)
 
 Tools, scripts, and skills for Bible study:
 - `.claude/` - Claude Code skills and configuration
 - `bible-study-tools/` - Bible study tool scripts
 - `src/` - Source code
 - `agents/` - Agent configurations
-- Documentation
 
-**Clone this repo:**
 ```bash
 git clone https://github.com/authenticwalk/mybibletoolbox-code
 ```
 
-## 2. **mybibletoolbox-lexicon** (~63MB)
+## 2. **mybibletoolbox-data**
 
-Static reference data (Strong's Greek/Hebrew dictionaries):
-- 14,197 word entries
-- Rarely updated
-
-**Clone lexicon data:**
-```bash
-git clone https://github.com/authenticwalk/mybibletoolbox-lexicon data/lexicon
-```
-
-**Or use sparse checkout for just Greek or Hebrew:**
-```bash
-git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-lexicon data/lexicon
-cd data/lexicon
-git sparse-checkout set words/strongs/greek  # Or hebrew
-```
-
-## 3. **mybibletoolbox-commentary** (~2.5GB)
-
-AI-generated verse commentary:
-- 49,508+ commentary files
-- Actively growing
-
-**⚠️ IMPORTANT:** Use sparse checkout to get only specific books!
+All Bible data (lexicons and commentary):
 
 ```bash
-# Clone with sparse checkout for specific books
-git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-commentary data/commentary
-cd data/commentary
-git sparse-checkout set commentary/MAT commentary/JHN  # Matthew and John
+git clone https://github.com/authenticwalk/mybibletoolbox-data data
 ```
 
-**See [mybibletoolbox-commentary README](https://github.com/authenticwalk/mybibletoolbox-commentary) for more patterns**
+**For large repos, use sparse checkout:**
+```bash
+git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-data data
+cd data
+git sparse-checkout set bible/MAT bible/JHN  # Add books as needed
+```
 
 # Quick Start
 
-## For Tool Developers
-
-Just clone this repo - that's it!
-
 ```bash
-git clone https://github.com/authenticwalk/mybibletoolbox-code
-cd mybibletoolbox-code
-```
-
-The tools will automatically clone data repositories when needed.
-
-## For Bible Study Users
-
-Clone the code repo and add data as needed:
-
-```bash
-# 1. Clone code/tools
+# Clone the code repo
 git clone https://github.com/authenticwalk/mybibletoolbox-code
 cd mybibletoolbox-code
 
-# 2. Clone lexicon data (if studying Greek/Hebrew words)
-git clone https://github.com/authenticwalk/mybibletoolbox-lexicon data/lexicon
-
-# 3. Clone commentary for specific books (if needed)
-git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-commentary data/commentary
-cd data/commentary
-git sparse-checkout set commentary/MAT  # Add books as needed
-cd ../..
-
-# 4. Use the tools!
+# Claude skills auto-clone data when needed, or manually:
+git clone https://github.com/authenticwalk/mybibletoolbox-data data
 ```
 
-## Automatic Data Loading
+# Data Structure
 
-The Claude Code skills automatically handle data repository cloning:
-- **get-source-languages** - Auto-clones lexicon if needed
-- **quote-bible** - Auto-clones commentary if needed
-- **scripture-study** - Auto-clones commentary if needed
+AI agents process tasks like "lookup all the original greek words for this verse" verse by verse.
 
-You can just start using the skills, and they'll download required data on first use.
+Data stored as YAML files in the data repository:
 
-# Working with Data Repositories
+`./data/bible/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-{task}.yaml`
 
-## Data Repository Locations
-
-After cloning, the expected directory structure is:
-
-```
-mybibletoolbox-code/          # This repo (code/tools)
-├── .claude/
-├── bible-study-tools/
-├── src/
-└── data/                     # Data repos (auto-created)
-    ├── lexicon/              # mybibletoolbox-lexicon
-    │   └── words/strongs/
-    └── commentary/           # mybibletoolbox-commentary
-        ├── commentary/
-        └── commentaries/
-```
-
-The `data/` directory is in `.gitignore` - you manage data repos separately.
-
-## Repository Size Comparison
-
-**Before split (legacy):**
-- Single repo: 2.6GB, 63,000+ files
-- Clone time: 3-5 minutes
-- Disk usage: 2.6GB minimum
-
-**After split:**
-- Code repo: ~10MB (~100 files)
-- Clone time: 5-10 seconds
-- Disk usage: 10MB (+ data repos as needed)
-
-**Result:** 97% faster clones for developers!
-
-## Managing Commentary Data Size
-
-The commentary repository is large (2.5GB). Best practices:
-
-### Use Sparse Checkout
-
-**Always use sparse checkout for commentary:**
-```bash
-git clone --filter=blob:none --sparse https://github.com/authenticwalk/mybibletoolbox-commentary data/commentary
-cd data/commentary
-
-# Add only books you need
-git sparse-checkout set commentary/MAT commentary/JHN
-
-# Add more books later
-git sparse-checkout add commentary/ROM
-
-# List what you have
-git sparse-checkout list
-```
-
-### Common Patterns
-
-**New Testament only:**
-```bash
-git sparse-checkout set commentary/{MAT,MRK,LUK,JHN,ACT,ROM,1CO,2CO,GAL,EPH,PHP,COL}
-```
-
-**Gospels only:**
-```bash
-git sparse-checkout set commentary/{MAT,MRK,LUK,JHN}
-```
-
-**Single book:**
-```bash
-git sparse-checkout set commentary/PHP
-```
-
-# Structure
-
-We give an AI agent a task like "lookup all the original greek words for this verse" and it will process this
-verse by verse till it is finished the entire Bible.
-
-These are stored as YAML files which are both human and AI readable in the directory
-
-`./bible/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-{task}.yaml`
-
-The data is loosely structured so it could be merged and filtered
+Loosely structured for easy merging and filtering.
 
 # Questions we are seeking to answer
 
@@ -234,17 +106,11 @@ The agent works like this
 
 # Using the Data
 
-## Script
+**Script:**
+```bash
+cat ./data/bible/MAT/5/3/*.yaml > merged.yaml
+```
 
-The simplest way is to just get all the data for a verse
+**MCP (future):** MCP server to auto-fetch data when working on verses
 
-`cat ./bible/MAT/5/3/*.yaml > merged.yaml`
-
-## MCP (future)
-
-With most AI agents like chatGPT you can add an MCP server so AI can talk to other sources.  In this case
-when you add the MCP tool it will tell the AI to get this data whenever working on a verse.
-
-## Subagent (future)
-
-The data will eventually get really big and fill your context window.  So it will be better to have your AI agent call a subagent to study a bible verse who in turn calls the MCP or the script.
+**Subagent (future):** Delegate verse study to subagents to manage context window

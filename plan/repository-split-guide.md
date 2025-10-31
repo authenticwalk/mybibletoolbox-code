@@ -2,54 +2,42 @@
 
 ## Overview
 
-This guide documents the process of splitting the `context-grounded-bible` repository into 3 separate repositories for better scalability and performance.
+This guide documents the process of splitting the `context-grounded-bible` repository into 2 separate repositories for better scalability and performance.
 
 ## Current Problem
 
-- **Single repository**: 2.6GB, 63,705 files
+- **Single repository**: Large size with mixed concerns
 - **Slow clones**: Several minutes to clone
 - **Git performance**: Operations slow down with many files
-- **Mixed concerns**: Code, static data, and generated data in one repo
+- **Mixed concerns**: Code and data in one repo
 
-## Solution: 3-Repository Architecture
+## Solution: 2-Repository Architecture
 
 ### Repository Structure
 
 ```
 ┌─────────────────────────────────────┐
-│  context-grounded-bible (main)      │
+│  mybibletoolbox-code                │
 │  - Tools & scripts                  │
 │  - .claude/ configuration           │
 │  - Documentation                    │
-│  - Size: ~10MB                      │
 └─────────────────────────────────────┘
            │
-           ├── References data from ──────┐
-           │                               │
-           │                               ▼
-           │                    ┌────────────────────────────┐
-           │                    │  bible-data-lexicons       │
-           │                    │  - Strong's dictionary     │
-           │                    │  - Word reference data     │
-           │                    │  - Size: 63MB              │
-           │                    │  - Rarely changes          │
-           │                    └────────────────────────────┘
            │
            └── References data from ──────┐
                                           │
                                           ▼
                               ┌────────────────────────────┐
-                              │  bible-data-commentary     │
+                              │  mybibletoolbox-data       │
+                              │  - Lexicons (Strong's)     │
                               │  - Generated commentary    │
-                              │  - Active development      │
-                              │  - Size: 2.5GB             │
-                              │  - Frequently updated      │
+                              │  - All Bible data          │
                               └────────────────────────────┘
 ```
 
 ### Repository Details
 
-#### 1. context-grounded-bible (Main Repository)
+#### 1. mybibletoolbox-code (Main Repository)
 
 **Contains:**
 - `.claude/` - Claude Code skills and configuration
@@ -70,19 +58,19 @@ This guide documents the process of splitting the `context-grounded-bible` repos
 - `words/strongs/` - Strong's Greek/Hebrew dictionary (14,197 files)
 - Future: Other lexicon data
 
-**Size:** 63MB
-**Update Frequency:** Rare (static reference data)
-**Users:** Tools needing word/lexicon data
+**Repository:** `https://github.com/authenticwalk/mybibletoolbox-code`
 
-#### 3. bible-data-commentary
+#### 2. mybibletoolbox-data
 
 **Contains:**
-- `commentary/` - Generated verse commentary (2.3GB)
-- `commentaries/` - Additional commentary data (246MB)
+- `bible/` - All Bible data (lexicons + commentary)
+  - `words/strongs/` - Strong's dictionary
+  - Book directories with verse data
 
-**Size:** 2.5GB
-**Update Frequency:** Frequent (active generation)
-**Users:** Tools needing verse commentary, researchers
+**Update Frequency:** Varies (lexicons rare, commentary frequent)
+**Users:** Tools needing Bible data, researchers
+
+**Repository:** `https://github.com/authenticwalk/mybibletoolbox-data`
 
 ## Benefits of Split
 
