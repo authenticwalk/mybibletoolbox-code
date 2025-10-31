@@ -52,11 +52,11 @@ echo ""
 # Initialize sparse checkout with test verse data
 # These are the verses commonly used for tool testing and development
 git sparse-checkout set \
-    bible/words/strongs \
-    bible/commentary/MAT/5 \
-    bible/commentary/JHN/3 \
-    bible/commentary/GEN/1 \
-    bible/commentaries
+    words/strongs \
+    commentary/MAT/5 \
+    commentary/JHN/3 \
+    commentary/GEN/1 \
+    commentary
 
 echo ""
 echo -e "${GREEN}✓ Minimal bible data setup complete!${NC}"
@@ -70,7 +70,7 @@ echo "  - Commentary tools metadata"
 echo ""
 echo -e "${YELLOW}To add more books later:${NC}"
 echo "  cd data"
-echo "  git sparse-checkout add bible/commentary/MRK"
-echo "  git sparse-checkout add bible/commentary/ROM"
+echo "  git sparse-checkout add commentary/MRK"
+echo "  git sparse-checkout add commentary/ROM"
 echo ""
 echo -e "${BLUE}========================================${NC}"

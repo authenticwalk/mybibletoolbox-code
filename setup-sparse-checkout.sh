@@ -1,5 +1,5 @@
 #!/bin/bash
-# Setup sparse checkout for Context-Grounded Bible repository
+# Setup sparse checkout for myBibleToolbox repository
 # This reduces the working directory from 2.6GB to ~100MB
 
 set -e
