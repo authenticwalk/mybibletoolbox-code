@@ -1,6 +1,6 @@
 # TBTA (The Bible Translator's Assistant) Processor
 
-Processes TBTA database export files into structured YAML commentary files for the Context-Grounded Bible project.
+Processes TBTA database export files into structured YAML commentary files for the myBibleToolbox project.
 
 ## Overview
 
@@ -244,7 +244,7 @@ This explicitly encodes the **Trial number** (3 persons) which is critical for t
 
 ## License
 
-**Tool**: MIT License (Context-Grounded Bible project)
+**Tool**: MIT License (myBibleToolbox project)
 
 **Data**: Check [tbta_db_export repository](https://github.com/AllTheWord/tbta_db_export) for TBTA data licensing
 

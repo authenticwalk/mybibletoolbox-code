@@ -4,7 +4,7 @@ Macula Source Language Processor
 =================================
 
 Processes Macula Hebrew and Greek XML files and generates YAML commentary files
-following the Context-Grounded Bible project structure.
+following the myBibleToolbox project structure.
 
 Output structure: ./bible/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-source-language.yaml
 

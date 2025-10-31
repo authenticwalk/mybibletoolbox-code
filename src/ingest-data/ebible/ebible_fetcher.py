@@ -5,11 +5,21 @@ which contains 1,000+ Bible translations in various languages.
 """
 
 import os
+import sys
 from pathlib import Path
 from typing import Dict, Optional
 
-from ..constants.bible import get_all_verses, parse_verse_ref
-from ..util.cache import fetch_verse_from_cache
+# Add src to path for imports when run as script
+if __name__ == "__main__":
+    sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+try:
+    from ...constants.bible import get_all_verses, parse_verse_ref
+    from ...util.cache import fetch_verse_from_cache
+except ImportError:
+    # Fallback for when run as script
+    from constants.bible import get_all_verses, parse_verse_ref
+    from util.cache import fetch_verse_from_cache
 
 CACHE_ROOT = Path('data/bible')
 

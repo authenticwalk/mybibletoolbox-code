@@ -17,7 +17,7 @@ This library processes the Macula Hebrew (WLC) and Macula Greek (Nestle1904) dat
 ### 1. Fetch Data (First Time Only)
 
 ```bash
-python src/lib/macula/macula_fetcher.py --all
+python src/ingest-data/macula/macula_fetcher.py --all
 ```
 
 This downloads ~500MB of linguistic data to `/tmp/macula/`.

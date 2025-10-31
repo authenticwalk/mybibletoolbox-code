@@ -4,7 +4,7 @@ TBTA (The Bible Translator's Assistant) Processor
 ==================================================
 
 Processes TBTA JSON export files and generates YAML commentary files
-following the Context-Grounded Bible project structure.
+following the myBibleToolbox project structure.
 
 Output structure: ./data/bible/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-tbta.yaml
 

@@ -25,13 +25,13 @@ from pathlib import Path
 from typing import Dict, List, Any, Optional
 
 # Add src to path for imports
-sys.path.insert(0, str(Path(__file__).parent.parent))
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
 
 from util.yaml_merger import merge_directory_yaml_files, merge_yaml_data, save_merged_yaml
 from constants.bible import BIBLE_STRUCTURE
 
 # Paths
-PROJECT_ROOT = Path(__file__).parent.parent.parent
+PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
 MACULA_CACHE = PROJECT_ROOT / "bible" / "commentaries"
 STRONGS_DIR = PROJECT_ROOT / "bible" / "words" / "strongs"
 

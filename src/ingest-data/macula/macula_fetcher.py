@@ -26,6 +26,10 @@ from pathlib import Path
 from datetime import datetime
 import json
 
+# Add src to path for imports when run as script
+if __name__ == "__main__":
+    sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
 # Configuration
 CACHE_DIR = Path("/tmp/macula")
 HEBREW_REPO = "https://github.com/Clear-Bible/macula-hebrew.git"
