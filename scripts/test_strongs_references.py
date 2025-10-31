@@ -7,6 +7,7 @@ import xml.etree.ElementTree as ET
 import requests
 import yaml
 import os
+from pathlib import Path
 from collections import defaultdict
 from typing import Dict
 
@@ -212,8 +213,9 @@ def main():
         parser.parse_hebrew_file(url)
 
     # Write output files
-    output_dir = '/home/user/context-grounded-bible/data/bible/words/strongs'
-    parser.write_yaml_files(output_dir)
+    script_dir = Path(__file__).parent
+    output_dir = script_dir.parent.parent / 'mybibletoolbox-data' / 'words' / 'strongs'
+    parser.write_yaml_files(str(output_dir))
 
     print("\n" + "=" * 70)
     print(f"Test Complete! Processed {len(parser.strongs_data)} Strong's numbers")

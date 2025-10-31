@@ -6,13 +6,14 @@ This script:
 1. Fetches XML files from Macula Greek (NT) and Hebrew (OT) repositories
 2. Parses words with Strong's numbers, their senses, and grammatical forms
 3. Groups by Strong's number and creates reference files showing all uses
-4. Outputs YAML files in ./data/bible/words/strongs/{number}/{number}-references.yaml
+4. Outputs YAML files in ../mybibletoolbox-data/words/strongs/{number}/{number}-references.yaml
 """
 
 import xml.etree.ElementTree as ET
 import requests
 import yaml
 import os
+from pathlib import Path
 from collections import defaultdict
 from typing import Dict
 import time
@@ -307,8 +308,9 @@ def main():
     parser.fetch_and_parse_all()
 
     # Write output files
-    output_dir = '/home/user/context-grounded-bible/data/bible/words/strongs'
-    parser.write_yaml_files(output_dir)
+    script_dir = Path(__file__).parent
+    output_dir = script_dir.parent.parent / 'mybibletoolbox-data' / 'words' / 'strongs'
+    parser.write_yaml_files(str(output_dir))
 
     print("\n" + "=" * 70)
     print(f"COMPLETE! Processed {len(parser.strongs_data)} Strong's numbers")
