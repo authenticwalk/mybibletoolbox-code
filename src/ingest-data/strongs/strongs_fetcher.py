@@ -29,9 +29,11 @@ from typing import Dict, Any, List, Tuple
 from collections import defaultdict
 
 # Configuration
-BASE_DIR = Path(__file__).parent
-# Navigate from src/ingest-data/strongs/ up to code repo root, then to data repo
-BIBLE_WORDS_DIR = BASE_DIR.parent.parent.parent.parent / "mybibletoolbox-data" / "words" / "strongs"
+import sys
+# Add src to path for config import
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+from config import STRONGS_DIR as BIBLE_WORDS_DIR
+
 CACHE_DIR = Path("/tmp/strongs_enhancement")
 
 # Base Strong's data URLs

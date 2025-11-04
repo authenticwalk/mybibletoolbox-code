@@ -31,9 +31,12 @@ from util.yaml_merger import merge_directory_yaml_files, merge_yaml_data, save_m
 from constants.bible import BIBLE_STRUCTURE
 
 # Paths
+import sys
 PROJECT_ROOT = Path(__file__).parent.parent.parent.parent
-MACULA_CACHE = PROJECT_ROOT / "bible" / "commentaries"
-STRONGS_DIR = PROJECT_ROOT / "bible" / "words" / "strongs"
+sys.path.insert(0, str(PROJECT_ROOT / "src"))
+from config import STRONGS_DIR, COMMENTARY_DIR
+
+MACULA_CACHE = COMMENTARY_DIR.parent / "commentaries" if COMMENTARY_DIR else PROJECT_ROOT / "data" / "commentaries"
 
 
 def parse_verse_ref(ref_str: str) -> Optional[tuple]:

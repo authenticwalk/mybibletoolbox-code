@@ -10,6 +10,7 @@ This is the myBibleToolbox project - an initiative to create the largest AI-read
  - NEVER write notes or summaries to the home directory, instead create a plan in ./plans/{your-plan}/README.md then update it with results.  Keep the home directory clean.
  - When moving files always do a git commit before editing it so the git history is preserved
  - Use subagents to protect your context, once you get above 60% context you'll start forget things so assign subagents tasks like planning, analyzing files, doing a bunch of work; you need to focus on overseeing it with the big picture and sharing progress in the plan files
+ - Prefer calling subagents in parallel, when possible 8 in parallel.
 
 ### The Problem Being Solved
 
@@ -34,11 +35,10 @@ The following are key files you can load.  Don't load them automatically as it w
    - /words/strongs/(G|H){strongs-number:04d}/{strongs-number}.strongs-{tool}.yaml for source language data
    - /topics/{lcc-code}/{slug}/{slug}-{tool}.yaml for topics
  - SCHEMA.md
-   - verse: BOOK.chapter.verse (required in every file)
    - cite sources inline with {source-id}: `{lang}-{version}` → `{lang}-{version}-{year}` for specificity
    - NEVER hallucinate: if from your memory use {llm-cs45}, if uncertain omit it
    - standard sections: source, translation, words, grammar, context, themes, cross_refs
-   - loosely structured for easy merging/filtering across tools
+   - loosely structured for easy merging/filtering across tools, use standard names so combines nicely on common structures, unstructured for unique values of the tool
  - REVIEW-GUIDELINES.md
    - 3 validation levels: critical (must pass), high priority (80%+), medium (60%+)
    - no fabrication, inline citations, no number predictions, data-file grounding only
@@ -46,6 +46,7 @@ The following are key files you can load.  Don't load them automatically as it w
  - ATTRIBUTION.md
    - all sources with copyright notices and citation codes
    - required for new sources: copyright, citation code, license type, purchase link
+   - also has websites with useful content, preference given to sites allowing for url templating (ex. site.com/gen/1 or site.com?book=gen&chapter=1)
  - bible-study-tools/TEMPLATE.md
    - template for creating new Bible study tools
    - 3-phase: data extraction first, then analysis, then validation
@@ -57,29 +58,24 @@ The following are key files you can load.  Don't load them automatically as it w
 
 ### Data Organization
 
-All generated commentary data follows this strict directory structure:
+All generated commentary data follows this strict directory structure: (See STANDARIZATION.md for examples, edge cases if unsure)
 
 ```
-./data/{book}/{chapter}/{verse}/{book}-{chapter}-{verse}-{task}.yaml
+$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{tool}.yaml
+$DATA_DIR/strongs/(H|G){strongs-number:04d}/(H|G){strongs-number:04d}-{tool}.strongs.yaml
+$DATA_DIR/topics/{lcc-code}/{slug}/{slug}[-{subsection}]-{tool}.yaml
+$DATA_DIR/languages/{ISO-639-3}/{ISO-639-3}-{tool}.yaml
+$DATA_DIR/languages/{ISO-639-3}/words/{word}/{ISO-639-3}-{word}-{tool}.yaml
+
 ```
-
-Examples:
-- `./data/MAT/005/003/MAT-005-003-greek-words.yaml`
-- `./data/JHN/003/016/JHN-003-016-interpretations.yaml`
-
-### File Formats
-
-- All data files are in YAML format (both human and AI readable)
-- Data is loosely structured to enable merging and filtering
-
 
 ## Development Notes
 
 - The `.claude/` directory contains Claude Code configuration and slash commands
-- The project is in early stages - the `bible/` directory structure will be created as data is generated
 - Book codes follow standard 3-letter abbreviations (MAT, JHN, GEN, etc.) (USFM 3.0)
 - Language codes follow (ISO-639-3)
 - This is an open-source project under MIT License
+- When creating new names, taxonomies, etc prioritize following known standards to remove the need for lookups
 
 ## Working Preferences
 
@@ -102,35 +98,3 @@ Examples:
 ## Git Commit Guidelines
 
 When committing changes to this repository, follow these guidelines:
-
-### Separate Data and Code Commits
-
-**IMPORTANT:** Data files must be committed separately from code files. This allows for easier cherry-picking and repository management.
-
-**Two-commit workflow:**
-1. **First commit:** Code/script files only (e.g., Python scripts, configuration files)
-2. **Second commit:** Data files only (all generated YAML files in `./bible/` directory)
-
-**Example:**
-```bash
-# Commit in code repo: Script changes
-git add src/ingest-data/strongs/strongs_fetcher.py
-git commit -m "feat: add Strong's dictionary fetcher script"
-
-# Commit in data repo: Generated data (separate repository)
-cd ../mybibletoolbox-data
-git add words/strongs
-git commit -m "data: add Strong's dictionary entries (14,466 files)"
-```
-
-**Why this matters:**
-- Code and data are in separate repositories for better management
-- Enables cherry-picking data updates without code changes
-- Keeps git history clean and organized
-- Makes it easier to revert data without affecting code
-- Reduces merge conflicts between data and code changes
-
-## Citations
-
-Bible Verses: **Format:** Incremental specificity as needed: `{lang}` → `{lang}-{version}` → `{lang}-{version}-{year}`
-

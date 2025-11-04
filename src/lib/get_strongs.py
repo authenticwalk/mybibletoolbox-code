@@ -39,9 +39,9 @@ sys.path.insert(0, str(Path(__file__).parent.parent))
 
 from util.yaml_merger import merge_directory_yaml_files
 
-# Paths
-PROJECT_ROOT = Path(__file__).parent.parent.parent
-STRONGS_DIR = PROJECT_ROOT.parent / "mybibletoolbox-data" / "words" / "strongs"
+# Add config to path and import
+sys.path.insert(0, str(Path(__file__).parent.parent))
+from config import STRONGS_DIR
 
 
 def normalize_strongs_number(number: str) -> Optional[str]:

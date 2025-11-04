@@ -7,6 +7,3 @@
 
 # Data repositories (cloned separately)
 data/
-
-# Split repositories directory (created by split-repository.sh)
-split-repos/ 

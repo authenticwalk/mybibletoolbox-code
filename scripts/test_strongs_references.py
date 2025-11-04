@@ -7,9 +7,14 @@ import xml.etree.ElementTree as ET
 import requests
 import yaml
 import os
+import sys
 from pathlib import Path
 from collections import defaultdict
 from typing import Dict
+
+# Add src to path for config import
+sys.path.insert(0, str(Path(__file__).parent.parent / "src"))
+from config import STRONGS_DIR
 
 # Test with just a couple of files
 TEST_GREEK_FILES = [
@@ -213,9 +218,7 @@ def main():
         parser.parse_hebrew_file(url)
 
     # Write output files
-    script_dir = Path(__file__).parent
-    output_dir = script_dir.parent.parent / 'mybibletoolbox-data' / 'words' / 'strongs'
-    parser.write_yaml_files(str(output_dir))
+    parser.write_yaml_files(str(STRONGS_DIR))
 
     print("\n" + "=" * 70)
     print(f"Test Complete! Processed {len(parser.strongs_data)} Strong's numbers")

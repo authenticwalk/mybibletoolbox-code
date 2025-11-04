@@ -55,7 +55,7 @@ lat: Latin
 
 **Note:** All data paths are relative to the `mybibletoolbox-data` repository.
 
-**Commentary:** `/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{type}.yaml`
+**Commentary:** `/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{tool-name}.yaml`
 
 **Examples:**
 
@@ -68,23 +68,26 @@ lat: Latin
 
 **Topics:**
 ```
-/topics/BT109/trinity/trinity.yaml
-/topics/BT130/divine-attributes/omniscience/omniscience.yaml
-/topics/BT750/salvation/justification/justification.yaml
-/topics/BT819/eschatology/second-coming/second-coming.yaml
-```
-
-**Words:**
-```
-/words/{ISO-639-3}/{word-root}/{word-inflected}.yaml
+/topics/BT109/trinity/trinity-{tool}.yaml
+/topics/BT130/divine-attributes/omniscience/omniscience-{tool}.yaml
+/topics/BT750/salvation/justification/justification-{tool}.yaml
+/topics/BT819/eschatology/second-coming/second-coming-{tool}.yaml
 ```
 
 **Strong's Concordance:**
 ```
-/words/strongs/{strongs-number}/{strongs-number}.strongs.yaml
+/strongs/G0026/G0026-{tool}.strongs.yaml
+/strongs/H0157/H0157-{tool}.strongs.yaml
 ```
 
-See [Strong's README](../mybibletoolbox-data/words/strongs/README.md) for complete Strong's Concordance format specification.
+See [Strong's README](../mybibletoolbox-data/strongs/README.md) for complete Strong's Concordance format specification.
+
+**Language-Specific Words:**
+```
+/languages/grc/words/λογος/grc-λογος-{tool}.yaml
+/languages/heb/words/אהב/heb-אהב-{tool}.yaml
+/languages/eng/words/love/eng-love-{tool}.yaml
+```
 
 **Rationale (Directory Structure):**
 - Book code visible in filename (easier to identify files out of context)
@@ -97,12 +100,12 @@ See [Strong's README](../mybibletoolbox-data/words/strongs/README.md) for comple
 
 **Purpose:** Store lexical/semantic data for words, organized by root form for easy lookup
 
-**Path:** `/bible/words/{lang}/{word-root}/{word-inflected}.yaml`
+**Path:** `/languages/{ISO-639-3}/words/{word}/{ISO-639-3}-{word}-{tool}.yaml`
 
 **Components:**
-- `{lang}`: ISO-639-3 language code (e.g., `heb`, `grc`, `eng`)
-- `{word-root}`: Lemmatized/root form (base word before inflection)
-- `{word-inflected}`: Actual word form (may be same as root, or inflected)
+- `{ISO-639-3}`: ISO-639-3 language code (e.g., `heb`, `grc`, `eng`)
+- `{word}`: The word form (root or inflected)
+- `{tool}`: The analysis tool that generated this data (e.g., `morphology`, `semantics`, `concordance`)
 
 **Normalization Rules by Language:**
 
@@ -123,50 +126,56 @@ See [Strong's README](../mybibletoolbox-data/words/strongs/README.md) for comple
 **Examples:**
 
 ```
-# Root form (same as directory)
-/bible/words/heb/אהב/אהב.yaml          # Root: love (ahav)
-/bible/words/grc/λογος/λογος.yaml      # Root: word/logos
+# Hebrew words (root form)
+/languages/heb/words/אהב/heb-אהב-morphology.yaml        # Love (ahav) - morphological analysis
+/languages/heb/words/אהב/heb-אהב-semantics.yaml         # Love (ahav) - semantic analysis
 
-# Inflected forms grouped under root
-/bible/words/heb/אהב/אהבה.yaml         # Inflected: ahavah (she loved)
-/bible/words/grc/λογος/λογου.yaml      # Inflected: logou (genitive)
-/bible/words/grc/λογος/λογον.yaml      # Inflected: logon (accusative)
+# Greek words (root form)
+/languages/grc/words/λογος/grc-λογος-morphology.yaml    # Word/logos - morphological analysis
+/languages/grc/words/λογος/grc-λογος-semantics.yaml     # Word/logos - semantic analysis
 
-# English (minimal inflection, but still grouped)
-/bible/words/eng/love/love.yaml        # Base form
-/bible/words/eng/love/loves.yaml       # 3rd person singular
-/bible/words/eng/love/loved.yaml       # Past tense
+# English words
+/languages/eng/words/love/eng-love-concordance.yaml     # Love - concordance data
+/languages/eng/words/love/eng-love-semantics.yaml       # Love - semantic analysis
 ```
 
 **YAML Format:**
 
 ```yaml
-# Root form example
+# Hebrew word example
+verse: JOB.038.036
 language: heb
 word: אָהַב
-root: אָהַב
 transliteration: ahav
-strongs: H157
+strongs: H0157
 meaning: to love, have affection
 related_words:
-  - grc/αγαπη/αγαπη
-  - eng/love/love
-verses: [JHN.3.16, 1JN.4.8]
+  - grc/αγαπη
+  - eng/love
+verses: [JHN.003.016, 1JN.004.008]
+tool: morphology
+metadata:
+  generated_by: tool-name
+  generated_date: 2025-11-04
 
-# Inflected form example
+# Greek word example
+verse: JHN.001.001
 language: grc
-word: λόγου
-root: λόγος
-transliteration: logou
-grammatical_form: genitive singular
-meaning: of a word
-verses: [JHN.1.1]
+word: λόγος
+transliteration: logos
+strongs: G3056
+meaning: word, speech, reason
+verses: [JHN.001.001, JHN.001.014]
+tool: semantics
+metadata:
+  generated_by: tool-name
+  generated_date: 2025-11-04
 ```
 
 **Benefits:**
-- **Discoverable**: Can look up any inflected form and find its root
-- **Organized**: All forms of a word grouped together
-- **Root explicit**: Root is visible in directory path
+- **Organized**: Language-specific organization under `/languages/`
+- **Tool-specific**: Each analysis tool creates separate files
+- **Discoverable**: Words organized alphabetically within language directories
 - **Cross-referencing**: Easy to link related words across languages
 
 **References for Lemmatization:**
@@ -174,13 +183,13 @@ verses: [JHN.1.1]
 - **Hebrew:** Brown-Driver-Briggs (BDB) Lexicon, Strong's Concordance
 - **Greek:** BDAG Lexicon, Strong's Concordance, Thayer's Greek Lexicon
 - **Strong's Numbers:** Use as cross-reference (e.g., H0157 for אָהַב, G0026 for ἀγάπη)
-- **Strong's Format:** See [Strong's README](../mybibletoolbox-data/words/strongs/README.md) for complete specification
+- **Strong's Format:** See [Strong's README](../mybibletoolbox-data/strongs/README.md) for complete specification
 
 ### 5. Theological Topic Taxonomy
 
 **Standard:** Library of Congress Classification (LCC) codes + human-readable slugs
 
-**Format:** `/bible/topics/{lcc-code}/{slug}/{slug}.yaml`
+**Format:** `/topics/{lcc-code}/{slug}/{slug}[-{subsection}]-{tool}.yaml`
 
 **Major LCC Sections for Biblical Topics:**
 ```
@@ -192,11 +201,11 @@ BX: Denominations and Church History
 
 **Example Topics with LCC Codes:**
 ```
-/bible/topics/BS1199/land-of-canaan/land-of-canaan.yaml    # Biblical geography
-/bible/topics/BT109/trinity/trinity.yaml                   # Doctrinal theology
-/bible/topics/BT750/salvation/justification/justification.yaml  # Soteriology
-/bible/topics/BV210/prayer/prayer.yaml                     # Practical theology
-/bible/topics/BV4909/suffering/suffering.yaml              # Christian life topics
+/topics/BS1199/land-of-canaan/land-of-canaan-study.yaml              # Biblical geography
+/topics/BT109/trinity/trinity-doctrine.yaml                          # Doctrinal theology
+/topics/BT750/salvation/justification/justification-theology.yaml    # Soteriology
+/topics/BV210/prayer/prayer-practice.yaml                            # Practical theology
+/topics/BV4909/suffering/suffering-pastoral.yaml                     # Christian life topics
 ```
 
 **YAML Format:**
@@ -221,30 +230,32 @@ verses: [MAT.28.19, JHN.1.1]
 
 #### Word References
 
-**Format:** `{lang}/{word-root}/{word-inflected}`
+**Format:** `{lang}/{word}`
 
-Use full directory path when referencing words in any YAML field:
+Use language-prefixed paths when referencing words in any YAML field:
 
 ```yaml
 # In word files
 related_words:
-  - grc/αγαπη/αγαπη      # Greek agape (root)
-  - heb/אהב/אהב          # Hebrew ahav (root)
-  - eng/love/love        # English love
-  - grc/λογος/λογου      # Greek logos (genitive)
+  - grc/αγαπη            # Greek agape
+  - heb/אהב              # Hebrew ahav
+  - eng/love             # English love
+  - grc/λογος            # Greek logos
 
 # In topic or verse analysis files
 key_words:
-  - grc/πιστις/πιστις    # faith
-  - grc/ελπις/ελπις      # hope
-  - grc/αγαπη/αγαπη      # love
+  - grc/πιστις           # faith
+  - grc/ελπις            # hope
+  - grc/αγαπη            # love
 ```
 
+**Note:** Full file paths are `/languages/{lang}/words/{word}/{lang}-{word}-{tool}.yaml`
+
 **Benefits:**
-- Unambiguous file location
+- Concise references (no redundant language prefix in reference)
 - Language explicit
-- Can reference specific inflections
-- Easy to programmatically resolve
+- Easy to programmatically resolve to full path
+- Organized under `/languages/` directory
 
 #### Topic References and Aliases
 
@@ -260,10 +271,10 @@ related_topics:
 
 **Alias reference** (with `@` prefix) - indicates primary definition is elsewhere:
 ```yaml
-# In /bible/topics/BV4627/sin/sin.yaml (Practical: Sins & Virtues)
+# In /topics/BV4627/sin/sin-doctrine.yaml (Practical: Sins & Virtues)
 primary_topic: "@BT695/fall-of-man"   # See doctrinal treatment
 
-# In /bible/topics/BT750/atonement/atonement.yaml (Soteriology)
+# In /topics/BT750/atonement/atonement-theology.yaml (Soteriology)
 see_also:
   - "@BV210/prayer"                    # Practical application
   - "@BS1199/day-of-atonement"         # Biblical reference
