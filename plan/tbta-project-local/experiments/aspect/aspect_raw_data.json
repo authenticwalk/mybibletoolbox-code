@@ -1,0 +1,434 @@
+[
+  {
+    "verse": "MAT.024.042",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.042",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.042",
+    "constituent": "know",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.042",
+    "constituent": "return",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "understand",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "own",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "know",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "own",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "watch-out",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "let",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "enter",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.043",
+    "constituent": "steal",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.044",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "'must' Obligation",
+    "time": "Immediate Future",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.044",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.044",
+    "constituent": "expect",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.044",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "B"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "appoint",
+    "aspect": "Unmarked",
+    "mood": "'might' Potential",
+    "time": "Later Today",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "appoint",
+    "aspect": "Unmarked",
+    "mood": "'might' Potential",
+    "time": "Later Today",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "appoint",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "need",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "B"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "give",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.045",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "F"
+  },
+  {
+    "verse": "MAT.024.046",
+    "constituent": "return",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.046",
+    "constituent": "do",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.046",
+    "constituent": "order",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Discourse",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.046",
+    "constituent": "do",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Discourse",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.046",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "V"
+  },
+  {
+    "verse": "MAT.024.047",
+    "constituent": "tell",
+    "aspect": "Imperfective",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.047",
+    "constituent": "appoint",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.047",
+    "constituent": "care",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "C"
+  },
+  {
+    "verse": "MAT.024.047",
+    "constituent": "own",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.048",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.048",
+    "constituent": "think",
+    "aspect": "Unmarked",
+    "mood": "'might' Potential",
+    "time": "Later Today",
+    "lexical_sense": "B"
+  },
+  {
+    "verse": "MAT.024.048",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.049",
+    "constituent": "beat",
+    "aspect": "Inceptive",
+    "mood": "'might' Potential",
+    "time": "Later Today",
+    "lexical_sense": "C"
+  },
+  {
+    "verse": "MAT.024.049",
+    "constituent": "eat",
+    "aspect": "Inceptive",
+    "mood": "'might' Potential",
+    "time": "Later Today",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.049",
+    "constituent": "drink",
+    "aspect": "Inceptive",
+    "mood": "'might' Potential",
+    "time": "Later Today",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.049",
+    "constituent": "become",
+    "aspect": "Habitual",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.050",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.050",
+    "constituent": "expect",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.050",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.050",
+    "constituent": "come",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.050",
+    "constituent": "know",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "punish",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "put",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "pretend",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "D"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "be",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Present",
+    "lexical_sense": "F"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "weep",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "gnash",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  },
+  {
+    "verse": "MAT.024.051",
+    "constituent": "suffer",
+    "aspect": "Unmarked",
+    "mood": "Indicative",
+    "time": "Immediate Future",
+    "lexical_sense": "A"
+  }
+]
