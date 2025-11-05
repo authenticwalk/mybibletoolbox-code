@@ -8,8 +8,8 @@ Each data source has its own subdirectory:
 
 - `ebible/` - eBible corpus (1000+ translations)
 - `strongs/` - Strong's Hebrew and Greek dictionaries
-- `macula/` - Macula Hebrew and Greek source language datasets
-- `source-languages/` - Combined source language data (uses Macula + Strong's)
+- `macula/` - Macula Hebrew and Greek source language datasets (fetch + process)
+- `tbta/` - The Bible Translator's Assistant data
 
 ## Usage
 
@@ -31,17 +31,32 @@ python3 src/ingest-data/strongs/strongs_fetcher.py
 
 ### Macula Datasets
 
-Download and cache Macula Hebrew and Greek datasets:
-
+**Step 1: Download raw data (one-time setup):**
 ```bash
 python3 src/ingest-data/macula/macula_fetcher.py
 ```
 
-### Source Languages
+**Step 2: Process verses into YAML files:**
+```bash
+# Single verse
+python3 src/ingest-data/macula/macula_processor.py --verse "JHN 3:16"
 
-Fetch combined source language data for a specific verse:
+# Entire book
+python3 src/ingest-data/macula/macula_processor.py --book MAT
+
+# All verses
+python3 src/ingest-data/macula/macula_processor.py --all
+```
+
+### TBTA (The Bible Translator's Assistant)
+
+Process TBTA JSON export files:
 
 ```bash
-python3 src/ingest-data/source-languages/source_languages_fetcher.py "JHN 3:16"
+# Single verse
+python3 src/ingest-data/tbta/tbta_processor.py --verse "GEN 1:1"
+
+# Entire book
+python3 src/ingest-data/tbta/tbta_processor.py --book GEN
 ```
 

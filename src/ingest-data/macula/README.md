@@ -32,23 +32,23 @@ This downloads ~500MB of linguistic data to `/tmp/macula/`.
 
 **Single verse:**
 ```bash
-python src/lib/macula/macula_processor.py --verse "JHN 1:1"
+python src/ingest-data/macula/macula_processor.py --verse "JHN 1:1"
 ```
 
 **Single book:**
 ```bash
-python src/lib/macula/macula_processor.py --book MAT
+python src/ingest-data/macula/macula_processor.py --book MAT
 ```
 
 **New Testament:**
 ```bash
-python src/lib/macula/macula_processor.py --nt
-# Or: python src/lib/macula/macula_processor.py --testament NT
+python src/ingest-data/macula/macula_processor.py --nt
+# Or: python src/ingest-data/macula/macula_processor.py --testament NT
 ```
 
 **All verses** (takes 30-60 minutes):
 ```bash
-python src/lib/macula/macula_processor.py --all
+python src/ingest-data/macula/macula_processor.py --all
 ```
 
 ## Output

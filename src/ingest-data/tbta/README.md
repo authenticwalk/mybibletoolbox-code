@@ -27,23 +27,23 @@ git clone https://github.com/AllTheWord/tbta_db_export.git
 
 ```bash
 # Single verse
-python src/lib/tbta/tbta_processor.py --verse "GEN 1:1"
+python src/ingest-data/tbta/tbta_processor.py --verse "GEN 1:1"
 
 # Single chapter
-python src/lib/tbta/tbta_processor.py --chapter "GEN 1"
+python src/ingest-data/tbta/tbta_processor.py --chapter "GEN 1"
 
 # Entire book
-python src/lib/tbta/tbta_processor.py --book GEN
+python src/ingest-data/tbta/tbta_processor.py --book GEN
 
 # All verses (entire Bible)
-python src/lib/tbta/tbta_processor.py --all
+python src/ingest-data/tbta/tbta_processor.py --all
 ```
 
 ### Test Without Writing Files
 
 ```bash
 # Dry run on Genesis 1
-python src/lib/tbta/tbta_processor.py --chapter "GEN 1" --dry-run
+python src/ingest-data/tbta/tbta_processor.py --chapter "GEN 1" --dry-run
 ```
 
 ## Output Format
@@ -251,5 +251,5 @@ This explicitly encodes the **Trial number** (3 persons) which is critical for t
 ## Related Documentation
 
 - Full TBTA analysis: `/plan/tbta-analysis.md`
-- Macula processor: `src/lib/macula/README.md`
+- Macula processor: `src/ingest-data/macula/README.md`
 - TBTA export README: https://github.com/AllTheWord/tbta_db_export
