@@ -5,7 +5,7 @@ Strong's Dictionary Fetcher - Enhanced Edition
 This script fetches Strong's Hebrew and Greek dictionary data from multiple sources
 and generates comprehensive YAML files for each entry.
 
-Directory structure: ../mybibletoolbox-data/words/strongs/{strongs-number}/{strongs-number}.strongs.yaml
+Directory structure: $DATA_DIR/strongs/{strongs-number}/{strongs-number}.strongs.yaml
 
 Strong's numbers use leading zeros:
 - Greek: G0001-G5624 (4 digits)

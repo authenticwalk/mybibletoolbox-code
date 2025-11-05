@@ -72,7 +72,7 @@ def _is_valid_data_dir(path: Path) -> bool:
     """
     # Check for at least one expected subdirectory
     expected_dirs = [
-        path / "words" / "strongs",
+        path / "strongs",
         path / "commentary",
     ]
     return any(d.exists() for d in expected_dirs)
@@ -111,7 +111,7 @@ def _print_setup_help():
 # Initialize paths on module import
 try:
     DATA_DIR = get_data_dir()
-    STRONGS_DIR = DATA_DIR / "words" / "strongs"
+    STRONGS_DIR = DATA_DIR / "strongs"
     COMMENTARY_DIR = DATA_DIR / "commentary"
     TOPICS_DIR = DATA_DIR / "topics" if (DATA_DIR / "topics").exists() else None
     
