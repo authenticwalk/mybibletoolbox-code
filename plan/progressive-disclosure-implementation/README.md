@@ -10,11 +10,12 @@ Successfully implemented a standardized progressive disclosure documentation sys
 **Location:** `.claude/skills/progressive-disclosure/SKILL.md`
 
 A comprehensive skill that teaches Claude how to organize documentation using industry-standard progressive disclosure patterns:
-- README.md files (≤200 lines) - High-level overviews
-- Subfiles (≤400 lines) - Detailed content on specific topics
+- README.md files (≤200 lines) - Complete overview with links (the quick reference)
+- Topic files (≤400 lines) - Detailed content on specific topics
 - Nested directories - When files exceed limits
-- Upward propagation - Changes flow up to parent READMEs
-- Executive summaries - Subfiles start with parent context
+- Anti-spam policy - Prefer updating existing files over creating new ones
+- Topic sections with links - No generic "Subfiles" lists
+- Append workflow - Write thesis → do work → append results to same file
 
 ### 2. Updated CLAUDE.md
 Added 1-line guidance in the "Documentation Philosophy" section directing use of progressive disclosure for complex documentation, with reference to the skill.
@@ -118,11 +119,30 @@ This loads the full skill with detailed guidance on creating and maintaining pro
 4. Convert files to directories when exceeding limits
 5. Update parent READMEs when making significant changes
 
+## Improvements Based on Feedback
+
+After initial implementation, skill was refined to be more prescriptive:
+
+### Changes Made
+1. **Broader applicability** - Description changed to "use whenever creating/updating .md files" rather than specific use cases
+2. **Prescriptive not descriptive** - Examples show IDEAL structure, not current state
+3. **No "Subfiles" sections** - README sections are topical with links, not generic file lists
+4. **Anti-spam policy** - Clear guidance to update existing files before creating new ones
+5. **Better organization** - validation.md contains organized verse sections, not individual verse files
+6. **README as quick reference** - Removed QUICK-REFERENCE.md pattern (README should be the quick reference)
+7. **Append workflow** - Write initial content → do work → append results to same file
+8. **Markdown links** - Use `[text](path.md)` not aliases (preserves token efficiency)
+
+### Key Principle
+README should contain all essential information. Links provide optional deep dives, not required reading.
+
 ## Git History
 
 **Commits:**
 - `8a833f5` - Merged TBTA analysis work (84 files)
 - `41c719e` - Added progressive disclosure skill and updated CLAUDE.md
+- `0e25ec8` - Added implementation summary
+- `3be867d` - Refined skill with prescriptive guidance based on feedback
 
 **Branch:** `claude/nested-docs-skill-process-011CUqK3iWNttjXJWW9jroPY`
 
