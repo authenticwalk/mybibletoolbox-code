@@ -1,615 +1,675 @@
 ---
 name: progressive-disclosure
-description: Organize complex research, planning, and learning documentation using progressive disclosure - a hierarchical pattern where high-level READMEs summarize details in subfiles, which expand into nested directories when they grow beyond limits. Use for TBTA features, language research, tool creation, or any multi-layered knowledge work.
+description: Organize markdown documentation using progressive disclosure - README.md ≤200 lines (overview), subfiles ≤400 lines (details), nested directories when limits exceeded. Use whenever creating or updating .md files for research, planning, experiments, or learning documentation.
 ---
 
 # Progressive Disclosure Documentation
 
-## Overview
+## Core Principle
 
-Progressive disclosure is an industry-standard documentation pattern that organizes information hierarchically, revealing detail on demand. This skill helps you structure complex research, experiments, and learnings so they remain token-efficient and navigable at any depth.
+Organize information hierarchically where each level is self-contained:
+- **README.md** (≤200 lines) - Complete overview with links to details
+- **Topic files** (≤400 lines) - Deep detail on one topic
+- **Nested directories** - When topic files exceed 400 lines
 
-**Core Principle:** Every level contains all essential information (README.md), with optional deeper detail in subfiles/subdirectories. You can stop reading at any level and have complete knowledge at that depth.
+**Key:** README should be the quick reference. Load it and know everything at a glance.
 
-## When to Use This Skill
+## The 200/400 Rule
 
-Use progressive disclosure for:
-- **TBTA feature research** - Features → experiments → individual test cases
-- **Language research** - Language families → individual languages → specific grammatical features
-- **Bible study tool creation** - Tool overview → experiments → revisions → learnings
-- **Planning complex tasks** - High-level plan → task breakdowns → implementation details
-- **Any growing knowledge base** - When documentation exceeds token-efficient sizes
+| File Type | Max Lines | Content |
+|-----------|-----------|---------|
+| README.md | 200 | Overview + links to all topics |
+| {topic}.md | 400 | Detailed content on one topic |
+| {topic}/README.md | 200 | Overview when topic.md exceeded 400 |
+| {topic}/{subtopic}.md | 400 | Specific subtopic details |
 
-## Documentation Structure Rules
+## Anti-Spam Policy: Prefer Updates Over New Files
 
-### The 200/400 Rule
-
-**Rule:** Files grow until they hit limits, then split into directories with their own README.
-
-| Level | Type | Max Lines | Content |
-|-------|------|-----------|---------|
-| Top | README.md | 200 lines | Overview of entire domain, list of all subfiles with 1-2 line descriptions |
-| Sub | {topic}.md | 400 lines | Detailed content on one topic, references to parent README summary |
-| Deep | {topic}/README.md | 200 lines | Overview when topic.md exceeded 400 lines |
-| Deeper | {topic}/{subtopic}.md | 400 lines | Specific details of subtopic |
-
-### File Naming Conventions
-
+**Bad Pattern:**
 ```
-./{domain}/
-├── README.md                           # 200 lines max - overview of domain
-├── {topic-1}.md                        # 400 lines max - details on topic 1
-├── {topic-2}.md                        # 400 lines max - details on topic 2
-└── {topic-3}/                          # Created when topic-3.md hit 400 lines
-    ├── README.md                       # 200 lines max - overview of topic 3
-    ├── {subtopic-3a}.md               # 400 lines max - details on subtopic
-    ├── {subtopic-3b}.md               # 400 lines max - details on subtopic
-    └── {subtopic-3c}/                 # Created when 3c.md hit 400 lines
-        ├── README.md                   # 200 lines max - overview of subtopic 3c
-        └── {detail-3c-i}.md           # 400 lines max - specific detail
+experiments/
+├── experiment-001.md
+├── experiment-001-results.md
+├── experiment-001-analysis.md
+├── experiment-001-learnings.md
+└── experiment-002.md
 ```
 
-### Real Examples from This Project
-
-#### TBTA Feature: Person Systems
+**Good Pattern:**
 ```
-plan/tbta-project-local/features/person-systems/
-├── README.md                          # Overview of person systems in translation
-├── LEARNINGS.md                       # Key discoveries (could become dir if >400)
-├── QUICK-REFERENCE.md                 # Practical guide
-├── BIBLE-EXAMPLES.md                  # Annotated examples
-└── ebible-analysis.md                 # Analysis of specific corpus
+experiments/
+├── experiment-001.md          # Hypothesis → Method → Results → Learnings (all in one)
+└── experiment-002.md          # Next iteration
 ```
 
-#### When person-systems grows further:
-```
-plan/tbta-project-local/features/person-systems/
-├── README.md                          # Still 200 lines - updated overview
-├── clusivity/                         # LEARNINGS.md hit 400 lines, became dir
-│   ├── README.md                      # Summary of clusivity findings
-│   ├── GEN-001-026.md                # Detailed analysis of Genesis 1:26
-│   ├── MAT-006-009.md                # Lord's Prayer clusivity analysis
-│   └── language-patterns.md          # Patterns by language family
-├── obviation/                         # Similarly expanded
-│   └── README.md
-└── QUICK-REFERENCE.md                # Still a file, under 400 lines
-```
+**Workflow for updating files:**
+1. Write initial content (thesis, hypothesis, plan)
+2. Do the work (experiment, research, analysis)
+3. **Append results to same file** (add Results section)
+4. **Append learnings to same file** (add Learnings section)
+5. Only create new file for next iteration or distinct topic
 
-## Core Principles
+**When to create new files:**
+- ✅ Distinct topic that doesn't fit existing files
+- ✅ File approaching 400-line limit
+- ✅ Next iteration/experiment in a series
+- ❌ Different sections of same work
+- ❌ Results/analysis of same experiment
+- ❌ "Part 2" of something that should be one file
 
-### 1. Upward Propagation
+## Structure Pattern: Topic Sections with Links
 
-**Rule:** Changes in subfiles must update parent READMEs.
-
-When you:
-- Complete an experiment in `experiments/clusivity/GEN-001-026.md`
-- Must update `experiments/clusivity/README.md` to reflect findings
-- Must update `experiments/README.md` to note completion status
-- May update `features/person-systems/README.md` if findings are significant
-
-**Implementation:**
-- Track which files changed in your session
-- Before committing, check parent README(s)
-- Update summary sections to reflect new learnings
-- Keep parent README line count under 200
-
-### 2. Executive Summaries
-
-**Rule:** When a file becomes a directory, its original summary moves to the new README.md and becomes the "executive summary" section.
-
-**Before (file growing too large):**
+**Bad (Don't do this):**
 ```markdown
-# person-systems.md (450 lines - too long!)
-
-Person systems vary across languages with features like clusivity...
-
-## Detailed Analysis
-[300 lines of details]
-```
-
-**After (converted to directory):**
-```markdown
-# person-systems/README.md (180 lines)
-
-## Executive Summary
-Person systems vary across languages with features like clusivity...
-[This matches what was in parent README]
+# Feature Research
 
 ## Overview
-This directory contains research on person systems in Bible translation.
+Research on grammatical features.
 
 ## Subfiles
 - clusivity.md - Inclusive/exclusive distinctions
 - obviation.md - Fourth person systems
-- number-systems.md - Dual, trial, plural distinctions
-
-## Key Findings
-[Summary of discoveries across all subfiles]
+- number-systems.md - Dual and trial numbers
 ```
 
-**Subfiles start with parent context:**
+**Good (Do this):**
 ```markdown
-# person-systems/clusivity.md
+# Feature Research
 
-> **Parent Context:** Person systems vary across languages with features like
-> clusivity, obviation, and complex number systems.
+Brief overview paragraph explaining what this research covers.
 
-## Focus: Clusivity in Bible Translation
+## Clusivity
 
-[400 lines of detailed analysis]
+Inclusive/exclusive distinctions in first-person plural pronouns affect 200+ languages
+in our dataset. Key finding: Austronesian languages almost universally exhibit clusivity.
+
+**Status:** Validation complete (12 verses tested, 100% accuracy)
+
+[Read detailed analysis →](clusivity.md)
+
+## Obviation
+
+Fourth person (obviative) systems rank discourse participants by prominence...
+
+**Status:** Framework defined, needs validation
+
+[Read detailed analysis →](obviation.md)
+
+## Number Systems
+
+Dual (2) and trial (3) number marking beyond singular/plural...
+
+**Status:** In progress
+
+[Read detailed analysis →](number-systems.md)
 ```
 
-### 3. Token Efficiency
+**Why this works:**
+- Each section gives essential info (no need to click through)
+- Links provide path to details without forcing load
+- Status makes progress clear
+- README stays under 200 lines even with many topics
 
-**Rule:** Users should be able to load just what they need.
+## Ideal Directory Structures
 
-**Levels of detail:**
-1. **Scan level** - Top README.md (200 lines) - "What exists here?"
-2. **Working level** - Specific topic file (400 lines) - "What do I need to know?"
-3. **Deep dive level** - Subdirectory (multiple files) - "What are all the details?"
+### Example 1: Feature Research (Simple)
 
-**For AI agents:**
-- Load parent README first
-- Determine which subfiles are relevant
-- Load only those subfiles
-- Never load entire tree unless explicitly needed
+```
+features/person-systems/
+├── README.md                          # Overview of person systems
+├── clusivity.md                       # Detailed analysis
+├── obviation.md                       # Detailed analysis
+└── number-systems.md                  # Detailed analysis
+```
 
-### 4. Self-Contained Context
-
-**Rule:** Every file must make sense on its own.
-
-**Bad:**
+**README.md structure:**
 ```markdown
-# experiment-002.md
-We tried the same approach but with 10 verses.
-Results were better than before.
+# Person Systems
+
+Person systems vary across languages with features like clusivity, obviation,
+and complex number marking that affect Bible translation accuracy.
+
+## Clusivity
+[2-3 sentences on key findings]
+[Read detailed analysis →](clusivity.md)
+
+## Obviation
+[2-3 sentences on key findings]
+[Read detailed analysis →](obviation.md)
+
+## Number Systems
+[2-3 sentences on key findings]
+[Read detailed analysis →](number-systems.md)
 ```
 
-**Good:**
+### Example 2: Feature Research (Nested)
+
+When `clusivity.md` exceeds 400 lines, split it:
+
+```
+features/person-systems/
+├── README.md                          # Still 200 lines - overview
+├── clusivity/                         # clusivity.md became directory
+│   ├── README.md                      # Clusivity overview
+│   ├── validation.md                  # Validation experiments
+│   ├── language-patterns.md           # Patterns by language family
+│   └── exceptions.md                  # Edge cases and exceptions
+├── obviation.md                       # Still under 400 lines
+└── number-systems.md                  # Still under 400 lines
+```
+
+**clusivity/README.md structure:**
 ```markdown
-# experiment-002.md
+# Clusivity in Bible Translation
 
-> **Parent Context:** Testing clusivity prediction in Genesis using LLM analysis
-> of Greek source text. Previous experiment (001) achieved 70% accuracy on 5 verses.
+Inclusive/exclusive distinctions in 200+ languages force explicit theological
+interpretation in verses where Greek/Hebrew leave "we" ambiguous.
 
-## Experiment: Expanded verse set (10 verses)
+## Validation
 
-**Hypothesis:** More context improves accuracy
-**Method:** Same prompt structure, expanded to 10 consecutive verses
-**Result:** 85% accuracy (improved from 70%)
+Tested 12 key verses across 7 language families. Achieved 100% accuracy in
+predicting which languages require clusivity marking and whether inclusive or
+exclusive is appropriate.
 
-[Detailed analysis]
+[Read validation details →](validation.md)
+
+## Language Patterns
+
+Austronesian: Nearly universal clusivity (kita/kami pattern)
+Algic: Suppletive forms (completely different roots)
+Mayan: Complex interaction with evidential systems
+
+[Read detailed patterns →](language-patterns.md)
+
+## Exceptions
+
+Three cases where standard rules fail: creoles, language contact situations,
+and honorific system interactions.
+
+[Read exception analysis →](exceptions.md)
 ```
 
-## Workflow
-
-### Creating New Documentation Structure
-
-#### Step 1: Start with README.md
+**validation.md structure:**
 ```markdown
-# {domain}/README.md
+# Clusivity Validation Experiments
 
-## Overview
-[2-3 sentences on what this domain covers]
+Testing prediction accuracy for clusivity marking across verses and languages.
 
-## Scope
-[What's included, what's not]
+## Experiment Design
 
-## Current Status
-[Empty, in progress, completed]
+**Hypothesis:** Greek inclusive/exclusive distinctions predictable from context
+**Method:** Analyze 12 verses in 7 language families
+**Success Criteria:** >90% accuracy
 
-## Subfiles
-[None yet]
-```
+## Verse Analysis
 
-#### Step 2: Add First Details
-Create `{topic}.md` files as you research:
-- Keep focused on one topic
-- Start simple, grow organically
-- Don't pre-create empty files
+### Genesis 1:26 - "Let us make mankind"
 
-#### Step 3: Monitor Line Counts
-As files approach limits:
-- **Approaching 200 (README)** - Consider if any topics can be extracted to subfiles
-- **Approaching 400 (topic file)** - Plan to convert to directory structure
+**Context:** Divine plural
+**Prediction:** Exclusive (God speaking, not including creation)
+**Tested Languages:**
+- Indonesian: kami (exclusive) ✓
+- Tagalog: kami (exclusive) ✓
+- Ojibwe: niinawind (exclusive) ✓
 
-#### Step 4: Convert File → Directory
-When `topic.md` exceeds 400 lines:
+**Accuracy:** 3/3 (100%)
 
-```bash
-# 1. Create directory
-mkdir {topic}
+[Additional 11 verses analyzed in same format...]
 
-# 2. Extract sections to subfiles
-# Split content into logical subtopics
+## Results Summary
 
-# 3. Create new README
-# Move high-level summary from topic.md to topic/README.md
-
-# 4. Update parent README
-# Reflect that {topic} is now a directory
-```
-
-#### Step 5: Update Parents
-After any significant change:
-```markdown
-# Parent README update checklist:
-- [ ] Updated subfile list with new files
-- [ ] Updated key findings with discoveries
-- [ ] Updated status if work completed
-- [ ] Kept under 200 lines
-```
-
-### Working Within Existing Structure
-
-#### Step 1: Read Parent README
-```markdown
-# Understand context:
-- What is the scope of this domain?
-- What subfiles exist?
-- What has been learned so far?
-```
-
-#### Step 2: Navigate to Relevant Subfile
-```markdown
-# Load only what you need:
-- For specific topic: Read {topic}.md
-- For subtopic: Read {topic}/{subtopic}.md
-- For overview: Stay at parent README
-```
-
-#### Step 3: Make Changes
-```markdown
-# Add content to appropriate level:
-- New experiment results → experiments/{feature}/experiment-00X.md
-- New learning → features/{feature}/LEARNINGS.md
-- New subtopic → create new {subtopic}.md file
-```
-
-#### Step 4: Propagate Upward
-```markdown
-# Update chain:
-1. Complete work in deepest file
-2. Update immediate parent README
-3. Update grandparent README if significant
-4. Stop when change is no longer significant to parent
-```
-
-## Integration with Existing Patterns
-
-### Replacing/Updating Old Patterns
-
-This progressive disclosure pattern **replaces** the following in this project:
-- ❌ Creating `LEARNINGS.md` at root of tool directories (keep them, but follow 400-line rule)
-- ❌ Experiment files without clear parent structure
-- ❌ Massive single-file documentation (>400 lines)
-- ❌ Summary files in project root (use `/plan/{task-name}/README.md`)
-
-This pattern **incorporates and improves**:
-- ✅ Learning loops from tool-experimenter (learnings propagate up)
-- ✅ Experiment tracking (experiments are subfiles with clear structure)
-- ✅ Self-improvement systems (findings update parent READMEs)
-
-### Bible Study Tools Integration
-
-For tool creation, structure becomes:
-```
-bible-study-tools/{tool-name}/
-├── README.md                          # 200 lines - tool overview, schema, sources
-├── experiments/                       # All experimental work
-│   ├── README.md                      # Experiment overview, results summary
-│   ├── experiment-001/                # First major experiment
-│   │   ├── README.md                  # Experiment goals, findings
-│   │   ├── method.md                  # Detailed methodology
-│   │   ├── results.md                 # Raw results and analysis
-│   │   └── learnings.md               # What we learned, what to change
-│   └── experiment-002/                # Second experiment incorporating learnings
-│       └── ...
-└── LEARNINGS.md                       # Cumulative learnings (→ dir if >400 lines)
-```
-
-**Key change:** Experiments directory has its own README showing experiment history and cumulative results, making it easy to see evolution without loading everything.
-
-### TBTA Features Integration
-
-Already well-aligned! The merged code follows this pattern:
-```
-plan/tbta-project-local/
-├── README.md                          # Project overview, status, key results
-├── features/                          # All feature research
-│   ├── FEATURE-SUMMARY.md            # Quick reference across features
-│   └── person-systems/                # One feature
-│       ├── README.md                  # Feature overview
-│       └── LEARNINGS.md              # Discoveries (could become dir)
-└── experiments/                       # All experiments
-    ├── FRAMEWORK.md                   # How experiments work
-    └── person-systems/                # Experiments for one feature
-        └── experiment-001.md          # Specific test
-```
-
-## Common Patterns
-
-### Pattern 1: Research → Discovery → Integration
-
-**Stage 1: Initial Research**
-```
-research-topic/
-└── README.md (50 lines) - "Started researching X"
-```
-
-**Stage 2: Growing Knowledge**
-```
-research-topic/
-├── README.md (150 lines) - Updated with initial findings
-├── source-analysis.md (200 lines) - Analysis of key sources
-└── initial-patterns.md (180 lines) - Patterns discovered
-```
-
-**Stage 3: Deep Investigation**
-```
-research-topic/
-├── README.md (200 lines) - Comprehensive overview
-├── source-analysis/                   # source-analysis.md hit 400 lines
-│   ├── README.md
-│   ├── source-type-1.md
-│   └── source-type-2.md
-├── patterns/                          # initial-patterns.md hit 400 lines
-│   ├── README.md
-│   ├── pattern-family-1.md
-│   └── pattern-family-2.md
-└── applications.md (300 lines) - How to use findings
-```
-
-### Pattern 2: Experiment Series
-
-**Structure:**
-```
-experiments/{feature-name}/
-├── README.md                          # Experiment history, best methods
-├── experiment-001.md                  # First attempt
-├── experiment-002.md                  # Refinement based on 001 learnings
-├── experiment-003.md                  # Further refinement
-└── FINAL-METHOD.md                    # Production-ready approach
-```
-
-**experiment-001.md format:**
-```markdown
-# Experiment 001: [Short description]
-
-> **Parent Context:** [Feature being tested, project goals]
-
-## Hypothesis
-[What we think will happen]
-
-## Method
-[What we're testing]
-
-## Results
-[What happened]
+- Total predictions: 84 (12 verses × 7 languages)
+- Correct: 84
+- Accuracy: 100%
 
 ## Learnings
-[What we discovered, what to change next]
+
+1. Divine speaker = exclusive (always)
+2. Apostolic "we" context-dependent
+3. Community "we" requires narrative analysis
+```
+
+### Example 3: Experiments with Learning Loop
+
+```
+experiments/aspect-marking/
+├── README.md                          # Experiment series overview
+├── experiment-001.md                  # First attempt (complete)
+├── experiment-002.md                  # Refinement (complete)
+└── experiment-003.md                  # Current work
+```
+
+**experiment-001.md structure (all in one file):**
+```markdown
+# Experiment 001: Basic Aspect Detection
+
+## Hypothesis
+
+Greek perfect/aorist/present aspect predictable from verb form alone.
+
+## Method
+
+- Analyzed 20 verbs from John 1
+- Used morphology codes from Macula Greek
+- Predicted aspect marking needed in target languages
+- Validated against TBTA database
+
+## Results
+
+**Accuracy:** 70% (14/20 correct)
+
+**Failures:**
+- Perfect aspect: 3 wrong predictions
+- Stative verbs: 2 wrong predictions
+
+[Detailed results table...]
+
+## Learnings
+
+### What Worked
+- Aorist detection: 100% accurate
+- Present continuous: 95% accurate
+
+### What Failed
+- Perfect aspect needs semantic context, not just morphology
+- Stative verbs follow different rules
+
+### Changes for Experiment 002
+1. Add semantic context window (±2 verses)
+2. Separate stative verb handling
+3. Include discourse type (narrative vs discourse)
 
 ## Next Steps
-[What experiment-002 should try]
+
+See [experiment-002.md](experiment-002.md) for refinements based on these learnings.
 ```
 
-### Pattern 3: Language Family Research
+**Why this works:**
+- Everything about experiment-001 is in ONE file
+- Results appended after running experiment
+- Learnings appended after analyzing results
+- Clear link to next iteration
+- No spam of separate results/analysis/learnings files
 
-**Structure:**
+### Example 4: Bad vs Good Nested Structure
+
+**Bad - Unstructured verse files:**
 ```
-languages/{family-name}/
-├── README.md                          # Family overview, key characteristics
-├── {language-code}.md                 # Individual language details (max 400)
-└── {language-code}/                   # If language details >400 lines
-    ├── README.md                      # Language overview
-    ├── phonology.md                   # Detailed phonology
-    ├── grammar.md                     # Detailed grammar
-    └── bible-translation.md           # Translation-specific notes
-```
-
-## Best Practices
-
-### Do:
-- ✅ Create files organically as content emerges
-- ✅ Keep README files under 200 lines strictly
-- ✅ Keep subfiles under 400 lines strictly
-- ✅ Update parent READMEs when subfiles change significantly
-- ✅ Include parent context at start of subfiles
-- ✅ Use descriptive filenames (not file1.md, file2.md)
-- ✅ Add subfile descriptions to parent README
-- ✅ Keep directory depths reasonable (usually max 3-4 levels)
-
-### Don't:
-- ❌ Pre-create empty files "for later"
-- ❌ Let files exceed line limits
-- ❌ Create files without updating parent README
-- ❌ Duplicate content across multiple files
-- ❌ Write content assuming reader has loaded all previous files
-- ❌ Create deeply nested structures (>5 levels) unless truly necessary
-- ❌ Use this pattern for simple, single-file documentation
-
-## Line Count Guidelines
-
-### How to Count Lines
-
-```bash
-# Count lines in a file
-wc -l {file}.md
-
-# Check all markdown files in directory
-wc -l *.md
-
-# Find files over limit
-find . -name "*.md" -exec wc -l {} \; | awk '$1 > 400 {print $2, $1}'
+clusivity/
+├── README.md
+├── GEN-001-026.md                     # Random verse file
+├── MAT-006-009.md                     # Another random verse file
+├── ROM-015-005.md                     # Yet another random verse file
+└── random-notes.md                    # Unorganized thoughts
 ```
 
-### What Counts as Lines
+**Good - Purposeful organization:**
+```
+clusivity/
+├── README.md                          # Overview with links
+├── validation.md                      # All validation work
+├── language-patterns.md               # Pattern analysis
+└── exceptions.md                      # Edge cases
 
-- ✅ All content lines (text, headers, lists)
-- ✅ Code blocks and examples
-- ✅ Blank lines for spacing
-- ❌ YAML frontmatter (--- delimited)
-- ❌ Commented-out sections for AI only
-
-**Why these limits?**
-- 200 lines ≈ 3000-4000 tokens (efficient for overview)
-- 400 lines ≈ 6000-8000 tokens (comprehensive detail without overload)
-- Humans can read 200 lines in 5-10 minutes
-- AI agents can load 400 lines with plenty of token budget remaining
-
-## Migration Guide
-
-### Converting Existing Documentation
-
-If you have existing documentation that doesn't follow this pattern:
-
-#### Step 1: Assess Current Structure
-```bash
-# Find all markdown files
-find . -name "*.md" -type f
-
-# Check line counts
-find . -name "*.md" -exec wc -l {} \; | sort -n
+# validation.md contains all verses in organized sections:
+## Divine Speaker Verses (5 verses)
+## Apostolic Authority Verses (4 verses)
+## Community Identity Verses (3 verses)
 ```
 
-#### Step 2: Identify Violations
-- Files >400 lines → Need to become directories
-- Directories without README.md → Need README creation
-- Parent READMEs >200 lines → Need compression/extraction
+## README Template
 
-#### Step 3: Prioritize Conversions
-Focus on:
-1. Most-used documentation first
-2. Actively growing areas
-3. Areas with >500 line files (severe violations)
+Use this template for all README.md files:
 
-#### Step 4: Convert Systematically
-For each oversized file:
-1. Create directory with same name
-2. Create README.md with overview (extract from original)
-3. Split content into logical subfiles
-4. Update parent README to reflect new structure
-5. Commit with message: "refactor: convert {name} to progressive disclosure structure"
-
-## Examples from Project
-
-### Example 1: TBTA Person Systems (Already Good!)
-
-```
-plan/tbta-project-local/features/person-systems/
-├── README.md (237 lines) - ⚠️ Slightly over, but acceptable
-├── LEARNINGS.md (164 lines) - ✅ Good
-├── QUICK-REFERENCE.md (164 lines) - ✅ Good
-└── BIBLE-EXAMPLES.md (186 lines) - ✅ Good
-```
-
-**Status:** Well-structured! Each file is self-contained. If README.md grows past 250 lines or BIBLE-EXAMPLES grows past 400, consider splitting.
-
-### Example 2: Converting Large File
-
-**Before:**
-```
-plan/research/language-systems.md (850 lines) - ❌ Too large!
-```
-
-**After:**
-```
-plan/research/language-systems/
-├── README.md (180 lines)              # Overview + findings summary
-├── clusivity-systems.md (350 lines)   # One major topic
-├── number-systems.md (280 lines)      # Another major topic
-└── case-systems.md (240 lines)        # Third major topic
-```
-
-### Example 3: Growing Organically
-
-**Week 1:**
-```
-plan/new-feature/
-└── README.md (80 lines) - Initial exploration
-```
-
-**Week 2:**
-```
-plan/new-feature/
-├── README.md (120 lines) - Updated with findings
-└── initial-experiment.md (200 lines) - First test
-```
-
-**Week 3:**
-```
-plan/new-feature/
-├── README.md (180 lines) - Comprehensive overview
-├── experiments/
-│   ├── README.md (60 lines) - Experiment tracking
-│   ├── experiment-001.md (200 lines)
-│   └── experiment-002.md (250 lines)
-└── findings.md (180 lines) - Key discoveries
-```
-
-## Troubleshooting
-
-### "My README is at 195 lines and I need to add more!"
-
-**Options:**
-1. Compress existing content (use bullet points, remove redundancy)
-2. Extract details to new subfile
-3. Move less critical info to subfile, keep summary in README
-4. Accept 205 lines if truly necessary (guidelines, not prison)
-
-### "I have 10 subfiles and the parent README list is huge!"
-
-**Solution:** Use categorization:
 ```markdown
-## Subfiles
+# {Topic Name}
 
-### Core Documentation
-- overview.md - Project scope and goals
-- methodology.md - How we do this work
+[2-3 sentence overview of what this topic covers and why it matters]
 
-### Experiments (5 files)
-- experiments/ - See experiments/README.md for full list
+## {Subtopic 1 Name}
 
-### Reference (3 files)
-- See reference/README.md for detailed source materials
+[2-4 sentences with key findings/status for this subtopic]
+
+[Read detailed analysis →]({subtopic-1}.md)
+
+## {Subtopic 2 Name}
+
+[2-4 sentences with key findings/status for this subtopic]
+
+[Read detailed analysis →]({subtopic-2}.md)
+
+## Current Status
+
+[Brief status: what's done, what's in progress, what's next]
 ```
 
-### "My topic needs 600 lines of detailed explanation!"
+**Rules:**
+- No "Subfiles" section (use topic sections instead)
+- Each section links to its subfile using `[text](path.md)` not aliases
+- Keep under 200 lines total
+- Include key findings IN the README (don't force clicking)
 
-**Solution:** It's a directory, not a file:
-```
-topic/
-├── README.md (200 lines) - Overview with key points
-├── part-1.md (400 lines) - First major section
-└── part-2.md (200 lines) - Second major section
-```
+## Topic File Template
 
-### "Changes in deep files require updating 4 parent READMEs!"
+Use this for {topic}.md files:
 
-**Solution:** Only propagate significant changes:
-- Small bug fix in deep file → Update immediate parent only
-- New discovery → Update 2 levels up
-- Major breakthrough → Update to top level
+```markdown
+# {Topic Name}
 
-Use judgment on what's "significant enough" to propagate.
+> **Parent Context:** [1 sentence from parent README about larger domain]
+
+[2-3 paragraph detailed introduction to this specific topic]
+
+## {Section 1}
+
+[Detailed content...]
+
+## {Section 2}
+
+[Detailed content...]
 
 ## Summary
 
-Progressive disclosure documentation:
-- **Organizes knowledge hierarchically** - README → subfiles → subdirectories
-- **Keeps content token-efficient** - 200/400 line limits
-- **Makes information findable** - Clear structure, descriptive names
-- **Propagates learnings upward** - Changes update parent summaries
-- **Grows organically** - Start simple, expand as needed
-- **Works across domains** - TBTA, languages, tools, planning
+[Key takeaways from this topic]
+```
 
-**Remember:** This is about making complex knowledge navigable and maintainable, not about rigid rules. Use judgment, prioritize clarity, and adjust as needed.
+**Rules:**
+- Include parent context at top
+- Keep under 400 lines
+- If approaching 400, plan conversion to directory
+- Organize with clear sections
 
----
+## Workflow: Creating New Documentation
 
-**When in doubt:**
-1. Can someone understand the domain by reading just the README? (If no, improve README)
-2. Can someone find specific details easily? (If no, improve structure)
-3. Is any file over 400 lines? (If yes, split it)
-4. Is any README over 200 lines? (If yes, extract to subfiles)
+### Step 1: Start Simple
+
+```bash
+mkdir research-topic
+cd research-topic
+```
+
+Create minimal README.md:
+```markdown
+# Research Topic
+
+Brief overview of what will be researched.
+
+## Status
+
+Initial exploration - no subfiles yet.
+```
+
+### Step 2: Add Content to README
+
+As you learn, update README.md directly:
+```markdown
+# Research Topic
+
+Overview paragraph.
+
+## Initial Findings
+
+[Add findings as you discover them]
+
+## Questions
+
+[Track questions that emerge]
+```
+
+### Step 3: Extract to Subfile When Needed
+
+When README approaches 200 lines, extract details:
+
+```markdown
+# Research Topic
+
+Overview paragraph stays.
+
+## Initial Findings
+
+Key findings: [2-3 sentences summary of what's in findings.md]
+
+[Read detailed findings →](findings.md)
+```
+
+Create `findings.md` with extracted content.
+
+### Step 4: Continue Growing
+
+- Update existing files before creating new ones
+- Create new topic file only when distinct topic emerges
+- Convert file→directory only when exceeding 400 lines
+
+## Workflow: Updating Existing Documentation
+
+### Before Creating New File, Ask:
+
+1. **Does this belong in existing file?** → Update that file
+2. **Is this results/analysis of existing work?** → Append to existing file
+3. **Is this truly a new distinct topic?** → Create new file
+4. **Is existing file approaching 400 lines?** → Plan split
+
+### Appending to Existing Files
+
+**Good workflow:**
+```markdown
+# Initial file creation
+## Hypothesis
+[Written before experiment]
+
+# After running experiment, append:
+## Results
+[Appended to same file]
+
+# After analysis, append:
+## Learnings
+[Appended to same file]
+
+# After insights, append:
+## Next Steps
+[Appended to same file]
+```
+
+### When to Split Files
+
+Only split when:
+- File exceeds 400 lines
+- File has 3+ distinct major topics (each 100+ lines)
+- Topics could be independently useful
+
+## Integration with Project Patterns
+
+### Bible Study Tools
+
+```
+bible-study-tools/{tool-name}/
+├── README.md (≤200 lines)             # Tool overview, schema, sources
+│   ## Purpose
+│   ## Research Methodology
+│   [Read detailed experiments →](experiments.md)
+│   ## Output Schema
+│   ## Validation
+│
+└── experiments.md (≤400 lines)        # All experimental work
+    ## Experiment 001
+    [Hypothesis → Method → Results → Learnings - all in one section]
+
+    ## Experiment 002
+    [Next iteration based on 001 learnings]
+```
+
+**Only create experiments/ directory if experiments.md exceeds 400 lines.**
+
+### TBTA Features
+
+```
+plan/tbta/features/{feature}/
+├── README.md                          # Feature overview with links
+│   ## Definition
+│   ## Language Distribution
+│   [Read validation →](validation.md)
+│   [Read patterns →](patterns.md)
+│
+├── validation.md                      # All validation experiments
+└── patterns.md                        # Pattern analysis
+```
+
+### Language Research
+
+```
+plan/languages/{family}/
+├── README.md                          # Family overview
+│   ## Overview
+│   ## Key Characteristics
+│   ## Languages in This Family
+│   [Read translation challenges →](translation-challenges.md)
+│
+├── translation-challenges.md          # Challenges analysis
+└── {language-code}.md                 # Individual language (if needed)
+```
+
+## Common Mistakes to Avoid
+
+### ❌ Mistake 1: Pre-creating Empty Files
+
+**Don't:**
+```bash
+touch hypothesis.md method.md results.md analysis.md learnings.md
+```
+
+**Do:**
+```markdown
+# experiment-001.md
+
+## Hypothesis
+[Write this section]
+
+[Later, append:]
+## Method
+[Write this section]
+
+[Later, append:]
+## Results
+[Write this section]
+```
+
+### ❌ Mistake 2: File Spam
+
+**Don't:**
+```
+notes-2024-01-15.md
+notes-2024-01-16.md
+notes-2024-01-17.md
+random-thoughts.md
+more-thoughts.md
+```
+
+**Do:**
+```
+research-notes.md (update daily with dated sections)
+```
+
+### ❌ Mistake 3: Generic Subfile Lists
+
+**Don't:**
+```markdown
+## Subfiles
+- file1.md
+- file2.md
+- file3.md
+```
+
+**Do:**
+```markdown
+## Clusivity
+[Key findings...]
+[Link to details]
+
+## Obviation
+[Key findings...]
+[Link to details]
+```
+
+### ❌ Mistake 4: Breaking Single Work Across Files
+
+**Don't:**
+```
+experiment-hypothesis.md
+experiment-method.md
+experiment-results.md
+experiment-analysis.md
+```
+
+**Do:**
+```
+experiment.md (with all sections in one file)
+```
+
+### ❌ Mistake 5: QUICK-REFERENCE.md Separate File
+
+**Don't:**
+```
+README.md (comprehensive)
+QUICK-REFERENCE.md (short version)
+```
+
+**Do:**
+```
+README.md (make it the quick reference - ≤200 lines)
+```
+
+## Line Count Checks
+
+```bash
+# Check specific file
+wc -l README.md
+
+# Check all markdown in directory
+wc -l *.md
+
+# Find files over 400 lines
+find . -name "*.md" -exec wc -l {} \; | awk '$1 > 400 {print $2 " has " $1 " lines (OVER LIMIT)"}'
+
+# Find READMEs over 200 lines
+find . -name "README.md" -exec wc -l {} \; | awk '$1 > 200 {print $2 " has " $1 " lines (OVER LIMIT)"}'
+```
+
+## When in Doubt
+
+**Ask these questions:**
+
+1. **Does README contain all essential info?**
+   - If no → improve README
+   - If yes → good!
+
+2. **Can someone understand topic reading just README?**
+   - If no → add more summary to README
+   - If yes → good!
+
+3. **Are subfiles truly necessary or just spam?**
+   - Necessary → distinct topics, detailed analysis
+   - Spam → results of same work, different days' notes
+
+4. **Does each section in README link to details?**
+   - If no → add links
+   - If yes → good!
+
+5. **Am I creating new file or updating existing?**
+   - Default to updating
+   - Create only if truly distinct
+
+## Summary
+
+Progressive disclosure for markdown docs:
+- ✅ README.md ≤200 lines (the quick reference)
+- ✅ Topic files ≤400 lines (detailed analysis)
+- ✅ Topic sections in README with links (not "Subfiles" list)
+- ✅ Nested directories only when needed
+- ✅ Update existing files before creating new ones
+- ✅ One file per distinct work (append sections, don't split)
+- ✅ Use `[text](path.md)` links not aliases
+- ❌ Don't spam directories with many small files
+- ❌ Don't create QUICK-REFERENCE.md (README is the quick reference)
+- ❌ Don't split single experiments across multiple files
+
+**Goal:** Token-efficient, navigable documentation where README gives you everything you need, with optional deep dives available via links.
