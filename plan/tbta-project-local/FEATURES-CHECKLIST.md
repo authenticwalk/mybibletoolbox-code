@@ -108,17 +108,17 @@ Legend:
 ## PHRASE-LEVEL CATEGORIES (4 categories)
 
 ### 9. Noun Phrases (Category 101)
-**Status**: 🟨 Documented, no experiments
+**Status**: ✅ Fully Documented, no experiments
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Sequence | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
-| Semantic Role | 🟨 | Documented, no experiment yet |
-| Implicit | 🟨 | Documented, no experiment yet |
-| Thing Relationship | ⬜ | Not documented (reserved field) |
-| Relativized | 🟨 | Documented, no experiment yet |
+| Sequence | 🟨 | Documented in features/101-noun-phrases/, no experiment yet |
+| Semantic Role | 🟨 | Documented in features/101-noun-phrases/, no experiment yet |
+| Implicit | 🟨 | Documented in features/101-noun-phrases/, no experiment yet |
+| Thing Relationship | 🟨 | Documented in features/101-noun-phrases/ (reserved field, rarely used) |
+| Relativized | 🟨 | Documented in features/101-noun-phrases/, no experiment yet |
 
-**Summary**: 0/5 features with experiments (0%), 4/5 documented (80%)
+**Summary**: 0/5 features with experiments (0%), 5/5 documented (100%)
 
 ### 10. Verb Phrases (Category 102)
 **Status**: 🟨 Documented, no experiments
