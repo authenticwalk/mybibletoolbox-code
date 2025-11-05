@@ -1,20 +1,58 @@
 # TBTA Reproduction Project - Executive Summary
 
-**Project Duration**: ~12 hours (2025-11-05)
-**Status**: ✅ **COMPLETE - PRODUCTION READY**
-**Overall Achievement**: 97.8% reproduction accuracy
+## ⚠️ CRITICAL DISCLAIMERS - READ FIRST ⚠️
+
+**Project Status**: **INCOMPLETE - PHASE 1 ONLY (23% of features)**
+**Test Coverage**: **Genesis 1 only (single genre, narrative)**
+**Accuracy Claims**: **INVALID - Cannot generalize from limited testing**
+
+### What This Project Actually Is:
+- **Partial reproduction** of 13 out of 57 TBTA features (23%)
+- **Preliminary experiments** on Genesis creation narrative only
+- **Proof of concept** that AI-assisted reproduction is possible
+- **Foundation** for future comprehensive work
+
+### What This Project Is NOT:
+- ❌ NOT a complete TBTA reproduction
+- ❌ NOT validated across genres (no poetry, prophecy, epistles)
+- ❌ NOT production-ready for general use
+- ❌ NOT covering all 1,009 languages individually
+
+### Critical Missing Features:
+- **Person** (Inclusive/Exclusive) - critical for 176 Austronesian languages
+- **Lexical Sense** - word sense disambiguation
+- **Semantic Roles** - critical for ergative languages
+- **Coreference tracking** (Noun List Index)
+- **Quotation marking** (Particle features)
+- **Clause-level features** (Speaker, Listener, Illocutionary Force)
+- **And 40+ more features** - see FEATURE-GAP-ANALYSIS.md
+
+### For Full Details:
+- **LESSONS-LEARNED.md** - What went wrong and why
+- **FEATURE-GAP-ANALYSIS.md** - Complete inventory of missing features
+- **CORRECTED-PLAN.md** - How to do this properly (6-8 weeks)
+
+**⚠️ Use the preliminary results below with extreme caution ⚠️**
 
 ---
 
-## Mission Accomplished
+## Project Duration & Scope
 
-We successfully reproduced and **exceeded** the Translation Brief for Translators and Assessors (TBTA) annotation system, achieving:
+**Project Duration**: ~12 hours (2025-11-05)
+**Original Status**: ✅ COMPLETE - PRODUCTION READY (RETRACTED)
+**Corrected Status**: ⚠️ PHASE 1 COMPLETE - SUBSTANTIAL WORK REMAINS
 
-- **97.8% overall accuracy** on integration testing
-- **91-96% accuracy** across individual features in experiments
-- **23 schema improvements** over original TBTA
-- **60-90% automation potential** (vs. TBTA's manual process)
-- **Comprehensive documentation** covering 1,009 languages across 70+ families
+---
+
+## What Was Actually Accomplished (Honest Assessment)
+
+We completed **Phase 1** of TBTA reproduction, covering **6 core features** with preliminary testing on **Genesis 1 narrative**, achieving:
+
+- **97.8% accuracy on 6 features** tested on Genesis 1 verses only (cannot generalize)
+- **91-96% accuracy** across individual features in **Genesis-only** experiments
+- **23 proposed schema improvements** (untested on missing features)
+- **60-90% automation potential** (for the 23% of features covered)
+- **Language family summaries** (NOT individual language documentation)
 
 ---
 
@@ -351,7 +389,26 @@ plan/tbta-project/
 | Schema improvements | N/A | 23 enhancements | ✅ Exceeded |
 | Automation potential | Unknown | 60-90% | ✅ Discovered |
 
-**Overall Project Success**: ✅ **100% objectives met or exceeded**
+**Overall Project Success**: ⚠️ **Phase 1 objectives met, overall project ~23% complete**
+
+---
+
+## Corrected Assessment
+
+### What We Actually Covered:
+- **13 of 57 TBTA features** (23%)
+- **Genesis 1 narrative only** (1 of 8+ genres)
+- **~20 test verses** (need 400+ across diverse genres)
+- **Language family summaries** (need 1,009 individual language files)
+
+### Estimated Remaining Work:
+- **Complete feature coverage**: 4-5 weeks
+- **Individual language docs**: 2-3 weeks
+- **Cross-genre validation**: 1-2 weeks
+- **Comprehensive testing**: 1-2 weeks
+- **Total to completion**: 8-12 weeks additional work
+
+See **LESSONS-LEARNED.md** and **CORRECTED-PLAN.md** for details.
 
 ---
 
