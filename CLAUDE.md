@@ -103,6 +103,7 @@ The data directory uses Git sparse-checkout to limit which files are downloaded.
 - **Don't over-explain mechanics** - Avoid detailed explanations of "how to use tokens" or basic processes unless solving a specific issue
 - **Inline key info, reference details** - Summarize essential standards in tool READMEs; link to full docs for edge cases with "see {doc} for details"
 - **Avoid redundancy** - Don't create "-quick" versions of docs; extract relevant parts directly into tool READMEs
+- **Use progressive disclosure** - For complex research/planning (TBTA features, languages, tools): README.md ≤200 lines (overview), subfiles ≤400 lines (details), convert to nested directories when exceeded. Changes propagate upward. Use `/progressive-disclosure` skill for full guidance
 
 ### Tool Development Process
 - **Experiments optimize, researchers execute** - Tool experimentation phase should test sources and optimize lookups; researchers should use the optimized approach directly
