@@ -6,4 +6,4 @@
 *.cache.*
 
 # Data repositories (cloned separately)
-data/
+.data/

@@ -294,7 +294,7 @@ def get_book_stats() -> Dict[str, int]:
 
 # Translation version keys following STANDARDIZATION.md format
 # Format: {lang}-{version} or {lang}-{version}-{year}
-# See source-abbreviations.yaml for complete list
+# See ATTRIBUTION.md for complete list of sources, codes, and authority levels
 
 # Sample translations for MAT.005.003 (Matthew 5:3) demonstrating the data structure
 # Full translation database would be loaded from external file

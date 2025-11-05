@@ -66,7 +66,7 @@ Creates a comprehensive inventory of all original language words (Hebrew/Aramaic
 
 **Citation Requirements:**
 - Every fact must have an inline citation: `content {source}`
-- Use source codes from `/source-abbreviations.yaml`
+- Use source codes from `ATTRIBUTION.md`
 - Verify all original language text against authoritative sources
 - Mark AI-generated insights with `{llm-cs45}` or appropriate model tag
 

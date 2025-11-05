@@ -89,7 +89,7 @@ This hybrid approach has proven effective across all verse types (popular, moder
 
 **Citation Requirements:**
 - Every illustration must have a source citation: `content {source}`
-- Use source codes from `/source-abbreviations.yaml`
+- Use source codes from `ATTRIBUTION.md`
 - For films: Include title, year, scene description
 - For books: Include title, author, chapter/page if available
 - For historical events: Include date, primary source

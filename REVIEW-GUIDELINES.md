@@ -234,9 +234,8 @@ These are **universal requirements** for all Bible study tools, regardless of ty
 **Process for Adding New Sources**:
 1. Identify all unique sources used in output
 2. Add to appropriate section in ATTRIBUTION.md
-3. Include all required attribution information
-4. Update source-abbreviations.yaml if new citation code needed
-5. Verify citation format consistency
+3. Include all required attribution information (source code, authority level, citation format, etc.)
+4. Verify citation format consistency with existing sources in ATTRIBUTION.md
 
 ---
 

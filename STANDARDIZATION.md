@@ -55,15 +55,15 @@ lat: Latin
 
 **Note:** All data paths are relative to the `mybibletoolbox-data` repository.
 
-**Commentary:** `/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{tool-name}.yaml`
+**Commentary:** `/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-{tool-name}.yaml`
 
 **Examples:**
 
 **Commentary:**
 ```
-/commentary/MAT/005/MAT.005.003-translations.yaml
-/commentary/MAT/005/MAT.005.003-semantic-clusters.yaml
-/commentary/GEN/001/GEN.001.001-translations.yaml
+/commentary/MAT/005/003/MAT-005-003-translations.yaml
+/commentary/MAT/005/003/MAT-005-003-semantic-clusters.yaml
+/commentary/GEN/001/001/GEN-001-001-translations.yaml
 ```
 
 **Topics:**
@@ -377,7 +377,7 @@ spa-rv-1960: "Reina Valera 1960"
 1. Every translation, fact, or analysis must cite its source
 2. Citations appear inline, not as separate fields or lists
 3. No fabricated examples - only cite what exists in data files
-4. Use standardized source codes from `source-abbreviations.yaml`
+4. Use standardized source codes from `ATTRIBUTION.md`
 
 **Citation Format by Content Type:**
 
@@ -426,7 +426,7 @@ llm-cs45                   # AI analysis: Claude Sonnet 4.5
 
 **Source Authority Levels:**
 
-Per `source-abbreviations.yaml`:
+Per `ATTRIBUTION.md`:
 - **High authority**: Biblical text editions (NA28, UBS5, Biblia Hebraica), established translations (NIV, ESV, NASB)
 - **Medium authority**: Digital platforms (BibleHub, eBible, Bible Gateway)
 - **Low authority**: LLM-generated content (llm-cs45, llm-gpt4) - ALWAYS requires human review
@@ -439,7 +439,7 @@ Per `source-abbreviations.yaml`:
 - Inline format keeps content and citations together
 - Incremental specificity (only add year when needed for disambiguation)
 
-**Reference:** See `/source-abbreviations.yaml` for complete version lookup table.
+**Reference:** See `ATTRIBUTION.md` for complete source codes, authority levels, and citation formats.
 
 ---
 

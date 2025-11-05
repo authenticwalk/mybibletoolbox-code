@@ -62,9 +62,9 @@ This document provides a comprehensive analysis of the mybibletoolbox-code repos
   - *Reason*: Better organization
 
 #### Inconsistent Naming Patterns
-- [ ] **source-abbreviations.yaml** - Kebab-case in root
-  - *Action*: MOVE to `/src/constants/source_abbreviations.yaml`
-  - *Reason*: Belongs with code constants, use Python naming convention
+- [x] **source-abbreviations.yaml** - Kebab-case in root
+  - *Action*: REMOVED - All data merged into ATTRIBUTION.md
+  - *Reason*: Redundant file; source codes and authority levels now in ATTRIBUTION.md
 
 - [ ] **.cursor/environment.json** - Editor-specific config
   - *Action*: Add to .gitignore if not already

@@ -24,7 +24,7 @@ Extract cross-linguistic semantic clusters (word groupings with unified meaning)
 - Format: `"quoted text" {source}` or `field_name: "content" {source}`
 - If from your training data: Use `llm-cs45`
 - Translation sources use format: `{lang}-{version}-{revision}-{source}` in arrays only
-- See `source-abbreviations.yaml` for lookup table
+- See `ATTRIBUTION.md` for source codes and authority levels
 
 ### 4. VERSE-CENTRIC OUTPUT
 - All cluster data for a verse goes in ONE file: `/bible/{book}/{chapter}/{book}-{chapter}-{verse:03d}-semantic-clusters.yaml`
