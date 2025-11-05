@@ -61,13 +61,27 @@ The following are key files you can load.  Don't load them automatically as it w
 All generated commentary data follows this strict directory structure: (See STANDARIZATION.md for examples, edge cases if unsure)
 
 ```
-$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{tool}.yaml
+$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml
 $DATA_DIR/strongs/(H|G){strongs-number:04d}/(H|G){strongs-number:04d}-{tool}.strongs.yaml
 $DATA_DIR/topics/{lcc-code}/{slug}/{slug}[-{subsection}]-{tool}.yaml
 $DATA_DIR/languages/{ISO-639-3}/{ISO-639-3}-{tool}.yaml
 $DATA_DIR/languages/{ISO-639-3}/words/{word}/{ISO-639-3}-{word}-{tool}.yaml
 
 ```
+
+Default $DATA_DIR should be .data
+If unset/not exists run `setup-minimal-data.sh`
+
+### Working with Sparse Checkout
+
+The data directory uses Git sparse-checkout to limit which files are downloaded. This is important to know:
+
+- **Adding files**: If you try to create/add files in directories not in the sparse-checkout scope, Git will filter them out on commit
+- **Solutions**:
+  - Add the directory to sparse-checkout: `cd $DATA_DIR && git sparse-checkout add commentary/ROM`
+  - Or disable sparse-checkout temporarily: `cd $DATA_DIR && git sparse-checkout disable`
+- **Check current scope**: `cd $DATA_DIR && git sparse-checkout list`
+- **Re-enable**: `cd $DATA_DIR && git sparse-checkout init --cone` then set patterns again
 
 ## Development Notes
 

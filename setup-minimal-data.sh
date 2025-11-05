@@ -7,6 +7,14 @@
 # - Minimal footprint for fast development
 #
 # Reduces data clone from 2.6GB to ~100MB
+#
+# Usage:
+#   ./setup-minimal-data.sh [--data-dir PATH] [--force]
+#
+# Options:
+#   --data-dir PATH    Specify data directory (default: .data or $DATA_DIR)
+#   --force, -f        Remove existing directory without confirmation
+#   --help, -h         Show this help message
 
 set -e
 
@@ -16,61 +24,114 @@ YELLOW='\033[1;33m'
 BLUE='\033[0;34m'
 NC='\033[0m'
 
+# Parse command-line arguments
+FORCE=false
+CUSTOM_DATA_DIR=""
+
+while [[ $# -gt 0 ]]; do
+    case $1 in
+        --data-dir)
+            CUSTOM_DATA_DIR="$2"
+            shift 2
+            ;;
+        --force|-f)
+            FORCE=true
+            shift
+            ;;
+        --help|-h)
+            echo "Usage: $0 [--data-dir PATH] [--force]"
+            echo ""
+            echo "Options:"
+            echo "  --data-dir PATH    Specify data directory (default: .data or \$DATA_DIR)"
+            echo "  --force, -f        Remove existing directory without confirmation"
+            echo "  --help, -h         Show this help message"
+            exit 0
+            ;;
+        *)
+            echo "Unknown option: $1"
+            echo "Use --help for usage information"
+            exit 1
+            ;;
+    esac
+done
+
 echo -e "${BLUE}========================================${NC}"
 echo -e "${BLUE}Minimal Bible Data Setup${NC}"
 echo -e "${BLUE}========================================${NC}"
 echo ""
 
-DATA_DIR="data"
+# Determine data directory with priority: CLI arg > env var > default
+if [ -n "$CUSTOM_DATA_DIR" ]; then
+    DATA_DIR="$CUSTOM_DATA_DIR"
+else
+    DATA_DIR="${DATA_DIR:-.data}"
+fi
+export DATA_DIR
+
+echo -e "${GREEN}Using data directory: $DATA_DIR${NC}"
+echo ""
+
 DATA_REPO="https://github.com/authenticwalk/mybibletoolbox-data"
 
 # Check if data directory already exists
 if [ -d "$DATA_DIR" ]; then
     echo -e "${YELLOW}Data directory already exists at: $DATA_DIR${NC}"
-    read -p "Do you want to remove it and start fresh? (yes/no): " confirm
-    if [ "$confirm" = "yes" ]; then
+    if [ "$FORCE" = true ]; then
+        echo "  Force flag set, removing existing directory..."
         rm -rf "$DATA_DIR"
         echo "  Removed existing data directory"
     else
-        echo "  Keeping existing data directory"
-        exit 0
+        read -p "Do you want to remove it and start fresh? (yes/no): " confirm
+        if [ "$confirm" = "yes" ]; then
+            rm -rf "$DATA_DIR"
+            echo "  Removed existing data directory"
+        else
+            echo "  Keeping existing data directory"
+            exit 0
+        fi
     fi
 fi
 
 echo -e "${GREEN}Cloning mybibletoolbox-data with sparse checkout...${NC}"
 echo ""
 
-# Clone with blobless filter for faster checkout
-git clone --filter=blob:none --sparse "$DATA_REPO" "$DATA_DIR"
+# Clone without checking out any files yet
+git clone --filter=blob:none --no-checkout "$DATA_REPO" "$DATA_DIR"
 
 cd "$DATA_DIR"
 
 echo ""
-echo -e "${GREEN}Setting up minimal sparse checkout...${NC}"
+echo -e "${GREEN}Setting up sparse checkout patterns...${NC}"
 echo ""
 
-# Initialize sparse checkout with test verse data
-# These are the verses commonly used for tool testing and development
-git sparse-checkout set \
-    words/strongs \
-    commentary/MAT/5 \
-    commentary/JHN/3 \
-    commentary/GEN/1 \
-    commentary
+# Enable sparse checkout and configure directories to include
+git sparse-checkout init --cone
+git sparse-checkout set strongs commentary/MAT/005 commentary/JHN/003 commentary/GEN/001
+
+echo ""
+echo -e "${GREEN}Checking out specified files...${NC}"
+# Now checkout - this will only fetch blobs for the sparse patterns
+git checkout main
 
 echo ""
 echo -e "${GREEN}✓ Minimal bible data setup complete!${NC}"
 echo ""
-echo -e "${BLUE}What was installed:${NC}"
-echo "  - Strong's dictionary (14,197 entries)"
-echo "  - Matthew 5 commentary (Beatitudes)"
-echo "  - John 3 commentary (includes 3:16)"
-echo "  - Genesis 1 commentary"
-echo "  - Commentary tools metadata"
+echo -e "${BLUE}Files installed:${NC}"
+find . -type f -not -path './.git/*' | sed 's|^\./||' | cut -d'/' -f1 | sort | uniq -c | sort -rn | awk '{printf "  %s - %s files\n", $2, $1}'
 echo ""
 echo -e "${YELLOW}To add more books later:${NC}"
-echo "  cd data"
+echo "  cd $DATA_DIR"
 echo "  git sparse-checkout add commentary/MRK"
 echo "  git sparse-checkout add commentary/ROM"
+echo ""
+echo -e "${YELLOW}Usage examples:${NC}"
+echo "  # Use custom directory"
+echo "  ./setup-minimal-data.sh --data-dir /path/to/data"
+echo ""
+echo "  # Force reinstall without confirmation"
+echo "  ./setup-minimal-data.sh --force"
+echo ""
+echo "  # Set via environment variable"
+echo "  export DATA_DIR=/path/to/data && ./setup-minimal-data.sh"
 echo ""
 echo -e "${BLUE}========================================${NC}"
