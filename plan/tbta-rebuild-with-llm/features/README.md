@@ -6,8 +6,7 @@ Comprehensive research on TBTA's linguistic annotation system, organized by feat
 
 TBTA (Translation by Translation Annotation) provides semantic features for biblical texts to enable accurate translation into 1000+ languages. Each feature captures linguistic distinctions that may be obligatory in target languages but ambiguous in source texts.
 
-**See also:** [ALL-FEATURES.md](./ALL-FEATURES.md) - Complete catalog of all TBTA features
-**See also:** [FEATURE-SUMMARY.md](./FEATURE-SUMMARY.md) - Quick reference table
+**See also:** [FEATURE-SUMMARY.md](./FEATURE-SUMMARY.md) - Quick reference table of all features
 
 ---
 

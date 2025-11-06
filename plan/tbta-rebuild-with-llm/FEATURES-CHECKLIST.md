@@ -24,7 +24,7 @@ Legend:
 | Proximity System | ✅ | Experiment complete (`features/proximity-systems/`, `experiments/proximity/`) |
 | Polarity | ✅ | Experiment complete (`features/polarity/`) |
 | Surface Realization | ✅ | Experiment complete (`features/surface-realization/`) |
-| Participant Status | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Participant Status | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 
 **Summary**: 7/8 features with experiments (87.5%)
 
@@ -36,13 +36,13 @@ Legend:
 | Time Granularity | ✅ | Experiment complete (`features/time-granularity/`, `experiments/time/`) |
 | Aspect | ✅ | Experiment complete (`experiments/aspect/`, 98.1% accuracy) |
 | Mood | ✅ | Experiment complete (`experiments/mood/`, 100% accuracy) |
-| Reflexivity | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Reflexivity | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Polarity | ✅ | Covered under noun polarity experiments |
 | Adjective Degree (Pos 9) | 🟨 | Documented, no experiment yet |
 | Target Tense (Pos 10) | ⬜ | Not documented (forward-looking feature) |
 | Target Aspect (Pos 11) | ⬜ | Not documented (forward-looking feature) |
 | Target Mood (Pos 12) | ⬜ | Not documented (forward-looking feature) |
-| Lexical Sense | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Lexical Sense | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 
 **Summary**: 4/10 features with experiments (40%), 6/10 documented (60%)
 
@@ -51,7 +51,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Degree | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Degree | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Usage (from AdjP) | 🟨 | Documented, no experiment yet |
 
 **Summary**: 0/2 features with experiments (0%), 2/2 documented (100%)
@@ -61,7 +61,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Degree | 🟨 | Documented in ALL-FEATURES.md, minimal detail |
+| Degree | 🟨 | Documented in FEATURE-SUMMARY.md, minimal detail |
 
 **Summary**: 0/1 features with experiments (0%), 1/1 documented (100%)
 
@@ -70,7 +70,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Lexical Sense | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Lexical Sense | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Special Types (Genitive, Kinship, Subgroup) | 🟨 | Documented, no experiment yet |
 
 **Summary**: 0/2 features with experiments (0%), 2/2 documented (100%)
@@ -80,7 +80,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Lexical Sense | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Lexical Sense | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Implicit Flag | 🟨 | Documented, no experiment yet |
 
 **Summary**: 0/2 features with experiments (0%), 2/2 documented (100%)
@@ -99,7 +99,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Type (QuoteBegin/End, Focus, Topic, etc.) | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Type (QuoteBegin/End, Focus, Topic, etc.) | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 
 **Summary**: 0/1 features with experiments (0%), 1/1 documented (100%)
 
@@ -125,7 +125,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Sequence | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Sequence | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Implicit | 🟨 | Documented, no experiment yet |
 
 **Summary**: 0/2 features with experiments (0%), 2/2 documented (100%)
@@ -135,7 +135,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Sequence | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Sequence | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Usage | 🟨 | Documented, no experiment yet |
 | Implicit | 🟨 | Documented, no experiment yet |
 
@@ -146,7 +146,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Sequence | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Sequence | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Implicit | 🟨 | Documented, no experiment yet |
 
 **Summary**: 0/2 features with experiments (0%), 2/2 documented (100%)
@@ -160,7 +160,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Clause Type (Pos 2) | 🟨 | Documented in ALL-FEATURES.md, no experiment yet |
+| Clause Type (Pos 2) | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |
 | Illocutionary Force (Pos 3) | ✅ | Experiment complete (`features/illocutionary-force/`) |
 | Topic NP (Pos 4) | 🟨 | Documented, no experiment yet |
 | Speaker (Pos 5) | ✅ | Part of honorifics experiments |
@@ -186,7 +186,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Paragraph Boundaries | 🟨 | Documented in ALL-FEATURES.md, structural marker |
+| Paragraph Boundaries | 🟨 | Documented in FEATURE-SUMMARY.md, structural marker |
 
 **Summary**: 0/1 features with experiments (0%), 1/1 documented (100%)
 
@@ -195,7 +195,7 @@ Legend:
 
 | Feature | Status | Notes |
 |---------|--------|-------|
-| Episode Boundaries | 🟨 | Documented in ALL-FEATURES.md, structural marker |
+| Episode Boundaries | 🟨 | Documented in FEATURE-SUMMARY.md, structural marker |
 
 **Summary**: 0/1 features with experiments (0%), 1/1 documented (100%)
 

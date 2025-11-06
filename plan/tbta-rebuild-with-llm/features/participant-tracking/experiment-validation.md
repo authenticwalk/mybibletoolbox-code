@@ -16,7 +16,7 @@ Test whether we can accurately predict Participant Tracking values (First Mentio
 
 ## Background: Participant Tracking Values
 
-From ALL-FEATURES.md, Participant Tracking has these possible values:
+From FEATURE-SUMMARY.md, Participant Tracking has these possible values:
 
 | Value | Meaning | Usage |
 |-------|---------|-------|
@@ -329,7 +329,7 @@ Check for:
 **Related Standards**:
 - See STANDARDIZATION.md for file naming conventions
 - See SCHEMA.md for data output format
-- See ALL-FEATURES.md for complete feature definitions
+- See FEATURE-SUMMARY.md for complete feature definitions
 
 ---
 
@@ -348,7 +348,7 @@ Check for:
 ## Document Metadata
 
 - **Framework Version**: 1.0 (FRAMEWORK.md)
-- **Feature Set**: ALL-FEATURES.md (Participant Tracking section)
+- **Feature Set**: FEATURE-SUMMARY.md (Participant Tracking section)
 - **Experiment Type**: Feature Isolation (Phase 1)
 - **Expected Duration**: Single verse pair testing
 - **Success Criteria**: 80%+ accuracy on participant tracking

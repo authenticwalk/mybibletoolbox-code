@@ -445,5 +445,5 @@ For each entity:
 
 - experiment-001.md: Full experimental methodology
 - predictor.py: Implementation of automated prediction
-- ALL-FEATURES.md: Complete participant tracking feature definitions
+- FEATURE-SUMMARY.md: Complete participant tracking feature definitions
 - FRAMEWORK.md: Overall TBTA feature reproduction framework

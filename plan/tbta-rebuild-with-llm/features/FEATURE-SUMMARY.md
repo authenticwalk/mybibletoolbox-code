@@ -1,7 +1,7 @@
 # TBTA Features: Quick Reference Summary
 
 ## Overview
-This table provides a quick reference for all TBTA features. For detailed documentation, see [ALL-FEATURES.md](./ALL-FEATURES.md).
+This table provides a quick reference for all TBTA features. For detailed documentation, see individual feature directories.
 
 ## Feature Summary Table
 

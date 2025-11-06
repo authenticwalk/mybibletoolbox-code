@@ -13,7 +13,7 @@ This is critical because aspect marking is obligatory in ~40% of world languages
 
 ## Aspect Values in TBTA
 
-From ALL-FEATURES.md, TBTA supports these aspect values:
+From FEATURE-SUMMARY.md, TBTA supports these aspect values:
 
 - **Unmarked**: No specific aspect (neutral/unspecified)
 - **Perfective**: Completed action viewed as whole
