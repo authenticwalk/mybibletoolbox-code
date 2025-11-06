@@ -258,7 +258,7 @@ See [PLAN.md](PLAN.md) for 8-12 week execution plan.
 plan/tbta-rebuild-with-llm/
 ├── README.md (this file)
 ├── LEARNINGS.md (extracted insights and methodology)
-├── features/ (documented features, experiments)
+├── features/ (documented features with validation experiments)
 ├── languages/ (family summaries, need individual files)
 └── combined/ (integrated prompts and workflows)
 ```
