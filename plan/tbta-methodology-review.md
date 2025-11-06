@@ -190,12 +190,18 @@ Update README.md and PLAN.md to emphasize:
 
 ### What We're Building
 
-**NOT**: A parser that extracts features already labeled in TBTA data
-**YES**: A prediction system that can label any Bible verse using:
-- Prompt engineering (detailed linguistic instructions)
-- Context engineering (translations showing how features are realized)
-- Semantic reasoning (understanding meaning, not just morphology)
-- Theological reasoning (understanding divine vs human patterns)
+**NOT**:
+- A parser that extracts features already labeled in TBTA data
+- Code/algorithms with if/else logic to classify features
+- Rule-based systems with programmatic decision trees
+
+**YES**: An LLM-based prediction system using:
+- **Prompt engineering**: Detailed natural language instructions for reasoning
+- **Context engineering**: Providing 900+ translations showing feature realization
+- **Semantic reasoning**: LLM understanding meaning through language, not code
+- **Theological reasoning**: Describing divine vs human patterns in prompts
+
+**Method**: The LLM reads instructions and context, then reasons through predictions using its language understanding. No coded rules or algorithmic classification!
 
 ### Resources We Use
 

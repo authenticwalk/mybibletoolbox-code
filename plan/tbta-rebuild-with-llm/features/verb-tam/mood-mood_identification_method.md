@@ -173,6 +173,16 @@ Mood can be modified by discourse function:
 
 ## Decision Tree for Mood Prediction
 
+**IMPORTANT**: This is a **reasoning framework for LLM prompts**, NOT code to implement!
+
+This flowchart describes the reasoning steps to include in your prompt to guide the LLM's analysis. The LLM reads these instructions and applies them through natural language reasoning, not through algorithmic execution.
+
+**Method**: Prompt engineering + context engineering
+- Include these reasoning steps in your prompt text
+- Provide examples showing this reasoning process
+- Give the LLM access to source text + translations as context
+- Let the LLM reason through the steps using its language understanding
+
 Use this flowchart to PREDICT mood from source text:
 
 ```
