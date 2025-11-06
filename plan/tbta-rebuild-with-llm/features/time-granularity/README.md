@@ -2,6 +2,58 @@
 
 Research on fine-grained temporal/tense systems across language families in the TBTA corpus, focusing on languages that distinguish between multiple degrees of temporal remoteness, evidentiality, and other advanced temporal marking systems.
 
+## Quick Translator Test
+
+Answer these questions about your target language:
+
+1. ☐ Does your language distinguish multiple past tenses by distance?
+   - If YES, how many past distinctions? (2-way, 3-way, 4-way+)
+2. ☐ Does your language distinguish multiple future tenses?
+   - Immediate future vs remote future?
+3. ☐ Does your language mark hodiernal (today) vs pre-hodiernal (before today)?
+4. ☐ Does your language use absolute time (calendar) or relative time (narrative flow)?
+5. ☐ Does your language have special marking for timeless/gnomic statements?
+
+If you answered YES to #1 with 3+ distinctions, time granularity annotation
+is CRITICAL.
+
+**Languages requiring this**:
+- Bantu: Up to 5 past tenses by distance (ChiBemba, Swahili)
+- Amazonian: Yagua has 5 past distinctions
+- Kiksht: Complex narrative time with multiple pasts
+- Quechuan: Multiple past levels
+
+## Baseline Statistics
+
+Expected distribution varies significantly by genre:
+
+**Narrative (OT/Gospels/Acts)**:
+- Historic Past: ~60% (main storyline events)
+- Immediate Past: ~15% (recent events referenced)
+- Present: ~10% (dialogue, description)
+- Immediate Future: ~10% (predictions, plans)
+- Other: ~5%
+
+**Teaching/Epistles (NT)**:
+- Present: ~40% (current teaching, timeless truth)
+- Discourse: ~25% (time relative to discourse moment)
+- Historic Past: ~15% (references to events)
+- Future: ~15% (prophecy, eschatology)
+- Other: ~5%
+
+**Prophecy (OT/Revelation)**:
+- Remote Future: ~35% (eschatological)
+- Near Future: ~25% (imminent fulfillment)
+- Historic Past: ~15% (retrospective)
+- Prophetic Perfect: ~15% (future as completed)
+- Other: ~10%
+
+**Law (Pentateuch)**:
+- Timeless: ~50% (perpetual statutes)
+- Future: ~30% (consequences)
+- Present: ~15% (current instruction)
+- Other: ~5%
+
 ## Scope
 
 This research analyzes 725+ languages from 11 major language families represented in TBTA:
@@ -208,6 +260,129 @@ TAM systems frequently interact with:
 - **Focus/Word Order**: Head-initial languages mark TAM with preverbal particles
 - **Agreement**: Case and subject agreement morphology interact with tense marking
 - **Narrative Structure**: Tense choices signal narrative organization (main vs. side content)
+
+## Hierarchical Prediction Prompt Template
+
+**Level 1 - Identify Genre** (CRITICAL for time)
+Prompt: "What genre is this passage?"
+- Narrative → Expect Historic Past dominance (60%+)
+- Teaching → Expect Present/Discourse dominance (60%+)
+- Prophecy → Expect Future dominance (60%+)
+- Law → Expect Timeless dominance (50%+)
+
+**Level 2 - Check Explicit Temporal Markers**
+Prompt: "Are there explicit time words?"
+- "yesterday", "tomorrow", "long ago" → Use stated timeframe
+- "now", "at that time", "then" → Mark temporal deixis
+- No marker → Continue Level 3
+
+**Level 3 - Analyze Verb Form (Greek/Hebrew)**
+Greek:
+- Aorist → Usually Historic Past (narrative) or Undefined (non-narrative)
+- Imperfect → Historic Past (ongoing) or Remote Past
+- Perfect → Recent Past with present relevance
+- Present → Present or Discourse
+- Future → Immediate Future or Remote Future (check context)
+
+Hebrew:
+- Wayyiqtol → Historic Past (narrative mainline)
+- Qatal → Completed action (Historic Past or Perfect)
+- Yiqtol → Future, habitual, or modal
+- Participle → Present or progressive
+
+**Level 4 - Apply Genre-Based Rules**
+Narrative:
+- Main storyline verbs → **Historic Past**
+- Background description → **Timeless** or **Present**
+- Direct speech about future → **Immediate Future** or **Remote Future**
+
+Teaching:
+- General truths → **Timeless**
+- Application to audience → **Present** or **Immediate Future**
+- Examples from past → **Historic Past**
+
+Prophecy:
+- Near fulfillment → **Near Future** (within generation)
+- Eschatological → **Remote Future** (end times)
+- Prophetic perfect (future as done) → **Remote Future** with perfect aspect
+
+**Level 5 - Check Discourse Frame**
+Prompt: "Is time relative to discourse moment or narrative moment?"
+- Letter writing: "I am writing to you" → **Discourse** (time of writing)
+- Narrative: "Jesus was teaching" → **Historic Past** (time of story)
+
+## Gateway Features & Correlations
+
+Quick prediction rules:
+
+| If Context Shows... | Then Predict... | Confidence |
+|---------------------|----------------|------------|
+| Genre=Narrative + Mood=Indicative | **Historic Past** | 70%+ |
+| Genre=Teaching + Present tense | **Present** or **Timeless** | 75%+ |
+| Genre=Prophecy + Future tense | **Remote Future** | 65%+ |
+| Explicit "yesterday", "long ago" | **Immediate Past** or **Remote Past** | 95%+ |
+| Explicit "tomorrow", "soon" | **Immediate Future** | 90%+ |
+| Law genre + imperative | **Timeless** | 80%+ |
+
+**Correlation with Mood + Aspect**:
+- Indicative + Aorist (Greek) → Historic Past (narrative context) 90%
+- Indicative + Present → Present or Timeless 80%
+- Subjunctive → Often Future or Conditional time
+
+## Common Prediction Errors
+
+**Error 1**: Ignoring genre context
+- Problem: Applying narrative rules to teaching passages
+- Solution: Always check genre first (Level 1)
+- Example: Present tense in narrative=currently happening; in teaching=timeless truth
+
+**Error 2**: Confusing narrative time vs discourse time
+- Problem: Not distinguishing story time from telling time
+- Solution: Check if time is relative to narrative or speaker
+- Example: "I am writing" (discourse time) vs "Jesus was writing" (narrative time)
+
+**Error 3**: Missing prophetic perfect
+- Problem: Treating future events as past because of perfect form
+- Solution: Recognize prophetic convention (certain future = completed)
+- Example: Isaiah's "the virgin has conceived" (future treated as complete)
+
+**Error 4**: Overusing "Immediate" vs "Remote"
+- Problem: Not clear what "immediate" means (hours? days? weeks?)
+- Solution: Use cultural context and explicit markers
+- Guidelines:
+  - Immediate: Within day/week, same scene
+  - Near: Within generation, this era
+  - Remote: Beyond generation, eschatological
+
+**Error 5**: Confusing aspect with time
+- Problem: Progressive aspect ≠ present time
+- Solution: Separate aspect (how action unfolds) from time (when it occurs)
+- Example: "was walking" = past time + progressive aspect
+
+## Cross-Feature Interactions
+
+**Time + Mood + Aspect** (PRIMARY TRIAD):
+These three features form a tightly integrated system:
+- Mood: Factual/hypothetical/commanded
+- Aspect: Internal temporal structure
+- Time: Location on timeline
+
+Example combinations:
+- Indicative + Perfective + Historic Past = "he walked" (narrative)
+- Indicative + Progressive + Present = "he is walking" (current)
+- Subjunctive + Imperfective + Future = "he might walk" (hypothetical future)
+
+**Time + Genre**:
+- Narrative: Dominated by Historic Past
+- Teaching: Dominated by Present/Timeless
+- Prophecy: Dominated by Future
+- Law: Dominated by Timeless
+
+**Time + Illocutionary Force**:
+- Declarative: Full range of time
+- Imperative: Usually Future (commanded action)
+- Interrogative: Usually Present or Future
+- Performative: Usually Present (speech act creates reality)
 
 ## Research Implications for TBTA
 

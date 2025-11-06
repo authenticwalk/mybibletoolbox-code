@@ -10,6 +10,59 @@ The TBTA Surface Realization feature tracks four distinct realization types:
 3. **Zero**: Dropped/null (no surface form, but understood contextually)
 4. **Clitic**: Reduced form attached to another word
 
+**Translation Impact**: ⭐⭐⭐⭐⭐ CRITICAL for pro-drop languages (Spanish, Japanese, Greek, Hebrew, Mandarin), topic-prominent languages (Japanese, Korean), and ergative languages. Surface realization choices directly determine grammaticality and naturalness.
+
+---
+
+## Baseline Statistics
+
+Expected distribution in Biblical narrative:
+
+**English** (non-pro-drop):
+- Noun: ~35% (full NPs for new/restaged participants)
+- Pronoun: ~60% (routine continued reference)
+- Zero: ~5% (ellipsis in coordinated structures)
+
+**Biblical Hebrew** (pro-drop):
+- Noun: ~30% (full NPs for new/restaged)
+- Pronoun: ~20% (explicit emphasis/disambiguation)
+- Zero: ~50% (routine continued reference in verb)
+
+**Biblical Greek** (partial pro-drop):
+- Noun: ~35% (full NPs)
+- Pronoun: ~30% (moderate pro-drop)
+- Zero: ~35% (subject in verb morphology)
+
+**Genre variation**:
+- Narrative: Higher noun usage (introducing characters)
+- Dialogue: Higher pronoun usage (established participants)
+- Teaching: More explicit nouns (clarity over conciseness)
+
+**Key principle**: Surface realization correlates 95%+ with **Participant Tracking** state. First Mention → Noun, Routine → Pronoun/Zero, Restaging → Noun.
+
+---
+
+## Quick Translator Test
+
+Answer these questions about your target language:
+
+1. ☐ Is your language pro-drop (can omit subject pronouns)?
+2. ☐ Does your language have rich verb agreement that identifies subjects?
+3. ☐ Does your language require explicit pronouns for routine reference?
+4. ☐ Does your language distinguish personal pronouns by formality (T-V distinction)?
+5. ☐ When restaging participants, does your language require full NP or allow pronouns?
+
+**Interpretation**:
+- If YES to #1-2 (pro-drop): Surface realization annotation is CRITICAL for knowing when to use zero vs explicit forms
+- If YES to #3 (non-pro-drop): You must use pronouns where source languages use zero
+- If YES to #4 (formality): Surface realization interacts with Honorifics feature
+- If YES to #5 (pronoun restaging): Your language has higher accessibility than English
+
+**Pro-drop languages**: Spanish, Italian, Portuguese, Greek, Hebrew, Japanese, Chinese, Korean, Arabic, Turkish, Russian (partial)
+**Non-pro-drop**: English, French, German, Dutch, Swedish
+
+---
+
 ## What is Surface Realization?
 
 Surface Realization refers to the phonologically realized form of a noun phrase in a sentence. The same semantic entity can appear in different ways depending on context, discourse, and language-specific rules.
@@ -26,96 +79,32 @@ Response: "He bought fruits there."  ← Must use pronoun "he"
 **Spanish (Pro-drop):**
 ```
 Hablante: "Juan llegó al mercado."
-Response: "Compró frutas allí."      ← Pronoun can be dropped
-         "Él compró frutas allí."    ← Or explicitly stated
+Response: "Compró frutas allí."      ← Pronoun can be dropped (zero)
+         "Él compró frutas allí."    ← Or explicitly stated (pronoun)
 ```
 
 The semantic meaning is identical, but Spanish allows zero realization while English requires overt pronouns for most persons/numbers.
 
-### Key Linguistic Concepts
-
-#### 1. Pro-Drop (Pronoun Drop)
-The ability to omit pronouns when their referent is recoverable from context. Languages vary in:
-- **Which persons**: Spanish drops all persons; Japanese drops all; English drops none
-- **Which numbers**: Some languages only drop singular
-- **Which clause types**: Some only in main clauses, others in all clause types
-- **Which tenses/moods**: Some restrict to certain forms
-
-#### 2. Null Subject Parameter
-A syntactic property where languages may have empty (non-phonological) subjects in finite clauses. This requires:
-- Rich agreement morphology on the verb
-- Discourse-based resolution mechanisms
-- Syntactic null categories (empty pronouns)
-
-#### 3. Topic Drop / Zero Anaphora
-Dropping of arguments that are:
-- Discourse topics
-- Recently mentioned
-- Contextually obvious
-- Semantically recoverable from the clause
-
-Examples across languages:
-- **Japanese**: Extensive argument drop for all semantic roles
-- **Korean**: Similar to Japanese
-- **Mandarin**: Drop of all arguments under appropriate conditions
-- **Spanish/Italian**: Drop of subjects; optional drop of objects with clitics
-
-#### 4. Clitic Pronouns
-Reduced pronouns that must attach to a host (usually the verb):
-- **Spanish**: lo/la/le/les (object clitics)
-- **French**: me/te/se/nous/vous/les
-- **Romance**: General pattern
-- **Slavic**: Limited clitic systems
-- **Balkan**: Extensive clitic doubling
+---
 
 ## Surface Realization Types in TBTA
 
 ### Type 1: Noun
 Full lexical noun phrase appears in surface position.
 
-**Examples:**
-```yaml
-- Constituent: Jesus
-  Surface Realization: Noun
-  Example: "Jesus went to the temple"
-
-- Constituent: disciple
-  Surface Realization: Noun
-  Example: "The disciples followed him"
-```
+**When to use:**
+- First introduction of character/entity
+- Emphasis or contrast
+- Formal register
+- Disambiguation needed
 
 **Languages that prefer this:**
 - Non-pro-drop languages (English, German, Dutch)
 - When introducing new referents (first mention)
 - In formal or emphatic contexts
-- Languages without rich morphology to recover arguments
-
-**When to use:**
-- First introduction of character/entity
-- Emphasis or contrast
-- Formal register
-- When disambiguation is needed
 
 ### Type 2: Pronoun
 Explicit pronoun (standalone or clitic-like) appears.
-
-**Examples:**
-```yaml
-- Constituent: Jesus
-  Surface Realization: Pronoun
-  Example: "He went to the temple" (English)
-           "Él fue al templo" (Spanish)
-
-- Constituent: disciples
-  Surface Realization: Pronoun
-  Example: "They followed him"
-```
-
-**Languages that commonly use pronouns:**
-- Non-pro-drop languages (required for grammaticality)
-- East Asian languages when not dropping
-- Instances where zero is not acceptable
-- Formal contexts in some pro-drop languages
 
 **When to use:**
 - Established referent, no emphasis
@@ -123,20 +112,12 @@ Explicit pronoun (standalone or clitic-like) appears.
 - Clarification contexts
 - Certain syntactic positions (fronted objects, non-adjacent antecedents)
 
+**Languages that commonly use pronouns:**
+- Non-pro-drop languages (required for grammaticality)
+- Pro-drop languages for emphasis or disambiguation
+
 ### Type 3: Zero (Pro-drop)
 The argument is not realized phonologically but is understood from context.
-
-**Examples:**
-```yaml
-- Constituent: Jesus
-  Surface Realization: Zero
-  Example: "∅ went to the temple" (recoverable from previous context)
-           "John arrived. ∅ bought fruits." (Spanish: Juan llegó. ∅ Compró frutas.)
-
-- Constituent: disciple
-  Surface Realization: Zero
-  Example: "The disciples followed. ∅ Listened carefully." (in pro-drop language)
-```
 
 **Conditions for zero realization:**
 1. **Recoverability**: Antecedent must be clear from discourse
@@ -154,383 +135,512 @@ The argument is not realized phonologically but is understood from context.
 ### Type 4: Clitic
 Reduced pronoun form attached to a host word (usually verb).
 
-**Examples:**
-```yaml
-- Constituent: object
-  Surface Realization: Clitic
-  Example: "Lo vi" (Spanish: "I saw-it" = "I saw him/it")
-           "Te lo dije" (Spanish: "I told-you-it")
-
-- Constituent: indirect object
-  Surface Realization: Clitic
-  Example: "Le doy el libro" (Spanish: "(To-him) I-give the book")
-```
-
 **Languages with systematic clitics:**
-- Romance languages (Spanish, French, Italian, Portuguese, Romanian)
+- Romance languages (Spanish, French, Italian, Portuguese)
 - Slavic languages (some)
 - Greek (Modern)
 - Balkan languages (extensive system)
-- Some Austronesian languages
 
 **Properties of clitics:**
 - Phonologically dependent on host
 - Typically follow special ordering rules
 - May have limited case/number distinctions
 - Can stack/double (multiple clitics per verb)
-- Often have special positioning relative to verbs (proclisis/enclisis)
 
-## Languages from Our TSV with Pro-Drop Characteristics
+---
 
-### High Pro-Drop Propensity (Extensive null subject systems)
+## Hierarchical Prediction Prompt Template
 
-#### East Asian Languages
-- **Mandarin Chinese** (zho): Extensive pro-drop for all arguments
-- **Cantonese** (yue): Extensive pro-drop
-- **Japanese** (jpn): All arguments can drop; heavily pro-drop
-- **Korean** (kor): Extensive pro-drop; topic-oriented
-- **Vietnamese** (vie): Drop subject and object pronouns
-- **Thai** (tha): Subject drop
-- **Lao** (lao): Subject drop
-- **Burmese** (mya): Subject drop
+Surface realization is highly predictable using this 5-level decision process:
 
-#### Romance Languages (Moderate to High)
-- **Spanish** (spa): Drop subjects freely
-- **Italian** (ita): Drop subjects freely
-- **Portuguese** (por): Drop subjects; languages vary
-- **Romanian** (ron): Drop subjects (archaic/dialectal)
-- **Catalan** (cat): Drop subjects
-- **Galician** (glg): Drop subjects
-- **French** (fra): Limited drop (mainly in informal)
-- **Occitan** (oci): Drop subjects
+### Level 1 - Check Participant Tracking State
+Surface realization correlates strongly with tracking (95%+ correlation):
 
-#### Slavic Languages (Limited drop, some clitics)
-- **Russian** (rus): Drop subjects in 3rd person, infinitives
-- **Bulgarian** (bul): Clitic pronouns (obligatory in many contexts)
-- **Serbian** (srp): Some subject drop
-- **Polish** (pol): Some subject drop in infinitives
-- **Czech** (ces): Limited drop
+| Tracking State | Surface Realization | Confidence |
+|---------------|---------------------|------------|
+| First Mention | **Noun** | 95%+ |
+| Routine (non-pro-drop) | **Pronoun** | 90%+ |
+| Routine (pro-drop) | **Zero** or **Pronoun** | 85%+ |
+| Restaging | **Noun** | 85%+ |
+| Frame Inferable | **Noun** (definite) | 90%+ |
+| Generic | **Noun** (often bare) | 85%+ |
+| Offstage | **Noun** (modifier position) | 95%+ |
 
-#### Austronesian Languages (Variable)
-- **Indonesian** (ind): Some subject drop in connected discourse
-- **Malay** (zlm): Some subject drop
-- **Tagalog** (tgl): Varies; focus system interacts
-- **Javanese** (jav): Subject drop
-- **Cebuano** (ceb): Varies
-- **Ilocano** (ilo): Variable
-- **Pampangan** (pam): Variable
+**Prompt**: "What is the Participant Tracking state? If First Mention or Restaging → use Noun (95%). If Routine → check Level 2."
 
-#### Quechuan Languages
-- **Quechua** languages (que, quy, etc.): Drop subjects with person/number agreement
+### Level 2 - Check Language Pro-Drop Status
+**Prompt**: "Is the target language pro-drop?"
 
-#### Other Families
-- **Greek** (Modern, ell): Subject drop; clitic objects
-- **Hebrew** (Modern, heb): Limited drop
-- **Arabic** (arb, ara, acm, etc.): Drop subjects with agreement
-- **Persian** (pes): Subject drop
-- **Turkish** (tur): Subject drop
-- **Hungarian** (hun): Limited drop
-- **Finnish** (fin): Limited drop
-- **Estonian** (est): Limited drop
-- **Basque** (eus): Limited drop
+**Pro-drop languages** (Hebrew, Greek, Spanish, Italian, Portuguese, Japanese, Korean, Mandarin, Arabic, Turkish):
+- Routine reference → **Zero** (most natural)
+- Emphasis/disambiguation → **Pronoun** (explicit)
+- First mention/restaging → **Noun**
 
-### Moderate Pro-Drop (Some contexts)
+**Non-pro-drop languages** (English, French, German, Dutch, Swedish):
+- Routine reference → **Pronoun** (required)
+- First mention/restaging → **Noun**
+- Zero → Only in coordinated structures (ellipsis)
 
-#### Trans-New Guinea Languages
-Many TNGLanguages show:
-- Subject drop in chain clauses
-- Object drop with agreement marking
-- Topic drop
-- Discourse context-dependent patterns
+### Level 3 - Check for Emphasis/Disambiguation
+**Prompt**: "Is there emphasis, contrast, or ambiguity?"
 
-Examples: Agarabi (agd), Amele (aey), etc.
+**Emphasis markers**:
+- Hebrew/Greek explicit pronoun when zero is normal → Emphasis
+  - Example: αὐτὸς εἶπεν (autos eipen) = "HE said" (emphatic, not routine)
+- Contrast: "Peter went, but JOHN stayed" → Use pronoun even in pro-drop
+- Ambiguity: Multiple same-gender referents → Use **Noun** for clarity
+  - Example: Two males in context → "Peter said" (not "he said")
 
-#### Mayan Languages
-- Context-dependent subject drop
-- Complex verbal agreement systems
+**Decision**:
+- If emphasis/contrast → Use explicit **Pronoun** (even in pro-drop)
+- If ambiguous → Use **Noun**
+- If neither → Continue to Level 4
 
-#### Cariban Languages
-- Subject drop in certain contexts
+### Level 4 - Check Register/Formality
+**Prompt**: "Does formality affect pronoun choice?"
 
-### Non-Pro-Drop or Minimal Pro-Drop
+**Formal contexts** (epistles, teaching, legal):
+- May use title + name instead of pronoun
+- Higher noun usage (explicit over implicit)
+- Pro-drop languages may use more explicit pronouns
 
-#### Germanic Languages
-- **English** (eng): No subject drop (highly non-pro-drop)
-- **German** (deu): Very limited; mostly in infinitives
-- **Dutch** (nld): Very limited
-- **Afrikaans** (afr): Very limited
-- **Swedish** (swe): Very limited
+**Informal contexts** (dialogue, narrative):
+- Pro-drop languages maximize zero
+- Allow pronouns more freely
 
-#### Others
-- **Finnish** (fin): Limited
-- **Hungarian** (hun): Limited
-- **Basque** (eus): Limited
+**Honorific systems** (Japanese, Korean, Javanese):
+- Pronoun choice affected by social distance
+- May avoid pronouns entirely in high-formality contexts
 
-## Clitic Placement Rules
+### Level 5 - Default Prediction (Accessibility Hierarchy)
+Based on Ariel's Accessibility Hierarchy:
 
-### Enclisis (Clitics follow the verb)
-Common in:
-- Spanish: habla-me (speak to-me) → but "me habla" in present tense
-- Portuguese: fala-me
-- Romance languages (especially imperative/infinitive forms)
-- Many Balkan languages
+**High accessibility** (recent, salient, unique) → Less material:
+- Pro-drop languages: **Zero**
+- Non-pro-drop: **Pronoun**
 
-### Proclisis (Clitics precede the verb)
-Common in:
-- French: me parle (me speaks)
-- Spanish: la veo (her I-see)
-- Many Balkan languages with obligatory proclisis
-- Modern Greek
+**Medium accessibility** (nearby, semi-salient) → Moderate material:
+- **Pronoun** (most languages)
 
-### Variable placement based on:
-- Tense/mood/aspect
-- Verb form (finite vs non-finite)
-- Clause type (main vs subordinate)
-- Negation
-- Stress/pragmatics
+**Low accessibility** (distant, multiple referents) → More material:
+- **Noun** (all languages)
 
-## Cross-Linguistic Variation
+**Final decision**: Choose least material form allowed by grammar that maintains clarity.
 
-### Person/Number Restrictions on Pro-Drop
+---
 
-| Language | 1sg | 2sg | 3sg | 1pl | 2pl | 3pl |
-|----------|-----|-----|-----|-----|-----|-----|
-| Spanish | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Portuguese | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Italian | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Japanese | ✓ | ✓ | ✓ | ✓ | ✓ | ✓ |
-| Russian | ✗ | ✗ | ✓ | ✗ | ✗ | ✗ |
-| English | ✗ | ✗ | ✗ | ✗ | ✗ | ✗ |
+## Gateway Features & Correlations
 
-### Clause Type Restrictions
+Surface realization is the OUTPUT of participant tracking. Check tracking state FIRST:
 
-**Subjects allowed to drop in:**
-1. **Main clauses**: Most pro-drop languages
-2. **Subordinate clauses**: Some pro-drop languages
-3. **Infinitives**: Many non-pro-drop languages allow (English: "I want [∅ to go]")
-4. **Imperatives**: Often special rules
-5. **Conditionals**: Often allowed
+### Strong Correlation with Participant Tracking (95%+)
 
-**Objects rarely drop except with:**
-1. Clitic pronouns (Romance languages)
-2. Highly salient topics (East Asian languages)
-3. Generic/indefinite readings
+| Tracking State | Surface Form | Confidence | Notes |
+|---------------|-------------|------------|-------|
+| First Mention | **Noun** | 95%+ | Introducing new referent |
+| Routine | **Pronoun** / **Zero** | 90%+ | Depends on pro-drop status |
+| Restaging | **Noun** | 85%+ | Reintroducing after absence |
+| Frame Inferable | **Noun** (definite) | 90%+ | "The priest" (role-based) |
+| Generic | **Noun** (often bare) | 85%+ | "Water is essential" |
+| Offstage | **Noun** (modifier) | 95%+ | "Peter's house" |
+
+### Predicting from Source Language
+
+**Greek/Hebrew explicit pronoun** → Unusual, signals:
+- Emphasis (αὐτός = "HE himself")
+- Contrast ("Not you, but HE")
+- Disambiguation
+
+**Greek/Hebrew zero** → Normal routine reference
+- Cannot infer emphasis from absence
+- Target language may require pronoun (if non-pro-drop)
+
+**English always explicit** → Cannot infer emphasis
+- English "he" could be routine or emphatic
+- Check Greek/Hebrew source for emphasis signals
+
+### Correlation with Person/Clusivity
+
+Pro-drop languages with zero subjects:
+- Person still encoded in verb morphology
+- 1st plural zero → Check **Clusivity** feature separately
+- Example: Spanish "Vamos" (go-1PL) = zero subject, but inclusive/exclusive distinction may matter
+
+### Correlation with Number
+
+Pronoun selection depends on number:
+- Dual/trial/paucal languages → Special pronoun forms
+- Greek/Hebrew encode number in verb morphology
+- Affects pro-drop: "They" vs "The two of them" (dual)
+
+---
+
+## Common Prediction Errors
+
+### Error 1: Not Accounting for Pro-Drop Differences
+**Problem**: Assuming all languages work like English (explicit pronouns for all routine reference)
+
+**Example**:
+- Spanish "Vino" (came-3SG) analyzed as missing pronoun
+- Actually: This is **Zero** (normal, grammatical)
+
+**Solution**:
+1. Check target language pro-drop status FIRST
+2. For pro-drop languages, zero is the DEFAULT for routine reference
+3. Explicit pronouns in pro-drop languages signal emphasis
+
+**How to detect**: If language has rich verb agreement (person/number marked on verb), likely pro-drop
+
+---
+
+### Error 2: Missing Emphasis in Source Language
+**Problem**: Not recognizing that Greek/Hebrew explicit pronouns signal emphasis, not just routine reference
+
+**Example**:
+- Greek: "αὐτὸς εἶπεν" (autos eipen) = "HE said"
+- Wrong analysis: Routine pronoun (translatable as zero in pro-drop target)
+- Correct analysis: **Emphatic pronoun** (should be explicit in target, even if pro-drop)
+
+**Solution**:
+1. When Greek/Hebrew has explicit pronoun, check if it's expected or emphatic
+2. If verb agreement would normally allow zero, explicit pronoun = emphasis
+3. Mark as **Pronoun** with note: "Emphatic, preserve in target"
+
+**How to detect**: Compare to surrounding clauses - if other clauses use zero but this one has explicit pronoun, likely emphatic
+
+---
+
+### Error 3: Assuming All Nouns Are "Full" NPs
+**Problem**: Not distinguishing between different types of noun phrases
+
+**Examples**:
+- "Water is essential" → **Noun** (bare, generic)
+- "The water" → **Noun** (definite, specific referent)
+- "This water" → **Noun** (demonstrative, proximal)
+- "Some water" → **Noun** (indefinite, non-specific)
+
+**Solution**:
+1. All are "Noun" surface realization, but require different analysis
+2. Bare nouns (generic) correlate with Generic participant tracking
+3. Definite nouns correlate with Routine or Frame Inferable
+4. Demonstrative nouns correlate with Proximity feature
+5. Indefinite nouns correlate with First Mention
+
+**How to detect**: Check determiner type (the, a, this, bare)
+
+---
+
+### Error 4: Not Considering Register/Formality
+**Problem**: Missing that formal contexts increase noun usage even for routine reference
+
+**Example**:
+- Narrative: "Jesus healed the man. He went home." (pronoun OK)
+- Formal epistle: "Paul writes to the church. The apostle declares..." (noun preferred)
+
+**Solution**:
+1. Check **Discourse Genre** and **Speech Style** features
+2. Formal/written genres prefer explicit nouns over pronouns
+3. Even in pro-drop languages, formal contexts may avoid zero
+4. Teaching/expository text = higher noun usage
+
+**How to detect**: Check if genre is formal (epistle, legal, teaching) vs informal (narrative dialogue)
+
+---
+
+### Error 5: Conflating Zero with Ellipsis
+**Problem**: Treating coordinated structure ellipsis (grammatical in English) as pro-drop
+
+**Example**:
+- English: "John came and [∅] bought fruits"
+- This is grammatical ellipsis in coordination, NOT pro-drop
+- Pro-drop = "John came. [∅] Bought fruits." (separate clauses)
+
+**Solution**:
+1. True zero (pro-drop) = omission in independent clauses
+2. Ellipsis = omission in coordinated structures (many languages allow)
+3. Mark coordinated ellipsis as **Zero** but note: "Coordinated ellipsis, not pro-drop"
+
+**How to detect**: Check if "and" connects the clauses (coordination) vs separate sentences
+
+---
+
+## Cross-Feature Interactions
+
+### Surface Realization + Participant Tracking (PRIMARY - 95% correlation)
+**Relationship**: Near-perfect correlation
+- Tracking state predicts surface form reliably
+- Use tracking as primary predictor
+
+**Validation rule**: If Tracking = First Mention but Surface = Zero → FLAG ERROR (except in rare contexts like diary style)
+
+---
+
+### Surface Realization + Person/Clusivity
+**Relationship**: Clusivity applies even when subject is zero
+
+**Example**:
+- Spanish: "[∅] Vamos" = "We (inclusive/exclusive?) go"
+- Surface = **Zero**, but person = 1PL, clusivity = TBD
+
+**Important**: For pro-drop languages with zero subjects:
+1. Zero surface form does NOT mean person is unspecified
+2. Person/number encoded in verb morphology
+3. Clusivity distinction still matters for translation
+4. Must analyze verb agreement, not just surface form
+
+---
+
+### Surface Realization + Number
+**Relationship**: Number affects pronoun selection
+
+**Dual/trial/paucal languages**:
+- "The two disciples" → If pronoun used, must be dual form
+- Hebrew/Greek encode number in verb morphology
+- Affects pro-drop: Number visible in verb even when subject is zero
+
+**Example**:
+- Greek: "ἦλθον" (elthon) = "came-3PL" (zero subject, plural)
+- Target with dual: Must check if exactly 2 or more than 2
+- Dual form required if exactly 2
+
+---
+
+### Surface Realization + Honorifics/Register
+**Relationship**: Formality affects pronoun choice and noun usage
+
+**T-V distinction languages** (French tu/vous, Spanish tú/usted):
+- Pronoun selection depends on social distance
+- Formal → May use title + name instead of pronoun
+- Example: "The teacher said" (formal) vs "He said" (informal)
+
+**Japanese/Korean honorific systems**:
+- Pronoun choice dramatically affected by formality
+- High-formality contexts may avoid pronouns entirely
+- Use title/role noun instead: "The teacher" (not "he")
+
+**Biblical application**:
+- Prayers to God → High formality (many languages)
+- May prefer nouns over pronouns even for routine reference
+- Example: "The Lord" repeated instead of "He"
+
+---
+
+### Surface Realization + Switch-Reference
+**Relationship**: Switch-reference systems interact with surface realization
+
+**Languages with switch-reference** (many Papuan, some Mayan):
+- Marking on verb indicates if subject is same or different from previous clause
+- Same-subject (SS) marker → Often allows zero
+- Different-subject (DS) marker → May require noun or pronoun
+
+**Example** (Amele, Papua New Guinea):
+- "John came-SS [∅] ate" → Same subject, zero OK
+- "John came-DS Mary ate" → Different subject, must be explicit
+
+**Validation**: If language has switch-reference, check consistency between switch-reference marking and surface realization
+
+---
+
+### Surface Realization + Proximity (Demonstratives)
+**Relationship**: Demonstrative determiners affect noun phrase form
+
+**When noun appears with demonstrative**:
+- "This man" → Surface = **Noun**, Proximity = Near
+- "That man" → Surface = **Noun**, Proximity = Far
+
+**Cannot use zero/pronoun with demonstrative**:
+- Must be full noun phrase
+- Demonstrative + noun = single constituent
+
+**Languages with demonstrative pronouns**:
+- "This one" → Some analyses: Pronoun with demonstrative
+- TBTA analysis: Treat as **Pronoun** (the head is pronominal)
+
+---
+
+## Languages from TSV with Pro-Drop Characteristics
+
+**High Pro-Drop** (extensive null subject systems):
+- East Asian: Mandarin, Japanese, Korean, Vietnamese, Thai, Burmese
+- Romance: Spanish, Italian, Portuguese, Catalan
+- Afro-Asiatic: Arabic, Hebrew
+- Other: Greek, Turkish, Persian, Quechua
+
+**Moderate Pro-Drop** (some contexts):
+- Slavic: Russian (3rd person), Bulgarian, Serbian
+- Trans-New Guinea: Many languages (chain clauses)
+- Austronesian: Indonesian, Malay, Tagalog (varies)
+
+**Non-Pro-Drop or Minimal**:
+- Germanic: English, German, Dutch, Swedish
+- Some Niger-Congo: Many Bantu languages
+
+See LANGUAGES-IN-TSV.md for complete typological breakdown by language family.
+
+---
 
 ## Discourse Factors Affecting Surface Realization
 
 ### 1. Givenness/Information Status
-- **New/Unknown**: Strongly prefer noun → "A rabbi came to town"
-- **Given/Known**: Prefer pronoun/zero → "He taught the people" or "∅ Taught the people"
-- **Accessible/Inferrable**: More flexible
+Based on Ariel's Accessibility Hierarchy:
 
-### 2. Discourse Topic
-- Topic-prominent languages mark topics explicitly
-- Zero realization most likely for current topics
-- Switch to pronoun when topic shifts
-- Use noun for new topic introduction
+**Accessibility Scale** (most to least):
+1. Zero / Unstressed pronoun (highest accessibility)
+2. Stressed pronoun
+3. Demonstrative pronoun
+4. Definite description
+5. Indefinite description (lowest accessibility)
 
-### 3. Distance from Antecedent
-- **Adjacent**: Zero most common
-- **Nearby (1-2 clauses)**: Pronoun common
-- **Distant (3+ clauses)**: Noun preferred for clarity
-- Language-specific: some (Japanese) allow zero even at distance; others (English) require noun
+**Application**:
+- New/Unknown → Noun (indefinite): "A rabbi came"
+- Given/Known → Pronoun/Zero: "He taught" or "[∅] Taught"
+- Accessible/Inferrable → Definite noun: "The rabbi"
 
-### 4. Semantic Role and Saliency
-- **Agents**: Pro-drop more likely
-- **Patients**: May require more explicit marking
-- **Inanimate**: More likely to require explicit marking
-- **Salient characters**: Pro-drop more likely even at distance
+### 2. Distance from Antecedent
+- Adjacent (0-1 clauses): Zero most common (pro-drop languages)
+- Nearby (2-3 clauses): Pronoun common
+- Distant (4+ clauses): Noun preferred for clarity
 
-### 5. Register and Style
-- **Formal written**: More nouns, more explicit
-- **Informal spoken**: More pro-drop, more pronouns
-- **Narrative**: Often high use of zero
-- **Direct speech**: More pronouns for clarity
+**Language variation**:
+- Japanese: Allows zero even at distance if salient
+- English: Requires noun if 3+ clauses away
+- Spanish: Intermediate (zero for salient topics at moderate distance)
 
-### 6. Negation
-Some languages require or forbid pro-drop with negation
-- Spanish: "No lo sé" (not it I-know) requires clitic, not null
+### 3. Semantic Role and Saliency
+- Agents: Pro-drop more likely
+- Patients: May require more explicit marking
+- Inanimate: More likely to require explicit marking
+- Salient characters (Jesus, God): Pro-drop more likely even at distance
+
+### 4. Register and Style
+- Formal written: More nouns, more explicit
+- Informal spoken: More pro-drop, more pronouns
+- Narrative: Often high use of zero (pro-drop languages)
+- Direct speech: More pronouns for clarity
+
+---
 
 ## Bible Translation Implications
 
 ### Problem 1: The Holy Spirit Reference Problem
+**Greek**: "To pneuma ho hagios" → Often understood with dropped pronouns in following clauses
 
-**Greek**: "To pneuma ho hagios" → Often understood with dropped pronouns
+**Translation choices**:
+- English (non-pro-drop): "The Holy Spirit" (explicit noun) or "He" (pronoun)
+- Spanish (pro-drop): "El Espíritu Santo" (noun), "Él" (pronoun), or "[∅]" (zero)
+- Japanese (high pro-drop): Extensive zero use possible
 
-**English requirement**: "The Holy Spirit" (explicit noun)
+### Problem 2: Theological Ambiguity
+Some passages use zero subjects in source language, creating intentional ambiguity.
 
-**Spanish option**:
-1. "El Espíritu Santo" (noun)
-2. "Él" (pronoun, if recently mentioned)
-3. "∅" (zero, if very clear from discourse)
-
-**Japanese option**: Extensive zero use possible
-
-### Problem 2: The Theological Ambiguity
-
-Some passages use zero subjects in the source language, creating intentional theological ambiguity:
-
-**Romans 10:9** (Greek has ambiguous subject):
-- "If you believe that God raised [someone] from the dead..."
+**Example - Romans 10:9** (Greek has ambiguous subject):
 - Could be: God raised Jesus, OR God raised us, OR God raised the dead generally
-
-Pro-drop languages may preserve this ambiguity; non-pro-drop languages must disambiguate.
+- Pro-drop languages may preserve ambiguity
+- Non-pro-drop languages must disambiguate (forced to choose referent)
 
 ### Problem 3: The Clitic Object Problem
-
 **Spanish/Italian/Portuguese**: Objects often appear as clitics, changing word order
 
 **Example**:
 ```
 English: "He told them the story"
-Spanish: "Les contó la historia" (to-them told the story)
-         "Se la contó" (to-them it told) - with double clitics
+Spanish: "Les contó la historia" (to-them told the story) ← clitic "les"
+         "Se la contó" (to-them it told) ← double clitics
 ```
 
-Must choose whether to use:
-- Full object NP: "a ellos"
+Must choose:
+- Full object NP: "a ellos" (to them)
 - Clitic: "les"
-- Zero: "∅" (only in certain contexts)
+- Zero: Only in limited contexts
 
 ### Problem 4: Switching Between Realization Types
-
-Bible discourse often switches between realization types:
+Bible discourse switches between realization types naturally:
 
 ```
-New character: "A woman came to the well"      [Noun]
-Continues: "She drank water"                  [Pronoun]
-Later in story: "∅ Returned to her home"      [Zero - in pro-drop language]
-Change of topic: "Jesus asked the woman..."   [Noun - reintroduction]
+New character: "A woman came to the well"      [Noun - First Mention]
+Continues: "She drank water"                   [Pronoun - Routine]
+Later: "[∅] Returned to her home"              [Zero - Routine, pro-drop]
+Topic shift: "Jesus asked the woman..."        [Noun - Restaging]
 ```
 
-Translators must ensure consistency within each language's constraints.
+Translators must ensure consistency within target language constraints.
 
-## Detailed Analysis: Pro-Drop by Language Family
+---
 
-### Austronesian (176 languages in our TSV)
-- **Patterns**: Variable; often focus-aligned rather than person-aligned
-- **Subgroups with high pro-drop**: Indonesian, Malaysian, Tagalog languages
-- **Special feature**: Focus system may determine realization (focus > topical > background)
-- **Subgroups with moderate pro-drop**: Javanese, Central Philippine languages
+## Prediction Guide Summary
 
-### Trans-New Guinea (141 languages in our TSV)
-- **Patterns**: Often clause-chaining languages with specific pro-drop rules
-- **Features**: Subject drop in medial clauses (between-clause subjects)
-- **Special feature**: Switch-reference systems may override general pro-drop
-- **Note**: Highly diverse; individual language investigation needed
+**Step-by-Step Process**:
 
-### Indo-European (135 languages in our TSV)
-- **Slavic subgroup**: Limited subject drop (mainly 3rd person Russian); some clitic systems
-- **Romance subgroup**: High pro-drop (Spanish, Portuguese, Italian, Romanian, Catalan)
-- **Germanic subgroup**: Generally non-pro-drop (English, German, Dutch, Swedish)
-- **Greek**: Subject drop allowed
-- **Armenian**: Limited drop
-- **Balkan languages**: Various cliticization patterns
+1. **Check Participant Tracking** → 95% determines surface form
+   - First Mention → Noun
+   - Routine → Pronoun or Zero (check language type)
+   - Restaging → Noun
 
-### Niger-Congo (89 languages in our TSV)
-- **Patterns**: Varies greatly by subgroup
-- **Bantu**: Generally non-pro-drop; rich noun class systems provide discourse tracking
-- **Kwa**: Variable
-- **Other groups**: Individual investigation needed
+2. **Check Language Pro-Drop Status**
+   - Pro-drop → Default to Zero for routine
+   - Non-pro-drop → Required Pronoun for routine
 
-### Sino-Tibetan (18 languages in our TSV)
-- **Mandarin, Cantonese**: Extensive pro-drop
-- **Other languages**: Vary
+3. **Check for Emphasis/Disambiguation**
+   - Greek/Hebrew explicit pronoun → Likely emphatic
+   - Multiple same-gender referents → Use Noun
+   - Contrast/focus → Explicit Pronoun
 
-### Afro-Asiatic (25 languages in our TSV)
-- **Semitic languages** (Hebrew, Arabic): Subject drop with rich agreement
-- **Other languages**: Vary
+4. **Check Register/Formality**
+   - Formal → More nouns
+   - Informal → More zero/pronouns
 
-## Prediction Guide for Translators
+5. **Apply Accessibility Hierarchy**
+   - High accessibility → Less material (Zero/Pronoun)
+   - Low accessibility → More material (Noun)
 
-### When to Use Zero (Pro-drop):
-1. ✓ Immediately after explicit mention of referent
-2. ✓ Current discourse topic is clearly established
-3. ✓ Language explicitly allows this person/number/clause-type combination
-4. ✓ Reflexivity or saliency suggests zero is natural
-5. ✓ Narrative/discourse context strongly supports recovery
+**Validation**:
+- Compare prediction to TBTA annotation
+- Expected accuracy: 90%+ if following hierarchy
+- Common errors: Not accounting for pro-drop, missing emphasis
 
-### When to Use Pronoun:
-1. ✓ Referent is not current discourse topic but still clear
-2. ✓ Some distance from antecedent (language-specific threshold)
-3. ✓ Need mild emphasis or contrast without full noun
-4. ✓ Formal register preferences pronouns over zero
-5. ✓ Negation requires pronoun/clitic (some languages)
-
-### When to Use Noun:
-1. ✓ First introduction of new entity
-2. ✓ Extended absence from discourse and reintroduction
-3. ✓ Emphasis or strong contrast
-4. ✓ Disambiguation needed (ambiguous referent)
-5. ✓ Formal written register (especially expository text)
-
-### When to Use Clitic:
-1. ✓ Language has obligatory clitic system (Romance, Greek, Balkan)
-2. ✓ Object expression and clitic is standard for your language
-3. ✓ Verb-doubling or clitic-doubling is required for clarity
-4. ✓ Specific syntactic construction demands it
-5. ✓ Register/style preference for clitic over other forms
-
-## Empirical Findings on Bible Translation
-
-### High Pro-Drop in Asian/Pacific Languages
-Languages like Japanese, Korean, Mandarin, and many Austronesian languages use extensive pro-drop in Bible translations. This:
-- Reads naturally to native speakers
-- Requires good discourse tracking
-- Preserves more source language ambiguity
-- Demands careful antecedent clarity
-
-### Romance Language Patterns
-Spanish and Portuguese Bibles:
-- Subject pronouns rarely appear when subject is clear
-- Object pronouns appear as clitics
-- Creates different word order from English source texts
-- Requires careful handling of emphatic subjects
-
-### Germanic Non-Pro-Drop Constraints
-English, German, Dutch Bible translations:
-- Must make explicit all subjects and objects
-- Cannot preserve source language ambiguities
-- Relies more on context and extra-textual knowledge
-- May be more verbose than source
-
-### TNGLanguage Complexity
-- Often have switch-reference + pro-drop interactions
-- Medial clauses (in clause chains) have special pro-drop rules
-- Require sophisticated tracking of subject continuity/change
-- Need language-specific guidance for each translation project
+---
 
 ## Resources for Further Study
 
-### Academic Sources (when available)
-- Language-specific grammars
-- Typological studies of pro-drop
-- Discourse analysis of Bible translations
-- Studies of clitic systems
+### Linguistic Background
+- Ariel, Mira (1990). "Accessing Noun-Phrase Antecedents" - Accessibility Hierarchy
+- Huang, C.-T. James (1984). "On the Distribution and Reference of Empty Pronouns" - Pro-drop theory
+- Rizzi, Luigi (1986). "Null Objects in Italian and the Theory of pro" - Romance clitics
 
 ### For This Project
-- Individual language analysis documents
-- Corpus analysis of existing translations
-- Discourse tracking experiments
-- Comparative studies of related languages
+- LEARNINGS.md - Experimental findings and edge cases
+- LANGUAGES-IN-TSV.md - Full typological breakdown by family
+- QUICK-REFERENCE.md - Fast lookup for common translation scenarios
+- INDEX.md - Cross-references to related features
+
+---
 
 ## Notes for Tool Development
 
-1. **Pro-drop detection** should consider:
-   - Language family and known features
-   - Distance from previous mention
-   - Discourse topic status
-   - Register and text type
-   - Specific syntactic constraints
+**Detection priorities**:
+1. Check Participant Tracking state first (95% correlation)
+2. Determine target language pro-drop status
+3. Scan for emphasis markers in source (Greek/Hebrew explicit pronouns)
+4. Check discourse distance from last mention
+5. Consider register/genre (formal vs informal)
 
-2. **Validation should check**:
-   - Consistency within verse
-   - Consistency with language family patterns
-   - Compatibility with switch-reference (if applicable)
-   - Register appropriateness
+**Validation checks**:
+- Consistency within verse (don't mix systems arbitrarily)
+- Compatibility with language family patterns (pro-drop vs non-pro-drop)
+- Register appropriateness (formal genres → more nouns)
+- Switch-reference consistency (if applicable to language)
 
-3. **Training data** needed:
-   - Native speaker judgments of naturalness
-   - Corpus analysis of translations
-   - Language-specific grammatical constraints
-   - Discourse pattern analysis
+**Training data needed**:
+- Native speaker judgments of naturalness
+- Corpus analysis of existing translations in target language
+- Language-specific grammatical constraints (which persons allow pro-drop?)
+- Discourse pattern analysis (distance thresholds for pronoun vs noun)
+
+---
+
+**Document Version**: 2.0 (TIER 1-2 Enhanced)
+**Last Updated**: 2025-11-06
+**See Also**:
+- LEARNINGS.md (experimental findings)
+- participant-tracking/README.md (gateway feature)
+- FEATURE-IMPROVEMENT-CHECKLIST.md (quality framework)

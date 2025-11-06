@@ -431,6 +431,19 @@ Study included: English (written/spoken), Spanish (spoken), Biblical Hebrew, Amh
 
 ## Cross-linguistic Variation in Participant Tracking
 
+### Language Family Impact
+
+| Family | Critical Features | Tracking Strategy | Example Languages |
+|--------|-------------------|-------------------|-------------------|
+| **Topic-Prominent** | Topic particles (wa/ga) | Mark Routine with topic, First Mention with subject | Japanese, Korean, Chinese |
+| **Switch-Reference** | SS/DS morphology | Routine=SS, shift=DS | Iatmul, Wojokeso, Guanano, Cavineña |
+| **Pro-Drop** | Zero anaphora | Routine as Ø, First Mention full NP | Spanish, Italian, Greek, Hebrew |
+| **Non-Pro-Drop** | Explicit pronouns | Routine requires "he/she", no zero | English, French, German |
+| **Article Languages** | Definite/Indefinite | First Mention="a", Routine/Frame="the" | English, Romance, Germanic |
+| **No-Article** | Context/word order | Use position and discourse flow | Chinese, Japanese, Slavic, Hebrew* |
+
+*Hebrew has definite article (ha-) but different from English usage patterns
+
 ### 1. Switch-Reference Systems
 
 **Geographic Distribution**: Primarily Papua New Guinea (40+ language families), also Amazonian languages
@@ -715,6 +728,58 @@ TBTA frequency distribution:
 - Too many First Mentions → May actually be Frame Inferable or Generic
 - Too few Routines → Likely miscategorizing continued reference
 - High Restaging → Likely overusing, most continuations are Routine
+
+## Baseline Statistics
+
+Based on TBTA database analysis (171,875 annotations):
+- **Routine**: 73.0% (125,543 instances) - Most common, continuous reference
+- **Generic**: 13.9% (23,856 instances) - Type/class references
+- **Frame Inferable**: 7.5% (12,815 instances) - Scene participants
+- **First Mention**: 5.4% (9,267 instances) - New participant introductions
+- **Interrogative**: 0.2% (394 instances) - In question contexts
+- **Offstage**: <0.001% (1 instance) - Extremely rare
+- **Restaging/Integration/Exiting**: 0% (defined but unused in current data)
+
+Genre expectations:
+- **Narrative**: 75-80% Routine (continuous character tracking)
+- **Teaching/Wisdom**: Higher Generic (~20-25%)
+- **Prophetic**: More First Mention (changing participants)
+
+## Quick Translator Test
+
+Answer these questions about your target language:
+
+1. ☐ Does your language mark topic vs new information grammatically?
+2. ☐ Does your language require switch-reference marking (SS/DS)?
+3. ☐ Does your language use particles to mark given vs new (wa/ga in Japanese)?
+4. ☐ Does your language allow zero pronouns (pro-drop)?
+5. ☐ How does your language mark participant reintroduction (full NP? demonstrative?)?
+
+If you answered YES to any of #1-3, participant tracking annotation is CRITICAL.
+
+**Languages requiring this**:
+- Switch-reference: Papua New Guinea languages (~40 families), Amazonian
+- Topic-marking: Japanese, Korean, Chinese (topic particles)
+- Pro-drop: Spanish, Italian, Greek (zero anaphora for continuous referents)
+
+## Gateway Features for Quick Prediction
+
+Use surface form as a strong predictor:
+
+| Surface Form | Predicted Tracking State | Confidence | Example |
+|--------------|-------------------------|------------|---------|
+| Pronoun (he, she, it, they) | **Routine** | 95%+ | "...Jesus spoke. He said..." |
+| Zero (pro-drop, implicit) | **Routine** | 95%+ | Greek/Hebrew continued subject |
+| Indefinite NP ("a woman") | **First Mention** | 90%+ | "A woman came to the well" |
+| Definite NP (first occurrence) | **Frame Inferable** | 85%+ | "The waiter approached" (restaurant frame) |
+| Full NP after gap (3+ clauses) | **Restaging** | 80%+ | "Peter... [3 clauses about Mary] ...Peter returned" |
+| Bare noun (no article) | **Generic** | 85%+ | "Water is essential" |
+| Interrogative pronoun (who, what) | **Interrogative** | 100% | "Who came to the well?" |
+
+**Correlations**:
+- Pronoun→Routine: 100% in tested data (Matthew 24:46-47)
+- Indefinite→First Mention: ~90% (check for generic contexts)
+- Definite (unexpected)→Frame Inferable: 85% (check for frame)
 
 ---
 

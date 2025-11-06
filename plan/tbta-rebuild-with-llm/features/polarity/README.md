@@ -55,6 +55,125 @@ In TBTA, Polarity is primarily encoded at the **noun level** rather than verb le
   Participant Tracking: First Mention
 ```
 
+## Quick Translator Test
+
+**Use this checklist to determine if your target language requires detailed polarity annotation:**
+
+### Negation Strategy
+
+1. ☐ **Does your language use negative particles or affixes for negation?**
+   - Negative particle (English "not", French "ne...pas", Japanese "nai")
+   - Negative affix (Turkish -ma/-me, Finnish negative auxiliary "ei")
+   - Negative verb forms (suppletive negation)
+   - Tonal negation (some African languages)
+
+2. ☐ **Where does negation appear in the clause?**
+   - Preverbal particle (Mayan languages, many African languages)
+   - Postverbal particle or suffix (Turkish, Japanese)
+   - Auxiliary verb (Finnish "ei", some Austronesian)
+   - Multiple positions possible (French "ne...pas" discontinuous)
+
+### Negative Concord
+
+3. ☐ **Does your language allow or require negative concord?**
+   - **Strict NC**: Multiple negatives required (Russian, Spanish, Greek, Turkish)
+     - "I nothing not saw" = "I didn't see anything"
+   - **Optional NC**: Varies by context or register (some Romance)
+   - **No NC (Double Negation)**: Two negatives = positive (Standard English, German)
+     - "I didn't see nothing" = "I saw something"
+
+4. ☐ **If you have negative concord, is it strict or optional?**
+   - Strict: Always required with negative indefinites
+   - Optional: Depends on emphasis, formality, or context
+   - Note: Most NC languages have strict NC
+
+### Negative Polarity Items (NPIs)
+
+5. ☐ **Does your language have negative polarity items (any, ever, at all)?**
+   - Yes, special items required in negative contexts (English "any", Japanese も-series)
+   - No dedicated NPIs (negation expressed through standard forms)
+   - Universal quantifiers used (some languages use "all" in negative contexts)
+
+6. ☐ **Can your NPIs appear in non-negative contexts?**
+   - Restricted: Only with negation or negative-like contexts (questions, conditionals)
+   - Some flexibility: Can appear with certain verbs or in specific constructions
+   - Note: True NPIs are licensed environments, not inherently negative
+
+### Scope & Case Marking
+
+7. ☐ **Can negation scope over the entire sentence vs. just one element?**
+   - Sentential negation: Negates whole proposition ("It is not the case that...")
+   - Constituent negation: Negates specific element ("Not the man, but the woman")
+   - Both possible, distinguished by syntax/prosody
+   - Language-specific restrictions
+
+8. ☐ **Does negation affect case marking or grammatical form?**
+   - **Genitive of negation**: Objects take genitive case under negation (Russian, Finnish)
+   - **Partitive case**: Required with negated objects (Finnish)
+   - **No case change**: Negation doesn't affect case (English, Mandarin)
+   - **Special negative forms**: Different verb or noun forms in negative contexts
+
+### Existential & Quantificational Negation
+
+9. ☐ **Does your language have special negative existential constructions?**
+   - Dedicated negative existential word (Hebrew אֵין ein, Russian нет net, Turkish yok)
+   - Negated copula or existential verb (English "there isn't")
+   - Same as verbal negation (no special form)
+
+10. ☐ **How does your language express "no one," "nothing," "never"?**
+   - Negative indefinites: Single negative word (English "nobody", German "niemand")
+   - NPI + negation: Requires negative verb (Japanese "dare-mo...nai" = "no one")
+   - Multiple negation: NC language requires negative verb + negative pronoun (Russian, Spanish)
+
+### Critical Indicators
+
+**If your language has STRICT NEGATIVE CONCORD (question 3), you MUST use multiple negative forms. Annotating only the verb or only the noun will produce ungrammatical output.**
+
+**If your language has GENITIVE OF NEGATION or case changes (question 8), polarity annotation affects not just the negative marker but also noun case/form.**
+
+**If your language has SPECIAL NEGATIVE EXISTENTIALS (question 9), existential negation requires different vocabulary, not just adding "not."**
+
+**If your language uses NPIs (question 5), you must select appropriate polarity-sensitive items (like "any" instead of "some") in negative contexts.**
+
+### Language Family Patterns
+
+**Negative Concord Languages** (multiple negatives required):
+- **Slavic**: Russian, Polish, Czech, Bulgarian (strict NC)
+- **Romance**: Spanish, Italian, Portuguese, Romanian (strict NC); French (optional NC)
+- **Greek**: Ancient and Modern Greek (strict NC)
+- **Turkic**: Turkish, Azerbaijani, Uzbek (strict NC)
+- **Uralic**: Finnish, Hungarian (strict NC with special negative auxiliary)
+- Strategy: Annotate all constituents in scope of negation as Negative
+
+**Non-NC Languages** (double negation = affirmative):
+- **Germanic**: Standard English, German, Dutch, Swedish
+- **Sino-Tibetan**: Mandarin Chinese, Cantonese
+- Strategy: Annotate only the negated element, avoid multiple negatives
+
+**NPI Languages** (require polarity items):
+- **Japanese**: Uses も (mo) series NPIs with negative verbs
+- **Korean**: Similar to Japanese with NPI system
+- **English**: "any," "ever," "at all" required in negative contexts
+- Strategy: Select NPIs for negative contexts, standard forms for affirmative
+
+**Genitive/Partitive of Negation**:
+- **Russian**: Direct objects become genitive under negation
+- **Finnish**: Partitive case required for negated objects
+- **Estonian**: Similar to Finnish
+- Strategy: Polarity affects case marking, not just negative particle
+
+**Special Negative Existentials**:
+- **Hebrew**: אֵין (ein) "there is not" (distinct from לֹא lo "not")
+- **Russian**: нет (net) "there is not" (distinct from не ne "not")
+- **Turkish**: yok "there is not" (distinct from negative suffix)
+- **Arabic**: ليس (laysa) negative copula, ما (ma) standard negation
+- Strategy: Use dedicated negative existential forms for "there is not" constructions
+
+**Tone/Suprasegmental Negation** (rare):
+- Some **African languages**: Negation marked by tone change
+- **Mayan languages**: Often preverbal negative particles
+- Strategy: Ensure negation marking aligns with tonal/prosodic requirements
+
 ## Language-Specific Polarity Systems
 
 ### 1. Negative Concord Languages

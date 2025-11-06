@@ -267,6 +267,157 @@ Exclamatives in Hebrew often use interrogative forms (e.g., "How can this be?") 
 
 ---
 
+## Baseline Statistics
+
+Expected distribution by genre (estimate pending validation):
+
+**Narrative**:
+- Declarative: ~60% (statements about actions/events)
+- Interrogative: ~20% (questions in dialogue)
+- Imperative: ~15% (commands, instructions)
+- Performative: ~3% (blessings, curses, oaths)
+- Other: ~2%
+
+**Teaching/Epistles**:
+- Declarative: ~70% (doctrinal statements)
+- Imperative: ~15% (exhortations, commands)
+- Interrogative: ~10% (rhetorical questions)
+- Performative: ~3% (prayer, blessing)
+- Other: ~2%
+
+**Prophecy**:
+- Declarative: ~50% (future predictions)
+- Performative: ~25% (oracular speech acts)
+- Imperative: ~15% (divine commands)
+- Interrogative: ~8% (rhetorical questions)
+- Other: ~2%
+
+---
+
+## Quick Translator Test
+
+Answer these questions about your target language:
+
+1. ☐ Does your language mark questions with particles or intonation only?
+2. ☐ Does your language have distinct imperative verb forms?
+3. ☐ Does your language use sentence-final particles for speech acts? (e.g., Japanese ne, yo, ka)
+4. ☐ Does your language mark performatives specially? (I hereby declare, bless, curse)
+5. ☐ How does your language distinguish direct from indirect commands?
+
+If you answered YES to #3 (sentence-final particles), illocutionary force
+annotation is CRITICAL for correct particle selection.
+
+**Languages requiring this**:
+- East Asian: Japanese, Korean, Mandarin (sentence particles)
+- Southeast Asian: Thai, Vietnamese, Malay (particles)
+- Bantu: Many use tone/particles for illocutionary marking
+
+---
+
+## Hierarchical Prediction Prompt Template
+
+**Level 1 - Check Morphological Marking**
+Prompt: "Does the verb form explicitly mark illocutionary force?"
+- Greek: Imperative mood → **Imperative Force**
+- Hebrew: Imperative, Jussive, Cohortative → **Imperative Force**
+- Interrogative pronouns (who, what, why) → **Interrogative Force**
+- If explicit → Done. If not → Continue Level 2
+
+**Level 2 - Syntactic Patterns**
+Prompt: "What syntactic pattern indicates the speech act?"
+- Question word order (inversion) → **Interrogative Force**
+- Performative verb (I declare, promise, swear) → **Performative Force**
+- Standard SVO/VSO order → **Declarative Force** (default)
+
+**Level 3 - Discourse Context**
+Prompt: "What is the speaker trying to achieve?"
+- Requesting information → **Interrogative Force**
+- Commanding action → **Imperative Force**
+- Stating facts → **Declarative Force**
+- Making something true by speaking → **Performative Force**
+
+**Level 4 - Speech Act Theory Application**
+Apply Searle's categories:
+- Assertives (state beliefs) → **Declarative**
+- Directives (get hearer to do something) → **Imperative**
+- Commissives (commit speaker to action) → **Commissive Force**
+- Expressives (express psychological state) → **Expressive Force**
+- Declarations (create new reality) → **Performative Force**
+
+**Level 5 - Pragmatic Inference**
+Prompt: "Could this be indirect speech act?"
+- Polite question functioning as command → Still **Imperative Force**
+- Example: "Can you pass the salt?" (form=question, force=command)
+
+---
+
+## Gateway Features & Correlations
+
+Quick prediction rules:
+
+| If Clause Contains... | Then Predict... | Confidence |
+|----------------------|----------------|------------|
+| Imperative verb form | **Imperative Force** | 95%+ |
+| Interrogative pronoun (who, what, why) | **Interrogative Force** | 95%+ |
+| Question particle (Greek ἆρα, οὐ, μή) | **Interrogative Force** | 95%+ |
+| Performative verb (declare, bless, swear) | **Performative Force** | 90%+ |
+| Optative mood (Greek) | **Optative Force** (wish) | 95%+ |
+| Standard indicative statement | **Declarative Force** | 85%+ (default) |
+
+**Correlation with Mood**:
+- Imperative Mood → 100% Imperative Force
+- Optative Mood → 100% Optative Force
+- Subjunctive Mood → Mixed (check context)
+- Indicative Mood → Usually Declarative Force (90%+)
+
+---
+
+## Common Prediction Errors
+
+**Error 1**: Confusing grammatical mood with illocutionary force
+- Problem: Indicative mood can have imperative force
+- Solution: Check discourse function, not just verb form
+- Example: "You will honor your father" (form=indicative, force=imperative)
+
+**Error 2**: Missing indirect speech acts
+- Problem: Polite questions functioning as commands
+- Solution: Analyze speaker intent and context
+- Example: "Would you mind closing the door?" (form=question, force=command)
+
+**Error 3**: Confusing rhetorical vs genuine questions
+- Problem: Both use interrogative form
+- Solution: Check if answer is expected or point is being made
+- Example: "Who can stand before God?" (rhetorical, may mark as Declarative)
+
+**Error 4**: Not recognizing performatives
+- Problem: Missing "I hereby X" patterns
+- Solution: Check for performative verbs in 1st person
+- Example: "I forgive you" (creates forgiveness by speaking)
+
+---
+
+## Cross-Feature Interactions
+
+**Illocutionary Force + Mood**:
+- Strong correlation: Imperative mood → Imperative force (100%)
+- Optative mood → Optative/wish force (100%)
+- Indicative mood → Usually Declarative force (90%+)
+- Subjunctive mood → Context-dependent
+
+**Illocutionary Force + Genre**:
+- Narrative: More Declarative (describing events)
+- Teaching: Mix of Declarative + Imperative (doctrine + exhortation)
+- Prophecy: High Performative (oracular speech)
+- Law: High Imperative (commands) + Declarative (statutes)
+
+**Illocutionary Force + Speaker**:
+- Divine speaker → More Performative (creative speech)
+- Prophet → More Performative (oracular)
+- Teacher → More Declarative + Imperative
+- Narrative voice → More Declarative
+
+---
+
 ## Languages Requiring Explicit Speech Act Marking
 
 ### High-Marking Languages
