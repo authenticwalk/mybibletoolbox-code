@@ -401,8 +401,8 @@ Similar Verses to Test:
 - Adelaar & Himmelmann (2013): Austronesian Languages
 
 ### Language-Specific Sources
-- Proximity systems README: /Users/chrispriebe/projects/mybibletoolbox/mybibletoolbox-code/plan/tbta-project-local/features/proximity-systems/README.md
-- Person systems examples: /Users/chrispriebe/projects/mybibletoolbox/mybibletoolbox-code/plan/tbta-project-local/features/person-systems/BIBLE-EXAMPLES.md
+- Proximity systems README: [../proximity-systems/README.md](../proximity-systems/README.md)
+- Person systems examples: [../person-systems/BIBLE-EXAMPLES.md](../person-systems/BIBLE-EXAMPLES.md)
 
 ### TBTA Resources
 - TBTA GitHub: https://github.com/AllTheWord/tbta_db_export

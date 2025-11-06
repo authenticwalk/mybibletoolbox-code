@@ -373,5 +373,5 @@ From analysis of Matthew 24 TBTA data:
 ## References
 
 - ALL-FEATURES.md: Comprehensive TBTA feature documentation
-- TBTA Sample Files: /Users/chrispriebe/projects/mybibletoolbox/mybibletoolbox-code/.data/commentary/MAT/024/
+- TBTA Sample Files: `../../../../.data/commentary/MAT/024/`
 - Mood Definition: Lines 377-403 in ALL-FEATURES.md
