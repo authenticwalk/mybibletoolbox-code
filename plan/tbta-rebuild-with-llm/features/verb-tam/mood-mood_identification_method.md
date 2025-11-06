@@ -354,5 +354,5 @@ def identify_mood(verb_data: dict, clause_data: dict) -> dict:
 
 - Test Results: `/experiments/mood/mood_test_results.json`
 - Test Script: `/experiments/mood/test_mood_predictions.py`
-- TBTA Feature Doc: `/plan/tbta-project-local/features/ALL-FEATURES.md` (lines 377-403)
+- TBTA Feature Doc: `../../FEATURE-SUMMARY.md` (Mood section)
 - Sample Data: `/data/commentary/MAT/024/` (51 verses)
