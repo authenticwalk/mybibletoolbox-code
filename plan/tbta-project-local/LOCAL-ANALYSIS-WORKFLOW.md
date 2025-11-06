@@ -59,20 +59,36 @@ git sparse-checkout set commentary/GEN/001 commentary/JHN/003 strongs
 
 ### Step 1: Identify Verse Fragments
 
-**Goal**: Find the MINIMUM verse fragments that cover EVERY state of the feature.
+**Goal**: Find 7+ diverse verses that cover EVERY state of the feature.
 
-**Example for Number Systems** (Singular, Dual, Trial, Plural):
-- If the feature has 4 states, you need at least 4 fragments
-- If you're testing 3 languages, that's 3 × 4 = 12 data points minimum
-- Add a few more for validation
+**Diversity Requirements**:
+Must include verses from different literary genres:
+1. **Narrative** - Stories, historical accounts (Genesis, Acts)
+2. **Poetry** - Psalms, Proverbs, Song of Songs
+3. **Prophecy** - Isaiah, Jeremiah, Revelation
+4. **Law** - Leviticus, Deuteronomy
+5. **Wisdom** - Job, Ecclesiastes, Proverbs
+6. **Epistle** - Romans, Corinthians, Ephesians
+7. **Gospel** - Matthew, Mark, Luke, John
+
+**Example for Clusivity** (Inclusive vs Exclusive):
+- Need at least 7 verses demonstrating INCLUSIVE
+- Need at least 7 verses demonstrating EXCLUSIVE
+- Must span different genres (narrative, poetry, epistle, etc.)
+
+**Coverage requirement**:
+- 7 verses minimum per feature state
+- 7-10 languages analyzed per verse
+- Diverse literary contexts
 
 **How to choose**:
 1. Review the feature README in `plan/tbta-project-local/features/{feature}/`
 2. Look at TBTA data to find verses with the feature (check `experiments/{feature}/`)
-3. Pick verses that:
+3. Select verses that:
    - Show clear grammatical distinctions
-   - Are available in sparse-checkout OR
-   - Add them to sparse-checkout
+   - Come from diverse literary genres
+   - Are theologically or culturally significant
+   - Are available in sparse-checkout OR can be added
 
 ### Step 2: Select Target Languages
 
@@ -123,35 +139,148 @@ grep "ind-" .data/commentary/JHN/003/016/JHN-003-014-translations-ebible.yaml
 
 ### Step 4: Analyze the Translations
 
-**What to look for**:
+**Strategic Language Selection**:
 
-For each verse fragment × language combination:
-1. **Identify the relevant grammatical element**
-   - Pronouns for person/number systems
-   - Verb forms for aspect/mood
-   - Demonstratives for proximity
+Choose languages based on these criteria:
 
-2. **Document the linguistic encoding**
+1. **Gateway languages** - Used as source for other translations
+   - English (eng): Most common translation source
+   - Spanish (spa): Gateway for Latin America
+   - French (fra): Gateway for Francophone Africa
+   - Swahili (swh): Gateway for East Africa
+   - Indonesian (ind): Gateway for Southeast Asia
+   - Arabic (arb): Gateway for Middle East/North Africa
+   - German (deu): Gateway for Germanic languages
+
+2. **Well-understood by SOTA models** - Common in training data
+   - English, Spanish, French, German, Russian, Chinese, Japanese, Korean
+   - High-quality linguistic resources available
+
+3. **Feature-specific exemplars** - Languages that explicitly encode this feature
+   - For clusivity: Tagalog, Indonesian, Fijian, Malay (Austronesian)
+   - For trial number: Fijian, Hawaiian (Oceanic)
+   - For honorifics: Japanese, Korean, Javanese
+
+**Recommended minimum**: 7-10 languages per verse
+- 2-3 gateway languages
+- 2-3 SOTA well-understood languages
+- 2-4 feature-specific languages
+- Include diverse language families
+
+**What to analyze**:
+
+For each verse:
+
+1. **Phase 1: Dominant Pattern Analysis**
+
+   Focus on gateway + SOTA languages first:
    ```markdown
    **Genesis 1:26 - "Let us make"**
 
-   - **Tagalog (tgl-TGL)**: "Gumawa **tayo**..."
-     - Uses *tayo* (inclusive we) = Trial number (3 persons of Trinity)
-     - Confirms First Inclusive person
+   **Gateway Languages (Expected to agree)**:
+   - **English (eng-LSV)**: "Let **Us** make" - ambiguous {llm-cs45}
+   - **Spanish (spa-RVA)**: "Hagamos al hombre" - ambiguous {llm-cs45}
+   - **Swahili (swh-ONEN)**: "**Tufanye** mtu" - Tu- prefix (likely inclusive) {llm-cs45}
+   - **German (deu-TKW)**: "Laßt **uns** Menschen machen" - ambiguous {llm-cs45}
 
-   - **Indonesian (ind-INO)**: "**Kita** akan menjadikan..."
-     - Uses *kita* (inclusive we)
-     - Also confirms First Inclusive
-
-   - **English (eng-EMTV)**: "Let **us** make..."
-     - Generic plural, no clusivity distinction
-     - Cannot determine if inclusive/exclusive from grammar alone
+   **Feature-Specific (Explicit encoding)**:
+   - **Tagalog (tgl-ULB)**: "Gawin **natin** ang tao"
+     - Uses *natin* (genitive of *tayo*) = INCLUSIVE {manual}
+   - **Indonesian (ind-ind)**: "Marilah **Kita** menciptakan"
+     - Uses *Kita* (capitalized) = INCLUSIVE {manual}
    ```
 
-3. **Look for disagreements**
-   - Do some languages choose different interpretations?
-   - Example: Some translations might use plural where others use dual
-   - Document WHY the disagreement exists (ambiguity? theological interpretation?)
+2. **Phase 2: Comprehensive Scan for Exceptions**
+
+   **CRITICAL**: Inspect the ENTIRE translations-ebible.yaml file
+
+   ```bash
+   # Load the full file
+   cat .data/commentary/GEN/001/026/GEN.001.026-translations-ebible.yaml
+
+   # Look for patterns that might indicate disagreement
+   # - Different word choices
+   # - Unusual constructions
+   # - Minority interpretations
+   ```
+
+   **Questions to ask**:
+   - Are there ANY languages that seem to diverge from the dominant pattern?
+   - Do any translations use singular where others use plural?
+   - Do any clusivity languages use exclusive where others use inclusive?
+   - Are there regional patterns (e.g., African vs Asian languages)?
+
+3. **Phase 3: Exception Investigation**
+
+   When you find exceptions:
+
+   **Step A: Identify the language**
+   ```markdown
+   **Potential Exception Found**:
+   - **Language X (xxx-VER)**: [unusual translation]
+   - **Differs from**: [dominant pattern]
+   ```
+
+   **Step B: Research and validate** (DO NOT ASSUME!)
+
+   For well-known languages:
+   - Consult grammar references
+   - Check other verses with same feature
+   - Cite sources: `{source}` or `{llm-cs45}` if using model knowledge
+
+   For lesser-known languages:
+   - **BE VERY CAREFUL** - do not make assumptions
+   - Research language family and known features
+   - Check linguistic databases (WALS, Ethnologue, Glottolog)
+   - If you find confirmation: cite source `{wals-feature-39a}`, `{ethnologue-xxx}`
+   - If you CANNOT confirm: mark as tentative `{llm-cs45, unconfirmed}`
+   - If uncertain: flag for manual review
+
+   **Step C: Diagnose the reason**
+   ```markdown
+   **Diagnosis**:
+   - **Language family pattern**: [e.g., Niger-Congo languages tend to...]
+   - **Theological tradition**: [e.g., Catholic vs Protestant translations]
+   - **Cultural context**: [e.g., monarchical vs egalitarian cultures]
+   - **Translation error**: [possible mistranslation]
+   - **Ambiguity in source**: [Hebrew/Greek allows multiple readings]
+   ```
+
+   **Example**:
+   ```markdown
+   **Exception: Yoruba (yor-yor)**
+   Translation: "Ẹ jẹ́ kí **a** dá ènìyàn" {yor-yor}
+
+   Uses "a" (we) - Yoruba does not grammatically mark clusivity {llm-cs45, unconfirmed}
+
+   **Diagnosis**: Not an exception to INCLUSIVE - Yoruba simply lacks
+   grammatical clusivity marking. The choice between inclusive/exclusive
+   must be inferred from context. {llm-cs45}
+
+   **Source validation needed**: Consult Yoruba grammar reference to confirm
+   clusivity is not marked. [FLAGGED FOR REVIEW]
+   ```
+
+4. **Phase 4: Document Findings**
+
+   ```markdown
+   ### Cross-Language Analysis
+
+   **Consensus Pattern** (XX languages agree):
+   - [Dominant interpretation]
+   - Languages: [list]
+
+   **Exceptions Found** (Y languages):
+
+   **Exception 1**: [Language] - [pattern]
+   - **Reason**: [diagnosis]
+   - **Validation**: [cited source or flagged]
+
+   **No-Data Languages** (Z languages):
+   - Languages that don't grammatically encode this feature
+   - Cannot determine feature value from grammar alone
+   - Examples: English, German, Spanish (for clusivity)
+   ```
 
 ### Step 5: Check TBTA Annotations
 
@@ -178,22 +307,60 @@ grep "Person:" .data/commentary/GEN/001/026/GEN-001-026-tbta.yaml
 
 ### Step 6: Document Findings
 
-**Create**: `plan/tbta-project-local/features/{feature}/ebible-analysis.md`
+**File Structure**:
+
+Follow this hierarchical organization:
+
+```
+features/{feature}/
+├── README.md                    # Summary (max 200 lines)
+├── {subfeature}/
+│   ├── README.md               # Subfeature summary (propagated from analysis)
+│   ├── {value}/
+│   │   ├── README.md          # Final findings for this value (max 400 lines)
+│   │   ├── {BOOK}-{chap}-{verse}.md   # Detailed verse analysis
+│   │   ├── {BOOK}-{chap}-{verse}.md   # (7+ verse files)
+│   │   └── ...
+│   └── {another-value}/
+│       └── ...
+└── experiments/                 # Research/experiments (optional)
+```
+
+**Example for Clusivity**:
+
+```
+features/person-systems/
+├── README.md                           # Overview of person systems
+└── clusivity/
+    ├── README.md                      # Summary of clusivity findings
+    ├── inclusive/
+    │   ├── README.md                 # Summary with top 3 examples
+    │   ├── GEN-001-026.md           # Genesis 1:26 detailed analysis
+    │   ├── JHN-011-007.md           # John 11:7 analysis
+    │   ├── PSA-095-001.md           # Psalm 95:1 analysis
+    │   ├── [4 more verse files]
+    │   └── ...
+    └── exclusive/
+        ├── README.md                 # Summary with top 3 examples
+        ├── ACT-015-025.md           # Acts 15:25 detailed analysis
+        ├── 1CO-001-002.md           # 1 Corinthians 1:2 analysis
+        └── [5 more verse files]
+```
+
+**README.md Files** (Summaries):
+
+Each README.md contains:
+- **Feature/value overview**: What it is
+- **Key findings**: Consensus patterns, exceptions
+- **Top 3 examples**: With actual translations inline
+- **Links to detailed analyses**: References to verse .md files
+- **Max 200 lines** (parent) or **400 lines** (subfeature)
+
+**Verse .md Files** (Detailed Analysis):
+
+**Create**: `features/{feature}/{value}/{BOOK}-{chap}-{verse}.md`
 
 **Template**:
-
-```markdown
-# {Feature Name} - eBible Local Analysis
-
-## Feature States Tested
-
-List all possible values of the feature:
-- Singular
-- Dual
-- Trial
-- Plural
-
-## Verse Selection
 
 ### Verse 1: {Reference}
 **Why chosen**: Shows {state 1} clearly
