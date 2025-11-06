@@ -165,13 +165,44 @@ All analyses follow [LOCAL-ANALYSIS-WORKFLOW.md](../../LOCAL-ANALYSIS-WORKFLOW.m
 | Letter: sender → recipient | EXCL | "We send to you" |
 | "We... but you" contrast | EXCL | "We speak... you reject" |
 
+## Common Prediction Errors
+
+**Error 1**: Assuming all prayer is exclusive
+- **Problem**: "We pray to you, God" → predicting exclusive
+- **Solution**: Intercessory prayer = exclusive, but congregational prayer can be inclusive
+- **Example**: "Our Father" (Matt 6:9) = exclusive (God excluded from "our"); but "God is with us" (Matt 1:23) = inclusive (congregation + divine presence)
+
+**Error 2**: Missing speaker identity shifts
+- **Problem**: Not tracking when speaker changes mid-passage
+- **Solution**: Identify each "we" instance separately, check speaker for each
+- **Example**: Jesus quotes prophet (exclusive) then addresses disciples (inclusive)
+
+**Error 3**: Ignoring genre patterns
+- **Problem**: Applying narrative rules to epistles uniformly
+- **Solution**: Narrative heavily exclusive (separate groups), epistles more balanced
+- **Example**: Paul's epistles: "we apostles" (exclusive) vs "we believers" (inclusive)
+
+## Cross-Feature Interactions
+
+**Person + Clusivity**:
+- 1st person singular: No clusivity distinction
+- 1st person plural: Clusivity CRITICAL
+- 2nd/3rd person: No clusivity (but check for T-V distinctions)
+
+**Clusivity + Speaker/Listener Identification**:
+- Must identify speaker and addressee to predict clusivity
+- Divine speaker + human addressee = 95% exclusive
+- Human speaker + divine addressee = context-dependent (prayer vs praise)
+
+**Clusivity + Genre**:
+- **Narrative (OT)**: Heavily exclusive (70-80% of "we" instances)
+- **Epistles (NT)**: Mixed, more balanced (40-50% exclusive, 50-60% inclusive)
+- **Prophecy**: Exclusive (90%+, prophet speaks for God to people)
+- **Prayer/Worship**: Context-dependent (to God = exclusive, with congregation = inclusive)
+
 ## Next Steps
 
 - **Add more verses**: Expand to 10+ per value for comprehensive coverage
 - **Non-Austronesian languages**: Analyze Algic (Cree, Ojibwe), Quechuan, Mayan languages
 - **Ambiguity cases**: Document more split-interpretation verses
 - **TBTA enhancement**: Propose dual-reading annotations for ambiguous cases
-
----
-
-**Lines**: ~195 (within 200-line limit for parent README)

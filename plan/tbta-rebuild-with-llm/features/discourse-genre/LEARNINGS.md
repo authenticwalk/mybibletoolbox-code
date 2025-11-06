@@ -327,10 +327,11 @@ From preliminary Matthew 24 analysis:
 
 ### Tool Development
 
-1. **Genre Prediction Algorithm**
-   - Train on marked examples
-   - Validate against test set
-   - Create feedback mechanism for improvement
+1. **Genre Prediction Validation**
+   - Predict genre from discourse features (tense patterns, illocutionary force, participant tracking)
+   - Validate predictions against marked examples in TBTA
+   - Refine prediction prompts based on validation errors
+   - TBTA data used only for validation, not as training input
 
 2. **Genre-Aware Tense Validator**
    - Check tense consistency within genres

@@ -117,7 +117,7 @@ Cross-check with:
 **Workflow Integration:**
 
 ```
-1. Parse source text (Greek/Hebrew) → Extract TBTA annotations
+1. Parse source text (Greek/Hebrew) → Generate/Predict TBTA annotations
 2. Identify target language family → Load family-specific profile (this guide)
 3. Map critical features → Preserve obligatory distinctions
 4. Collapse irrelevant features → Simplify where target language doesn't distinguish

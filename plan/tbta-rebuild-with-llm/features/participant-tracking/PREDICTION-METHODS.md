@@ -1,47 +1,64 @@
-# Participant Tracking Prediction Methods
-## Three Approaches to Predicting First Mention, Routine, Restaging, Exiting, and Frame Inferable
+# Participant Tracking: LLM Prompting Strategies
+## Three Complementary Approaches for Predicting Participant Tracking States
 
 ---
 
 ## Overview
 
-This document outlines three complementary methods for predicting TBTA participant tracking values, tested on Matthew 24:46-47 (master/servant relationships). Each method uses different linguistic cues and reasoning patterns.
+This document outlines three complementary LLM prompting strategies for predicting TBTA participant tracking values, tested on Matthew 24:46-47 (master/servant relationships). Each strategy guides the LLM through different linguistic reasoning patterns. Rather than executing algorithms, the LLM reads these prompts and applies linguistic understanding to make predictions.
 
 ---
 
-## Method 1: Discourse Position & Narrative Flow
+## Strategy 1: LLM Discourse Analysis Prompts
 
 ### Principle
-Participant tracking is fundamentally about how entities move through a narrative timeline. We track whether entities are being introduced, continuing, returning, or leaving.
+Participant tracking is fundamentally about how entities move through a narrative timeline. The LLM reasons about whether entities are being introduced, continuing, returning, or leaving by understanding discourse structure.
 
-### Algorithm
+### LLM Prompt Template
 
 ```
-For each entity:
-  1. Check discourse position:
-     - Is this the entity's first mention overall?
-     - Is this the first mention in THIS discourse unit?
-     - Is this the entity's first mention after being absent?
+You are analyzing participant tracking in Biblical narrative. For each
+entity in this passage, reason through these questions about discourse
+position and narrative flow:
 
-  2. Check narrative prominence:
-     - Is the entity actively performing actions (agent)?
-     - Is the entity being acted upon (patient)?
-     - Is the entity merely mentioned (passive)?
+DISCOURSE POSITION ANALYSIS:
+1. "Where does this entity appear in the narrative timeline?"
+   - First mention overall in the discourse?
+   - First mention in THIS specific discourse unit/scene?
+   - Returning after being absent from prior clauses?
 
-  3. Check coreference:
-     - Does a pronoun immediately follow?
-     - Does the entity's role expand or diminish?
-     - Is the entity still "on stage"?
+2. "What is this entity's narrative prominence?"
+   - Is the entity actively performing actions (agent role)?
+   - Is the entity being acted upon (patient role)?
+   - Is the entity only mentioned in passing (background)?
 
-  4. Assign tracking value:
-     IF first overall mention:
-       → First Mention
-     ELSE IF mentioned before but resuming active role:
-       → Routine (if continuous) OR Restaging (if after absence)
-     ELSE IF exiting the narrative:
-       → Exiting
-     ELSE IF implicit through possessive/relationship:
-       → Frame Inferable
+3. "How does this entity's presence continue forward?"
+   - Do pronouns immediately reference it in following clauses?
+   - Does the entity's role expand, maintain, or diminish?
+   - Is the entity still "on stage" in the narrative spotlight?
+
+TRACKING STATE DECISION:
+Based on your discourse analysis, reason about the tracking state:
+
+- If this is the entity's first overall appearance → Consider: FIRST MENTION
+  (unless inferable from a frame, then consider: FRAME INFERABLE)
+
+- If the entity was mentioned before and continues smoothly → ROUTINE
+  Evidence: minimal referential distance, pronoun use, continuous presence
+
+- If the entity returns after significant absence → RESTAGING
+  Evidence: other entities intervened, gap in mentions, uses full NP not pronoun
+
+- If the entity is leaving the narrative focus → EXITING (rare)
+  Evidence: final actions, decreasing prominence, narrative closure
+
+- If the entity is implicit via relationship/possession → FRAME INFERABLE
+  Evidence: "his goods", "the priest" (in temple frame), definiteness despite novelty
+
+Apply Hopper's grounding theory: foreground participants (advancing the story)
+are tracked more explicitly than background participants (providing context).
+
+Explain your reasoning using evidence from the narrative structure.
 ```
 
 ### Application to MAT 24:46-47
@@ -105,56 +122,76 @@ For each entity:
 
 ---
 
-## Method 2: Syntactic Surface Realization Analysis
+## Strategy 2: LLM Surface Form Analysis Prompts
 
 ### Principle
-How an entity is syntactically realized (full noun, pronoun, zero) correlates with its tracking status. Pronouns = established (Routine). Full nouns often = new information (First Mention). Implicit agents = Frame Inferable.
+The linguistic form of a referent (full noun, pronoun, zero) correlates with its tracking status. The LLM applies Ariel's Accessibility Theory: more accessible referents use less linguistic material. The LLM reads surface forms and infers tracking states.
 
-### Algorithm
+### LLM Prompt Template
 
 ```
-For each entity:
-  1. Analyze surface realization:
-     Surface Realization Form:
-       - If NOUN PHRASE (full lexical noun): Usually First Mention or Frame Inferable
-       - If PRONOUN: Almost always Routine (established entity)
-       - If ZERO (dropped/implicit): Could be Routine or Frame Inferable
-       - If CLITIC: Typically Routine
+You are analyzing participant tracking using surface form patterns. Apply
+Ariel's Accessibility Hierarchy: form correlates with cognitive accessibility.
 
-  2. Check modifiers:
-     - Demonstrative modifier (this/that/these/those)?
-       → Indicates First Mention or Restaging
-     - Possessive determiner (his/her/their)?
-       → Could indicate Frame Inferable
-     - Relative clause modifier?
-       → Might indicate new information (First Mention)
-     - No modifiers (bare noun)?
-       → Could be Generic or Frame Inferable
+For each entity, analyze its linguistic realization:
 
-  3. Check article/definiteness:
-     - Definite article (the)?
-       → Entity is established (Routine)
-     - Indefinite article (a/an)?
-       → Entity is new (First Mention)
-     - No article?
-       → Could be Generic or depends on context
+SURFACE FORM ANALYSIS:
+1. "What form does this referent take?"
+   - Full noun phrase (e.g., "the servant", "that woman")?
+   - Pronoun (he, she, it, they)?
+   - Zero/implicit (dropped subject in pro-drop languages)?
+   - Clitic (attached pronoun form)?
 
-  4. Check verb predicate:
-     - Active voice → Entity is agent
-     - Passive voice → Entity is patient (might be Frame Inferable for agent)
-     - Stative → Entity is attribute
+2. "What modifiers appear with this referent?"
+   - Demonstrative (this/that/these/those)?
+     → Signals: pointing out, specifying, often new or reactivated
+   - Possessive (his/her/their)?
+     → Signals: relational inference, often frame-inferable
+   - Relative clause (who/which/that + clause)?
+     → Signals: providing new identifying information
+   - No modifiers (bare noun)?
+     → Signals: generic or established through context
 
-  5. Assign tracking based on form:
-     IF pronoun:
-       → Routine
-     ELSE IF demonstrative + noun:
-       → First Mention (unless reappearing → Restaging)
-     ELSE IF possessive + noun:
-       → Often Frame Inferable
-     ELSE IF indefinite article:
-       → First Mention
-     ELSE IF definite article or bare noun:
-       → Context-dependent (could be Routine or Frame Inferable)
+3. "What article/determiner is used?"
+   - Definite article (the)?
+     → Signals: established or frame-accessible
+   - Indefinite article (a/an)?
+     → Signals: new to discourse
+   - No article?
+     → Signals: generic, mass noun, or language-specific pattern
+
+4. "What is the verb predicate structure?"
+   - Active voice → Entity is agent (often tracked as main participant)
+   - Passive voice → Entity is patient (agent may be frame-inferable)
+   - Stative predicate → Entity in state (may be background)
+
+TRACKING STATE INFERENCE (Based on Form):
+Apply these patterns from Ariel's Accessibility Theory:
+
+- PRONOUN → Almost always ROUTINE
+  Reasoning: Pronouns = high accessibility markers for established referents
+
+- DEMONSTRATIVE + NOUN → Usually FIRST MENTION or RESTAGING
+  Reasoning: Demonstratives specify/point out, signaling new focus or shift
+
+- POSSESSIVE + NOUN → Often FRAME INFERABLE
+  Reasoning: Possession implies relationship; referent inferable from possessor
+
+- INDEFINITE ARTICLE + NOUN → FIRST MENTION
+  Reasoning: Indefiniteness signals discourse-new status
+
+- DEFINITE ARTICLE + NOUN (first occurrence) → FRAME INFERABLE
+  Reasoning: Definiteness without prior mention signals frame accessibility
+
+- BARE NOUN (no determiner) → GENERIC or context-dependent
+  Reasoning: Language-specific patterns (mass nouns, generics, pro-drop contexts)
+
+Consider cross-linguistic variation:
+- Biblical Hebrew (pro-drop): routine participants may be zero-marked
+- English (non-pro-drop): routine participants require explicit pronouns
+- Article-less languages: definiteness inferred from context
+
+Explain your reasoning by citing the specific surface form evidence.
 ```
 
 ### Application to MAT 24:46-47
@@ -223,62 +260,81 @@ For each entity:
 
 ---
 
-## Method 3: Information Structure & Discourse Grounding
+## Strategy 3: LLM Information Structure Prompts
 
 ### Principle
-Participant tracking reflects the information structure of discourse. New information (First Mention) vs. given information (Routine) vs. inferrable information (Frame Inferable) follow predictable patterns based on how entities are grounded in the discourse context.
+Participant tracking reflects information structure. The LLM reasons about whether referents are discourse-new (First Mention), discourse-given (Routine), or discourse-inferable (Frame Inferable) based on grounding in the discourse context.
 
-### Algorithm
+### LLM Prompt Template
 
 ```
-For each entity:
-  1. Check information status:
-     - Is this entity explicitly mentioned before?
-       → Explicitly Grounded
-     - Is this entity inferrable from stated information?
-       → Inferentially Grounded (Frame Inferable)
-     - Is this entity brand new to discourse?
-       → Ungrounded (First Mention)
+You are analyzing participant tracking through information structure. Apply
+Gundel's Givenness Hierarchy to determine cognitive status of each referent.
 
-  2. Analyze grounding mechanism:
-     Explicit Grounding:
-       - Direct mention in previous clause/sentence
-       - Textual anaphora (pronounced reference)
-       - Same entity reappearing
-       → Routine (if continuous) or Restaging (if after gap)
+For each entity, analyze its information grounding:
 
-     Inferential Grounding:
-       - Implied through possessive relationships (my book → book Frame Inf)
-       - Implied through role relationships (teacher's student → student Frame Inf)
-       - Implied through cultural/situational context
-       - Implied through "standard" scenarios (temple → priests, stones)
-       → Frame Inferable
+INFORMATION STATUS ANALYSIS:
+1. "How is this entity grounded in the discourse?"
 
-     Discourse-New Grounding:
-       - No previous mention or inference possible
-       - Presented as entirely new participant
-       → First Mention
+   EXPLICIT GROUNDING (mentioned before):
+   - Direct mention in previous clauses?
+   - Anaphoric pronoun reference?
+   - Same entity reappearing in discourse?
+   → Status: Discourse-given
 
-  3. Check topicality:
-     - Is the entity currently the topic of discussion?
-       → Likely Routine
-     - Is the entity becoming the new topic?
-       → First Mention (if new) or Restaging (if returning)
-     - Is the entity background information?
-       → Might be Exiting, Offstage, or Frame Inferable
+   INFERENTIAL GROUNDING (not mentioned but inferable):
+   - Implied through possessive relationships?
+     Example: "his book" → the book is inferable from "his"
+   - Implied through role relationships?
+     Example: "teacher's student" → student is inferable from teacher role
+   - Implied through cultural/situational frames?
+     Example: temple mentioned → priests, altar are inferable
+   - Implied through "standard" scene participants?
+     Example: restaurant → waiter, menu are inferable
+   → Status: Discourse-inferable
 
-  4. Assign tracking based on grounding:
-     IF Explicitly Grounded:
-       IF continuous from previous mention:
-         → Routine
-       ELSE IF returning after gap:
-         → Restaging
-       ELSE IF leaving narrative:
-         → Exiting
-     ELSE IF Inferentially Grounded:
-       → Frame Inferable
-     ELSE IF Discourse-New:
-       → First Mention
+   DISCOURSE-NEW (no grounding):
+   - No previous mention AND not inferable from context
+   - Presented as entirely new participant
+   → Status: Discourse-new
+
+2. "What is this entity's topicality status?"
+   - Currently the topic of discussion (in focus)?
+     → Likely continuing as ROUTINE
+   - Becoming the new topic (topic shift)?
+     → FIRST MENTION (if new) or RESTAGING (if returning)
+   - Background/peripheral information?
+     → Possibly OFFSTAGE or FRAME INFERABLE
+
+TRACKING STATE DECISION (Based on Grounding):
+
+IF EXPLICITLY GROUNDED (mentioned before):
+  - Continuous from previous mention with minimal gap?
+    → Label: ROUTINE
+    Reasoning: Apply Givón's referential distance - minimal distance = routine
+
+  - Returning after significant gap with intervening entities?
+    → Label: RESTAGING
+    Reasoning: Reactivation required after dormancy, uses fuller forms
+
+  - Leaving the narrative focus?
+    → Label: EXITING (rare in TBTA)
+    Reasoning: Final mention, diminishing role
+
+IF INFERENTIALLY GROUNDED (inferable but not explicit):
+  → Label: FRAME INFERABLE
+  Reasoning: Apply Fillmore's Frame Semantics - frames evoke participants
+  "Uniquely identifiable" per Gundel but via frame, not prior mention
+
+IF DISCOURSE-NEW (no grounding):
+  → Label: FIRST MENTION
+  Reasoning: "Type identifiable" per Gundel but not yet uniquely established
+  in this discourse context
+
+Apply Prince's information structure taxonomy: entities move from
+NEW → INFERRABLE → EVOKED as discourse progresses.
+
+Explain your reasoning by identifying the specific grounding mechanism.
 ```
 
 ### Application to MAT 24:46-47
@@ -386,35 +442,61 @@ For each entity:
 
 ---
 
-## Recommendations for Implementation
+## Recommendations for LLM Implementation
 
-### For Automated Prediction System
+### Multiple Prompting Strategy
 
-1. **Combine all three methods** as ensemble approach
-2. **Weight by confidence**:
-   - Surface Realization: Weight 0.4 (most automatable)
-   - Narrative Flow: Weight 0.35 (captures discourse)
-   - Information Structure: Weight 0.25 (most nuanced)
+1. **Use all three prompting strategies** in sequence or parallel
+2. **Leverage LLM's ability to synthesize**:
+   Rather than weighted voting, prompt the LLM to reason across all three:
 
-3. **Use voting**:
-   - If all three methods agree: HIGH confidence
-   - If two of three agree: MEDIUM confidence
-   - If only one agrees: LOW confidence (flag for review)
+```
+You have analyzed this passage using three complementary strategies:
+1. Discourse position and narrative flow
+2. Surface form and accessibility markers
+3. Information structure and grounding
 
-### For Human Annotation
+Now synthesize your analysis:
+- Where do all three strategies agree? (HIGH confidence)
+- Where do two strategies agree? (MEDIUM confidence)
+- Where do strategies conflict? (Flag for additional reasoning)
 
-1. **Use Method 3 (Information Structure)** as primary framework
-   - Most theoretically sound
+For any conflicts, reason through which strategy provides the most
+compelling evidence given the linguistic context. Explain your final
+decision with reference to the strategies that support it.
+```
+
+3. **Confidence assessment through LLM reasoning**:
+   The LLM naturally expresses uncertainty and can flag ambiguous cases:
+   - All strategies converge → HIGH confidence
+   - Minor discrepancies but clear best analysis → MEDIUM confidence
+   - Significant conflicts or unclear evidence → LOW confidence (mark [UNCERTAIN])
+
+### For Human-in-the-Loop Annotation
+
+1. **Primary Prompt: Use Strategy 3 (Information Structure)**
+   - Most theoretically sound framework
    - Best aligns with TBTA design goals
-   - Explains decisions to translators
+   - Explanations are useful for translators
 
-2. **Cross-check with Method 1 (Narrative Flow)**
-   - Ensures character arcs make sense
-   - Catches unrealistic jumps
+2. **Validation Prompt: Cross-check with Strategy 1 (Narrative Flow)**
+   ```
+   Review your annotations from the information structure perspective.
+   Now check: Do the character arcs and narrative progression make sense?
+   Are there any unrealistic jumps or discontinuities?
+   ```
 
-3. **Validate with Method 2 (Surface Realization)**
-   - Ensures decisions are grounded in text form
-   - Identifies potential errors
+3. **Surface Form Verification: Apply Strategy 2**
+   ```
+   Verify that your tracking state assignments match the surface forms.
+   Are pronouns marked as ROUTINE? Are indefinite NPs marked as FIRST MENTION?
+   Flag any surface form mismatches and explain language-specific patterns.
+   ```
+
+4. **Human Review of Flagged Cases**
+   - LLM marks uncertain cases with [UNCERTAIN]
+   - Human annotator reviews these cases with full linguistic context
+   - Human makes final decision, feeding back to improve future prompts
 
 ---
 
