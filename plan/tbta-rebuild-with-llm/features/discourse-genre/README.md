@@ -219,6 +219,27 @@ Genre can determine lexical choices, even for the same semantic content:
 - Poetic genre permits or requires figurative language
 - Teaching genre may use metaphors or simplified vocabulary
 
+---
+
+## Quick Translator Test
+
+Answer these questions about your target language:
+
+1. ☐ Does your language use different tense systems for narrative vs non-narrative?
+2. ☐ Does your language mark backgrounded vs foregrounded information?
+3. ☐ Does your language have special markers for quoted speech?
+4. ☐ Does your language change register for different genres?
+
+If you answered YES to #1 or #2, discourse genre annotation is CRITICAL for correct tense/aspect selection and information structure.
+
+**Languages requiring this**:
+- Romance: French (passé simple vs. imparfait), Spanish (pretérito vs. imperfecto)
+- Bantu: Swahili and related languages (narrative tense distinctions)
+- East Asian: Japanese, Mandarin (register and particle changes by genre)
+- Hebrew: Biblical Hebrew (wayyiqtol for narrative vs. qatal for other genres)
+
+---
+
 ## Linguistic Features by Genre
 
 ### Tense/Aspect Patterns
