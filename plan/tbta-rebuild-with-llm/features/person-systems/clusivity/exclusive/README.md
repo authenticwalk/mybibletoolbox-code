@@ -284,4 +284,4 @@ This represents genuine theological disagreement about whether Isaiah is the dir
 ---
 
 **Total lines**: ~370 (within 400-line limit)
-**File location**: `plan/tbta-project-local/features/person-systems/clusivity/exclusive/README.md`
+**File location**: `features/person-systems/clusivity/exclusive/README.md`

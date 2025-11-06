@@ -8,7 +8,7 @@ This document captures patterns and methodologies from successful TBTA experimen
 
 ## From: Person-Systems Experiment (Clusivity Prediction)
 
-**Source**: `/plan/tbta-project-local/experiments/person-systems/`
+**Source**: `features/person-systems/`
 **Achievement**: 100% accuracy on inclusive/exclusive predictions (11/11 test cases)
 **Method**: LLM prompting with theological and discourse context
 
@@ -300,7 +300,7 @@ Result: 100% accuracy (11/11 test cases)
 
 ## From: Aspect Experiment (98.1% Accuracy)
 
-**Source**: `/plan/tbta-project-local/experiments/aspect/`
+**Source**: `features/verb-tam/aspect-*`
 **Achievement**: 98.1% accuracy (53/54 correct predictions)
 **Method**: Rarity principle + Mood correlation + Multi-factor analysis
 
@@ -489,7 +489,7 @@ Final prediction:
 
 ## From: Mood Detection Experiment (100% Accuracy)
 
-**Source**: `/plan/tbta-project-local/experiments/mood/`
+**Source**: `features/verb-tam/mood-*`
 **Achievement**: 100% accuracy (316 verbs)
 **Key Learning**: Always check if feature is EXPLICIT before building complex prediction
 

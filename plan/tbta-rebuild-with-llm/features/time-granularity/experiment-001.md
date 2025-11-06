@@ -290,6 +290,6 @@ Verse 24:34 - "The Lord has risen and has appeared to Simon"
 
 ## References
 
-- Time Granularity Research: `/plan/tbta-project-local/features/time-granularity/README.md`
-- TBTA Feature Reproduction Framework: `/plan/tbta-project-local/experiments/FRAMEWORK.md`
+- Time Granularity Research: `README.md`
+- TBTA Feature Reproduction Framework: `../FRAMEWORK.md`
 

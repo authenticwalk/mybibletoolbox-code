@@ -1,7 +1,7 @@
 # Noun Phrases Feature Documentation - Completion Summary
 
 **Created:** 2025-11-05
-**Location:** `/home/user/mybibletoolbox-code/plan/tbta-project-local/features/101-noun-phrases/README.md`
+**Location:** `README.md`
 **Line Count:** 400 lines (≤500 target: ✅)
 
 ## What Was Created

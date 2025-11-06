@@ -82,7 +82,7 @@ Must include verses from different literary genres:
 - Diverse literary contexts
 
 **How to choose**:
-1. Review the feature README in `plan/tbta-project-local/features/{feature}/`
+1. Review the feature README in `features/{feature}/`
 2. Look at TBTA data to find verses with the feature (check `experiments/{feature}/`)
 3. Select verses that:
    - Show clear grammatical distinctions
@@ -95,7 +95,7 @@ Must include verses from different literary genres:
 **Goal**: Choose languages you KNOW encode this feature AND are available in ebible.
 
 **How to select**:
-1. Review `plan/tbta-project-local/languages/{family}/README.md`
+1. Review `languages/families/{family}.md`
 2. Check `src/constants/languages.tsv` for language codes
 3. Pick languages where you CONFIDENTLY know the feature:
    - Tagalog (tgl): clusivity - `tayo` vs `kami`
@@ -492,7 +492,7 @@ Each `ebible-analysis.md` should cover ONE feature. Don't try to analyze 10 feat
 
 ## Example: Clusivity in Genesis 1:26
 
-See `plan/tbta-project-local/features/person-systems/ebible-analysis.md` (to be created) for a complete example.
+See `features/person-systems/` for complete examples with verse-by-verse analysis.
 
 **Quick preview**:
 - **Feature**: First Person Inclusive vs Exclusive
@@ -505,8 +505,8 @@ See `plan/tbta-project-local/features/person-systems/ebible-analysis.md` (to be 
 ## Questions?
 
 Check existing experiment files in:
-- `plan/tbta-project-local/experiments/person-systems/experiment-001.md`
-- `plan/tbta-project-local/experiments/number-systems/experiment-001.md`
+- `features/person-systems/experiment-001.md`
+- `features/number-systems/experiment-validation.md`
 
 These show the GLOBAL research approach. Your local analysis adds VALIDATION with real texts.
 

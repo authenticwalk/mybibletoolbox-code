@@ -243,4 +243,4 @@ When you encounter these patterns in the source text, **USE INCLUSIVE forms**:
 ---
 
 **Total lines**: ~350 (within 400-line limit)
-**File location**: `plan/tbta-project-local/features/person-systems/clusivity/inclusive/README.md`
+**File location**: `features/person-systems/clusivity/inclusive/README.md`

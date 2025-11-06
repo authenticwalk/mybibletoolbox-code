@@ -174,8 +174,7 @@ Comprehensive documentation of 70+ additional families including: Afro-Asiatic (
 ## Sources
 
 ### Primary Research
-- Source 1: plan/tbta-project-local/languages/ (database-focused analyses)
-- Source 2: plan/tbta-project/language-research/families/ (comprehensive linguistic research)
+- Consolidated from multiple research branches with comprehensive linguistic analysis
 
 ### Academic References
 - Comprehensive bibliographies provided in individual family files

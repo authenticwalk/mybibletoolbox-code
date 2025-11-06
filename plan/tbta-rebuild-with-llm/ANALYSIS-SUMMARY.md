@@ -192,7 +192,7 @@ A feature is highly predictable when it has:
 **Complete** (have analysis):
 - `features/number-systems/` ✅
 - `features/person-systems/` ✅
-- `features/proximity-systems/` ✅
+- `features/proximity/` ✅ (includes language-typology.md)
 - `features/time-granularity/` ✅
 - `features/honorifics-register/` ✅
 - `features/illocutionary-force/` ✅
