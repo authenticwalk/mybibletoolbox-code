@@ -718,106 +718,412 @@ TBTA frequency distribution:
 
 ---
 
-## Decision Tree Algorithm
+## LLM Reasoning Framework
+
+This framework guides an LLM through natural language reasoning to predict participant tracking states. Rather than executing algorithmic steps, the LLM reads these guidelines and reasons about the discourse context.
+
+### Prompt Structure for LLM Annotation
+
+**For each nominal constituent N in clause C, prompt the LLM with:**
 
 ```
-START: For each nominal constituent N in clause C:
+You are analyzing participant tracking in Biblical discourse. For the
+constituent "{N}" in this clause, reason through these questions using
+the provided source text and discourse context:
 
-1. Is N first occurrence in discourse?
-   YES → Is N generic/type reference?
-         YES → GENERIC
-         NO → FIRST MENTION
-   NO → Continue to 2
+STEP 1: Generic or Specific Reference?
+Ask yourself: "Is this referring to a type/class or a specific entity?"
+- Generic indicators: timeless statements, bare plurals, definitional contexts
+- If generic → Label: GENERIC
 
-2. Is N in interrogative clause querying identity/properties?
-   YES → INTERROGATIVE
-   NO → Continue to 3
+STEP 2: First Occurrence Analysis
+Ask yourself: "Have I seen this referent before in this passage?"
+- If NO, continue to Step 3
+- If YES, skip to Step 4
 
-3. Has N been explicitly mentioned before in text?
-   YES → Continue to 5
-   NO → Continue to 4
+STEP 3: Frame Inferability Check (For New Referents)
+Ask yourself: "Although not mentioned before, can I infer this from the scene?"
+- Check if a frame has been established (restaurant, temple, market, etc.)
+- Check if this referent is a typical participant in that frame
+  Examples:
+  - "Restaurant" frame → waiter, menu, food are inferable
+  - "Well" frame → water, bucket are inferable
+  - "Creation" frame → heaven, earth, light are inferable
+- Often uses definite article despite first mention ("the waiter")
+- If frame-inferable → Label: FRAME INFERABLE
+- If not inferable → Label: FIRST MENTION
 
-4. Is N inferable from established frame/scene?
-   YES → FRAME INFERABLE
-   NO → FIRST MENTION (edge case: implied but not frame-inferable)
+STEP 4: Referential Distance Analysis (For Previously Mentioned)
+Ask yourself: "How recently was this referent last mentioned?"
+Using Givón's framework, count the clauses since last mention:
+- Same clause or 1-2 clauses ago → Continue to Step 5
+- 3+ clauses ago → Continue to Step 6
 
-5. Count clauses since last mention of N (RD = Referential Distance)
-   RD = 0 (same clause) → ROUTINE
-   RD = 1-2 → Continue to 6
-   RD >= 3 → RESTAGING
+STEP 5: Routine Continuation Check
+Ask yourself: "Is this referent continuing smoothly in the discourse?"
+- Low competing referents in between?
+- Encoded with pronoun or maintained noun?
+- In focus of attention?
+- If YES → Label: ROUTINE
 
-6. Count competing referents between last mention and current (PI)
-   PI = 0 (no competition) → ROUTINE
-   PI = 1-2 (low competition) → ROUTINE
-   PI >= 3 (high competition) → RESTAGING
+STEP 6: Restaging Analysis (After Absence)
+Ask yourself: "Is this referent returning after other participants intervened?"
+Consider:
+- High referential distance (3+ clauses)
+- Multiple competing referents intervened
+- Typically uses full NP (not just pronoun)
+- Reactivating a dormant referent
+- If YES → Label: RESTAGING
+- If NO (continuous despite distance) → Label: ROUTINE
 
-7. Is N in attributive/modifying position only (not main argument)?
-   YES → OFFSTAGE
-   NO → ROUTINE
+STEP 7: Special Cases
+Check for:
+- Interrogative context: Is this in a question querying identity?
+  → Label: INTERROGATIVE
+- Attributive position: Is this only a modifier, not a main argument?
+  → Label: OFFSTAGE (rare)
 
-END: Assign tracking state to N
+Apply Ariel's Accessibility Hierarchy and Gundel's Givenness Hierarchy
+reasoning: More accessible referents → less linguistic material needed.
+
+Your reasoning should reference the specific linguistic evidence from the
+text: word forms, referential distance, discourse structure.
+```
+
+### Multi-Prompt Strategy for Complex Cases
+
+For difficult annotation decisions, use sequential prompting:
+
+**Prompt 1 - Coreference Analysis:**
+```
+Build a referent chain for this passage. List each mention of
+"{referent}" and what form it takes (full NP, pronoun, zero, etc.).
+Track where the referent appears across clauses.
+```
+
+**Prompt 2 - Frame Identification:**
+```
+What discourse frames are active in this passage? (e.g., temple frame,
+market frame, creation frame, etc.) What participants are inferable
+from each frame based on FrameNet and world knowledge?
+```
+
+**Prompt 3 - State Assignment:**
+```
+Given the referent chain from Prompt 1 and the active frames from
+Prompt 2, assign participant tracking states to each mention.
+Explain your reasoning using Givón's referential distance and
+Ariel's accessibility markers.
 ```
 
 ---
 
-## Validation Methods
+## Validation Using TBTA and LLM Cross-Checking
 
-### Method 1: Referential Distance Calculation
+### Method 1: LLM Self-Validation with Referential Distance
 
-For each tracked participant across a text:
+Prompt the LLM to validate its own annotations using Givón's referential distance framework:
 
-```python
-def calculate_referential_distance(mentions):
-    """
-    mentions: list of (clause_number, tracking_state) tuples
-    """
-    for i in range(1, len(mentions)):
-        current_clause = mentions[i][0]
-        previous_clause = mentions[i-1][0]
-        rd = current_clause - previous_clause
-        expected_state = mentions[i][1]
+```
+Review your participant tracking annotations for "{referent}" across
+this passage. For each annotation:
 
-        # Validate
-        if rd == 1 and expected_state != "Routine":
-            flag_error("Expected Routine for RD=1")
-        if rd >= 3 and expected_state not in ["Restaging", "First Mention"]:
-            flag_error("Expected Restaging for RD>=3")
+1. Calculate the referential distance (clauses since last mention)
+2. Evaluate whether the tracking state matches expected patterns:
+   - RD = 1 clause → Should typically be ROUTINE
+   - RD = 2-3 clauses, low competition → Usually ROUTINE
+   - RD = 3+ clauses, high competition → Consider RESTAGING
+
+3. If you labeled something ROUTINE with RD >= 3 and high competition,
+   explain your reasoning. Is there continuity that overrides the distance?
+
+4. If you labeled something RESTAGING, verify:
+   - Significant gap in mentions (RD >= 3)?
+   - Competing referents intervened?
+   - Uses full NP rather than pronoun?
+
+Flag any annotations that don't follow expected patterns and explain
+why the exception is justified based on the discourse context.
 ```
 
-### Method 2: Frame Consistency Check
+### Method 2: Frame Consistency Validation
 
-For frame-inferable candidates:
+Prompt the LLM to validate Frame Inferable annotations:
 
-```python
-frame_triggers = {
-    "restaurant": ["waiter", "menu", "food", "table", "bill"],
-    "market": ["vendor", "goods", "price", "stall"],
-    "well": ["water", "bucket", "rope", "draw"],
-    "temple": ["altar", "priest", "sacrifice", "holy"],
-    "creation": ["heaven", "earth", "light", "darkness"],
-}
+```
+For each constituent you labeled FRAME INFERABLE, verify:
 
-def validate_frame_inferable(constituent, context):
-    # Check if any frame trigger exists in prior context
-    for frame, inferables in frame_triggers.items():
-        if frame_mentioned_in(frame, context):
-            if constituent in inferables:
-                return True # Valid frame-inferable
-    return False # Should be First Mention, not Frame Inferable
+1. Identify the frame that makes this referent inferable
+   (e.g., restaurant frame, temple frame, creation frame)
+
+2. Confirm the frame was established in prior context:
+   - Quote the text that evokes this frame
+   - Identify the frame-evoking word(s)
+
+3. Confirm this referent is a typical participant in that frame:
+   - Use FrameNet knowledge or world knowledge
+   - Explain why this referent belongs to the frame
+
+4. Check for definite marking despite first mention:
+   - Does the text use "the {referent}" even though not previously mentioned?
+   - This is a key indicator of frame inferability
+
+If you cannot identify a clear frame that was previously established,
+reconsider whether this should be FIRST MENTION instead.
+
+Examples of valid frame inferences:
+- "John entered the restaurant" → "the waiter" is frame-inferable
+- "In the beginning God created" → "the heavens" and "the earth" are inferable from creation frame
+- "They came to the well" → "the water" is frame-inferable
+
+Flag any FRAME INFERABLE that lacks clear frame grounding.
 ```
 
-### Method 3: Surface Form Validation
+### Method 3: Surface Form Consistency Check
 
-Cross-check tracking state against surface realization:
+Prompt the LLM to cross-validate tracking states with linguistic realization:
 
-| Tracking State | Expected Surface Forms | Unexpected Forms |
+```
+Review your annotations and check if the surface form matches the
+tracking state. Apply these principles from Ariel's Accessibility Theory:
+
+Expected patterns:
+
+| Tracking State | Expected Surface Forms | Problem Indicators |
 |---------------|----------------------|------------------|
-| First Mention | Full NP, indefinite (in article langs) | Pronouns, zero |
-| Routine | Pronouns, zero (in pro-drop), repeated NP | First-time full NP |
-| Restaging | Full NP, demonstrative + NP | Simple pronoun |
-| Frame Inferable | Definite NP (despite first mention) | Indefinite article |
-| Generic | Varies (bare plural, definite singular) | Specific demonstrative |
-| Offstage | Attributive position | Main argument position |
+| First Mention | Full NP, indefinite article ("a woman") | If uses pronoun or zero |
+| Routine | Pronouns, zero (pro-drop), repeated NP | If indefinite on continued ref |
+| Restaging | Full NP, demonstrative + NP | If simple pronoun after gap |
+| Frame Inferable | Definite NP despite first mention ("the waiter") | If indefinite article |
+| Generic | Bare plural, generic singular | If specific demonstrative |
+| Offstage | Attributive/modifying position | If main argument |
+
+For each annotation, ask:
+- Does the surface form match expectations for this tracking state?
+- If FIRST MENTION uses "the" (definite), should it be FRAME INFERABLE?
+- If ROUTINE uses full NP with indefinite article, is it really routine?
+- If RESTAGING uses just a pronoun, is it actually ROUTINE?
+
+Flag mismatches between tracking state and surface realization.
+Explain any exceptions based on language-specific patterns or
+discourse factors (e.g., Hebrew definite article patterns,
+pro-drop language phenomena).
+```
+
+### Method 4: Cross-Validation Against TBTA Gold Standard
+
+When TBTA annotations are available, use them for validation:
+
+```
+Compare your predictions to TBTA gold standard annotations.
+
+For each mismatch:
+1. Identify the difference (e.g., you predicted ROUTINE, TBTA has FRAME INFERABLE)
+2. Re-read the context and TBTA's annotation
+3. Reason about why TBTA chose differently:
+   - Did you miss a frame that was established?
+   - Did you miscalculate referential distance?
+   - Did you misidentify generic vs. specific reference?
+4. Update your understanding of the tracking patterns
+
+Calculate accuracy metrics:
+- Overall agreement rate
+- Per-state precision and recall
+- Common error patterns
+
+Use mismatches as learning opportunities to refine your
+annotation reasoning for future passages.
+```
+
+---
+
+## LLM Prompting Strategy
+
+### Overview
+
+Rather than executing code or algorithms, participant tracking annotation uses LLM reasoning guided by linguistic principles. The LLM reads the Biblical text, applies theoretical frameworks (Givón, Ariel, Gundel, etc.), and makes predictions through natural language reasoning.
+
+### Core Principles
+
+1. **The LLM reads and reasons** - It doesn't execute if/else statements; it understands linguistic patterns
+2. **Grounded in theory** - Prompts reference specific frameworks (Accessibility Theory, Givenness Hierarchy, etc.)
+3. **Evidence-based** - The LLM cites specific textual evidence for each decision
+4. **Self-correcting** - Multiple prompt passes allow validation and refinement
+
+### Implementation Workflow
+
+**Phase 1: Initial Annotation**
+```
+Input: Biblical passage (verse or pericope)
+Prompt: Apply the LLM Reasoning Framework (see above) to each nominal
+Output: Initial tracking state assignments with reasoning
+```
+
+**Phase 2: Self-Validation**
+```
+Input: Initial annotations + original text
+Prompt: Apply validation methods 1-3 (referential distance, frame consistency, surface form)
+Output: Flagged inconsistencies with explanations
+```
+
+**Phase 3: Refinement**
+```
+Input: Flagged inconsistencies + validation feedback
+Prompt: Re-evaluate flagged annotations with additional context
+Output: Refined annotations with updated reasoning
+```
+
+**Phase 4: Gold Standard Comparison** (when available)
+```
+Input: LLM annotations + TBTA gold standard
+Prompt: Identify mismatches and learn from differences
+Output: Accuracy metrics + pattern learning
+```
+
+### Prompt Engineering Best Practices
+
+**1. Provide Linguistic Context**
+Always include the theoretical framework in the prompt:
+```
+Apply Givón's referential distance metric: count clauses since last
+mention. Apply Ariel's accessibility hierarchy: high accessibility
+markers (pronouns) for established referents, low accessibility
+markers (full NPs) for new/reactivated referents.
+```
+
+**2. Request Explicit Reasoning**
+Don't just ask for labels; ask for reasoning:
+```
+For each tracking state you assign, explain:
+- What linguistic evidence supports this decision?
+- Which theoretical principle applies?
+- What alternative states did you consider and why did you reject them?
+```
+
+**3. Use Chain-of-Thought Prompting**
+Break complex decisions into steps:
+```
+Step 1: Identify all nominal constituents
+Step 2: Build coreference chains
+Step 3: Calculate referential distances
+Step 4: Identify active frames
+Step 5: Assign tracking states
+Step 6: Validate assignments
+```
+
+**4. Leverage Cross-Linguistic Knowledge**
+Include cross-linguistic patterns:
+```
+Consider: In Biblical Hebrew (a pro-drop language), routine participants
+may be zero-marked. In English, they require explicit pronouns. What
+does the surface form in the source text tell you about tracking status?
+```
+
+**5. Enable Error Detection**
+Ask the LLM to flag uncertainty:
+```
+For any annotation you're uncertain about, mark it with [UNCERTAIN]
+and explain what additional information would help you decide. Common
+uncertainties: generic vs. specific, frame inferable vs. first mention,
+routine vs. restaging with moderate referential distance.
+```
+
+### Example: Complete Annotation Workflow
+
+**Text: John 4:7 (partial)**
+> "A woman of Samaria came to draw water"
+
+**Prompt 1: Initial Analysis**
+```
+Analyze participant tracking for John 4:7: "A woman of Samaria came to draw water"
+
+Context: This verse is the first mention of the woman in John 4. Jesus is
+already at the well (mentioned in 4:6).
+
+For each nominal constituent:
+1. Identify the constituent and its form
+2. Apply the reasoning framework
+3. Assign tracking state with explanation
+```
+
+**Expected LLM Response:**
+```
+Constituent 1: "woman"
+- Form: Indefinite NP with possessive modifier ("a woman of Samaria")
+- First occurrence: YES (not mentioned before in John 4)
+- Generic or specific: SPECIFIC (particular individual in narrative)
+- Frame inferable: NO (not inferable from prior context)
+- Tracking state: FIRST MENTION
+- Reasoning: Indefinite article + first occurrence + narrative introduction
+  pattern. This is a new participant being introduced into the discourse.
+
+Constituent 2: "Samaria"
+- Form: Proper noun (geographic term) in possessive/origin construction
+- This is not a participant but a geographic modifier
+- Could be OFFSTAGE (provides background context but not an agent)
+- or excluded from participant tracking (place name, not tracked entity)
+
+Constituent 3: "water"
+- Form: Bare noun (no article)
+- First occurrence: YES (not mentioned in this immediate context)
+- Generic or specific: GENERIC (non-specific water, not a particular quantity)
+- Tracking state: GENERIC
+- Reasoning: Mass noun with no determiner, refers to water as a substance
+  rather than a specific quantity being tracked through discourse.
+```
+
+**Prompt 2: Validation Check**
+```
+Review your annotations for John 4:7. Check:
+1. Does "woman" use indefinite article → consistent with FIRST MENTION? YES
+2. Is "water" really generic or is it specific to the well context?
+3. Should "water" be FRAME INFERABLE since the well was established in 4:6?
+
+Reconsider "water" in light of the well frame.
+```
+
+**Expected LLM Refinement:**
+```
+Reconsideration for "water":
+- Context review: John 4:6 establishes "Jacob's well"
+- Frame activated: WELL FRAME (includes water, bucket, rope, drawing mechanism)
+- Definite reading: The woman came to draw [the] water [from the well]
+- Even though surface form is bare noun, semantic context makes the water
+  specific to this well
+- Revised tracking state: FRAME INFERABLE
+- Reasoning: Water is a canonical participant in the well frame. Though not
+  previously mentioned, it is understood to be present given that Jesus
+  is sitting at the well. The act of "draw water" presupposes water's presence.
+```
+
+### Accuracy Claims and Testing
+
+Based on experiment-001.md testing on Matthew 24:46-47:
+- **Agreement rate**: 100% across three complementary reasoning methods
+- **High confidence predictions**: 83% (5/6 entities)
+- **Frame inferable detection**: Successfully identified possessive constructions
+
+The LLM-based approach achieved the same results as algorithmic methods would
+predict, but with explicit linguistic reasoning and flexibility to handle
+edge cases through natural language understanding rather than brittle rules.
+
+### Advantages of LLM Prompting vs. Algorithmic Approach
+
+**Flexibility**: LLM can handle ambiguous cases that fall between categories
+**Reasoning transparency**: Every decision is explained with linguistic evidence
+**Cross-linguistic transfer**: LLM applies theoretical knowledge to new languages
+**Error explanation**: When wrong, LLM can articulate why it chose incorrectly
+**Iterative refinement**: Multi-pass prompting improves accuracy without code changes
+
+### Key Linguistic Concepts for LLM Prompts
+
+Always include these in prompts to ground LLM reasoning:
+
+- **Givón's Referential Distance**: Clauses since last mention
+- **Ariel's Accessibility Hierarchy**: Linguistic material inversely correlates with accessibility
+- **Gundel's Givenness Hierarchy**: Six cognitive statuses (in focus → type identifiable)
+- **Frame Semantics (Fillmore)**: Scenes evoke expected participants
+- **Grounding Theory (Hopper)**: Foreground vs. background participants
 
 ---
 

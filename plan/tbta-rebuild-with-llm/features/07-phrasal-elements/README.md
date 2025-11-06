@@ -1,6 +1,6 @@
 # Phrasal Elements (TBTA Category 7)
 
-Multi-word expressions encoded as single semantic units for accurate translation of idioms, fixed phrases, and compound expressions.
+Predict multi-word expressions that function as single semantic units—idioms, fixed phrases, and compound expressions that cannot be translated word-by-word.
 
 **Target Audience:** Bible translators working with languages that handle idioms and compound expressions differently from source languages.
 
@@ -8,149 +8,321 @@ Multi-word expressions encoded as single semantic units for accurate translation
 
 ---
 
-## Purpose
+## What Are Phrasal Elements?
 
-### What Are Phrasal Elements?
+Phrasal elements are sequences of words where the meaning is **non-compositional**—the whole means more than the sum of its parts. These include:
 
-Phrasal elements identify sequences of words that must be treated as single semantic units rather than individual words. These include:
+- **Idioms**: "I am who I am" (Exodus 3:14) - philosophical statement beyond literal words
+- **Fixed phrases**: "son of man" - theological/messianic title, not generic "human offspring"
+- **Compound expressions**: "give thanks" - treated as unit in Greek, may be single word in target
+- **Cultural expressions**: "stiff-necked people" - metaphor for stubbornness requiring special translation
 
-- **Idioms**: "I am who I am" (Exodus 3:14) - philosophical statement of divine identity
-- **Fixed phrases**: "son of man" - theological/messianic title
-- **Compound expressions**: Multi-word terms that lose meaning when separated
-- **Cultural expressions**: Context-specific phrases requiring unified translation
-
-### Why It Matters
-
-**Translation Impact:**
-- **Preserves idiomatic meaning**: Word-by-word translation often produces nonsense or theological error
-- **Identifies cultural units**: Some expressions are culturally bound and need special handling
-- **Prevents mistranslation**: Recognizing fixed phrases prevents breaking apart theological terms
-- **Guides target language choices**: Helps translators choose equivalent idioms or explanatory phrases
-
-**Error Types Prevented:**
-- Breaking apart divine names/titles
-- Translating idioms literally (producing nonsense)
-- Missing theological significance of fixed expressions
-- Creating grammatically correct but semantically wrong translations
-
-### Which Language Families Need This?
-
-**High Priority:**
-1. **East Asian languages** (Chinese, Japanese, Korean) - Different idiom structures
-2. **Austronesian languages** (Indonesian, Tagalog) - Different compounding patterns
-3. **African languages** (Swahili, Yoruba) - Cultural-specific idioms
-4. **Native American languages** - Different metaphorical systems
-
-**Why:** These languages have:
-- Different metaphorical systems (what's idiomatic in Greek/Hebrew isn't in target)
-- Different compounding rules (some use single words for multi-word concepts)
-- Cultural gaps (expressions requiring explanation vs. direct translation)
-
-### When NOT to Use This Feature
-
-- **Ordinary noun phrases**: "the big house" is not phrasal (compositional meaning)
-- **Regular verb phrases**: "he walked quickly" is not phrasal (predictable construction)
-- **Arbitrary word sequences**: Random adjacent words with independent meanings
-- **Phrases with clear compositional meaning**: Where each word contributes predictably to the whole
+**Key characteristic**: Breaking apart phrasal elements destroys meaning or creates theological errors.
 
 ---
 
-## Methodology
+## Why They Matter for Translation
 
-### Phase 1: Data Extraction
+**Translation Impact:**
+- **Prevents nonsense**: Literal "stiff-necked" is meaningless in most languages
+- **Preserves theology**: "Son of Man" as messianic title vs. generic human being
+- **Guides target choices**: Use equivalent idiom, functional description, or explanatory phrase
+- **Identifies cultural gaps**: Source culture metaphors may need replacement in target culture
 
-**Location in TBTA Data:**
+**High Priority Languages:**
+- **East Asian** (Chinese, Japanese, Korean) - different metaphorical systems
+- **Austronesian** (Indonesian, Tagalog) - different compounding patterns
+- **African** (Swahili, Yoruba) - different body-part metaphors ("hard heart" vs. "stiff neck")
+- **Native American** - different cultural idiom structures
 
-Phrasal elements appear in TBTA YAML with constituent marker `p` in the first position:
+---
 
-```python
-def extract_phrasal_elements(verse_yaml):
-    """
-    Extract phrasal elements from TBTA YAML structure.
+## Prediction Methodology
 
-    Phrasal elements are marked with Part="p-..." structure:
-    - Position 0: 'p' (phrasal category marker)
-    - Position 1: '-' (separator)
-    - Position 2: Semantic complexity level (e.g., '1')
-    - Position 3: Lexical sense identifier (e.g., 'A')
-    - Positions 4-9: Spare positions for future features
-    """
-    phrasal_elements = []
+### Step 1: Identify Candidates from Source Text
 
-    def traverse(node, context=None):
-        if isinstance(node, dict):
-            # Check for phrasal marker
-            part = node.get('Part', '')
-            if part.startswith('p-'):
-                phrasal_elements.append({
-                    'semantic_code': part,
-                    'text': node.get('Lu', ''),  # Language-universal text
-                    'context': context,
-                    'complexity': part[2] if len(part) > 2 else None,
-                    'sense': part[3] if len(part) > 3 else None
-                })
+**Indicators of phrasal elements in Greek/Hebrew:**
 
-            # Recursively process children
-            if 'children' in node:
-                for child in node['children']:
-                    traverse(child, context={**context, 'parent': part})
+1. **Fixed collocations** - words that frequently appear together
+   - Greek: εὐχαριστέω (give thanks), μετανοέω (change mind/repent)
+   - Hebrew: בַּר־אֱנָשׁ (son of man), קְשֵׁה־עֹרֶף (stiff-necked)
 
-        elif isinstance(node, list):
-            for item in node:
-                traverse(item, context)
+2. **Divine names and titles** - theologically significant fixed expressions
+   - אֶהְיֶה אֲשֶׁר אֶהְיֶה (I am who I am)
+   - υἱὸς τοῦ ἀνθρώπου (Son of Man)
+   - ἀμνὸς τοῦ θεοῦ (Lamb of God)
 
-    traverse(verse_yaml, context={'verse': verse_yaml.get('verse', 'unknown')})
-    return phrasal_elements
+3. **Body-part metaphors** - culturally-specific idioms
+   - Hebrew: "hardness of heart", "uncircumcised ears"
+   - Greek: "bowels of mercy" (compassion)
+
+4. **Formulaic expressions** - greetings, blessings, technical terms
+   - χάρις ὑμῖν καὶ εἰρήνη (grace and peace to you)
+   - βασιλεία τῶν οὐρανῶν (kingdom of heaven)
+
+**LLM Prompt for Step 1:**
+```
+Analyze the Greek/Hebrew text for [VERSE]. Identify any:
+1. Fixed collocations (words that regularly appear together)
+2. Divine names, titles, or theological terms
+3. Body-part metaphors or cultural idioms
+4. Formulaic expressions or technical terms
+
+For each candidate, explain why it might be non-compositional.
 ```
 
-**Context Required:** Verse-level (phrasal elements are identified within single verses)
+### Step 2: Validate with Translation Patterns
 
-**Data Characteristics:**
-- **Explicit encoding**: Phrasal elements are directly marked in TBTA data (not predicted)
-- **Sparse feature**: Not every verse contains phrasal elements
-- **Fixed structure**: `p-[complexity][sense][spares...]` where complexity/sense are currently hardcoded as `1A`
+**Translation analysis reveals idiomatic status:**
 
-### Phase 2: Analysis (Not Prediction)
+1. **Check for unit translation** across languages
+   - If 80%+ of translations treat phrase as unit → likely phrasal element
+   - If translations vary widely → may be compositional
 
-Phrasal elements are **explicit** in TBTA data, not predicted. However, analysis can identify patterns:
+2. **Look for functional equivalents** in target languages
+   - English "son of man" → Spanish "hijo del hombre" (literal)
+   - English "hardness of heart" → Spanish "terquedad" (functional: stubbornness)
+   - Presence of functional equivalents suggests non-compositional meaning
 
-**Pattern Recognition:**
+3. **Identify cultures without equivalent metaphor**
+   - Languages that translate "stiff-necked" as "stubborn" → confirms idiom status
+   - Languages that keep literal "stiff neck" → may miss idiomatic meaning
 
-1. **Theological Fixed Phrases** (95%+ reliability)
-   - Divine names: "I AM", "Son of Man", "Son of God"
-   - Messianic titles: "Lamb of God", "King of Kings"
-   - Doctrinal expressions: "born again", "eternal life"
+**LLM Prompt for Step 2:**
+```
+Compare translations of [PHRASE] across English, Spanish, French, German, Chinese, Arabic:
 
-2. **Cultural Idioms** (90%+ reliability)
-   - Hebrew idioms: "hardness of heart", "stiff-necked"
-   - Greek idioms: "bowels of mercy", "gird up loins"
-   - Cultural metaphors: "whitewashed tombs"
+1. Do translators treat this as a unit or translate word-by-word?
+2. Do some languages use different metaphors (functional equivalents)?
+3. What does translation variation tell us about idiomatic status?
 
-3. **Compound Constructions** (85%+ reliability)
-   - Noun compounds: "high priest", "new covenant"
-   - Verb compounds: "give thanks", "bear witness"
-   - Prepositional compounds: "by means of", "on behalf of"
+Conclusion: Is this a phrasal element? Why or why not?
+```
 
-**Key Correlations:**
-- **Discourse genre**: Prophetic/poetic genres have more idiomatic expressions
-- **Speaker identity**: Divine speaker → more theological fixed phrases
-- **Book-specific patterns**: Exodus/Revelation have more symbolic/idiomatic language
+### Step 3: LLM Prediction with Context
 
-### Phase 3: Validation
+**Final prediction using discourse context:**
 
-**Extraction Accuracy:** 100% (explicit field, direct extraction)
+1. **Genre considerations**
+   - Prophetic/poetic texts → more idioms and metaphors
+   - Narrative texts → fewer but important theological titles
+   - Epistles → technical theological terms
 
-**Critical Validation Rules:**
-- [ ] All phrasal elements have valid `p-` prefix
-- [ ] Text field (`Lu`) contains the multi-word expression
-- [ ] Semantic code follows `p-[complexity][sense][spares...]` format
-- [ ] Expression is genuinely non-compositional (meaning > sum of parts)
+2. **Speaker identity**
+   - Divine speaker → more fixed divine names/attributes
+   - Jesus → more kingdom/messianic terminology
+   - Prophets → more cultural metaphors
 
-**Quality Checks:**
-- Verify phrase boundaries (no truncated expressions)
-- Confirm theological/cultural significance
-- Check against standard Bible lexicons for recognized idioms
-- Validate cross-translation consistency (same phrase = same marking)
+3. **Theological significance**
+   - Does phrase carry theological weight beyond literal words?
+   - Is misunderstanding this phrase in early church dialogues (e.g., Nicodemus's confusion)?
+
+**LLM Prompt for Step 3:**
+```
+For [VERSE], considering:
+- Genre: [prophetic/narrative/epistle/etc.]
+- Speaker: [God/Jesus/prophet/apostle/etc.]
+- Context: [theological/cultural significance]
+
+Is "[PHRASE]" a phrasal element that should be translated as a unit?
+
+Answer with:
+1. YES/NO/UNCERTAIN
+2. Type: [idiom/title/compound/formula]
+3. Reason: Why this phrase is/isn't non-compositional
+4. Translation challenge: What happens if translated literally?
+```
+
+---
+
+## Examples with Prediction Reasoning
+
+### Example 1: "I am who I am" (Exodus 3:14)
+
+**Source text:** אֶהְיֶה אֲשֶׁר אֶהְיֶה (Hebrew)
+
+**Prediction reasoning:**
+1. **Fixed collocation**: Unique philosophical construction not used elsewhere
+2. **Divine name**: God's self-revelation—highest theological significance
+3. **Translation patterns**: Most languages struggle with tautology, use explanatory phrases
+4. **Non-compositional**: Literal "I will be that I will be" misses philosophical depth
+
+**Prediction:** ✅ **Phrasal element** (divine identity statement)
+
+**Expected output:**
+```yaml
+verse: EXO.003.014
+phrasal_elements:
+  - text: "I am who I am"
+    type: "divine_name"
+    function: "theological_statement"
+    compositionality: "non-compositional"
+    reason: "Philosophical statement of God's self-existence and eternality"
+    translation_challenge: "Tautological structure difficult in many languages; requires theological interpretation"
+```
+
+### Example 2: "son of man" (Daniel 7:13, throughout Gospels)
+
+**Source text:** בַּר־אֱנָשׁ (Aramaic), υἱὸς τοῦ ἀνθρώπου (Greek)
+
+**Prediction reasoning:**
+1. **Context-dependent**: Generic in some contexts ("human being"), messianic title in others
+2. **Fixed collocation**: Appears 100+ times in consistent form
+3. **Translation patterns**: Languages keep literal form even when odd (signals importance)
+4. **Theological weight**: Jesus's preferred self-designation—theologically loaded
+
+**Prediction:** ✅ **Phrasal element** (messianic title in Gospel contexts)
+
+**Expected output:**
+```yaml
+verse: MAT.016.013
+phrasal_elements:
+  - text: "son of man"
+    type: "messianic_title"
+    function: "self_designation"
+    compositionality: "context-dependent"
+    reason: "Can be generic or messianic; Gospel usage is theologically significant title"
+    translation_challenge: "Ambiguity between generic and messianic must be clear; gender implications vary by language"
+```
+
+### Example 3: "stiff-necked people" (Exodus 32:9)
+
+**Source text:** עַם־קְשֵׁה־עֹרֶף (Hebrew, literally "people hard of neck")
+
+**Prediction reasoning:**
+1. **Body-part metaphor**: Physical neck → metaphorical stubbornness
+2. **Translation patterns**: Most languages use functional equivalent ("stubborn", "rebellious")
+3. **Cultural idiom**: Metaphor works in ancient Near East context, not universal
+4. **Non-compositional**: Literal "hard neck" is meaningless/humorous in many languages
+
+**Prediction:** ✅ **Phrasal element** (cultural idiom)
+
+**Expected output:**
+```yaml
+verse: EXO.032.009
+phrasal_elements:
+  - text: "stiff-necked people"
+    type: "cultural_idiom"
+    function: "metaphor"
+    compositionality: "non-compositional"
+    reason: "Body-part metaphor for stubbornness; literal translation produces nonsense"
+    translation_challenge: "Target cultures may use different body parts (hard heart, closed ears); need functional equivalent"
+```
+
+### Example 4: "born again" / "born from above" (John 3:3)
+
+**Source text:** γεννηθῇ ἄνωθεν (Greek - deliberately ambiguous)
+
+**Prediction reasoning:**
+1. **Intentional wordplay**: ἄνωθεν means both "again" (temporal) and "from above" (spatial)
+2. **Nicodemus's confusion**: John 3:4 shows he takes literal meaning—confirms non-compositional intent
+3. **Translation patterns**: Languages force choice between meanings (losing wordplay)
+4. **Theological depth**: Spiritual rebirth, not physical—meaning beyond literal words
+
+**Prediction:** ✅ **Phrasal element** (theological expression with wordplay)
+
+**Expected output:**
+```yaml
+verse: JHN.003.003
+phrasal_elements:
+  - text: "born again"
+    type: "theological_expression"
+    function: "wordplay"
+    compositionality: "non-compositional"
+    reason: "Greek ἄνωθεν has double meaning (again/from above); spiritual rebirth concept requires unified treatment"
+    translation_challenge: "Target language may lose wordplay; consider footnote for alternate meaning"
+```
+
+### Example 5: "the big house" (Hypothetical - NOT phrasal)
+
+**Source text:** ὁ μέγας οἶκος (Greek)
+
+**Prediction reasoning:**
+1. **Compositional**: "big" + "house" = big house (predictable meaning)
+2. **Translation patterns**: All languages translate word-by-word without issue
+3. **No idiom**: No cultural or theological special meaning
+4. **No fixed collocation**: Words not specially bound together
+
+**Prediction:** ❌ **NOT a phrasal element** (ordinary noun phrase)
+
+This example shows what to reject—compositional phrases where meaning is predictable from parts.
+
+---
+
+## Validation Against TBTA Data
+
+**After prediction, validate against TBTA structure:**
+
+### TBTA Encoding of Phrasal Elements
+
+TBTA marks phrasal elements with `Part="p-..."` in YAML structure:
+- Position 0: `p` (phrasal category marker)
+- Position 1: `-` (separator)
+- Positions 2+: Semantic codes (currently `1A` for all)
+
+### Validation Process
+
+1. **Check predictions against TBTA**
+   - True Positives: Predicted phrasal, marked in TBTA ✅
+   - False Positives: Predicted phrasal, NOT in TBTA ⚠️ (may be unmarked idiom)
+   - False Negatives: Not predicted, but marked in TBTA ❌ (missed idiom)
+   - True Negatives: Not predicted, not in TBTA ✅
+
+2. **Accuracy metrics**
+   - Precision: Of predicted phrasal elements, how many are correct?
+   - Recall: Of actual phrasal elements (in TBTA), how many did we find?
+   - F1 Score: Balance of precision and recall
+
+3. **Learning from mismatches**
+   - False Positives → refine prediction criteria (too broad?)
+   - False Negatives → add overlooked indicators (too narrow?)
+
+**Goal:** 85%+ F1 score on initial predictions, improving with iteration.
+
+---
+
+## Common Prediction Errors
+
+### Error Type 1: Over-prediction (False Positives)
+
+**Mistake:** Marking ordinary phrases as idiomatic
+
+❌ Wrong: "the good shepherd" → phrasal element
+✅ Right: Descriptive phrase, compositional (good + shepherd)
+
+**Why it happens:** Theological significance ≠ non-compositional
+**How to avoid:** Ask "Does literal word-by-word translation lose meaning?"
+
+### Error Type 2: Under-prediction (False Negatives)
+
+**Mistake:** Missing culturally-bound idioms
+
+❌ Wrong: "uncircumcised ears" → not phrasal
+✅ Right: Hebrew idiom for "stubborn to listen" (non-compositional)
+
+**Why it happens:** Unfamiliarity with source culture metaphors
+**How to avoid:** Study Hebrew/Greek idiom lexicons; check translation patterns
+
+### Error Type 3: Context-insensitive
+
+**Mistake:** Same phrase marked differently in different contexts
+
+Example: "son of man"
+- Generic context: "mere mortal" → NOT phrasal (compositional)
+- Messianic context: "Son of Man" → phrasal (theological title)
+
+**Why it happens:** Ignoring discourse context
+**How to avoid:** Apply Step 3 prompts—genre, speaker, theological weight
+
+### Error Type 4: Confusing theological importance with non-compositionality
+
+**Mistake:** Marking theologically significant compositional phrases
+
+❌ Wrong: "eternal life" → always phrasal
+✅ Right: Usually compositional (eternal + life), unless culturally-loaded fixed term
+
+**Why it happens:** Importance ≠ idiomatic
+**How to avoid:** Focus on compositionality test: "Does word-by-word work?"
 
 ---
 
@@ -159,7 +331,7 @@ Phrasal elements are **explicit** in TBTA data, not predicted. However, analysis
 ### Filename Format
 
 ```
-{DATA_DIR}/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-phrasal-elements.yaml
+{DATA_DIR}/commentary/{BOOK}/{chapter:03d}/{BOOK}-{chapter:03d}-{verse:03d}-phrasal-elements.yaml
 ```
 
 Example: `./data/commentary/EXO/003/014/EXO-003-014-phrasal-elements.yaml`
@@ -170,273 +342,52 @@ Example: `./data/commentary/EXO/003/014/EXO-003-014-phrasal-elements.yaml`
 verse: BOOK.chapter.verse
 phrasal_elements:
   - text: "I am who I am"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "divine_identity"  # Optional: theological/cultural/compound
-    function: "name"  # Optional: title/metaphor/idiom/name
-    notes: "Hebrew: אֶהְיֶה אֲשֶׁר אֶהְיֶה - divine self-designation"
-  - text: "son of man"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "messianic_title"
-    function: "title"
-    notes: "Can mean 'human being' or messianic title depending on context"
+    type: "divine_name"  # divine_name|messianic_title|cultural_idiom|compound_construction
+    function: "theological_statement"  # title|metaphor|idiom|formula|statement
+    compositionality: "non-compositional"  # non-compositional|partially-compositional|context-dependent
+    reason: "Philosophical statement of God's self-existence"
+    translation_challenge: "Tautological structure difficult; may require explanatory phrase"
+    source_language: "אֶהְיֶה אֲשֶׁר אֶהְיֶה"
+    citations: "{llm-cs45}"
 metadata:
-  source: "tbta"
-  version: "1.0.0"
-  extraction_method: "explicit"
-  confidence: 1.0
+  prediction_method: "llm_analysis"
+  confidence: 0.95  # 0.0-1.0
+  validation_status: "confirmed"  # confirmed|pending|uncertain
 ```
 
 ### Field Descriptions
 
-- **text**: The multi-word expression as it appears in the verse
-- **semantic_code**: TBTA semantic string (format: `p-[complexity][sense][spares...]`)
-- **complexity**: Semantic complexity level (currently hardcoded as `1`)
-- **sense**: Lexical sense identifier (currently hardcoded as `A`)
-- **type**: Optional classification (divine_identity, messianic_title, cultural_idiom, compound_construction)
-- **function**: Optional functional role (name, title, metaphor, idiom)
-- **notes**: Explanatory context (source language, theological significance, translation challenges)
-
-### Examples
-
-#### Example 1: Divine Identity Statement (Exodus 3:14)
-
-```yaml
-verse: EXO.003.014
-phrasal_elements:
-  - text: "I am who I am"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "divine_identity"
-    function: "name"
-    notes: "Hebrew: אֶהְיֶה אֲשֶׁר אֶהְיֶה. Philosophical statement of God's self-existence. Must be translated as unified concept, not word-by-word."
-    translation_challenges:
-      - "Some languages lack copula ('to be' verb)"
-      - "Tautological structure difficult in languages requiring distinct predicates"
-      - "May require explanatory phrase: 'I exist as I exist' or 'I am the eternal one'"
-metadata:
-  source: "tbta"
-  version: "1.0.0"
-  extraction_method: "explicit"
-  confidence: 1.0
-```
-
-#### Example 2: Messianic Title (Daniel 7:13)
-
-```yaml
-verse: DAN.007.013
-phrasal_elements:
-  - text: "son of man"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "messianic_title"
-    function: "title"
-    notes: "Hebrew: בַּר־אֱנָשׁ. Can be generic 'human being' or specific messianic title. Context determines interpretation."
-    translation_challenges:
-      - "Ambiguity: generic vs. messianic must be clear in target"
-      - "Languages with classifiers may need 'son' as kinship vs. metaphorical"
-      - "Gender-specific: some languages require gender-neutral alternative"
-metadata:
-  source: "tbta"
-  version: "1.0.0"
-  extraction_method: "explicit"
-  confidence: 1.0
-```
-
-#### Example 3: Cultural Idiom (Exodus 32:9)
-
-```yaml
-verse: EXO.032.009
-phrasal_elements:
-  - text: "stiff-necked people"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "cultural_idiom"
-    function: "metaphor"
-    notes: "Hebrew idiom for stubbornness/rebellion. Literal translation meaningless in many languages."
-    translation_challenges:
-      - "Metaphor may not transfer: 'stiff neck' = stubbornness not universal"
-      - "Some languages use different body part metaphors (hard heart, closed ears)"
-      - "May require functional equivalent: 'rebellious people' or cultural idiom"
-metadata:
-  source: "tbta"
-  version: "1.0.0"
-  extraction_method: "explicit"
-  confidence: 1.0
-```
-
-#### Example 4: Compound Construction (Matthew 26:26)
-
-```yaml
-verse: MAT.026.026
-phrasal_elements:
-  - text: "give thanks"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "compound_construction"
-    function: "idiom"
-    notes: "Greek: εὐχαριστέω - compound verb 'to give thanks'. May be single word in target language."
-    translation_challenges:
-      - "Greek compound → may be single verb in target (e.g., 'thank')"
-      - "Or may require descriptive phrase: 'express gratitude'"
-      - "Register considerations: formal vs. informal gratitude expressions"
-metadata:
-  source: "tbta"
-  version: "1.0.0"
-  extraction_method: "explicit"
-  confidence: 1.0
-```
-
-#### Example 5: Ambiguous Case (John 3:3)
-
-```yaml
-verse: JHN.003.003
-phrasal_elements:
-  - text: "born again"
-    semantic_code: "p-1A....."
-    complexity: "1"
-    sense: "A"
-    type: "theological_expression"
-    function: "idiom"
-    notes: "Greek: γεννηθῇ ἄνωθεν - can mean 'born again' or 'born from above'. Translation determines interpretation."
-    translation_challenges:
-      - "Double meaning: 'again' (temporal) vs. 'from above' (spatial/divine)"
-      - "Nicodemus's confusion (John 3:4) hinges on ambiguity"
-      - "Target language may force choice, losing wordplay"
-      - "Possible strategies: use ambiguous term if available, or footnote alternate meaning"
-metadata:
-  source: "tbta"
-  version: "1.0.0"
-  extraction_method: "explicit"
-  confidence: 1.0
-```
-
----
-
-## Related Features
-
-### Integration with Other TBTA Categories
-
-**Correlates with:**
-- **Category 1 (Nouns)**: Phrasal elements often contain compound nouns ("son of man", "high priest")
-- **Category 2 (Verbs)**: Some phrasal elements are verb compounds ("give thanks", "bear witness")
-- **Category 105 (Clauses)**: Phrasal elements can span clause boundaries in rare cases
-- **Lexical Sense fields**: Complexity/sense values may correlate with word-level semantic encoding
-
-**Conflicts/Consistency Checks:**
-- Ensure phrasal element boundaries align with phrase/clause boundaries
-- Verify that words within phrasal elements don't have conflicting individual semantic annotations
-- Check that phrasal elements marked in TBTA aren't redundantly annotated as separate words
-
-### Integration with Macula Data
-
-**Complementary Information:**
-- **Macula provides**: Morphological analysis of individual words within phrases
-- **TBTA provides**: Pragmatic/semantic identification of non-compositional units
-- **Combined value**: Translators see both word-level grammar AND phrase-level meaning
-
-**Example (Exodus 3:14 "I am who I am"):**
-- Macula: Three separate verb forms (אֶהְיֶה - אֲשֶׁר - אֶהְיֶה), morphological parsing
-- TBTA: Single phrasal element (p-1A.....), semantic unity marker
-- Translation: Needs both - morphology shows grammatical construction, phrasal marking shows idiomatic meaning
-
-### Translation Workflow Integration
-
-**When to Consult This Feature:**
-1. **Pre-translation phase**: Identify idioms/fixed phrases requiring special handling
-2. **Drafting phase**: Check if word sequence is phrasal before translating word-by-word
-3. **Review phase**: Verify phrasal elements preserved as semantic units
-4. **Consultant check**: Flag phrasal elements for accuracy verification
-
-**How to Present to Translators:**
-- **Warning markers**: Highlight phrasal elements in draft text (don't translate literally!)
-- **Suggested equivalents**: Provide target language idioms where available
-- **Cultural notes**: Explain source culture context and significance
-- **Alternative strategies**: List options (idiom, functional equivalent, explanatory phrase)
-
-**Practical Example:**
-```
-Source text: "stiff-necked people" (EXO 32:9)
-Phrasal marker: ⚠️ IDIOM - Do not translate literally
-Meaning: Stubborn, rebellious, resistant to instruction
-Target options:
-  1. Use cultural equivalent idiom (if available)
-  2. Use functional description: "rebellious people", "stubborn people"
-  3. Use explanatory phrase: "people who refuse to listen"
-Avoid: Literal "people with rigid necks" (meaningless or humorous in many languages)
-```
-
----
-
-## Implementation Notes
-
-### Current Limitations
-
-1. **Sparse annotations**: Not all idiomatic expressions are marked (TBTA is incomplete)
-2. **Hardcoded values**: Complexity and sense currently locked at `1A` (not semantically differentiated)
-3. **No subcategories**: All phrasal elements treated uniformly (no distinction between idioms, compounds, titles)
-4. **Boundary ambiguity**: Some phrasal elements may have fuzzy boundaries
-5. **Context-dependent**: Same phrase may be phrasal in one context, compositional in another
-
-### Future Enhancements
-
-1. **Semantic differentiation**: Expand complexity/sense fields to distinguish:
-   - Theological terms (divine names, messianic titles)
-   - Cultural idioms (metaphorical expressions)
-   - Compound constructions (fixed collocations)
-   - Grammatical idioms (fixed syntactic patterns)
-
-2. **Prediction models**: Develop ML models to identify unmarked phrasal elements:
-   - Train on known idioms from Bible lexicons
-   - Use discourse context to identify fixed expressions
-   - Cross-reference translation equivalents across languages
-
-3. **Translation database**: Build phrasal element database with:
-   - Source language text
-   - Literal meaning
-   - Idiomatic meaning
-   - Target language equivalents by language family
-   - Translation strategies by context
-
-4. **Quality metrics**: Establish accuracy measures:
-   - Precision: How many marked phrases are truly non-compositional?
-   - Recall: How many actual idioms are unmarked?
-   - Cross-translation consistency: Same phrase marked consistently?
-
-### Research Questions
-
-1. **Coverage**: What percentage of actual biblical idioms are marked in TBTA?
-2. **Accuracy**: Are all marked phrasal elements genuinely non-compositional?
-3. **Granularity**: Should sub-types be encoded (idiom vs. compound vs. title)?
-4. **Boundaries**: How to handle nested phrasal elements or overlapping structures?
-5. **Context**: When does context change a phrase from compositional to idiomatic?
+- **text**: The multi-word expression as it appears in English reference translation
+- **type**: Classification (divine_name, messianic_title, cultural_idiom, compound_construction)
+- **function**: Functional role (title, metaphor, idiom, formula, statement)
+- **compositionality**: How meaning relates to parts (non-compositional, partially-compositional, context-dependent)
+- **reason**: Explanation of why this is phrasal (for human reviewers)
+- **translation_challenge**: Specific issues translators face
+- **source_language**: Greek/Hebrew/Aramaic original text
+- **citations**: Source of prediction (LLM inference should cite {llm-cs45})
 
 ---
 
 ## Summary
 
-**Phrasal Elements (Category 7)** identify multi-word expressions that function as semantic units, critical for accurate translation of idioms, fixed phrases, and compound expressions.
+**Phrasal Elements (Category 7)** are multi-word expressions requiring unified translation because their meaning is non-compositional (whole > sum of parts).
 
-**Key Takeaways:**
-- ✅ Explicit in TBTA data (direct extraction, 100% accuracy)
-- ✅ Essential for 50+ language families with different idiom systems
-- ✅ Prevents translation errors (breaking apart fixed expressions)
-- ⚠️ Currently limited: Hardcoded complexity/sense, sparse annotations
-- 🔮 Future work: Expand subcategories, build translation database, develop prediction models
+**Prediction Strategy:**
+1. ✅ Identify candidates from source text (fixed collocations, divine names, metaphors)
+2. ✅ Validate with translation patterns (unit treatment, functional equivalents)
+3. ✅ LLM prediction with context (genre, speaker, theological significance)
+4. ✅ Validate against TBTA structure after prediction
+
+**Key Principles:**
+- Non-compositionality is the core test
+- Context matters (same phrase may/may not be phrasal in different verses)
+- Translation patterns reveal idiomatic status
+- TBTA is validation source, NOT input for prediction
 
 **Translator Impact:**
-Phrasal element marking saves translators from common errors like literal translation of idioms, helping preserve theological significance and cultural meaning in target languages.
+Accurate phrasal element prediction prevents translation disasters (literal idioms producing nonsense or theological error), helping preserve meaning across languages.
 
-**Next Steps:**
-1. Extract all phrasal elements from TBTA data
-2. Categorize by type (theological, cultural, compound)
-3. Build translation equivalent database by language family
-4. Develop prediction model for unmarked phrasal elements
-5. Create translator reference guide with examples and strategies
+**Expected Accuracy:**
+- Initial predictions: 85%+ F1 score
+- With iterative refinement: 90%+ F1 score
+- Some uncertainty is acceptable—reviewers can adjudicate borderline cases
