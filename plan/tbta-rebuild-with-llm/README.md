@@ -248,9 +248,9 @@ Complementary workflow validates predictions against real translations:
 **Documentation**: Individual language files required, family summaries insufficient
 **Validation**: Test each feature across all genres before claiming accuracy
 
-See [plan/tbta-project/LESSONS-LEARNED.md](/home/user/mybibletoolbox-code/plan/tbta-project/LESSONS-LEARNED.md) for detailed analysis of what went wrong and corrective actions.
+See [LEARNINGS.md](LEARNINGS.md) for detailed methodology insights and what was learned.
 
-See [plan/tbta-project/CORRECTED-PLAN.md](/home/user/mybibletoolbox-code/plan/tbta-project/CORRECTED-PLAN.md) for proper 8-12 week execution plan.
+See [PLAN.md](PLAN.md) for 8-12 week execution plan.
 
 ## File Structure
 
