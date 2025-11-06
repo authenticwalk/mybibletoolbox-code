@@ -231,4 +231,4 @@ Translation Guidance:
 ---
 
 **Documentation**: November 2025 | **TBTA Version**: Current | **Status**: Primary Reference
-For detailed analysis see: `/plan/tbta-project-local/features/105-clauses/analysis.md`
+For detailed analysis see: `../analysis.md` (to be created)

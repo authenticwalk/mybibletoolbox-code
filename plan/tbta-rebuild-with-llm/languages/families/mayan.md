@@ -380,7 +380,7 @@ Mayan languages have productive systems for creating new verbs through affixatio
 This documentation is part of the TBTA (Textual Basis for Translation Assessment) project for documenting grammatical features of all languages with Bible translations. Mayan languages represent a crucial category for understanding ergative-absolutive languages in Bible translation contexts.
 
 ### Related Documentation
-- See `/plan/tbta-project-local/` for other language family documentation
+- See `../` for other language family documentation
 - See `STANDARDIZATION.md` for data file organization standards
 - See `SCHEMA.md` for commentary data format
 

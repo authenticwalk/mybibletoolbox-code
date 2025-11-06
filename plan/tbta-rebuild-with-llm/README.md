@@ -264,8 +264,7 @@ plan/tbta-rebuild-with-llm/
 ```
 
 **Source documentation**:
-- [plan/tbta-project/](/home/user/mybibletoolbox-code/plan/tbta-project/) - Original research with accuracy experiments
-- [plan/tbta-project-local/](/home/user/mybibletoolbox-code/plan/tbta-project-local/) - Validation with real translations
+- Multiple research branches consolidated into unified structure
 
 ## Conclusion
 

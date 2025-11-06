@@ -401,7 +401,7 @@ Similar Verses to Test:
 - Adelaar & Himmelmann (2013): Austronesian Languages
 
 ### Language-Specific Sources
-- Proximity systems README: [../proximity-systems/README.md](../proximity-systems/README.md)
+- Proximity language typology: [language-typology.md](language-typology.md)
 - Person systems examples: [../person-systems/BIBLE-EXAMPLES.md](../person-systems/BIBLE-EXAMPLES.md)
 
 ### TBTA Resources

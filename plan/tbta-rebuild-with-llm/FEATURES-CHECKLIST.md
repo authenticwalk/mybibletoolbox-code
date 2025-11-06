@@ -21,7 +21,7 @@ Legend:
 | Person System | ✅ | Experiment complete (`features/person-systems/`, 100% accuracy) |
 | Participant Tracking | ✅ | Experiment complete (`experiments/participant-tracking/`, 90% accuracy) |
 | Noun List Index | ✅ | Experiment complete (`experiments/noun-index/`) |
-| Proximity System | ✅ | Experiment complete (`features/proximity-systems/`, `experiments/proximity/`) |
+| Proximity System | ✅ | Experiment complete (`features/proximity/`) |
 | Polarity | ✅ | Experiment complete (`features/polarity/`) |
 | Surface Realization | ✅ | Experiment complete (`features/surface-realization/`) |
 | Participant Status | 🟨 | Documented in FEATURE-SUMMARY.md, no experiment yet |

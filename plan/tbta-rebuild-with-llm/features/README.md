@@ -43,7 +43,7 @@ Demonstrative proximity (near/far distinctions) varies dramatically: 2-way syste
 **Status:** Complete with typological analysis
 
 [Read detailed analysis →](proximity/)
-[Read language systems →](proximity-systems/)
+[Read language typology →](proximity/language-typology.md)
 
 ---
 
@@ -219,5 +219,5 @@ Each feature directory contains:
 ---
 
 **Last Updated:** 2025-11-06
-**Source Projects:** tbta-project, tbta-project-local
+**Consolidated from:** Multiple research branches
 **Consolidated For:** tbta-rebuild-with-llm
