@@ -1,0 +1,16 @@
+{
+  "total_verbs": 316,
+  "mood_distribution": {
+    "Indicative": 299,
+    "'should' Obligation": 1,
+    "'must' Obligation": 5,
+    "'should not' Obligation": 1,
+    "Forbidden Obligation": 2,
+    "'might' Potential": 8
+  },
+  "categories": {
+    "Indicative": 299,
+    "Obligation": 9,
+    "Potential": 8
+  }
+}
