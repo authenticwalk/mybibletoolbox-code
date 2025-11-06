@@ -8,6 +8,34 @@ This document describes how to PREDICT mood values for biblical verbs using Gree
 
 **NOT**: Extract mood values from TBTA data structures (that's just reading the answer key!)
 
+## Quick Translator Test
+
+Before diving into the detailed methodology, answer these questions about your target language:
+
+1. **Does your language distinguish indicative (factual) vs subjunctive (hypothetical)?**
+   - Can you grammatically mark "He is here" (fact) vs "If he were here" (hypothetical)?
+   - Some languages use verb forms, others use particles or context
+
+2. **Does your language have special mood for commands/requests (imperative)?**
+   - Is "Go!" grammatically different from "You are going"?
+   - Or do you use intonation, particles, or context to mark commands?
+
+3. **Can your language express obligation (must/should) grammatically?**
+   - "You must go" vs "You should go" vs "You may go"
+   - Are these distinctions built into verb forms or expressed with modal words?
+
+4. **Does your language mark permission (may) or possibility (might) distinctly?**
+   - "You may enter" (permission) vs "You might win" (possibility)
+   - Can these be distinguished grammatically or only by context?
+
+5. **How many grammatical moods does your language have?**
+   - Count distinct verb forms: indicative, imperative, subjunctive, optative, etc.
+   - Some languages have 2-3, others have 10+ including evidential and obligative moods
+
+**Why this matters**: TBTA's mood system (11 values) captures semantic modality beyond traditional grammatical moods. Even if your language only has 2-3 grammatical moods, TBTA helps you decide when to add modal verbs ("must," "should," "might") to express the source text's full modal meaning.
+
+---
+
 ## What is Mood?
 
 **Mood** (also called modality) indicates the speaker's stance toward the action:
@@ -422,3 +450,67 @@ clause:
 - Greek Grammar: Smyth's Greek Grammar, sections on mood
 - Hebrew Grammar: Waltke & O'Connor, Hebrew verb system
 - Sample Data (for validation): `../../../../.data/commentary/MAT/024/` (51 verses)
+
+---
+
+## Action Items for Production Release
+
+Based on FEATURE-IMPROVEMENT-CHECKLIST.md analysis, the following improvements will strengthen this feature:
+
+### ✅ Completed
+- [x] Quick Translator Test added (5 questions for target language assessment)
+- [x] Prediction methodology documented (LLM prompts, not code)
+- [x] Decision tree flowchart provided
+- [x] Greek/Hebrew morphology rules defined
+- [x] Semantic modality patterns identified
+- [x] Language-specific applications documented
+- [x] Validation workflow established
+
+### 🧪 Comprehensive Testing Required (Phase 3)
+The methodology is well-defined but needs validation across diverse Biblical texts:
+
+- [ ] **Test prediction on 100+ verses across genres**:
+  - Narrative (Gospels, Acts, OT history)
+  - Prophecy (Isaiah, Revelation)
+  - Epistles (Paul's letters)
+  - Poetry/Wisdom (Psalms, Proverbs)
+  - Legal texts (Leviticus, Deuteronomy)
+
+- [ ] **Measure actual accuracy by mood type**:
+  - Expected: Indicative 90-95%, Imperative 95-100%
+  - Expected: Subjunctive/Optative 85-90%
+  - Expected: Obligation 70-85%, Potential 70-80%
+  - Calculate precision/recall for each mood category
+
+- [ ] **Document systematic errors and refine prompts**:
+  - Identify which mood types are confused (e.g., 'should' vs 'must')
+  - Analyze discourse contexts that cause mispredictions
+  - Refine decision tree based on error patterns
+  - Update prompt templates with clearer disambiguation rules
+
+- [ ] **Test inter-annotator agreement**:
+  - Have multiple linguists predict moods independently
+  - Measure agreement rate to validate methodology clarity
+  - Document cases where expert annotators disagree
+
+### 📊 Language Family Impact Table (TIER 2)
+- [ ] **Expand language examples into structured table** (currently lines 354-367):
+  - Turkish: Map 11 TBTA moods to Turkish evidential/obligation system
+  - Japanese: Map to keigo (politeness) levels + modal particles
+  - Greek: Preserve original mood distinctions in translation
+  - Arabic: Handle complex obligation/permission hierarchies
+  - English: Map to modal verbs (must/should/might/may/can)
+  - Mandarin: Map to modal particles (会/能/可以/应该)
+  - Add 5-10 more language families with specific mapping rules
+
+### 📏 Progressive Disclosure
+- File is currently 453 lines (13% over 400-line limit for methodology files)
+- Consider splitting detailed examples into separate reference file if more content is added
+
+**Estimated effort**: 6-8 hours for comprehensive testing, 2-3 hours for language family table
+
+---
+
+**Document Version**: 1.1
+**Last Updated**: 2025-11-06
+**Status**: Methodology complete, awaiting comprehensive validation testing

@@ -57,6 +57,109 @@ Note: Adverbs lack the adjective-specific values for equality (q), intensified c
 
 Note: Verbs lack equality and comparative variation markers but include intensification.
 
+## Quick Translator Test
+
+**Use this checklist to determine if your target language requires detailed degree annotation:**
+
+### Comparative & Superlative
+
+1. ☐ **Does your language mark comparative (more X than Y)?**
+   - Synthetic: Morphological suffix/affix (English -er, Latin -ior)
+   - Analytic: Separate degree word (English "more", Mandarin 更 gèng)
+   - Conjoined: Parallel clauses with contrasting terms (Amele, Motu)
+   - None: Degree-neutral language (Washo, Fijian, Warlpiri)
+
+2. ☐ **Does your language mark superlative (most X)?**
+   - Synthetic: Morphological suffix/affix (English -est, Greek -τατος)
+   - Analytic: Separate degree word (English "most", Mandarin 最 zuì)
+   - Periphrastic: Construct state or prepositional phrase (Hebrew)
+   - None: Degree-neutral language
+
+3. ☐ **If you have both synthetic and analytic, which is more common?**
+   - Primarily synthetic (German, Finnish, Russian)
+   - Mixed system (English: short adjectives synthetic, long adjectives analytic)
+   - Primarily analytic (French, Mandarin, Indonesian)
+
+### Intensification
+
+4. ☐ **Does your language have multiple intensifiers (very, extremely, incredibly)?**
+   - Many intensifiers: Track level (I = "very", E = "extremely")
+   - Few intensifiers: Simple vs. emphatic distinction sufficient
+   - Morphological intensification: Reduplication, prefixes, augmentative affixes
+   - None: Context-based intensity only
+
+5. ☐ **Can adjectives be marked for excess ("too much") or sufficiency ("enough")?**
+   - Dedicated "too" marker (English "too", French "trop")
+   - Verbal construction ("exceeds", "surpasses")
+   - Sufficiency marker separate from degree
+   - Combined in single system
+
+### Degree System Type
+
+6. ☐ **What comparison construction type does your language use?**
+   - **Exceed comparative**: Standard NP as object of "exceed" verb (Duala, many African)
+   - **Locational comparative**: Standard NP takes locational case (Estonian "from", Maasai "to")
+   - **Conjoined comparative**: Parallel clauses (Amele, many Australian/PNG)
+   - **Particle comparative**: Comparative particle + standard (English "than", Hungarian)
+
+7. ☐ **Is your language degree-based or degree-neutral?**
+   - **Degree-based**: Gradable adjectives introduce degree arguments (most languages)
+   - **Degree-neutral**: No degree semantics, uses conjoined comparison (Motu, Fijian, Washo, Warlpiri)
+
+### Special Features
+
+8. ☐ **Does your language distinguish absolute vs. relative superlative?**
+   - Relative: "the most X (of a group)" — comparison set required
+   - Absolute/Elative: "extremely X" — no comparison, high degree only
+   - Same form, context-distinguished (Latin, English)
+   - Different forms (Romance: Portuguese -íssimo vs. mais, Spanish muy vs. más)
+
+9. ☐ **Does your language have equative constructions (as X as Y)?**
+   - Degree marker + standard marker (English "as...as", German "so...wie")
+   - Standard marker only
+   - Similative construction (similarity, not equality)
+   - No dedicated equative
+
+10. ☐ **Does your language mark downward comparison (less, least)?**
+   - Separate lexical items (English "less"/"least", French "moins")
+   - Same morphology as upward (rare)
+   - No grammaticalized downward comparison
+
+### Critical Indicators
+
+**If your language is DEGREE-NEUTRAL (question 7), then comparative/superlative annotation may be inapplicable. You will use conjoined or contextual comparison strategies instead.**
+
+**If your language uses EXCEED or LOCATIONAL comparatives (question 6), pay attention to case marking and verb choice, not just adjective degree.**
+
+**If your language has SYNTHETIC morphology (questions 1-2), ensure adjective forms receive proper degree codes (C, S, L, l) even when not using separate words.**
+
+**If your language has RICH INTENSIFIER systems (question 4), distinguish I (general: "very") from E (extreme: "exceedingly") systematically.**
+
+### Language Family Patterns
+
+**Degree-Neutral Languages** (use conjoined comparison):
+- **Austronesian**: Motu, Fijian (confirmed)
+- **Pama-Nyungan**: Warlpiri (confirmed), likely others
+- **Hokan/Isolate**: Washo (confirmed)
+- Strategy: Annotate with conjoined comparison pattern, not degree codes
+
+**Synthetic Systems** (morphological comparison):
+- **Indo-European**: Most Germanic (German, Scandinavian), Slavic (Russian, Polish), some Romance (Romanian)
+- **Uralic**: Finnish, Hungarian, Estonian
+- Strategy: Code morphological forms directly (C for -er, S for -est equivalents)
+
+**Analytic Systems** (separate degree words):
+- **Sino-Tibetan**: Mandarin, Cantonese (exclusively analytic)
+- **Romance**: French (highly analytic), Spanish, Italian
+- **Niger-Congo**: Many languages use exceed or locational strategies
+- Strategy: Identify degree words, code accordingly
+
+**Mixed Systems** (both synthetic and analytic):
+- **English**: Short adjectives synthetic, long adjectives analytic
+- **Ancient Greek**: Synthetic default, analytic for participles/compounds
+- **Biblical Hebrew**: No synthetic, exclusively periphrastic (מִן construction)
+- Strategy: Determine context rules for which strategy applies
+
 ## Cross-Linguistic Typology of Comparison
 
 ### 1. Comparative Constructions
