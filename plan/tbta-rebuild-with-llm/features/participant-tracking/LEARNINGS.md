@@ -25,10 +25,18 @@ The key insight: **Only 5 states are actively needed** for Biblical text (Routin
 ### State 1: ROUTINE (73% of cases)
 **When to use**: Referent mentioned in last 1-3 clauses with low competing referents
 
-**Detection**:
-```python
-if previously_mentioned(referent) and referential_distance <= 3 and competing_referents < 3:
-    return "Routine"
+**LLM Prompt for Detection**:
+```
+For this referent, ask yourself:
+1. "Was this referent mentioned recently (within last 1-3 clauses)?"
+2. "Are there few competing referents between mentions?"
+3. "Is this referent maintaining continuous presence in the discourse?"
+
+If YES to all three → Label as ROUTINE
+
+Reasoning: Apply Givón's continuity principle - continuous topics require
+minimal linguistic marking. This referent is "in focus" per Gundel's
+hierarchy, maintaining high accessibility per Ariel's scale.
 ```
 
 **Validation**: Most common state. If you're getting <60% Routine, something is wrong.
@@ -43,10 +51,25 @@ if previously_mentioned(referent) and referential_distance <= 3 and competing_re
 ### State 2: GENERIC (14% of cases)
 **When to use**: Reference to types/classes, not specific individuals; timeless statements
 
-**Detection**:
-```python
-if is_generic_context(clause) or is_habitual(verb) or is_definition(clause):
-    return "Generic"
+**LLM Prompt for Detection**:
+```
+For this referent, ask yourself:
+1. "Is this statement timeless, or about a specific event?"
+2. "Does this refer to a type/class or a particular individual?"
+3. "Is this making a general claim or describing a specific action?"
+
+Generic indicators to look for:
+- Timeless present tense ("Lions are dangerous")
+- Habitual aspect ("A man goes to work daily")
+- Definitional statements ("Water is H₂O")
+- Bare plurals ("Dogs bark")
+- Proverbial/wisdom context
+
+If the statement is about classes/types → Label as GENERIC
+If the statement is about a specific entity in time → Continue checking other states
+
+Reasoning: Generic references are not tracked as individual participants.
+They make claims about categories, not about specific discourse referents.
 ```
 
 **Indicators**:
@@ -64,10 +87,27 @@ if is_generic_context(clause) or is_habitual(verb) or is_definition(clause):
 ### State 3: FRAME INFERABLE (7.5% of cases)
 **When to use**: First occurrence BUT inferable from established scene/frame
 
-**Detection**:
-```python
-if not previously_mentioned(referent) and is_frame_participant(referent, current_frame):
-    return "Frame Inferable"
+**LLM Prompt for Detection**:
+```
+For this referent appearing for the first time, ask yourself:
+1. "Has a frame/scene been established in prior context?"
+   (e.g., restaurant, temple, well, market, creation, etc.)
+2. "Is this referent a typical participant in that frame?"
+3. "Does the text use definite marking despite first mention?"
+   (e.g., "the waiter" without previously mentioning waiter)
+
+Frame examples:
+- Restaurant frame → waiter, menu, food, bill are inferable
+- Well frame → water, bucket, rope are inferable
+- Temple frame → altar, priest, sacrifice are inferable
+- Creation frame → heaven, earth, light are inferable
+
+If frame is active AND referent belongs to it → Label as FRAME INFERABLE
+If no active frame → Label as FIRST MENTION
+
+Reasoning: Apply Fillmore's Frame Semantics - certain words evoke frames
+that make their typical participants accessible even without explicit mention.
+This is "uniquely identifiable" per Gundel's hierarchy via frame inference.
 ```
 
 **Key test**: Definite article on first mention
@@ -88,10 +128,24 @@ if not previously_mentioned(referent) and is_frame_participant(referent, current
 ### State 4: FIRST MENTION (5.4% of cases)
 **When to use**: Truly new referent, not inferable from frame
 
-**Detection**:
-```python
-if not previously_mentioned(referent) and not is_frame_participant(referent, current_frame):
-    return "First Mention"
+**LLM Prompt for Detection**:
+```
+For this referent, ask yourself:
+1. "Is this the first time this referent appears in the discourse?"
+2. "Is it NOT inferable from any established frame?"
+3. "Does it use indefinite marking (e.g., 'a woman', 'a man')?"
+
+If YES to all three → Label as FIRST MENTION
+
+Reasoning: Apply Ariel's Accessibility Theory - new referents require
+"low accessibility markers" (full NPs with indefinite articles) because
+they haven't been activated in the discourse model. This is "type identifiable"
+per Gundel's hierarchy - we know the type (woman) but not the specific individual yet.
+
+Surface form expectations:
+- Indefinite article ("a woman")
+- Existential construction ("there was a man")
+- Full noun phrase with no prior context
 ```
 
 **Surface forms**:
@@ -106,10 +160,22 @@ if not previously_mentioned(referent) and not is_frame_participant(referent, cur
 ### State 5: INTERROGATIVE (0.2% of cases)
 **When to use**: Referent in interrogative clause querying identity/properties
 
-**Detection**:
-```python
-if is_interrogative(clause) and is_wh_word(referent):
-    return "Interrogative"
+**LLM Prompt for Detection**:
+```
+For this referent, ask yourself:
+1. "Is this referent part of an interrogative clause (question)?"
+2. "Is the identity or properties of this referent being queried?"
+3. "Does this use a wh-word (who, what, which, whom, whose)?"
+
+If YES → Label as INTERROGATIVE
+
+Note: Only the questioned referent gets this label, not all referents
+in a question. Example: "Who saw the woman?" - "who" is INTERROGATIVE,
+but "woman" is ROUTINE or FIRST MENTION depending on context.
+
+Reasoning: Interrogatives mark information structure - they signal
+"unknown" or "requested" information. The referent is in focus but
+informationally incomplete.
 ```
 
 **Indicators**:
@@ -167,7 +233,7 @@ if is_attributive_modifier(referent) and not is_main_argument(referent):
 
 ---
 
-## Implementation Strategy
+## LLM Prediction Workflow
 
 ### Phase 1: Minimum Viable System (3 States)
 Focus on the big three that cover 95% of cases:
@@ -178,19 +244,33 @@ Focus on the big three that cover 95% of cases:
 
 Combined: 92.4% coverage
 
-**Algorithm**:
-```python
-def classify_participant(referent, clause, context):
-    # Check generic first (independent of mention tracking)
-    if is_generic_context(clause):
-        return "Generic"
+**LLM Prompting Approach**:
+```
+Given a Biblical passage, prompt the LLM:
 
-    # Check if mentioned before
-    if not previously_mentioned(referent, context):
-        return "First Mention"
+"For each nominal constituent in this passage, determine its
+participant tracking state using these steps:
 
-    # Default to routine for continued reference
-    return "Routine"
+STEP 1: Check if GENERIC
+Ask: Is this a timeless statement about types/classes?
+Look for: bare plurals, habitual aspect, definitional contexts
+If YES → Label: GENERIC
+
+STEP 2: Check if FIRST MENTION (for non-generic referents)
+Ask: Is this the first occurrence in the discourse?
+Look for: indefinite article, new participant introduction
+If YES → Label: FIRST MENTION
+
+STEP 3: Default to ROUTINE (for previously mentioned)
+Ask: Has this referent appeared before?
+Look for: pronouns, repeated nouns, continued reference
+If YES → Label: ROUTINE
+
+Provide your reasoning for each decision using linguistic evidence
+from the text."
+
+This simple 3-state system achieves 92.4% coverage and establishes
+the foundation for more complex tracking.
 ```
 
 ---
@@ -203,24 +283,38 @@ Add 7.5% more coverage:
 Total: 99.9% coverage
 
 **Requirements**:
-- Build frame database (can use FrameNet)
-- Detect frame-evoking words
-- Identify expected frame participants
+- Provide LLM with frame knowledge (FrameNet concepts)
+- Include examples of common Biblical frames
+- Guide frame-participant inference
 
-**Enhanced algorithm**:
-```python
-def classify_participant(referent, clause, context):
-    if is_generic_context(clause):
-        return "Generic"
+**Enhanced LLM Prompting**:
+```
+"For each nominal constituent, determine tracking state:
 
-    if not previously_mentioned(referent, context):
-        # Check if inferable from established frame
-        if has_active_frame(context) and is_frame_participant(referent, get_active_frame(context)):
-            return "Frame Inferable"
-        else:
-            return "First Mention"
+STEP 1: Check if GENERIC (timeless/type reference)
+→ If YES: GENERIC
 
-    return "Routine"
+STEP 2: For first occurrences, check FRAME INFERABILITY
+Ask yourself:
+- 'What frame/scene has been established in prior context?'
+- 'Is this referent a typical participant in that frame?'
+- 'Does the text use definite marking despite first mention?'
+
+Common Biblical frames:
+- Temple frame (altar, priest, sacrifice, incense)
+- Well frame (water, bucket, rope)
+- Market frame (vendor, goods, prices)
+- Creation frame (heaven, earth, light, darkness)
+- Household frame (master, servant, goods, authority)
+
+If frame is active AND referent belongs to it → FRAME INFERABLE
+If no frame connection → FIRST MENTION
+
+STEP 3: For previously mentioned → ROUTINE
+
+Explain which frame (if any) makes each referent inferable."
+
+This 4-state system covers 99.9% of active TBTA annotations.
 ```
 
 ---
@@ -232,17 +326,28 @@ Add remaining 0.2%:
 
 Total: 100% of active states
 
-**Trivial to add**:
-```python
-def classify_participant(referent, clause, context):
-    # Check interrogative context
-    if is_interrogative(clause) and is_wh_word(referent):
-        return "Interrogative"
+**Complete LLM Prompting**:
+```
+"For each nominal constituent, determine tracking state:
 
-    if is_generic_context(clause):
-        return "Generic"
+STEP 0: Check if INTERROGATIVE
+Ask: Is this referent in a question querying identity/properties?
+Look for: wh-words (who, what, which, whom, whose)
+→ If YES: INTERROGATIVE (only for the queried referent itself)
 
-    # ... rest of algorithm
+STEP 1: Check if GENERIC
+Ask: Is this a timeless statement about types/classes?
+→ If YES: GENERIC
+
+STEP 2: For first occurrences, check FRAME INFERABILITY
+Ask: Is there an active frame that makes this referent inferable?
+→ If frame is active: FRAME INFERABLE
+→ If no frame: FIRST MENTION
+
+STEP 3: For previously mentioned
+→ ROUTINE
+
+This complete 5-state system covers 100% of TBTA's active annotations."
 ```
 
 ---
@@ -479,38 +584,41 @@ Based on the systematic approach outlined:
 
 ---
 
-## Reproduction Roadmap
+## LLM-Based Annotation Plan
 
-### Week 1: Foundation
-- [ ] Implement coreference resolution pipeline
-- [ ] Build clause segmentation
-- [ ] Create referent chain tracking
-- [ ] Test on Genesis 1 (31 verses)
+### Week 1: Foundation Prompts
+- [ ] Develop core prompts for 3-state system (Routine, Generic, First Mention)
+- [ ] Test prompts on Genesis 1 (31 verses)
+- [ ] Refine prompts based on LLM output quality
+- [ ] Establish prompt template structure
 
-### Week 2: Core States
-- [ ] Implement 3-state system (Routine, Generic, First Mention)
-- [ ] Validate on John 4 (54 verses)
-- [ ] Calculate accuracy against TBTA gold standard
-- [ ] Iterate on generic detection
+### Week 2: Validation and Refinement
+- [ ] Add self-validation prompts (referential distance checks)
+- [ ] Test on John 4 (54 verses)
+- [ ] Compare LLM predictions to TBTA gold standard
+- [ ] Identify patterns in LLM errors (generic vs. specific confusion, etc.)
+- [ ] Refine prompts to address error patterns
 
-### Week 3: Frame Semantics
-- [ ] Build frame database (start with 20 common frames)
-- [ ] Implement Frame Inferable detection
+### Week 3: Frame Semantics Integration
+- [ ] Develop frame identification prompts
+- [ ] Provide LLM with common Biblical frame examples
+- [ ] Add Frame Inferable detection to prompts
 - [ ] Test on narrative passages (Ruth, Jonah)
-- [ ] Expand frame database based on errors
+- [ ] Expand frame examples based on LLM performance
 
-### Week 4: Polish & Validation
-- [ ] Add Interrogative detection
-- [ ] Implement all validation checks
-- [ ] Run on full book (Mark - 16 chapters)
-- [ ] Compare results with TBTA annotations
-- [ ] Document errors and edge cases
+### Week 4: Complete System and Validation
+- [ ] Add Interrogative detection prompts
+- [ ] Implement multi-pass validation workflow (initial → validation → refinement)
+- [ ] Run complete system on Mark (16 chapters)
+- [ ] Compare results with TBTA annotations systematically
+- [ ] Document edge cases where LLM reasoning differs from TBTA
 
-### Week 5: Scale & Extend
-- [ ] Process entire New Testament
+### Week 5: Scale and Quality Assurance
+- [ ] Process entire New Testament using refined prompts
 - [ ] Calculate precision/recall per state
-- [ ] Build confidence scores for each annotation
-- [ ] Create uncertainty flags for manual review
+- [ ] Identify passages where LLM marks [UNCERTAIN]
+- [ ] Build quality assurance workflow using LLM self-checking
+- [ ] Create annotation guidelines based on successful prompts
 
 ---
 
