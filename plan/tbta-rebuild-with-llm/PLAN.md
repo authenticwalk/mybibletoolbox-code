@@ -5,6 +5,25 @@
 **Estimated Timeline**: 8-12 weeks full-time effort
 **Estimated Output**: 57 features documented, 1,009 languages covered, 400+ verses validated
 
+## ⚠️ CRITICAL METHODOLOGY REQUIREMENT ⚠️
+
+**PREDICTION, NOT EXTRACTION!**
+
+This plan is about building a system that can **PREDICT** TBTA-style annotations using:
+- Source text (Greek/Hebrew with morphology)
+- 900+ translations showing feature realization
+- Linguistic theory, semantic patterns, theological reasoning
+- Context engineering (genre, discourse, surrounding verses)
+
+**NOT** about extracting features already labeled in TBTA data!
+
+**TBTA labels are ONLY for**:
+- Training (examining examples to learn patterns)
+- Validation (comparing predictions to measure accuracy)
+- Testing (held-out test sets for evaluation)
+
+**NEVER for**: Generating predictions directly (that's just copying the answer key!)
+
 ---
 
 ## Phase 0: Pre-Planning (3-5 days)
