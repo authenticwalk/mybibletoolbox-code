@@ -1,7 +1,9 @@
 # Generic TBTA Feature Implementation Template
 
 ## Purpose
-This template provides a standardized approach for implementing, analyzing, or predicting ANY TBTA feature based on learnings from successful experiments (Aspect 98%, Person 100%, Mood 100%, Participant Tracking 100%).
+This template provides a standardized approach for implementing, analyzing, or predicting ANY TBTA feature using LLM prompt engineering based on learnings from successful experiments (Aspect 98%, Person 100%, Mood 100%, Participant Tracking 100%).
+
+**Critical**: This approach uses LLM context and prompting, NOT Python prediction code.
 
 ---
 
@@ -11,11 +13,11 @@ This template provides a standardized approach for implementing, analyzing, or p
 - [ ] Read official TBTA documentation for this feature
 - [ ] Identify feature category (Noun/Verb/Clause/Phrase/Discourse)
 - [ ] List all possible values (complete enumeration)
-- [ ] Determine if feature is **explicit in YAML** or **must be predicted**
+- [ ] Determine if feature is **explicit in YAML** or **must be inferred**
 
 **Key Question**: Is this feature directly extractable from TBTA data?
 - **YES** → Go to **Phase 2A: Direct Extraction** (Mood pathway - fastest)
-- **NO** → Go to **Phase 2B: Prediction Framework** (Aspect/Person pathway)
+- **NO** → Go to **Phase 2B: LLM Prediction Framework** (Aspect/Person pathway)
 
 ### Step 1.2: Translation Impact Analysis
 - [ ] Which language families need this feature? (List 3-5)
@@ -32,46 +34,42 @@ This template provides a standardized approach for implementing, analyzing, or p
 ## Phase 2A: DIRECT EXTRACTION (For Explicit Features)
 
 ### Step 2A.1: Locate Feature in YAML Structure
-```python
-def find_feature_location(yaml_data, feature_name):
-    """
-    Recursively search YAML structure to find where feature is stored
-    """
-    # Template: Start with clause level, then VP/NP level, then word level
-    pass
+
+**Approach**: Ask LLM to examine sample YAML and identify where feature appears
+
+**Prompt Template**:
+```
+I need to extract the "{feature_name}" feature from TBTA YAML data.
+
+Here is a sample verse YAML:
+{paste sample YAML}
+
+Please:
+1. Identify where "{feature_name}" appears in the structure
+2. Note the path (e.g., clauses[0].children[1].{feature_name})
+3. Check if it's at clause level, phrase level, or word level
+4. Confirm the field name is consistent
 ```
 
 **Test with 3 sample verses** to confirm location stability
 
-### Step 2A.2: Build Extraction Function
-```python
-def extract_feature(verse_yaml, feature_name):
-    """
-    Standard recursive tree traversal for ANY TBTA feature
-    """
-    results = []
+### Step 2A.2: Build Extraction Strategy
 
-    def traverse(node, context=None):
-        # Pattern from Mood experiment: Check explicit fields first
-        if isinstance(node, dict):
-            if feature_name in node:
-                results.append({
-                    'value': node[feature_name],
-                    'context': context,
-                    'constituent': node.get('Constituent', 'N/A')
-                })
+**Approach**: Use LLM to read YAML and extract feature values with context
 
-            # Recursively check children
-            if 'children' in node:
-                for child in node['children']:
-                    traverse(child, context={**context, 'parent': node.get('Part')})
+**Prompt Template**:
+```
+Extract all instances of "{feature_name}" from this verse:
 
-        elif isinstance(node, list):
-            for item in node:
-                traverse(item, context)
+{paste verse YAML}
 
-    traverse(verse_yaml)
-    return results
+For each instance, provide:
+- Value of {feature_name}
+- Constituent (the text it applies to)
+- Context (parent clause/phrase)
+- Location in structure
+
+Format as simple list.
 ```
 
 ### Step 2A.3: Validate Extraction
@@ -84,177 +82,165 @@ def extract_feature(verse_yaml, feature_name):
 
 ---
 
-## Phase 2B: PREDICTION FRAMEWORK (For Implicit Features)
+## Phase 2B: LLM PREDICTION FRAMEWORK (For Implicit Features)
 
 ### Step 2B.1: Apply Rarity Principle
-```python
-def analyze_distribution(all_values):
-    """
-    Find dominant value (baseline) and marked values (special cases)
-    """
-    distribution = Counter(all_values)
-    total = sum(distribution.values())
 
-    for value, count in distribution.most_common():
-        percentage = (count / total) * 100
-        print(f"{value}: {percentage:.1f}%")
+**Concept**: Identify the dominant value (baseline) that accounts for 80-90% of cases
 
-    baseline = distribution.most_common(1)[0][0]
-    marked_values = [v for v, c in distribution.items() if c/total < 0.20]
+**Approach**: Ask LLM to analyze sample data and identify pattern
 
-    return {
-        'baseline': baseline,  # Use as default (>80% accuracy)
-        'marked': marked_values  # Need special triggers
-    }
+**Prompt Template**:
+```
+Analyze the distribution of "{feature_name}" values in these {N} sample verses:
+
+{paste sample data showing feature values}
+
+1. What is the most common value? (percentage)
+2. What are the rare/marked values? (percentage)
+3. What is a good default/baseline prediction?
+
+This baseline should give 80-90% accuracy without further analysis.
 ```
 
 **Target**: Baseline should give you 80-90% accuracy immediately
 
-### Step 2B.2: Build Hierarchical Decision Tree
+### Step 2B.2: Build Hierarchical Prompt Strategy
+
+**Concept**: Layer prompts from most deterministic to least deterministic
 
 **Template from Person/Aspect/Participant experiments**:
 
-```python
-def predict_feature(context):
-    """
-    Hierarchical decision tree: Most deterministic → Least deterministic
-    """
-    # LEVEL 1: Theological/Semantic Analysis (Most Important)
-    theological_result = check_theological_factors(context)
-    if theological_result['confidence'] > 0.95:
-        return theological_result['value']
+**LEVEL 1: Theological/Semantic Analysis (Most Important)**
 
-    # LEVEL 2: Capability/Restriction Analysis
-    capability_result = check_capability(context)
-    if capability_result['confidence'] > 0.90:
-        return capability_result['value']
+Prompt:
+```
+Analyze the theological/semantic factors for "{constituent}" in {verse reference}:
 
-    # LEVEL 3: Discourse Context Analysis
-    discourse_result = check_discourse_context(context)
-    if discourse_result['confidence'] > 0.85:
-        return discourse_result['value']
+Verse context: {surrounding verses}
+Word being analyzed: "{constituent}"
+Theological context: {book theme, passage theme}
 
-    # LEVEL 4: Grammatical Cues
-    grammar_result = check_grammatical_cues(context)
-    if grammar_result['confidence'] > 0.80:
-        return grammar_result['value']
+For the feature "{feature_name}", consider:
+- Does this refer to God/deity? (affects Person, Number)
+- Is this describing capability or ontology? (affects Person, Aspect)
+- What is the semantic type? (State, Action, Process, Event)
+- Does theology override grammar here?
 
-    # LEVEL 5: Baseline (Default)
-    return {
-        'value': BASELINE_VALUE,
-        'confidence': baseline_accuracy,  # e.g., 0.85
-        'method': 'baseline'
-    }
+What value is most theologically appropriate? (Confidence: High/Medium/Low)
 ```
 
-### Step 2B.3: Discover Correlations
+**LEVEL 2: Discourse Context Analysis**
 
-**Pattern from Aspect experiment**:
+Prompt:
+```
+Analyze the discourse context for "{constituent}" in {verse reference}:
 
-```python
-def find_correlations(feature_data, context_fields):
-    """
-    Find which context fields strongly correlate with feature values
-    """
-    correlations = {}
+Surrounding verses: {previous 2 verses + next 2 verses}
+Discourse genre: {narrative/teaching/prophecy/etc}
+Speaker: {who is speaking}
+Listener: {who is being addressed}
 
-    for field in context_fields:
-        correlation_table = {}
+For the feature "{feature_name}", consider:
+- Is this a new participant or established? (affects Tracking)
+- What is the discourse flow? (affects Salience, Structure)
+- How does this fit the genre pattern?
 
-        for instance in feature_data:
-            field_value = instance.get(field)
-            feature_value = instance['feature']
-
-            key = (field_value, feature_value)
-            correlation_table[key] = correlation_table.get(key, 0) + 1
-
-        # Calculate conditional probabilities
-        for (field_val, feat_val), count in correlation_table.items():
-            total_with_field = sum(c for (fv, _), c in correlation_table.items() if fv == field_val)
-            probability = count / total_with_field
-
-            if probability > 0.80:  # Strong correlation
-                correlations[f"{field}={field_val}"] = {
-                    'predicts': feat_val,
-                    'confidence': probability
-                }
-
-    return correlations
+What value fits the discourse context? (Confidence: High/Medium/Low)
 ```
 
-**Check these context fields**:
-- Mood (for verb features)
-- Time (for aspect/mood)
-- Semantic type (for aspect/voice)
-- Discourse genre (for salience/structure)
-- Speaker/Listener (for demographics-related features)
+**LEVEL 3: Grammatical Cues**
 
-### Step 2B.4: Multi-Method Validation
+Prompt:
+```
+Analyze the grammatical cues for "{constituent}" in {verse reference}:
 
-**Pattern from Participant Tracking**:
+Surrounding text: {sentence or clause}
+Source language: {Greek/Hebrew text if available}
+Grammatical form: {morphology from Macula if available}
 
-```python
-def predict_with_ensemble(context):
-    """
-    Use multiple independent methods, require agreement for high confidence
-    """
-    method1 = theological_analysis(context)
-    method2 = grammatical_analysis(context)
-    method3 = discourse_analysis(context)
+For the feature "{feature_name}", consider:
+- What grammatical markers are present? (pronouns, articles, verb forms)
+- What does the source language grammar suggest?
+- Are there explicit indicators in the text?
 
-    predictions = [method1, method2, method3]
-    values = [p['value'] for p in predictions]
-
-    if len(set(values)) == 1:
-        # All agree
-        return {
-            'value': values[0],
-            'confidence': 0.95,
-            'agreement': '100%'
-        }
-    elif values.count(values[0]) >= 2:
-        # Majority agree
-        majority_value = max(set(values), key=values.count)
-        return {
-            'value': majority_value,
-            'confidence': 0.80,
-            'agreement': '66%'
-        }
-    else:
-        # Disagree - flag for human review
-        return {
-            'value': None,
-            'confidence': 0.50,
-            'agreement': '0%',
-            'note': 'Ambiguous - requires human judgment'
-        }
+What value do the grammatical cues suggest? (Confidence: High/Medium/Low)
 ```
 
-### Step 2B.5: Blind Testing Protocol
+**LEVEL 4: Cross-Feature Correlations**
+
+Prompt:
+```
+Check correlations with other features for "{constituent}" in {verse reference}:
+
+Known features from TBTA:
+- Mood: {value if known}
+- Time: {value if known}
+- Genre: {value if known}
+- {other relevant features}
+
+For the feature "{feature_name}", historical correlations show:
+- Potential mood → 100% Inceptive aspect
+- Historic Past + Narrative → Usually Completive aspect
+- {list known correlations}
+
+Based on these correlations, what value is predicted?
+```
+
+**LEVEL 5: Baseline (Default)**
+
+If all analysis is inconclusive:
+```
+No strong indicators found for "{feature_name}" in {verse reference}.
+
+Applying baseline: {BASELINE_VALUE}
+Confidence: {baseline_accuracy}% (from distribution analysis)
+Method: Default (rarity principle)
+```
+
+### Step 2B.3: Multi-Method Validation
+
+**Approach**: Use multiple LLM prompts independently, require agreement
+
+**Prompt Template**:
+```
+I have 3 independent analyses for "{feature_name}" in {verse reference}:
+
+Method 1 (Theological): {value_1} (Confidence: {conf_1})
+Method 2 (Discourse): {value_2} (Confidence: {conf_2})
+Method 3 (Grammatical): {value_3} (Confidence: {conf_3})
+
+Evaluate:
+- Do all 3 agree? → High confidence (95%)
+- Do 2/3 agree? → Medium confidence (80%)
+- All disagree? → Flag for human review, use baseline
+
+What is the final prediction and confidence level?
+```
+
+### Step 2B.4: Blind Testing Protocol
 
 **Critical for avoiding overfitting**:
 
-```python
-def blind_test(predictions, actual_data):
-    """
-    Test predictions WITHOUT looking at actual values first
-    """
-    # 1. Make predictions for all test cases
-    predicted = [predict_feature(case['context']) for case in actual_data]
+1. Create test set of verses with known feature values (don't look at values!)
+2. Apply LLM prompt strategy to predict values
+3. ONLY AFTER all predictions are made, compare with actual values
+4. Analyze errors and refine prompts
 
-    # 2. NOW compare with actual values
-    correct = sum(1 for p, a in zip(predicted, actual_data) if p['value'] == a['value'])
-    accuracy = correct / len(actual_data)
+**Prompt for Error Analysis**:
+```
+I predicted "{predicted_value}" but the actual value was "{actual_value}" for {verse reference}.
 
-    # 3. Analyze errors
-    errors = [(p, a) for p, a in zip(predicted, actual_data) if p['value'] != a['value']]
+Verse context: {context}
+My reasoning: {why I predicted that value}
 
-    return {
-        'accuracy': accuracy,
-        'correct': correct,
-        'total': len(actual_data),
-        'errors': errors
-    }
+Why was I wrong?
+1. Was theological/semantic factor missed?
+2. Was discourse context misunderstood?
+3. Was grammatical cue misinterpreted?
+4. Was this an ambiguous case with multiple valid readings?
+
+How should the prompt be improved to catch this case?
 ```
 
 ---
@@ -263,117 +249,152 @@ def blind_test(predictions, actual_data):
 
 ### Step 3.1: Error Categorization
 
-For each error, categorize as:
-- **Type 1: Semantic Expansion** - TBTA added implicit information not in surface text
-- **Type 2: Theological Ambiguity** - Multiple valid interpretations
-- **Type 3: Cultural/Historical Knowledge** - Requires external knowledge
-- **Type 4: Rare Construction** - Insufficient training data
+For each error, ask LLM to categorize:
+
+**Prompt**:
+```
+Categorize this prediction error:
+
+Verse: {reference}
+Predicted: {predicted_value}
+Actual: {actual_value}
+Context: {verse context}
+
+Is this error:
+Type 1: Semantic Expansion - TBTA added implicit information not in surface text
+Type 2: Theological Ambiguity - Multiple valid interpretations exist
+Type 3: Cultural/Historical Knowledge - Required external knowledge we didn't have
+Type 4: Rare Construction - Insufficient training data for this pattern
+Type 5: Prompt Limitation - Our prompt strategy didn't check the right factors
+
+Classification: Type ___
+Reasoning: ...
+```
 
 ### Step 3.2: Accuracy Tiering
 
 | Accuracy | Tier | Automation Level |
 |----------|------|------------------|
-| 95-100% | Tier 1 | Full automation with spot checks |
-| 85-94% | Tier 2 | Automation with human review |
-| 75-84% | Tier 3 | Automation with fallbacks + review |
-| <75% | Tier 4 | Human-driven with AI assistance |
+| 95-100% | Tier 1 | LLM with spot checks |
+| 85-94% | Tier 2 | LLM with human review |
+| 75-84% | Tier 3 | LLM with fallbacks + review |
+| <75% | Tier 4 | Human-driven with LLM assistance |
 
 ### Step 3.3: Documentation Requirements
 
-Create 4 files for each feature:
+Create documentation for each feature:
 
-**1. README.md** - Translator-facing
-- What is this feature?
-- Why does it matter?
-- Which languages need it?
-- How to use it in translation?
+**1. README.md** - Translator-facing (≤500 lines, progressive disclosure)
+- Purpose: What is this feature and why it matters
+- Methodology: How to determine the value (LLM prompt patterns)
+- Output Schema: What the YAML looks like
+- Related Features: Cross-references
 
-**2. METHOD.md** - Developer-facing
-- Extraction/prediction algorithm
-- Code examples
-- Decision tree logic
-- Correlation tables
-
-**3. QUICK-REFERENCE.md** - All audiences
-- Feature values summary
-- Examples from actual verses
-- Common patterns
-- Edge cases
-
-**4. EXPERIMENT-REPORT.md** - Researcher-facing
-- Methodology details
-- Accuracy metrics
-- Error analysis
-- Future improvements
+**2. EXAMPLES.md** - Concrete verse examples
+- 5-10 example verses with detailed analysis
+- Show LLM reasoning for each case
+- Include edge cases and ambiguities
 
 ---
 
 ## Phase 4: INTEGRATION
 
 ### Step 4.1: Verse-Level Integration
-```python
-def integrate_feature_into_verse(verse_data, feature_values):
-    """
-    Add feature to verse YAML maintaining SCHEMA.md compliance
-    """
-    verse_data[feature_name] = {
-        'values': feature_values,
-        'source': 'tbta' if extracted else 'predicted',
-        'confidence': confidence_score,
-        'method': method_name
-    }
-    return verse_data
+
+**Approach**: Use LLM to create properly formatted YAML
+
+**Prompt Template**:
+```
+Create YAML output for "{feature_name}" following SCHEMA.md format:
+
+Verse: {reference}
+Feature: {feature_name}
+Value: {predicted_value}
+Confidence: {confidence_score}
+Method: {theological/discourse/grammatical/baseline}
+
+Output YAML with:
+- Proper nesting (if part of larger structure)
+- Inline source citation
+- Confidence metadata
+- All required fields per SCHEMA.md
+
+Example format: {show example}
 ```
 
 ### Step 4.2: Cross-Feature Validation
-- [ ] Check consistency with related features
-- [ ] Validate against Macula data where applicable
-- [ ] Ensure no contradictions with theology/discourse
 
-### Step 4.3: Query Tool Development
-```python
-def query_feature(feature_name, filter_criteria):
-    """
-    Enable queries like "find all verses with Trial number"
-    """
-    results = []
-    for verse in all_verses:
-        if matches_criteria(verse[feature_name], filter_criteria):
-            results.append({
-                'reference': verse['verse'],
-                'value': verse[feature_name],
-                'context': get_context(verse)
-            })
-    return results
+**Prompt Template**:
+```
+Validate this prediction against related features:
+
+Feature: {feature_name} = {value}
+Related features:
+- Mood: {value}
+- Time: {value}
+- Genre: {value}
+
+Check for contradictions:
+- Does Inceptive aspect make sense with Indicative mood?
+- Does Trial number align with First Inclusive person?
+- Does Historic Past fit Narrative genre?
+
+Are there any logical contradictions? If so, which value should be reconsidered?
 ```
 
 ---
 
-## Phase 5: DEPLOYMENT
+## Phase 5: PROMPT REFINEMENT
 
-### Step 5.1: Performance Optimization
-- [ ] Batch processing for multiple verses
-- [ ] Cache frequently-accessed data
-- [ ] Optimize recursive traversal
-- [ ] Parallelize independent predictions
+### Step 5.1: Prompt Optimization
 
-### Step 5.2: Error Handling
-```python
-def safe_predict(context):
-    try:
-        result = predict_feature(context)
-        return result
-    except KeyError as e:
-        return {'value': BASELINE, 'confidence': 0.85, 'error': 'missing_field'}
-    except ValueError as e:
-        return {'value': None, 'confidence': 0.0, 'error': 'invalid_data'}
+As you gain experience, refine prompts:
+
+**Template for Improvement**:
+```
+My current prompt for "{feature_name}" is:
+{paste current prompt}
+
+Based on errors in verses {list problematic verses}, I need to:
+1. Add check for: {missing factor}
+2. Emphasize: {underweighted factor}
+3. Clarify instruction about: {ambiguous part}
+
+Generate improved prompt that catches these cases while staying concise.
+```
+
+### Step 5.2: Context Engineering
+
+**Determine optimal context to provide**:
+
+**Prompt**:
+```
+For predicting "{feature_name}", what context should I provide to the LLM?
+
+Current context includes:
+- The verse text
+- ±2 surrounding verses
+- Book theme
+- {list current context}
+
+Testing shows errors in cases like {example errors}.
+
+What additional context would help?
+- Full chapter?
+- Parallel passages?
+- Source language grammar?
+- Theological commentary?
+- {other options}
+
+Recommend optimal context (balance accuracy vs token cost).
 ```
 
 ### Step 5.3: Monitoring & Feedback Loop
+
 - [ ] Track prediction accuracy on new data
-- [ ] Collect user corrections
-- [ ] Re-train models with feedback
-- [ ] Update documentation with new patterns
+- [ ] Collect human corrections from users
+- [ ] Update prompts based on feedback patterns
+- [ ] Document new edge cases in EXAMPLES.md
 
 ---
 
@@ -381,55 +402,83 @@ def safe_predict(context):
 
 ### Minimum Viable Implementation
 - [ ] Feature values enumerated
-- [ ] Extraction/prediction function working
+- [ ] Baseline prompt working
 - [ ] Tested on 10+ verses with >80% accuracy
-- [ ] README.md created
-- [ ] Integrated with verse YAML format
+- [ ] README.md created (≤500 lines)
+- [ ] Output YAML format validated
 
 ### Production-Ready Implementation
 - [ ] Tested on 100+ verses with documented accuracy
-- [ ] All 4 documentation files created
+- [ ] Hierarchical prompt strategy (5 levels)
 - [ ] Error categorization complete
-- [ ] Query tool functional
-- [ ] Cross-feature validation passed
+- [ ] Cross-feature validation working
+- [ ] EXAMPLES.md with 5-10 detailed cases
 
 ### Excellent Implementation
 - [ ] Tested on 500+ verses
-- [ ] Multiple validation methods agree
+- [ ] Multiple validation prompts agree
 - [ ] Transferable patterns documented
 - [ ] Language-specific guidance provided
 - [ ] Integration with translation workflows
 
 ---
 
-## Feature-Specific Adaptations
+## Feature-Specific Prompt Adaptations
 
 ### For Noun Features (Number, Person, Proximity, etc.)
-- Priority: Semantic/ontological analysis
-- Check: Referent type, discourse tracking, theological category
-- Common correlations: Semantic type, discourse status, speaker identity
+
+**Priority**: Semantic/ontological analysis over grammar
+
+**Prompt Emphasis**:
+- What is the referent? (God, human, object)
+- What are the ontological properties?
+- What theological factors override grammar?
+- How is this tracked in discourse?
+
+**Key Context**: Referent identity, theological category, discourse tracking
 
 ### For Verb Features (Time, Aspect, Mood, etc.)
-- Priority: Mood as gateway feature
-- Check: Mood → Time → Aspect hierarchy
-- Common correlations: Discourse genre, semantic class, telicity
+
+**Priority**: Mood as gateway, then Time, then Aspect
+
+**Prompt Emphasis**:
+- Check Mood first (constrains other choices)
+- Time relative to discourse frame
+- Aspect from telicity and completion
+- Genre affects all three
+
+**Key Context**: Mood value, discourse genre, event type, narrative flow
 
 ### For Clause Features (Force, Demographics, Genre, etc.)
-- Priority: Discourse context and speech act
-- Check: Speaker/listener roles, genre, discourse structure
-- Common correlations: Theological context, dialogue vs narrative
+
+**Priority**: Discourse context and speech act
+
+**Prompt Emphasis**:
+- Who is speaking to whom?
+- What is the genre/discourse type?
+- What is the illocutionary force?
+- How does this fit discourse structure?
+
+**Key Context**: Speaker/listener roles, genre, discourse position, theological context
 
 ### For Phrase Features (Semantic Role, Relativization, etc.)
-- Priority: Syntactic structure and discourse function
-- Check: Phrase type, head properties, discourse prominence
-- Common correlations: Case marking, word order, definiteness
+
+**Priority**: Syntactic structure and discourse function
+
+**Prompt Emphasis**:
+- What is the grammatical role?
+- How prominent in discourse?
+- What semantic relationship?
+- How does phrase relate to head?
+
+**Key Context**: Clause structure, case marking, word order, definiteness
 
 ---
 
 ## Anti-Patterns to Avoid
 
-❌ **Don't**: Start with complex ML models
-✅ **Do**: Start with simple rules, add complexity only if needed
+❌ **Don't**: Use Python/code for predictions
+✅ **Do**: Use LLM context and prompt engineering
 
 ❌ **Don't**: Ignore the rarity principle
 ✅ **Do**: Use the dominant value as baseline (instant 80-90% accuracy)
@@ -437,14 +486,14 @@ def safe_predict(context):
 ❌ **Don't**: Analyze features in isolation
 ✅ **Do**: Check correlations with mood, genre, semantics, theology
 
-❌ **Don't**: Look at actual data before making predictions
-✅ **Do**: Blind testing prevents overfitting
+❌ **Don't**: Look at actual data before making predictions (overfitting)
+✅ **Do**: Blind testing with held-out data
 
 ❌ **Don't**: Force decisions on ambiguous cases
 ✅ **Do**: Flag ambiguity, provide multiple readings, lower confidence
 
 ❌ **Don't**: Skip error categorization
-✅ **Do**: Systematic error analysis reveals fixable patterns
+✅ **Do**: Systematic error analysis reveals fixable prompt gaps
 
 ❌ **Don't**: Treat all features equally
 ✅ **Do**: Tier by confidence, automate high-confidence only
@@ -454,33 +503,37 @@ def safe_predict(context):
 ## Template Usage Examples
 
 **Example 1: Implementing "Voice" Feature**
-1. Phase 1: Voice = Active/Passive/Middle, Tier A priority, affects 50+ languages
-2. Phase 2A: Check if explicit in YAML → YES → Extract directly
-3. Phase 3: Validate on 100 verses → 98% accuracy
-4. Phase 4: Integrate, build query "find all passive divine passives"
-5. Phase 5: Deploy with Tier 1 automation
+
+1. **Phase 1**: Voice = Active/Passive/Middle, Tier A priority, affects 50+ languages
+2. **Phase 2A**: Check if explicit in YAML → YES → Extract using LLM with YAML reading
+3. **Phase 3**: Validate on 100 verses → 98% accuracy
+4. **Phase 4**: Create prompts for query "find all passive divine passives"
+5. **Phase 5**: Document with Tier 1 automation
 
 **Example 2: Implementing "Definiteness" Feature**
-1. Phase 1: Definite/Indefinite, Tier B priority, affects article languages
-2. Phase 2B: Not explicit → Predict from discourse tracking + theological uniqueness
-3. Level 1: Theological uniqueness (THE Messiah) → Definite
-4. Level 2: Discourse tracking (First Mention vs Routine) → guide decision
-5. Level 3: Article presence in target languages
-6. Phase 3: 85% accuracy on 50 verses → Tier 2 automation with review
+
+1. **Phase 1**: Definite/Indefinite, Tier B priority, affects article languages
+2. **Phase 2B**: Not explicit → Predict using LLM prompts
+3. **Prompt Level 1**: Theological uniqueness ("THE Messiah") → Definite
+4. **Prompt Level 2**: Discourse tracking (First Mention vs Routine) → guide decision
+5. **Prompt Level 3**: Article presence in source language
+6. **Phase 3**: 85% accuracy on 50 verses → Tier 2 automation with review
 
 ---
 
 ## Conclusion
 
-This template provides a proven, systematic approach for implementing ANY TBTA feature based on patterns from successful experiments achieving 98-100% accuracy.
+This template provides a proven, systematic approach for implementing ANY TBTA feature using **LLM prompt engineering and context engineering** (NOT Python code).
 
 **Key Success Factors**:
 1. Check for explicit encoding first (Mood pathway)
 2. Use rarity principle (baseline = 80-90% accuracy)
-3. Hierarchical decisions (theology → semantics → grammar)
-4. Multi-method validation (require agreement)
+3. Hierarchical prompt strategy (theology → semantics → grammar)
+4. Multi-method validation (require agreement across prompts)
 5. Blind testing (prevents overfitting)
 6. Error categorization (systematic improvement)
 7. Tiered automation (confidence-based deployment)
 
-Follow this template, adapt to feature-specific needs, and you will achieve high-accuracy TBTA feature reproduction.
+**Critical Principle**: This is an **LLM-driven process**. Features are predicted by providing rich context to language models and using carefully crafted prompts, NOT by writing Python prediction algorithms.
+
+Follow this template, adapt prompts to feature-specific needs, and you will achieve high-accuracy TBTA feature inference using the power of modern LLMs that already understand Biblical text, theology, and linguistics.
