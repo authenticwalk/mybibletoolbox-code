@@ -15,6 +15,66 @@ Our dataset includes:
 - **Solomon Islands**: 8 languages (4.7%)
 - **Other regions**: 4 languages (2.3%)
 
+## TBTA Translation Features
+
+Features unique to Austronesian languages that require translation decisions not explicit in Greek/Hebrew source texts.
+
+### Clusivity (Inclusive/Exclusive "We") - ESSENTIAL
+
+**Present in**: All 172 languages (universal)
+**Dominant examples**:
+- **Tagalog**: `tayo` (inclusive) vs `kami` (exclusive)
+- **Indonesian**: `kita` (inclusive) vs `kami` (exclusive)
+- **Samoan**: `tātou` (inclusive) vs `mātou` (exclusive)
+
+**Biblical translation examples**:
+- **Genesis 1:26** "Let us make mankind" → Exclusive (Trinity speaking to itself)
+- **Matthew 6:9** "Our Father" → Inclusive (Jesus including disciples)
+- **1 Corinthians 1:23** "We preach" → Exclusive (apostles, not Corinthians)
+- **Acts 15:25** "We all agreed" → Inclusive (apostles including recipients)
+
+### Dual/Trial Number - ESSENTIAL (Oceanic only)
+
+**Present in**: 87 Oceanic languages (~50% of family)
+**Absent in**: Philippine, Indonesian types
+**Dominant example - Samoan**:
+- Dual: `lāua` (they two), `tāua` (we two inclusive), `māua` (we two exclusive)
+- Plural: `lātou` (they many), `tātou` (we all inclusive), `mātou` (we all exclusive)
+
+**Biblical translation examples**:
+- **Luke 24:13** "Two of them" → Dual number required
+- **Acts 13:2** "Set apart for me Barnabas and Saul" → Dual number
+- **Genesis 1:26** "Let us make" → Trial (Trinity = three persons)
+
+### Voice/Focus Systems - ESSENTIAL (Philippine type)
+
+**Present in**: 45 Philippine languages, some Formosan, Madagascar
+**Pattern**: Four voices (actor, patient, locative, beneficiary) marked by verb affixes
+**Dominant example - Tagalog**:
+- Actor focus: `kumain` (the one who ate)
+- Patient focus: `kainin` (what was eaten)
+- Locative focus: `kainan` (where eating happened)
+- Beneficiary focus: `ikain` (who it was eaten for)
+
+**Biblical translation examples**:
+- **John 1:1** "In the beginning was the Word" → Patient focus (Word is topic)
+- **Matthew 4:4** "Man does not live by bread alone" → Actor focus (man is topic)
+
+**Variants**: Indonesian/Malay simplified to 2 voices (active/passive)
+
+### Realis/Irrealis Mood - ESSENTIAL
+
+**Present in**: All 172 languages
+**Pattern**: Realis (completed/actual events) vs Irrealis (future/hypothetical/commands)
+**Dominant example - Tagalog**:
+- Realis: `kumain` (ate - completed)
+- Irrealis: `kakain` (will eat - not yet happened)
+
+**Biblical translation examples**:
+- **John 1:1** "was" → Realis (actually happened)
+- **Matthew 6:10** "Your kingdom come" → Irrealis (command/wish)
+- **Revelation prophecy** → Irrealis (future events)
+
 ## Classification Structure
 
 According to Robert Blust (1977, 1999), the family divides into ten primary branches:

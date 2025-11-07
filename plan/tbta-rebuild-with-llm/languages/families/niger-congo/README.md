@@ -6,6 +6,64 @@ Niger-Congo is one of the world's largest language families, comprising approxim
 
 **Dataset Coverage**: 94 Niger-Congo languages across 22 countries in West, Central, East, and Southern Africa.
 
+## TBTA Translation Features
+
+Features unique to Niger-Congo languages that require translation decisions not explicit in Greek/Hebrew source texts.
+
+### Noun Classes - ESSENTIAL (Bantu, Atlantic, Gur, Kwa)
+
+**Present in**: ~75 of 94 languages (absent in Mande, Kru, Ijoid)
+**Pattern**: 10-20 noun classes with concordial agreement affecting all modifiers
+**Dominant example - Swahili** (Bantu):
+- Class 1/2: people (`m-/wa-`) - "mtoto" (child) / "watoto" (children)
+- Class 5/6: fruits, paired objects (`-/ma-`) - "tunda" (fruit) / "matunda" (fruits)
+- Class 7/8: things, tools (`ki-/vi-`) - "kitu" (thing) / "vitu" (things)
+- Class 9/10: animals, loanwords (`N-/N-`) - "mbwa" (dog) / "mbwa" (dogs)
+
+**Biblical translation examples**:
+- **"Word" (John 1:1)** → Class 5 (abstract) or Class 7 (thing)?  Choice affects theological understanding
+- **"Faith"** → Class assignment varies: abstract class vs concrete class affects how believers conceptualize
+- **"Spirit"** → Class 1 (person), Class 5 (abstract), or Class 9 (breath/wind)? Theological implications
+
+**Translation impact**: Every noun triggers agreement. "The Word was God" requires consistent class agreement across sentence. Theological terms need careful class assignment.
+
+**Variants**: Bantu uses prefixes, Gur uses suffixes. Class count varies (Swahili 15 classes, some languages 21+).
+
+### Tone as Grammar - ESSENTIAL (Most languages)
+
+**Present in**: ~85 of 94 languages (absent in Swahili, Fula/Fulfulde, Wolof)
+**Pattern**: Tone distinguishes both lexical meaning AND grammatical categories
+**Dominant example - Yoruba** (3 tones):
+- High tone: `ọkọ` (hoe/vehicle)
+- Mid tone: `ọkọ` (spear)
+- Low tone: `ọkọ` (husband)
+- Tone change for tense/aspect
+
+**Biblical translation examples**:
+- **"Lord" vs "lord"** → Different tone patterns distinguish God from human masters
+- **Past vs Present** → Tone changes (not just affixes) mark tense/aspect
+- **Question vs Statement** → Final tone patterns distinguish (no separate particles)
+
+**Translation impact**: Tone must be marked in orthography. Omitting tone creates ambiguity that can cause theological misunderstanding.
+
+**Variants**: 2-tone systems (many Bantu), 3-tone (Yoruba, Igbo), 4-tone (some Kwa), 5-tone (rare).
+
+### Aspect-Prominence - ESSENTIAL
+
+**Present in**: All 94 languages
+**Pattern**: Aspect (perfective/imperfective) more important than tense (past/present/future)
+**Dominant example - Swahili**:
+- **-li-** perfective past: `alienda` (he went - completed)
+- **-na-** imperfective present: `anaenda` (he goes - ongoing)
+- **-ta-** future: `ataenda` (he will go)
+
+**Biblical translation examples**:
+- **Greek aorist** → Perfective aspect (completed action)
+- **Greek imperfect** → Imperfective aspect (ongoing/habitual)
+- **"I am" (John 8:58)** → Imperfective (ongoing existence)
+
+**Translation impact**: Greek tense-aspect system maps well. Focus on aspectual value over temporal location.
+
 ## Quick Statistics
 
 - **Total Languages in Dataset**: 94
