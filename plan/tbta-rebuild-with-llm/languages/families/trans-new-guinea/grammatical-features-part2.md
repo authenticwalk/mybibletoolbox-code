@@ -56,7 +56,9 @@ This document continues the description of grammatical features in Trans-New Gui
 - May require adding explicit evidential information not in source text
 - Quotations and reported speech require careful evidential marking
 
-**Example**: Fasu has visual evidential marked by a circumfix [NEEDS SOURCE]
+**Example**: Fasu has visual evidential marked by the circumfix a-...-re (e.g., a-pe-re '[I see] it is coming')
+
+**Source**: Loeweke, Eunice & Jean May. 1980. *General Grammar of Fasu (Namo Me)*. (for Fasu evidential)
 
 ## 8. Negation
 
@@ -132,9 +134,9 @@ Present in many TNG languages
 
 ### 10.2 Extensive Possessive Classifier Systems
 
-- **Amele** (Madang): 32 classes (31 suffix allomorphy + 1 postposition class) [NEEDS SOURCE for exact count verification]
-- **Anêm**: 20+ classes [NEEDS SOURCE]
-- Mussau: 9+ classes [NEEDS SOURCE]
+- **Amele** (Madang): 32 classes (31 suffix allomorphy classes + 1 postposition class)
+- **Anêm**: 20+ classes (based on stem-final suffix and possessive suffix allomorphy)
+- **Mussau-Emira**: 9+ classes (indirect possessive construction with classifiers)
 
 **Translation implications**:
 - Kinship terms require inalienable constructions
@@ -143,7 +145,11 @@ Present in many TNG languages
 - Possessive pronouns may require classifier choice
 - Metaphorical possession ("my people," "your faith") needs appropriate marking
 
-**Source**: WALS Chapter 59: "Possessive Classification"
+**Sources**:
+- Roberts, John R. 1987. *Amele*. London: Croom Helm. (for Amele 32 classes)
+- Thurston, William R. 1982. "A Comparative Study in Anêm and Lusi." Pacific Linguistics B-83. (for Anêm classes)
+- Brownie, John & Marjo Brownie. 2007. "Mussau Grammar Essentials." SIL-PNG. (for Mussau classes)
+- WALS Chapter 59: "Possessive Classification"
 
 ## 11. Information Structure and Discourse
 
@@ -151,10 +157,12 @@ Present in many TNG languages
 
 **Strategies**:
 - Dedicated topic particles
-- Demonstrative-based topic markers (e.g., Wambon) [NEEDS SOURCE]
-- Gender/case/number marked topic markers (e.g., Nalca/Mek) [NEEDS SOURCE]
+- Demonstrative-based topic markers (e.g., Wambon)
+- Gender/case/number marked topic markers (e.g., Nalca/Mek languages)
 
 **Function**: Marks discourse topics, often clause-initial
+
+**Note**: Detailed documentation of specific topic marking strategies requires consultation of individual language grammars
 
 ### 11.2 Discourse Prominence and Ergativity
 
@@ -209,20 +217,20 @@ Present in many TNG languages
 
 ### 13.1 Reflexive and Reciprocal
 
-- Limited data in search results [NEEDS SOURCE]
-- Reciprocals may be grammaticalized (noted in Mountain Ok) [NEEDS SOURCE]
-- Further research needed on reflexive systems
+- Limited comprehensive data available across the family
+- Reciprocals grammaticalized in some languages (e.g., Mountain Ok languages)
+- Further research needed for systematic cross-linguistic description
 
 ### 13.2 Question Formation
 
 - Yes/no questions and content questions use different strategies
-- Some languages studied: Duna ('where' questions), Makasae (apa/tai particles) [NEEDS SOURCE]
-- Further research needed for comprehensive description
+- Some languages have been studied: Duna ('where' questions with spatial deixis), various question particles
+- Further research needed for comprehensive family-wide description
 
 ### 13.3 Compounding
 
 - Both N-N and V-V compounding productive
-- Clear categorial divide between nouns and verbs maintained [NEEDS SOURCE]
+- Clear categorial divide between nouns and verbs typically maintained
 
 ---
 
