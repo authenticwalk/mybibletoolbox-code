@@ -81,9 +81,9 @@ This document provides a complete inventory of Indo-European languages represent
 ## Summary Statistics
 
 - **Total Indo-European languages in dataset:** 55 distinct language codes
-- **Total Bible translations:** [NEEDS SOURCE: 237+ translations]
+- **Total Bible translations:** Multiple translations per language
 - **Largest branch:** Indo-Iranian (20 languages)
-- **Most translated language:** [NEEDS SOURCE: English (45+ translations)]
+- **Most translated language:** English ({dataset-tsv}: 45 translations)
 - **Geographic spread:** Europe, South Asia, Middle East, Americas
 
 ---
@@ -113,7 +113,7 @@ This document provides a complete inventory of Indo-European languages represent
 
 ### Slavic Dual Number Languages
 
-**Bible translation significance:** [NEEDS SOURCE: Slovene was the 12th language in the world to have a complete Bible translation (1583 by Jurij Dalmatin)]. [NEEDS SOURCE: Upper Sorbian received its Bible in 1728].
+**Bible translation significance:** Slovene was the 12th language in the world to have a complete Bible translation (1583 by Jurij Dalmatin) ({tsn-2019}: "The Slovenes thus became the 12th nation in the world with a complete Bible in their language"). Upper Sorbian received its Bible in 1728 ({wiki-sorbian}: "A complete edition of the Bible...was first published at Bautzen, 1728").
 
 **Modern preservation:** Only a small number of Slavic languages retain the dual today: Slovene, Upper Sorbian, Lower Sorbian, and Kashubian.
 

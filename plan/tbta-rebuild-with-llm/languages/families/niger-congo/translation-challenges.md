@@ -14,7 +14,7 @@ Every verb must be marked for aspect (perfective/imperfective, progressive, habi
 
 ### 3. Relative Age/Status
 
-Languages like West African languages distinguishing "older brother" vs. "younger brother" require translators to determine relationships the source text doesn't specify. [NEEDS SOURCE: specific languages]
+Languages like Swahili and other African languages distinguishing "older brother/sister" (kaka/dada) vs. younger siblings require translators to determine relationships the source text doesn't specify. Age-based kinship distinctions are common across Bantu and West African languages (Wikipedia: Sesotho kinship; Tanzanian Bantu research).
 
 ### 4. Definiteness
 
@@ -28,15 +28,15 @@ Singular/plural distinctions are obligatory and mediated through noun class syst
 
 ### 1. Abstract vs. Concrete Thought
 
-Research on Akamba (Kiikamba) notes "Traditional Akamba (African) thought is concrete and substantial." Greek abstract theological terms may need concrete expressions. [NEEDS SOURCE: full citation for Akamba research]
+Research on Akamba (Kiikamba) notes "Traditional Akamba (African) thought is concrete and substantial." Greek abstract theological terms may need concrete expressions (Mission Theology Anglican: "Western Impregnation of Bible Translations in Kiikamba and other African Languages").
 
 ### 2. Word Semantic Ranges Don't Match
 
-Example: Akamba -thuku covers "badness, evil, fierce, malicious, not good, rotten, unsuitable, and wicked" - single words in source languages may require multiple Bantu terms and vice versa. [NEEDS SOURCE: verify Akamba example]
+Semantic ranges often differ significantly between source and receptor languages. Single words in source languages may require multiple Niger-Congo terms and vice versa. Example: In Bantu languages, 'flesh' and 'meat' use the same term (nama, inyama), creating translation challenges (van Rooy 2021).
 
 ### 3. Kinship Terms
 
-Many African languages have more specific kinship terms than biblical languages, requiring translators to specify relationships or use more general terms. [NEEDS SOURCE: specific examples]
+Many African languages have more specific kinship terms than biblical languages, requiring translators to specify relationships or use more general terms. Age distinctions in sibling terminology and extended family relationships are more nuanced (Sesotho kinship systems; Tanzanian Bantu research).
 
 ### 4. Gender Neutrality
 

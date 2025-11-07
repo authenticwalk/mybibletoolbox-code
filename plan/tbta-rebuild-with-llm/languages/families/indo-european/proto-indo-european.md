@@ -21,7 +21,7 @@ Proto-Indo-European was a **highly inflectional language** with complex morpholo
 
 The **ten main branches** of Indo-European are:
 
-1. **Anatolian** (extinct, [NEEDS SOURCE: earliest attested 17th century BCE])
+1. **Anatolian** (extinct, earliest attested 17th century BCE {wiki-hittite}: "attested in cuneiform records dating from the 17th century BC")
    - Hittite, Luwian, Palaic, Lydian, Lycian
    - Earliest attested IE branch
    - Shows some archaic features (e.g., two-gender system)

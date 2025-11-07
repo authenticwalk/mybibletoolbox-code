@@ -230,7 +230,7 @@ This document covers language families with 5-9 languages in the dataset.
 
 ---
 
-## 19. Turkic (6 languages) [NEEDS SOURCE: only 3 languages listed]
+## 19. Turkic (3 languages)
 
 **Languages in dataset**: Azerbaijani (South), Turkish, Uyghur
 
@@ -317,7 +317,7 @@ This document covers language families with 5-9 languages in the dataset.
 
 ---
 
-## 21. Dravidian (5 languages) [NEEDS SOURCE: only 4 languages listed]
+## 21. Dravidian (4 major languages)
 
 **Languages in dataset**: Kannada, Malayalam, Tamil, Telugu
 

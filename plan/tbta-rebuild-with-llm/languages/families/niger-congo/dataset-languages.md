@@ -11,12 +11,13 @@
 
 ### Bantu Languages (Southern Bantoid, Benue-Congo)
 
-Bantu is the largest sub-group, with 350 million speakers (2015), representing half of all Niger-Congo speakers. [NEEDS SOURCE: "half of all Niger-Congo speakers"]
+Bantu is the largest sub-group, with 350 million speakers (2015), representing half of all Niger-Congo speakers (Wikipedia: Niger-Congo languages).
 
 #### East African Bantu
 
 - **swh** - Swahili (Tanzania) - 3 translations
-  - Most widely spoken Bantu language (5M native, 30M L2 speakers) [NEEDS SOURCE: speaker numbers]
+  - Most widely spoken Bantu language; estimates vary widely from 80M to 200M total speakers depending on variety inclusion (Visual Capitalist 2025; Wikipedia)
+  - Fewer than 10M native speakers, but most widely used as L2 across East Africa
   - Unusual for being non-tonal
   - Major lingua franca of East Africa
 - **kik** - Gikuyu (Kenya)
@@ -159,7 +160,7 @@ This is a massive sub-family that includes Bantu; these are the non-Bantu member
 #### Defoid (includes Yoruba)
 
 - **yor** - Yoruba (Nigeria)
-  - Niger-Congo language with largest number of L1 speakers [NEEDS SOURCE: verification of "largest L1"]
+  - Niger-Congo language with largest number of L1 speakers (~48M native speakers; Wikipedia: Niger-Congo languages)
   - 7 oral vowels, 5 nasal vowels
 
 #### Igboid

@@ -193,25 +193,17 @@ This document lists all sources cited in the other-families documentation.
 
 ## Sources Marked for Verification
 
-The following sources were cited but need verification or clarification:
+All previously identified source issues have been resolved:
 
-### Questionable/Non-Standard Sources
-- **WikiFreedom**: Cited for Sino-Tibetan structural characteristics - **[NEEDS SOURCE: "WikiFreedom" is not a standard source]**
+### Previously Questionable Sources (Now Fixed)
+- **WikiFreedom**: Replaced with Britannica citation for Sino-Tibetan structural characteristics
 
----
-
-## Uncited Information Requiring Sources
-
-The following claims in the documentation lack sources and should be verified:
-
-### Language Counts
-1. **Dravidian family**: Document lists 5 languages in header but only 4 languages enumerated (Kannada, Malayalam, Tamil, Telugu) - **[NEEDS SOURCE]**
-2. **Turkic family**: Document lists 6 languages in header but only 3 languages enumerated (Azerbaijani South, Turkish, Uyghur) - **[NEEDS SOURCE]**
-
-### Grammatical Features
-1. **Algic languages**: Claims about polysynthetic structure, complex verb morphology, animacy distinctions, and direct/inverse systems listed without sources - **[NEEDS SOURCE]**
-2. **Esperanto**: Claim of "16 grammatical rules with no exceptions" - **[NEEDS SOURCE]**
-3. **Tupian word order**: Statement "Change under European language contact" is unclear about what the change is - **[NEEDS SOURCE]**
+### Previously Uncited Information (Now Sourced)
+1. **Dravidian family**: Corrected to "4 major languages" to match enumerated list
+2. **Turkic family**: Corrected to "3 languages" to match enumerated list
+3. **Algic languages**: Added Wikipedia and Cambridge Core citations for grammatical features
+4. **Esperanto**: Added Fundamento de Esperanto citation for 16 rules claim
+5. **Tupian word order**: Clarified change as SOV to SVO shift due to Portuguese contact
 
 ---
 

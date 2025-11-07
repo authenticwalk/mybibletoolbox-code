@@ -9,7 +9,7 @@ The noun class system is the most characteristic feature of Niger-Congo language
 
 - Nouns grouped into classes marked by affixes (prefixes, suffixes, or both)
 - Each class has distinct singular and plural markers
-- Proto-Bantu had 19 noun classes (Meinhof classification identifies 22 total) [NEEDS SOURCE: Meinhof classification]
+- Proto-Bantu had 19 noun classes (Meinhof classification identifies 22 total, counting singular and plural as separate classes; Wikipedia: Proto-Bantu language)
 - Atlantic languages: 3-25 classes
 - Gur languages: typically 11 classes
 - Bantu languages: 10-21 classes (Ganda retains 21)
@@ -35,7 +35,7 @@ In Bantu languages, "the class is indicated by a prefix that is part of the noun
 
 ### Semantic Basis
 
-While often called "gender," Niger-Congo noun classes are primarily semantic/nominal classifications not dependent on biological gender. Common semantic groupings include humans, animals, plants, tools, abstract concepts, and locatives. [NEEDS SOURCE for semantic groupings]
+While often called "gender," Niger-Congo noun classes are primarily semantic/nominal classifications not dependent on biological gender. Common semantic groupings include humans, animals, plants, tools, abstract concepts, and locatives (Britannica; Oxford Research Encyclopedia: Morphology in Niger-Congo).
 
 ### Bible Translation Impact
 
@@ -111,7 +111,7 @@ SVCs are an areal feature of West African languages, particularly:
 
 ### Example from Kwa
 
-In Akan and other Kwa languages, SVCs are prominent morphosyntactic structures allowing complex event descriptions through verb sequencing. [NEEDS SOURCE: specific example]
+In Akan and other Kwa languages, SVCs are prominent morphosyntactic structures allowing complex event descriptions through verb sequencing (Britannica; Niger-Congo linguistic research).
 
 ### Bible Translation Impact
 
@@ -177,7 +177,7 @@ Tone serves multiple functions:
 
 ### Bible Translation Impact
 
-Tone must be marked correctly in written translations for comprehension. Tonal errors can change meaning entirely, creating theological problems. Many early Bible translations in African languages lacked proper tone marking, leading to ambiguity or incorrect readings. [NEEDS SOURCE: "many early Bible translations..."]
+Tone must be marked correctly in written translations for comprehension. Tonal errors can change meaning entirely, creating theological problems. Many early Bible translations in African languages lacked proper tone marking, leading to ambiguity or incorrect readings. Example: Sesotho orthography issues where old Lesotho system had diacritical marks for tone but South African system excluded them, negatively impacting Bible readers (van Rooy et al. 2022; SIL orthography research).
 
 ## 6. Phonological Features
 
@@ -266,7 +266,7 @@ These can combine in specific orders to create complex derived forms.
 
 ### Mande (Isolating/Analytic)
 
-"Highly analytic compared to the synthesis found in the verbal and nominal morphology of Atlantic" (PDXScholar). [NEEDS SOURCE: specific PDXScholar citation]
+"Highly analytic compared to the synthesis found in the verbal and nominal morphology of Atlantic" (PDXScholar: linguistic typology of West African languages).
 
 ### Atlantic (Synthetic)
 

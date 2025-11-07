@@ -498,7 +498,7 @@ Conjunct: *ní·beir* "he does not carry"
 
 **Forms:** Article inflects for gender, number, case
 - 3 genders × 5 cases × 2 numbers = 30 potential forms
-- Actual forms: [NEEDS SOURCE: 17 distinct forms due to syncretism]
+- Actual forms: 17 distinct forms due to syncretism ({hellenistic-greek}: genitive plural is identical across genders, neuter nominative and accusative are identical in each number, and neuter genitive/dative are identical to masculine)
 
 **Functions:**
 - Mark definiteness: *ὁ ἄνθρωπος* "the man" vs. *ἄνθρωπος* "a man"
@@ -867,7 +867,7 @@ Conjunct: *ní·beir* "he does not carry"
 
 **Descended from medieval Indo-Aryan languages of northwestern India**
 - Related to Hindi, Punjabi, Gujarati
-- Left Indian subcontinent [NEEDS SOURCE: approximately 1000-1200 CE]
+- Left Indian subcontinent approximately 1000-1200 CE ({wiki-romani-history}: "migrations to Europe occurring approximately 1000 years ago"; {worldatlas-romani}: "arrived in the Balkans around 900 years ago")
 - Migrated through Persia, Armenia, into Europe
 
 **Evidence of Indo-Aryan origin:**
@@ -930,7 +930,7 @@ Conjunct: *ní·beir* "he does not carry"
 
 **Small translation base:**
 - Limited Biblical texts in Romani
-- [NEEDS SOURCE: Romani Bible translation history is relatively recent]
+- Romani Bible translation history is relatively recent ({wiki-romani-bible}: first Gospel in 1837, complete Bible not until 2014)
 - Many Romani communities multilingual (use majority language for religious texts)
 
 **Mixed grammar:**
