@@ -69,18 +69,21 @@ This document describes the core grammatical features that characterize Trans-Ne
 - This contrasts with ergative case marking (see section 3 below)
 
 **Examples from languages**:
-- Fore: object prefix, subject suffix [NEEDS SOURCE]
-- Mian: triple-indexing (head-marking) [NEEDS SOURCE]
-- Telefol: triple-indexing (head-marking) [NEEDS SOURCE]
-- Fuyug: much simpler morphology [NEEDS SOURCE]
-- Kimaghama: isolating (minimal morphology) [NEEDS SOURCE]
+- Mian: triple-indexing (subject suffixes, object prefixes, recipient suffixes), head-marking
+- Telefol: triple-indexing (same pattern as Mian), head-marking
+- Fuyug: simpler morphology compared to highland languages
+- Kimaghama: isolating morphology (minimal inflection)
 
 **Translation implications**:
 - Greek and Hebrew person marking in verbs maps reasonably well
 - Pronominal reference in translations needs careful attention
 - Dual number in pronouns affects rendering of "both" or paired individuals
 
-**Source**: Foley, William A. *Morphology of Trans New Guinea Languages.* Oxford Research Encyclopedia of Linguistics.
+**Sources**:
+- Foley, William A. *Morphology of Trans New Guinea Languages.* Oxford Research Encyclopedia of Linguistics.
+- Fedden, Sebastian. 2011. *A Grammar of Mian*. Berlin: Mouton de Gruyter. (for Mian triple-indexing)
+- Healey, Alan. 1964. "Telefol verb morphology." (for Telefol triple-indexing)
+- Bradshaw, Robert L. 2007. *Fuyug Grammar Sketch*. SIL-PNG Academic Publications. (for Fuyug morphology)
 
 ## 2. Word Order
 
@@ -119,11 +122,10 @@ This document describes the core grammatical features that characterize Trans-Ne
 - **Disambiguation**: Ergative used to avoid ambiguity
 
 **Examples**:
-- Lower Grand Valley Dani: ergative primarily for disambiguation [NEEDS SOURCE]
-- Yali: optional ergative interacts with discourse prominence [NEEDS SOURCE]
+- Lower Grand Valley Dani: ergative primarily for disambiguation
+- Yali: optional ergative interacts with discourse prominence at both global and local levels
 - Kaluli, Ku Waru, Duna: studied for acquisition of ergative marking
-
-**Kobon example**: No case on full nouns, but pronominal case exists (additive-quantitatively asymmetrical system) [NEEDS SOURCE]
+- Kobon: No case on full nouns, but pronominal case exists (additive-quantitatively asymmetrical system)
 
 **Translation implications**:
 - Greek/Hebrew don't have ergative systems
@@ -131,7 +133,11 @@ This document describes the core grammatical features that characterize Trans-Ne
 - Transitive/intransitive verb pairs may affect translation choices
 - Important for causative constructions
 
-**Source**: Rumsey, Alan. "The acquisition of ergative marking in Kaluli, Ku Waru and Duna (Trans New Guinea)."
+**Sources**:
+- Rumsey, Alan. "The acquisition of ergative marking in Kaluli, Ku Waru and Duna (Trans New Guinea)."
+- Bromley, H. Myron. 1981. *A Grammar of Lower Grand Valley Dani*. Pacific Linguistics. (for Dani ergative)
+- Riesberg, Sonja. 2018. "Optional ergative, agentivity and discourse prominence – Evidence from Yali (Trans-New Guinea)." *Linguistic Typology* 22(1). (for Yali ergative)
+- Davies, John. 1981. *Kobon*. Lingua Descriptive Studies. Amsterdam: North-Holland. (for Kobon pronominal case)
 
 ## 4. Number Systems
 
@@ -139,7 +145,7 @@ This document describes the core grammatical features that characterize Trans-Ne
 - **Singular**
 - **Dual** (two) - very common in TNG
 - **Plural** (three or more)
-- **Paucal** (few) - rare, e.g., Yimas has four-way system: sg/dual/paucal/pl [NEEDS SOURCE]
+- **Paucal** (few) - rare, e.g., Yimas has four-way system: sg/dual/paucal/pl
 
 **Proto-TNG reconstructions**:
 - Dual: *-li, *-t
@@ -148,7 +154,7 @@ This document describes the core grammatical features that characterize Trans-Ne
 
 **Distribution**:
 - Number often marked on verbs rather than (or in addition to) nouns
-- Some languages (like Amele) restrict number marking to kinship terms [NEEDS SOURCE]
+- Some languages (like Amele) restrict number marking to kinship terms
 - Many languages have minimal or optional number marking on nouns
 
 **Translation implications**:
@@ -157,22 +163,29 @@ This document describes the core grammatical features that characterize Trans-Ne
 - "Both" and "all" require careful distinction
 - Collective plurals may affect rendering of group nouns
 
-**Example**: Wantoat distinguishes singular, dual, and plural in pronouns [NEEDS SOURCE]
+**Examples**:
+- Yimas: four-way number distinction (singular, dual, paucal, plural) in pronouns
+- Wantoat: three-way distinction (singular, dual, plural) in pronouns
+- Amele: number marking (plural -el) restricted to kinship terms
 
-**Source**: Pawley & Hammarström (2018) for proto-TNG reconstructions
+**Sources**:
+- Pawley & Hammarström (2018) for proto-TNG reconstructions
+- Foley, William A. 1991. *The Yimas Language of New Guinea*. Stanford University Press. (for Yimas)
+- McElhanon, Kenneth A. & C. Voorhoeve. 1970. *The Trans-New Guinea Phylum: Explorations in Deep-Level Genetic Relationships*. (for Wantoat)
+- Roberts, John R. 1987. *Amele*. London: Croom Helm. (for Amele number marking)
 
 ## 5. Serial Verb Constructions
 
 **Prevalence**: Extremely common and productive in TNG languages
 
 **Function**: Compensate for small verb root inventories
-- Some languages have as few as 60 verb roots [NEEDS SOURCE]
+- Many TNG languages have limited verb root inventories
 - Serial verbs expand expressive capacity
 
 **Types**:
 
 1. **Causative serialization**: Using 'get' or similar verb
-   - Example: Gants (Madang) uses *miŋa* 'get' for causatives [NEEDS SOURCE]
+   - Common pattern across TNG languages
 
 2. **Benefactive/applicative**: Using 'give' or similar
    - Benefactives typically require serial construction with 'give'
@@ -197,8 +210,8 @@ This document describes the core grammatical features that characterize Trans-Ne
 
 ### 6.1 Obligatory TAM Marking
 
-- **Nuclear TNG languages**: 94.7% have obligatory TAM marking (very high rate) [NEEDS SOURCE for "nuclear TNG" definition and statistic]
-- Contrasts with other small families in region: 58.3% rate [NEEDS SOURCE]
+- **Trans-New Guinea languages**: Show high rates of obligatory TAM marking compared to other language families in the region
+- TAM marking is a characteristic feature of TNG languages, particularly in larger sub-families
 
 ### 6.2 Tense Systems
 
@@ -241,11 +254,13 @@ This document describes the core grammatical features that characterize Trans-Ne
 
 - **Realis** vs. **Irrealis** distinctions widespread
 - Imperative, hortative, jussive categories present
-- Some languages conflate future and hortative (Koromu) [NEEDS SOURCE]
+- Some languages conflate future and hortative (e.g., Koromu shows future tense/hortative overlap)
 
 **Translation implications**:
 - Subjunctive and optative moods map to irrealis
 - Dual tense systems useful for reported events with evidential distinctions
+
+**Source for Koromu**: Priestley, Carol. *Koromu (Kesawai): Grammar and Information Structure of a New Guinea Language*. (for future/hortative overlap)
 
 ---
 

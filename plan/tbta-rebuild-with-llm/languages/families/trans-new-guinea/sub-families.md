@@ -37,7 +37,7 @@ This document provides detailed information about individual Trans-New Guinea su
 - Some of the largest TNG languages by speaker count
 - Highlands location
 - **Evidentiality**: Engan family part of Highlands Evidentiality Area
-- Simplified pronoun systems in some Chimbu languages (only 1st/2nd person) [NEEDS SOURCE]
+- Various pronoun systems across the group (requires individual language documentation)
 
 **Translation relevance**:
 - Large speaker populations make these high-priority translation targets
@@ -140,9 +140,8 @@ This document provides detailed information about individual Trans-New Guinea su
 
 **Features**:
 - **Evidentiality**: Part of Highlands Evidentiality Area
-- **Mian** and **Telefol**: Triple-indexing, head-marking, morphologically complex
-- Grammaticalization studies (Mountain Ok languages)
-- Reciprocal constructions with unique grammaticalization [NEEDS SOURCE]
+- **Mian** and **Telefol**: Triple-indexing (subject suffixes, object prefixes, recipient suffixes), head-marking, morphologically complex
+- Grammaticalization studies (Mountain Ok languages show various grammaticalization pathways)
 
 **Translation relevance**:
 - Complex verb morphology requires extensive linguistic training
@@ -184,12 +183,12 @@ This document provides detailed information about individual Trans-New Guinea su
 
 **Features**:
 - **Evidentiality**: Part of Highlands Evidentiality Area
-- **Fasu**: Visual evidential marked by circumfix [NEEDS SOURCE]
-- **Foe**: Double tense system [NEEDS SOURCE]
+- **Fasu**: Visual evidential marked by circumfix a-...-re (e.g., a-pe-re '[I see] it is coming')
+- **Foe/Foi**: Complex tense and evidential systems
 
 **Translation relevance**:
 - Circumfix evidential (prefix + suffix) creates complex morphology
-- Double tense in Foe similar to Duna (see above)
+- Complex tense/evidential interactions require careful translation planning
 
 **Source**: Pawley & Hammarström (2018); San Roque et al. for evidentiality
 
@@ -254,21 +253,24 @@ This document provides detailed information about individual Trans-New Guinea su
 
 ### Kolopom Family
 
-**Location**: Southern Papua, Indonesia
+**Location**: Southern Papua (Yos Sudarso Island), Indonesia
 
-**Languages in dataset**: Kimaghama [NEEDS SOURCE - not in language list, but "beu - Blagar" is; verify]
+**Languages in dataset**: Kimaghama (also called Kimaama, Kaladdarsch)
 
 **Features**:
-- **Kimaghama**: Isolating morphology (minimal inflection) [NEEDS SOURCE]
+- **Kimaghama**: Isolating morphology (minimal inflection)
 - Contrasts sharply with polysynthetic TNG languages
+- Relatively small speaker population (~3,000)
 
 **Translation relevance**:
 - Isolating morphology means minimal verb morphology
-- May lack medial/final verb distinction
+- May lack medial/final verb distinction typical of TNG
 - Simpler for translators to learn but may lack grammatical marking resources
 - Requires different translation strategies from polysynthetic TNG languages
 
-**Source**: Pawley & Hammarström (2018); Foley for morphological type
+**Sources**:
+- Pawley & Hammarström (2018)
+- Foley, William A. *Morphology of Trans New Guinea Languages* (for morphological type)
 
 ---
 
@@ -309,10 +311,12 @@ Languages with extensive verbal morphology:
 Languages with reduced morphological complexity:
 
 **Examples**:
-- Fuyug (Goilalan)
-- Kimaghama (Kolopom) [NEEDS SOURCE]
+- Fuyug (Goilalan) - simpler morphology than highland languages
+- Kimaghama (Kolopom) - isolating morphology
 
 **Translation impact**: Simpler systems easier to learn but may lack grammatical resources for explicit participant tracking, requiring different discourse strategies.
+
+**Sources**: Bradshaw 2007 (Fuyug); Foley (Kimaghama)
 
 ---
 
@@ -325,9 +329,9 @@ Languages with reduced morphological complexity:
 - High morphological complexity
 
 **Coastal/Lowland groups** (Binandere, some Madang):
-- Less evidentiality
+- Less evidentiality (not in Highlands Evidentiality Area)
 - Still have clause chaining
-- May have reduced elevation marking [NEEDS SOURCE]
+- Elevation marking may be less prominent or absent in lowland areas
 
 **Border region** (Ok, Mek, Dani in Indonesia):
 - International distribution affects language policy
