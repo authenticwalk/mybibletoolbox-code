@@ -2,13 +2,13 @@
 
 ## Overview
 
-The Otomanguean (Oto-Manguean) language family is one of the most ancient and linguistically complex language families in the Americas, with all modern speakers located in Mexico. With approximately 2.3 million speakers spread across nearly 200 languages and dialects, Otomanguean represents the deepest time depth of any language family in the Western Hemisphere, with Proto-Otomanguean splitting estimated at circa 4400 BCE—making it the oldest language family with evidence of tonal contrast.
+The Otomanguean (Oto-Manguean) language family is one of the most ancient and linguistically complex language families in the Americas, with all modern speakers located in Mexico. With approximately 2.3 million speakers [Wikipedia: Oto-Manguean languages] spread across nearly 200 languages and dialects [Wikipedia: Oto-Manguean languages], Otomanguean represents the deepest time depth of any language family in the Western Hemisphere, with Proto-Otomanguean splitting estimated at circa 4400 BCE (based on controversial glottochronology method; other estimates suggest 1500 BCE) [Wikipedia: Oto-Manguean languages]—making it the oldest language family with evidence of tonal contrast [Wikipedia: Oto-Manguean languages].
 
-**Key fact**: Otomanguean is the *only fully tonal language family* in North and Central America.
+**Key fact**: Otomanguean is the *only fully tonal language family* in North and Central America [Wikipedia: Oto-Manguean languages].
 
 ### Geographic Distribution
 
-- **Primary hub**: State of Oaxaca (hosts ~1.5 million speakers across Zapotecan and Mixtecan branches)
+- **Primary hub**: State of Oaxaca (hosts ~1.5 million speakers across Zapotecan and Mixtecan branches) [Wikipedia: Oto-Manguean languages]
 - **Secondary concentrations**: Puebla, Guerrero, Hidalgo, Querétaro, Estado de México
 - **Historical range**: Extended into Nicaragua and Costa Rica (Manguean branch, now extinct)
 
@@ -21,9 +21,9 @@ The internal diversity of Otomanguean languages is comparable to Indo-European�
 ## Major Branches (8 subgroups)
 
 ### 1. Zapotecan (24 languages in database)
-**Speakers**: ~500,000 | **Geographic focus**: Oaxaca (primarily)
+**Speakers**: ~500,000 [NEEDS SOURCE] | **Geographic focus**: Oaxaca (primarily)
 
-The largest Otomanguean branch, with approximately 50 total varieties/dialects.
+The largest Otomanguean branch, with approximately 50 total varieties/dialects [NEEDS SOURCE].
 
 **Languages in database**:
 - Zapotec, Sierra de Juárez
@@ -53,9 +53,9 @@ The largest Otomanguean branch, with approximately 50 total varieties/dialects.
 **Linguistic note**: Four broad geographic divisions (Northern Sierra, Valley, Southern Sierra, Isthmus) with distinct features.
 
 ### 2. Mixtecan (31 languages in database)
-**Speakers**: ~550,000 | **Geographic focus**: Oaxaca, Puebla, Guerrero
+**Speakers**: ~550,000 [NEEDS SOURCE] | **Geographic focus**: Oaxaca, Puebla, Guerrero
 
-The most diverse Otomanguean family with three main groups (Cuicatec, Mixtec, Trique).
+The most diverse Otomanguean family with three main groups (Cuicatec, Mixtec, Trique) [NEEDS SOURCE].
 
 **Mixtec varieties** (24 in database):
 - Mixtec, Atatlahuca
@@ -81,12 +81,12 @@ The most diverse Otomanguean family with three main groups (Cuicatec, Mixtec, Tr
 **Trique**:
 - Triqui, Copala
 
-**Linguistic note**: Trique notably has up to **5 level tones**, the upper end of Otomanguean tonal complexity.
+**Linguistic note**: Trique notably has up to **5 level tones** [Wikipedia: Oto-Manguean languages; Chicahuaxtla Triqui has five level tones], the upper end of Otomanguean tonal complexity.
 
 ### 3. Oto-Pamean (5 languages in database)
-**Speakers**: ~500,000+ | **Geographic focus**: Central Mexico (Hidalgo, Querétaro, Estado de México)
+**Speakers**: ~500,000+ [NEEDS SOURCE] | **Geographic focus**: Central Mexico (Hidalgo, Querétaro, Estado de México)
 
-Characterized by **two-tone systems** (predominant in this branch).
+Characterized by **two-tone systems** [NEEDS SOURCE] (predominant in this branch).
 
 **Languages in database**:
 - Otomi, Mezquital
@@ -95,12 +95,12 @@ Characterized by **two-tone systems** (predominant in this branch).
 - Otomi, Querétaro
 - Otomí, Estado de México
 
-**Linguistic note**: Most Otomi varieties distinguish **3 tones** (high, low, rising); one San Gregorio dialect analyzed with 4 tones. Proto-Otomi likely had VSO order.
+**Linguistic note**: Most Otomi varieties distinguish **3 tones** (high, low, rising) [NEEDS SOURCE]; one San Gregorio dialect analyzed with 4 tones [NEEDS SOURCE]. Proto-Otomi likely had VSO order [NEEDS SOURCE].
 
 ### 4. Chinantec (8 languages in database)
-**Speakers**: ~140,000 | **Geographic focus**: Oaxaca, Veracruz
+**Speakers**: ~140,000 [NEEDS SOURCE] | **Geographic focus**: Oaxaca, Veracruz
 
-Notable for **5 register tones** in some dialects—"a highly unusual feature in world languages."
+Notable for **5 register tones** in some dialects [Wikipedia: Chinantecan languages; Usila Chinantec has five register tones]—"a highly unusual feature in world languages" [NEEDS SOURCE for quote].
 
 **Languages in database**:
 - Chinantec, Comaltepec
@@ -114,16 +114,16 @@ Notable for **5 register tones** in some dialects—"a highly unusual feature in
 - Chinantec, Usila
 
 ### 5. Populocan (Popolocan) (2 languages in database)
-**Speakers**: ~30,000+ | **Geographic focus**: Puebla, Northern Oaxaca
+**Speakers**: ~30,000+ [NEEDS SOURCE] | **Geographic focus**: Puebla, Northern Oaxaca
 
 **Languages in database**:
 - Popoloca, San Marcos Tlacoyalco
 - Popoloca, San Juan Atzingo
 
-**Linguistic note**: Also includes Chocho (~700 speakers), not in current database.
+**Linguistic note**: Also includes Chocho (~700 speakers) [NEEDS SOURCE], not in current database.
 
 ### 6. Chatino (3 languages in database)
-**Speakers**: ~50,000 | **Geographic focus**: Oaxaca
+**Speakers**: ~50,000 [NEEDS SOURCE] | **Geographic focus**: Oaxaca
 
 **Languages in database**:
 - Chatino, Tataltepec
@@ -131,7 +131,7 @@ Notable for **5 register tones** in some dialects—"a highly unusual feature in
 - Chatino, Nopala
 
 ### 7. Amuzgo (2 languages in database)
-**Speakers**: ~60,000 | **Geographic focus**: Guerrero, Oaxaca
+**Speakers**: ~60,000 [NEEDS SOURCE] | **Geographic focus**: Guerrero, Oaxaca
 
 **Languages in database**:
 - Amuzgo, Guerrero
@@ -159,49 +159,49 @@ Notable for **5 register tones** in some dialects—"a highly unusual feature in
 **Universal tonal nature**: All 69 Otomanguean languages in the database are tonal.
 
 **Tonal variation**:
-- **Minimum**: 2 level tones (some languages)
-- **Common range**: 2-4 tones per language
-- **Maximum**: 5 level tones (Trique)
-- **Contour tones**: Many languages include rising, falling, and register contours
-- **Whistled speech**: Zapotec, Chinantec, and Mazatec varieties can be whistled—reproducing tone, stress, and sentence rhythm through pitch alone. Short conversations can be sustained in whistled form.
+- **Minimum**: 2 level tones (some languages) [NEEDS SOURCE]
+- **Common range**: 2-4 tones per language [NEEDS SOURCE]
+- **Maximum**: 5 level tones (Trique) [already cited above]
+- **Contour tones**: Many languages include rising, falling, and register contours [NEEDS SOURCE]
+- **Whistled speech**: Zapotec, Chinantec, and Mazatec varieties can be whistled—reproducing tone, stress, and sentence rhythm through pitch alone. Short conversations can be sustained in whistled form. [Wikipedia: Whistled language; multiple sources on Chinantec and Mazatec whistled speech]
 
-**Phonological consequence**: Tone is so important that it's written in the practical orthographies (alphabets) of many languages, at least on some words.
+**Phonological consequence**: Tone is so important that it's written in the practical orthographies (alphabets) of many languages, at least on some words. [NEEDS SOURCE]
 
-**Historical significance**: Otomanguean is the oldest language family with evidence of tonal contrast in the proto-language (Proto-Otomanguean, ~4400 BCE).
+**Historical significance**: Otomanguean is the oldest language family with evidence of tonal contrast in the proto-language (Proto-Otomanguean, ~4400 BCE). [already cited in overview]
 
 ### 2. Word Order: Verb-Subject-Object (VSO)
 
-**Primary pattern**: V-S-O is the basic/predominant word order in Otomanguean languages.
+**Primary pattern**: V-S-O is the basic/predominant word order in Otomanguean languages. [NEEDS SOURCE]
 
-**Verb-initial property**: Head-initial structure with verbs preceding arguments.
+**Verb-initial property**: Head-initial structure with verbs preceding arguments. [NEEDS SOURCE]
 
 **Variation**:
-- Some Otomi dialects (Toluca, San Ildefonso Querétaro) show SVO as most frequent
-- Most other Otomanguean languages maintain VSO as basic order
-- Proto-Otomi reconstructed with VSO
+- Some Otomi dialects (Toluca, San Ildefonso Querétaro) show SVO as most frequent [NEEDS SOURCE]
+- Most other Otomanguean languages maintain VSO as basic order [NEEDS SOURCE]
+- Proto-Otomi reconstructed with VSO [NEEDS SOURCE]
 
-**Preverbal positions**: Topical, focal, negative, and interrogative elements can occupy preverbal slots in some languages (e.g., Zapotec).
+**Preverbal positions**: Topical, focal, negative, and interrogative elements can occupy preverbal slots in some languages (e.g., Zapotec). [NEEDS SOURCE]
 
 ### 3. Morphology: Complex and Agglutinative
 
-**Type**: Primarily agglutinative with prefixes and suffixes attached to roots, though some fusion occurs.
+**Type**: Primarily agglutinative with prefixes and suffixes attached to roots, though some fusion occurs. [NEEDS SOURCE]
 
-**Complexity level**: "Incredibly complex inflectional class systems" involving:
+**Complexity level**: "Incredibly complex inflectional class systems" [NEEDS SOURCE for quote] involving:
 - Rich arrays of suffixes and prefixes
 - Complex tonal patterns
 - Stem alternations
 - Multiple processes co-occurring in a single word
 
 **Morphological processes** (language-dependent):
-- **Infixation**: Particularly prominent in Otomi
-- **Consonant mutation**: Stem modification for grammatical function
-- **Apocope**: Loss of final segments
-- **Tonal marking**: Grammatical information conveyed through tone changes
+- **Infixation**: Particularly prominent in Otomi [NEEDS SOURCE]
+- **Consonant mutation**: Stem modification for grammatical function [NEEDS SOURCE]
+- **Apocope**: Loss of final segments [NEEDS SOURCE]
+- **Tonal marking**: Grammatical information conveyed through tone changes [NEEDS SOURCE]
 
 **Noun morphology**:
-- Generally minimal true case marking
-- Plurality marked in noun phrase (quantifiers, numbers) rather than on noun itself
-- Some varieties have passive prefixes on verbs (e.g., Zapotec /dug-/ prefix)
+- Generally minimal true case marking [NEEDS SOURCE]
+- Plurality marked in noun phrase (quantifiers, numbers) rather than on noun itself [NEEDS SOURCE]
+- Some varieties have passive prefixes on verbs (e.g., Zapotec /dug-/ prefix) [NEEDS SOURCE]
 
 **Morphosyntactic typology**: Mixed synthetic and analytic structures:
 - **Phrase level**: Synthetic (morphologically dense)
@@ -216,21 +216,21 @@ Notable for **5 register tones** in some dialects—"a highly unusual feature in
 
 ### 4. Syllable Structure
 
-**Predominant pattern**: Open syllables (CV)
+**Predominant pattern**: Open syllables (CV) [NEEDS SOURCE]
 - Syllables primarily end in vowels
 - Or in /h/ or glottal stop (in some languages)
 
-**Exception**: Oto-Pamean languages have unusual consonant clusters at syllable end (atypical for Otomanguean).
+**Exception**: Oto-Pamean languages have unusual consonant clusters at syllable end (atypical for Otomanguean). [NEEDS SOURCE]
 
-**Segmental note**: Many Otomanguean languages lack labial consonants (no /p/, /b/), though this varies by language.
+**Segmental note**: Many Otomanguean languages lack labial consonants (no /p/, /b/), though this varies by language. [NEEDS SOURCE]
 
 ### 5. Nasal Vowels
 
-Common feature across the family, contributing to phonological complexity.
+Common feature across the family, contributing to phonological complexity. [NEEDS SOURCE]
 
 ### 6. Analytic tendencies
 
-While morphologically complex, Otomanguean languages are MORE ANALYTIC than other Mesoamerican language families, having comparatively fewer morphemes per word than neighboring groups.
+While morphologically complex, Otomanguean languages are MORE ANALYTIC than other Mesoamerican language families, having comparatively fewer morphemes per word than neighboring groups. [NEEDS SOURCE]
 
 ---
 
