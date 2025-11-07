@@ -47,7 +47,25 @@ All files will have either:
 ## Progress Tracking
 
 - **Started**: 2025-11-07
-- **Target**: Complete this session
+- **Completed**: 2025-11-07
 - **Claims to verify**: ~149
-- **Claims verified**: 0
-- **Claims removed**: 0
+- **Claims verified**: ~145
+- **Claims removed**: <5
+- **Sources added**: 50+ authoritative citations
+
+## Results Summary
+
+All language family files successfully verified:
+- Austronesian: 37 claims (34 verified, 3 explained, 0 removed)
+- Indo-European: 10 claims (9 verified, 1 removed)
+- Niger-Congo: 34+ claims (all verified with 5 new sources)
+- Trans-New Guinea: 31+ claims (23 verified, 6 modified, 2 major errors corrected)
+- Other-Families: 6 issues (all resolved)
+- Mayan: 11 categories (all verified, 1 citation error fixed)
+- Otomanguean: ~30 claims (all verified)
+
+## Commits
+
+- Trans-New Guinea: 1351ab4
+- All others: 130ddae
+- Branch: claude/llm-folder-rebuild-011CUsZGwdAqioh1tPZ1XYzs
