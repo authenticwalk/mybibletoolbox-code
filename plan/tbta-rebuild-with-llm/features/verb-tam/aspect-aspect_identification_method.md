@@ -4,6 +4,34 @@
 
 This document describes the systematic method for identifying TBTA aspect values from Biblical verse context. Based on analysis of Matthew 24 (54 verbs across 10 verses), this method achieves high accuracy by focusing on the distinctive markers for each aspect type.
 
+## Quick Translator Test
+
+Before diving into the detailed methodology, answer these questions about your target language:
+
+1. **Does your language obligatorily mark perfective vs imperfective aspect?**
+   - Languages like Russian require aspect marking on every verb
+   - Languages like English make it optional
+
+2. **Does your language distinguish inceptive (beginning) vs cessative (ending)?**
+   - Can you grammatically mark "begin to eat" differently from "stop eating"?
+   - Or do you use separate verbs/constructions?
+
+3. **Can your language express habitual/customary actions distinctly?**
+   - "He used to walk daily" vs "He is walking"
+   - Some languages have dedicated habitual markers
+
+4. **Does progressive aspect (ongoing action) have special marking?**
+   - English: "is walking" (progressive) vs "walks" (simple)
+   - Is this distinction grammatical or lexical in your language?
+
+5. **Are aspectual distinctions obligatory or optional in your language?**
+   - Must every verb specify aspect, or can it be unmarked?
+   - TBTA defaults to Unmarked (90.7%) - does your language allow this?
+
+**Why this matters**: TBTA's aspect system helps you decide when to use special aspect marking in your translation. If your language has obligatory aspect, you'll need to map TBTA's "Unmarked" to your language's default. If optional, you can preserve TBTA's marked/unmarked distinction.
+
+---
+
 ## Key Insight: Aspect Annotation Philosophy
 
 **TBTA only marks aspect when semantically necessary.**
@@ -622,7 +650,39 @@ THEN UNMARKED ✓ (90.7% probability in narrative)
 
 ---
 
-**Document Version**: 1.0
-**Last Updated**: 2025-11-04
+## Action Items for Production Release
+
+Based on FEATURE-IMPROVEMENT-CHECKLIST.md analysis, the following improvements will strengthen this feature:
+
+### ✅ Completed
+- [x] Quick Translator Test added (5 questions for target language assessment)
+- [x] Decision tree methodology documented
+- [x] 98.1% accuracy achieved on test data
+- [x] Common errors identified and documented
+
+### 🔄 Formatting Improvements
+- [ ] **Format language examples as family impact table**: Convert the "Language Family Implications" section (lines 587-612) into a structured table showing:
+  - Language family
+  - Aspect encoding type (obligatory/optional)
+  - TBTA mapping rules
+  - Example transformations
+
+### 📏 Progressive Disclosure
+- [ ] **Ensure methodology file ≤400 lines**: Current file is 657 lines (29% over limit)
+  - Consider splitting "Detailed Aspect Triggers" (lines 79-437) into separate reference file
+  - Keep decision tree and quick reference in main methodology
+  - Link to detailed triggers file for edge cases
+
+### 🧪 Future Testing (Phase 3)
+- [ ] Expand testing beyond Matthew 24 to verify accuracy across genres
+- [ ] Test rare aspects (Cessative, Perfective, Completive) with targeted examples
+- [ ] Validate prediction accuracy on blind test set (100+ verses)
+
+**Estimated effort**: 2-3 hours for formatting improvements
+
+---
+
+**Document Version**: 1.1
+**Last Updated**: 2025-11-06
 **Based on**: Matthew 24 TBTA Analysis (54 verbs, 10 verses)
 **Overall Accuracy**: 98.1%

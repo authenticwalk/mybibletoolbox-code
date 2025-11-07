@@ -23,7 +23,7 @@ TBTA manually annotated Bible verses with linguistic features crucial for transl
 **Theological hierarchy predicts features**: Divine vs human distinctions override pure grammar
 - Example: "Let us make" (Gen 1:26) = Exclusive clusivity (Trinity addressing Trinity)
 - Person/Clusivity: 100% accuracy using theological reasoning
-- Mood detection: 100% accuracy with direct extraction
+- Mood prediction: High accuracy (90-95% estimated) using Greek/Hebrew morphology
 
 **Pattern matching captures aspect**: Systematic semantic rules work
 - Aspect: 98.1% accuracy on Greek/Hebrew patterns
@@ -68,9 +68,10 @@ TBTA manually annotated Bible verses with linguistic features crucial for transl
 - Also handles Algic obviation (4th person), T-V distinctions
 - Validated on divine speech, apostolic authority, congregational contexts
 
-**Mood** (100%): Direct extraction from morphology
+**Mood** (90-95% estimated): Prediction from Greek/Hebrew morphology + semantics
 - Indicative, potential, obligation, permissive
-- Works across Greek indicative/subjunctive/optative/imperative
+- Uses Greek indicative/subjunctive/optative/imperative + modal auxiliaries
+- Comprehensive testing still needed
 
 **Aspect** (98.1%): Pattern matching Greek/Hebrew aspectual systems
 - Unmarked, inceptive, completive, cessative, durative, iterative
@@ -146,13 +147,41 @@ Individual language documentation for all 1,009 languages needed:
 
 ## Methodology
 
-### Core Approach
+### CRITICAL CLARIFICATION: Prediction vs. Extraction
+
+⚠️ **GOAL**: Build a system that can PREDICT TBTA-style annotations WITHOUT looking at existing TBTA labels.
+
+⚠️ **NOT**: Extract features that are already labeled in TBTA data structures (that's just copying the answer key!)
+
+**Some early experiments mistakenly described "extraction" methods (reading TBTA fields) as "prediction." These have been corrected. The true goal is PREDICTION using:**
+
+✅ Source text (Greek/Hebrew with morphology)
+✅ 900+ translations showing feature realization
+✅ Linguistic theory and semantic patterns
+✅ Theological reasoning and genre awareness
+✅ Context engineering (surrounding verses, discourse structure)
+
+❌ TBTA labels (only for validation/testing, NOT input to predictions)
+
+### Correct Workflow
+
+```
+1. READ: Source text + translations + context (NO TBTA labels!)
+2. ANALYZE: Apply linguistic/semantic/theological reasoning
+3. PREDICT: Generate feature label
+4. VALIDATE: Compare with TBTA to measure accuracy
+5. LEARN: Improve prediction methods from mismatches
+6. ITERATE: Refine prompts and decision trees
+```
+
+### Core Prediction Approach
 
 1. **Semantic interpretation over morphology**: What target languages need, not just source grammar
 2. **Theological reasoning**: Divine/human distinctions predict many features
 3. **Genre awareness**: Narrative vs poetry vs prophecy require different rules
-4. **Multiple validation**: Frequency checks, coherence tests, cross-references
-5. **Confidence scoring**: Flag uncertain predictions for human review
+4. **Translation analysis**: Examine how 900+ translations realize features
+5. **Multiple validation**: Frequency checks, coherence tests, cross-references
+6. **Confidence scoring**: Flag uncertain predictions for human review
 
 ### Systematic Decision Trees
 

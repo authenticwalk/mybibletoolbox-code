@@ -204,6 +204,20 @@ Run through [Validation Checklist](#validation-checklist):
 
 ## Feature Annotation Guides
 
+### IMPORTANT: About the Pseudocode in This Document
+
+The Python-style pseudocode throughout this guide is **ILLUSTRATIVE of reasoning logic**, NOT code to implement.
+
+**Actual implementation**: Use LLM prompts with natural language instructions that guide the LLM through this reasoning. The LLM reads these logic patterns and applies them through language understanding, not through coded execution.
+
+**Example**: When you see `extract_numeral(context)`, this means:
+- **Prompt the LLM**: "Identify any explicit numerals in the source text"
+- **NOT**: Write a Python function to parse numerals
+
+The pseudocode shows the decision-making process. You implement it by asking the LLM questions in natural language that follow the same logical structure.
+
+---
+
 ### Participant Tracking
 
 **Purpose**: Track how referents are introduced and maintained across discourse

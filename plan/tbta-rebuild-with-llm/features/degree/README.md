@@ -1,711 +1,384 @@
-# TBTA Degree Annotation System: Comprehensive Documentation
+# TBTA Feature: Degree
 
-## Overview
+## Translation Impact
 
-This document provides a comprehensive analysis of TBTA's degree annotation system for adjectives, adverbs, and verbs. The degree feature captures how languages express comparison, intensification, and gradation of properties.
+Degree marking determines how languages express comparison ("more than"), superlatives ("most"), and intensification ("very"). Languages vary dramatically: some use synthetic morphology (English "-er/-est", Greek "-τερος/-τατος"), others use analytic constructions (Mandarin "更/最", French "plus/le plus"), while degree-neutral languages (Motu, Fijian, Washo, Warlpiri) lack degree semantics entirely and use conjoined comparison. Without accurate degree annotation, translations will fail to select appropriate comparative forms, misuse intensifiers, or incorrectly apply degree marking in degree-neutral languages, producing unnatural or ungrammatical output across diverse comparison systems.
 
-## TBTA Degree Values
+## Complete Value Enumeration
 
-TBTA encodes degree information using single-letter codes at specific positions in the semantic string. The complete inventory varies by part of speech:
+TBTA encodes degree at different positions by part of speech:
 
-### Adjectives (Position 4)
-11 possible values:
+### Adjectives (Position 4) - 11 values
 
 | Code | Meaning | Description |
 |------|---------|-------------|
-| N | No Degree | Positive/base form with no degree marking |
-| C | Comparative | Expresses "more X than Y" |
-| S | Superlative | Expresses "most X (of all)" |
-| I | Intensified | Enhanced degree ("very X", "extremely X") |
-| E | Extremely Intensified | Highest intensification ("exceedingly X") |
-| T | 'too' | Excessive degree ("too X") |
-| L | 'less' | Downward comparison ("less X than Y") |
-| l | 'least' | Downward superlative ("least X of all") |
-| q | Equality | Equative comparison ("as X as Y") |
-| i | Intensified Comparative | "Much more X than Y" |
-| s | Superlative of 2 items | "The X-er of the two" |
-
-### Adverbs (Position 4)
-8 possible values:
-
-| Code | Meaning |
-|------|---------|
-| N | No Degree |
-| C | Comparative |
-| S | Superlative |
-| V | Intensified (equivalent to I for adjectives) |
-| E | Extremely Intensified |
-| T | 'too' |
-| L | 'less' |
-| l | 'least' |
-
-Note: Adverbs lack the adjective-specific values for equality (q), intensified comparative (i), and superlative of 2 items (s).
-
-### Verbs (Position 9)
-8 possible values:
-
-| Code | Meaning |
-|------|---------|
-| N | No Degree |
-| C | Comparative |
-| S | Superlative |
-| I | Intensified |
-| E | Extremely Intensified |
-| T | 'too' |
-| L | 'less' |
-| l | 'least' |
-
-Note: Verbs lack equality and comparative variation markers but include intensification.
-
-## Cross-Linguistic Typology of Comparison
-
-### 1. Comparative Constructions
-
-Based on WALS Chapter 121 (Stassen), comparative constructions are classified by how the standard NP (comparison benchmark) receives case marking:
-
-#### Fixed-Case Comparatives
-
-**A. Exceed Comparative**
-- Standard NP functions as direct object of "exceed/surpass" verb
-- Example: Duala "this house it big exceed that" = "This house is bigger than that"
-- Common in: Sub-Saharan Africa, Southeast Asia
-- Distribution: 33/167 languages surveyed
-
-**B. Locational Comparative**
-- Standard NP takes locational/adverbial case form
-- Three subtypes:
-  - **From-comparatives**: Estonian "spring is more beautiful than fall" (standard marked with "from")
-  - **To-comparatives**: Maasai "hartebeest is bigger than waterbuck" (standard marked with "to")
-  - **At-comparatives**: Tubu "his eye is redder than blood" (standard marked with "at")
-- Common in: Northern Africa, Eurasia
-- Distribution: 78/167 languages (most common type)
-
-#### Derived-Case Comparatives
-
-**C. Conjoined Comparative**
-- Two parallel clauses with independent predicates
-- Uses antonymous terms or positive-negative polarity
-- Example: Amele "this house big, that house small" = "This house is bigger than that house"
-- Common in: Australia, New Guinea
-- Distribution: 34/167 languages
-- **Crucial**: Used in degree-neutral languages (see section 3)
-
-**D. Particle Comparative**
-- Comparative particle accompanies standard NP
-- Example: English "taller than", French "plus grand que", Hungarian "István taller than Peter"
-- Common in: Europe
-- Distribution: 22/167 languages
-
-### 2. Degree Morphology Types
-
-Languages employ different strategies for marking degree:
-
-#### A. Synthetic/Morphological
-Formation through affixation:
-
-**Indo-European Examples:**
-- English: -er (comparative), -est (superlative)
-- Latin: -ior/-ius (comparative), -issimus/-a/-um (superlative)
-- Ancient Greek: -τερος/-τέρᾱ/-τερον (comparative), -τατος/-τάτη/-τατον (superlative)
-- Alternative Greek: -ῑ́ων/-ῐ́ον (comparative), -ιστος/-ιστη/-ιστον (superlative)
-
-**Characteristics:**
-- Inherited from Proto-Indo-European *-yos-/-ies- (comparative), *-isto- (superlative)
-- Retained in Germanic, Slavic, some Romance
-- Most robust in languages with fusional morphology
-
-#### B. Analytic/Periphrastic
-Formation through separate degree words:
+| `N` | No Degree | Positive/base form, unmarked |
+| `C` | Comparative | "more X than Y" |
+| `S` | Superlative | "most X (of all)" |
+| `I` | Intensified | "very X", "extremely X" |
+| `E` | Extremely Intensified | "exceedingly X", maximum intensification |
+| `T` | 'too' | Excessive degree ("too X") |
+| `L` | 'less' | Downward comparison ("less X than Y") |
+| `l` | 'least' | Downward superlative ("least X of all") |
+| `q` | Equality | Equative comparison ("as X as Y") |
+| `i` | Intensified Comparative | "much more X than Y" |
+| `s` | Superlative of 2 items | "the X-er of the two" |
+
+### Adverbs (Position 4) - 8 values
+
+Uses: `N`, `C`, `S`, `V` (=Intensified), `E`, `T`, `L`, `l`
+(Lacks: `q`, `i`, `s`)
+
+### Verbs (Position 9) - 8 values
+
+Uses: `N`, `C`, `S`, `I`, `E`, `T`, `L`, `l`
+(Lacks: `q`, `i`, `s`)
+
+## Baseline Statistics
+
+Expected distribution in Biblical texts (estimates based on degree morphology frequency):
+
+| Code | Estimate | Context |
+|------|----------|---------|
+| `N` (Unmarked) | ~70% | Base form, no degree marking |
+| `C` (Comparative) | ~15% | Explicit comparison constructions |
+| `S` (Superlative) | ~5% | Superlative forms (less common than comparative) |
+| `I` (Intensified) | ~5% | Intensifiers ("very", μᾶλλον, מְאֹד) |
+| `E`, `T`, `L`, `l`, `q`, `i`, `s` | ~5% | Specialized degree marking (combined) |
+
+**Source Language Patterns:**
+- Greek NT: Synthetic comparative/superlative common (μείζων, μέγιστος)
+- Hebrew OT: No synthetic forms, exclusively periphrastic (מִן construction)
+- Epistles: Higher intensification frequency
+- Narrative: More base forms, occasional comparative
+
+## Quick Translator Test
+
+**Critical questions to determine degree annotation needs:**
+
+1. **Does your language mark comparative (more X than Y)?**
+   - Synthetic: Morphological (English -er, Latin -ior) → Code morphology
+   - Analytic: Degree word (English "more", Mandarin 更) → Code degree word
+   - Conjoined: Parallel clauses (Amele, Motu) → Degree-neutral
+   - None: Context-based (Washo, Fijian) → Degree-neutral
+
+2. **Does your language mark superlative (most X)?**
+   - Synthetic: Suffix (English -est, Greek -τατος)
+   - Analytic: Degree word (English "most", Mandarin 最)
+   - Periphrastic: Construct state (Hebrew)
+   - None: Degree-neutral
+
+3. **Is your language degree-based or degree-neutral?**
+   - Degree-based: Gradable adjectives introduce degree arguments (most languages)
+   - Degree-neutral: No degree semantics, uses conjoined comparison (Motu, Fijian, Washo, Warlpiri)
+
+4. **Does your language have multiple intensifiers?**
+   - Many intensifiers: Track levels (I = "very", E = "extremely")
+   - Few intensifiers: Simple distinction sufficient
+   - Morphological: Reduplication, prefixes, augmentative
+
+5. **What comparison construction type does your language use?**
+   - Exceed comparative: Standard NP as object of "exceed" verb (Duala, African)
+   - Locational: Standard takes case (Estonian "from", Maasai "to")
+   - Conjoined: Parallel clauses (Amele, Australian)
+   - Particle: Comparative particle + standard (English "than")
+
+**Critical Indicators:**
+
+- **Degree-neutral languages** → Do NOT use C/S codes, use conjoined comparison
+- **Synthetic morphology** → Code forms directly (C for -er, S for -est)
+- **Rich intensifier systems** → Distinguish I (general) from E (extreme)
+- **Exceed/Locational comparatives** → Pay attention to case/verb, not just degree
+
+## Examples
+
+**Example 1: John 15:13** - Comparative
+```yaml
+Greek: μείζονα ταύτης ἀγάπην (meizona tautēs agapēn)
+English: "Greater love than this"
+Degree: C (Comparative)
+Reason: Synthetic comparative form μείζων (greater) from μέγας (great)
+```
+
+**Example 2: Matthew 22:36** - Superlative
+```yaml
+Greek: ποία ἐντολὴ μεγάλη (poia entolē megalē)
+English: "Which is the greatest commandment?"
+Degree: S (Superlative) - if using μεγίστη form
+Note: Greek may use positive form contextually for superlative meaning
+```
+
+**Example 3: Song of Solomon 1:2** - Comparative (Hebrew)
+```yaml
+Hebrew: טוֹבִים דֹּדֶיךָ מִיָּיִן (tovim dodeka miYayin)
+English: "Your love is better than wine"
+Degree: C (Comparative)
+Reason: מִן (min) construction creates comparative meaning
+```
 
-**Examples:**
-- English: more/most (esp. polysyllabic adjectives)
-- Ancient Greek: μᾶλλον (more), μάλιστα (most)
-- French: plus (more), le plus (most)
-- Mandarin: 更 gèng (more), 最 zuì (most)
+**Example 4: John 3:29** - Intensified
+```yaml
+Greek: χαρᾷ χαίρει (chara chairei) - "rejoices with joy"
+English: "Greatly rejoices" or "rejoices exceedingly"
+Degree: I or E (Intensified)
+Reason: Cognate accusative creates intensification
+```
 
-**Usage Contexts:**
-- Greek: Required for participles, compound adjectives, -τός verbal adjectives, -ιος adjectives
-- English: Polysyllabic adjectives, stylistic variation
-- Universal: Languages without synthetic morphology
+**Example 5: 2 Corinthians 4:17** - Intensified Superlative
+```yaml
+Greek: καθ' ὑπερβολὴν εἰς ὑπερβολὴν (kath hyperbolēn eis hyperbolēn)
+English: "Far more exceeding / beyond all comparison"
+Degree: E (Extremely Intensified)
+Reason: Double hyperbole construction, maximum intensification
+```
 
-#### C. Mixed Systems
-Many languages employ both strategies contextually:
-- English: good → better/best (synthetic) vs. beautiful → more/most beautiful (analytic)
-- Greek: Simple adjectives (synthetic) vs. compounds (analytic)
-- Romance: Varying degrees of synthesis retention (Romanian high, French low)
+## Hierarchical Prompt Template (5-Level)
 
-### 3. Degree-Neutral Languages
+### Level 1: Check for Degree Marking
 
-Recent research (Beck et al. 2009, Bochnak 2013) identifies languages lacking degree-based semantics entirely.
+```
+Does this adjective/adverb/verb show degree marking?
 
-#### The Degree Semantics Parameter
-Languages systematically differ in whether gradable predicates introduce degree arguments:
-- **Degree-based**: Predicates have type ⟨d,⟨e,t⟩⟩ with explicit degree variable
-- **Delineation-based**: Predicates have type ⟨e,t⟩ without degree variable
+Source: [Greek/Hebrew text]
+Translation: [English]
+
+Check for:
+- Comparative forms (English -er, "more", Greek -τερος, Hebrew מִן)
+- Superlative forms (English -est, "most", Greek -τατος, Hebrew construct)
+- Intensifiers (very, extremely, Greek λίαν/σφόδρα, Hebrew מְאֹד)
+- Excessive markers ("too")
+- Equative ("as...as")
+
+Answer: YES or NO
+```
+
+**Decision:** NO → `N` (No Degree), STOP | YES → Continue to Level 2
+
+### Level 2: Identify Degree Type
 
-#### Confirmed Degree-Neutral Languages
+```
+What type of degree marking is present?
+
+Options:
+A. Comparative: "more X than Y", comparison between entities
+B. Superlative: "most X", highest degree in set
+C. Intensified: "very X", degree enhancement without comparison
+D. Excessive: "too X", beyond acceptable threshold
+E. Equative: "as X as Y", equality of degree
+F. Downward: "less X" or "least X", inferiority comparison
+
+Source indicators:
+- Greek synthetic: -τερος (comp), -τατος (sup), -ῑ́ων (irreg comp)
+- Greek analytic: μᾶλλον (more), μάλιστα (most)
+- Hebrew: מִן (comparative), construct state (superlative), מְאֹד (very)
+
+Identified type: [A-F]
+```
+
+**Decision:** Continue to Level 3 with type
+
+### Level 3: Determine Degree Subtype
+
+```
+Refine the degree marking based on context.
+
+For Comparative (A):
+- Standard comparative → C
+- Intensified comparative ("much more") → i (adjectives only)
+
+For Superlative (B):
+- General superlative → S
+- Superlative of two items → s (adjectives only)
+- Absolute/Elative (no comparison set) → Consider E
+
+For Intensified (C):
+- General intensification ("very") → I
+- Maximum intensification ("exceedingly") → E
+
+For Excessive (D):
+- Excess marking ("too") → T
+
+For Equative (E):
+- Equality construction ("as...as") → q (adjectives only)
 
-**Motu** (Austronesian, Papua New Guinea)
-- Uses conjoined comparison exclusively
-- Lacks degree morphology entirely
+For Downward (F):
+- Comparative of inferiority → L
+- Superlative of inferiority → l
 
-**Fijian** (Austronesian, Fiji)
-- IC-only language (individual comparison)
-- No degree arguments in gradable predicates
+Identified code: [Specific TBTA code]
+```
 
-**Washo** (isolate/Hokan, California/Nevada)
-- Systematically lacks degree morphology
-- Gradable predicates type ⟨e,t⟩
+### Level 4: Validate Against Source Language
 
-**Warlpiri** (Pama-Nyungan, Australia)
-- Gradable predicates do not combine with degree arguments
-- Uses alternative comparison strategies
+```
+Verify degree marking against source language form.
 
-#### Comparison Strategies in Degree-Neutral Languages
-- Conjoined comparatives (most common)
-- Positive-negative polarity
-- Contextual inference
-- Absolute rather than scalar semantics
+Greek validation:
+- Synthetic comparative present? → C
+- Synthetic superlative present? → S
+- μᾶλλον used? → C (analytic comparative)
+- μάλιστα used? → S (analytic superlative)
+- Intensifier (λίαν, σφόδρα, πάνυ)? → I or E
 
-### 4. Biblical Languages Comparison Systems
+Hebrew validation:
+- מִן construction present? → C (comparative)
+- Construct state pattern? → Check if superlative (S)
+- מְאֹד present? → I (intensified)
+- Definite article on adjective? → May indicate S
 
-#### Ancient Greek (Koine)
+Does source support predicted degree? YES/NO
+If NO, revise prediction based on source.
+```
 
-**Synthetic Formation:**
-- Regular comparative: -τερος/-τέρᾱ/-τερον (suffix to masculine stem)
-- Regular superlative: -τατος/-τάτη/-τατον
-- Irregular comparative: -ῑ́ων/-ῑ́ᾱ/-ῐ́ον (masculine/feminine, neuter)
-- Irregular superlative: -ιστος/-ιστη/-ιστον
+### Level 5: Check Target Language Requirements
 
-**Analytic Formation:**
-- μᾶλλον + positive adjective (comparative)
-- μάλιστα + positive adjective (superlative)
+```
+Validate against target language comparison system.
 
-**Required Analytic Contexts:**
-- Participles (cannot take comparative/superlative suffixes)
-- Compound adjectives
-- Prepositional prefix adjectives
-- Verbal adjectives in -τός
-- Adjectives in -ιος
+Target language questions:
+1. Is target language degree-neutral?
+   - If YES, do NOT use C/S codes, use conjoined comparison
+2. Does target use synthetic or analytic comparison?
+   - Synthetic: Ensure proper morphological form
+   - Analytic: Select appropriate degree word
+3. Does target have exceed/locational comparative?
+   - Adjust case marking and verb choice accordingly
+4. Does target distinguish multiple intensifier levels?
+   - If YES, apply I vs E distinction
+   - If NO, collapse to single intensifier
 
-**New Testament Examples:**
-- John 15:13: μείζονα (greater, comparative from μέγας)
-- Synthetic comparative forms common in NT
+Final degree code: [Code with justification]
+```
 
-#### Biblical Hebrew
+## Gateway Features (Correlations)
 
-**Fundamental Difference:** Hebrew lacks morphological comparison entirely. All comparison is periphrastic.
+High-confidence quick predictions:
 
-**Comparative Strategies:**
+| Context | Predict | Confidence | Notes |
+|---------|---------|------------|-------|
+| No degree marking | `N` | 95%+ | Base form, default |
+| Greek -τερος/-τέρᾱ/-τερον | `C` | 95%+ | Synthetic comparative |
+| Greek -τατος/-τάτη/-τατον | `S` | 95%+ | Synthetic superlative |
+| Greek μᾶλλον + adjective | `C` | 90%+ | Analytic comparative |
+| Greek μάλιστα + adjective | `S` | 90%+ | Analytic superlative |
+| Hebrew מִן + adjective | `C` | 90%+ | Comparative construction |
+| Hebrew construct state pattern | `S` | 75%+ | Check context for superlative |
+| English "more" + adjective | `C` | 90%+ | Analytic comparative |
+| English "most" + adjective | `S` | 90%+ | Analytic superlative |
+| English "very" + adjective | `I` | 85%+ | General intensification |
+| English "extremely/exceedingly" | `E` | 85%+ | Maximum intensification |
+| English "too" + adjective | `T` | 95%+ | Excessive degree |
 
-1. **Preposition מִן (min) "from"**
-   - Adjective remains in base form
-   - Example: "X is great from Y" = "X is greater than Y"
-   - Standard marked with מִן
-   - Can also use מִכֹּל (mikkol) "from all" for emphasis
+**Cross-feature correlations:**
+- Teaching discourse → Higher intensification (I/E)
+- Comparative constructions → Often with "than" particle
+- Superlatives → Usually with definite article
+- Degree-neutral target → Never use C/S codes
 
-2. **Comparative Context Without Overt Marking**
-   - Context-dependent interpretation
-   - Adjective + implied comparison
+## Common Prediction Errors
 
-**Superlative Strategies:**
+### Error 1: Applying Degree to Degree-Neutral Languages (~40% in affected languages)
 
-1. **Construct State: Singular + Plural**
-   - Pattern: "X of Xs"
-   - Example: שִׁיר הַשִּׁירִים (shir ha-shirim) "Song of Songs" = "Best/Greatest Song"
+**Problem:** Using C/S codes for languages lacking degree semantics
 
-2. **Construct State: Adjective + Noun**
-   - Pattern: "Adjective of Noun"
-   - Example: "wise of men" = "wisest of men"
+**Example:**
+- Motu, Fijian, Washo, Warlpiri all lack degree arguments
+- Wrong: Code "bigger" as C (Comparative)
+- Right: Use conjoined comparison ("X big, Y small")
 
-3. **Preposition מִן with Definite Article**
-   - Pattern: "the X מִן Y"
-   - Example: "the good מִן your children" = "the best of your children"
+**Solution:** Check target language typology first, identify degree-neutral languages
 
-4. **Definite Article on Adjective**
-   - Making adjective determinate implies superlative
-   - Often with partitive genitive or suffix
+### Error 2: Missing Synthetic vs. Analytic Distinction (~15-20% of errors)
 
-**Typological Classification:** Hebrew uses locational comparative (from-type) and periphrastic superlative strategies.
+**Problem:** Not recognizing morphological degree marking
 
-## Specialized Degree Categories
+**Example:**
+- Greek μείζων (synthetic comparative) vs. μᾶλλον μέγας (analytic)
+- Both mean "greater" but different constructions
+- Must code both as C, but construction type matters for target
 
-### 5. Intensification
+**Solution:** Check source language morphology, identify synthetic forms
 
-Intensifiers enhance degree without comparison:
+### Error 3: Confusing Intensification Levels (~20% of errors)
 
-#### Types of Intensifiers
+**Problem:** Not distinguishing general (I) from extreme (E) intensification
 
-**A. Maximizers**
-- Absolute endpoint: "completely", "totally", "absolutely"
-- Scales with upper bound
+**Example:**
+- "Very good" → I (Intensified)
+- "Exceedingly good" → E (Extremely Intensified)
+- Wrong: Coding both as I
+- Right: Use E for maximum intensification
 
-**B. Boosters**
-- Scalar increase: "very", "extremely", "really"
-- Open-ended intensification
+**Solution:** Check intensifier strength (very/quite = I, exceedingly/incredibly = E)
 
-**C. Approximators**
-- Near endpoint: "almost", "nearly", "practically"
-- Approaching maximum
+### Error 4: Hebrew Comparative Misidentification (~10-15% in Hebrew texts)
 
-#### Cross-Linguistic Patterns
+**Problem:** Missing מִן (min) construction for comparative
 
-**Lexical Intensifiers:**
-- English: very, extremely, incredibly, absolutely
-- Ancient Greek: λίαν, πάνυ, σφόδρα
-- Hebrew: מְאֹד (meod) "very"
+**Example:**
+- טוֹב מִן "good from" = "better than"
+- Wrong: Code as N (unmarked)
+- Right: Code as C (comparative via מִן construction)
 
-**Morphological Intensification:**
-- Reduplication (many languages)
-- Intensive prefixes
-- Augmentative affixes
+**Solution:** Always check for מִן with adjectives, indicates comparative
 
-**Semantic Bleaching:**
-- Intensifiers grammaticalize from content words
-- "Very" < Latin vērus "true"
-- Sociolinguistic variation in intensifier use
+### Error 5: Absolute vs. Relative Superlative Confusion (~10% of errors)
 
-#### TBTA Intensification Values
+**Problem:** Confusing elative (absolute) with superlative (relative)
 
-- **I (Intensified)**: General intensification ("very")
-- **E (Extremely Intensified)**: Maximum intensification ("exceedingly")
-- **i (Intensified Comparative)**: Enhanced comparison ("much more")
+**Example:**
+- Latin/Greek superlative can mean "very X" (elative) or "most X" (superlative)
+- "Most holy" (elative = extremely holy) → E
+- "Most holy (of all)" (superlative) → S
+- Context determines meaning
 
-### 6. Excessive Degree ("Too")
+**Solution:** Check for comparison set; if absent, may be E not S
 
-Marks degree beyond acceptable/optimal threshold:
+## Validation Approach
 
-**Characteristics:**
-- Indicates over-sufficiency
-- Negative implicature
-- Often triggers consequence clauses
+**How to test degree predictions:**
 
-**Cross-Linguistic Encoding:**
-- Dedicated lexical items (English "too", French "trop")
-- Verbal constructions ("exceed")
-- Contextual inference
+1. **Source Language Validation**
+   - Greek: Check for -τερος/-τατος or -ῑ́ων/-ιστος suffixes
+   - Greek: Identify μᾶλλον/μάλιστα + adjective
+   - Hebrew: Look for מִן construction or construct state
+   - Hebrew: Check for מְאֹד (very)
 
-**TBTA Code:** T = "too"
+2. **Morphological Analysis**
+   - Synthetic forms: Identify affixes directly
+   - Analytic forms: Identify degree words
+   - Mixed systems: Determine which strategy applies (adjective length, type)
 
-### 7. Equative Constructions
+3. **Cross-Feature Validation**
+   - Comparative + "than" particle → Confirms C
+   - Superlative + definite article → Confirms S
+   - Intensifier + no comparison → Confirms I or E
+   - Excessive + negative implicature → Confirms T
 
-Expresses equality of degree between comparee and standard:
+4. **Target Language Check**
+   - Degree-neutral: Never use C/S
+   - Synthetic target: Ensure morphological compatibility
+   - Analytic target: Verify degree word availability
+   - Exceed/Locational: Adjust case and verb selection
 
-#### Structure
-- English: "as...as" (Kim is as tall as Pat)
-- French: "aussi...que" (aussi grand que)
-- German: "so...wie" (so groß wie)
+5. **Sample Testing**
+   - Test 50-100 adjectives/adverbs across genres
+   - Compare to TBTA gold standard
+   - Calculate error rate by degree type
+   - Target: <10% error with methodology
 
-#### Typological Patterns (Haspelmath 2017)
+**Error Rate Expectations:**
+- Without methodology: 30-40% error rate
+- With source checking: <10% error rate
+- Degree-neutral languages: 0% if typology checked first
 
-Six equative types identified, based on presence of:
-- Equative degree marker (first "as")
-- Standard marker (second "as")
+## Detailed Documentation
 
-**Generalization 1:** No equative construction has degree marker without standard marker.
+For comprehensive linguistic analysis, see:
+- **[typology.md](typology.md)** - Cross-linguistic comparison systems, WALS data, degree-neutral languages
+- **[biblical-languages.md](biblical-languages.md)** - Greek and Hebrew degree systems in detail
+- **[constructions.md](constructions.md)** - Comparative, superlative, and intensification constructions
 
-**Common Type:** Both degree marker and standard marker present (European pattern).
+## Summary
 
-#### Cross-Linguistic Variation
-- Parameter marking: Languages vary in whether equative uses parameter marker
-- Similative vs. Equative: Different constructions for similarity vs. equality
-- Zero-marking: Some languages lack overt equative morphology
-
-**TBTA Code:** q = "Equality" (adjectives only)
-
-### 8. Downward Comparison
-
-Less common than upward comparison but attested widely:
-
-**"Less" (L):**
-- Comparative of inferiority
-- "X is less tall than Y"
-- Romance: French "moins...que", Spanish "menos...que"
-- English analytical: "less...than"
-
-**"Least" (l):**
-- Superlative of inferiority
-- "X is the least tall"
-- Parallel to regular superlative
-
-**Cross-Linguistic Pattern:**
-- More common in languages with analytic comparison
-- Rare in purely synthetic systems
-- Often uses separate lexical items rather than affixes
-
-### 9. Superlative Subtypes
-
-#### Relative vs. Absolute Superlative
-
-**Relative Superlative:**
-- Compares entity to group
-- Requires/implies comparison set
-- "She is the most beautiful (of all)"
-
-**Absolute Superlative (Elative):**
-- Expresses very high degree
-- No comparison set
-- "She is extremely/most beautiful"
-
-**Morphological Distinction:**
-- **Latin**: Same form, distinguished by context/complements
-- **Romance**: Distinct constructions
-  - Portuguese: superlativo relativo (mais + article + adjective) vs. superlativo absoluto (muito + adjective OR adjective + -íssimo)
-  - Italian: più (relative) vs. molto/-issimo (absolute)
-  - Spanish: más (relative) vs. muy/-ísimo (absolute)
-
-**Elative in Non-European Languages:**
-- **Arabic**: al-ism al-tafḍīl (single pattern for comparative, superlative, and elative)
-- **Tagalog**: napaka- prefix (elative) vs. pinaka- prefix (superlative)
-
-#### Superlative of Two Items
-
-Specialized construction for binary comparison:
-- English: "the taller of the two" (not "tallest")
-- Uses comparative form with superlative syntax
-- Grammaticalized in some languages
-
-**TBTA Code:** s = "Superlative of 2 items" (adjectives only)
-
-### 10. Degree Words and Ordering
-
-Based on WALS Chapter 91 (Dixon):
-
-#### Degree Word Categories
-
-**Separate Words:**
-- Meanings: "very", "more", "a little"
-- Modify adjectives to indicate property degree
-
-**Affixes:**
-- Bound morphology attached to adjectives
-- English -er/-est
-- Maricopa intensive prefix
-
-#### Cross-Linguistic Ordering Patterns
-
-**DegAdj (Degree word precedes):**
-- 227/481 languages
-- Dominant in: Europe, Asia, North America
-- English: very tall, more beautiful
-
-**AdjDeg (Adjective precedes):**
-- 192/481 languages
-- Dominant in: Africa, New Guinea, Southeast Asia
-
-**Both Orders:**
-- 62/481 languages
-- No dominant pattern
-- Common in: Austronesian family
-- May vary by:
-  - Attributive vs. predicative position
-  - Specific degree word
-  - Register/style
-
-## Language Family Patterns
-
-### Indo-European
-
-**General Characteristics:**
-- Proto-IE had synthetic comparison: *-yos-/-ies- (comparative), *-isto- (superlative)
-- Modern languages show varying retention
-
-**Germanic:**
-- Retains synthetic system broadly
-- English: Mixed (synthetic for short, analytic for long)
-- German: Primarily synthetic with -er/-st
-- Scandinavian: Primarily synthetic
-
-**Romance:**
-- Evolved toward analytic strategies
-- French: Highly analytic (plus/moins, le plus/le moins)
-- Italian: Mixed (più/meno but also -issimo for absolute)
-- Spanish: Primarily analytic
-- Portuguese: Analytic with synthetic absolute (-íssimo)
-- Romanian: Retains most synthesis (mai)
-
-**Slavic:**
-- Preserves fusional morphology
-- Rich inflectional systems
-- Synthetic comparison retained
-- Examples: Russian, Polish, Czech all maintain morphological comparison
-
-**Greek:**
-- Ancient: Robust synthetic + analytic option
-- Modern: Primarily analytic (πιο, ο πιο)
-
-**Celtic:**
-- Variable patterns
-- Irish: Analytic (níos, is)
-- Welsh: Mixed strategies
-
-### Niger-Congo
-
-**Characteristics:**
-- World's largest family (1,540 languages)
-- Diverse comparison strategies
-- Many use exceed comparatives
-- Noun class systems interact with degree marking
-
-**Bantu Subfamily:**
-- Exceed comparative common
-- Locational strategies
-- Verb-based comparison
-
-**West Atlantic:**
-- Various strategies
-- Often analytic
-
-### Austronesian
-
-**Characteristics:**
-- 1,256 languages
-- High diversity in comparison strategies
-- Many degree-neutral languages
-- Conjoined comparison common
-
-**Confirmed Patterns:**
-- Fijian: Degree-neutral
-- Motu: Conjoined comparison only
-- Tagalog: Morphological markers (mas-, pinaka-, napaka-)
-- Indonesian/Malay: Analytic (lebih, paling)
-
-**Ordering:**
-- Both DegAdj and AdjDeg common
-- High within-family variation
-
-### Sino-Tibetan
-
-**Characteristics:**
-- Highly isolating morphology
-- Primarily analytic comparison
-- Dedicated degree words
-
-**Chinese:**
-- Mandarin: 更 gèng (comparative), 最 zuì (superlative), 很 hěn (very)
-- Cantonese: 更 gang3 (more), 最 zeoi3 (most)
-- Analytic exclusively
-
-**Tibeto-Burman:**
-- Variable patterns
-- Many analytic systems
-- Some languages lack formal comparison
-
-### Pama-Nyungan (Australian)
-
-**Characteristics:**
-- Many conjoined comparison languages
-- Several degree-neutral languages confirmed
-- Warlpiri: Lacks degree arguments
-- Often use positive-negative polarity
-
-### Uralic
-
-**Characteristics:**
-- Synthetic comparison in many languages
-- Finnish: Comparative -mpi, superlative -in
-- Hungarian: Comparative -bb, superlative leg-...-bb
-- Estonian: Locational from-comparative
-
-### Afro-Asiatic
-
-**Semitic:**
-- **Arabic**: Unique elative system (comparative/superlative/intensive in one form)
-- **Hebrew**: Periphrastic only (see Biblical Hebrew section)
-- **Aramaic**: Similar to Hebrew patterns
-
-**Berber:**
-- Various strategies
-- Often analytic
-
-### Isolates and Small Families
-
-**Washo** (Hokan, isolate):
-- Degree-neutral confirmed
-- Lacks degree morphology entirely
-
-**Basque** (isolate):
-- Analytic comparison
-- Suffix -ago (comparative), -en (superlative)
-
-## Degree in Semantic Theory
-
-### Degree Semantics vs. Delineation Semantics
-
-**Degree-Based Semantics:**
-- Gradable predicates have type ⟨d,⟨e,t⟩⟩
-- Explicit degree argument
-- Scalar comparison along dimension
-- Presumes degree ontology in language
-
-**Delineation-Based Semantics:**
-- Gradable predicates have type ⟨e,t⟩
-- No degree argument
-- Vague boundaries
-- Contextual standards
-
-**Parameter Setting:**
-- Not correlated with language family
-- Crosscuts traditional typology
-- Degree-neutral: Motu, Fijian, Washo, Warlpiri
-- Degree-based: English, Greek, most Indo-European
-
-### Scale Structure
-
-**Types of Scales:**
-- **Open scales**: No maximum/minimum (tall, short)
-- **Closed scales**: Upper bound (full, empty)
-- **Partially closed**: One bound (wet, dry)
-
-**Interaction with Degree:**
-- Modifiers select for scale types
-- "Completely" requires closed scale
-- "Very" compatible with open scales
-- Cross-linguistic variation in scale lexicalization
-
-## Methodology for Annotation
-
-### Identifying Degree in Biblical Texts
-
-#### Step 1: Identify Source Language Form
-
-**Greek:**
-1. Check for comparative suffix: -τερος/-τέρᾱ/-τερον, -ῑ́ων/-ῐ́ον
-2. Check for superlative suffix: -τατος/-τάτη/-τατον, -ιστος/-ιστη/-ιστον
-3. Check for μᾶλλον (comparative analytic)
-4. Check for μάλιστα (superlative analytic)
-5. Identify intensifiers: λίαν, πάνυ, σφόδρα
-
-**Hebrew:**
-1. Check for מִן (min) preposition → comparative
-2. Check construct state patterns → potential superlative
-3. Check for מְאֹד (meod) → intensifier
-4. Check for definite article on adjective in specific contexts → superlative
-
-#### Step 2: Analyze Target Language Translation
-
-**For Adjectives:**
-1. Identify base form degree marking
-2. Determine construction type:
-   - Synthetic morphology (-er, -est, etc.)
-   - Analytic construction (more, most, less, least)
-   - Intensifier + adjective (very, extremely, too)
-   - Equative construction (as...as)
-   - Excessive (too)
-3. Assess comparative context:
-   - Binary comparison → may be "s" (superlative of 2)
-   - Group comparison → standard "S" (superlative)
-   - Enhanced comparison → may be "i" (intensified comparative)
-
-**For Adverbs:**
-1. Same as adjectives but without q, i, s values
-2. Use V for intensified (not I)
-
-**For Verbs:**
-1. Check for degree adverbials modifying verb
-2. Identify modal intensification
-3. Note excessive constructions
-
-#### Step 3: Map to TBTA Codes
-
-**Mapping Rules:**
-
-| Linguistic Feature | TBTA Code | Notes |
-|-------------------|-----------|-------|
-| Base/positive form | N | Default |
-| Comparative morphology/syntax | C | "more X than Y" |
-| Superlative morphology/syntax | S | "most X of all" |
-| Very, really, quite | I | General intensification |
-| Extremely, exceedingly, incredibly | E | Extreme intensification |
-| Too (+ negative implicature) | T | Excessive |
-| Less than | L | Downward comparative |
-| Least of | l | Downward superlative |
-| As...as construction | q | Adjectives only |
-| Much more, far more | i | Adjectives only |
-| Comparative of two | s | Adjectives only |
-
-#### Step 4: Context Validation
-
-**Questions to Ask:**
-1. Does the source language have this degree marking?
-2. Is the target language faithfully rendering source degree?
-3. Is this degree marking required by target language grammar?
-4. Are there competing interpretations?
-
-**Common Ambiguities:**
-- Absolute vs. relative superlative (context-dependent)
-- Intensifier vs. excessive (pragmatic)
-- Elative vs. superlative (requires complement analysis)
-
-## Sources Consulted
-
-### Primary Linguistic Resources
-
-**WALS (World Atlas of Language Structures):**
-- Stassen, Leon. 2013. Comparative Constructions. In: Dryer, Matthew S. & Haspelmath, Martin (eds.) WALS Online (v2020.3) [Data set]. Zenodo. https://doi.org/10.5281/zenodo.7385533 (Available online at https://wals.info/chapter/121)
-- Dixon, R.M.W. 2013. Order of Degree Word and Adjective. In: Dryer, Matthew S. & Haspelmath, Martin (eds.) WALS Online (v2020.3) [Data set]. https://wals.info/chapter/91
-
-**TBTA Database:**
-- AllTheWord. TBTA Database Export. GitHub repository. https://github.com/AllTheWord/tbta_db_export
-- README.md documentation of semantic encoding system
-
-### Academic Linguistics
-
-**Degree Semantics:**
-- Beck, Sigrid, Svetlana Krasikova, Daniel Fleischer, Remus Gergel, Stefan Hofstetter, Christiane Savelsberg, John Vanderelst, and Elisabeth Villalta. 2009. "Crosslinguistic Variation in Comparison Constructions." Linguistic Variation Yearbook 9: 1–66.
-- Bochnak, M. Ryan. 2013. "Cross-linguistic Variation in the Semantics of Comparatives." PhD dissertation, University of Chicago.
-- Kennedy, Christopher. 2007. "Vagueness and Grammar: The Semantics of Relative and Absolute Gradable Adjectives." Linguistics and Philosophy 30: 1-45.
-
-**Equative Constructions:**
-- Haspelmath, Martin. 2017. "Equative constructions in world-wide perspective." In Treis, Yvonne & Vanhove, Martine (eds.), Similative and equative constructions: A cross-linguistic perspective, 9-32. Amsterdam: Benjamins.
-- Haspelmath, Martin and Oda Buchholz. 1998. "Equative and similative constructions in the languages of Europe." In van der Auwera, Johan (ed.), Adverbial constructions in the languages of Europe, 277-334. Berlin: Mouton de Gruyter.
-
-**Indo-European Comparative Morphology:**
-- Clackson, James. 2007. Indo-European Linguistics: An Introduction. Cambridge: Cambridge University Press.
-- Fortson, Benjamin W. IV. 2010. Indo-European Language and Culture: An Introduction, 2nd ed. Malden, MA: Wiley-Blackwell.
-
-**Cross-Linguistic Typology:**
-- Cresswell, Cassandre and Elsi Kaiser. 2024. "Cross-Linguistic Differences in Morphological Processing: Evidence from English and Italian." Reading Research Quarterly. https://doi.org/10.1080/10888438.2024.2413108
-
-### Biblical Language Grammars
-
-**Ancient Greek:**
-- Goodell, Thomas Dwight. 1902. "Comparison of Adjectives." In A School Grammar of Attic Greek. Dickinson College Commentaries. https://dcc.dickinson.edu/grammar/goodell/comparison-adjectives
-- Smyth, Herbert Weir. 1920. A Greek Grammar for Colleges. Cambridge, MA: Harvard University Press. Perseus Digital Library. http://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.04.0007
-- Peek, Corinne. Ancient Greek I: A 21st Century Approach. Open Book Publishers. https://books.openbookpublishers.com/10.11647/obp.0264/ch29.xhtml
-
-**Biblical Hebrew:**
-- Gesenius, Wilhelm. Gesenius' Hebrew Grammar, §133: "The Comparison of Adjectives (Periphrastic Expression of the Comparative and Superlative)." Wikisource. https://en.wikisource.org/wiki/Gesenius'_Hebrew_Grammar/133
-- Hebrew for Christians. "Comparative Usage in Biblical Hebrew." https://hebrew4christians.com/Grammar/Unit_Five/Comparative_Usage/comparative_usage.html
-- unfoldingWord Hebrew Grammar. "Adjective." https://uhg.readthedocs.io/en/latest/adjective.html
-
-### Intensifiers and Degree Modification
-
-**Wikipedia and Reference:**
-- "Intensifier." Wikipedia. https://en.wikipedia.org/wiki/Intensifier
-- "Degrees of comparison of adjectives and adverbs." Wikipedia. https://en.wikipedia.org/wiki/Comparison_(grammar)
-
-**Academic Papers:**
-- Beltrama, Andrea. 2015. "Intensification and sociolinguistic variation: a corpus study." Proceedings of the 41st Annual Meeting of the Berkeley Linguistics Society.
-- Bolinger, Dwight. 1972. Degree Words. The Hague: Mouton.
-
-### Language Family Resources
-
-**Indo-European:**
-- "Indo-European languages." Wikipedia. https://en.wikipedia.org/wiki/Indo-European_languages
-- "Fusional language." Wikipedia. https://en.wikipedia.org/wiki/Fusional_language
-
-**Niger-Congo:**
-- "Niger–Congo languages." Wikipedia. https://en.wikipedia.org/wiki/Niger–Congo_languages
-
-**Austronesian:**
-- Ethnologue. "Language Families." https://www.ethnologue.com/insights/largest-families/
-
-**General Typology:**
-- "World Map of Language Families." https://maps-and-tables.neocities.org/languages_map
-
-## Document Version
-
-Version 1.0 - Created 2025-11-05
-Research compiled by Claude (Sonnet 4.5)
-Based on TBTA database export and cross-linguistic typological research
+Degree is essential for accurate comparison and intensification across diverse languages. TBTA's 11-value system (adjectives) covers synthetic/analytic comparative (C), superlative (S), intensification (I/E), excessive (T), equative (q), and downward comparison (L/l). Critical considerations include degree-neutral languages (Motu, Fijian, Washo) requiring conjoined comparison, synthetic vs. analytic morphology (Greek vs. Mandarin), and Hebrew's exclusively periphrastic system. Validation requires checking source language forms (Greek synthetic forms, Hebrew מִן construction), target language typology (degree-based vs. degree-neutral), and comparison construction types (exceed, locational, conjoined, particle).
