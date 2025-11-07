@@ -11,6 +11,72 @@ Trans-New Guinea (TNG) is one of the world's largest language families, with pro
 - **Secondary locations**: Indonesia (West Papua/Papua provinces)
 - **Region**: Primarily the interior highlands and mountains of New Guinea island
 
+## TBTA Translation Features
+
+Features unique to Trans-New Guinea languages that require translation decisions not explicit in Greek/Hebrew source texts.
+
+### Switch-Reference - ESSENTIAL
+
+**Present in**: Nearly all 129 languages (universal feature)
+**Pattern**: Medial verbs marked for same-subject (SS) vs different-subject (DS)
+**Dominant example - Amele**:
+- Same-subject: `-en` suffix (next clause has same subject)
+- Different-subject**: `-ig` suffix (next clause has different subject)
+
+**Biblical translation examples**:
+- **Mark 1:9** "Jesus came from Nazareth and was baptized" → Same-subject (Jesus...Jesus)
+- **Mark 1:10** "As Jesus came up, he saw heaven torn open" → Same-subject (Jesus...he)
+- **Mark 1:11** "A voice came from heaven: 'You are my Son'" → Different-subject (Jesus...voice)
+
+**Translation impact**: Every narrative sentence requires analyzing who does the next action. Maintains participant tracking automatically through verb morphology.
+
+### Evidentiality - ESSENTIAL (Highlands only)
+
+**Present in**: ~14 Highlands languages (Fasu, Dani, Yali, Kobon, etc.)
+**Absent in**: Lowland languages (~115 languages)
+**Dominant example - Fasu**:
+- Visual evidential: `a-...-re` (I saw it happen)
+- Reported: unmarked or narrative markers
+- Inferred: separate particles
+
+**Biblical translation examples**:
+- **Luke 2:10** "I bring you good news" → Visual (angel speaking) or divine knowledge marker
+- **Acts 1:3** "He appeared to them" → Visual (apostles witnessed)
+- **Hebrews 11:1** "Faith is confidence" → Generic/gnomic (not witnessed)
+- **All prophecy** → Reported or divine revelation marker
+
+**Translation impact**: Cannot translate without deciding information source. Testimonial passages (Gospels, Acts) need visual markers. Epistles need generic/gnomic markers.
+
+**Variants**: Some languages have 2-way systems, others have 3+ distinctions (visual/auditory/inferred/reported).
+
+### Dual Number - CRITICAL
+
+**Present in**: Very common across family
+**Dominant examples**:
+- **Mian, Telefol**: Pronouns and verbs mark dual
+- **Wantoat**: Singular/dual/plural in pronouns
+
+**Biblical translation examples**:
+- **Luke 24:13** "Two of them" → Dual pronouns/verbs
+- **Acts 13:2** "Barnabas and Saul" → Dual throughout passage
+- **Genesis 1:27** "Male and female" → Dual or plural depending on focus
+
+### Elevation Deixis - CRITICAL (Some languages)
+
+**Present in**: Various languages with topographical sensitivity
+**Pattern**: Verbs mark uphill/downhill/level motion
+**Example pattern**:
+- "Go up" = motion toward mountains/higher ground
+- "Go down" = motion toward lowlands/coast
+- "Go across" = level motion
+
+**Biblical translation examples**:
+- **Luke 10:30** "Going down from Jerusalem to Jericho" → Downhill marker (Jerusalem is higher)
+- **Luke 2:4** "Joseph went up to Judea, to Bethlehem" → Uphill marker
+- **Matthew 17:1** "Jesus led them up a high mountain" → Uphill marker
+
+**Variants**: Some languages grammaticalize elevation, others use lexical verbs.
+
 ## Key Typological Features
 
 Trans-New Guinea languages share significant typological characteristics that create unique challenges and opportunities for Bible translation:
