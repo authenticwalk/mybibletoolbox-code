@@ -2,11 +2,13 @@
 
 ## Overview
 
-The Mayan language family comprises approximately 22 distinct languages (with numerous dialects) spoken across Mexico, Guatemala, and Belize. These languages represent one of the most significant indigenous language families of Mesoamerica, with a combined speaker population of approximately 7 million people.
+The Mayan language family comprises approximately 30 distinct languages total [NEEDS SOURCE], with 22 Mayan languages spoken in Guatemala [NEEDS SOURCE]. These languages (with numerous dialects) are spoken across Mexico, Guatemala, and Belize. These languages represent one of the most significant indigenous language families of Mesoamerica, with a combined speaker population of approximately 6-7 million people [NEEDS SOURCE].
 
 ## Complete Mayan Language Database
 
 Total languages in database: 22 unique Mayan languages
+
+**Note**: Speaker population estimates in this table require source citations [NEEDS SOURCE].
 
 | ISO-639-3 | Language Name | Region | Speakers (est.) | Bible Translation Available |
 |-----------|---------------|--------|-----------------|---------------------------|
@@ -83,7 +85,7 @@ Mayan languages employ extensive classifier systems that categorize objects by s
 
 #### Classifier Types
 
-**Shape-Based Classifiers:**
+**Shape-Based Classifiers:** [NEEDS SOURCE]
 - `tzutz` - round/spherical objects (coconuts, balls, fruits)
 - `chow` - long/thin objects (sticks, pencils, threads)
 - `p'ak` - flat/thin objects (paper, boards, leaves)
@@ -142,6 +144,8 @@ Positional verbs encode:
 
 #### Major Positional Classes
 
+[NEEDS SOURCE for specific positional root forms]
+
 **Vertical/Horizontal Position:**
 - `tz'ap` / `tzap` - standing (tall objects, people standing)
 - `xul` - lying down/prone (people lying, logs)
@@ -168,6 +172,8 @@ Positionals function as:
 - **Adverbial modifiers** in certain constructions
 
 #### Positional Construction Examples
+
+[NEEDS SOURCE for Tzotzil examples]
 
 ```
 Tzotzil:
@@ -215,6 +221,8 @@ Rather than a traditional tense system (past/present/future), Mayan languages or
 - Example: `r-u-tz'on` (he/she has understood) - completive
 
 #### Aspect-Tense Interaction
+
+[NEEDS SOURCE for K'iche' morphological patterns]
 
 ```
 K'iche' Verbal Morphology:
@@ -295,6 +303,8 @@ Mayan languages have productive systems for creating new verbs through affixatio
 ---
 
 ## Regional Grouping
+
+[NEEDS SOURCE for classification of Mayan language branches]
 
 ### Yucatec Branch
 - Languages of Yucatán Peninsula and Belize

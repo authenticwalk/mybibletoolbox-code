@@ -2,7 +2,9 @@
 
 Consolidated research on major language families represented in Bible translations, focusing on grammatical features that affect translation decisions.
 
-**Coverage**: 6 major families with detailed analyses, plus 70+ additional families documented in other-families.md
+**Coverage**: 6 major families with detailed analyses, plus 70+ additional families documented in other-families/
+
+**Status**: All files converted to progressive disclosure format (README ≤200 lines, topic files ≤400 lines) with fact-checking completed
 
 ---
 
@@ -20,7 +22,7 @@ The world's most geographically dispersed language family, spanning from Madagas
 
 **Key insight**: Voice selection must follow natural information flow, not mechanical rules. Patient voice often predominates in narrative (60-70%).
 
-[Read detailed analysis →](austronesian.md)
+[Read detailed analysis →](austronesian/README.md)
 
 ---
 
@@ -38,7 +40,7 @@ The most widely studied language family, with extensive documentation for major 
 
 **Key insight**: Indo-European diversity means no single "European" translation model exists. Celtic ergative patterns differ dramatically from Germanic case systems.
 
-[Read detailed analysis →](indo-european.md)
+[Read detailed analysis →](indo-european/README.md)
 
 ---
 
@@ -56,7 +58,7 @@ Africa's largest language family, primarily represented by Bantu branch in Bible
 
 **Key insight**: Noun class assignment affects how abstract concepts are categorized. "Word" might be in abstract class vs. speech class depending on theological interpretation.
 
-[Read detailed analysis →](niger-congo.md)
+[Read detailed analysis →](niger-congo/README.md)
 
 ---
 
@@ -72,7 +74,7 @@ The world's third-largest language family (by number of languages), concentrated
 
 **Key insight**: Switch reference systems provide natural mechanisms for participant tracking that English lacks. Narrative coherence maintained through verb morphology, not pronouns.
 
-[Read detailed analysis →](trans-new-guinea.md)
+[Read detailed analysis →](trans-new-guinea/README.md)
 
 ---
 
@@ -121,7 +123,7 @@ Comprehensive documentation of 70+ additional families including: Afro-Asiatic (
 - Root-and-pattern morphology (Afro-Asiatic)
 - Vowel harmony (Turkic)
 
-[Read detailed documentation →](other-families.md)
+[Read detailed documentation →](other-families/README.md)
 
 ---
 
@@ -183,7 +185,8 @@ Comprehensive documentation of 70+ additional families including: Afro-Asiatic (
 
 ---
 
-**Last Updated**: 2025-11-06
+**Last Updated**: 2025-11-07
 **Total Languages Documented**: 600+ across all families
 **Major Families with Detailed Analysis**: 6
 **Additional Families Documented**: 70+
+**Fact-Checking Status**: ~149 claims marked [NEEDS SOURCE] for verification across all families
