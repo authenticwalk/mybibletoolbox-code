@@ -53,6 +53,20 @@ The following are key files you can load.  Don't load them automatically as it w
    - output schema with required fields (verse, inline citations, metadata)
    - define tool-specific Level 2 validation requirements
 
+### Working with TBTA Data or Features
+
+**If improving TBTA data or linguistic features, start here**: Read `/plan/tbta-rebuild-with-llm/README.md`
+
+This README is the single entry point for the TBTA reproduction project, which reverse-engineers TBTA's (The Bible Translator's Assistant) linguistic annotation methodology. TBTA provides 57 linguistic features for Bible translation into 1,000+ languages.
+
+The README covers:
+- What TBTA is and why we're reproducing it
+- The three-phase approach (training, adversarial validation, comprehensive)
+- Current status (2/17 features complete)
+- How to contribute (2-week cycle per feature)
+- Links to all detailed documentation
+
+**Key methodology**: Use adversarial testing (edge cases + typical cases) to validate feature algorithms. Always predict BEFORE checking TBTA test data to avoid data leakage.
 
 ## Repository Structure
 
