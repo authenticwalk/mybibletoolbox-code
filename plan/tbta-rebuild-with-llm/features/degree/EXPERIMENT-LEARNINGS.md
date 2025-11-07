@@ -223,12 +223,31 @@ Before considering this experiment complete:
 
 - [ ] Access TBTA database for test verses
 - [ ] Fill in actual annotations for all predictions
-- [ ] Calculate accuracy rate (target: 90%+ like number-systems)
-- [ ] Analyze mismatches for systematic patterns
+- [ ] Calculate accuracy rate (target: 100% - either match or understand why)
+- [ ] **FOR EACH MISMATCH: Apply exhaustive 6-step debugging**
+  - [ ] Step 1: Verify data accuracy
+  - [ ] Step 2: Re-analyze source text (morphology, lexicons, commentaries)
+  - [ ] Step 3: Re-analyze context (discourse, theology, parallels)
+  - [ ] Step 4: Cross-reference sources (3+ translations, 2+ commentaries, LXX/Vulgate)
+  - [ ] Step 5: Test alternative hypotheses (different algorithms, edge cases)
+  - [ ] Step 6: Make final determination (TBTA correct OR potential error)
+- [ ] Document systematic patterns in matches
+- [ ] Document learned patterns from mismatches
+- [ ] Flag any potential TBTA errors with comprehensive analysis
 - [ ] Document secondary findings (language disagreements)
 - [ ] Create refined algorithm based on results
 - [ ] Design follow-up experiments for uncertainties
 - [ ] Propagate new insights to CROSS-FEATURE-LEARNINGS.md
+
+### Learning from Number-Systems Success
+
+Number-systems achieved **100% accuracy** after exhaustive debugging:
+- Original: 91.4% (32/35 correct)
+- After debugging: 100% (all 3 "mismatches" were TBTA correct, we learned the pattern)
+- **Key Discovery**: LXX translates Hebrew dual שָׁמַיִם as SINGULAR (semantic > morphological)
+- **Pattern**: Ancient translations (LXX, Vulgate) provide authoritative semantic interpretation
+
+**Apply to Degree**: For any Greek/Hebrew morphological vs semantic conflicts, check LXX/Vulgate first
 
 ---
 

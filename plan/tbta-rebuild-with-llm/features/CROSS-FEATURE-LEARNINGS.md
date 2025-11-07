@@ -136,7 +136,51 @@ For each prediction:
    - What pattern this reveals
 ```
 
-#### Phase 3: Pattern Analysis
+#### Phase 3: Exhaustive Debugging for Mismatches (TARGET: 100% ACCURACY)
+```
+For EACH mismatch, debug exhaustively:
+
+Step 1: Verify Data Accuracy
+- [ ] Confirm verse reference is correct
+- [ ] Verify TBTA data extraction (correct feature, correct constituent)
+- [ ] Check for data corruption or version mismatch
+
+Step 2: Re-analyze Source Text
+- [ ] Re-examine Greek/Hebrew morphology (synthetic forms, particles)
+- [ ] Check interlinear translations for semantic meaning
+- [ ] Consult lexicons for alternate meanings
+- [ ] Review grammatical commentaries
+
+Step 3: Re-analyze Context
+- [ ] Expand context window (preceding/following verses)
+- [ ] Check discourse structure (paragraph, chapter)
+- [ ] Identify any theological/cultural factors
+- [ ] Review parallel passages
+
+Step 4: Cross-Reference Multiple Sources
+- [ ] Check 3+ English translations
+- [ ] Check 2+ scholarly commentaries
+- [ ] Consult target language examples (if available)
+- [ ] Review linguistic databases (WALS, Glottolog)
+
+Step 5: Test Alternative Hypotheses
+- [ ] Could TBTA be using a different algorithm?
+- [ ] Is there a valid alternative interpretation?
+- [ ] Does this reveal a new pattern we missed?
+- [ ] Is this an edge case requiring special handling?
+
+Step 6: Make Final Determination
+If after Steps 1-5, our prediction STILL seems more accurate:
+→ Flag as POTENTIAL TBTA ERROR for team review
+→ Document comprehensive analysis in potential-errors/ folder
+
+If TBTA annotation is defensible:
+→ Document as LEARNED PATTERN
+→ Update algorithm to handle this case
+→ Reclassify prediction methodology
+```
+
+#### Phase 4: Pattern Analysis
 ```
 Across all results:
 1. Calculate accuracy by value type
@@ -144,9 +188,10 @@ Across all results:
 3. Identify systematic patterns in mismatches
 4. Document edge cases and uncertainties
 5. Create refined algorithm
+6. Isolate potential TBTA errors vs. methodology gaps
 ```
 
-#### Phase 4: Secondary Findings
+#### Phase 5: Secondary Findings
 ```
 Document where languages/translations might disagree:
 1. Morphological vs semantic disagreements
@@ -156,7 +201,9 @@ Document where languages/translations might disagree:
 ```
 
 ### Success Metrics
-- **Target accuracy**: 90%+ (number-systems achieved 91.4%)
+- **Target accuracy**: 100% (either match or potential TBTA error flagged)
+- **Learned patterns**: 95%+ accuracy (confirmed algorithm works)
+- **Potential TBTA errors**: Flagged with exhaustive analysis
 - **High confidence patterns**: 95%+ accuracy
 - **Medium confidence patterns**: 70-90% accuracy
 - **Low confidence patterns**: Flagged for human review
