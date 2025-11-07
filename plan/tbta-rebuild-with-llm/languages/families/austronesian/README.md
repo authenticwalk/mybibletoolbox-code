@@ -75,6 +75,93 @@ Features unique to Austronesian languages that require translation decisions not
 - **Matthew 6:10** "Your kingdom come" → Irrealis (command/wish)
 - **Revelation prophecy** → Irrealis (future events)
 
+### Possessive Classification - ESSENTIAL (Oceanic)
+
+**Present in**: Strong in Oceanic languages (~109 langs), weaker in Philippine/Indonesian
+**Pattern**: Inalienable (inherent) vs Alienable (separable) possession
+**Dominant example - Fijian**:
+- Inalienable: `noqu yaca` (my name - part of me)
+- Alienable general: `noqu vola` (my book - can be separated)
+- Alienable food: `kequ ika` (my fish - to be eaten)
+- Alienable drink: `mequ wai` (my water - to be drunk)
+
+**Micronesian expansion** - up to 5 categories in some languages
+
+**Biblical translation examples**:
+- **Matthew 6:9** "Our Father" → Inalienable (inherent relationship)
+- **Matthew 6:11** "Our daily bread" → Alienable food class
+- **John 10:27** "My sheep" → Alienable general (owned but separable)
+- **Romans 8:9** "Spirit of God dwells in you" → Inalienable or special spiritual class
+
+**Cultural variations**:
+- **Traditional cultures**: "Our land" may be inalienable (sacred connection to ancestors)
+- **Island cultures**: Sea/fishing terms often have special possessive classes
+- **Theological impact**: Choosing inalienable for "Our Father" emphasizes unbreakable relationship
+
+**Variants**:
+- Philippine type: Minimal distinction
+- Indonesian: Lost most possessive classification
+- Oceanic: 2-5 possessive classes depending on language
+
+### Topic Marking - CRITICAL (Many languages)
+
+**Present in**: Common across family, especially topic-prominent Philippine languages
+**Pattern**: Marked topic (given information) vs comment (new information)
+**Dominant example - Tagalog**:
+- Topic marker: `ang` marks definite/focused noun
+- Non-topic: `ng` marks non-focused arguments
+
+**Biblical translation examples**:
+- **John 1:1** "In the beginning was the Word" → Word is topic (known referent)
+- **Matthew 5:3** "Blessed are the poor in spirit" → "Poor in spirit" is topic
+- **Participant tracking**: First mention vs repeated reference affects topic marking
+
+**Cultural impact**: What is treated as "given" vs "new" varies by cultural knowledge. Biblical figures familiar to one culture may need different topic marking than in cultures without biblical knowledge.
+
+### Proximity (Demonstratives) - CRITICAL (Variable systems)
+
+**Present in**: All languages, but system size varies
+**Pattern**: 2-way to 4-way spatial distinctions
+**Common patterns**:
+- **2-way**: Near speaker vs far from speaker
+- **3-way**: Near speaker / near hearer / far from both
+- **4-way**: Adds visibility or elevation distinctions
+
+**Dominant example - Tagalog (3-way)**:
+- `ito` - near speaker (this here by me)
+- `iyan` - near hearer (that there by you)
+- `iyon` - far from both (that over there)
+
+**Biblical translation examples**:
+- **John 1:29** "Behold the Lamb of God" → Proximal (visible/present) or distal (prophetic)?
+- **Luke 7:44** "Do you see this woman?" → Proximal (visible to both)
+- **Matthew 26:61** "This man said..." → Medial (referring to Jesus, near but not speaker)
+
+**Cultural variations**:
+- **Elevation-sensitive cultures** (PNG coast): Up/down distinction matters for topography
+- **Visibility-marking languages**: Seen vs unseen demonstratives
+- **Discourse deixis**: "This I say to you" uses demonstrative for abstract reference
+
+### Pro-Drop (Surface Realization) - ESSENTIAL (Most languages)
+
+**Present in**: Most Austronesian languages allow subject/object omission
+**Pattern**: Null subjects and objects when referent is clear from context
+**Dominant example - Tagalog**:
+- Full: `Kumain siya ng tinapay` (He ate bread)
+- Pro-drop: `Kumain ng tinapay` (Ate bread - subject dropped when obvious)
+
+**Biblical translation examples**:
+- **John 1:3** "Through him all things were made" → Can drop "him" if clear from context
+- **Narrative sequences**: Once participant established, can use pro-drop for cohesion
+- **Dialogue**: Speaker/hearer can be omitted based on pragmatics
+
+**Cultural impact**: Topic continuity conventions differ. What counts as "clear from context" varies by culture and discourse style.
+
+**Variants**:
+- Philippine type: Heavy pro-drop
+- Indonesian: More conservative, retains more overt subjects
+- Oceanic: Variable by language
+
 ## Classification Structure
 
 According to Robert Blust (1977, 1999), the family divides into ten primary branches:

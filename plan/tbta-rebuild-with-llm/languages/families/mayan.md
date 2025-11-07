@@ -37,6 +37,189 @@ Total languages in database: 22 unique Mayan languages
 
 ---
 
+## TBTA Translation Features
+
+Features unique to Mayan languages that require translation decisions not explicit in Greek/Hebrew source texts.
+
+### Numeral Classifiers - ESSENTIAL (All 22 languages)
+
+**Present in**: All Mayan languages (universal feature)
+**Pattern**: Objects categorized by shape, function, and abstract properties; classifiers obligatory with numerals
+**Dominant example - K'iche'**:
+- `junpe q'a` (one + round classifier) - for fruits, round objects
+- `junp' tzutz` (one + completion classifier) - for completed objects
+- `junpik` (one + handle classifier) - for handled objects, tools
+- `oxche` (three + long classifier) - for long objects (sticks, rope)
+- `oxp'ak` (three + flat classifier) - for flat objects (paper, cloth)
+
+**Biblical translation examples**:
+- **"Twelve tribes"** → Must choose classifier: long? group? people-collection?
+- **"Seven churches"** → Building classifier? assembly classifier? abstract classifier?
+- **"Two fish"** → Animal classifier or food classifier? Affects emphasis
+- **"One loaf of bread"** → Shape classifier (flat/round) affects how readers picture it
+- **"Three days"** → Temporal unit classifier required
+
+**Cultural variations**:
+- **Metaphorical weight**: Abstract nouns (faith, hope) require classifier choice affecting concreteness
+- **Sacred objects**: Classifiers for temple items convey shape/function/sacredness
+- **Theological implications**: "Body of Christ" - which classifier emphasizes corporate unity vs physical body?
+
+**Variants**:
+- Classifier inventories vary: K'iche' ~20, Ch'orti' documented with different sets
+- Ch'ol uses `-p'ej` as generic classifier for numerals 1-19
+- Some languages have specialized classifiers for ritual/religious contexts
+
+### Positional Verbs - ESSENTIAL (All languages)
+
+**Present in**: All 22 languages (250-500 distinct positional roots per language)
+**Pattern**: Distinct verb category encoding position, posture, and configuration of objects at rest
+**Dominant example - Tzotzil**:
+- `va'al` (standing) - for vertical orientation
+- `puch'ul` (lying prone) - for horizontal resting
+- `nakal` (residing, at home) - for settled state
+- `wokol` (seated) - for sitting position
+
+**Biblical translation examples**:
+- **"Jesus sat down"** → Specific positional for seated posture required (cultural significance)
+- **"The angel was standing"** → Standing positional (implies authority, readiness)
+- **"Lazarus was laid in the tomb"** → Prone positional (corpse configuration specific)
+- **"Bread set on the table"** → Flat resting positional
+- **"He stood before Pilate"** → Standing positional (courtroom posture)
+
+**Cultural variations**:
+- **Social meaning**: Seated position can imply teaching authority; standing implies readiness to act
+- **Resurrection body**: Exact positional choices affect materiality perception (ghostly vs physical)
+- **Religious symbolism**: Maya cosmology assigns meaning to positions (vertical = sacred axis)
+- **Detailed spatial awareness**: English glosses over; Mayan requires explicit positional encoding
+
+**Variants**: All languages have positionals, but root inventories differ. Tzotzil studied extensively by Haviland (1992).
+
+### Ergative-Absolutive Alignment - CRITICAL (All languages)
+
+**Present in**: All 22 Mayan languages (defining family feature)
+**Pattern**: Transitive subjects (agents) marked with ergative; intransitive subjects and transitive objects marked with absolutive
+**Dominant example - K'iche'**:
+- Transitive: `x-∅-atz'ub-a-n ri Xwan ri li tz'i'-a` (PERF-ABS.3SG-bite-TV-ABS.3PL ART Xwan ART DEF dog-ABS) = "Xwan bit the dog"
+- Intransitive: `x-r-aj-tik ri ala` (PERF-ERG.3SG-go-PL ART child) = "The child went"
+
+**Dominant example - Kaqchikel**:
+- Ergative prefixes mark transitive agents
+- Absolutive suffixes mark intransitive subjects and transitive objects
+- Creates inverse relationship with English nominative-accusative
+
+**Biblical translation examples**:
+- **Active constructions**: "Jesus healed the man" → Jesus-ERG, man-ABS (agent de-emphasized grammatically)
+- **Intransitive**: "Jesus wept" → Jesus-ABS (treated like object/patient)
+- **Greek passive**: May map naturally to ergative constructions (patient-focus)
+- **Causatives**: "God made them" → Complex ergative marking
+- **Reflexives**: "He humbled himself" → Ergative marker deleted (self-action)
+
+**Cultural variations**:
+- **Agent de-emphasis**: Ergative construction highlights action/patient more than agent
+- **Divine action**: God-ERG creates different nuance than English God-SUBJECT
+- **Passive theology**: "We are saved" may use absolutive marking (we are patients of salvation)
+- **Theological emphasis**: Ergative system naturally emphasizes what God does TO/FOR humans (patient-focus)
+
+**Variants**: All Mayan languages ergative, but marking patterns vary (prefixes, suffixes, split systems).
+
+### Aspect-Prominence - CRITICAL (All languages)
+
+**Present in**: All 22 languages (aspect primary, tense secondary)
+**Pattern**: Perfective (completed) vs Imperfective (ongoing/habitual) distinction primary; temporal reference secondary
+**Dominant example - K'iche'**:
+- Perfective: `x-[ERG]-[VERB]-[TV]-[ABS]` (completed action, marked with `x-`)
+- Imperfective: `r-[ERG]-[VERB]-[ABS]` or `∅-[ABS]-[VERB]` (habitual/ongoing)
+- Completive: `[ABS]-[VERB]-j` (perfected with result state)
+
+**Biblical translation examples**:
+- **Narrative mainline**: "Jesus went, saw, spoke" → All perfective (sequential completed events)
+- **Background description**: "While he was teaching" → Imperfective (ongoing background)
+- **Eternal truths**: "God loves the world" → Imperfective (habitual/timeless)
+- **Once-for-all events**: "Christ died for sins" → Perfective (completed, not repeated)
+- **Result states**: "It is finished" → Completive (perfected with lasting result)
+
+**Cultural variations**:
+- **Narrative structure**: Perfective = mainline events; imperfective = background/setting
+- **Theological emphasis**: Aspect choice affects understanding (salvation: completed act or ongoing process?)
+- **Greek aspect mapping**: Mayan aspect naturally maps to Greek aorist/imperfect distinction
+- **Timeless truths**: Imperfective for eternal theological statements
+
+**Variants**: All Mayan languages aspect-prominent, but specific marking strategies vary.
+
+### Possession Classification - CRITICAL (All languages)
+
+**Present in**: All 22 languages distinguish inalienable/alienable possession
+**Pattern**: Inalienable (body parts, kinship) marked directly on noun; alienable requires special constructions
+**Dominant example - K'iche'**:
+- Inalienable: `nu-q'aq'` (my hand) - direct possessive prefix
+- Inalienable kinship: `nu-tat` (my father) - direct marking
+- Alienable: Requires special possessive constructions, sometimes with classifiers
+
+**Biblical translation examples**:
+- **"Our Father in heaven"** → Inalienable kinship marking (inherent, unbreakable relationship)
+- **"My body, my blood"** → Inalienable body parts (emphasis on material reality)
+- **"Your possessions"** → Alienable construction (can be separated)
+- **"His disciples"** → Kinship-like or alienable? Choice affects relationship perception
+
+**Cultural variations**:
+- **Theological relationships**: God as Father = inalienable (inherent relationship, not adopted)
+- **Body of Christ**: Inalienable possession emphasizes organic unity
+- **Material possessions**: Alienable marking reinforces separation from identity
+- **Spiritual kinship**: Believers as "children of God" uses inalienable kinship terms
+
+**Variants**: All languages have distinction, but classifier use in alienable possession varies.
+
+### Directional Morphology - CRITICAL (Many languages)
+
+**Present in**: Common across family, highly developed in some languages
+**Pattern**: Verbal affixes encode direction of motion or action
+**Dominant example - Ch'ol**:
+- Directional suffixes mark motion toward/away from speaker or reference point
+- Integrate tightly with aspect and voice marking
+- "Come" vs "go" encoded through directionals, not separate verbs
+
+**Biblical translation examples**:
+- **"Come to me"** → Motion toward (directional marking)
+- **"Go into all the world"** → Motion away (directional marking)
+- **"He ascended into heaven"** → Upward directional required
+- **"Come down from the cross"** → Downward directional
+- **Spatial theology**: Directional choices affect how actions are perceived relative to speaker/God
+
+**Cultural variations**:
+- **Theophany directionality**: God "coming down" to humans vs humans "going up" to God
+- **Missional directionality**: Sending out (away from) vs gathering in (toward)
+- **Vertical dimension**: Ascension/descent marked explicitly
+
+**Variants**: Highly developed in Ch'olan languages; variable in other branches.
+
+### Verbal Derivation (Causative, Applicative) - CRITICAL (All languages)
+
+**Present in**: All 22 languages have productive derivational morphology
+**Pattern**: Affixes create new verbs from existing roots
+**Dominant patterns**:
+- **Causative** (`s-` prefix): "make someone do X"
+- **Passive** (various suffixes): suppress ergative agent
+- **Reflexive** (`r-` + reflexive prefix): self-action
+- **Applicative**: add beneficiary or instrument argument (increase valence)
+
+**Biblical translation examples**:
+- **"God made them"** → Causative morphology
+- **"Jesus made the blind see"** → Causative (cause-to-see)
+- **"Heal me"** → May use applicative (heal-for-me, benefactive)
+- **"Bless one another"** → Reciprocal morphology
+- **"Be saved"** → Passive suppresses agent
+- **"Repent"** → Reflexive (self-directed action)
+
+**Cultural variations**:
+- **Causative theology**: God's agency in salvation (God causes belief, causes growth)
+- **Applicative benefactive**: Emphasizes actions done "for" someone (died-for-us)
+- **Reflexive spiritual action**: Self-examination, self-denial naturally reflexive
+- **Reciprocal community**: "Love one another" naturally reciprocal
+
+**Variants**: All languages have system, but specific affixes and productivity vary.
+
+---
+
 ## Key Linguistic Features
 
 ### 1. Ergative-Absolutive Alignment

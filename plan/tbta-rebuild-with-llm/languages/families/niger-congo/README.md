@@ -64,6 +64,169 @@ Features unique to Niger-Congo languages that require translation decisions not 
 
 **Translation impact**: Greek tense-aspect system maps well. Focus on aspectual value over temporal location.
 
+### Serial Verb Constructions - ESSENTIAL (Kwa, Benue-Congo)
+
+**Present in**: Very common in Kwa, Benue-Congo (~40 languages); less common in Bantu
+**Pattern**: Multiple verbs in sequence sharing subject and TAM, no conjunctions
+**Dominant example - Yoruba**:
+- `Ó mú ìwé wá` (He took book came) = "He brought a book"
+- `Mo rí i lọ` (I saw him go) = "I saw him leave"
+- Directional: `wá` (come), `lọ` (go) as second verb
+- Benefactive: Serial with `fún` (give) = do for someone
+
+**Biblical translation examples**:
+- **Luke 15:18** "I will arise and go to my father" → Serial construction (arise-go)
+- **Mark 1:17** "Come, follow me" → Serial verbs natural (come-follow)
+- **Acts 8:27** "He rose and went" → Single serial verb sequence
+- **Benefactive constructions**: "He healed them" → do-healing give-them (serial)
+
+**Cultural variations**:
+- **Action conceptualization**: Western "went shopping" might be 3 serials (go-look-buy)
+- **Theological clarity**: "God gave us salvation" uses benefactive serial, emphasizing gift nature
+
+**Variants**: Bantu less productive than Kwa/Benue-Congo. Mande uses different strategies.
+
+### Verb Extensions - CRITICAL (Bantu)
+
+**Present in**: Highly developed in Bantu (~60 languages); less in other sub-families
+**Pattern**: Verbal suffixes modify verb meaning (causative, applicative, reciprocal, passive)
+**Dominant example - Swahili**:
+- Root: `pika` (cook)
+- Causative `-sha`: `pikisha` (cause to cook)
+- Applicative `-ia`: `pikia` (cook for someone)
+- Reciprocal `-ana`: `pikana` (cook for each other)
+- Passive `-wa`: `pikwa` (be cooked)
+- Stacked: `pikishiana` (cause each other to cook)
+
+**Biblical translation examples**:
+- **Causative constructions**: "Make them understand" → teach-CAUSATIVE
+- **Applicative (benefactive)**: "Jesus healed him" → heal-APPLICATIVE (heal-for-him)
+- **Reciprocal**: "Love one another" → love-RECIPROCAL (very natural!)
+- **Passive**: Greek passive voice maps directly to passive extension
+
+**Cultural variations**:
+- **Benefactive theology**: Applicative extension emphasizes actions done "for" someone's benefit
+- **Reciprocal community**: Extension naturally expresses "one another" commands (love, forgive, serve)
+
+**Variants**: Bantu has full system; other Niger-Congo sub-families use periphrastic constructions.
+
+### Locative Systems - CRITICAL (Bantu)
+
+**Present in**: Bantu languages (~60 languages)
+**Pattern**: Multiple locative classes with distinct meanings
+**Dominant example - Swahili**:
+- Class 16 (`pa-`): exact location - `pale` (at that spot)
+- Class 17 (`ku-`): general area - `kule` (over there)
+- Class 18 (`mu-`): inside - `mle` (in there)
+- All three trigger concordial agreement on verbs/adjectives
+
+**Biblical translation examples**:
+- **"In the beginning"** → Class 18 (inside time) or Class 17 (general)?
+- **"At the cross"** → Class 16 (exact spot where crucifixion happened)
+- **"In heaven"** → Class 18 (inside realm) vs Class 17 (general area)
+- **Spatial theology**: Choice of locative class affects how believers conceptualize spiritual location
+
+**Cultural variations**:
+- **Sacred spaces**: Exact location (Class 16) may emphasize historical/physical reality
+- **Spiritual realms**: Inside (Class 18) may emphasize immersion in God's presence
+- **Theological debates**: "In Christ" - which locative? Affects union theology
+
+**Variants**: Only Bantu has grammaticalized locative classes. Other sub-families use prepositions/postpositions.
+
+### Kinship Term Specificity - CRITICAL (Variable)
+
+**Present in**: Most languages have more specific kinship terms than Greek/Hebrew
+**Pattern**: Distinct terms for older/younger siblings, maternal/paternal relatives, relative age
+**Dominant example - Yoruba**:
+- `ẹgbọn` (older sibling of either gender)
+- `àbúrò` (younger sibling of either gender)
+- Greek `adelphos` (brother/sibling) must choose which
+
+**Dominant example - Swahili**:
+- `mjomba` (maternal uncle) vs `baba mdogo` (paternal uncle, lit. "small father")
+- Greek `adelphos` ambiguous; Swahili requires precision
+
+**Biblical translation examples**:
+- **"James, the Lord's brother"** → Older or younger? Term choice matters culturally
+- **"Brothers and sisters"** → Age-relative terms may need both ẹgbọn and àbúrò
+- **"Uncle" (implied)** → Maternal or paternal? Affects inheritance/authority implications
+
+**Cultural variations**:
+- **Respect hierarchies**: Older sibling term implies authority, younger implies submission
+- **Theological implications**: Calling God "Father" in cultures with paternal authority systems
+- **Family structure**: Extended family terms affect how "brothers in Christ" is understood
+
+**Variants**: Degree of specificity varies. Some languages have 10+ distinct kinship terms where Greek has 2-3.
+
+### Ideophones - CRITICAL (Nearly universal)
+
+**Present in**: Extremely productive across family (~85 languages)
+**Pattern**: Vivid sensory/descriptive words that don't fit standard word classes
+**Dominant example - Zulu**:
+- `du!` (absolute silence)
+- `qha!` (suddenness, immediacy)
+- `bheka` (sparkling, glittering)
+- Often reduplicated for intensity
+
+**Biblical translation examples**:
+- **"The heavens opened"** → Ideophone for sudden opening (`qha!`)
+- **"Blind man sees"** → Ideophone for sudden clarity
+- **"Dead silence"** → Ideophone for absolute stillness
+- **Intensification**: Greek adverbs may map to ideophonic expressions
+
+**Cultural variations**:
+- **Oral vividness**: Ideophones make Scripture come alive in oral cultures
+- **Dramatic events**: Resurrection, miracles natural for ideophonic expression
+- **Theological drama**: God's sudden interventions expressed with impact
+
+**Variants**: All Niger-Congo languages have ideophones, but productivity varies. Bantu especially rich.
+
+### Logophoricity - RELEVANT (Some languages)
+
+**Present in**: Some West African languages (Yoruba, Ewe, some Gur languages)
+**Pattern**: Special pronouns in reported speech referring to the person whose speech/thought is being reported
+**Dominant example - Yoruba**:
+- `òun` (logophoric) vs `ó` (regular 3rd person)
+- "John₁ said that he₁ was tired" → `òun` (John himself)
+- "John₁ said that he₂ was tired" → `ó` (someone else)
+
+**Biblical translation examples**:
+- **Quotations of Jesus**: "Jesus said that he would rise" → Logophoric (Jesus himself)
+- **Prophetic self-reference**: "The prophet said he saw" → Logophoric clarifies
+- **Ambiguous Greek pronouns**: Logophoric disambiguates who is speaking
+
+**Cultural variations**:
+- **Prophecy clarity**: Divine speech reported with logophoric pronouns emphasizes source
+- **Teaching contexts**: Jesus' self-references clearly marked as his own words
+
+**Variants**: Only some West African languages. Bantu, Atlantic, most others lack this feature.
+
+### Participant Tracking - CRITICAL (Discourse-level)
+
+**Present in**: All languages, but strategies vary
+**Pattern**: How languages track who is doing what across discourse
+**Dominant strategies**:
+- **Topic continuity**: Same subject maintained, pro-drop pronouns
+- **Switch marking**: New subject requires overt noun/pronoun
+- **Noun class agreement**: Agreement markers help track participants
+
+**Dominant example - Swahili**:
+- Verbal subject markers track person: `a-` (3sg), `wa-` (3pl)
+- Once participant established, can drop noun and rely on verb prefix
+- Noun class agreement helps distinguish multiple 3rd person referents
+
+**Biblical translation examples**:
+- **Narrative sequences**: "Jesus went, he saw, he spoke" - track through verb prefixes
+- **Multiple participants**: Class agreement distinguishes "the Word" (class 5) from "God" (class 1)
+- **Discourse structure**: Peak events may require overt restatement of subject
+
+**Cultural variations**:
+- **Oral narrative style**: Clear participant tracking essential for oral comprehension
+- **Theological clarity**: Distinguishing "God," "Jesus," "Spirit" across discourse
+- **Episode boundaries**: New episodes signal with full noun phrases
+
+**Variants**: Bantu uses verb prefixes + class agreement; Kwa uses topic-comment; Mande more explicit pronouns.
+
 ## Quick Statistics
 
 - **Total Languages in Dataset**: 94

@@ -18,6 +18,174 @@ The internal diversity of Otomanguean languages is comparable to Indo-European�
 
 ---
 
+## TBTA Translation Features
+
+Features unique to Otomanguean languages that require translation decisions not explicit in Greek/Hebrew source texts.
+
+### Universal Tonality - ESSENTIAL (All 69 languages)
+
+**Present in**: All 69 Otomanguean languages (only fully tonal family in North/Central America)
+**Pattern**: Tone carries both lexical (word meaning) and grammatical (tense, aspect, mood) information
+**Tone range**: 2-5 level tones depending on language
+**Dominant example - Trique** (5-level system):
+- High, mid-high, mid, mid-low, low tones (most complex in family)
+- Each tone level distinguishes word meanings
+- Tone changes mark grammatical categories
+
+**Dominant example - Otomi** (3-level system):
+- High, low, rising tones (most common pattern in family)
+- Tone mutation marks tense/aspect
+- One dialect (San Gregorio) has 4 tones (high, low, rising, falling)
+
+**Biblical translation examples**:
+- **"Lord" vs "lord"**: Different tones distinguish God from human masters
+- **Verb tense/aspect**: "he went" vs "he goes" → tone change on verb (not just affixes)
+- **Grammatical categories**: Past/present/future may be marked primarily through tone
+- **Word disambiguation**: Identical consonant-vowel sequences → different meanings through tone
+
+**Cultural variations**:
+- **Theological precision**: Tone errors can change "God" to "god" or "holy" to "common"
+- **Orthographic challenge**: Tone must be marked in written Scripture (non-negotiable)
+- **Oral tradition**: Whistled speech (see below) reproduces tone patterns for distance communication
+- **Complexity gradient**: Simpler 2-tone systems (easier) vs 5-tone systems (high cognitive load)
+
+**Variants**:
+- **Otomi**: 3 tones (high, low, rising) - most varieties
+- **Trique**: 5 level tones (most complex)
+- **Chinantec**: Up to 5 register tones (Usila Chinantec)
+- **Zapotec/Mixtec**: Typically 2-4 tones
+
+### VSO Word Order - CRITICAL (All languages)
+
+**Present in**: All 69 languages (verb-initial, head-initial)
+**Pattern**: Verb-Subject-Object as basic order (differs from Greek SVO and Hebrew VSO-dominant)
+**Dominant example - Otomi**:
+- `ri nzäthë di noya` (VERB eat DET child) = "The child eats"
+- Verb occupies initial position
+- Possessors and modifiers follow nouns
+- Numerals precede nouns
+
+**Biblical translation examples**:
+- **"In the beginning God created"** → "Created God (in the beginning) the heavens and the earth"
+- **All declarative statements**: Verb-first restructuring required
+- **Discourse flow**: Topic-comment structure affected by verb-initial order
+- **Emphasis patterns**: Greek word-order emphasis not available; must use other strategies
+
+**Cultural variations**:
+- **Matches Biblical Hebrew**: VSO common in Hebrew narrative
+- **Differs from Greek**: NT Greek prefers SVO
+- **Information structure**: Topic prominence conveyed through particles, not word order
+- **Spanish influence**: Some Otomi dialects shifting toward SVO (Toluca, Querétaro)
+
+**Variants**: Most maintain VSO; some Otomi dialects show SVO influence (Spanish contact).
+
+### Consonant Mutation - CRITICAL (Especially Otomi)
+
+**Present in**: Otomi prominently, variable in other branches
+**Pattern**: Initial consonant of verb root changes to mark grammatical categories
+**Dominant example - Otomi**:
+- Present vs non-present marked by initial consonant change
+- Active vs passive marked by mutation
+- `t-` → `d-` mutation for tense/aspect
+- `p-` → `b-` mutation for voice
+
+**Biblical translation examples**:
+- **Verb tense**: "he eats" vs "he ate" → consonant mutation (not suffix)
+- **Voice marking**: "he healed" vs "he was healed" → mutation marks passive
+- **Aspect marking**: Perfective vs imperfective through initial consonant
+
+**Cultural variations**:
+- **Morphophonemic complexity**: Mutation patterns must be learned; not transparent
+- **Theological precision**: Correct mutation essential for tense/aspect accuracy
+- **Translation challenge**: Greek tense-aspect system must map to consonant changes
+
+**Variants**: Prominent in Otomi; less developed or absent in other branches.
+
+### Infixation - CRITICAL (Otomi, some others)
+
+**Present in**: Otomi extensively, variable in other branches
+**Pattern**: Grammatical morphemes inserted inside verb root (not prefixed or suffixed)
+**Dominant example - Otomi**:
+- TAM (tense-aspect-mood) markers can be infixed
+- Person/number agreement may use infixation
+- Combined with consonant mutation and tone changes
+- `t-V-verb` pattern: TAM marker inserted after initial consonant
+
+**Biblical translation examples**:
+- **Complex verb forms**: "He will have been teaching" → single verb with multiple infixes
+- **Aspect marking**: Perfective/imperfective infixes required
+- **Person marking**: Subject agreement infixed
+
+**Cultural variations**:
+- **Morphological density**: Single verb = entire English clause
+- **Parsing challenge**: Word boundaries not obvious
+- **Translation complexity**: Must master infixation system for natural expression
+
+**Variants**: Highly developed in Otomi; less prominent in other branches.
+
+### Whistled Speech - RELEVANT (Zapotec, Chinantec, Mazatec)
+
+**Present in**: Zapotec, Chinantec, Mazatec varieties (not all branches)
+**Pattern**: Tone, stress, and rhythm reproduced through whistling; short conversations possible
+**Function**: Distance communication (across valleys, fields)
+
+**Biblical translation examples**:
+- **Oral Scripture transmission**: Whistled form possible for memorized passages
+- **Tone verification**: If whistleable, tone marking is correct
+- **Cultural relevance**: Scripture can be "proclaimed" across distance
+- **Accessibility**: Illiterate speakers can use whistled communication
+
+**Cultural variations**:
+- **Cultural practice**: Traditional distance communication method
+- **Scripture accessibility**: Whistled gospel proclamation culturally appropriate
+- **Tone teaching**: Whistling helps learn correct tone patterns
+- **Community practice**: Public Scripture reading/whistling
+
+**Variants**: Only Zapotec, Chinantec, Mazatec documented. Not universal across family.
+
+### Nasal Harmony - RELEVANT (Especially Mixtec)
+
+**Present in**: Mixtec prominently, variable in others
+**Pattern**: Vowel nasalization spreads across syllables within morphemes
+**Dominant example - Mixtec**:
+- If one vowel is nasal, adjacent vowels nasalize
+- Morpheme-level harmony (not word-level)
+- Complex nasal-stop segments
+
+**Biblical translation examples**:
+- **Phonological accuracy**: Nasal harmony affects pronunciation
+- **Word boundaries**: Harmony domain helps identify morphemes
+- **Orthographic representation**: Nasal marking required
+
+**Cultural variations**:
+- **Phonological naturalness**: Harmony makes words flow naturally
+- **Acquisition**: Children learn harmony early; essential for native-sounding speech
+
+**Variants**: Highly developed in Mixtec; present but variable in other branches.
+
+### Analytic Nominal Morphology - CRITICAL (All languages)
+
+**Present in**: All 69 languages (contrast with synthetic verbal morphology)
+**Pattern**: Nouns relatively uninflected; plurality and definiteness marked through particles/modifiers
+**Dominant pattern**:
+- Number marked through quantifiers, not noun suffixes
+- Definiteness marked through particles (often prefixed)
+- Possession marked through separate possessive constructions
+
+**Biblical translation examples**:
+- **Plurality**: "angels" → "angel" + plural particle/numeral
+- **Definiteness**: "the Word" → definite particle + "word"
+- **Possessed nouns**: "our Father" → possessive construction (not suffix)
+
+**Cultural variations**:
+- **Analytic advantage**: Clear morpheme boundaries in noun phrases
+- **Particle placement**: Word order affects meaning
+- **Greek article**: Maps to definite particles
+
+**Variants**: Universal pattern across family, though specific particles vary.
+
+---
+
 ## Major Branches (8 subgroups)
 
 ### 1. Zapotecan (24 languages in database)
