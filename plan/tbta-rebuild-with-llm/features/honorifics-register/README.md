@@ -2,6 +2,33 @@
 
 This research document examines complex honorific and register systems across the languages in the TBTA project, with focus on Asian languages and others with sophisticated sociolinguistic variation.
 
+---
+
+## 🔥 NEW: Speaker Demographics Features (Production-Ready)
+
+**For TBTA implementation, see comprehensive feature documentation**:
+
+📄 **[SPEAKER-DEMOGRAPHICS-README.md](SPEAKER-DEMOGRAPHICS-README.md)** - Start here for complete overview of the 6 speaker demographics features with TIER 1-2 documentation elements
+
+Supporting documentation:
+- **[SPEAKER-LISTENER-CODES.md](SPEAKER-LISTENER-CODES.md)** - Complete enumeration of character codes
+- **[ATTITUDE-EXAMPLES.md](ATTITUDE-EXAMPLES.md)** - 20+ concrete verse examples
+- **[AGE-RELATIONSHIP-GUIDE.md](AGE-RELATIONSHIP-GUIDE.md)** - Calculation guide for age features
+- **[LANGUAGE-APPLICATIONS.md](LANGUAGE-APPLICATIONS.md)** - Japanese, Korean, Javanese, Thai, Vietnamese, Hindi applications
+- **[VALIDATION-CHECKLIST.md](VALIDATION-CHECKLIST.md)** - Step-by-step validation procedures
+
+**The 6 Features**:
+1. Speaker (who is speaking)
+2. Listener (who is being addressed)
+3. Speaker's Attitude (social register: Neutral, Polite, Honorable, Familiar, Endearing)
+4. Speaker's Age (Child, Young Adult, Adult, Elder)
+5. Speaker-Listener Age Relationship (relative age with 5 levels)
+6. Speech Style (Formal, Informal, Liturgical, Prophetic, Didactic, etc.)
+
+These features work together to enable accurate honorific system selection in Bible translation for languages like Japanese, Korean, Javanese, Thai, Vietnamese, and Hindi.
+
+---
+
 ## Summary of Findings
 
 Languages in our project that require special handling for honorifics, politeness levels, social status markers, age-based speech, and gender-based variations:
