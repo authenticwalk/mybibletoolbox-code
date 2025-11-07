@@ -227,9 +227,9 @@
 
 ---
 
-### 7. Mood (Verb TAM) ✅ EXCELLENT
-**Current**: verb-tam/ (mood experiments, 100% accuracy, 316 verbs)
-**Status**: Production-ready, exemplary
+### 7. Mood (Verb TAM) ⭐ Priority 1
+**Current**: verb-tam/ (mood experiments, prediction methodology)
+**Status**: Good prediction framework, needs comprehensive testing
 
 | Element | Status | Notes |
 |---------|--------|-------|
@@ -238,19 +238,22 @@
 | 3. Baseline | ✅ | **94.62% Indicative in narrative** |
 | 4. Quick Test | ❌ | Easy to add |
 | 5. Examples | ✅ | Matthew 24 examples |
-| 6. Prompt Template | ✅ | Extraction method (Tier 0 - explicit!) |
+| 6. Prompt Template | ✅ | Prediction from Greek/Hebrew morphology + semantics |
 | 7. Gateway Features | ✅ | Mood IS the gateway |
 | 8. Common Errors | ✅ | Edge cases documented |
-| 9. Validation Metrics | ✅ | **100% accuracy (316 verbs)** |
+| 9. Validation Metrics | 🟨 | **Methodology defined, needs comprehensive testing (100+ verses)** |
 | 10. Language Family Table | ✅ | Turkish, Japanese, Greek, Arabic |
 | 11. Typology | ✅ | Linguistic categories |
 | 12. Cross-Features | ✅ | Time, Aspect, Force correlations |
-| 13. Methodology | ✅ | Step-by-step extraction |
+| 13. Methodology | ✅ | Step-by-step prediction (LLM prompts, not code) |
 
 **Action Items**:
 - [ ] Add Quick Test: "1. Does your language distinguish indicative vs subjunctive? 2. Does your language have obligation mood (must/should)?"
+- [ ] Run comprehensive validation: Test prediction methodology on 100+ verses across genres
+- [ ] Measure actual accuracy: Compare predictions to TBTA labels (expect 85-95%)
+- [ ] Document systematic errors and refine prompts based on results
 
-**Estimated effort**: 1 hour
+**Estimated effort**: 6-8 hours (includes comprehensive testing)
 
 ---
 

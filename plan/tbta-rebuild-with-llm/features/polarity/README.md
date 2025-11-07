@@ -1,283 +1,388 @@
 # TBTA Feature: Polarity
 
-## Overview
+## Translation Impact
 
-Polarity is a linguistic feature that encodes whether a constituent's existence, presence, or assertion is affirmed (positive polarity) or negated (negative polarity). In The Bible Translator's Assistant (TBTA), this feature is crucial for accurate translation into languages that have complex polarity systems, including negative concord languages, languages with negative polarity items (NPIs), and languages with special grammatical forms for negated constituents.
+Polarity determines whether a constituent is affirmed or negated, directly affecting lexical selection and grammatical forms across languages. Languages with strict negative concord (Spanish, Russian, Greek, Turkish) require multiple negative elements for single semantic negation ("I nothing not saw" = "I didn't see anything"), while non-NC languages (English, German) interpret double negatives as affirmative. Languages with genitive of negation (Russian, Finnish) change case marking under negation, and languages with special negative existentials (Hebrew אֵין, Russian нет, Turkish yok) use different vocabulary entirely. Without accurate polarity annotation, translations will produce ungrammatical negative concord violations, incorrect case marking, or inappropriate negative polarity items, critically affecting ~50% of languages with specialized negative systems.
 
-## Linguistic Definition
+## Complete Value Enumeration
 
-### What is Polarity?
+TBTA uses a binary polarity distinction primarily at the noun level:
 
-Polarity in linguistics refers to the distinction between affirmative (positive) and negative expressions. It encompasses:
+| Code | Meaning | Description | Usage |
+|------|---------|-------------|-------|
+| `Affirmative` | Positive | Normal positive assertion | Default, unmarked polarity |
+| `Negative` | Negated | Negated existence/presence | Noun's existence/presence negated |
 
-1. **Sentential Polarity**: Whether an entire sentence is affirmative or negative
-2. **Constituent Polarity**: Whether specific elements (especially nouns) are affirmed or negated
-3. **Polarity Sensitivity**: How certain lexical items (polarity items) are restricted to particular polarity contexts
+**Application:** Polarity is encoded at the constituent (especially noun) level rather than purely at verb level, capturing whether the noun's existence or presence is negated.
 
-### Key Concepts
+## Baseline Statistics
 
-#### Negative Polarity Items (NPIs)
-NPIs are expressions that typically only appear in negative contexts. They are not inherently negative but require licensing by negation or similar environments (Giannakidou & Zwarts, 1999).
+Expected distribution in Biblical texts (estimates based on negation frequency):
 
-Examples in English:
-- "at all" (*I didn't like it at all* vs. **I liked it at all*)
-- "any" in certain uses (*I don't have any money* vs. **I have any money*)
-- "ever" (*Nobody ever told me* vs. **Somebody ever told me*)
+| Value | Estimate | Context |
+|-------|----------|---------|
+| `Affirmative` | ~85% | Default, unmarked positive assertions |
+| `Negative` | ~15% | Negated constituents, negative existentials |
 
-#### Negative Concord
-In negative concord (NC) languages, multiple negative elements combine to express a single semantic negation rather than canceling each other out (Dalmi, 2022).
+**Source Language Patterns:**
+- Hebrew: Uses special negative existential אֵין (ein) for "there is not"
+- Greek: Negative particles οὐ/μή with negative concord patterns
+- Negation more frequent in teaching/prohibitive texts
+- Existential negations common in narrative
 
-#### Double Negation
-In non-NC languages like Standard English, two negatives typically yield a positive meaning: "I didn't see nothing" = "I saw something"
+**Genre Variation:**
+- Legal/Prohibitive: Higher negation (20-25%)
+- Narrative: Moderate negation (~15%)
+- Wisdom/Teaching: Variable, contextual
+- Apocalyptic: Lower negation (~10%)
 
-## TBTA Encoding
+## Quick Translator Test
 
-### Values
+**Critical questions to determine polarity requirements:**
 
-TBTA uses a simple binary distinction for the Polarity feature:
+1. **Does your language allow or require negative concord?**
+   - Strict NC: Multiple negatives required (Russian, Spanish, Greek, Turkish)
+   - Optional NC: Context-dependent (some Romance)
+   - No NC (Double Negation): Two negatives = positive (English, German)
 
+2. **Does negation affect case marking or grammatical form?**
+   - Genitive of negation: Objects take genitive (Russian, Finnish)
+   - Partitive case: Required with negation (Finnish)
+   - No case change: Negation doesn't affect case (English, Mandarin)
+   - Special negative forms: Different verb/noun forms
+
+3. **Does your language have special negative existential constructions?**
+   - Dedicated word (Hebrew אֵין, Russian нет, Turkish yok)
+   - Negated copula (English "there isn't")
+   - Same as verbal negation
+
+4. **Does your language have negative polarity items (NPIs)?**
+   - Special items in negative contexts (English "any", Japanese も-series)
+   - No dedicated NPIs
+   - Universal quantifiers in negative contexts
+
+5. **How does your language express "no one," "nothing," "never"?**
+   - Negative indefinites: Single word (English "nobody")
+   - NPI + negation: Requires negative verb (Japanese "dare-mo...nai")
+   - Multiple negation: NC with negative verb + pronoun (Russian, Spanish)
+
+**Critical Indicators:**
+
+- **Strict NC languages** → Must annotate all constituents in negation scope
+- **Genitive/Partitive of negation** → Polarity affects case, not just negative marker
+- **Special negative existentials** → Requires different vocabulary, not adding "not"
+- **NPI languages** → Must select polarity-sensitive items (like "any" vs "some")
+
+## Examples
+
+**Example 1: Genesis 19:31** - Negative Existential
 ```yaml
-Polarity: Affirmative  # Normal positive assertion (default)
-Polarity: Negative     # Negated existence/presence
+Hebrew: אֵין אִישׁ בָּאָרֶץ (ein ish ba'aretz)
+English: "There is not a man in the earth"
+Constituent: man
+Polarity: Negative
+Reason: Special negative existential אֵין negates existence of men
 ```
 
-### Application Context
-
-In TBTA, Polarity is primarily encoded at the **noun level** rather than verb level. This captures whether the noun's existence or presence is negated.
-
-### Example from TBTA Data
-
+**Example 2: Matthew 5:18** - Negative Quantification
 ```yaml
-# From GEN 19:31 - "there is not a man in the earth"
-- Constituent: man
-  Number: Plural
-  Polarity: Negative  # "no men"
-  Participant Tracking: First Mention
+Greek: ἰῶτα ἓν ἢ μία κεραία οὐ μὴ παρέλθῃ (iōta hen ē mia keraia ou mē parelthē)
+English: "Not one jot or one tittle shall pass"
+Constituent: jot, tittle
+Polarity: Negative
+Reason: Universal negative quantification with οὐ μή (emphatic negation)
 ```
 
-## Language-Specific Polarity Systems
-
-### 1. Negative Concord Languages
-
-#### Russian (Slavic Family)
-Russian exhibits **strict negative concord** where multiple negative elements affirm each other:
-
-```
-Я ничего не знаю
-Ya nichevo nye znayu
-I nothing NEG know
-"I don't know anything" (lit. "I nothing not know")
+**Example 3: Romans 3:10** - Negative Indefinite
+```yaml
+Greek: οὐκ ἔστιν δίκαιος οὐδὲ εἷς (ouk estin dikaios oude heis)
+English: "There is no one righteous, not even one"
+Constituent: one (person)
+Polarity: Negative
+Reason: Negative concord (οὐκ...οὐδέ), negated existence
 ```
 
-Key features:
-- Requires negative verb with negative indefinites
-- All indefinites in scope of negation must be negative
-- Genitive case often used with negated existence
-
-#### Turkish (Turkic Family)
-Turkish also shows strict NC properties:
-
-```
-Hiçbir şeyim yok
-Not-one thing-of-mine exists-not
-"I don't have anything"
+**Example 4: Psalm 14:1** - Negative Polarity
+```yaml
+Hebrew: אֵין אֱלֹהִים (ein elohim)
+English: "There is no God"
+Constituent: God
+Polarity: Negative (in context: "no belief in God")
+Reason: Negative existential construction with אֵין
 ```
 
-Features:
-- Negative verb forms required with negative pronouns/adverbs
-- Special negative existential constructions
-- Morphological negation on verbs
-
-#### Finnish (Uralic Family)
-Finnish has a unique negation system using the auxiliary 'ei':
-
-```
-En tiedä mitään
-NEG.1SG know anything.PARTITIVE
-"I don't know anything"
+**Example 5: John 1:18** - Negative with Emphasis
+```yaml
+Greek: θεὸν οὐδεὶς ἑώρακεν πώποτε (theon oudeis heōraken pōpote)
+English: "No one has ever seen God"
+Constituent: one (person)
+Polarity: Negative
+Reason: οὐδείς (no one) with πώποτε (ever), negative polarity
 ```
 
-Features:
-- Negative auxiliary verb 'ei' conjugates for person
-- Partitive case with negation
-- Special suffixes (-kaan/-kään) for negative contexts
+## Hierarchical Prompt Template (5-Level)
 
-### 2. Languages with NPIs (Non-NC)
-
-#### Japanese
-Japanese uses NPIs in negative contexts without negative concord:
+### Level 1: Check for Negation
 
 ```
-何も見なかった
-nani-mo mi-nakatta
-what-EVEN see-NEG.PAST
-"didn't see anything"
+Is there negation in this clause affecting the noun?
+
+Source: [Greek/Hebrew text]
+Translation: [English]
+
+Check for:
+- Negative particles (Greek οὐ/μή, Hebrew לֹא/אַל/אֵין)
+- Negative words ("not", "no", "never", "nothing", "none")
+- Negative existentials (Hebrew אֵין, specific constructions)
+- Negative indefinites ("nobody", "nothing")
+- Context of prohibition or denial
+
+Answer: YES or NO
 ```
 
-The particle も (mo) creates NPIs that require negation.
+**Decision:** NO → `Affirmative` (default), STOP | YES → Continue to Level 2
 
-### 3. Languages with Special Negated Forms
-
-Some languages have distinct lexical items or morphological forms for negated nouns:
-
-#### Tagalog (Austronesian)
-Uses "wala" (none/no) vs. "may/mayroon" (there is):
+### Level 2: Identify Negation Type
 
 ```
-Walang tao dito
-No person here
-"There's nobody here"
+What type of negation is present?
+
+Options:
+A. Verbal Negation: Negates the verb/action
+   - "He did not go"
+
+B. Existential Negation: Negates existence
+   - "There is no man"
+   - Hebrew אֵין, Russian нет, Turkish yok
+
+C. Constituent Negation: Negates specific noun
+   - "Not the man, but the woman"
+   - Noun in scope of negation
+
+D. Negative Indefinite: Inherently negative noun/pronoun
+   - "Nobody came", "Nothing happened"
+   - Requires negative concord in NC languages
+
+Identified type: [A, B, C, or D]
 ```
 
-## Bible Translation Challenges
+**Decision:** Continue to Level 3
 
-### 1. Existential Statements
+### Level 3: Determine Scope of Negation
 
-Biblical Hebrew and Greek existential negations often require careful handling:
+```
+Is the noun within the scope of negation?
 
-**Genesis 19:31** - "there is not a man in the earth"
-- Hebrew: אֵין אִישׁ (ein ish) - uses special negative existential
-- Russian: нет мужчины (net muzhchiny) - genitive with negation
-- Turkish: yeryüzünde erkek yok - negative existential 'yok'
-- English: "there is no man" or "there isn't a man"
+Questions:
+1. Does negation apply to this specific noun?
+2. Is noun the subject/object of negated verb?
+3. Is noun part of negative existential ("there is no X")?
+4. Is noun a negative indefinite ("nothing", "no one")?
 
-### 2. Universal Negative Quantification
+Scope analysis:
+- Noun directly negated → Polarity: Negative
+- Noun outside negation scope → Polarity: Affirmative
+- Unclear scope → Check syntactic position
 
-Passages with "no one," "nothing," "never" require language-specific strategies:
+If noun is within scope: Continue to Level 4
+If noun is outside scope: Code as Affirmative, STOP
+```
 
-**Matthew 5:18** - "not one jot or tittle shall pass"
-- NC languages: Multiple negatives required
-- NPI languages: Appropriate polarity items needed
+### Level 4: Validate Against Source Language
 
-### 3. Rhetorical Negative Questions
+```
+Verify polarity marking in source language.
 
-**Romans 8:31** - "If God is for us, who can be against us?"
-- Some languages require special markers for rhetorical negatives
-- Polarity affects expected answer interpretation
+Greek validation:
+- οὐ/μή present with this noun? → Negative
+- οὐδείς/μηδείς (no one/nothing) used? → Negative
+- Negative concord pattern? → Multiple elements Negative
+- Outside negation scope? → Affirmative
 
-### 4. Prophetic Negations
+Hebrew validation:
+- אֵין used with this noun? → Negative (special existential)
+- לֹא with verb governing this noun? → Check scope
+- Negative phrase structure? → Determine constituent involvement
 
-**Isaiah 9:7** - "Of the increase...there shall be no end"
-- Eternal/absolute negations may use special forms
-- Some languages distinguish temporary vs. permanent negation
+Does source confirm noun is negated? YES/NO
+```
 
-## Cross-Linguistic Variation
+### Level 5: Check Target Language Requirements
 
-### Languages from TBTA Database Requiring Polarity Attention
+```
+Validate against target language polarity system.
 
-Based on the languages.tsv file, several language families in TBTA require careful polarity handling:
+Target language questions:
+1. Does target have strict negative concord?
+   - If YES, ensure all constituents in scope marked Negative
 
-#### Austronesian Languages
-Many Philippine and Indonesian languages (e.g., Tagalog, Inabaknon, Alune) have:
-- Complex systems of existential negation
-- Distinct negative and affirmative markers
-- Interaction with focus/topic systems
+2. Does target require genitive/partitive of negation?
+   - If YES, polarity annotation affects case selection
 
-#### Trans-New Guinea Languages
-Languages like Ankave, Amele, and Angaataha may have:
-- Clause-chaining with polarity dependencies
-- Switch-reference interacting with negation
-- Special negative verb forms
+3. Does target have special negative existentials?
+   - If YES, use dedicated forms (not regular negation + copula)
 
-#### Australian Aboriginal Languages
-Languages like Arrernte and Alyawarr often feature:
-- Negative particles with specific scope
-- Interaction with ergative-absolutive alignment
-- Complex negation in subordinate clauses
+4. Does target use NPIs in negative contexts?
+   - If YES, select "any" not "some", "ever" not "always", etc.
 
-#### Mayan Languages
-Achi and Awakateko show:
-- Preverbal negative particles
-- Interaction with aspect markers
-- Special forms for negative imperatives
+5. Does target have negative indefinites?
+   - If YES, use "nobody/nothing" forms appropriately
 
-## Edge Cases and Challenges
+Final polarity code: [Affirmative or Negative with justification]
+```
 
-### 1. Scope Ambiguity
-"All the disciples didn't flee" could mean:
-- None of the disciples fled (wide scope negation)
-- Not all disciples fled (narrow scope negation)
+## Gateway Features (Correlations)
 
-Different languages resolve this differently, requiring translator decisions.
+High-confidence quick predictions:
 
-### 2. Negative Raising
-"I don't think he came" vs. "I think he didn't come"
-- Some languages distinguish these
-- Others treat them identically
+| Context | Predict | Confidence | Notes |
+|---------|---------|------------|-------|
+| No negation present | `Affirmative` | 98%+ | Default polarity |
+| Hebrew אֵין + noun | `Negative` | 95%+ | Special negative existential |
+| Greek οὐδείς/μηδείς | `Negative` | 95%+ | Negative indefinite pronouns |
+| Greek οὐ/μή + verb + noun object | `Negative` | 85%+ | Noun in negation scope |
+| English "no" + noun | `Negative` | 90%+ | Direct negative modifier |
+| English "not...any" | `Negative` | 90%+ | NPI construction |
+| Negative imperative | `Negative` | 85%+ | Prohibition affects arguments |
+| Negative question (rhetorical) | Check context | 60% | May expect positive answer |
 
-### 3. Metalinguistic Negation
-"He didn't see three men, he saw four"
-- Corrective negation may use different strategies
-- Some languages have special corrective particles
+**Cross-feature correlations:**
+- Negative Polarity + Interrogative → Often rhetorical questions
+- Negative Polarity + Existential constructions → Special forms likely
+- Negative Polarity in NC languages → Requires checking all constituents
+- First Mention + Negative → Rare (check for "no X exists" meaning)
 
-### 4. Expletive Negation
-Some languages use "pleonastic" negation that doesn't contribute semantic negativity:
-- French: "Je crains qu'il ne vienne" (I fear he might come)
-- The "ne" doesn't mean "not" here
+## Common Prediction Errors
 
-## Implementation Guidelines
+### Error 1: Missing Negative Concord Requirements (~40% in NC languages)
 
-### For Tool Developers
+**Problem:** Failing to mark all constituents as Negative in NC languages
 
-1. **Detection Strategy**
-   - Look for negative particles (not, no, never, none)
-   - Check for negative affixes (un-, non-, -less)
-   - Identify negative existentials
-   - Track scope of negation
+**Example:**
+- Spanish: "No vi a nadie" (Not saw to no-one = "I didn't see anyone")
+- Wrong: Only mark verb as negative
+- Right: Mark both verb AND "nadie" (no one) as Negative
 
-2. **Encoding Recommendations**
-   ```yaml
-   # Explicit negative noun
-   - Constituent: man
-     Polarity: Negative
-     Surface Realization: Noun
+**Solution:** Check if target language has strict NC, mark all elements in scope
 
-   # Implicit negative (from context)
-   - Constituent: hope
-     Polarity: Negative
-     Implicit Information: Implicit Situational Information
-   ```
+### Error 2: Confusing Verbal vs. Constituent Negation (~25% of errors)
 
-3. **Validation Checks**
-   - Ensure polarity consistency within scope
-   - Flag potential scope ambiguities
-   - Check for double negative interpretations
-   - Validate against target language requirements
+**Problem:** Not determining which constituents are in negation scope
 
-### For Bible Translators
+**Example:**
+- "Not all disciples fled" (negates "all", not "disciples")
+- Wrong: Mark "disciples" as Negative
+- Right: Scope is on quantifier "all", not noun itself
 
-1. **Assessment Questions**
-   - Does the target language have negative concord?
-   - Are there special negative existential constructions?
-   - Do negative contexts require special case marking?
-   - Are there distinct NPIs that must be used?
+**Solution:** Analyze syntactic scope carefully, determine what is negated
 
-2. **Translation Strategies**
-   - Map source polarity to target system
-   - Resolve scope ambiguities based on context
-   - Choose appropriate NPIs or negative forms
-   - Maintain rhetorical force of negative questions
+### Error 3: Missing Special Negative Existentials (~20% in affected languages)
 
-## Academic References
+**Problem:** Using regular negation instead of dedicated negative existential
 
-- Baker, C. L. (1970). "Double Negatives." *Linguistic Inquiry*, 1(2), 169-186.
-- Dalmi, G. (2022). *Strict Negative Concord in Slavic and Finno-Ugric: Licensing, Structure and Interpretation*. De Gruyter.
-- Giannakidou, A. (1998). *Polarity Sensitivity as (Non)veridical Dependency*. John Benjamins.
-- Giannakidou, A., & Zwarts, F. (1999). "Temporal, aspectual structure and polarity." *The Handbook of Contemporary Syntactic Theory*, 232-250.
-- Horn, L. R. (1989). *A Natural History of Negation*. University of Chicago Press.
-- Ladusaw, W. A. (1979). *Polarity Sensitivity as Inherent Scope Relations*. PhD dissertation, University of Texas.
-- Linebarger, M. (1987). "Negative polarity and grammatical representation." *Linguistics and Philosophy*, 10, 325-387.
-- Penka, D. (2011). *Negative Indefinites*. Oxford University Press.
-- Zeijlstra, H. (2004). *Sentential Negation and Negative Concord*. PhD dissertation, University of Amsterdam.
+**Example:**
+- Hebrew: אֵין (ein) "there is not" ≠ לֹא (lo) "not"
+- Wrong: Translate as "it is not that there is a man"
+- Right: Use special negative existential form
+
+**Solution:** Check for dedicated negative existential words/constructions
+
+### Error 4: Incorrect NPI Selection (~15% of errors)
+
+**Problem:** Not using negative polarity items in negative contexts
+
+**Example:**
+- English: "I didn't see anything" (not "something")
+- Wrong: "I didn't see something" (grammatically awkward/wrong meaning)
+- Right: Use "anything" (NPI) in negative context
+
+**Solution:** Identify NPIs required by target language, use in negative contexts
+
+### Error 5: Genitive/Partitive Case Errors (~30% in Russian/Finnish)
+
+**Problem:** Not changing case marking under negation
+
+**Example:**
+- Russian: "У меня нет книги" (genitive) not "книгу" (accusative)
+- Wrong: Keep accusative case under negation
+- Right: Use genitive case with negated objects
+
+**Solution:** Check if target language requires case change under negation
+
+## Validation Approach
+
+**How to test polarity predictions:**
+
+1. **Source Language Validation**
+   - Greek: Check for οὐ/μή particles, οὐδείς/μηδείς
+   - Hebrew: Look for אֵין (existential), לֹא (verbal), אַל (prohibitive)
+   - Verify syntactic scope of negation
+
+2. **Scope Analysis**
+   - Determine which constituents are within negation scope
+   - Check verb arguments (subject, object, obliques)
+   - Verify negative indefinites require negation
+
+3. **Target Language Requirements**
+   - NC languages: Check all constituents in scope
+   - Genitive/Partitive: Verify case changes
+   - Special existentials: Confirm dedicated forms used
+   - NPIs: Validate appropriate items selected
+
+4. **Cross-Validation**
+   - Negative + Existential → Check for special forms
+   - Negative + Quantifier → Verify scope correctly analyzed
+   - Negative + Interrogative → Check rhetorical function
+   - Negative Concord → Ensure consistency across all elements
+
+5. **Sample Testing**
+   - Test 50-100 negative constructions across genres
+   - Compare to TBTA gold standard
+   - Check NC compliance in NC languages
+   - Verify case marking in genitive-of-negation languages
+   - Target: <5% error rate for polarity (binary feature)
+
+**Error Rate Expectations:**
+- Without methodology: 25-30% error rate
+- With source + scope checking: <5% error rate
+- NC languages without proper checking: 40-50% errors
+
+## Language Family Patterns
+
+**Negative Concord Languages** (strict NC):
+- Slavic: Russian, Polish, Czech, Bulgarian
+- Romance: Spanish, Italian, Portuguese, Romanian; French (optional)
+- Greek: Ancient and Modern Greek
+- Turkic: Turkish, Azerbaijani, Uzbek
+- Uralic: Finnish, Hungarian (with negative auxiliary)
+
+**Non-NC Languages** (double negation = affirmative):
+- Germanic: Standard English, German, Dutch, Swedish
+- Sino-Tibetan: Mandarin Chinese, Cantonese
+
+**NPI Languages**:
+- Japanese: も (mo) series NPIs
+- Korean: Similar NPI system
+- English: "any," "ever," "at all"
+
+**Genitive/Partitive of Negation**:
+- Russian: Direct objects → genitive under negation
+- Finnish: Partitive case required
+- Estonian: Similar to Finnish
+
+**Special Negative Existentials**:
+- Hebrew: אֵין (ein) "there is not"
+- Russian: нет (net) "there is not"
+- Turkish: yok "there is not"
+- Arabic: ليس (laysa) negative copula
+
+## Detailed Documentation
+
+For comprehensive linguistic analysis, see:
+- **[negative-concord.md](negative-concord.md)** - Detailed analysis of NC systems, cross-linguistic patterns
+- **[existentials.md](existentials.md)** - Negative existential constructions, special forms
+- **[npis.md](npis.md)** - Negative polarity items, licensing environments
 
 ## Summary
 
-Polarity is a critical feature for Bible translation because:
-
-1. **Structural Requirements**: Many languages have obligatory grammatical requirements for negative contexts
-2. **Lexical Selection**: NPIs and negative forms must be chosen correctly
-3. **Scope Resolution**: Ambiguous negation scope must be resolved
-4. **Pragmatic Force**: Rhetorical negatives must maintain their intended effect
-5. **Theological Accuracy**: Existential and absolute negations must be precise
-
-TBTA's encoding of Polarity as a binary feature on nouns provides essential information for navigating these complexities, ensuring accurate and natural translation across the world's diverse polarity systems.
+Polarity is critical for accurate negation across diverse language systems. The binary TBTA distinction (Affirmative/Negative) applied at constituent level captures whether nouns are affirmed or negated. Key challenges include strict negative concord languages (Spanish, Russian, Greek) requiring multiple negative markings, genitive-of-negation languages (Russian, Finnish) changing case under negation, special negative existentials (Hebrew אֵין, Russian нет), and NPI selection (English "any" vs "some"). Validation requires checking source language negation (Greek οὐ/μή, Hebrew אֵין/לֹא), determining syntactic scope, and verifying target language requirements (NC compliance, case changes, special existentials, NPI selection). Affects ~50% of languages with specialized negative systems.

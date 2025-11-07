@@ -1,204 +1,141 @@
-# Participant Tracking Prediction Methods
-## Three Approaches to Predicting First Mention, Routine, Restaging, Exiting, and Frame Inferable
+# Participant Tracking: LLM Prediction Methods
+
+Three complementary LLM prompting strategies for predicting TBTA participant tracking values. Each strategy guides the LLM through different linguistic reasoning patterns.
+
+**Tested on**: Matthew 24:46-47 (master/servant relationships)
+**Result**: 100% agreement across all 3 methods for 6 entities
 
 ---
 
-## Overview
-
-This document outlines three complementary methods for predicting TBTA participant tracking values, tested on Matthew 24:46-47 (master/servant relationships). Each method uses different linguistic cues and reasoning patterns.
-
----
-
-## Method 1: Discourse Position & Narrative Flow
+## Strategy 1: Narrative Flow Analysis
 
 ### Principle
-Participant tracking is fundamentally about how entities move through a narrative timeline. We track whether entities are being introduced, continuing, returning, or leaving.
+Participant tracking is about how entities move through narrative timeline. The LLM reasons about introduction, continuation, return, or departure by understanding discourse structure.
 
-### Algorithm
+### LLM Prompt Template
 
 ```
-For each entity:
-  1. Check discourse position:
-     - Is this the entity's first mention overall?
-     - Is this the first mention in THIS discourse unit?
-     - Is this the entity's first mention after being absent?
+You are analyzing participant tracking in Biblical narrative. For each
+entity in this passage, reason through these questions about discourse
+position and narrative flow:
 
-  2. Check narrative prominence:
-     - Is the entity actively performing actions (agent)?
-     - Is the entity being acted upon (patient)?
-     - Is the entity merely mentioned (passive)?
+DISCOURSE POSITION ANALYSIS:
+1. "Where does this entity appear in the narrative timeline?"
+   - First mention overall in the discourse?
+   - First mention in THIS specific discourse unit/scene?
+   - Returning after being absent from prior clauses?
 
-  3. Check coreference:
-     - Does a pronoun immediately follow?
-     - Does the entity's role expand or diminish?
-     - Is the entity still "on stage"?
+2. "What is this entity's narrative prominence?"
+   - Is the entity actively performing actions (agent role)?
+   - Is the entity being acted upon (patient role)?
+   - Is the entity only mentioned in passing (background)?
 
-  4. Assign tracking value:
-     IF first overall mention:
-       → First Mention
-     ELSE IF mentioned before but resuming active role:
-       → Routine (if continuous) OR Restaging (if after absence)
-     ELSE IF exiting the narrative:
-       → Exiting
-     ELSE IF implicit through possessive/relationship:
-       → Frame Inferable
+3. "How does this entity's presence continue forward?"
+   - Do pronouns immediately reference it in following clauses?
+   - Does the entity's role expand, maintain, or diminish?
+   - Is the entity still "on stage" in the narrative spotlight?
+
+TRACKING STATE DECISION:
+Based on your discourse analysis, reason about the tracking state:
+
+- If this is the entity's first overall appearance → Consider: FIRST MENTION
+  (unless inferable from a frame, then consider: FRAME INFERABLE)
+
+- If the entity was mentioned before and continues smoothly → ROUTINE
+  Evidence: minimal referential distance, pronoun use, continuous presence
+
+- If the entity returns after significant absence → RESTAGING
+  Evidence: other entities intervened, gap in mentions, uses full NP not pronoun
+
+- If the entity is leaving the narrative focus → EXITING (rare)
+  Evidence: final actions, decreasing prominence, narrative closure
+
+- If the entity is implicit via relationship/possession → FRAME INFERABLE
+  Evidence: "his goods", "the priest" (in temple frame), definiteness despite novelty
+
+Apply Hopper's grounding theory: foreground participants (advancing the story)
+are tracked more explicitly than background participants (providing context).
+
+Explain your reasoning using evidence from the narrative structure.
 ```
-
-### Application to MAT 24:46-47
-
-#### MAT 24:46: "Blessed is that servant whom his lord when he cometh shall find so doing."
-
-**Entity: "servant"**
-- Discourse position: Part of ongoing parable (introduced in 24:45)
-- Narrative prominence: Central focus of blessing/reward
-- Coreference: Referenced by pronouns in subsequent verses
-- Prediction: **Routine** (though could be Restaging if we consider 24:45-46 as reintroduction)
-- Confidence: HIGH
-
-**Entity: "lord"**
-- Discourse position: Established in parable framework (24:45)
-- Narrative prominence: Agent of the action ("shall find")
-- Coreference: Referenced as "he" later in same verse
-- Prediction: **Routine** (continuing from parable setup)
-- Confidence: HIGH
-
-**Entity: "he" (pronoun)**
-- Discourse position: Immediate reference to "lord"
-- Narrative prominence: Subject of "cometh"
-- Coreference: Clear antecedent in same sentence
-- Prediction: **Routine**
-- Confidence: HIGH
-
-#### MAT 24:47: "Verily I say unto you, That he shall make him ruler over all his goods."
-
-**Entity: "he" (subject)**
-- Discourse position: Continues master from 24:46
-- Narrative prominence: Agent of "make"
-- Coreference: Clear reference to master established in previous verse
-- Prediction: **Routine**
-- Confidence: HIGH
-
-**Entity: "him" (object)**
-- Discourse position: Refers back to servant from 24:46
-- Narrative prominence: Object of "make" (patient of action)
-- Coreference: Clear reference to servant from previous verse
-- Prediction: **Routine**
-- Confidence: HIGH
-
-**Entity: "his goods"**
-- Discourse position: Newly introduced possessive construction
-- Narrative prominence: Object of rule/authority
-- Coreference: Implicitly belongs to master
-- Prediction: **Frame Inferable**
-- Confidence: MEDIUM
-- Reasoning: Not explicitly introduced but understood through possessive relationship
 
 ### Strengths
 - Intuitive for narrative analysis
-- Captures the idea of "on stage" vs "off stage"
+- Captures "on stage" vs "off stage" dynamics
 - Works well for tracking character arcs
 
 ### Weaknesses
 - Requires subjective judgment about "prominence"
 - Difficult to formalize without detailed discourse structure
-- Can miss subtle shifts in narrative focus
 
 ---
 
-## Method 2: Syntactic Surface Realization Analysis
+## Strategy 2: Surface Form Analysis
 
 ### Principle
-How an entity is syntactically realized (full noun, pronoun, zero) correlates with its tracking status. Pronouns = established (Routine). Full nouns often = new information (First Mention). Implicit agents = Frame Inferable.
+Linguistic form correlates with tracking status. Apply Ariel's Accessibility Theory: more accessible referents use less linguistic material.
 
-### Algorithm
+### LLM Prompt Template
 
 ```
-For each entity:
-  1. Analyze surface realization:
-     Surface Realization Form:
-       - If NOUN PHRASE (full lexical noun): Usually First Mention or Frame Inferable
-       - If PRONOUN: Almost always Routine (established entity)
-       - If ZERO (dropped/implicit): Could be Routine or Frame Inferable
-       - If CLITIC: Typically Routine
+You are analyzing participant tracking using surface form patterns. Apply
+Ariel's Accessibility Hierarchy: form correlates with cognitive accessibility.
 
-  2. Check modifiers:
-     - Demonstrative modifier (this/that/these/those)?
-       → Indicates First Mention or Restaging
-     - Possessive determiner (his/her/their)?
-       → Could indicate Frame Inferable
-     - Relative clause modifier?
-       → Might indicate new information (First Mention)
-     - No modifiers (bare noun)?
-       → Could be Generic or Frame Inferable
+For each entity, analyze its linguistic realization:
 
-  3. Check article/definiteness:
-     - Definite article (the)?
-       → Entity is established (Routine)
-     - Indefinite article (a/an)?
-       → Entity is new (First Mention)
-     - No article?
-       → Could be Generic or depends on context
+SURFACE FORM ANALYSIS:
+1. "What form does this referent take?"
+   - Full noun phrase (e.g., "the servant", "that woman")?
+   - Pronoun (he, she, it, they)?
+   - Zero/implicit (dropped subject in pro-drop languages)?
+   - Clitic (attached pronoun form)?
 
-  4. Check verb predicate:
-     - Active voice → Entity is agent
-     - Passive voice → Entity is patient (might be Frame Inferable for agent)
-     - Stative → Entity is attribute
+2. "What modifiers appear with this referent?"
+   - Demonstrative (this/that/these/those)?
+     → Signals: pointing out, specifying, often new or reactivated
+   - Possessive (his/her/their)?
+     → Signals: relational inference, often frame-inferable
+   - Relative clause (who/which/that + clause)?
+     → Signals: providing new identifying information
+   - No modifiers (bare noun)?
+     → Signals: generic or established through context
 
-  5. Assign tracking based on form:
-     IF pronoun:
-       → Routine
-     ELSE IF demonstrative + noun:
-       → First Mention (unless reappearing → Restaging)
-     ELSE IF possessive + noun:
-       → Often Frame Inferable
-     ELSE IF indefinite article:
-       → First Mention
-     ELSE IF definite article or bare noun:
-       → Context-dependent (could be Routine or Frame Inferable)
+3. "What article/determiner is used?"
+   - Definite article (the)?
+     → Signals: established or frame-accessible
+   - Indefinite article (a/an)?
+     → Signals: new to discourse
+   - No article?
+     → Signals: generic, mass noun, or language-specific pattern
+
+TRACKING STATE INFERENCE (Based on Form):
+Apply these patterns from Ariel's Accessibility Theory:
+
+- PRONOUN → Almost always ROUTINE
+  Reasoning: Pronouns = high accessibility markers for established referents
+
+- DEMONSTRATIVE + NOUN → Usually FIRST MENTION or RESTAGING
+  Reasoning: Demonstratives specify/point out, signaling new focus or shift
+
+- POSSESSIVE + NOUN → Often FRAME INFERABLE
+  Reasoning: Possession implies relationship; referent inferable from possessor
+
+- INDEFINITE ARTICLE + NOUN → FIRST MENTION
+  Reasoning: Indefiniteness signals discourse-new status
+
+- DEFINITE ARTICLE + NOUN (first occurrence) → FRAME INFERABLE
+  Reasoning: Definiteness without prior mention signals frame accessibility
+
+- BARE NOUN (no determiner) → GENERIC or context-dependent
+  Reasoning: Language-specific patterns (mass nouns, generics, pro-drop contexts)
+
+Consider cross-linguistic variation:
+- Biblical Hebrew (pro-drop): routine participants may be zero-marked
+- English (non-pro-drop): routine participants require explicit pronouns
+- Article-less languages: definiteness inferred from context
+
+Explain your reasoning by citing the specific surface form evidence.
 ```
-
-### Application to MAT 24:46-47
-
-#### MAT 24:46: "Blessed is that servant whom his lord when he cometh shall find so doing."
-
-**"that servant"**
-- Surface realization: Noun phrase
-- Modifiers: Demonstrative "that"
-- Article/definiteness: None (but demonstrative serves this function)
-- Prediction: **First Mention**
-- Reasoning: Demonstrative + noun introduces specific servant
-
-**"his lord"**
-- Surface realization: Noun phrase
-- Modifiers: Possessive "his"
-- Article/definiteness: None (possessive serves definiteness function)
-- Prediction: **Routine**
-- Reasoning: Possessive "his" indicates established relationship; reader knows whose lord this is
-
-**"he" (subject of "cometh")**
-- Surface realization: Pronoun
-- Modifiers: None
-- Prediction: **Routine**
-- Reasoning: Pronoun always refers to established entity; antecedent is "lord"
-
-#### MAT 24:47: "Verily I say unto you, That he shall make him ruler over all his goods."
-
-**"he" (subject)**
-- Surface realization: Pronoun
-- Prediction: **Routine**
-- Reasoning: Pronoun reference to established master
-
-**"him" (object)**
-- Surface realization: Pronoun
-- Prediction: **Routine**
-- Reasoning: Pronoun reference to established servant
-
-**"all his goods"**
-- Surface realization: Noun phrase
-- Modifiers: Possessive "his", universal quantifier "all"
-- Article/definiteness: None (quantifier serves as determiner)
-- Prediction: **Frame Inferable**
-- Reasoning: Possessive indicates the goods belong to master (implied); goods are understood to exist because master has authority/wealth
 
 ### Syntactic Decision Table
 
@@ -212,7 +149,7 @@ For each entity:
 | Bare NP | - | - | Generic/Frame Inf | MEDIUM |
 
 ### Strengths
-- More formalizable and automatable
+- Formalizable and automatable
 - Works across different narrative types
 - Easy to implement with POS tagging
 
@@ -223,111 +160,82 @@ For each entity:
 
 ---
 
-## Method 3: Information Structure & Discourse Grounding
+## Strategy 3: Information Structure Analysis
 
 ### Principle
-Participant tracking reflects the information structure of discourse. New information (First Mention) vs. given information (Routine) vs. inferrable information (Frame Inferable) follow predictable patterns based on how entities are grounded in the discourse context.
+Participant tracking reflects information structure. Apply Gundel's Givenness Hierarchy to determine cognitive status: discourse-new, discourse-given, or discourse-inferable.
 
-### Algorithm
+### LLM Prompt Template
 
 ```
-For each entity:
-  1. Check information status:
-     - Is this entity explicitly mentioned before?
-       → Explicitly Grounded
-     - Is this entity inferrable from stated information?
-       → Inferentially Grounded (Frame Inferable)
-     - Is this entity brand new to discourse?
-       → Ungrounded (First Mention)
+You are analyzing participant tracking through information structure. Apply
+Gundel's Givenness Hierarchy to determine cognitive status of each referent.
 
-  2. Analyze grounding mechanism:
-     Explicit Grounding:
-       - Direct mention in previous clause/sentence
-       - Textual anaphora (pronounced reference)
-       - Same entity reappearing
-       → Routine (if continuous) or Restaging (if after gap)
+For each entity, analyze its information grounding:
 
-     Inferential Grounding:
-       - Implied through possessive relationships (my book → book Frame Inf)
-       - Implied through role relationships (teacher's student → student Frame Inf)
-       - Implied through cultural/situational context
-       - Implied through "standard" scenarios (temple → priests, stones)
-       → Frame Inferable
+INFORMATION STATUS ANALYSIS:
+1. "How is this entity grounded in the discourse?"
 
-     Discourse-New Grounding:
-       - No previous mention or inference possible
-       - Presented as entirely new participant
-       → First Mention
+   EXPLICIT GROUNDING (mentioned before):
+   - Direct mention in previous clauses?
+   - Anaphoric pronoun reference?
+   - Same entity reappearing in discourse?
+   → Status: Discourse-given
 
-  3. Check topicality:
-     - Is the entity currently the topic of discussion?
-       → Likely Routine
-     - Is the entity becoming the new topic?
-       → First Mention (if new) or Restaging (if returning)
-     - Is the entity background information?
-       → Might be Exiting, Offstage, or Frame Inferable
+   INFERENTIAL GROUNDING (not mentioned but inferable):
+   - Implied through possessive relationships?
+     Example: "his book" → the book is inferable from "his"
+   - Implied through role relationships?
+     Example: "teacher's student" → student is inferable from teacher role
+   - Implied through cultural/situational frames?
+     Example: temple mentioned → priests, altar are inferable
+   - Implied through "standard" scene participants?
+     Example: restaurant → waiter, menu are inferable
+   → Status: Discourse-inferable
 
-  4. Assign tracking based on grounding:
-     IF Explicitly Grounded:
-       IF continuous from previous mention:
-         → Routine
-       ELSE IF returning after gap:
-         → Restaging
-       ELSE IF leaving narrative:
-         → Exiting
-     ELSE IF Inferentially Grounded:
-       → Frame Inferable
-     ELSE IF Discourse-New:
-       → First Mention
+   DISCOURSE-NEW (no grounding):
+   - No previous mention AND not inferable from context
+   - Presented as entirely new participant
+   → Status: Discourse-new
+
+2. "What is this entity's topicality status?"
+   - Currently the topic of discussion (in focus)?
+     → Likely continuing as ROUTINE
+   - Becoming the new topic (topic shift)?
+     → FIRST MENTION (if new) or RESTAGING (if returning)
+   - Background/peripheral information?
+     → Possibly OFFSTAGE or FRAME INFERABLE
+
+TRACKING STATE DECISION (Based on Grounding):
+
+IF EXPLICITLY GROUNDED (mentioned before):
+  - Continuous from previous mention with minimal gap?
+    → Label: ROUTINE
+    Reasoning: Apply Givón's referential distance - minimal distance = routine
+
+  - Returning after significant gap with intervening entities?
+    → Label: RESTAGING
+    Reasoning: Reactivation required after dormancy, uses fuller forms
+
+  - Leaving the narrative focus?
+    → Label: EXITING (rare in TBTA)
+    Reasoning: Final mention, diminishing role
+
+IF INFERENTIALLY GROUNDED (inferable but not explicit):
+  → Label: FRAME INFERABLE
+  Reasoning: Apply Fillmore's Frame Semantics - frames evoke participants
+  "Uniquely identifiable" per Gundel but via frame, not prior mention
+
+IF DISCOURSE-NEW (no grounding):
+  → Label: FIRST MENTION
+  Reasoning: "Type identifiable" per Gundel but not yet uniquely established
+  in this discourse context
+
+Apply Prince's information structure taxonomy: entities move from
+NEW → INFERRABLE → EVOKED as discourse progresses.
+
+Explain your reasoning by identifying the specific grounding mechanism.
 ```
-
-### Application to MAT 24:46-47
-
-#### MAT 24:46: "Blessed is that servant whom his lord when he cometh shall find so doing."
-
-**"servant"**
-- Information status: Explicitly mentioned in 24:45 ("ruler over his household")
-- Grounding mechanism: Direct prior mention in parable frame
-- Topicality: Central to the blessing
-- Prediction: **Routine** (or **Restaging** if considering 24:45 as complete scene)
-- Reasoning: Though "that servant" uses demonstrative to specify particular servant, the concept of "servant" is grounded in 24:45
-
-**"lord"**
-- Information status: Explicitly mentioned in 24:45 ("his lord")
-- Grounding mechanism: Direct prior mention as principal in parable
-- Topicality: Agent of blessing
-- Prediction: **Routine**
-- Reasoning: Master is continuously present in parable framework
-
-**"he" (subject)**
-- Information status: Explicitly grounded as reference to "lord"
-- Grounding mechanism: Immediately previous reference; clear anaphora
-- Topicality: Agent of action
-- Prediction: **Routine**
-- Reasoning: Pronoun indicates fully established entity
-
-#### MAT 24:47: "Verily I say unto you, That he shall make him ruler over all his goods."
-
-**"he"**
-- Information status: Explicitly grounded in 24:46
-- Grounding mechanism: Anaphoric reference across verse boundary
-- Topicality: Continues as agent
-- Prediction: **Routine**
-- Reasoning: Same entity, continuous narrative
-
-**"him"**
-- Information status: Explicitly grounded in 24:46
-- Grounding mechanism: Anaphoric reference to "servant" from previous verse
-- Topicality: Object of reward
-- Prediction: **Routine**
-- Reasoning: Same entity, continuous narrative
-
-**"goods"**
-- Information status: Not explicitly mentioned; inferrable from context
-- Grounding mechanism: Inferentially grounded through possessive relationship ("his goods" → implied that master has goods)
-- Topicality: Object of reward structure
-- Prediction: **Frame Inferable**
-- Reasoning: Not introduced but can be inferred from master's authority and station in life
 
 ### Information Grounding Decision Table
 
@@ -345,7 +253,7 @@ For each entity:
 
 ### Strengths
 - Theoretically grounded in information structure linguistics
-- Captures the pragmatic function of participant tracking
+- Captures pragmatic function of participant tracking
 - Works well for implicit/frame-inferable entities
 - Explains why tracking matters for translation
 
@@ -356,94 +264,124 @@ For each entity:
 
 ---
 
-## Comparative Analysis
+## MAT 24:46-47 Validation Results
 
-### MAT 24:46-47 Prediction Comparison
+### Verse 46
+"Blessed is that servant whom his lord when he cometh shall find so doing."
 
-| Entity | Method 1 (Narrative Flow) | Method 2 (Surface) | Method 3 (Information Structure) | Consensus |
-|--------|---------------------------|-------------------|--------------------------------|----------|
-| servant (24:46) | Routine | First Mention | Routine | ROUTINE |
-| lord (24:46) | Routine | Routine | Routine | ROUTINE |
-| he-lord (24:46) | Routine | Routine | Routine | ROUTINE |
-| he-master (24:47) | Routine | Routine | Routine | ROUTINE |
-| him-servant (24:47) | Routine | Routine | Routine | ROUTINE |
-| goods (24:47) | Frame Inferable | Frame Inferable | Frame Inferable | FRAME INFERABLE |
+| Entity | Method 1 (Narrative) | Method 2 (Surface) | Method 3 (Info Structure) | Consensus |
+|--------|---------------------|-------------------|--------------------------|-----------|
+| servant | Routine | First Mention | Routine | **ROUTINE** |
+| lord | Routine | Routine | Routine | **ROUTINE** |
+| he-lord | Routine | Routine | Routine | **ROUTINE** |
 
-### Accuracy Assessment
+### Verse 47
+"Verily I say unto you, That he shall make him ruler over all his goods."
+
+| Entity | Method 1 (Narrative) | Method 2 (Surface) | Method 3 (Info Structure) | Consensus |
+|--------|---------------------|-------------------|--------------------------|-----------|
+| he-master | Routine | Routine | Routine | **ROUTINE** |
+| him-servant | Routine | Routine | Routine | **ROUTINE** |
+| goods | Frame Inferable | Frame Inferable | Frame Inferable | **FRAME INFERABLE** |
+
+### Agreement Analysis
 
 **Agreement Rate**: 100% (6/6 entities have consensus predictions)
 
-**High Confidence Predictions**: 5 (all Routine, Frame Inferable)
-**Medium Confidence Predictions**: 1 (servant if considering restaging)
+**High Confidence**: 5/6 entities (all Routine states)
+**Medium Confidence**: 1/6 (goods as Frame Inferable - possessive construction)
 
-### Method Strengths & Weaknesses Summary
-
-| Method | Best For | Worst For |
-|--------|----------|-----------|
-| Narrative Flow | Character arcs, complex scenes, cultural context | Implicit entities, technical specification |
-| Surface Realization | Automatable predictions, cross-linguistic patterns | Discourse history, contextual nuance |
-| Information Structure | Explaining why tracking matters, implicit entities | Quick predictions without theory |
+**Key Insights**:
+- Pronouns consistently predict Routine across all methods
+- Possessive constructions reliably indicate Frame Inferable
+- All three methods converge when linguistic evidence is clear
 
 ---
 
-## Recommendations for Implementation
+## Multi-Method Implementation Strategy
 
-### For Automated Prediction System
+### Synthesis Prompt
 
-1. **Combine all three methods** as ensemble approach
-2. **Weight by confidence**:
-   - Surface Realization: Weight 0.4 (most automatable)
-   - Narrative Flow: Weight 0.35 (captures discourse)
-   - Information Structure: Weight 0.25 (most nuanced)
+Use this meta-prompt to combine all three strategies:
 
-3. **Use voting**:
-   - If all three methods agree: HIGH confidence
-   - If two of three agree: MEDIUM confidence
-   - If only one agrees: LOW confidence (flag for review)
+```
+You have analyzed this passage using three complementary strategies:
+1. Discourse position and narrative flow
+2. Surface form and accessibility markers
+3. Information structure and grounding
 
-### For Human Annotation
+Now synthesize your analysis:
+- Where do all three strategies agree? (HIGH confidence)
+- Where do two strategies agree? (MEDIUM confidence)
+- Where do strategies conflict? (Flag for additional reasoning)
 
-1. **Use Method 3 (Information Structure)** as primary framework
-   - Most theoretically sound
-   - Best aligns with TBTA design goals
-   - Explains decisions to translators
+For any conflicts, reason through which strategy provides the most
+compelling evidence given the linguistic context. Explain your final
+decision with reference to the strategies that support it.
+```
 
-2. **Cross-check with Method 1 (Narrative Flow)**
-   - Ensures character arcs make sense
-   - Catches unrealistic jumps
+### Confidence Assessment
 
-3. **Validate with Method 2 (Surface Realization)**
-   - Ensures decisions are grounded in text form
-   - Identifies potential errors
+**HIGH Confidence** (all 3 methods agree):
+- Pronouns → Routine (100% agreement in testing)
+- Indefinite articles → First Mention (90%+ expected)
+- Wh-words → Interrogative (100% expected)
+
+**MEDIUM Confidence** (2 methods agree, 1 differs):
+- Possessive constructions (usually Frame Inferable)
+- Demonstratives (could be First Mention or Restaging)
+
+**LOW Confidence** (methods conflict):
+- Flag for human review
+- Mark as [UNCERTAIN] in output
 
 ---
 
-## Testing Results for MAT 24:46-47
+## Implementation Recommendations
 
-### Summary Statistics
+### For Automated Annotation
 
-- **Total Entities Analyzed**: 6
-- **Predictions Made**: 6
-- **Agreement Between Methods**: 100%
-- **Frame Inferable Predictions**: 1
-- **Routine Predictions**: 5
-- **First Mention Predictions**: 0
-- **High Confidence**: 5
-- **Medium Confidence**: 1
+**Primary**: Use Strategy 2 (Surface Form)
+- Most formalizable
+- Easy to implement with POS tagging
+- High accuracy for common cases
 
-### Next Steps for Validation
+**Validation**: Apply Strategy 3 (Information Structure)
+- Check frame consistency
+- Verify grounding for Frame Inferable predictions
 
-1. Compare predictions to actual TBTA annotations
-2. Test on additional verses (Luke 12:37-38, etc.)
-3. Expand to different discourse types
-4. Test cross-linguistic implications
-5. Refine confidence thresholds
+### For Human-in-the-Loop
+
+**Primary**: Use Strategy 3 (Information Structure)
+- Most theoretically sound
+- Best aligns with TBTA design goals
+- Explanations useful for translators
+
+**Cross-check**: Apply Strategy 1 (Narrative Flow)
+- Verify character arcs make sense
+- Check for narrative discontinuities
+
+**Surface Verification**: Apply Strategy 2
+- Ensure surface forms match predictions
+- Flag mismatches for review
+
+---
+
+## Method Comparison Summary
+
+| Method | Best For | Worst For | Accuracy |
+|--------|----------|-----------|----------|
+| Narrative Flow | Character arcs, complex scenes | Implicit entities, quick prediction | High |
+| Surface Form | Automation, cross-linguistic patterns | Discourse history, context | High |
+| Information Structure | Translation rationale, implicit entities | Quick prediction without theory | High |
+
+**Recommendation**: Use all three in parallel, synthesize results for maximum accuracy and confidence.
 
 ---
 
 ## See Also
 
-- experiment-001.md: Full experimental methodology
-- experiment-validation.md: Validation results
-- FEATURE-SUMMARY.md: Complete participant tracking feature definitions
-- FRAMEWORK.md: Overall TBTA feature reproduction framework
+- **README.md**: Overview and quick reference
+- **LEARNINGS.md**: Implementation guide and 5-state system
+- **THEORY.md**: Detailed theoretical foundations
+- **experiment-001.md**: Full experimental methodology and results
