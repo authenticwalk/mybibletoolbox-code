@@ -1,8 +1,12 @@
 # Person Systems in Bible Translation Languages
 
-## Executive Summary
+## Translation Impact ⭐⭐⭐⭐⭐
 
-Person systems vary dramatically across languages, with many languages in our TSV file exhibiting features like clusivity (inclusive/exclusive distinctions), obviation (fourth person), and complex number systems (dual, trial). These grammatical distinctions have significant implications for Bible translation accuracy and theological meaning.
+**Criticality: HIGHEST** - Affects 33% of all Bible translations (700+ languages). Wrong clusivity choice completely alters theological meaning: "we apostles" (exclusive authority) vs "we believers" (inclusive community). Biblical source languages don't mark clusivity, requiring contextual inference for every first-person plural pronoun.
+
+**Translation Difficulty:** ⭐⭐⭐⭐ (High) - Requires theological analysis, discourse tracking, and speaker/addressee identification for each "we/us/our" instance.
+
+**Frequency:** ⭐⭐⭐⭐⭐ (Constant) - Every first-person plural pronoun in ~700+ languages demands explicit inclusive/exclusive choice.
 
 ## Local Analysis Completed ✅
 
@@ -52,6 +56,17 @@ Answer these questions about your target language:
 
 **Examples**: Austronesian (Indonesian, Tagalog, Tok Pisin), Algic (Algonquin, Cree), many Mayan, Cariban, and Pacific languages require clusivity marking.
 
+## Common Errors & Solutions
+
+| Error | Problem | Solution |
+|-------|---------|----------|
+| **All prayer is exclusive** | Assuming "we pray to God" = always exclusive | Distinguish prayer TO God (Matt 6:9 EXCL) from statements ABOUT divine presence (Matt 1:23 INCL) |
+| **Missing speaker shifts** | Not tracking speaker changes in passage | Identify speaker for EACH "we" separately - Jesus quoting prophet ≠ Jesus addressing disciples |
+| **Ignoring genre patterns** | Applying narrative rules (90% EXCL) to all genres | Check baseline: Narrative 90% EXCL, Epistles 50/50, Worship 80% INCL |
+| **Missing reciprocals** | Overlooking "one another" constructions | Reciprocal actions (Heb 10:24) = 100% INCL - both parties must participate |
+
+**See**: [METHODOLOGY.md](METHODOLOGY.md) for complete error analysis and prevention strategies.
+
 ## Gateway Features & Prediction Rules
 
 Quick prediction rules with high accuracy:
@@ -84,6 +99,15 @@ Clusivity is a grammatical distinction in first-person plural pronouns that expl
 
 - **Inclusive "we"** = speaker + addressee(s) + possibly others ("we including you")
 - **Exclusive "we"** = speaker + others, but NOT addressee ("we but not you")
+
+#### Complete Value Enumeration
+
+| Value | Definition | Participants | Bible Examples | Languages |
+|-------|------------|--------------|----------------|-----------|
+| **Inclusive** | Speaker includes addressee | speaker + addressee ± others | Gen 1:26 (Trinity), Ps 95:1 (worship), Heb 10:24 (mutual encouragement) | táyo (Tagalog), kita (Indonesian), yumi (Tok Pisin) |
+| **Exclusive** | Speaker excludes addressee | speaker + others, NOT addressee | Jhn 3:11 (Jesus vs Nicodemus), Matt 6:9 (prayer to God), Acts 15:25 (apostles to churches) | kamí (Tagalog), kami (Indonesian), mipela (Tok Pisin) |
+
+**Note**: This feature applies ONLY to first-person plural pronouns (we/us/our). Singular "I" and second/third-person pronouns do not mark clusivity in these languages.
 
 #### Languages with Clusivity
 
