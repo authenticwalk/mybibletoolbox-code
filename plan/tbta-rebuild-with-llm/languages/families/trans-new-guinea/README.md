@@ -77,6 +77,108 @@ Features unique to Trans-New Guinea languages that require translation decisions
 
 **Variants**: Some languages grammaticalize elevation, others use lexical verbs.
 
+### Multiple Past Tenses - CRITICAL (Many languages)
+
+**Present in**: Common across family
+**Pattern**: Temporal distance marked in past tense (today/yesterday/remote)
+**Dominant examples**:
+- **Today's past**: Action earlier today
+- **Yesterday's past**: Action yesterday
+- **Remote past**: Action days/weeks/months ago
+- Some languages add **recent vs distant remote**
+
+**Biblical translation examples**:
+- **Luke 24:13** "That same day" → Today's past
+- **John 11:17** "Lazarus had been in the tomb four days" → Recent remote past
+- **Genesis creation narrative** → Distant remote past (ancient events)
+- **Prophetic historical references** → May require remote past even for recent events if culturally distant
+
+**Cultural variations**:
+- **Oral cultures**: Recent past (within living memory) vs mythic past (before living memory)
+- **Event significance**: Culturally important events may use different past tense than chronology alone would suggest
+- **Theological impact**: Creation as "long ago mythic time" vs "historical event" affects past tense choice
+
+### Possessive Classification - CRITICAL (Variable)
+
+**Present in**: Many languages distinguish alienable/inalienable
+**Pattern**: Inherent possession vs acquired possession
+**Dominant example - Amele**:
+- Inalienable: Body parts, kinship (no classifier)
+- Alienable: Objects, possessions (requires classifier)
+- Some languages have 20+ possessive classifiers (Amele: 32 classes!)
+
+**Biblical translation examples**:
+- **Matthew 6:9** "Our Father" → Inalienable (inherent kinship)
+- **Matthew 26:26** "Take, eat; this is my body" → Inalienable body
+- **Luke 12:33** "Sell your possessions" → Alienable with appropriate classifier
+- **John 10:11** "I am the good shepherd" → Metaphorical kinship (inalienable?) or role (alienable?)
+
+**Cultural variations**:
+- **Clan-based societies**: Extended family may be inalienable
+- **Subsistence cultures**: Tools/gardens may have special possessive classes
+- **Theological decisions**: Is God our "inherent Father" or "adopted Father"? Affects possessive class
+
+### Serial Verb Constructions - ESSENTIAL
+
+**Present in**: Extremely productive across family
+**Pattern**: Multiple verbs in sequence expressing single complex event
+**Purpose**: Compensate for small verb root inventories (some languages <100 roots)
+
+**Common patterns**:
+- **Directional**: "come + see" = come to see
+- **Benefactive**: "do + give" = do for (someone)
+- **Causative**: "make + happen" = cause to happen
+- **Manner**: "go + run" = go running
+
+**Biblical translation examples**:
+- **Mark 1:17** "Come, follow me" → Serial verbs (come-follow)
+- **Luke 15:18** "I will arise and go to my father" → Serial verbs (arise-go)
+- **Acts 8:27** "He rose and went" → Serial verbs (rose-went)
+- **Complex actions**: "He went up, entering the temple" → Multiple serials
+
+**Cultural variations**: Which actions are considered "single events" varies. Western "went shopping" might be three serial verbs in TNG (go + look + buy).
+
+### Ergative Case - CRITICAL (Many languages)
+
+**Present in**: Common, often split-ergative systems
+**Pattern**: Ergative marks transitive subjects, absolutive marks intransitive subjects and objects
+**Complication**: Many TNG languages have **split ergativity**:
+- Nouns: Ergative-absolutive
+- Pronouns: Nominative-accusative
+- Or splits based on tense/aspect
+
+**Dominant examples**:
+- **Dani**: Ergative only for disambiguation
+- **Yali**: Optional ergative based on discourse prominence
+- **Kobon**: Pronouns use different system than nouns
+
+**Biblical translation examples**:
+- **John 1:1** "In the beginning was the Word" → Word is absolutive (intransitive subject)
+- **John 1:3** "Through him all things were made" → "Him" is ergative (agent) or instrumental?
+- **Passive constructions**: Greek passive may not map directly to ergative patterns
+
+**Cultural impact**: Ergative systems highlight patient/affected entity. May affect theological emphasis (what God does TO us vs we do).
+
+### Clause Chaining Strategies - ESSENTIAL
+
+**Present in**: Nearly universal
+**Pattern**: Long chains of medial verbs + final verb
+**Functions**:
+- **Temporal sequence**: "He went, saw, spoke, returned"
+- **Simultaneous action**: "While going, he spoke"
+- **Purpose chains**: "He went in order to speak"
+- **Cause-effect**: "Being hungry, he ate"
+
+**Biblical translation examples**:
+- **Mark 1:9-11** Three verses = one long clause chain (came, was baptized, came up, saw, heard)
+- **Luke 15:11-32** Prodigal son parable = extended clause chaining
+- **Narrative structure**: Every narrative passage requires clause chain analysis
+
+**Cultural variations**:
+- **Oral narrative style**: Chains can be very long (20+ verbs)
+- **Discourse peaks**: Final verbs carry main assertion; medial verbs are buildup
+- **Theological emphasis**: Final position = most important. Where does theological point go in chain?
+
 ## Key Typological Features
 
 Trans-New Guinea languages share significant typological characteristics that create unique challenges and opportunities for Bible translation:
