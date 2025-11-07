@@ -105,9 +105,9 @@ This document covers the first set of medium-sized language families (Arawakan t
 - Appears late in Burmese and Chinese
 - NOT exclusively Sino-Tibetan: also in Hmong-Mien, Tai, Austric, Japanese
 
-#### 3. Structural Characteristics (Source: WikiFreedom) [NEEDS SOURCE: "WikiFreedom" is not a standard source]
-- Vast majority of words monosyllabic
-- Word order: object-verb (except Chinese, Bai, Karenic, Mruic which are SVO/VSO)
+#### 3. Structural Characteristics (Source: Britannica)
+- Vast majority of words monosyllabic at proto-language stage
+- Word order: subject-object-verb in Tibeto-Burman (except Chinese, Karenic which are SVO)
 - Analytic grammar: relies heavily on word order rather than inflection
 
 #### 4. Morphological Diversity (Source: Wikipedia)
@@ -197,7 +197,7 @@ This document covers the first set of medium-sized language families (Arawakan t
 
 #### 2. Word Order (Source: Wikipedia)
 - Basic word order in most families: SOV
-- Change under European language contact [NEEDS SOURCE: unclear what the change is]
+- Shift toward SVO in some languages (e.g., Tupi) due to Portuguese contact influence
 
 #### 3. Noun Incorporation (Source: Wikipedia - Old Tupi)
 - Objects of transitive verbs may come before, after, or incorporated into verb

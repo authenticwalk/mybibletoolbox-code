@@ -58,8 +58,8 @@ Understanding grammatical features of diverse language families is critical for:
 
 ### Asia
 - **Sino-Tibetan** (18)
-- **Dravidian** (5) [NEEDS SOURCE: only 4 listed - Kannada, Malayalam, Tamil, Telugu]
-- **Turkic** (6) [NEEDS SOURCE: only 3 listed - Azerbaijani, Turkish, Uyghur]
+- **Dravidian** (4 major languages - Kannada, Malayalam, Tamil, Telugu)
+- **Turkic** (3 languages - Azerbaijani, Turkish, Uyghur)
 
 ## Key Typological Features
 

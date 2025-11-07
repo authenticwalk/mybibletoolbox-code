@@ -75,6 +75,11 @@ This document lists all sources cited in the Austronesian language family resear
 - URL: https://www.academia.edu/38054811/
 - **Supports**: Manobo language focus systems
 
+**Delmer, Jean-Francois**
+- "Non-Personal Determiners in Manobo Languages."
+- URL: https://www.academia.edu/41468800/
+- **Supports**: Demonstratives in Manobo languages convey definiteness to compensate for lost determiner contrasts
+
 ### Oceanic Languages
 
 **Lynch, John, Malcolm Ross & Terry Crowley (2002)**
@@ -100,7 +105,7 @@ This document lists all sources cited in the Austronesian language family resear
 
 **Wikipedia: "Austronesian languages"**
 - URL: https://en.wikipedia.org/wiki/Austronesian_languages
-- **Supports**: General information, geographic distribution, classification
+- **Supports**: General information, geographic distribution, classification; 1,200-1,268 languages total
 
 **Polinsky, Maria**
 - "Austronesian syntax: A Syntactic Overview of Austronesian Languages."
@@ -180,9 +185,11 @@ This document lists all sources cited in the Austronesian language family resear
 - URL: https://www.dynamicsoflanguage.edu.au/news-and-media/past-events/past-events-in-2015/article/?id=manfred-krifka-the-realis-irrealis-distinction-in-daakie-ambrym-vanuatu-25-august-2015
 - **Supports**: Realis/irrealis in Vanuatu languages
 
-**[Unspecified PDF source cited as "Irrealis is Real, PDF"]**
-- **Supports**: Realis/irrealis as major T-A-M distinction
-- **NOTE**: [NEEDS PROPER CITATION] - exact source not provided
+**Von Prince, K., A. Krajinović & M. Krifka (2022)**
+- "Irrealis is real."
+- *Language*, 98(2): 221-249.
+- URL: https://muse.jhu.edu/article/857153
+- **Supports**: Realis/irrealis as major T-A-M distinction; semantic domain split into possible and counterfactual
 
 ## Pronouns and Clusivity
 
@@ -220,11 +227,16 @@ This document lists all sources cited in the Austronesian language family resear
 - URL: http://www.mariapolinsky.com/wp-content/uploads/2023/07/Chen-Polinsky-AN_gender_chapter.pdf
 - **Supports**: Genitive/possessive classifiers, noun classification
 
+**Polinsky, Maria**
+- "Austronesian syntax: A Syntactic Overview of Austronesian Languages."
+- URL: https://scholar.harvard.edu/files/mpolinsky/files/a_syntactic_overview_of_austronesian_languages.010213.pdf
+- **Supports**: Micronesian object agreement, general syntactic features
+
 ## Specific Languages
 
 **"Cebuano Grammar Notes"**
 - URL: https://scholarspace.manoa.hawaii.edu/bitstreams/75449514-a5eb-487a-aa6b-7778680179e8/download
-- **Supports**: Cebuano phonology (16 consonants, 3 vowels, Spanish loanword vowels)
+- **Supports**: Cebuano phonology (16 consonants, 3 vowels /i, a, u/, Spanish loanword vowels /e, o/)
 
 **ScholarSpace @ University of Hawaii**
 - Various dissertations and working papers on Austronesian languages
@@ -253,20 +265,36 @@ This document lists all sources cited in the Austronesian language family resear
 - URL: https://www.diu.edu/documents/jlcr/jlcr-1.2-2020-10.15.20.pdf
 - **Supports**: Minority language translation issues
 
-## Sources Mentioned Without Full Citations
+## Additional Sources Added During Verification (2025-11-07)
 
-The following sources are mentioned in the text but lack complete bibliographic information:
+**Bril, Isabelle**
+- "Number and numeration in Nêlêmwa and Zuanga (New Caledonia): Ontologies, definiteness and pragmatics."
+- URL: https://hal.science/hal-00994177
+- **Supports**: Nêlêmwa demonstrative determiners mark definiteness; no separate definite articles
 
-1. **"Irrealis is Real, PDF"** - [NEEDS PROPER CITATION]
-   - Cited for: Realis/irrealis modal distinction as major T-A-M dichotomy
+**Wikipedia: "Micronesian languages"**
+- URL: https://en.wikipedia.org/wiki/Micronesian_languages
+- **Supports**: Lack of plain labial consonants; palatalized and labio-velarized series
 
-2. **Academia.edu: "Non-Personal Determiners in Manobo Languages"** - [NEEDS PROPER CITATION]
-   - Cited for: Demonstratives in Manobo languages
+**Wikipedia: "Clusivity"**
+- URL: https://en.wikipedia.org/wiki/Clusivity
+- **Supports**: Tagalog dual inclusive kata/kitá; inclusive/exclusive distinction
 
-3. **Various unnamed sources for**:
-   - Nêlêmwa (New Caledonia) definiteness marking - [NEEDS SOURCE]
-   - Specific language counts and variant numbers - [NEEDS SOURCE]
-   - Several linguistic examples and specific claims - [NEEDS SOURCE]
+**Wikipedia: "List of loanwords in Indonesian"**
+- URL: https://en.wikipedia.org/wiki/List_of_loanwords_in_Indonesian
+- **Supports**: 10,000 Dutch loanwords in Indonesian
+
+**Donohue, M. & C. Grimes (2008)**
+- Reject Central-Eastern Malayo-Polynesian as valid clade
+- **Supports**: Scholarly questioning of CMP coherence
+
+**Edwards, O. & C. Grimes (2021)**
+- Reject Central-Eastern Malayo-Polynesian as valid clade
+- **Supports**: Recent scholarly challenges to CMP classification
+
+**Multiple Austronesian migration studies**
+- PNAS 2021, archaeological sources
+- **Supports**: Timeline of 6,000 ya to Taiwan, 4,000 ya to Philippines
 
 ## Summary Statistics
 

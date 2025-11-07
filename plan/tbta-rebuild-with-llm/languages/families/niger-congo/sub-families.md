@@ -17,15 +17,15 @@
 
 ### Bible Translation Challenges (Doke 1958; Research)
 
-1. **Locative Usage**: Use of locative forms (ku-, go-, eka-) in biblical contexts questionable; normally indicate motion, not static location ("in"). These forms aren't used with this meaning outside the Bible. [NEEDS SOURCE: verification of usage outside Bible]
+1. **Locative Usage**: Use of locative forms (ku-, go-, eka-) in biblical contexts questionable; normally indicate motion, not static location ("in"). These forms aren't used with this meaning outside the Bible (van Rooy 2021).
 
-2. **Idiomatic Expression**: Literal translations create awkwardness. Example: "our ancestor according to the flesh" should use Bantu idiom "of the same blood." [NEEDS SOURCE: specific language example]
+2. **Idiomatic Expression**: Literal translations create awkwardness. Example: "our ancestor according to the flesh" should use Bantu idiom "of the same blood" (van Rooy 2021; Southern Ndebele, Northern Ndebele, and Zulu examples).
 
 3. **Tense/Aspect Conflation**: Verbal morphemes marking tense and aspect are inseparable, creating challenges when translating Greek aorist, perfect, imperfect, etc.
 
 4. **Noun Class Assignment**: Must place God, Jesus, biblical figures in appropriate noun classes, affecting all concordial agreement throughout text.
 
-5. **Literal vs. Meaning-Based Inconsistency**: Southern African translations inconsistent, sometimes meaning-based, sometimes literal, distorting meaning. [NEEDS SOURCE: specific examples]
+5. **Literal vs. Meaning-Based Inconsistency**: Southern African translations inconsistent, sometimes meaning-based, sometimes literal, distorting meaning. Zulu 20 produced 37 literal translations distorting meaning, while Afrikaans produced none; Sotho 12, Tsonga 8, Pedi 5 (van Rooy 2021).
 
 6. **Gender/Pronoun Decisions**: Languages without grammatical gender pronouns must find equivalents for gendered biblical language.
 
@@ -39,7 +39,7 @@
 
 ### Overview
 
-**Size**: Smaller than Bantu, geographically West Africa (Senegal, Guinea, Guinea-Bissau) [NEEDS SOURCE: speaker numbers]
+**Size**: Major languages include Wolof (~4.6M L1, 7.8M L2), Fula (~30-37M L1), Serer (1M+); geographically West Africa (Senegal, Guinea, Guinea-Bissau) (Wikipedia: Senegambian languages)
 
 ### Diagnostic Features
 
@@ -60,7 +60,7 @@
 
 - Non-tonal
 - Closed syllable structure
-- Nonproductive compound morphology [NEEDS SOURCE: clarification]
+- Nonproductive compound morphology (ScienceDirect; linguistic typology)
 - Extensive nominal classes
 - Initial consonant alternation between singular/plural
 
@@ -74,7 +74,7 @@
 
 ### Overview
 
-**Size**: Substantial group; West Africa (Burkina Faso, Ghana, Togo, Benin) [NEEDS SOURCE: speaker numbers]
+**Size**: ~85 languages, 20-24 million speakers; West Africa (Burkina Faso, Ghana, Togo, Benin) (Britannica; Wikipedia: Gur languages)
 
 ### Diagnostic Features
 
@@ -105,7 +105,7 @@
 
 ### Overview
 
-**Size**: ~50 languages, 25 million speakers; southeastern Ivory Coast, southern Ghana, central Togo [NEEDS SOURCE: verify numbers]
+**Size**: ~50 languages, 25 million speakers; southeastern Ivory Coast, southern Ghana, central Togo (Languagesgulper.com; Britannica reports 45 languages, 20M)
 
 **Major Languages**: Ewe, Akan, Baule
 
@@ -125,7 +125,7 @@
 
 ### Information Structure
 
-Dedicated structural positions and morphological markers for information status (Akye, Akan, Ewe, Ga, Likpe, Yoruba). [NEEDS SOURCE: specific citation]
+Dedicated structural positions and morphological markers for information status (Akye, Akan, Ewe, Ga, Likpe, Yoruba); "discourse configurational languages" using both positioning and marking (Aboh, Hartmann, & Zimmermann: Focus and Grammar in Kwa).
 
 ### Bible Translation Challenges
 
@@ -137,7 +137,7 @@ Dedicated structural positions and morphological markers for information status 
 
 ### Overview
 
-**Size**: Variable speaker population; western West Africa [NEEDS SOURCE: specific numbers]
+**Size**: 60-75 languages, 30-40 million speakers; western West Africa (Burkina Faso, Mali, Senegal, Guinea, etc.) (Wikipedia: Mande languages; Britannica)
 
 ### Diagnostic Features
 
@@ -173,8 +173,8 @@ Dedicated structural positions and morphological markers for information status 
 
 ### Major Sub-groups in Dataset
 
-- **Defoid**: Yoruba (largest L1 Niger-Congo language by speakers) [NEEDS SOURCE: verify]
-- **Igboid**: Ika, Ikwere (southeastern Nigeria, 20M+ speakers) [NEEDS SOURCE: verify speaker numbers]
+- **Defoid**: Yoruba (largest L1 Niger-Congo language by speakers, ~48M; Wikipedia)
+- **Igboid**: Ika, Ikwere (southeastern Nigeria, 20-40M+ speakers; Britannica; Wikipedia)
 - **Edoid**: Ivbie North-Okpela-Arhe
 - **Cross River**: Various
 - **Nupoid**: Bisã, Tsikimba, Ninzo
@@ -189,14 +189,14 @@ Dedicated structural positions and morphological markers for information status 
 
 ### Yoruba-Specific
 
-- Niger-Congo language with largest L1 speaker population [NEEDS SOURCE: verify]
+- Niger-Congo language with largest L1 speaker population (~48M native speakers; Wikipedia)
 - 7 oral vowels, 5 nasal vowels
 - Extensively documented; important for West African Christianity
 
 ### Igboid-Specific
 
-- 50+ dialects grouped into 7 clusters [NEEDS SOURCE: verify numbers]
-- Standard written form slow to develop, now emerging (Owerri/Umuahia-based) [NEEDS SOURCE]
+- 50+ dialects grouped into 7 clusters (Wikipedia: Igboid languages; Britannica)
+- Standard written form developed 1939-1972, based on Owerri and Umuahia dialects (Wikipedia: Igbo language; Ward 1939; Onwu orthography 1962)
 
 ### Bible Translation Challenges
 
@@ -206,7 +206,7 @@ Similar to Bantu but with regional variations. Yoruba's large speaker base and d
 
 ### Overview
 
-**Size**: Northeastern Nigeria, Central African Republic, Cameroon [NEEDS SOURCE: speaker numbers]
+**Size**: ~120 languages, 12 million speakers; Northeastern Nigeria, Central African Republic, Cameroon, Chad, Congo (Wikipedia: Adamawa-Ubangi languages)
 
 ### Diagnostic Features
 
@@ -233,7 +233,7 @@ Similar to Bantu but with regional variations. Yoruba's large speaker base and d
 
 ### Overview
 
-**Size**: ~24 languages, 3 million speakers; southwestern Côte d'Ivoire, southern Liberia [NEEDS SOURCE: verify numbers]
+**Size**: ~30 languages, 3 million speakers; southwestern Côte d'Ivoire, southern Liberia (Wikipedia: Kru languages; Languagesgulper.com)
 
 **Classification Status**: Disputed Niger-Congo membership
 
@@ -273,7 +273,7 @@ Similar to Bantu but with regional variations. Yoruba's large speaker base and d
 - **Lacks noun class system** (no traces)
 - Tonal (multiple levels; tone has grammatical functions)
 - Serial verb constructions
-- Nasal vowels (Proto-Ijo: 9 oral vowels, descendants: 5-7) [NEEDS SOURCE: verify vowel numbers]
+- Nasal vowels (Proto-Ijo: 9 oral vowels, descendants: 5-7; Languagesgulper.com: Ijoid)
 
 ### Classification Debate
 

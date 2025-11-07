@@ -8,7 +8,7 @@
 
 ## Overview
 
-The Indo-European language family is the world's largest language family by number of speakers ([NEEDS SOURCE]: 3.4 billion people, 42% of global population) and one of the most geographically widespread. It exhibits significant internal variation in grammatical structures while maintaining recognizable shared ancestry.
+The Indo-European language family is the world's largest language family by number of speakers ({wiki-ie}: over 3.4 billion people, 42% of the global population) and one of the most geographically widespread. It exhibits significant internal variation in grammatical structures while maintaining recognizable shared ancestry.
 
 This research examines 55 Indo-European languages in our Bible translation dataset across 10 major branches, focusing on grammatical features that affect Bible translation: case systems, aspect/tense marking, gender systems, and number distinctions.
 

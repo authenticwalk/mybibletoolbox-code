@@ -54,13 +54,11 @@ This document covers families with 1-4 languages, language isolates, and constru
 
 **Geographic distribution**: North America (Canada and United States)
 
-**Unique grammatical features**: [NEEDS SOURCE]
-- Polysynthetic structure
-- Complex verb morphology
-- Animacy distinctions
-- Direct/inverse systems
-
-**Note**: While extensive information exists on Algic/Algonquian languages, this was not captured in the current search queries. Further dedicated research recommended.
+**Unique grammatical features**: (Source: Wikipedia, Cambridge Core)
+- Polysynthetic structure: very high ratio of morphemes per word
+- Complex verb morphology with extensive affixation
+- Animacy distinctions: animate/inanimate noun classification system
+- Direct/inverse systems: morphosyntactic marking based on salience/animacy hierarchy
 
 ---
 
@@ -273,7 +271,7 @@ The following families have 1-2 languages each in the dataset. Limited grammatic
 - Regular agglutinating grammar
 - No irregularities by design
 - Draws vocabulary from Romance, Germanic, Slavic languages
-- 16 grammatical rules with no exceptions [NEEDS SOURCE]
+- 16 basic grammatical rules designed without exceptions (Source: Fundamento de Esperanto)
 
 ### Translation-Relevant Distinctions
 

@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Austronesian language family is one of the world's largest language families, with approximately [NEEDS SOURCE] 1,200+ languages spoken across a vast geographic area from Madagascar to Easter Island. This research focuses on 172 Austronesian languages in our dataset and their implications for Bible translation work.
+The Austronesian language family is one of the world's largest language families, with approximately 1,200+ languages [Source: Multiple sources including Wikipedia, Britannica; estimates range 1,200-1,268 languages] spoken across a vast geographic area from Madagascar to Easter Island. This research focuses on 172 Austronesian languages in our dataset and their implications for Bible translation work.
 
 ## Geographic Distribution
 
@@ -88,7 +88,7 @@ Philippine-type languages use **ang-phrases** to mark focused/definite nouns, in
 - Lack of consonant clusters (except Formosan languages)
 - Generally toneless
 - Polynesian: Scarcity of consonants, heavy vowel use with length distinctions
-- Micronesian: [NEEDS SOURCE] Lack of plain labial consonants (palatalized and labio-velarized series)
+- Micronesian: Lack of plain labial consonants (palatalized and labio-velarized series) [Source: Wikipedia: Micronesian languages]
 
 [Read detailed analysis →](linguistic-features.md#phonology)
 

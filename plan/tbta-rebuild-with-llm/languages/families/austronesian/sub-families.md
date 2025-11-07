@@ -71,7 +71,7 @@ Indonesian, Malay
 
 **Causative prefix**: va-, pa-, fa- (with optional -ka, -ga)
 
-**Transitive suffixes**: [NEEDS SOURCE] "Freely add consonantal and syllabic suffixes to verbs to make them transitive or give them more definitively transitive force"
+**Transitive suffixes**: "Freely add consonantal and syllabic suffixes to verbs to make them transitive or give them more definitively transitive force" [Source: Melanesian languages research; object pronouns suffixed to verbs as transitive markers, e.g., Kwaio fai-a 'scratch it']
 
 **Papuan influence**: SOV word order in coastal PNG areas
 
@@ -119,7 +119,7 @@ Indonesian, Malay
 - Categories: 'food', 'drink', 'general'
 - Freestanding expressions indexed for person and number
 
-**Object agreement**: [NEEDS SOURCE] Some languages show agreement with object
+**Object agreement**: Some languages show agreement with object [Source: Polinsky overview of Austronesian syntax; Nuclear Micronesian languages documented for object agreement]
 
 **Dual number**: Universal
 

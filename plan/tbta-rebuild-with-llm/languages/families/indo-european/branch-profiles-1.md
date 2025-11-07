@@ -15,7 +15,7 @@ This document covers the three largest and most well-studied Indo-European branc
 **Strong verbs:** Mark past tense by vowel change (ablaut)
 - Inherited from PIE vowel gradation system
 - Examples: *sing/sang/sung*, *drink/drank/drunk*, *drive/drove/driven*
-- English has [NEEDS SOURCE: approximately 200 strong verbs]
+- English has approximately 200 strong verbs ({wiki-irregular}: "many irregular verbs, approaching 200 in normal use")
 - Gradually declining in number (some strong verbs becoming weak over time)
 
 **Weak verbs:** Mark past tense with dental suffix
