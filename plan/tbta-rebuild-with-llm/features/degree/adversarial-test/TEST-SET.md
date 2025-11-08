@@ -1,230 +1,335 @@
-# Degree Feature: Adversarial Test Set
+# Degree Feature: Adversarial Test Set (REDESIGNED)
 
-**Purpose**: Test algorithm v1.0 on challenging edge cases
-**Expected accuracy**: 50-60% (adversarial cases are intentionally difficult)
-**Selection date**: 2025-11-08
+**Purpose**: Test algorithm v1.0 with equal coverage of all degree values
+**Design principle**: One example per value (11 values), harder ambiguous cases
+**Expected accuracy**: 50-60% (challenging cases with potential disagreement)
+**Selection date**: 2025-11-08 (REVISED)
 **TBTA Access**: FORBIDDEN until predictions locked
-**Status**: LOCKED - Do not modify after this commit
+**Status**: LOCKED
+
+---
+
+## Design Philosophy Change
+
+**Original design flaw**: Unbalanced (focused on comparative/intensified, missing many values)
+
+**New design**: Equal coverage (1 example per value × 11 values = 11 verses)
+- Benefit: Tests algorithm's ability to distinguish ALL degree values
+- Requirement: Each value must be tested with ambiguous/hard cases
+- Focus: Boundary cases where degree assignment is debatable
 
 ---
 
 ## Test Set Overview
 
-**Total verses**: 5
-**Source**: Selected from experiment-001.md (excluded from training)
-**Selection criteria**: Edge cases that challenge degree boundary decisions
-**Training overlap**: None (explicitly excluded from 8-verse training set)
+**Total verses**: 11
+**Distribution**: 1 example per degree value
+**Selection criteria**: Boundary ambiguities, form-function mismatches, rare values
+**Training overlap**: None
 
 ---
 
-## Adversarial Test Verses
+## Value 1: N (No Degree) - 1 verse
 
-### 1. Matthew 5:19 - Downward Superlative Boundary
+Hard case where base form might be confused with intensification
 
-**Reference**: Matthew 5:19
-**Greek**: ὃς ἐὰν οὖν λύσῃ μίαν τῶν ἐντολῶν τούτων τῶν ἐλαχίστων
-**English (ESV)**: "Therefore whoever relaxes one of the least of these commandments"
+### 1. John 1:1 - "The Word Was God" (Predicate Nominative)
+
+**Reference**: John 1:1
+**Greek**: καὶ θεὸς ἦν ὁ λόγος
+**English (ESV)**: "And the Word was God"
 
 **Challenge**:
-- ἐλάχιστος (elachistos) - superlative form "least"
-- Downward direction (smallest, least important)
-- Does TBTA mark as:
-  - l (lowercase L) - "least" specifically?
-  - L (uppercase L) - general downward comparison?
-  - S (Superlative) - treating as standard superlative?
+- θεὸς (theos) "God" - anarthrous predicate nominative
+- No explicit degree marking
+- But context emphasizes divine nature (could be seen as intensified/superlative)
+- Does TBTA mark theological emphasis or just grammatical form?
 
-**Why adversarial**: Tests directional superlative distinction (downward "least" vs. upward "greatest")
-
-**Confidence**: Low (uncertain without training data on downward superlatives)
+**Why ambiguous**: Theological weight vs. grammatical form (no degree)
+**Expected answer**: N (No Degree)
+**Alternative**: S or I (if theological emphasis encoded)
+**Confidence**: Medium
 
 ---
 
-### 2. Romans 5:15 - Intensified Comparative Threshold
+## Value 2: C (Comparative) - 1 verse
 
-**Reference**: Romans 5:15
-**Greek**: πολλῷ μᾶλλον ἡ χάρις τοῦ θεοῦ
-**English (ESV)**: "much more the grace of God"
+Hard case where comparative might be confused with superlative context
+
+### 2. Matthew 11:11 - "No One Greater Than John"
+
+**Reference**: Matthew 11:11
+**Greek**: οὐκ ἐγήγερται ἐν γεννητοῖς γυναικῶν μείζων Ἰωάννου τοῦ βαπτιστοῦ
+**English (ESV)**: "Among those born of women there has arisen no one greater than John the Baptist"
 
 **Challenge**:
-- πολλῷ μᾶλλον (pollō mallon) - "much more" (comparative + intensifier)
-- Is this:
-  - C (Comparative) - standard comparative?
-  - i (Intensified Comparative) - if this code exists?
-  - I/V (Intensified) - treating the intensifier separately?
+- μείζων (meizōn) - comparative form "greater"
+- Context: "no one greater" = superlative meaning (John is greatest)
+- Morphology (comparative) vs. semantics (superlative)
+- Does TBTA follow form or function?
 
-**Why adversarial**: Tests boundary between comparative and intensified comparative
-
-**Confidence**: Medium (depends on whether TBTA distinguishes intensified comparatives)
+**Why ambiguous**: Comparative form with superlative semantic meaning
+**Expected answer**: C (Comparative - morphological)
+**Alternative**: S (Superlative - semantic)
+**Confidence**: Low
 
 ---
 
-### 3. 2 Corinthians 4:17 - Extreme Intensification (Double Hyperbole)
+## Value 3: S (Superlative) - 1 verse
 
-**Reference**: 2 Corinthians 4:17
-**Greek**: καθ' ὑπερβολὴν εἰς ὑπερβολὴν αἰώνιον βάρος δόξης
-**English (ESV)**: "an eternal weight of glory beyond all comparison"
+Hard case where positive form is used in superlative context
+
+### 3. Matthew 22:36 - "Which Is the Greatest Commandment?"
+
+**Reference**: Matthew 22:36
+**Greek**: ποία ἐντολὴ μεγάλη ἐν τῷ νόμῳ;
+**English (ESV)**: "Teacher, which is the great commandment in the Law?"
 
 **Challenge**:
-- καθ' ὑπερβολὴν εἰς ὑπερβολὴν - "beyond comparison to comparison" (double hyperbole)
-- Extreme intensification through repetition
-- Is this:
-  - E (Extremely Intensified) - if this rare code exists?
-  - I/V (Intensified) - treating as standard intensification?
-  - S (Superlative) - semantic superlative ("most glorious")?
+- μεγάλη (megalē) - positive form "great" (not superlative μεγίστη)
+- Question asks "which is greatest?" (superlative intent)
+- Greek uses positive form where English expects superlative
+- Does TBTA encode question semantics or Greek morphology?
 
-**Why adversarial**: Tests threshold for extreme intensification coding
-
-**Confidence**: Low (rare construction, unclear TBTA policy)
+**Why ambiguous**: Positive form in superlative question context
+**Expected answer**: S (Superlative - semantic) or N (No Degree - morphological)
+**Confidence**: Low
 
 ---
 
-### 4. Ephesians 3:20 - Triple Compound Intensifier
+## Value 4: I (Intensified) - 1 verse
+
+Hard case where intensification might overlap with extremely intensified
+
+### 4. Acts 16:26 - "Great Earthquake"
+
+**Reference**: Acts 16:26
+**Greek**: σεισμὸς ἐγένετο μέγας
+**English (ESV)**: "And suddenly there was a great earthquake"
+
+**Challenge**:
+- μέγας (megas) "great" - could be intensified or just descriptive
+- Context: Supernatural earthquake (prison shaking)
+- Is this I (very great) or just N (great without degree)?
+- Or E (extremely great - miracle context)?
+
+**Why ambiguous**: Boundary between descriptive and intensified
+**Expected answer**: I (Intensified) or N (No Degree)
+**Confidence**: Low
+
+---
+
+## Value 5: E (Extremely Intensified) - 1 verse
+
+Hard case testing threshold for extreme intensification
+
+### 5. Ephesians 3:20 - Triple Compound
 
 **Reference**: Ephesians 3:20
-**Greek**: τῷ δὲ δυναμένῳ ὑπὲρ πάντα ποιῆσαι ὑπερεκπερισσοῦ
-**English (ESV)**: "Now to him who is able to do far more abundantly than all that we ask or think"
+**Greek**: ὑπερεκπερισσοῦ
+**English (ESV)**: "Far more abundantly"
 
 **Challenge**:
-- ὑπερεκπερισσοῦ (hyperekperissou) - triple compound: ὑπέρ (hyper-) + ἐκ (ek-) + περισσός (perissos)
-- Morphologically extreme intensification
+- ὑπερεκπερισσοῦ (hyperekperissou) - triple compound (ὑπέρ + ἐκ + περισσός)
+- Morphologically extreme
 - But English translates as comparative: "far MORE abundantly"
-- Does TBTA encode:
-  - E (Extremely Intensified) - based on Greek morphology?
-  - C (Comparative) - based on English translation "more"?
-  - S (Superlative) - semantic maximum ("most abundantly possible")?
+- Does TBTA encode Greek (E) or English translation (C)?
 
-**Why adversarial**: Tests whether TBTA encodes source language (Greek) or target language (English) forms
-
-**Confidence**: Low (critical test of TBTA's encoding philosophy)
+**Why ambiguous**: Tests source vs. target language encoding philosophy
+**Expected answer**: E (Greek morphology) or C (English translation)
+**Confidence**: Very Low (critical test)
 
 ---
 
-### 5. Matthew 10:25 - Equative Construction
+## Value 6: T ('too'/Excessive) - 1 verse
+
+Hard case testing if "too" appears in Biblical texts
+
+### 6. 1 Corinthians 10:13 - "Beyond Your Ability"
+
+**Reference**: 1 Corinthians 10:13
+**Greek**: ὑπὲρ ὃ δύνασθε
+**English (ESV)**: "Beyond what you are able to bear"
+
+**Challenge**:
+- ὑπὲρ (hyper) "beyond" - could indicate excessive degree
+- English "too much" not explicit but implied (beyond ability = excessive)
+- Does TBTA use T code for implicit excess?
+- Or is this just C (comparative - "more than")?
+
+**Why ambiguous**: Implicit excess vs. explicit comparative
+**Expected answer**: T (if implicit excess) or C (comparative) or N (no degree)
+**Confidence**: Very Low (rare value, may not exist)
+
+---
+
+## Value 7: L ('less'/Downward Comparative) - 1 verse
+
+Hard case where downward comparison might be comparative
+
+### 7. Hebrews 7:7 - "The Inferior"
+
+**Reference**: Hebrews 7:7
+**Greek**: τὸ ἔλαττον ὑπὸ τοῦ κρείττονος εὐλογεῖται
+**English (ESV)**: "It is beyond dispute that the inferior is blessed by the superior"
+
+**Challenge**:
+- ἔλαττον (elatton) "lesser/inferior" - comparative of ἐλαχύς
+- Downward direction (less/inferior vs. more/superior)
+- Does TBTA distinguish L (downward) from C (general comparative)?
+- Or both get C?
+
+**Why ambiguous**: Directional distinction unclear
+**Expected answer**: L (if directional) or C (if combined)
+**Confidence**: Low
+
+---
+
+## Value 8: l ('least'/Downward Superlative) - 1 verse
+
+Hard case where downward superlative might be regular superlative
+
+### 8. Matthew 5:19 - "Least in the Kingdom"
+
+**Reference**: Matthew 5:19
+**Greek**: ἐλάχιστος κληθήσεται ἐν τῇ βασιλείᾳ
+**English (ESV)**: "Will be called least in the kingdom of heaven"
+
+**Challenge**:
+- ἐλάχιστος (elachistos) - superlative "least"
+- Downward direction (least vs. greatest)
+- Does TBTA use l (downward superlative) or S (general superlative)?
+- Is directional distinction encoded?
+
+**Why ambiguous**: Downward vs. upward superlative distinction
+**Expected answer**: l (if directional code exists) or S (if combined)
+**Confidence**: Low
+
+---
+
+## Value 9: q (Equative) - 1 verse
+
+Hard case testing if equative gets dedicated code
+
+### 9. Matthew 10:25 - "Like His Teacher"
 
 **Reference**: Matthew 10:25
 **Greek**: ἀρκετὸν τῷ μαθητῇ ἵνα γένηται ὡς ὁ διδάσκαλος αὐτοῦ
 **English (ESV)**: "It is enough for the disciple to be like his teacher"
 
 **Challenge**:
-- ὡς (hōs) - comparative particle "like, as"
-- Equative construction: "X is AS Y" (not more or less, but equal)
-- Does TBTA mark equative:
-  - q (Equative) - if this code exists?
-  - C (Comparative) - treating ὡς as general comparison?
-  - N (No Degree) - not considering equative as degree?
+- ὡς (hōs) "like/as" - equative particle
+- "As X as Y" construction (equality comparison)
+- Does TBTA distinguish q (equative) from C (comparative)?
+- Or does equative lack degree marking (N)?
 
-**Why adversarial**: Tests whether TBTA distinguishes equative from comparative
-
-**Confidence**: Low (equative is edge case, may not have dedicated code)
+**Why ambiguous**: Equative as degree category unclear
+**Expected answer**: q (if distinct code) or N (no degree) or C (general comparison)
+**Confidence**: Very Low (rare value)
 
 ---
 
-## Selection Rationale
+## Value 10: i (Intensified Comparative) - 1 verse
 
-These 5 verses were chosen from experiment-001.md because they represent:
+Hard case testing intensified comparative as distinct category
 
-1. **Boundary cases**: Where category distinctions are unclear
-   - Downward vs. upward (Matt 5:19)
-   - Comparative vs. intensified comparative (Rom 5:15)
-   - Intensified vs. extremely intensified (2 Cor 4:17, Eph 3:20)
-   - Comparative vs. equative (Matt 10:25)
+### 10. Romans 5:15 - "Much More"
 
-2. **Rare constructions**: Not likely covered in training
-   - Double hyperbole (2 Cor 4:17)
-   - Triple compound (Eph 3:20)
-   - Equative particle (Matt 10:25)
+**Reference**: Romans 5:15
+**Greek**: πολλῷ μᾶλλον ἡ χάρις τοῦ θεοῦ
+**English (ESV)**: "Much more the grace of God"
 
-3. **Philosophy tests**: Source vs. target language encoding
-   - Eph 3:20 specifically tests whether TBTA follows Greek morphology or English translation
+**Challenge**:
+- πολλῷ μᾶλλον (pollō mallon) - "much more" (intensifier + comparative)
+- Is this i (intensified comparative) or just C (comparative)?
+- Does πολλῷ "much" create a separate degree category?
+- Or is intensification separate from comparison?
+
+**Why ambiguous**: Combined intensification + comparison
+**Expected answer**: i (if distinct) or C (if combined with comparative) or I+C (two marks)
+**Confidence**: Very Low
+
+---
+
+## Value 11: s (Superlative of 2) - 1 verse
+
+Hard case testing superlative in dyadic context
+
+### 11. Luke 18:14 - "This Man Went Down Justified Rather Than the Other"
+
+**Reference**: Luke 18:14
+**Greek**: κατέβη οὗτος δεδικαιωμένος... παρ' ἐκεῖνον
+**English (ESV)**: "This man went down to his house justified, rather than the other"
+
+**Challenge**:
+- Context: Two men (Pharisee and tax collector) - dyadic
+- Comparative παρ' (par') "rather than/more than"
+- Does "better of the two" get s (superlative of 2) or just C (comparative)?
+- Is this category even used in TBTA?
+
+**Why ambiguous**: Dyadic superlative vs. simple comparative
+**Expected answer**: s (if dyadic superlative exists) or C (comparative)
+**Confidence**: Very Low (rare value)
+
+---
+
+## Value Coverage Summary
+
+| Value | Description | Verse |
+|-------|-------------|-------|
+| N | No Degree | John 1:1 |
+| C | Comparative | Matt 11:11 |
+| S | Superlative | Matt 22:36 |
+| I | Intensified | Acts 16:26 |
+| E | Extremely Intensified | Eph 3:20 |
+| T | 'too' (Excessive) | 1 Cor 10:13 |
+| L | 'less' (Downward Comp) | Heb 7:7 |
+| l | 'least' (Downward Sup) | Matt 5:19 |
+| q | Equative | Matt 10:25 |
+| i | Intensified Comparative | Rom 5:15 |
+| s | Superlative of 2 | Luke 18:14 |
+| **TOTAL** | | **11** |
 
 ---
 
 ## Expected Performance
 
-**Realistic expectations**:
-- **50-60% accuracy** (2-3 correct out of 5): Algorithm handles some edge cases
-- **40-50% accuracy** (2 correct): Significant gaps but learning possible
-- **<40% accuracy** (0-1 correct): Algorithm too simplistic for edge cases
+**Target accuracy**: 50-60% (5-7 correct out of 11)
 
-**Specific predictions about likely errors**:
-1. **Matt 5:19**: May mark 'S' instead of 'l' (expect error)
-2. **Rom 5:15**: May mark 'C' instead of 'i' if 'i' exists (expect error)
-3. **2 Cor 4:17**: May mark 'I' instead of 'E' if 'E' exists (expect error)
-4. **Eph 3:20**: Critical test - may mark 'E' (Greek) but TBTA might mark 'C' (English)
-5. **Matt 10:25**: May mark 'C' instead of 'q' if 'q' exists (expect error)
+**Likely challenges**:
+- Rare values (T, q, i, s): May not exist in TBTA → 4 errors expected
+- Directional distinction (L vs. C, l vs. S): May not be encoded → 2 errors expected
+- Form-function mismatch (Matt 11:11, Matt 22:36): Ambiguous → 2 errors expected
+- Source vs. target (Eph 3:20): Critical test of TBTA philosophy → 1 error expected
 
-**Success benchmark**: 2-3 correct = 40-60% ✅
+**High confidence** (3 verses): None (all are ambiguous)
+**Medium confidence** (4 verses): N, C, S, I
+**Low confidence** (7 verses): E, T, L, l, q, i, s
 
----
-
-## Prediction Protocol
-
-**CRITICAL**: Do NOT check TBTA for these verses until after predictions are locked!
-
-### Step 1: Wait for Algorithm v1.0
-- Training phase must complete first
-- Algorithm v1.0 must be locked (git commit SHA)
-
-### Step 2: Apply Algorithm to Test Set
-- For each verse, apply algorithm v1.0 WITHOUT checking TBTA
-- Document reasoning for each prediction
-- Rate confidence: High/Medium/Low
-- Note any gaps in algorithm that make prediction difficult
-
-### Step 3: Lock Predictions
-- Create `PREDICTIONS-locked.md` file
-- Include all 5 predictions with reasoning
-- Commit to git with timestamp
-- Record commit SHA
-- NO modifications allowed after this point
-
-### Step 4: Check TBTA
-- Only AFTER predictions are locked
-- Retrieve TBTA annotations for these 5 verses
-- Calculate accuracy
-- Document in `RESULTS.md`
-
----
-
-## Success Criteria
-
-**Adversarial test successful if**:
-- ✅ Predictions made BEFORE checking TBTA
-- ✅ Predictions locked (git commit SHA recorded)
-- ✅ Accuracy 40-60% (2-3 correct)
-- ✅ Error analysis identifies specific algorithm gaps
-- ✅ Learnings feed into algorithm v2.0
-
-**Red flags**:
-- ❌ Check TBTA before making predictions
-- ❌ Modify predictions after seeing TBTA
-- ❌ Accuracy <40% (algorithm fundamentally broken)
-- ❌ Accuracy >70% (test set not adversarial enough)
+**Success benchmark**: 5-7 correct = 45-64% ✅
 
 ---
 
 ## Comparison with Random Test
 
-**Expected gap**: Random should beat adversarial by 20-35 points
+Random test will have same 11 values but with clearer cases (morphology = semantics).
 
-**Example outcome**:
-- Adversarial: 50% (2-3 correct)
-- Random: 80% (4 correct)
-- Gap: 30 points ✅
-
-If gap <15 points, adversarial test not hard enough ❌
+**Expected gap**: Random 70-80% vs. Adversarial 50-60% = 15-25 points ✅
 
 ---
 
-## Files to Create
+## Prediction Protocol
 
-After algorithm v1.0 locked:
-1. ⏳ `PREDICTIONS-locked.md` - Predictions before checking TBTA (with commit SHA)
-2. ⏳ `RESULTS.md` - Accuracy after checking TBTA
-3. ⏳ `ERROR-ANALYSIS.md` - Detailed analysis of failures
+1. Wait for algorithm v1.0 (from training)
+2. Apply to each verse WITHOUT checking TBTA
+3. Document reasoning, note ambiguities
+4. Rate confidence
+5. LOCK predictions (git commit)
+6. Check TBTA after lock
+7. Calculate accuracy overall and per value
 
 ---
 
-**Status**: ✅ Test set locked
-**Next action**: Wait for algorithm v1.0, then make predictions WITHOUT TBTA
+**Status**: ✅ Redesigned with equal value coverage
+**Next step**: Wait for algorithm v1.0, then predict
 **Target date**: 2025-11-10
