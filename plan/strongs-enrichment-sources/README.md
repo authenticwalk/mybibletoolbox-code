@@ -18,6 +18,55 @@ Strong's Concordance provides basic definitions for 14,197 Greek and Hebrew word
 
 ---
 
+## Strategy 0: Start with Base Strong's Files (ALWAYS FIRST!)
+
+### Critical Foundation
+
+**Location:** `./bible/words/strongs/{number}/{number}.strongs.yaml`
+
+**What's Already There:**
+- 14,197 Strong's word files (G0001-G5624 Greek, H0001-H8674 Hebrew)
+- Pre-imported open-licensed data from:
+  - **BDB** (Brown-Driver-Briggs) - Hebrew lexicon
+  - **Thayer's** - Greek lexicon
+  - **unfoldingWord** - Translation Words
+  - **LSJ** (Liddell-Scott-Jones) - Classical Greek lexicon
+- **Cross-reference codes** to other lexicon systems (when available):
+  - BDB, BDAG, Louw-Nida, TDNT, GK (Goodrick-Kohlenberger), TWOT, LSJ
+
+**CRITICAL RULE:** Always read the base Strong's file FIRST before doing any research!
+
+**Why This Matters:**
+1. Avoid duplicating data already imported
+2. Use cross-reference codes for additional searches
+3. Build on existing foundation rather than starting from scratch
+4. Many scholarly articles cite multiple numbering systems - cross-references unlock broader discovery
+
+**Discovery Method:**
+1. Read `./bible/words/strongs/{number}/{number}.strongs.yaml`
+2. Note what data is already present
+3. Note any cross-reference codes (BDAG, TDNT, Louw-Nida, etc.)
+4. Use those codes for web searches: `"BDAG {code}"`, `"Louw-Nida {domain}"`, etc.
+5. Only research what's NOT already in the file
+
+**Example:**
+```bash
+# Always start here:
+cat ./bible/words/strongs/G1411/G1411.strongs.yaml
+
+# If it has cross-references like:
+# bdag: "δύναμις-227"
+# tdnt: "2:286"
+# louw_nida: "74.1"
+
+# Then search by those too:
+# "BDAG δύναμις-227"
+# "TDNT 2:286"
+# "Louw-Nida 74.1"
+```
+
+---
+
 ## Strategy 1: Aggregator Sites with Copyright Clearance
 
 ### 1.1 BibleHub.com
@@ -586,9 +635,76 @@ Strong's Concordance provides basic definitions for 14,197 Greek and Hebrew word
 
 ---
 
-## Strategy 7: Systematic Cross-Referencing
+## Strategy 7: Cross-Linguistic Translation Patterns (TBTA Approach)
 
-### 7.1 Related Strong's Numbers
+### 7.1 Extract Patterns from Existing Translations
+
+**Purpose:** Understand how 900+ Bible translations handle each Strong's word across different linguistic features.
+
+**The Idea (from TBTA Strong's hints):**
+- For each Strong's word, analyze how it's translated across multiple languages
+- Identify patterns: "When language X uses word Y → linguistic feature Z"
+- Document convergence: "5/5 Austronesian languages use exclusive form"
+- Flag divergence: "Languages split 50/50 on this usage"
+
+**Target Linguistic Features:**
+- **Number System** - Dual/Trial number (Hawaiian "lākou" = trial/3 persons)
+- **Person/Clusivity** - Inclusive/Exclusive (Tagalog "kami"/"tayo")
+- **Proximity** - Demonstrative distance (Japanese これ/それ/あれ)
+- **Polarity** - Negative particles
+- **Lexical Sense** - Polysemy disambiguation
+- **Surface Realization** - Pro-drop patterns
+
+**Example Pattern:**
+```yaml
+# Strong's G2249: ἡμεῖς (we)
+translation_patterns:
+  clusivity:
+    - context: "divine speech (Trinity)"
+      pattern: "5/5 Austronesian languages use exclusive form"
+      examples:
+        - {lang: "tgl", word: "kami", meaning: "exclusive"}
+        - {lang: "msa", word: "kami", meaning: "exclusive"}
+        - {lang: "fij", word: "keirau", meaning: "exclusive"}
+      confidence: 0.98
+
+    - context: "church unity passages"
+      pattern: "8/8 languages use inclusive form"
+      examples:
+        - {lang: "tgl", word: "tayo", meaning: "inclusive"}
+        - {lang: "msa", word: "kita", meaning: "inclusive"}
+      confidence: 0.95
+```
+
+**Discovery Method:**
+1. Access translation corpus (900+ Bible translations)
+2. For each Strong's word, extract all translations across languages
+3. Group by linguistic feature (clusivity, proximity, number, etc.)
+4. Identify convergence patterns (high agreement)
+5. Flag ambiguous cases (split decisions)
+6. Document with confidence scores
+
+**Value for Translators:**
+- Evidence-based guidance: "Most languages with feature X use pattern Y"
+- Edge case documentation: Trial number, 4th person, 9-way proximity systems
+- Confidence scoring: Strong patterns vs. ambiguous cases
+- Cross-linguistic validation
+
+**Sources:**
+- eBible corpus: github.com/BibleNLP/ebible (900+ translations)
+- Parallel Bible corpora
+- Bible translation organization databases
+
+**Related Research:**
+- See `/plan/tbta-strongs-hints-*.md` for detailed analysis
+- TBTA (The Bible Translator's Assistant) feature prediction
+- Focus on top 300 high-frequency words (diminishing returns after that)
+
+---
+
+## Strategy 8: Systematic Cross-Referencing
+
+### 8.1 Related Strong's Numbers
 
 **Method:** For each Strong's number, identify related words:
 - Synonyms (different nuances)
@@ -609,7 +725,7 @@ Strong's Concordance provides basic definitions for 14,197 Greek and Hebrew word
 
 ---
 
-### 7.2 Semantic Domain Grouping
+### 8.2 Semantic Domain Grouping
 
 **Method:** Group words by meaning domains rather than etymology.
 
@@ -627,9 +743,9 @@ Strong's Concordance provides basic definitions for 14,197 Greek and Hebrew word
 
 ---
 
-## Strategy 8: Targeted Resource Recommendations
+## Strategy 9: Targeted Resource Recommendations
 
-### 8.1 High-Priority Greek Resources
+### 9.1 High-Priority Greek Resources
 
 **For Every Greek Word:**
 1. **Thayer's** - public domain, comprehensive, standard (BibleHub, StudyLight, BLB)
@@ -649,7 +765,7 @@ Strong's Concordance provides basic definitions for 14,197 Greek and Hebrew word
 
 ---
 
-### 8.2 High-Priority Hebrew Resources
+### 9.2 High-Priority Hebrew Resources
 
 **For Every Hebrew Word:**
 1. **BDB (Brown-Driver-Briggs)** - public domain, standard (BibleHub, StudyLight)
@@ -781,16 +897,42 @@ See `/plan/policy/fair-use.md` for full policy.
 
 ---
 
+## Related Planning Documents
+
+This document builds on and complements several other planning efforts:
+
+**Strong's Enrichment:**
+- `/plan/strongs-word-research-tools.md` - Original planning for comprehensive word research tool
+- `/bible-study-tools/strongs-word-research/README.md` - Tool implementation documentation
+
+**TBTA Strong's Hints (Cross-Linguistic Patterns):**
+- `/plan/tbta-strongs-hints-summary.md` - Executive summary of TBTA approach
+- `/plan/tbta-strongs-hints-approach.md` - Detailed methodology
+- `/plan/tbta-strongs-hints-evaluation.md` - Feature-by-feature analysis
+- `/plan/tbta-strongs-hints-llm-enhancement.md` - LLM integration strategies
+- `/plan/tbta-comprehensive-review.md` - Complete TBTA feature inventory
+
+**Related Data Sources:**
+- `/plan/morphhb-vs-macula.md` - Hebrew morphology data analysis
+- `ATTRIBUTION.md` - All source citations and copyright notices
+- `plan/policy/fair-use.md` - Fair use policy details
+
+---
+
 ## Conclusion
 
 We have **multiple discovery strategies** for enriching Strong's data:
 
+0. **Base Strong's files** - ALWAYS read first! Contains pre-imported lexicons + cross-reference codes
 1. **Aggregator sites** (BibleHub, StudyLight, BLB) - already negotiated access
 2. **Web search** - Strong's numbers, cross-reference codes, controversies
 3. **Community platforms** - Stack Exchange, blogs (marked as lower authority)
 4. **Open-licensed projects** - unfoldingWord, OpenScriptures
 5. **Academic search** - .edu sites, PDF search, journals
 6. **Specialized research** - LXX, papyri, classical literature, cognates
+7. **Cross-linguistic patterns** - TBTA approach with 900+ translations
+8. **Systematic cross-referencing** - Related words, semantic domains
+9. **Targeted recommendations** - Priority resources by language
 
 **Next Steps:**
 1. Update tool-experimenter to use these discovery strategies
