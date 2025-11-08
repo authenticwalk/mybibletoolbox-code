@@ -193,4 +193,22 @@
 
 ---
 
+## Complementary Approaches
+
+### Strong's Hints as Context Enhancement
+
+**Alternative**: Supplement predictions with Strong's word-level translation patterns
+
+Add cross-linguistic hints to Strong's entries extracted from 900+ translations:
+- Pattern example: "When Tagalog uses 'kami' → exclusive, 'tayo' → inclusive"
+- Expected gain: +7% overall accuracy, +25% on edge cases
+- Best for: Lexical features (Number, Person, Proximity, Lexical Sense)
+
+**See detailed analysis**:
+- `../tbta-strongs-hints-summary.md` - Executive summary and decision guide
+- `../tbta-strongs-hints-llm-enhancement.md` - Integration approaches
+- `../tbta-strongs-hints-evaluation.md` - Feature-by-feature analysis
+
+---
+
 **Last Updated**: 2025-11-07 | **Next Milestone**: 5 features by end of Q4 2025
