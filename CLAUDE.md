@@ -52,7 +52,7 @@ The following are key files you can load.  Don't load them automatically as it w
    - 3-phase: data extraction first, then analysis, then validation
    - output schema with required fields (verse, inline citations, metadata)
    - define tool-specific Level 2 validation requirements
-
+ - **Working with TBTA features**: Read `/plan/tbta-rebuild-with-llm/README.md`
 
 ## Repository Structure
 

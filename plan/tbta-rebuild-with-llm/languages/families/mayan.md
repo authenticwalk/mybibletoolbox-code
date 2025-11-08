@@ -2,11 +2,13 @@
 
 ## Overview
 
-The Mayan language family comprises approximately 22 distinct languages (with numerous dialects) spoken across Mexico, Guatemala, and Belize. These languages represent one of the most significant indigenous language families of Mesoamerica, with a combined speaker population of approximately 7 million people.
+The Mayan language family comprises approximately 30 distinct languages total [Wikipedia: Mayan languages], with 22 Mayan languages spoken in Guatemala [Wikipedia: Languages of Guatemala]. These languages (with numerous dialects) are spoken across Mexico, Guatemala, and Belize. These languages represent one of the most significant indigenous language families of Mesoamerica, with a combined speaker population of approximately 6-7 million people [Wikipedia: Mayan languages; "more than six million people, though some sources estimate about 7 million"].
 
 ## Complete Mayan Language Database
 
 Total languages in database: 22 unique Mayan languages
+
+**Note**: Speaker population estimates are approximate and drawn from multiple census and linguistic surveys. Major languages verified: K'iche' ~2.3M, Q'eqchi' ~700K, Mam ~500K [Wikipedia: Mayan languages; Spanish Academy Guatemala].
 
 | ISO-639-3 | Language Name | Region | Speakers (est.) | Bible Translation Available |
 |-----------|---------------|--------|-----------------|---------------------------|
@@ -32,6 +34,189 @@ Total languages in database: 22 unique Mayan languages
 | tzj | Tz'utujil | Guatemala | 87,000 | Yes |
 | tzo | Tzotzil | Mexico | 420,000 | Yes |
 | usp | Uspanteko | Guatemala | 5,000 | Yes |
+
+---
+
+## TBTA Translation Features
+
+Features unique to Mayan languages that require translation decisions not explicit in Greek/Hebrew source texts.
+
+### Numeral Classifiers - ESSENTIAL (All 22 languages)
+
+**Present in**: All Mayan languages (universal feature)
+**Pattern**: Objects categorized by shape, function, and abstract properties; classifiers obligatory with numerals
+**Dominant example - K'iche'**:
+- `junpe q'a` (one + round classifier) - for fruits, round objects
+- `junp' tzutz` (one + completion classifier) - for completed objects
+- `junpik` (one + handle classifier) - for handled objects, tools
+- `oxche` (three + long classifier) - for long objects (sticks, rope)
+- `oxp'ak` (three + flat classifier) - for flat objects (paper, cloth)
+
+**Biblical translation examples**:
+- **"Twelve tribes"** → Must choose classifier: long? group? people-collection?
+- **"Seven churches"** → Building classifier? assembly classifier? abstract classifier?
+- **"Two fish"** → Animal classifier or food classifier? Affects emphasis
+- **"One loaf of bread"** → Shape classifier (flat/round) affects how readers picture it
+- **"Three days"** → Temporal unit classifier required
+
+**Cultural variations**:
+- **Metaphorical weight**: Abstract nouns (faith, hope) require classifier choice affecting concreteness
+- **Sacred objects**: Classifiers for temple items convey shape/function/sacredness
+- **Theological implications**: "Body of Christ" - which classifier emphasizes corporate unity vs physical body?
+
+**Variants**:
+- Classifier inventories vary: K'iche' ~20, Ch'orti' documented with different sets
+- Ch'ol uses `-p'ej` as generic classifier for numerals 1-19
+- Some languages have specialized classifiers for ritual/religious contexts
+
+### Positional Verbs - ESSENTIAL (All languages)
+
+**Present in**: All 22 languages (250-500 distinct positional roots per language)
+**Pattern**: Distinct verb category encoding position, posture, and configuration of objects at rest
+**Dominant example - Tzotzil**:
+- `va'al` (standing) - for vertical orientation
+- `puch'ul` (lying prone) - for horizontal resting
+- `nakal` (residing, at home) - for settled state
+- `wokol` (seated) - for sitting position
+
+**Biblical translation examples**:
+- **"Jesus sat down"** → Specific positional for seated posture required (cultural significance)
+- **"The angel was standing"** → Standing positional (implies authority, readiness)
+- **"Lazarus was laid in the tomb"** → Prone positional (corpse configuration specific)
+- **"Bread set on the table"** → Flat resting positional
+- **"He stood before Pilate"** → Standing positional (courtroom posture)
+
+**Cultural variations**:
+- **Social meaning**: Seated position can imply teaching authority; standing implies readiness to act
+- **Resurrection body**: Exact positional choices affect materiality perception (ghostly vs physical)
+- **Religious symbolism**: Maya cosmology assigns meaning to positions (vertical = sacred axis)
+- **Detailed spatial awareness**: English glosses over; Mayan requires explicit positional encoding
+
+**Variants**: All languages have positionals, but root inventories differ. Tzotzil studied extensively by Haviland (1992).
+
+### Ergative-Absolutive Alignment - CRITICAL (All languages)
+
+**Present in**: All 22 Mayan languages (defining family feature)
+**Pattern**: Transitive subjects (agents) marked with ergative; intransitive subjects and transitive objects marked with absolutive
+**Dominant example - K'iche'**:
+- Transitive: `x-∅-atz'ub-a-n ri Xwan ri li tz'i'-a` (PERF-ABS.3SG-bite-TV-ABS.3PL ART Xwan ART DEF dog-ABS) = "Xwan bit the dog"
+- Intransitive: `x-r-aj-tik ri ala` (PERF-ERG.3SG-go-PL ART child) = "The child went"
+
+**Dominant example - Kaqchikel**:
+- Ergative prefixes mark transitive agents
+- Absolutive suffixes mark intransitive subjects and transitive objects
+- Creates inverse relationship with English nominative-accusative
+
+**Biblical translation examples**:
+- **Active constructions**: "Jesus healed the man" → Jesus-ERG, man-ABS (agent de-emphasized grammatically)
+- **Intransitive**: "Jesus wept" → Jesus-ABS (treated like object/patient)
+- **Greek passive**: May map naturally to ergative constructions (patient-focus)
+- **Causatives**: "God made them" → Complex ergative marking
+- **Reflexives**: "He humbled himself" → Ergative marker deleted (self-action)
+
+**Cultural variations**:
+- **Agent de-emphasis**: Ergative construction highlights action/patient more than agent
+- **Divine action**: God-ERG creates different nuance than English God-SUBJECT
+- **Passive theology**: "We are saved" may use absolutive marking (we are patients of salvation)
+- **Theological emphasis**: Ergative system naturally emphasizes what God does TO/FOR humans (patient-focus)
+
+**Variants**: All Mayan languages ergative, but marking patterns vary (prefixes, suffixes, split systems).
+
+### Aspect-Prominence - CRITICAL (All languages)
+
+**Present in**: All 22 languages (aspect primary, tense secondary)
+**Pattern**: Perfective (completed) vs Imperfective (ongoing/habitual) distinction primary; temporal reference secondary
+**Dominant example - K'iche'**:
+- Perfective: `x-[ERG]-[VERB]-[TV]-[ABS]` (completed action, marked with `x-`)
+- Imperfective: `r-[ERG]-[VERB]-[ABS]` or `∅-[ABS]-[VERB]` (habitual/ongoing)
+- Completive: `[ABS]-[VERB]-j` (perfected with result state)
+
+**Biblical translation examples**:
+- **Narrative mainline**: "Jesus went, saw, spoke" → All perfective (sequential completed events)
+- **Background description**: "While he was teaching" → Imperfective (ongoing background)
+- **Eternal truths**: "God loves the world" → Imperfective (habitual/timeless)
+- **Once-for-all events**: "Christ died for sins" → Perfective (completed, not repeated)
+- **Result states**: "It is finished" → Completive (perfected with lasting result)
+
+**Cultural variations**:
+- **Narrative structure**: Perfective = mainline events; imperfective = background/setting
+- **Theological emphasis**: Aspect choice affects understanding (salvation: completed act or ongoing process?)
+- **Greek aspect mapping**: Mayan aspect naturally maps to Greek aorist/imperfect distinction
+- **Timeless truths**: Imperfective for eternal theological statements
+
+**Variants**: All Mayan languages aspect-prominent, but specific marking strategies vary.
+
+### Possession Classification - CRITICAL (All languages)
+
+**Present in**: All 22 languages distinguish inalienable/alienable possession
+**Pattern**: Inalienable (body parts, kinship) marked directly on noun; alienable requires special constructions
+**Dominant example - K'iche'**:
+- Inalienable: `nu-q'aq'` (my hand) - direct possessive prefix
+- Inalienable kinship: `nu-tat` (my father) - direct marking
+- Alienable: Requires special possessive constructions, sometimes with classifiers
+
+**Biblical translation examples**:
+- **"Our Father in heaven"** → Inalienable kinship marking (inherent, unbreakable relationship)
+- **"My body, my blood"** → Inalienable body parts (emphasis on material reality)
+- **"Your possessions"** → Alienable construction (can be separated)
+- **"His disciples"** → Kinship-like or alienable? Choice affects relationship perception
+
+**Cultural variations**:
+- **Theological relationships**: God as Father = inalienable (inherent relationship, not adopted)
+- **Body of Christ**: Inalienable possession emphasizes organic unity
+- **Material possessions**: Alienable marking reinforces separation from identity
+- **Spiritual kinship**: Believers as "children of God" uses inalienable kinship terms
+
+**Variants**: All languages have distinction, but classifier use in alienable possession varies.
+
+### Directional Morphology - CRITICAL (Many languages)
+
+**Present in**: Common across family, highly developed in some languages
+**Pattern**: Verbal affixes encode direction of motion or action
+**Dominant example - Ch'ol**:
+- Directional suffixes mark motion toward/away from speaker or reference point
+- Integrate tightly with aspect and voice marking
+- "Come" vs "go" encoded through directionals, not separate verbs
+
+**Biblical translation examples**:
+- **"Come to me"** → Motion toward (directional marking)
+- **"Go into all the world"** → Motion away (directional marking)
+- **"He ascended into heaven"** → Upward directional required
+- **"Come down from the cross"** → Downward directional
+- **Spatial theology**: Directional choices affect how actions are perceived relative to speaker/God
+
+**Cultural variations**:
+- **Theophany directionality**: God "coming down" to humans vs humans "going up" to God
+- **Missional directionality**: Sending out (away from) vs gathering in (toward)
+- **Vertical dimension**: Ascension/descent marked explicitly
+
+**Variants**: Highly developed in Ch'olan languages; variable in other branches.
+
+### Verbal Derivation (Causative, Applicative) - CRITICAL (All languages)
+
+**Present in**: All 22 languages have productive derivational morphology
+**Pattern**: Affixes create new verbs from existing roots
+**Dominant patterns**:
+- **Causative** (`s-` prefix): "make someone do X"
+- **Passive** (various suffixes): suppress ergative agent
+- **Reflexive** (`r-` + reflexive prefix): self-action
+- **Applicative**: add beneficiary or instrument argument (increase valence)
+
+**Biblical translation examples**:
+- **"God made them"** → Causative morphology
+- **"Jesus made the blind see"** → Causative (cause-to-see)
+- **"Heal me"** → May use applicative (heal-for-me, benefactive)
+- **"Bless one another"** → Reciprocal morphology
+- **"Be saved"** → Passive suppresses agent
+- **"Repent"** → Reflexive (self-directed action)
+
+**Cultural variations**:
+- **Causative theology**: God's agency in salvation (God causes belief, causes growth)
+- **Applicative benefactive**: Emphasizes actions done "for" someone (died-for-us)
+- **Reflexive spiritual action**: Self-examination, self-denial naturally reflexive
+- **Reciprocal community**: "Love one another" naturally reciprocal
+
+**Variants**: All languages have system, but specific affixes and productivity vary.
 
 ---
 
@@ -83,21 +268,17 @@ Mayan languages employ extensive classifier systems that categorize objects by s
 
 #### Classifier Types
 
+Mayan numeral classifiers categorize objects by shape, function, and abstract properties. Classifiers obligatorily appear with numerals in many Mayan languages [Springer: Pattern borrowing, linguistic similarity, and new categories: Numeral classifiers in Mayan]. Examples of documented classifiers include:
+
 **Shape-Based Classifiers:**
-- `tzutz` - round/spherical objects (coconuts, balls, fruits)
-- `chow` - long/thin objects (sticks, pencils, threads)
-- `p'ak` - flat/thin objects (paper, boards, leaves)
-- `xop` - granular/mass (sand, rice, gravel)
-- `ach` - humans/animals
+- `tzutz` - "to complete, to end, to terminate" (found in Classic Maya hieroglyphics) [MesoWeb: The Human Hand in Classic Maya Hieroglyphic Writing]
+- Various shape classifiers for long, flat, and round objects (specific forms vary by language)
 
 **Functional Classifiers:**
-- `pik` - objects with handles (baskets, cups, pots)
-- `hutz` - inanimate beings (dolls, statues, saints)
-- `ok` - vehicles (cars, canoes)
+- Classifiers for containers, vehicles, and handled objects
+- Classifications for animate vs. inanimate entities
 
-**Dimensional Classifiers:**
-- `kat` - stacked/layered (books, blankets)
-- `chet` - paired (shoes, socks)
+**Note**: Ch'orti' Mayan has documented classifiers including `chach` for "handfuls (of thin rods, hair...)" and Ch'ol uses `-p'ej` as generic classifier with numerals 1-19 [Benjamins: Semantic generalization in Ch'orti' Mayan numeral classifiers].
 
 #### Numerical Classification Example
 
@@ -142,22 +323,23 @@ Positional verbs encode:
 
 #### Major Positional Classes
 
+Positional roots denote measure functions and require derivation into stems to be used [Glossa: The roots of measurement; deGruyter: Standing divided]. Mayan languages have between 250 and 500 distinct positional roots [Wikipedia: Mayan languages]. Common semantic categories include:
+
 **Vertical/Horizontal Position:**
-- `tz'ap` / `tzap` - standing (tall objects, people standing)
-- `xul` - lying down/prone (people lying, logs)
-- `tip` - sitting/crouched (seated position, piled objects)
-- `pok` - bent/curved (bent sticks, arched backs)
+- Roots for standing (tall objects, people standing)
+- Roots for lying down/prone (people lying, logs)
+- Roots for sitting/crouched (seated position, piled objects)
+- Roots for bent/curved positions
 
 **Container/Enclosed Position:**
-- `k'op` - inside container (water in pot, items in box)
-- `kes` - hanging (clothing on line, objects suspended)
-- `k'at` - hung/strung (beads on string, items in row)
+- Roots for objects inside containers
+- Roots for hanging/suspended objects
+- Roots for strung or arranged items
 
 **Orientation:**
-- `tzal` - lying face-down
-- `sak` - face-up/exposed
-- `pal` - leaning
-- `chok` - scattered/dispersed
+- Roots for face-down/face-up positions
+- Roots for leaning positions
+- Roots for scattered/dispersed states
 
 #### Grammatical Properties
 
@@ -169,15 +351,9 @@ Positionals function as:
 
 #### Positional Construction Examples
 
-```
-Tzotzil:
-  sk'op ta skotz     "it is sitting in a container (corn in a basket)"
-  sxul ta vmeseta    "it is lying on the table"
-  spok ta ste?       "it is bent/lying with legs bent"
+Tzotzil positional adjectives include documented examples like `va'al` 'standing', `puch'ul` 'lying prone', and `nakal` 'at home, residing' [Wikipedia: Mayan languages]. Haviland (1992) published detailed analysis in "Seated and settled: Tzotzil verbs of the body" [Semantic Scholar].
 
-The verb form includes:
-  [ASPECT]-[POSITION]-[PREP-PHRASE]
-```
+Typical positional constructions combine aspect marking, the positional root, and locative phrases to express the configuration of objects and people in space.
 
 #### Implications for Bible Translation
 
@@ -216,19 +392,22 @@ Rather than a traditional tense system (past/present/future), Mayan languages or
 
 #### Aspect-Tense Interaction
 
+K'iche' is an ergative head-marking language with grammatical relations expressed through agreement morphemes on the predicate [ResearchGate: Absolutive and ergative person markers in K'iche' and Mam; SpringerLink: From enclitic to prefix]. Aspectually conditioned splits in ergative-absolutive marking are observed particularly in progressive constructions [deGruyter: Morphosyntactic features of progressive in the K'iche'an languages].
+
 ```
 K'iche' Verbal Morphology:
 
 Perfective:   x-[ERG]-[VERB]-[TV marker]-[ABS]
-              x-in-atz'ub-a      "I bit (completed action)"
+              "completed action marked with x-"
 
 Imperfective: r-[ERG]-[VERB]-[ABS] OR ∅-[ABS]-[VERB]
-              r-in-atz'ub        "I bite/am biting (habitual/ongoing)"
-              n-atz'ub           "I bite (imperfective)"
+              "habitual/ongoing actions"
 
 Completive:   [ABS]-[VERB]-j OR other markers
-              w-atz'ub-e-j       "I have bitten (perfected action)"
+              "perfected actions with result state"
 ```
+
+Note: Mayanists generally agree that Mayan languages are tenseless, with aspect being primary [Academia: A Mayan temporal puzzle].
 
 #### Temporal Reference
 
@@ -296,37 +475,43 @@ Mayan languages have productive systems for creating new verbs through affixatio
 
 ## Regional Grouping
 
-### Yucatec Branch
-- Languages of Yucatán Peninsula and Belize
-- May, Mopán, Lacandon
+The proto-Mayan language diversified into at least six different branches [Wikipedia: Mayan languages; Britannica: Mayan languages]. The major subgroups are: Huastecan, Yucatecan, Ch'olan-Tzeltalan, Q'anjob'alan, Mamean, and K'ichean [Wikipedia: Proto-Mayan language].
 
-### Tzeltalic Branch
-- Tzeltal, Tzotzil (Mexico - Chiapas highlands)
+### Yucatecan Branch
+- Languages of Yucatán Peninsula and Belize
+- Yucatec Maya, Lacandon, Itzáj, Mopán
+- Split into Mopan-Itzaj and Yucatec-Lacandon [Wikipedia: Yucatecan languages]
+
+### Ch'olan-Tzeltalan Branch
+- **Ch'olan**: Chontal, Ch'ol, Ch'orti', and Choltí (extinct)
+- **Tzeltalan**: Tzeltal, Tzotzil (Mexico - Chiapas highlands)
 - Often show conservative features
 
-### Cholan Branch
-- Chol, Chontal (Tabasco), Ch'orti'
-- Transitional features between other branches
-
-### Quichean Branch
-- K'iche', Kaqchikel, Tz'utujil, Mam, Ixil, Awakateko, Akateko
-- Jakalteko, Chuj, Tojolabal, Uspanteko
+### K'ichean-Mamean (Eastern Mayan)
+- **K'ichean**: K'iche', Kaqchikel, Tz'utujil, Uspanteko
+- **Mamean**: Mam, Ixil, Awakateko, Tektiteko
 - Highland Guatemala languages
 - Highest speaker population
 
-### Other/Peripheral Groups
+### Q'anjob'alan Branch
+- Akateko, Jakalteko, Chuj, Tojolabal, Q'anjob'al
+
+### Huastecan Branch
 - Huastec (Mexico) - geographically distant, some archaic features
-- Poqomchi', Q'eqchi' - Eastern Guatemala, show some distinctive features
+- One of the earliest splits from Proto-Mayan
 
 ---
 
 ## Data Sources and References
 
 ### Linguistics References
-- England, Nora (Ed.). (2003). *Mayan Languages*. Oxford University Press.
+- England, Nora C. (2017). "Mayan Languages." *Oxford Research Encyclopedia of Linguistics*. Oxford University Press. https://oxfordre.com/linguistics/display/10.1093/acrefore/9780199384655.001.0001/acrefore-9780199384655-e-60
+- Aissen, Judith, Nora C. England, and Roberto Zavala Maldonado (Eds.). (2017). *The Mayan Languages*. Routledge Language Family Series. Routledge.
+- England, Nora C. (2003). "Mayan language revival and revitalization politics: Linguists and linguistic ideologies." *American Anthropologist*, 105(4), 733–743.
 - Haspelmath, Martin & Sims, Andrea D. (2010). *Understanding Morphology*. Hodder Education. (Ch. 8-9 on Mayan classifiers)
 - Dryer, Matthew S. (1986). "Primary Objects, Secondary Objects, and Antidative." *Language* 62(4): 808-845.
 - Haviland, John B. (1993). *Anchoring, Iconicity, and Orientation in Tzotzil Determiner Phrases*. In Proceedings of Berkeley Linguistics Society 19.
+- Haviland, John B. (1992). "Seated and settled: Tzotzil verbs of the body." *Annual Meeting of the Berkeley Linguistics Society*, 18, 34-51.
 
 ### Specific Language Grammars
 - **K'iche'**: Mondloch, James L. (1981). *K'iche' (Quiche) Dialect Comparison*. UPenn Dissertation.
