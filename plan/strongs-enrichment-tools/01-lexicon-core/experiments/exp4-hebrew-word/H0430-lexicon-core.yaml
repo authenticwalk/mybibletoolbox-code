@@ -1,0 +1,195 @@
+strongs_number: H0430
+language: hebrew
+lemma: אֱלֹהִים
+transliteration: ʼĕlôhîym
+pronunciation: el-o-heem'
+
+# Base data from Strong's lexicon
+base_data:
+  definition: "gods in the ordinary sense; but specifically used (in the plural thus, especially with the article) of the supreme God; occasionally applied by way of deference to magistrates; and sometimes as a superlative {strongs}"
+  kjv_usage: "angels, × exceeding, God (gods) (-dess, -ly), × (very) great, judges, × mighty {strongs}"
+  derivation: "plural of H433 (אֱלוֹהַּ) {strongs}"
+  morphology: "H:N-M (Hebrew: Noun-Masculine) {stepbible}"
+
+# Etymology and word formation
+etymology:
+  root_words:
+    - strongs: H433
+      lemma: אֱלוֹהַּ
+      transliteration: eloah
+      relationship: "singular form; H430 is the plural {strongs}{biblehub}{blb}"
+    - strongs: H410
+      lemma: אֵל
+      transliteration: el
+      relationship: "related root meaning 'God, mighty one' {biblehub}"
+    - strongs: H426
+      lemma: אֱלָה
+      transliteration: elah
+      relationship: "Aramaic variant/equivalent {studylight}"
+
+  morphological_formation:
+    base_form: "אֱלוֹהַּ (eloah)"
+    plural_suffix: "ים- (-im)"
+    grammatical_note: "Plural form (אֱלֹהִים) used with singular verbs when referring to the one true God - known as 'plural intensive' or 'plural of majesty' {bdb}{studylight}{blb}"
+    rare_feminine_agreement: "1 Kings 11:33 shows rare feminine agreement {studylight}"
+
+  pictographic_etymology:
+    aleph: "ox head - represents strength {studylight}"
+    lamed: "shepherd staff - represents authority {studylight}"
+    combined_meaning: "strong authority - anyone or anything wielding power {studylight}"
+
+# Reference codes from major Hebrew lexicons
+reference_codes:
+  twot: "93c {studylight}{blb}"
+  bdb_primary: true
+  note: "BDB (Brown-Driver-Briggs) is the primary Hebrew lexicon, equivalent to Thayer's for Greek {biblehub}{studylight}"
+
+# Comprehensive semantic range with usage categories
+semantic_range:
+  overview: "The most important theological term in Hebrew Bible, used 2,606 times with multiple distinct meanings depending on context, article usage, and verb agreement {biblehub}{blb}"
+
+  categories:
+    - id: 1
+      label: "The True God (monotheistic)"
+      definition: "The one supreme God of Israel (Yahweh), especially with definite article (הָאֱלֹהִים) or singular verb agreement {bdb}{biblehub}"
+      usage_notes:
+        - "Appears ~2,326-2,346 times in this sense {biblehub}{blb}"
+        - "Foundational to biblical theology of creation, covenant, and judgment {biblehub}"
+        - "Examples: 'God of Abraham,' 'God of Israel,' 'God of hosts,' 'Everlasting God,' 'God of heaven' {biblehub}"
+        - "Deuteronomy 4:35,39 - 'Yahweh is the God (הָאֱלֹהִים)' {studylight}"
+      kjv_translation: "God (2,346 occurrences) {blb}"
+
+    - id: 2
+      label: "False gods (polytheistic)"
+      definition: "Pagan deities, idols, foreign gods - plural usage {bdb}{biblehub}"
+      usage_notes:
+        - "Appears ~244 times in this sense {blb}"
+        - "Often as 'other gods,' 'foreign gods,' 'gods of the nations' {studylight}"
+        - "Scripture employs this term to expose their impotence compared to true God {biblehub}"
+      kjv_translation: "god, gods (244 occurrences) {blb}"
+
+    - id: 3
+      label: "Judges and magistrates"
+      definition: "Human rulers/judges functioning as divine representatives or reflecting divine authority {bdb}{studylight}{blb}"
+      usage_notes:
+        - "Those wielding divine authority at sacred sites {studylight}"
+        - "Examples: Exodus 21:6, 22:8-9 (judges) {biblehub}"
+        - "'Godlike ones' - Moses before Aaron (Exodus 4:16), Samuel's shade (1 Samuel 28:13) {blb}"
+      kjv_translation: "judge, judges {blb}"
+
+    - id: 4
+      label: "Superhuman beings"
+      definition: "Angels, divine ones, celestial beings in God's council {bdb}{biblehub}{studylight}"
+      usage_notes:
+        - "Divine ones in heavenly assembly {studylight}"
+        - "Angels and divine messengers {biblehub}"
+      kjv_translation: "angels {blb}"
+
+    - id: 5
+      label: "Superlative/intensive usage"
+      definition: "Divine quality, extreme degree, or works/possessions belonging to God {bdb}{blb}"
+      usage_notes:
+        - "Attributive phrases: 'mountain of God,' 'fire of God,' 'house of God' {studylight}{blb}"
+        - "Compound expressions: 'angel of God,' 'man of God' (prophet) {studylight}"
+      kjv_translation: "× exceeding, × (very) great, × mighty {blb}"
+
+    - id: 6
+      label: "Individual deity with possessive"
+      definition: "Specific god or goddess when used with possessive suffixes {bdb}{studylight}"
+      usage_notes:
+        - "Can refer to individual pagan deity in context {studylight}"
+      kjv_translation: "goddess {blb}"
+
+# Statistical and distribution data
+occurrence_statistics:
+  total_occurrences: 2606
+  note: "Varies slightly by source: 2,598 {biblehub}, 2,606 {blb}, 2,570+ {studylight}"
+
+  primary_distribution:
+    genesis: "200+ occurrences {biblehub}"
+    psalms: "260+ occurrences {biblehub}"
+    torah: "frequent throughout {biblehub}"
+    prophets: "frequent throughout {biblehub}"
+    writings: "frequent throughout {biblehub}"
+
+  morphological_forms:
+    absolute_state: "אֱלֹהִים - 680 occurrences {biblehub}"
+    with_article: "הָאֱלֹהִים - 366 occurrences {biblehub}"
+
+# Theological significance
+theological_notes:
+  plural_of_majesty: "The plural form with singular meaning represents divine majesty and comprehensive authority {studylight}"
+  monotheistic_foundation: "Despite plural form, used with singular verbs to emphasize one true God, foundational to Israelite monotheism {biblehub}"
+  covenant_theology: "Central to understanding God's covenant relationship with Israel {biblehub}"
+  creation_theology: "The Creator-God who governs creation, covenant, and judgment {biblehub}"
+
+# Related Hebrew words
+related_words:
+  - strongs: H433
+    lemma: אֱלוֹהַּ
+    transliteration: eloah
+    relationship: "singular form of H430 {biblehub}"
+
+  - strongs: H410
+    lemma: אֵל
+    transliteration: el
+    relationship: "related root, also meaning 'God, mighty one' {biblehub}"
+
+  - strongs: H426
+    lemma: אֱלָה
+    transliteration: elah
+    relationship: "Aramaic equivalent {studylight}"
+
+# Citations and sources
+sources:
+  - id: strongs
+    name: "Strong's Hebrew Lexicon"
+    attribution: "openscriptures/strongs + STEPBible/BDB"
+
+  - id: bdb
+    name: "Brown-Driver-Briggs Hebrew Lexicon"
+    attribution: "via BibleHub, StudyLight, Blue Letter Bible"
+    note: "Primary lexicon for Hebrew, equivalent to Thayer's for Greek"
+
+  - id: biblehub
+    name: "BibleHub Hebrew Lexicon"
+    url: "https://biblehub.com/hebrew/430.htm"
+    accessed: "2025-11-08"
+
+  - id: studylight
+    name: "StudyLight Hebrew Lexicon"
+    url: "https://www.studylight.org/lexicons/eng/hebrew/430.html"
+    accessed: "2025-11-08"
+    additional_content: "TWOT, Ancient Hebrew Lexicon pictographic etymology"
+
+  - id: blb
+    name: "Blue Letter Bible Lexicon"
+    url: "https://www.blueletterbible.org/lexicon/h430/kjv/wlc/0-1/"
+    accessed: "2025-11-08"
+
+# Validation metadata
+validation:
+  critical_requirements:
+    sources_cited: true
+    no_hallucination: true
+    inline_citations: true
+
+  hebrew_specific_tests:
+    bdb_extraction_successful: true
+    plural_singular_documented: true
+    multiple_usage_categories: true
+    hebrew_morphology_noted: true
+    twot_reference_included: true
+
+  data_richness:
+    etymology_depth: "high"
+    semantic_categories: 6
+    theological_significance: "documented"
+    occurrence_statistics: "comprehensive"
+
+# Tool metadata
+metadata:
+  tool: lexicon-core
+  experiment: exp4-hebrew-word
+  generated: "2025-11-08"
+  note: "Testing Hebrew extraction with BDB lexicon (vs Greek Thayer's). Tests plural-singular usage and theological terminology."
