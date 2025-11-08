@@ -35,6 +35,8 @@ Languages in our project that require special handling for honorifics, politenes
 
 - **Critical systems**: Japanese, Korean, Mandarin Chinese, Thai, Vietnamese, Indonesian
 - **Significant systems**: Hindi, Bengali, Gujarati, Marathi, Telugu, Tamil, Malayalam, Tagalog
+- **T-V distinction (Indo-European)**: French, Spanish, German, Russian, Polish - formal/informal "you"
+- **Age-based kinship (Niger-Congo)**: Swahili, Bantu languages - older/younger sibling distinctions obligatory
 - **Minor/emerging**: Hebrew, Arabic, Sanskrit
 
 ---
@@ -294,6 +296,175 @@ Languages in our project that require special handling for honorifics, politenes
 - Sneddon, James N. "Indonesian: A Comprehensive Grammar" (2003)
 - Kaswanti Purwo, Bambang. "Politeness in Languages and Cultures: The Japanese and English Cases" (1990)
 - Gil, David. "The Structure of Riau Indonesian" (2001)
+
+---
+
+## European Languages (T-V Distinction)
+
+### Indo-European T-V Systems
+
+**Status**: Moderate complexity, widespread across branches
+
+**What is T-V Distinction?**:
+- From Latin "tu/vos" - familiar vs. formal second-person pronouns
+- Marks social distance, respect, intimacy, and power relationships
+- **Critical**: Biblical passages require translator decisions about formality level
+
+#### Romance Languages
+
+**French (fra)**:
+- **tu** (familiar): Friends, family, children, peers, intimate prayer
+- **vous** (formal/plural): Strangers, superiors, elders, traditional God-address
+- Traditional Bible translations: Always vous to God (reverence)
+- Modern debate: tu to God (intimacy) vs. vous (respect)
+
+**Spanish (spa)**:
+- **tú** (familiar): Friends, family, informal contexts
+- **usted** (formal): Strangers, superiors, elders, formal contexts
+- Regional variation: Latin America vs. Spain usage differs
+- Biblical translation: Jesus-disciples (tú), Jesus-Pharisees (may vary), prayer to God (usted traditional)
+
+**Portuguese (por)**:
+- **tu** (familiar): Informal relationships
+- **você** (semi-formal): General polite form
+- **o senhor/a senhora** (very formal): High respect
+- Brazil vs. Portugal: Different usage patterns
+
+**Italian (ita)**:
+- **tu** (familiar): Friends, family, informal
+- **Lei** (formal): Strangers, superiors, formal contexts
+- Less rigid than French, but still significant in religious contexts
+
+#### Germanic Languages
+
+**German (deu)**:
+- **du** (familiar): Friends, family, children, some modern workplaces
+- **Sie** (formal): Strangers, superiors, formal contexts
+- **Lutheran influence**: Luther used "du" for God (intimate relationship with Father)
+- Modern German Bibles: Mix of du (intimacy) and Sie (reverence) depending on tradition
+
+**Dutch (nld)**:
+- **jij** (familiar): Informal relationships
+- **u** (formal): Formal, respectful address
+
+#### Slavic Languages
+
+**Russian (rus)**:
+- **ты (ty)** (familiar): Friends, family, children, intimate contexts
+- **вы (vy)** (formal/plural): Strangers, superiors, respectful address
+- Growing debate: ты vs. вы in prayer to God
+- Traditional: вы (reverence); Charismatic/modern: ты (intimacy)
+
+**Polish (pol)**:
+- **ty** (familiar): Informal relationships
+- **pan/pani** (formal): Mr./Mrs. + formal address
+- Complex honorific particles with formal address
+
+**Czech (ces)**:
+- **ty** (familiar): Friends, family
+- **vy** (formal): Respectful, formal contexts
+
+#### Biblical Translation Implications
+
+**Critical Decision Points**:
+
+1. **Jesus addressing disciples**:
+   - Familiar (tu/du/ты) - intimate relationship
+   - Shows closeness, teaching authority without formality
+
+2. **Jesus addressing Pharisees**:
+   - May shift to formal (vous/Sie/вы) in confrontation
+   - Or remain familiar (tu) as sovereign disregard for their claimed status
+   - Translation choice affects tone of rebuke
+
+3. **Prayer to God**:
+   - **Traditional**: Formal (vous/Sie/вы) - reverence, transcendence
+   - **Modern/Informal**: Familiar (tu/du/ты) - intimacy, relationship
+   - **Theological implications**:
+     - Formal = God as distant, holy, to be revered
+     - Familiar = God as Father, intimate, relational
+
+4. **God addressing humans**:
+   - Typically familiar (tu) - sovereign intimacy
+   - God condescends to intimate relationship
+
+5. **Social hierarchy in parables**:
+   - Masters/servants: Master uses tu (down), servant uses vous (up)
+   - Parents/children: Varies by culture
+   - Elders/youth: Youth uses formal upward
+
+**Cultural Variation by Language**:
+- **French**: Strong formal tradition, vous to God nearly universal historically
+- **German**: Protestant (du to God), Catholic (Sie to God) split
+- **Spanish**: Regional variation, Latin America more formal than Spain
+- **Russian**: Active debate, generational shift toward familiar ты
+
+---
+
+## African Languages (Age-Based Kinship)
+
+### Niger-Congo Age Distinctions
+
+**Status**: Obligatory in most Bantu and related languages
+
+**What Are Age-Based Kinship Terms?**:
+- Grammatical requirement to specify relative age in kinship relationships
+- Cannot simply say "brother" - must specify older or younger
+- Affects translation of all sibling relationships in Bible
+
+#### Swahili and Bantu Languages
+
+**Swahili (swa)**:
+- **kaka** (older brother) vs. younger brother (different term)
+- **dada** (older sister) vs. younger sister (different term)
+- Age distinction OBLIGATORY in kinship vocabulary
+- Cannot use generic "sibling" term
+
+**Other Bantu Languages** (Zulu, Xhosa, Sesotho, etc.):
+- Similar age-based kinship systems across family
+- Extensive kinship terminology distinguishing:
+  - Mother's brothers vs. father's brothers (different words)
+  - Age order among siblings
+  - Generation levels (grandparent, parent, child, grandchild specific terms)
+
+#### Biblical Translation Implications
+
+**Challenge**: Greek/Hebrew "adelphos" (brother) is age-neutral
+
+**Translation Decisions Required**:
+
+1. **Jesus and his brothers** (Matt 13:55):
+   - Must specify if James, Joses, Simon, Judas are older or younger than Jesus
+   - Theological implications: If older brothers, why is Jesus head? If younger, fits primacy
+
+2. **Peter and Andrew** (Matt 4:18):
+   - "Simon called Peter and Andrew his brother"
+   - Must specify: older or younger brother?
+   - Cultural implications: Authority and respect affected by age order
+
+3. **James and John** (sons of Zebedee):
+   - Age order affects understanding of "sons of thunder" dynamics
+   - Which brother asked for position at Jesus' right hand?
+
+4. **"Love your brother"** commands:
+   - Generic or specific age? Affects application
+   - May require two translations: "love your older brother" and "love your younger brother"
+
+5. **Spiritual brotherhood** (Christians as brothers):
+   - How to express age-neutral spiritual kinship in age-specific language?
+   - May use generic person term + qualifier "in Christ" to bypass kinship age-marking
+
+**Translation Strategies**:
+- **Historical research**: Determine actual age order from extrabiblical sources where possible
+- **Cultural notes**: Include footnotes explaining age ambiguity in source text
+- **Generic terms**: Use non-kinship terms for spiritual brotherhood to avoid age-marking
+- **Multiple renderings**: Provide both older/younger options with cultural context
+
+**Cultural Considerations**:
+- Respect for elders encoded grammatically
+- Younger siblings expected to show deference
+- Authority structures affected by age order
+- Family hierarchy more explicit than in Western cultures
 
 ---
 
