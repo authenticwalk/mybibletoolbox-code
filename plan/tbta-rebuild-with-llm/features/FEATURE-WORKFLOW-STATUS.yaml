@@ -1,0 +1,249 @@
+workflow_version: "1.0"
+last_updated: "2025-11-08"
+description: "Tracks progress through 10-phase workflow for each TBTA feature"
+
+# Priority order for new features (first available gets picked)
+priority_queue:
+  - number-systems
+  - degree
+  - person-systems
+  - participant-tracking
+  - discourse-genre
+  - proximity
+  - polarity
+  - verb-tam
+  - time-granularity
+  - surface-realization
+  - honorifics-register
+  - illocutionary-force
+
+# Phase definitions (for reference)
+phases:
+  1:
+    name: "Feature Selection & Setup"
+    duration: "15 minutes"
+    deliverables: ["Feature identified", "Context loaded"]
+  2:
+    name: "Training Set Design"
+    duration: "1-2 hours"
+    deliverables: ["training/TRAINING-SET.md"]
+  3:
+    name: "Training Analysis"
+    duration: "2-3 hours"
+    deliverables: ["training/TBTA-ANNOTATIONS.md", "training/PATTERNS-LEARNED.md"]
+    tbta_access: true
+  4:
+    name: "Algorithm Development"
+    duration: "1-2 hours"
+    deliverables: ["training/ALGORITHM-v1.md"]
+    requires_git_lock: true
+  5:
+    name: "Test Set Design"
+    duration: "2-3 hours"
+    deliverables: ["adversarial-test/TEST-SET.md", "random-test/TEST-SET.md"]
+  6:
+    name: "Make Predictions"
+    duration: "2-3 hours"
+    deliverables: ["adversarial-test/PREDICTIONS-locked.md", "random-test/PREDICTIONS-locked.md"]
+    requires_git_lock: true
+    tbta_access: false  # CRITICAL: NO TBTA ACCESS
+  7:
+    name: "Validation & Accuracy"
+    duration: "1-2 hours"
+    deliverables: ["adversarial-test/RESULTS.md", "random-test/RESULTS.md"]
+    tbta_access: true
+  8:
+    name: "Error Analysis & Refinement"
+    duration: "3-5 hours"
+    deliverables: ["ERROR-ANALYSIS.md", "ALGORITHM-v2.md"]
+  9:
+    name: "Documentation"
+    duration: "1-2 hours"
+    deliverables: ["README.md updates", "COMPLETION-SUMMARY.md"]
+  10:
+    name: "Peer Review"
+    duration: "1-2 hours"
+    deliverables: ["PEER-REVIEW.md", "Final commits"]
+
+# Feature statuses
+features:
+  number-systems:
+    status: in_progress  # not_started | in_progress | complete | blocked
+    current_phase: 5
+    completed_phases: [1, 2, 3, 4]
+    started: "2025-11-07"
+    last_updated: "2025-11-08"
+    notes: |
+      - Training complete with 35 verses (91.4% initial accuracy)
+      - Algorithm v1.0 locked based on training
+      - Test sets designed with equal value coverage (12 verses each, 2 per value)
+      - Ready for Phase 6: Make predictions WITHOUT checking TBTA
+    next_action: "Apply algorithm v1.0 to both test sets, lock predictions"
+    blocked_on: null
+    accuracy:
+      training_explainability: 100%
+      adversarial_expected: "60-70%"
+      random_expected: "80-90%"
+
+  degree:
+    status: in_progress
+    current_phase: 3
+    completed_phases: [1, 2]
+    started: "2025-11-07"
+    last_updated: "2025-11-08"
+    notes: |
+      - Training set designed (8 verses covering basic degree patterns)
+      - Test sets designed with equal value coverage (11 verses each, 1 per value)
+      - Ready for Phase 3: Access TBTA for training set ONLY
+    next_action: "Access TBTA for 8 training verses, analyze patterns, create PATTERNS-LEARNED.md"
+    blocked_on: "TBTA data access for training verses"
+    accuracy:
+      adversarial_expected: "50-60%"
+      random_expected: "70-80%"
+
+  person-systems:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: |
+      - Has existing comprehensive documentation
+      - Needs to enter workflow at Phase 2 (training set design)
+    next_action: "Review existing docs, design training set with equal value coverage"
+    blocked_on: null
+
+  participant-tracking:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has existing documentation, needs workflow"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  discourse-genre:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has existing documentation"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  proximity:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has comprehensive language typology analysis"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  polarity:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has existing documentation"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  verb-tam:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has annotation methodology"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  time-granularity:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has existing documentation"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  surface-realization:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has existing documentation"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  honorifics-register:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has language matrix and comprehensive docs"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+  illocutionary-force:
+    status: not_started
+    current_phase: 1
+    completed_phases: []
+    started: null
+    last_updated: null
+    notes: "Has existing documentation"
+    next_action: "Start Phase 2: Training set design"
+    blocked_on: null
+
+# Global statistics
+statistics:
+  features_total: 12
+  features_complete: 0
+  features_in_progress: 2
+  features_not_started: 10
+  features_blocked: 0
+  completion_percentage: 0
+  phases_completed_total: 9  # number-systems: 4, degree: 2, +3 for initial setup
+  estimated_hours_remaining: 288  # 12 features × ~24 hours per feature
+
+# Milestones
+milestones:
+  - name: "First Feature Complete"
+    target_date: "2025-11-15"
+    features: ["number-systems"]
+    status: "on_track"
+
+  - name: "Core Features (5) Complete"
+    target_date: "2025-12-31"
+    features: ["number-systems", "degree", "person-systems", "participant-tracking", "discourse-genre"]
+    status: "on_track"
+
+  - name: "All 12 Features Complete"
+    target_date: "2026-03-31"
+    features: ["all"]
+    status: "on_track"
+
+# Notes for workflow improvement
+workflow_notes:
+  - "Equal value coverage is critical - prevents bias toward common values"
+  - "Harder verses in adversarial sets reveal algorithm weaknesses better"
+  - "Per-value accuracy metrics more informative than overall accuracy"
+  - "6-step exhaustive debugging for every error is essential"
+  - "LXX/Vulgate provide authoritative semantic interpretation"
+  - "Context pollution prevented by one-phase-per-session approach"
+
+# Blocking issues
+blocking_issues:
+  - issue: "TBTA data access"
+    affects: ["degree", "all future features"]
+    status: "in_progress"
+    workaround: "Can design training/test sets, make predictions; validation waits for TBTA access"
+    notes: "Need method to access TBTA annotations systematically"
