@@ -135,13 +135,52 @@ Obviation distinguishes between multiple third-person referents based on discour
 - **Proximate** (3rd person): The more important/topical referent
 - **Obviative** (4th person): The less important/secondary referent
 
+**Note**: Obviation is DIFFERENT from clusivity. While clusivity distinguishes inclusive/exclusive "we," obviation distinguishes between two third-person referents by their discourse prominence.
+
 #### Languages with Obviation
 
 ##### From Our TSV (Known or Likely):
-- **Algic languages**: Algonquin (alq), potentially Arapaho (arp) and Blackfoot (bla)
+- **Algic languages**: Algonquin (alq), Cree, Ojibwe, potentially Arapaho (arp) and Blackfoot (bla)
 - **Athabaskan languages**: Apache, Western (apw) - related to Navajo which has 4th person
 
-### 3. Number Systems Beyond Singular/Plural
+#### Translation Implications for Obviation
+
+**Biblical narratives with multiple third-person referents**:
+- "Jesus called Peter and said to him" → Must mark whether Jesus (proximate) or Peter (obviative)
+- "The angel appeared to Mary and spoke to her" → Angel (proximate topic) vs Mary (obviative)
+- Discourse tracking: Main character typically proximate, secondary characters obviative
+- Switch-reference: When obviative becomes new topic, may promote to proximate
+
+### 3. T-V Distinction (Formal/Informal "You")
+
+#### What is T-V Distinction?
+
+T-V distinction (from Latin "tu/vos") marks social distance, formality, and respect through different second-person pronouns.
+
+**Languages with T-V**:
+- **Romance**: French (tu/vous), Spanish (tú/usted), Portuguese (tu/você), Italian (tu/Lei)
+- **Germanic**: German (du/Sie), Dutch (jij/u), Swedish (du/ni)
+- **Slavic**: Russian (ты/вы), Polish (ty/wy), Czech (ty/vy)
+- **Indo-Iranian**: Hindi (तू tū / तुम tum / आप āp - three-way system!)
+
+#### Translation Implications
+
+**Critical Biblical Passages**:
+- **Jesus addressing disciples**: Familiar (tu) - intimate relationship
+- **Jesus addressing Pharisees**: May shift to formal (vous) in confrontation or respectful discourse
+- **Prayer to God**: Varies by tradition:
+  - Traditional: Formal (vous/Sie/вы) - reverence
+  - Modern/informal: Familiar (tu/du/ты) - intimacy with God
+- **God addressing humans**: Typically familiar (tu) - sovereign intimacy
+- **Social hierarchy**: Masters/servants, parents/children, elders/youth require T-V decisions
+
+**Cultural Variation**:
+- French traditional: Always vous to God (reverence)
+- German Protestant: Often du to God (Luther's influence - intimate relationship)
+- Spanish: Varies by region and tradition
+- Russian: Growing debate between formal вы and familiar ты in prayer
+
+### 4. Number Systems Beyond Singular/Plural
 
 #### Dual Number
 Languages distinguishing exactly two items:

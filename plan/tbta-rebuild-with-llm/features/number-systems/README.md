@@ -63,9 +63,24 @@ Answer these questions about your target language:
 If you answered YES to any of #1-4, specialized number annotation is critical.
 
 **Languages needing this**:
-- Austronesian (dual/trial/paucal) - 176 languages
-- Oceanic subset (trial/quadrial) - ~50 languages
-- Trans-New Guinea (trial) - 141 languages
+- **Austronesian** (176 languages): Dual/trial/paucal widespread
+  - Oceanic subset (~50 languages): Trial/quadrial systems
+  - Philippine-type: Dual pronouns common
+- **Trans-New Guinea** (141 languages): Dual widespread, some trial
+- **Australian** (36 languages): Almost all have dual
+  - **Kinship variation**: Dual forms vary by relationship between the two referents
+  - Example (Warlpiri): Different dual pronouns for kin vs. non-kin pairs
+- **Afro-Asiatic** (25 languages):
+  - **Arabic**: Full dual system (nouns, verbs, adjectives, pronouns)
+  - **Hebrew**: Restricted dual (mainly paired body parts: eyes-עֵינַיִם, hands-יָדַיִם)
+- **Niger-Congo** (94 languages): Singular/plural via noun class systems (10-20 classes)
+  - Number marking integrated with class agreement
+  - Example (Swahili): class 1 (singular person) / class 2 (plural people)
+- **Mayan** (22 languages): Singular/plural in ergative-absolutive system
+- **Indo-European (CRITICAL NOTE)**:
+  - **Only 4 IE languages preserve productive dual**: Slovene, Upper Sorbian, Lower Sorbian, Kashubian
+  - **NONE in current dataset!** All major IE languages (Russian, Polish, German, French, Spanish, English) LOST dual
+  - Greek NT: Residual dual (rare); Sanskrit: Full dual (archaic)
 
 **Examples**: See TBTA-EXAMPLES.md for Genesis 1:26 (Trinity trial), Matthew 5:29 (singular eye), Genesis 1:27 (dual "them")
 
@@ -165,9 +180,21 @@ Quick rules with high accuracy:
 
 **Major Language Families** (see LANGUAGE-BREAKDOWN.md for full list):
 - **Austronesian (176)**: Most complex - Sursurunga (sgz) has 5-way distinction
-- **Trans-New Guinea (141)**: Typically dual, some paucal
+- **Trans-New Guinea (141)**: Typically dual, some paucal/trial
 - **Australian (36)**: Almost all have dual - Murrinh-Patha (mwf) has paucal up to 15
+  - **Kinship-influenced**: Australian dual pronouns vary by relationship between referents
+  - Example (Warlpiri): Different dual forms based on kinship between the two people
 - **Afro-Asiatic (25)**: Arabic (full dual), Hebrew (restricted dual)
+- **Niger-Congo (94)**: Number mediated through noun class systems (10-20 classes)
+  - Singular/plural distinction OBLIGATORY but expressed through class agreement
+  - Example: Swahili class 1/2 (people), class 5/6 (natural pairs/plurals)
+  - Every noun must be assigned to class affecting all concordial agreements
+- **Mayan (22)**: Singular/plural in ergative-absolutive alignment
+  - Number marking interacts with ergativity
+  - Classifiers (shape/function) may affect plural interpretation
+- **Indo-European**: MOST languages lost dual entirely
+  - Only Slovene + 3 Sorbian languages maintain productive dual
+  - Historical dual in Greek (NT), Sanskrit (archaic)
 
 **Critical Translation Passages**:
 - Trinity contexts → trial (Gen 1:26, Matt 28:19)
