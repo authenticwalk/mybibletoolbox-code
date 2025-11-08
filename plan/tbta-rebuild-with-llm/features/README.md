@@ -155,6 +155,99 @@ How participants are expressed: noun, pronoun, zero anaphora, clitic. Critical f
 
 ---
 
+## Additional Features Identified from Language Family Research
+
+Based on comprehensive language family analysis (see [../languages/](../languages/)), the following additional features have been identified as critical for Bible translation. These features are OBLIGATORY in multiple language families and require translator decisions not explicit in Greek/Hebrew source texts.
+
+**Status:** Proposed features requiring documentation and tool development
+
+### NEW Features Requiring Implementation
+
+1. **Voice Systems** - Austronesian symmetrical voice (Philippine-type)
+   - 4-voice obligatory systems (Tagalog, Cebuano, Ilokano): actor, patient, location, instrument focus
+   - Every verb requires voice marking decision
+   - Affects 176 Austronesian languages
+
+2. **Evidentiality** - Information source marking (Trans-New Guinea, Quechuan)
+   - ~50 Highlands languages: OBLIGATORY witnessed/reported/inferential marking
+   - Critical for Gospel narratives: "Jesus rose" requires evidential marking
+   - Categories: visual, reportive, inferential, participatory
+
+3. **Switch-Reference** - Same/different subject marking (Trans-New Guinea)
+   - Nearly universal in Trans-New Guinea (141 languages)
+   - Medial verbs mark subject continuity across clause chains
+   - Example: "He came and sat down" requires same-subject marker
+
+4. **Noun Classes** - Niger-Congo gender/class systems
+   - 10-20 classes OBLIGATORY in Bantu (94 languages)
+   - Every noun (God, Jesus, angels, abstract concepts) requires class assignment
+   - Classes affect all concordial agreements (adjectives, verbs, pronouns)
+
+5. **Serial Verb Constructions** - Trans-New Guinea verb serialization
+   - Limited verb roots (some languages ~60!) require serial constructions
+   - Causative: serial "give" + main verb
+   - Aspectual: serial "stay" (progressive), "finish" (completive)
+   - Benefactive: serial "give" for recipient marking
+
+6. **Spatial Deixis/Elevation** - Vertical/directional marking
+   - Trans-New Guinea: "go up/down" requires elevation specification
+   - Biblical "go up to Jerusalem" maps naturally to elevation systems
+   - Ascension/descension language highly salient
+
+7. **Tone Systems** - Lexical and grammatical tone
+   - Niger-Congo: Tone NOT optional - as essential as consonants/vowels
+   - Otomanguean: Tone for INFLECTION - most complex systems in world
+   - Prevents theological misunderstanding, affects definiteness
+
+8. **Numeral Classifiers** - Shape/function classification (Mayan, Sino-Tibetan)
+   - All 22 Mayan languages: ESSENTIAL feature
+   - "Twelve tribes" requires classifier choice (shape/group/people?)
+   - Affects theological emphasis: "Body of Christ" classifier choice matters
+
+9. **Positional Verbs** - Posture/configuration marking (Mayan)
+   - 250-500 distinct roots per Mayan language
+   - "Jesus sat down" requires specific seated positional
+   - Position carries cultural/theological meaning (authority, readiness, rest)
+
+10. **Ergative-Absolutive Alignment** - Case marking systems
+    - All 22 Mayan languages, many Australian languages
+    - Transitive subjects marked differently than intransitive
+    - Affects translation of Greek passive, active voice
+
+11. **Directional Morphology** - Motion direction encoding (Mayan, Ch'olan)
+    - Verbal affixes encode toward/away/up/down motion
+    - "Come to me" vs "go away" through directional marking
+    - Missional directionality: sending vs gathering
+
+12. **Root-and-Pattern Morphology** - Non-linear morphology (Afro-Asiatic)
+    - Consonantal roots, vowel patterns add grammatical information
+    - Arabic K-T-B root: KiTaB (book), KaTaBa (write), maKTaB (office)
+    - Cannot segment linearly, must recognize root-pattern interdigitation
+
+13. **Polysynthetic Structures** - Single-word sentences (Uto-Aztecan, some Eskimo-Aleut)
+    - Verb can encode subject, object, tense, aspect, mode in one word
+    - Nahuatl: "onikpix" = complete sentence "I held it"
+    - Extensive incorporation of arguments into verb complex
+
+14. **Kinship-Influenced Grammar** - Australian dual variations
+    - Dual pronouns vary by relationship between the two referents
+    - Warlpiri: Different dual forms for kin vs. non-kin pairs
+    - "Triangular terms" indicate relation of speaker + listener to referent
+
+**See Also:** [Language Family Insights Application](../../language-insights-application.md) for complete feature list with family-specific examples
+
+### Enhanced Features Requiring Expansion
+
+The following existing features should be expanded with family-specific insights:
+
+1. **Person Systems** → Add T-V distinction (Indo-European formal/informal "you")
+2. **Number Systems** → Add class-based number (Niger-Congo), kinship-influenced dual (Australian)
+3. **Honorifics** → Add age-based kinship terms (Niger-Congo), T-V cultural variations
+4. **Possession Systems** → Add inalienable/alienable distinctions (Mayan, Austronesian, Trans-New Guinea)
+5. **Aspect Systems** → Add aspect-prominence vs tense-prominence (Slavic, Mayan, Otomanguean)
+
+---
+
 ## Integration Priorities
 
 **Always Check:**
