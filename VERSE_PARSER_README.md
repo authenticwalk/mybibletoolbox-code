@@ -17,15 +17,17 @@ The `verse_parser.py` script processes Bible data (verses, chapters, books, or S
 ### Installation
 
 ```bash
-# Install dependencies
+# Install dependencies (including Anthropic SDK)
 pip install -r requirements.txt
 
 # Setup minimal Bible data
 ./setup-minimal-data.sh
 
-# Set your Anthropic API key
+# Set your Anthropic API key (required!)
 export ANTHROPIC_API_KEY=your_key_here
 ```
+
+**Note**: The script requires an Anthropic API key to function. Get one at https://console.anthropic.com/
 
 ### Basic Usage
 
@@ -34,6 +36,20 @@ export ANTHROPIC_API_KEY=your_key_here
 python verse_parser.py \
   --dataset verse \
   --markdown examples/sample_verse_instructions.md \
+  --limit 100
+
+# Process with different model
+python verse_parser.py \
+  --dataset verse \
+  --markdown examples/sample_verse_instructions.md \
+  --model claude-opus-4-20250514 \
+  --limit 50
+
+# Skip audit phase for faster processing
+python verse_parser.py \
+  --dataset verse \
+  --markdown examples/sample_verse_instructions.md \
+  --no-audit \
   --limit 100
 
 # Check status
@@ -60,9 +76,18 @@ python verse_parser.py \
 
 - `--limit N` - Number of items to process (default: 100, use -1 for all)
 - `--filter PATTERN` - Filter items (e.g., "MAT*" for Matthew, "G*" for Greek)
+- `--model MODEL` - Claude model to use (default: claude-sonnet-4-5-20250929)
+- `--max-tokens N` - Maximum tokens for responses (default: 4096)
+- `--no-audit` - Skip audit phase (faster but less validated)
 - `--continue` - Continue from previous run
 - `--redo-all` - Start fresh, ignore previous progress
 - `--status` - Show current progress and exit
+
+### Available Models
+
+- `claude-sonnet-4-5-20250929` (default) - Latest Sonnet, best balance
+- `claude-opus-4-20250514` - Most capable, slower and more expensive
+- `claude-haiku-4-20250430` - Fastest and cheapest, good for simple tasks
 
 ## Dataset Types
 
@@ -262,70 +287,82 @@ git sparse-checkout add strongs/G0026
 
 Data is loaded and provided to Claude as context automatically.
 
-## Claude Agent SDK Integration
+## Claude SDK Integration
 
 ### Current Status
 
-The script includes placeholders for Claude Agent SDK integration:
+✅ **FULLY IMPLEMENTED** - The script now uses the official Anthropic Python SDK!
 
+The `ClaudeAgentRunner` class:
+- Initializes the Anthropic client with API key from environment
+- Implements `run_processing_session()` with full API integration
+- Implements `run_audit_session()` for validation
+- Handles errors (rate limits, API errors, connection issues)
+- Supports multiple Claude models
+- Reports token usage for monitoring
+
+### How It Works
+
+**Processing Phase** (verse_parser.py:453-525):
 ```python
-# verse_parser.py lines ~390-410
-def run_processing_session(self, item: str, context_data: Dict):
-    """Run processing session with Claude Agent SDK"""
-    # TODO: Integrate actual Claude Agent SDK
-    # Placeholder implementation
-    ...
-
-def run_audit_session(self, item: str, output: str, context_data: Dict):
-    """Run audit session to validate work"""
-    # TODO: Integrate actual Claude Agent SDK
-    # Placeholder implementation
-    ...
+message = self.client.messages.create(
+    model=self.model,
+    max_tokens=self.max_tokens,
+    messages=[{
+        "role": "user",
+        "content": f"{instructions}\n\n{context_data}"
+    }]
+)
 ```
 
-### Integration Steps
+**Audit Phase** (verse_parser.py:527-611):
+```python
+audit_prompt = """Review work against instructions...
+- Check if follows all requirements
+- Verify source citations
+- Validate output format
+"""
 
-To integrate the actual Claude Agent SDK:
+message = self.client.messages.create(
+    model=self.model,
+    max_tokens=2048,
+    messages=[{"role": "user", "content": audit_prompt}]
+)
 
-1. Import the SDK:
-   ```python
-   from anthropic import Agent
-   ```
+# Passes if response starts with "PASS"
+passed = feedback.strip().upper().startswith("PASS")
+```
 
-2. Initialize agent in `ClaudeAgentRunner.__init__`:
-   ```python
-   self.agent = Agent(api_key=os.environ.get("ANTHROPIC_API_KEY"))
-   ```
+### Configuration
 
-3. Implement `run_processing_session`:
-   ```python
-   response = self.agent.run(
-       messages=[{
-           "role": "user",
-           "content": f"{self.instructions}\n\n# Context Data\n\n{json.dumps(context_data, indent=2)}"
-       }]
-   )
-   ```
+**Model Selection**:
+```bash
+# Use Opus for complex analysis (slower, more accurate)
+python verse_parser.py --model claude-opus-4-20250514 --dataset verse --markdown analysis.md
 
-4. Implement `run_audit_session`:
-   ```python
-   audit_prompt = f"""
-   Review this work against the original instructions.
+# Use Haiku for simple tasks (faster, cheaper)
+python verse_parser.py --model claude-haiku-4-20250430 --dataset verse --markdown simple.md
 
-   Original Instructions:
-   {self.instructions}
+# Use Sonnet (default, balanced)
+python verse_parser.py --dataset verse --markdown analysis.md
+```
 
-   Completed Work:
-   {output}
+**Token Limits**:
+```bash
+# Increase for longer outputs
+python verse_parser.py --max-tokens 8192 --dataset chapter --markdown detailed.md
 
-   Context Data:
-   {json.dumps(context_data, indent=2)}
+# Decrease for shorter outputs
+python verse_parser.py --max-tokens 2048 --dataset verse --markdown brief.md
+```
 
-   Does the work follow all instructions? Identify any issues.
-   """
+### Error Handling
 
-   response = self.agent.run(messages=[{"role": "user", "content": audit_prompt}])
-   ```
+The implementation includes comprehensive error handling:
+- **RateLimitError**: Logged and processing continues with next item
+- **APIConnectionError**: Network issues are caught and logged
+- **APIError**: General API errors are handled gracefully
+- All errors are logged to the learning file for analysis
 
 ## Examples
 

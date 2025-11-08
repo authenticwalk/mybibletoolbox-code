@@ -13,6 +13,7 @@ Usage:
 
 import argparse
 import json
+import os
 import random
 import sys
 import subprocess
@@ -20,6 +21,9 @@ from datetime import datetime
 from pathlib import Path
 from typing import Dict, List, Optional, Tuple
 import yaml
+
+# Import Anthropic SDK
+from anthropic import Anthropic, APIError, APIConnectionError, RateLimitError
 
 # Import project modules
 from src.constants.bible import (
@@ -417,15 +421,26 @@ class DataManager:
 
 
 # ============================================================================
-# Claude Agent SDK Integration
+# Claude SDK Integration
 # ============================================================================
 
 class ClaudeAgentRunner:
-    """Manages Claude Agent SDK sessions for processing and auditing."""
+    """Manages Claude API sessions for processing and auditing."""
 
-    def __init__(self, markdown_file: Path):
+    def __init__(self, markdown_file: Path, model: str = "claude-sonnet-4-5-20250929"):
         self.markdown_file = markdown_file
         self.instructions = self._load_instructions()
+        self.model = model
+        self.max_tokens = 4096
+
+        # Initialize Anthropic client
+        api_key = os.environ.get("ANTHROPIC_API_KEY")
+        if not api_key:
+            raise ValueError(
+                "ANTHROPIC_API_KEY environment variable is required. "
+                "Set it with: export ANTHROPIC_API_KEY=your_key_here"
+            )
+        self.client = Anthropic(api_key=api_key)
 
     def _load_instructions(self) -> str:
         """Load instructions from markdown file."""
@@ -437,7 +452,7 @@ class ClaudeAgentRunner:
 
     def run_processing_session(self, item: str, context_data: Dict) -> Tuple[bool, str, Optional[str]]:
         """
-        Run a processing session for an item.
+        Run a processing session for an item using Claude API.
 
         Args:
             item: Item reference (verse, chapter, book, or Strong's number)
@@ -447,26 +462,71 @@ class ClaudeAgentRunner:
             Tuple of (success, output, error_message)
         """
         try:
-            # TODO: Integrate actual Claude Agent SDK
-            # For now, this is a placeholder
             print(f"  [Processing] {item}")
             print(f"    Instructions: {len(self.instructions)} chars")
             print(f"    Context data: {len(str(context_data))} chars")
 
-            # Placeholder: Simulate processing
-            # In actual implementation, this would call Claude Agent SDK
-            success = True
-            output = f"Processed {item} successfully (placeholder)"
-            error = None
+            # Build the user message with instructions + context
+            context_str = json.dumps(context_data, indent=2, ensure_ascii=False)
+            user_message = f"""{self.instructions}
 
-            return success, output, error
+# Context Data
+
+The following data has been loaded for {item}:
+
+```json
+{context_str}
+```
+
+Please process this data according to the instructions above.
+"""
+
+            # Call Claude API
+            print(f"    Calling Claude API (model: {self.model})...")
+            message = self.client.messages.create(
+                model=self.model,
+                max_tokens=self.max_tokens,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": user_message
+                    }
+                ]
+            )
+
+            # Extract text response
+            output = ""
+            for block in message.content:
+                if hasattr(block, 'text'):
+                    output += block.text
+
+            print(f"    ✓ Received response ({message.usage.input_tokens} in, {message.usage.output_tokens} out)")
+
+            return True, output, None
+
+        except RateLimitError as e:
+            error_msg = f"Rate limit exceeded: {str(e)}"
+            print(f"    ✗ {error_msg}")
+            return False, "", error_msg
+
+        except APIConnectionError as e:
+            error_msg = f"API connection error: {str(e)}"
+            print(f"    ✗ {error_msg}")
+            return False, "", error_msg
+
+        except APIError as e:
+            error_msg = f"API error: {str(e)}"
+            print(f"    ✗ {error_msg}")
+            return False, "", error_msg
 
         except Exception as e:
-            return False, "", str(e)
+            error_msg = f"Unexpected error: {str(e)}"
+            print(f"    ✗ {error_msg}")
+            return False, "", error_msg
 
     def run_audit_session(self, item: str, output: str, context_data: Dict) -> Tuple[bool, str]:
         """
-        Run an audit session to validate completed work.
+        Run an audit session to validate completed work using Claude API.
 
         Args:
             item: Item reference
@@ -477,19 +537,78 @@ class ClaudeAgentRunner:
             Tuple of (passed, feedback)
         """
         try:
-            # TODO: Integrate actual Claude Agent SDK for auditing
             print(f"  [Auditing] {item}")
 
-            # Placeholder: Simulate audit
-            # In actual implementation, this would call Claude Agent SDK
-            # to review the work against original instructions
-            passed = True
-            feedback = f"Audit passed for {item} (placeholder)"
+            # Build audit prompt
+            context_str = json.dumps(context_data, indent=2, ensure_ascii=False)
+            audit_prompt = f"""You are an expert reviewer validating work against specific instructions.
+
+# Original Instructions
+
+{self.instructions}
+
+# Context Data
+
+```json
+{context_str}
+```
+
+# Completed Work
+
+```
+{output}
+```
+
+# Your Task
+
+Review the completed work carefully and check if it:
+1. Follows all instructions from the original task
+2. Uses the provided context data appropriately
+3. Adheres to cited standards (STANDARDIZATION.md, SCHEMA.md, etc.)
+4. Includes proper source citations
+5. Avoids fabrication or hallucination
+6. Produces the expected output format
+
+Respond with:
+- "PASS" if the work meets all requirements
+- "FAIL" followed by specific issues if there are problems
+
+Be thorough but concise in identifying issues.
+"""
+
+            # Call Claude API for audit
+            print(f"    Calling Claude API for audit...")
+            message = self.client.messages.create(
+                model=self.model,
+                max_tokens=2048,
+                messages=[
+                    {
+                        "role": "user",
+                        "content": audit_prompt
+                    }
+                ]
+            )
+
+            # Extract audit response
+            feedback = ""
+            for block in message.content:
+                if hasattr(block, 'text'):
+                    feedback += block.text
+
+            # Determine if passed
+            passed = feedback.strip().upper().startswith("PASS")
+
+            if passed:
+                print(f"    ✓ Audit passed")
+            else:
+                print(f"    ✗ Audit failed")
 
             return passed, feedback
 
         except Exception as e:
-            return False, f"Audit error: {str(e)}"
+            error_msg = f"Audit error: {str(e)}"
+            print(f"    ✗ {error_msg}")
+            return False, error_msg
 
 
 # ============================================================================
@@ -562,7 +681,8 @@ def process_items(
     progress_tracker: ProgressTracker,
     data_manager: DataManager,
     agent_runner: ClaudeAgentRunner,
-    learning_logger: LearningLogger
+    learning_logger: LearningLogger,
+    skip_audit: bool = False
 ):
     """
     Main processing loop for items.
@@ -607,14 +727,17 @@ def process_items(
                 learning_logger.log_failure(item, error, {"dataset_type": dataset_type})
                 continue
 
-            # 3. Run audit session
-            passed, feedback = agent_runner.run_audit_session(item, output, context_data)
+            # 3. Run audit session (if not skipped)
+            if not skip_audit:
+                passed, feedback = agent_runner.run_audit_session(item, output, context_data)
 
-            if not passed:
-                print(f"  ❌ Audit failed: {feedback}")
-                progress_tracker.mark_failed(item, f"Audit failed: {feedback}")
-                learning_logger.log_audit_failure(item, feedback, output)
-                continue
+                if not passed:
+                    print(f"  ❌ Audit failed: {feedback}")
+                    progress_tracker.mark_failed(item, f"Audit failed: {feedback}")
+                    learning_logger.log_audit_failure(item, feedback, output)
+                    continue
+            else:
+                print(f"  ⚠️  Skipping audit (--no-audit enabled)")
 
             # 4. Mark as completed
             print(f"  ✅ Completed successfully")
@@ -699,6 +822,27 @@ Examples:
         help="Show current progress status and exit"
     )
 
+    parser.add_argument(
+        "--model",
+        type=str,
+        default="claude-sonnet-4-5-20250929",
+        help="Claude model to use (default: claude-sonnet-4-5-20250929)"
+    )
+
+    parser.add_argument(
+        "--no-audit",
+        dest="skip_audit",
+        action="store_true",
+        help="Skip the audit phase (faster but less validated)"
+    )
+
+    parser.add_argument(
+        "--max-tokens",
+        type=int,
+        default=4096,
+        help="Maximum tokens for Claude responses (default: 4096)"
+    )
+
     args = parser.parse_args()
 
     # Initialize progress tracker
@@ -780,8 +924,19 @@ Examples:
 
     # Initialize components
     data_manager = DataManager()
-    agent_runner = ClaudeAgentRunner(markdown_file)
+    agent_runner = ClaudeAgentRunner(
+        markdown_file,
+        model=args.model if hasattr(args, 'model') else "claude-sonnet-4-5-20250929"
+    )
+
+    # Update max_tokens if specified
+    if hasattr(args, 'max_tokens'):
+        agent_runner.max_tokens = args.max_tokens
+
     learning_logger = LearningLogger()
+
+    # Store skip_audit setting
+    skip_audit = args.skip_audit if hasattr(args, 'skip_audit') else False
 
     # Process items
     print(f"\nStarting processing of {len(items)} items...\n")
@@ -795,7 +950,8 @@ Examples:
             progress_tracker,
             data_manager,
             agent_runner,
-            learning_logger
+            learning_logger,
+            skip_audit
         )
     except KeyboardInterrupt:
         print("\n\nInterrupted by user.")
