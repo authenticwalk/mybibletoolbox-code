@@ -60,12 +60,37 @@ Translating "the Lamb of God" (G721 ἀρνίον) to Arctic cultures:
 
 **Cultural Challenges provide:**
 - Problem: No sheep in Arctic cultures
-- Solutions documented:
-  - Substitute: "caribou calf of God" (cultural equivalent)
-  - Descriptive: "young sacrificial animal of God"
-  - Loan word + note: "lamb (sheep offspring) of God" + footnote
-- Theological stakes: High - central gospel imagery
-- Evaluation: Caribou substitution successful in Inuit contexts
+- **Core meaning to preserve:**
+  - Innocence (young/unblemished)
+  - Substitutionary sacrifice
+  - Purity/holiness
+  - Connection to Passover lamb imagery
+
+- **Solution strategies documented:**
+  1. **Cultural substitute:** "seal pup of God"
+     - Methodology: Find local animal used in sacrifice/food that conveys innocence
+     - Theological evaluation: ✅ Preserves sacrifice, innocence, purity
+     - Danger: ⚠️ May lose connection to OT Passover if readers unfamiliar
+     - Mitigation: Footnote explaining Passover lamb background
+
+  2. **Loan word + teaching:** "lamb of God" (transliterate) + explanation
+     - Methodology: Introduce new concept with description
+     - Theological evaluation: ✅ Preserves exact terminology, builds biblical literacy
+     - Danger: ⚠️ May seem foreign/irrelevant without explanation
+     - Mitigation: Add "young innocent animal from God's special flock"
+
+  3. **Descriptive phrase:** "the innocent one sacrificed for us"
+     - Methodology: Translate the theological function, not the animal
+     - Theological evaluation: ✅ Clear theological meaning
+     - Danger: ⚠️ Loses animal imagery, may disconnect from OT
+     - Mitigation: Footnote with literal translation and cultural context
+
+- **Evaluation principles:**
+  - Does it preserve the core theological truth?
+  - Does it maintain connection to Old Testament imagery?
+  - Is it culturally meaningful or foreign?
+  - What theological distortions could arise?
+  - How can we mitigate the weaknesses?
 
 ---
 
@@ -287,6 +312,64 @@ Cultural Analysis extracts:
 
 ## Methodology
 
+### Core Principle: Teach Methodology, Not Just Solutions
+
+**DON'T:** Create lookup table of "use X word for Y concept in Z language"
+**DO:** Document reasoning process, dangers, evaluation criteria - transferable to ANY language
+
+**Output Focus:**
+1. **Core meaning** - What theological truth MUST be preserved?
+2. **Multiple strategies** - Not one answer, but 4-5 approaches with tradeoffs
+3. **Dangers documented** - What can go theologically wrong?
+4. **Evaluation process** - How to test if a solution works
+5. **Failed approaches** - What NOT to do and why
+6. **Transferable principles** - "DON'T just copy seal→lamb. Ask: what's YOUR culture's sacrificial animal?"
+
+### Example: Teaching vs. Prescribing
+
+**❌ Prescriptive approach (what we DON'T want):**
+```
+H7950 (snow):
+- Saharan Arabic uses "frozen rain"
+- Hawaiian uses "hau"
+- Solution: Use local frozen/white phenomenon
+```
+
+**✅ Methodological approach (what we DO want):**
+```
+H7950 (snow):
+
+Core meaning to preserve:
+- Whiteness (purity metaphor in Isaiah 1:18)
+- Coldness (refreshing in Proverbs 25:13)
+- Covering (Job 38:22 - storehouses)
+
+Strategy 1: Find local white phenomenon
+  Examples: Saharan "frozen rain", Hawaiian "hau" (ice/frost)
+  When it works: ✅ Culture has SOME white natural phenomenon
+  Danger: ⚠️ May lose coldness or covering aspect
+  Evaluation: Does it work in "white as snow" purity metaphor?
+
+Strategy 2: Teach the concept
+  Approach: "White frozen rain from sky called 'snow'"
+  When it works: ✅ When building biblical literacy is priority
+  Danger: ⚠️ May seem foreign/irrelevant
+  Mitigation: Emphasize the whiteness/purity, not the meteorology
+
+Strategy 3: Focus on the metaphor
+  Approach: "White as [whitest thing in culture]"
+  Example: "White as cloud" or "white as pure salt"
+  When it works: ✅ When purity metaphor is the only usage
+  Danger: ⚠️ Loses literal snow in creation/nature contexts
+
+Evaluation checklist:
+- Does "white as ___" convey absolute purity?
+- If Job 38:22 mentions storehouses, does your word support that?
+- Will readers understand Proverbs 25:13 cold/refreshing metaphor?
+
+Theological stakes: Medium-High (purity metaphor critical, but not salvific)
+```
+
 ### Phase 1: Identify High-Priority Words
 **Criteria for prioritization:**
 1. **Theologically significant** - Core gospel terms (cross, blood, lamb, bread, etc.)
@@ -352,45 +435,156 @@ strongs_number: G26
 lemma: ἀγάπη
 translation_challenges:
   category: [untranslatable_concept, semantic_gap]
-  description: "Agape love represents selfless, sacrificial love distinct from romantic/familial love {llm-cs45}"
 
-  problem_languages:
-    - family: Sino-Tibetan
-      issue: "Single word 'ài' (爱) covers all love types {chinese-union}"
-      impact: "Loses agape/eros distinction"
+  # CORE: What MUST be preserved theologically
+  core_meaning_to_preserve:
+    - "Selfless, sacrificial love (not romantic/emotional)"
+    - "God's essential nature (1 John 4:8)"
+    - "Commanded Christian ethic (John 13:34-35)"
+    - "Distinct from eros (romantic), philia (friendship), storge (family)"
 
-    - family: Austronesian
-      issue: "Multiple love words but none match agape semantics"
-      context: "Polynesian cultures have aroha (compassion) as closest equivalent"
+  theological_stakes: "Critical - agape is central to gospel and Christian identity {llm-cs45}"
 
-  solutions_documented:
-    - language: cmn (Mandarin Chinese)
-      translation: "爱 (ài) + explanatory note"
-      source: chinese-union-2010
-      evaluation: "Relies on footnotes for distinction"
+  # STRATEGY 1: Semantic approximation
+  strategy_semantic_approximation:
+    methodology: "Find local word emphasizing selfless/sacrificial care"
 
-    - language: swa (Swahili)
-      translation: "upendo"
+    when_to_use: "Language has word that captures key aspects of agape"
+
+    example:
+      language: swa (Swahili)
+      word: "upendo"
+      why_it_works: "Emphasizes intentional, willed care (not emotion-driven)"
+      theological_eval: ✅ "Good semantic fit for agape concept"
+      danger: ⚠️ "May still be confused with romantic upendo in context"
+      mitigation: "Use qualifying phrases 'upendo wa Mungu' (God's kind of love)"
       source: swahili-union
-      context: "Upendo emphasizes intentional care, closer to agape"
-      evaluation: "Semantic fit better than direct translation"
 
-    - language: dtp (Sawi - Peace Child context)
-      translation: "Redemptive analogy: 'peace child' concept"
+    transferable_principle: >
+      Look for words that emphasize: (1) choice/will over emotion,
+      (2) sacrificial action, (3) undeserved favor. Test in 'love your
+      enemies' context - if it works there, likely good agape match.
+
+  # STRATEGY 2: Redemptive analogy
+  strategy_redemptive_analogy:
+    methodology: "Find cultural practice/concept that embodies agape principle"
+
+    when_to_use: "No semantic match exists, but culture has practice embodying concept"
+
+    example:
+      language: dtp (Sawi)
+      cultural_practice: "peace child"
+      how_it_works: "Giving one's own child to enemy tribe creates unbreakable peace"
+      application: "Jesus as God's peace child given to hostile humanity"
+      theological_eval: ✅ "Brilliantly preserves sacrifice + reconciliation + love"
+      transformation: "Made gospel instantly comprehensible in headhunter culture"
       source: richardson-1974
-      context: "Mapped to cultural practice of giving child as peace offering"
-      evaluation: "Highly effective - transformed cultural understanding {llm-cs45}"
 
-  translator_guidance:
-    - "Seek cultural equivalents of selfless/sacrificial love concepts {unfoldingword-tn}"
-    - "Consider loan word + explanation if no semantic match"
-    - "Distinguish from romantic love (eros) and familial love (storge) in notes"
-    - "Redemptive analogies: look for cultural practices embodying concept"
+    transferable_principle: >
+      Ask: What cultural practices embody (1) costly sacrifice, (2) for benefit
+      of undeserving recipient, (3) initiated by giver? Use as bridge/analogy.
+      DON'T just copy - find YOUR culture's equivalent practice.
 
-  theological_stakes: "High - agape is central to God's nature (1 John 4:8) and Christian ethics (John 13:34-35) {llm-cs45}"
+  # STRATEGY 3: Loan word + teaching
+  strategy_loan_word:
+    methodology: "Introduce Greek/biblical term with explanation"
+
+    when_to_use: "No good semantic match AND no cultural analogy available"
+
+    example:
+      language: cmn (Mandarin Chinese)
+      problem: "Single word 爱 (ài) covers all love types"
+      solution_1: "Use ài + qualifier '上帝的爱' (God's love)"
+      solution_2: "Transliterate '阿加佩' (ā jiā pèi) + definition"
+      theological_eval: ⚠️ "Requires teaching - prone to confusion without it"
+      advantage: ✅ "Builds biblical vocabulary, precise when taught"
+      source: chinese-union-2010
+
+    transferable_principle: >
+      Loan words REQUIRE teaching infrastructure. Don't use unless you plan
+      to educate readers. Add footnotes, glossaries, or teaching notes.
+      NEVER just transliterate and assume people will figure it out.
+
+  # STRATEGY 4: Descriptive phrase
+  strategy_descriptive:
+    methodology: "Describe the concept rather than find single-word equivalent"
+
+    when_to_use: "Single word would mislead; precision more important than brevity"
+
+    examples:
+      - "love that gives without expecting return"
+      - "God's kind of selfless love"
+      - "sacrificial care for the undeserving"
+
+    theological_eval: ✅ "Clear, accurate, preserves meaning"
+    tradeoff: "Loses single-word elegance, may be verbose"
+
+    transferable_principle: >
+      Better to be wordy and accurate than concise and misleading. Use for
+      theological terms where precision is critical. Especially good for
+      footnotes explaining loan words.
+
+  # CRITICAL: Theological dangers to avoid
+  theological_dangers:
+    - danger: "Using romantic love word"
+      consequence: "Sexualizes God's love, distorts 'God is love' into romantic category"
+      example: "Some cultures only have eros-type word"
+      prevention: "NEVER use romantic-primary words. Use descriptive or loan word instead."
+      severity: "CRITICAL - creates heretical understanding"
+
+    - danger: "Using merit-based word"
+      consequence: "Implies salvation by works, God's love is conditional"
+      example: "Word meaning 'love earned by being lovable'"
+      prevention: "Test in 'loved us while we were still sinners' - must work there"
+      severity: "CRITICAL - undermines gospel of grace"
+
+    - danger: "Using emotion-only word"
+      consequence: "Reduces love to feeling, loses commanded aspect"
+      example: "Word only for emotional affection, can't be commanded"
+      prevention: "Test in 'love one another' command - must be obeyable"
+      severity: "HIGH - weakens ethical imperatives"
+
+    - danger: "Losing sacrificial element"
+      consequence: "Agape becomes mere kindness or affection"
+      example: "Nice/friendly word without costly sacrifice component"
+      prevention: "Test in cross/atonement contexts - must convey sacrifice"
+      severity: "HIGH - loses connection to crucifixion theology"
+
+  # How to evaluate any proposed solution
+  evaluation_checklist:
+    questions:
+      - "Does it preserve selfless/sacrificial nature?"
+      - "Can it be commanded? (John 13:34 - 'love one another')"
+      - "Does it work in 'God is agape' (1 John 4:8)?"
+      - "Distinct from romantic/sexual love?"
+      - "Works in 'love your enemies' (Matthew 5:44)?"
+      - "Conveys unmerited/grace-based quality?"
+      - "Connects to cross/sacrifice theology?"
+
+    process:
+      - "Test proposed word in all NT agape contexts"
+      - "Ask native speakers: 'Can you command someone to X?'"
+      - "Check for unintended sexual/romantic connotations"
+      - "Verify it works for both divine and human love"
+      - "Consider: How will heretics misuse this word choice?"
+
+  # What to document about solutions that FAILED
+  failed_approaches:
+    example:
+      attempt: "Using familial love word in Language X"
+      why_it_failed: "Implied blood relation - 'God loves family members only'"
+      distortion_created: "Exclusive tribalism, not universal love"
+      lesson_learned: "Avoid words with kinship restrictions"
+
+  # Resources for finding solutions
+  research_process:
+    - "Survey 10+ existing translations in language family"
+    - "Consult unfoldingWord translation notes for guidance"
+    - "Interview native-speaking believers about word connotations"
+    - "Study anthropological literature for cultural practices"
+    - "Test in small focus group before finalizing"
 
 citations:
-  chinese-union: "Chinese Union Version, 1919"
   chinese-union-2010: "Chinese Union Version (Simplified), 2010"
   swahili-union: "Swahili Union Version"
   richardson-1974: "Richardson, D. (1974). Peace Child. Gospel Light"
@@ -484,28 +678,57 @@ Follow TEMPLATE.md pattern:
 
 ## Success Criteria
 
-### Research Quality
-- [ ] Solutions drawn from real translations (cited)
-- [ ] Multiple language families represented per challenge
-- [ ] Both successful and unsuccessful approaches documented
-- [ ] Translator guidance grounded in documented practice
+### 1. Methodological Depth (Primary)
+- [ ] **Multiple strategies documented** - Not just "use X word" but 4-5 approaches with tradeoffs
+- [ ] **Transferable principles** - "Find YOUR culture's X" not "copy this solution"
+- [ ] **Evaluation process** - How to test if solution works in YOUR language
+- [ ] **Dangers/warnings** - What theological distortions can arise
+- [ ] **Failed approaches** - What NOT to do, with explanations why
 
-### Theological Accuracy
-- [ ] Theological stakes assessed for each word
-- [ ] Gospel clarity impact evaluated
-- [ ] Metaphor preservation considerations noted
+### 2. Theological Rigor
+- [ ] **Core meaning identified** - What MUST be preserved theologically
+- [ ] **Theological stakes** - How critical is precision for this term? (salvific/high/medium/low)
+- [ ] **Danger analysis** - Heretical implications of poor choices
+- [ ] **Evaluation checklist** - Test questions for any proposed solution
+- [ ] **Multiple contexts** - Does solution work in ALL biblical uses of the word?
 
-### Practical Usefulness
-- [ ] Useful for remaining untranslated languages
-- [ ] Informative for Bible revision projects
-- [ ] Educational for cross-cultural ministry
-- [ ] Demonstrates patterns for similar challenges
+### 3. Evidence-Based Examples
+- [ ] **Real translations cited** - Every example from documented source
+- [ ] **Multiple language families** - Not just one language's solution
+- [ ] **Success AND failure** - Both what worked and what didn't
+- [ ] **Context of usage** - Why solution worked in that specific culture
+- [ ] **Outcome documented** - What was the effect on the church/readers?
 
-### Data Integrity
+### 4. Practical Transferability
+- [ ] **Useful for NEW translations** - Guides process, not just catalogs results
+- [ ] **Cultural analysis tools** - How to identify analogous practices
+- [ ] **Testing methods** - How to validate solutions before publishing
+- [ ] **Mitigation strategies** - When strategy has weakness, how to compensate
+- [ ] **Decision trees** - "If X, then try A; if Y, then try B"
+
+### 5. Data Integrity
 - [ ] All claims cited with inline {source}
 - [ ] No fabricated examples
 - [ ] Uncertainty documented where present
+- [ ] Language families identified correctly
 - [ ] Fair use compliance maintained
+
+### Quality Indicators
+
+**Excellent entry:**
+- ✅ 4+ strategies with when-to-use guidance
+- ✅ Theological dangers identified with severity ratings
+- ✅ Transferable principles clearly stated
+- ✅ Failed approaches documented with lessons
+- ✅ Evaluation checklist with 5+ test questions
+- ✅ Examples from 3+ language families
+
+**Inadequate entry:**
+- ❌ "Language X uses word Y" (prescriptive, not educational)
+- ❌ Single strategy only (no alternatives)
+- ❌ No danger analysis (unsafe for translators)
+- ❌ No evaluation process (can't validate solutions)
+- ❌ Examples without reasoning (not transferable)
 
 ---
 
