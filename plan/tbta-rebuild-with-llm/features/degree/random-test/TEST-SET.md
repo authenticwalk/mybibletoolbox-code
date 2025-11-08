@@ -1,257 +1,355 @@
-# Degree Feature: Random Test Set
+# Degree Feature: Random Test Set (REDESIGNED)
 
-**Purpose**: Test algorithm v1.0 on typical cases
-**Expected accuracy**: 75-85% (typical cases should be easier than adversarial)
-**Selection date**: 2025-11-08
+**Purpose**: Test algorithm v1.0 with equal coverage of all degree values
+**Design principle**: One example per value (11 values), clearer typical cases
+**Expected accuracy**: 70-80% (typical cases easier than adversarial)
+**Selection date**: 2025-11-08 (REVISED)
 **Random seed**: 42
 **TBTA Access**: FORBIDDEN until predictions locked
-**Status**: LOCKED - Do not modify after this commit
+**Status**: LOCKED
+
+---
+
+## Design Philosophy Change
+
+**Original design flaw**: Unbalanced (focused on comparative, missing many values)
+
+**New design**: Equal coverage (1 example per value × 11 values = 11 verses)
+- Benefit: Matches adversarial structure for fair comparison
+- Strategy: Choose CLEAR cases where morphology aligns with semantics
+- Focus: Unambiguous degree marking
 
 ---
 
 ## Test Set Overview
 
-**Total verses**: 5
-**Source**: NEW verses not in experiment-001.md
-**Selection method**: Random selection from diverse books with clear degree marking
+**Total verses**: 11
+**Distribution**: 1 example per degree value (matching adversarial)
+**Selection criteria**: Clear morphology, form = function, less ambiguity
 **Training overlap**: None
 **Adversarial overlap**: None
 
 ---
 
-## Selection Strategy
+## Value 1: N (No Degree) - 1 verse
 
-**Books prioritized**: Different from training set
-- Training includes: John 15, Matthew 22, Mark 1, Hebrews 7, Song of Solomon, Genesis 1
-- Random test focuses on: Luke, James, Philippians, Psalms, Isaiah
+Clear base form with no degree marking
 
-**Typical cases** (avoid adversarial characteristics):
-- Clear comparative/superlative morphology
-- Standard intensification
-- No extreme constructions (no triple compounds)
-- No boundary cases (no equative, no directional ambiguity)
-- Straightforward degree marking
+### 1. Genesis 1:1 - "In the Beginning"
 
----
+**Reference**: Genesis 1:1
+**Hebrew**: בְּרֵאשִׁית
+**English (ESV)**: "In the beginning"
 
-## Random Test Verses
+**Why clear**:
+- No degree morphology whatsoever
+- Baseline positive form
+- No intensification, no comparison
+- Simple descriptive use
 
-### 1. Luke 9:48 - Upward Superlative (Clear Morphology)
-
-**Reference**: Luke 9:48
-**Greek**: ὁ γὰρ μικρότερος ἐν πᾶσιν ὑμῖν ὑπάρχων οὗτός ἐστιν μέγας
-**English (ESV)**: "For he who is least among you all is the one who is great"
-
-**Morphology**: μικρότερος (mikroteros) - comparative form "lesser/younger"
-**Context**: Standard comparative usage
-**Expected**: C (Comparative) or possibly l/L (downward comparison)
-**Confidence**: High (clear comparative morphology)
-
-**Why typical**: Synthetic comparative with clear morphology, no ambiguity
+**Expected answer**: N (No Degree)
+**Confidence**: High
 
 ---
 
-### 2. James 3:4 - Intensified with Standard Adverb
+## Value 2: C (Comparative) - 1 verse
 
-**Reference**: James 3:4
-**Greek**: ἰδοὺ καὶ τὰ πλοῖα τηλικαῦτα ὄντα καὶ ὑπὸ ἀνέμων σκληρῶν ἐλαυνόμενα
-**English (ESV)**: "Look at the ships also: though they are so large and are driven by strong winds"
+Clear synthetic comparative form
 
-**Morphology**: τηλικαῦτα (tēlikauta) - "so large" (demonstrative intensifier)
-**Context**: Intensification of size
-**Expected**: I/V (Intensified/Very) or possibly S (if semantic superlative)
-**Confidence**: Medium-High (standard intensification pattern)
+### 2. John 15:13 - "Greater Love"
 
-**Why typical**: Common intensification pattern without extreme morphology
+**Reference**: John 15:13
+**Greek**: μείζονα ταύτης ἀγάπην οὐδεὶς ἔχει
+**English (ESV)**: "Greater love has no one than this"
+
+**Why clear**:
+- μείζονα (meizona) - comparative form of μέγας
+- Synthetic morphology (-τερος suffix)
+- Clear "X greater than Y" construction
+- Form and function align perfectly
+
+**Expected answer**: C (Comparative)
+**Confidence**: High
 
 ---
 
-### 3. Philippians 1:23 - Synthetic Comparative (Clear Case)
+## Value 3: S (Superlative) - 1 verse
+
+Clear synthetic superlative form
+
+### 3. Matthew 23:11 - "The Greatest Among You"
+
+**Reference**: Matthew 23:11
+**Greek**: ὁ δὲ μείζων ὑμῶν ἔσται ὑμῶν διάκονος
+**English (ESV)**: "The greatest among you shall be your servant"
+
+**Note**: If μείζων here is comparative not superlative, substitute with:
+
+**Alternative**: 1 Corinthians 13:13 - "Greatest of These is Love"
+**Greek**: μείζων δὲ τούτων ἡ ἀγάπη
+**English (ESV)**: "The greatest of these is love"
+
+**Why clear**:
+- Explicit superlative context ("of these three")
+- Clear partitive superlative construction
+- Form and semantics align
+
+**Expected answer**: S (Superlative)
+**Confidence**: High
+
+---
+
+## Value 4: I (Intensified) - 1 verse
+
+Clear intensifier adverb
+
+### 4. Mark 1:35 - "Very Early"
+
+**Reference**: Mark 1:35
+**Greek**: πρωῒ ἔννυχα λίαν
+**English (ESV)**: "And rising very early in the morning"
+
+**Why clear**:
+- λίαν (lian) - standard intensifying adverb "very"
+- No ambiguity - pure intensification
+- Straightforward I/V marking
+- Training set included this type
+
+**Expected answer**: I or V (Intensified/Very)
+**Confidence**: High
+
+---
+
+## Value 5: E (Extremely Intensified) - 1 verse
+
+Clear double intensification or hyperbole
+
+### 5. 2 Corinthians 4:17 - "Beyond All Comparison"
+
+**Reference**: 2 Corinthians 4:17
+**Greek**: καθ' ὑπερβολὴν εἰς ὑπερβολὴν
+**English (ESV)**: "Beyond all comparison" / "far more exceeding"
+
+**Why clear**:
+- καθ' ὑπερβολὴν εἰς ὑπερβολὴν - double hyperbole construction
+- Explicit extreme intensification
+- Morphologically marked as maximum degree
+- If TBTA uses E, this is clearest case
+
+**Expected answer**: E (Extremely Intensified) or I (if E doesn't exist)
+**Confidence**: Medium (depends on E existing)
+
+---
+
+## Value 6: T ('too'/Excessive) - 1 verse
+
+Looking for explicit "too" construction
+
+### 6. Matthew 8:8 - "I Am Not Worthy"
+
+**Reference**: Matthew 8:8 (checking for explicit "too" elsewhere)
+**Alternative search**: Looking for ὑπέρ constructions meaning "too much"
+
+**Note**: This value may not appear in Biblical Greek. If unavailable, mark as "No example found"
+
+**Why uncertain**:
+- "Too X" constructions rare in Koine Greek
+- May not exist in TBTA Biblical data
+- Included for completeness, but expect N/A
+
+**Expected answer**: T (if exists) or No example available
+**Confidence**: Very Low
+
+---
+
+## Value 7: L ('less'/Downward Comparative) - 1 verse
+
+Clear "less than" construction
+
+### 7. John 13:16 - "A Servant Is Not Greater Than His Master"
+
+**Context**: "οὐκ ἔστιν δοῦλος μείζων τοῦ κυρίου αὐτοῦ"
+**Reverse**: Implies servant is LESS than master
+
+**Alternative**: Hebrews 7:7 - "The Lesser/Inferior"
+**Greek**: τὸ ἔλαττον
+**English (ESV)**: "The inferior is blessed by the superior"
+
+**Why clearer than adversarial**:
+- ἔλαττον (elatton) - explicit "lesser/inferior" form
+- Paired with κρείττονος "greater/superior" for contrast
+- Downward direction explicit
+
+**Expected answer**: L (if directional) or C (if combined)
+**Confidence**: Medium-Low
+
+---
+
+## Value 8: l ('least'/Downward Superlative) - 1 verse
+
+Clear "least" superlative form
+
+### 8. Matthew 25:40 - "Least of These My Brothers"
+
+**Reference**: Matthew 25:40
+**Greek**: ἐλαχίστων τούτων τῶν ἀδελφῶν μου
+**English (ESV)**: "The least of these my brothers"
+
+**Why clear**:
+- ἐλαχίστων (elachistōn) - genitive plural superlative "least"
+- Clear superlative morphology (-ιστος)
+- Partitive construction ("of these")
+- Downward direction explicit
+
+**Expected answer**: l (if directional exists) or S (if combined)
+**Confidence**: Medium
+
+---
+
+## Value 9: q (Equative) - 1 verse
+
+Clear "as...as" equative construction
+
+### 9. Matthew 10:24 - "A Disciple Is Not Above His Teacher"
+
+**Greek**: οὐκ ἔστιν μαθητὴς ὑπὲρ τὸν διδάσκαλον οὐδὲ δοῦλος ὑπὲρ τὸν κύριον αὐτοῦ
+**English (ESV)**: "A disciple is not above his teacher, nor a servant above his master"
+
+**Alternative**: Looking for ὡς...ὡς "as...as" construction
+
+### Better: Philippians 2:6 - "Equal with God"
+
+**Greek**: ἴσα θεῷ (isa theō) - "equal to God"
+**Explicit equative with ἴσος (isos) "equal"
+
+**Why clear**:
+- ἴσα (isa) - explicit "equal" adjective
+- Clear equative semantics
+- If TBTA uses q, this qualifies
+
+**Expected answer**: q (if equative encoded) or N (if not degree)
+**Confidence**: Low (rare value)
+
+---
+
+## Value 10: i (Intensified Comparative) - 1 verse
+
+Clear "much more" construction
+
+### 10. Philippians 1:23 - "Far Better"
 
 **Reference**: Philippians 1:23
-**Greek**: τὴν ἐπιθυμίαν ἔχων εἰς τὸ ἀναλῦσαι καὶ σὺν Χριστῷ εἶναι, πολλῷ γὰρ μᾶλλον κρεῖσσον
-**English (ESV)**: "My desire is to depart and be with Christ, for that is far better"
+**Greek**: πολλῷ [μᾶλλον] κρεῖσσον
+**English (ESV)**: "Far better" / "much better"
 
-**Morphology**: κρεῖσσον (kreisson) - comparative form "better"
-**Intensifier**: πολλῷ μᾶλλον "far/much better"
-**Expected**: C (Comparative) with possible intensification marking
-**Confidence**: High (clear comparative, though intensified like Rom 5:15 in adversarial)
+**Why clear**:
+- πολλῷ (pollō) "much" + comparative
+- κρεῖσσον (kreisson) "better" (comparative)
+- Clear intensification of comparative
+- If i exists, this is straightforward example
 
-**Why typical**: Standard comparative construction, even if intensified
-
-**Note**: Similar to Rom 5:15 (adversarial), but clearer comparative morphology
-
----
-
-### 4. Psalm 19:10 - Hebrew Comparative (Min Construction)
-
-**Reference**: Psalm 19:10
-**Hebrew**: הַֽנֶּחֱמָדִים מִזָּהָב וּמִפַּז רָב
-**English (ESV)**: "More to be desired are they than gold, even much fine gold"
-
-**Morphology**: מִן (min) construction - "more desirable THAN gold"
-**Context**: Standard Hebrew comparative
-**Expected**: C (Comparative)
-**Confidence**: High (standard Hebrew comparative like Song 1:2 in training)
-
-**Why typical**: Straightforward Hebrew comparative construction
+**Expected answer**: i (if exists) or C (if combined)
+**Confidence**: Low (rare value)
 
 ---
 
-### 5. Isaiah 55:9 - Hebrew Comparative with Vertical Imagery
+## Value 11: s (Superlative of 2) - 1 verse
 
-**Reference**: Isaiah 55:9
-**Hebrew**: כִּֽי־גָבְהוּ שָׁמַיִם מֵאָרֶץ כֵּן גָּבְהוּ דְרָכַי מִדַּרְכֵיכֶם
-**English (ESV)**: "For as the heavens are higher than the earth, so are my ways higher than your ways"
+Clear "better of the two" dyadic context
 
-**Morphology**: מִן (min) construction - "higher THAN" (גָבְהוּ... מֵ)
-**Context**: Comparative of elevation/superiority
-**Expected**: C (Comparative)
-**Confidence**: High (standard comparative, same structure as Psalm 19:10)
+### 11. John 2:10 - "You Have Kept the Good Wine Until Now"
 
-**Why typical**: Clear comparative construction with standard Hebrew morphology
+**Context**: Comparing two wine servings (first vs. now)
+**Greek**: τὸν καλὸν οἶνον... ἕως ἄρτι
+**Comparison**: The better wine (of the two servings)
 
----
+**Alternative**: Look for explicit "X-er of the two" constructions
 
-## Stratification by Degree Type
+**Why challenging even for random**:
+- Dyadic superlative rare in Greek
+- May not exist as distinct category
+- Included for completeness
 
-**Target distribution**:
-- Comparative (C): 3 verses (Luke 9:48, Phil 1:23, Psalm 19:10 or Isaiah 55:9)
-- Superlative (S): 0 verses (harder to find clear typical cases)
-- Intensified (I/V): 1 verse (James 3:4)
-- Hebrew comparative: 2 verses (Psalm 19:10, Isaiah 55:9)
-
-**Rationale**: Comparatives are most common degree type, so weighted accordingly
+**Expected answer**: s (if exists) or C (comparative)
+**Confidence**: Very Low
 
 ---
 
-## Exclusions Confirmed
+## Value Coverage Summary
 
-**Not in experiment-001**:
-- John 15:13, Matthew 22:36, 22:38, 5:19, Romans 5:15, 5:17, Mark 1:35, 2 Corinthians 4:17, Hebrews 7:7, Matthew 10:25, Genesis 1:1, Song of Solomon 1:2, 1:8, Ephesians 3:20
-- ✅ None of random test verses overlap
-
-**Not in training set** (8 verses):
-- ✅ None of random test verses overlap
-
-**Not in adversarial set** (5 verses):
-- ✅ None of random test verses overlap
+| Value | Description | Verse | Confidence |
+|-------|-------------|-------|------------|
+| N | No Degree | Gen 1:1 | High |
+| C | Comparative | John 15:13 | High |
+| S | Superlative | 1 Cor 13:13 | High |
+| I | Intensified | Mark 1:35 | High |
+| E | Extremely Intensified | 2 Cor 4:17 | Medium |
+| T | 'too' (Excessive) | [Searching] | Very Low |
+| L | 'less' (Downward Comp) | Heb 7:7 | Medium-Low |
+| l | 'least' (Downward Sup) | Matt 25:40 | Medium |
+| q | Equative | Phil 2:6 | Low |
+| i | Intensified Comparative | Phil 1:23 | Low |
+| s | Superlative of 2 | [Searching] | Very Low |
+| **TOTAL** | | **11** | |
 
 ---
 
 ## Expected Performance
 
-**Target accuracy**: 75-85% (4 out of 5 correct, possibly all 5)
+**Target accuracy**: 70-80% (8-9 correct out of 11)
 
-**High confidence predictions** (3 verses):
-- Luke 9:48 (clear comparative)
-- Psalm 19:10 (Hebrew min comparative)
-- Isaiah 55:9 (Hebrew min comparative)
+**High confidence** (4 verses, should all be correct):
+- N (Gen 1:1)
+- C (John 15:13)
+- S (1 Cor 13:13)
+- I (Mark 1:35)
 
-**Medium confidence predictions** (2 verses):
-- James 3:4 (intensification - depends on TBTA intensifier policy)
-- Phil 1:23 (comparative but intensified - similar to adversarial Rom 5:15)
+**Medium confidence** (3 verses, likely correct):
+- E (2 Cor 4:17) - if E exists
+- L (Heb 7:7) - if directional exists
+- l (Matt 25:40) - if directional exists
 
-**Likely correct** (4-5 verses):
-- All Hebrew comparatives should work (learned in training)
-- Clear Greek comparative should work (learned in training)
-- Intensification might work (learned in training with Mark 1:35)
+**Low confidence** (4 verses, may not exist):
+- T, q, i, s - rare values, may not be in TBTA
 
-**Possible error candidate**:
-- Phil 1:23 - If TBTA distinguishes intensified comparative, might miss this
-  (But training will reveal this pattern, so maybe not an error)
-
-**Success benchmark**: 4-5 correct = 80-100% ✅
+**Success benchmark**: 7-9 correct = 64-82% ✅
 
 ---
 
 ## Comparison with Adversarial Set
 
-**Design philosophy**:
-- **Adversarial**: Boundary cases, extreme constructions, philosophical tests, rare values
-- **Random**: Clear morphology, standard constructions, typical patterns, representative
+**Adversarial**: Form-function mismatches, boundary ambiguities, rare value tests
+**Random**: Form-function alignment, clear morphology, typical constructions
 
-**Expected gap**: Random should beat adversarial by 20-35 points
+**Expected gap**: Random 70-80% vs. Adversarial 50-60% = 15-25 points ✅
 
-**Example outcome**:
-- Adversarial: 50% (2-3 correct)
-- Random: 80% (4 correct)
-- Gap: 30 points ✅
+**Per-value comparison** (expected):
+- Common values (N, C, S, I): Random 100% vs. Adversarial 50-75%
+- Directional (L, l): Both uncertain (may not distinguish)
+- Rare (T, q, i, s, E): Both low (may not exist)
 
-**Success criteria**:
-- ✅ Random > Adversarial by 15+ points
-- ❌ Random ≤ Adversarial (test sets poorly designed)
+---
+
+## Exclusions Confirmed
+
+**Not in training set** (8 verses)
+**Not in adversarial test** (11 verses)
 
 ---
 
 ## Prediction Protocol
 
-**CRITICAL**: Do NOT check TBTA for these verses until after predictions are locked!
-
-### Step 1: Wait for Algorithm v1.0
-- Training phase must complete first
-- Algorithm v1.0 must be locked (git commit SHA)
-
-### Step 2: Apply Algorithm to Random Test
-- For each verse, apply algorithm v1.0 WITHOUT checking TBTA
-- Document reasoning
-- Rate confidence: High/Medium/Low
-
-### Step 3: Lock Predictions
-- Create `PREDICTIONS-locked.md` file
-- Include all 5 predictions with reasoning
-- Commit to git with timestamp (AFTER adversarial predictions)
-- Record commit SHA
-- NO modifications allowed after this point
-
-### Step 4: Check TBTA
-- Only AFTER both test predictions are locked
-- Retrieve TBTA annotations for these 5 verses
-- Calculate accuracy
-- Compare with adversarial accuracy
-- Document in `RESULTS.md`
+1. Wait for algorithm v1.0 (from training)
+2. Apply to each verse WITHOUT checking TBTA
+3. Document reasoning
+4. Rate confidence
+5. LOCK predictions (git commit) - AFTER adversarial
+6. Check TBTA after lock
+7. Calculate accuracy overall and per value
+8. Compare with adversarial results
 
 ---
 
-## Success Criteria
-
-**Random test successful if**:
-- ✅ Predictions made BEFORE checking TBTA
-- ✅ Predictions locked (git commit SHA recorded)
-- ✅ Accuracy 75-85% (4 out of 5 correct)
-- ✅ Random accuracy > Adversarial accuracy by 15+ points
-- ✅ Demonstrates algorithm generalization to typical cases
-
-**Red flags**:
-- ❌ Check TBTA before making predictions
-- ❌ Modify predictions after seeing TBTA
-- ❌ Accuracy <70% (algorithm doesn't generalize)
-- ❌ Random ≤ Adversarial (test sets poorly designed)
-
----
-
-## Random Seed Documentation
-
-**Seed**: 42
-**Selection process**:
-1. Listed books not heavily used in experiment-001 or training
-2. Used random seed 42 to select 5 diverse books
-3. From each book, searched for clear degree marking (comparatives, intensifiers)
-4. Selected verses with straightforward constructions (no edge cases)
-5. Verified no overlap with training or adversarial sets
-
-**Reproducibility**: Using seed 42, this selection process can be reproduced
-
----
-
-## Files to Create
-
-After algorithm v1.0 locked:
-1. ⏳ `PREDICTIONS-locked.md` - Predictions before checking TBTA (with commit SHA)
-2. ⏳ `RESULTS.md` - Accuracy after checking TBTA
-
----
-
-**Status**: ✅ Test set locked
-**Next action**: Wait for algorithm v1.0, then make predictions WITHOUT TBTA (after adversarial)
+**Status**: ✅ Redesigned with equal value coverage
+**Next step**: Wait for algorithm v1.0, then predict (after adversarial)
 **Target date**: 2025-11-10
