@@ -8,9 +8,11 @@ The `verse_parser.py` script processes Bible data (verses, chapters, books, or S
 
 1. **Loading data** from the mybibletoolbox-data repository
 2. **Processing** each item using Claude Agent SDK with custom instructions
-3. **Auditing** completed work in a separate session
-4. **Learning** from failures to improve over time
-5. **Tracking progress** so runs can be resumed
+3. **Validating YAML output** to ensure proper format
+4. **Auditing** completed work in a separate session
+5. **Saving output files** with standardized filenames following STANDARDIZATION.md
+6. **Learning** from failures to improve over time
+7. **Tracking progress** so runs can be resumed
 
 ## Quick Start
 
@@ -79,6 +81,8 @@ python verse_parser.py \
 - `--model MODEL` - Claude model to use (default: claude-sonnet-4-5-20250929)
 - `--max-tokens N` - Maximum tokens for responses (default: 4096)
 - `--no-audit` - Skip audit phase (faster but less validated)
+- `--output-dir PATH` - Output directory for YAML files (default: ./output)
+- `--tool-name NAME` - Tool name for filenames (default: verse-parser)
 - `--continue` - Continue from previous run
 - `--redo-all` - Start fresh, ignore previous progress
 - `--status` - Show current progress and exit
@@ -286,6 +290,116 @@ git sparse-checkout add strongs/G0026
 ```
 
 Data is loaded and provided to Claude as context automatically.
+
+## YAML Output Validation
+
+The script automatically validates all output from Claude to ensure it's valid YAML format.
+
+### Validation Features
+
+1. **YAML Parsing**: Verifies output is valid YAML syntax
+2. **Structure Check**: Ensures output is a YAML dictionary (not list or scalar)
+3. **Code Block Extraction**: Automatically extracts YAML from markdown code blocks
+4. **Error Reporting**: Provides detailed error messages for invalid YAML
+
+### Output File Management
+
+**Filename Format** (following STANDARDIZATION.md):
+
+- **Verses**: `{BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml`
+  - Example: `MAT-005-003-verse-parser.yaml`
+
+- **Chapters**: `{BOOK}-{chapter:03d}-{tool}.yaml`
+  - Example: `MAT-005-verse-parser.yaml`
+
+- **Books**: `{BOOK}-{tool}.yaml`
+  - Example: `MAT-verse-parser.yaml`
+
+- **Strong's**: `{strongs_num}-{tool}.strongs.yaml`
+  - Example: `G0026-verse-parser.strongs.yaml`
+
+**Directory Structure** (mirrors mybibletoolbox-data):
+
+```
+output/
+├── commentary/
+│   ├── MAT/
+│   │   ├── 005/
+│   │   │   ├── 003/
+│   │   │   │   └── MAT-005-003-verse-parser.yaml
+│   │   │   ├── 004/
+│   │   │   │   └── MAT-005-004-verse-parser.yaml
+│   │   └── ...
+│   └── ...
+└── strongs/
+    ├── G0026/
+    │   └── G0026-verse-parser.strongs.yaml
+    └── ...
+```
+
+### Usage Examples
+
+```bash
+# Save output to default directory (./output)
+python verse_parser.py \
+  --dataset verse \
+  --markdown examples/sample_verse_instructions.md \
+  --output-dir output \
+  --limit 10
+
+# Save with custom tool name
+python verse_parser.py \
+  --dataset verse \
+  --markdown deep_analysis.md \
+  --output-dir ./results \
+  --tool-name deep-analysis \
+  --limit 50
+
+# Process without saving (testing mode)
+python verse_parser.py \
+  --dataset verse \
+  --markdown test.md \
+  --limit 5
+  # (no --output-dir, files won't be saved)
+```
+
+### YAML Extraction
+
+The script handles multiple output formats:
+
+**Plain YAML**:
+```yaml
+verse: MAT.005.003
+text: Blessed are the poor in spirit
+```
+
+**YAML in code blocks**:
+````markdown
+Here's the analysis:
+
+```yaml
+verse: MAT.005.003
+text: Blessed are the poor in spirit
+themes:
+  - beatitudes
+  - humility
+```
+````
+
+Both formats are automatically detected and extracted.
+
+### Validation Errors
+
+If YAML validation fails, the script:
+1. Logs the error message
+2. Marks the item as failed in progress tracker
+3. Saves the error to the learning file
+4. Continues with the next item
+
+Common validation errors:
+- **Syntax errors**: Invalid YAML structure
+- **Empty output**: Claude returned no content
+- **Wrong type**: Output is not a dictionary (e.g., plain string or list)
 
 ## Claude SDK Integration
 

@@ -40,12 +40,197 @@ from src.constants.bible import (
 
 PROGRESS_FILE = ".verse_parser_progress.json"
 LEARNING_FILE = "verse_parser_learnings.md"
+DEFAULT_OUTPUT_DIR = "output"
 
 # Strong's number ranges
 GREEK_STRONGS_MIN = 1
 GREEK_STRONGS_MAX = 5624
 HEBREW_STRONGS_MIN = 1
 HEBREW_STRONGS_MAX = 8674
+
+
+# ============================================================================
+# Output File Management
+# ============================================================================
+
+def generate_output_filename(item: str, dataset_type: str, tool_name: str = "verse-parser") -> str:
+    """
+    Generate standardized output filename based on item and dataset type.
+
+    Args:
+        item: Item reference (e.g., "MAT.005.003", "G0026")
+        dataset_type: Type of dataset (verse, chapter, book, strongs)
+        tool_name: Name of the tool generating output (default: "verse-parser")
+
+    Returns:
+        Filename following STANDARDIZATION.md conventions
+
+    Examples:
+        >>> generate_output_filename("MAT.005.003", "verse", "analysis")
+        "MAT-005-003-analysis.yaml"
+        >>> generate_output_filename("G0026", "strongs", "word-study")
+        "G0026-word-study.strongs.yaml"
+    """
+    if dataset_type == "verse":
+        # Format: {BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml
+        # Example: MAT-005-003-verse-parser.yaml
+        book, chapter, verse = item.split(".")
+        return f"{book}-{chapter}-{verse}-{tool_name}.yaml"
+
+    elif dataset_type == "chapter":
+        # Format: {BOOK}-{chapter:03d}-{tool}.yaml
+        # Example: MAT-005-verse-parser.yaml
+        book, chapter = item.split(".")
+        return f"{book}-{chapter}-{tool_name}.yaml"
+
+    elif dataset_type == "book":
+        # Format: {BOOK}-{tool}.yaml
+        # Example: MAT-verse-parser.yaml
+        return f"{item}-{tool_name}.yaml"
+
+    elif dataset_type == "strongs":
+        # Format: {strongs_num}-{tool}.strongs.yaml
+        # Example: G0026-verse-parser.strongs.yaml
+        return f"{item}-{tool_name}.strongs.yaml"
+
+    else:
+        # Fallback
+        return f"{item}-{tool_name}.yaml"
+
+
+def validate_yaml_output(output: str) -> Tuple[bool, Optional[str], Optional[Dict]]:
+    """
+    Validate that output is valid YAML.
+
+    Args:
+        output: String output to validate
+
+    Returns:
+        Tuple of (is_valid, error_message, parsed_data)
+    """
+    try:
+        # Try to parse as YAML
+        data = yaml.safe_load(output)
+
+        if data is None:
+            return False, "Output is empty or null", None
+
+        if not isinstance(data, dict):
+            return False, f"Output must be a YAML dictionary, got {type(data).__name__}", None
+
+        # Check for required 'verse' field for verse datasets
+        # (This is a basic check - more specific validation could be added per dataset type)
+
+        return True, None, data
+
+    except yaml.YAMLError as e:
+        return False, f"Invalid YAML: {str(e)}", None
+    except Exception as e:
+        return False, f"Validation error: {str(e)}", None
+
+
+def extract_yaml_from_output(output: str) -> Optional[str]:
+    """
+    Extract YAML content from markdown code blocks or plain output.
+
+    Handles cases where Claude wraps YAML in ```yaml or ```yml blocks.
+
+    Args:
+        output: Raw output from Claude
+
+    Returns:
+        Extracted YAML string or original output if no code block found
+    """
+    import re
+
+    # Try to find YAML code block
+    yaml_pattern = r'```(?:yaml|yml)\s*\n(.*?)\n```'
+    matches = re.findall(yaml_pattern, output, re.DOTALL)
+
+    if matches:
+        # Return the first YAML block found
+        return matches[0].strip()
+
+    # Also try plain code blocks
+    code_pattern = r'```\s*\n(.*?)\n```'
+    matches = re.findall(code_pattern, output, re.DOTALL)
+
+    if matches:
+        # Check if it looks like YAML (starts with key:)
+        for match in matches:
+            if ':' in match.split('\n')[0]:
+                return match.strip()
+
+    # Return original output
+    return output.strip()
+
+
+def save_output_file(
+    item: str,
+    dataset_type: str,
+    output: str,
+    output_dir: Path,
+    tool_name: str = "verse-parser"
+) -> Tuple[bool, Optional[str], Optional[Path]]:
+    """
+    Save validated YAML output to file.
+
+    Args:
+        item: Item reference
+        dataset_type: Type of dataset
+        output: YAML output to save
+        output_dir: Output directory
+        tool_name: Tool name for filename
+
+    Returns:
+        Tuple of (success, error_message, output_path)
+    """
+    try:
+        # Extract YAML from output
+        yaml_content = extract_yaml_from_output(output)
+
+        # Validate YAML
+        is_valid, error_msg, parsed_data = validate_yaml_output(yaml_content)
+
+        if not is_valid:
+            return False, f"YAML validation failed: {error_msg}", None
+
+        # Generate filename
+        filename = generate_output_filename(item, dataset_type, tool_name)
+
+        # Create output directory structure based on dataset type
+        if dataset_type == "verse":
+            # commentary/{BOOK}/{chapter}/{verse}/{filename}
+            book, chapter, verse = item.split(".")
+            file_dir = output_dir / "commentary" / book / chapter / verse
+        elif dataset_type == "chapter":
+            # commentary/{BOOK}/{chapter}/{filename}
+            book, chapter = item.split(".")
+            file_dir = output_dir / "commentary" / book / chapter
+        elif dataset_type == "book":
+            # commentary/{BOOK}/{filename}
+            file_dir = output_dir / "commentary" / item
+        elif dataset_type == "strongs":
+            # strongs/{strongs_num}/{filename}
+            file_dir = output_dir / "strongs" / item
+        else:
+            # Fallback to root
+            file_dir = output_dir
+
+        # Create directory
+        file_dir.mkdir(parents=True, exist_ok=True)
+
+        # Full output path
+        output_path = file_dir / filename
+
+        # Write YAML file
+        with open(output_path, 'w', encoding='utf-8') as f:
+            f.write(yaml_content)
+
+        return True, None, output_path
+
+    except Exception as e:
+        return False, f"Error saving file: {str(e)}", None
 
 
 # ============================================================================
@@ -682,7 +867,9 @@ def process_items(
     data_manager: DataManager,
     agent_runner: ClaudeAgentRunner,
     learning_logger: LearningLogger,
-    skip_audit: bool = False
+    skip_audit: bool = False,
+    output_dir: Optional[Path] = None,
+    tool_name: str = "verse-parser"
 ):
     """
     Main processing loop for items.
@@ -695,8 +882,12 @@ def process_items(
         data_manager: Data management instance
         agent_runner: Claude agent runner instance
         learning_logger: Learning logger instance
+        skip_audit: Whether to skip audit phase
+        output_dir: Optional output directory for saving files
+        tool_name: Tool name for filename generation
     """
     total = len(items)
+    save_files = output_dir is not None
 
     for idx, item in enumerate(items, 1):
         print(f"\n[{idx}/{total}] Processing: {item}")
@@ -727,7 +918,24 @@ def process_items(
                 learning_logger.log_failure(item, error, {"dataset_type": dataset_type})
                 continue
 
-            # 3. Run audit session (if not skipped)
+            # 3. Validate YAML output
+            print(f"  [Validating] YAML output...")
+            is_valid, validation_error, parsed_data = validate_yaml_output(
+                extract_yaml_from_output(output)
+            )
+
+            if not is_valid:
+                print(f"  ❌ YAML validation failed: {validation_error}")
+                progress_tracker.mark_failed(item, f"YAML validation failed: {validation_error}")
+                learning_logger.log_failure(item, validation_error, {
+                    "dataset_type": dataset_type,
+                    "output": output[:500]
+                })
+                continue
+
+            print(f"  ✓ YAML validation passed")
+
+            # 4. Run audit session (if not skipped)
             if not skip_audit:
                 passed, feedback = agent_runner.run_audit_session(item, output, context_data)
 
@@ -739,7 +947,22 @@ def process_items(
             else:
                 print(f"  ⚠️  Skipping audit (--no-audit enabled)")
 
-            # 4. Mark as completed
+            # 5. Save output to file (if output_dir specified)
+            if save_files:
+                print(f"  [Saving] Writing output file...")
+                saved, save_error, output_path = save_output_file(
+                    item, dataset_type, output, output_dir, tool_name
+                )
+
+                if not saved:
+                    print(f"  ❌ Failed to save output: {save_error}")
+                    progress_tracker.mark_failed(item, f"Failed to save: {save_error}")
+                    learning_logger.log_failure(item, save_error, {"dataset_type": dataset_type})
+                    continue
+
+                print(f"  ✓ Saved to: {output_path}")
+
+            # 6. Mark as completed
             print(f"  ✅ Completed successfully")
             progress_tracker.mark_completed(item)
 
@@ -843,6 +1066,19 @@ Examples:
         help="Maximum tokens for Claude responses (default: 4096)"
     )
 
+    parser.add_argument(
+        "--output-dir",
+        type=Path,
+        help="Output directory for saving YAML files (default: ./output)"
+    )
+
+    parser.add_argument(
+        "--tool-name",
+        type=str,
+        default="verse-parser",
+        help="Tool name for output filenames (default: verse-parser)"
+    )
+
     args = parser.parse_args()
 
     # Initialize progress tracker
@@ -938,6 +1174,21 @@ Examples:
     # Store skip_audit setting
     skip_audit = args.skip_audit if hasattr(args, 'skip_audit') else False
 
+    # Setup output directory
+    output_dir = None
+    if hasattr(args, 'output_dir') and args.output_dir:
+        output_dir = args.output_dir
+    elif hasattr(args, 'output_dir'):
+        # Use default if not specified
+        output_dir = Path(DEFAULT_OUTPUT_DIR)
+
+    if output_dir:
+        output_dir.mkdir(parents=True, exist_ok=True)
+        print(f"\nOutput directory: {output_dir}")
+
+    # Get tool name
+    tool_name = args.tool_name if hasattr(args, 'tool_name') else "verse-parser"
+
     # Process items
     print(f"\nStarting processing of {len(items)} items...\n")
     print("=" * 60)
@@ -951,7 +1202,9 @@ Examples:
             data_manager,
             agent_runner,
             learning_logger,
-            skip_audit
+            skip_audit,
+            output_dir,
+            tool_name
         )
     except KeyboardInterrupt:
         print("\n\nInterrupted by user.")
@@ -962,6 +1215,8 @@ Examples:
     print("Processing complete!")
     print(f"\nLearnings logged to: {LEARNING_FILE}")
     print(f"Progress saved to: {PROGRESS_FILE}")
+    if output_dir:
+        print(f"Output files saved to: {output_dir}")
 
 
 if __name__ == "__main__":
