@@ -281,6 +281,23 @@ See [LEARNINGS.md](LEARNINGS.md) for detailed methodology insights and what was 
 
 See [PLAN.md](PLAN.md) for 8-12 week execution plan.
 
+## Enhancement: Strong's Hints as Context
+
+**Alternative approach**: Supplement LLM predictions with Strong's word-level hints
+
+Instead of only verse-by-verse analysis, add cross-linguistic patterns to Strong's entries:
+- Extract translation patterns from 900+ translations (e.g., "when Tagalog uses 'kami' → exclusive")
+- Load hints with verse context to provide concrete evidence
+- Expected: +7% accuracy overall, +25% on edge cases
+
+**Best for**: Lexical features (Number, Person, Proximity, Lexical Sense)
+**Integration**: Validation workflow - LLM predicts first, then validates with hints
+
+See detailed analysis:
+- `../tbta-strongs-hints-summary.md` - Executive summary and decision guide
+- `../tbta-strongs-hints-llm-enhancement.md` - Integration with LLM approach
+- `../tbta-strongs-hints-evaluation.md` - Feature-by-feature analysis
+
 ## File Structure
 
 ```
@@ -292,7 +309,8 @@ plan/tbta-rebuild-with-llm/
 └── combined/ (integrated prompts and workflows)
 ```
 
-**Source documentation**:
+**Related documentation**:
+- `../tbta-strongs-hints-*.md` - Strong's hints alternative/enhancement approach
 - Multiple research branches consolidated into unified structure
 
 ## Conclusion
