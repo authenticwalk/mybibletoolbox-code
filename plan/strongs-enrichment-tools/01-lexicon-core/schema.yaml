@@ -1,0 +1,275 @@
+# Strong's Lexicon Core - Output Schema
+
+# Output File Location: ./bible/words/strongs/{number}/{number}-lexicon-core.yaml
+# Example: ./bible/words/strongs/G1411/G1411-lexicon-core.yaml
+
+# === METADATA ===
+strongs_number: "G1411"  # Required: Strong's number (G#### or H####)
+language: "greek"         # Required: "greek" or "hebrew"
+lemma: "δύναμις"         # Required: Lexical form in original script
+transliteration: "dunamis"  # Required: Romanized form
+
+tool:
+  name: "strongs-lexicon-core"
+  version: "1.0.0"
+  generated_date: "2025-11-08"
+
+# === BASE DATA (from ./bible/words/strongs/{number}/{number}.strongs.yaml) ===
+# This section copied from pre-existing base Strong's file
+base_data:
+  strongs_number: "G1411"
+  definition: "strength, power, ability" # Citation: {strongs}
+  kjv_usage: "strength, power, ability, abundance" # Citation: {strongs}
+  derivation: "from δύναμαι (to be able)" # Citation: {strongs}
+  source: "OpenScriptures Strong's"
+  license: "CC-BY-SA"
+
+  # Pre-imported lexicon data (if present in base file)
+  imported_lexicons:
+    thayers: "present"  # Note: Thayer's data already in base file
+    bdb: "not_applicable"  # For Hebrew words only
+    lsj: "present"     # LSJ abridged data in base file
+    unfoldingword: "partial"  # Some unfoldingWord data present
+
+  # Cross-reference codes (if present in base file)
+  cross_references:
+    bdag: "δύναμις-227"    # Bauer-Danker-Arndt-Gingrich code (if available)
+    tdnt: "2:286"          # Theological Dictionary of NT reference (if available)
+    louw_nida: "74.1"      # Louw-Nida semantic domain (if available)
+    gk: "1539"             # Goodrick-Kohlenberger number (if available)
+    twot: null             # Theological Wordbook of OT (Hebrew only)
+    lsj_ref: "δύναμις"     # LSJ reference (if available)
+
+# === ETYMOLOGY (HIGH AUTHORITY) ===
+etymology:
+  # Root words (with Strong's numbers if biblical)
+  root_words:
+    - word: "δύναμαι"
+      strongs: "G1410"
+      meaning: "to be able, to have power" # Citation: {thayer} {biblehub-lexicon}
+
+  # Detailed derivation notes
+  derivation_notes: "From root δύναμαι (dunamai, Strong's G1410) meaning 'to be able, to have power'. The -μις suffix forms an abstract noun indicating the quality or state of being able." # Citation: {thayer} {helps} {biblehub-lexicon}
+
+  # Convergence note (fair use compliance)
+  convergence_note: "Etymology consistent across all major Greek lexicons" # Citation: {strongs} {thayer} {helps} {abbott-smith}
+
+  # Diachronic development (Classical → Koine → Modern, if significant)
+  diachronic_development: |
+    Classical Greek: Used by Plato and Aristotle for natural physical strength and political power.
+    Koine Greek (NT): Extended to miraculous/divine power, particularly in contexts of supernatural acts.
+    Semantic shift from natural to supernatural domain while retaining core concept of 'power'. # Citation: {lsj-abridged} for classical, {thayer} for Koine, {llm-cs45} for analysis
+
+# === SEMANTIC RANGE (HIGH AUTHORITY) ===
+semantic_range:
+  # Convergence note (fair use grouping)
+  convergence_note: "Major lexicons identify 7 primary semantic categories, with strong agreement on structure" # Citation: {thayer} {helps} {abbott-smith}
+
+  # Semantic categories (numbered, with examples)
+  categories:
+    - category_id: 1
+      category_name: "Universal Strength and Power"
+      definition: "Inherent ability, general strength or power" # Citation: {thayer}
+      biblical_examples:
+        - ref: "MAT.22.29"
+          context: "Not knowing the scriptures nor the power of God" # Citation: {biblehub-interlinear}
+        - ref: "ROM.1.20"
+          context: "Eternal power and divine nature" # Citation: {biblehub-interlinear}
+
+    - category_id: 2
+      category_name: "Power for Performing Miracles"
+      definition: "Miraculous power, ability to perform supernatural acts" # Citation: {thayer} {helps}
+      biblical_examples:
+        - ref: "MAT.11.20"
+          context: "Cities where most of his miracles (δύναμεις) were done" # Citation: {biblehub-interlinear}
+        - ref: "ACT.8.13"
+          context: "Seeing miracles and great signs" # Citation: {biblehub-interlinear}
+
+    - category_id: 3
+      category_name: "Moral Power and Excellence of Soul"
+      definition: "Moral strength, virtue, spiritual excellence" # Citation: {thayer}
+      biblical_examples:
+        - ref: "2PE.1.3"
+          context: "His divine power has granted us everything for life and godliness" # Citation: {biblehub-interlinear}
+
+    - category_id: 4
+      category_name: "Power of Wealth"
+      definition: "Ability or resources to accomplish something (especially through wealth)" # Citation: {thayer}
+      biblical_examples:
+        - ref: "REV.18.3"
+          context: "Abundance of her luxury" # Note: δύναμις can indicate wealth/resources
+
+    - category_id: 5
+      category_name: "Numerical Strength"
+      definition: "Numbers, army, or force of persons" # Citation: {thayer}
+      note: "Less common usage, contextual in some passages"
+
+    - category_id: 6
+      category_name: "Military Forces"
+      definition: "Armies, military might" # Citation: {thayer}
+      biblical_examples:
+        - ref: "LUK.21.26"
+          context: "Powers of the heavens will be shaken" # Note: Cosmic/celestial powers
+
+    - category_id: 7
+      category_name: "Meaning of a Word"
+      definition: "Significance, import, or force of language" # Citation: {thayer}
+      note: "Rare usage, technical linguistic sense"
+
+# === USAGE STATISTICS (HIGH AUTHORITY) ===
+usage_statistics:
+  # Total occurrences (exact count)
+  total_occurrences: 120 # Citation: {biblehub-lexicon}
+  source_verification: "Verified against NAS Exhaustive Concordance and BibleHub"
+
+  # Grammatical forms
+  grammatical_forms: 15 # Citation: {biblehub-lexicon}
+  form_note: "Appears in various cases (nominative, genitive, dative, accusative)"
+
+  # Testament distribution
+  testament_distribution:
+    old_testament: 0    # Greek word, NT only
+    new_testament: 120
+    septuagint: "yes"  # Does appear in LXX (check for Hebrew equivalent)
+
+  # KJV translation frequency (ranked by count)
+  kjv_translation_frequency:
+    - translation: "power"
+      count: 77 # Citation: {biblehub-lexicon}
+    - translation: "mighty work"
+      count: 11 # Citation: {biblehub-lexicon}
+    - translation: "strength"
+      count: 7 # Citation: {biblehub-lexicon}
+    - translation: "miracle"
+      count: 7 # Citation: {biblehub-lexicon}
+    - translation: "might"
+      count: 4 # Citation: {biblehub-lexicon}
+    - translation: "virtue"
+      count: 3 # Citation: {biblehub-lexicon}
+    - translation: "ability"
+      count: 1 # Citation: {biblehub-lexicon}
+    # ... additional translations
+
+# === LEXICAL CONVERGENCE (FAIR USE GROUPING) ===
+lexical_convergence:
+  primary_meaning: "strength, power, ability"
+  lexicons_agreeing: [strongs, thayer, helps, abbott-smith, mounce] # Listed collectively
+  confidence: "HIGH"
+  convergence_note: "Strong consensus across all published lexicons on primary meaning and etymology"
+
+  # Areas of strong agreement
+  agreement_areas:
+    - area: "Etymology from δύναμαι"
+      sources: [strongs, thayer, helps, abbott-smith]
+    - area: "Seven semantic categories"
+      sources: [thayer, helps]
+      note: "Thayer's provides most detailed categorization, HELPS confirms major categories"
+    - area: "Miraculous power emphasis in NT"
+      sources: [thayer, helps, tdnt-ref]
+
+# === LEXICAL DIVERGENCE (FAIR USE COMPARATIVE ANALYSIS) ===
+lexical_divergence:
+  # Diachronic semantic shift
+  - semantic_area: "Classical vs. Koine usage"
+    classical_usage:
+      definition: "Natural physical strength, political power" # Citation: {lsj-abridged}
+      period: "Classical Greek (5th-4th century BCE)"
+      context: "Used by Plato, Aristotle, Homer for natural/political power"
+      sources: [lsj-abridged]
+
+    koine_usage:
+      definition: "Miraculous power, divine ability, supernatural strength" # Citation: {thayer} {helps}
+      period: "Koine Greek (NT era, 1st century CE)"
+      context: "Applied to divine/supernatural acts, especially miracles of Jesus"
+      sources: [thayer, helps, tdnt-ref]
+
+    analysis: "Semantic shift from natural physical/political power to supernatural divine power. Core concept of 'ability/strength' preserved, but domain extended from natural to supernatural realm." # Citation: {llm-cs45}
+
+  # Nuance emphasis differences
+  - semantic_area: "Inherent vs. Manifested Power"
+    approach_1:
+      emphasis: "Inherent ability, latent power"
+      sources: [abbott-smith]
+      note: "Emphasizes the capacity or potential for power"
+
+    approach_2:
+      emphasis: "Power in action, demonstrated strength"
+      sources: [helps, tdnt-ref]
+      note: "Emphasizes the manifestation and exercise of power"
+
+    synthesis: "Both aspects present in biblical usage - word encompasses both latent capacity and active demonstration of power" # Citation: {llm-cs45}
+
+# === CROSS-REFERENCE CODES (FOR SCHOLARLY SEARCHES) ===
+cross_references:
+  # From base file and BLB extraction
+  bdag: "δύναμις-227"          # Use for search: "BDAG δύναμις-227"
+  tdnt: "2:286"                # Use for search: "TDNT 2:286"
+  louw_nida: "74.1"            # Use for search: "Louw-Nida 74.1"
+  gk: "1539"                   # Goodrick-Kohlenberger number
+  twot: null                   # Hebrew only
+  lsj_ref: "δύναμις"          # Liddell-Scott-Jones reference
+
+  # Related Strong's numbers (from BibleHub, for Tool 5: relationships)
+  related_words:
+    - strongs: "G1410"
+      relationship: "root"
+      word: "δύναμαι"
+      gloss: "to be able"
+    - strongs: "G1412"
+      relationship: "derived"
+      word: "δυνατέω"
+      gloss: "to be mighty"
+    # ... more related words
+
+# === QUALITY METADATA ===
+metadata:
+  extraction_date: "2025-11-08T12:00:00Z"
+  tool_version: "strongs-lexicon-core-v1.0"
+
+  # Sources consulted during extraction
+  sources_consulted:
+    - source_type: "base_file"
+      location: "./bible/words/strongs/G1411/G1411.strongs.yaml"
+      data_used: "definition, kjv_usage, derivation, cross_refs"
+
+    - source_type: "biblehub"
+      url: "https://biblehub.com/greek/1411.htm"
+      data_extracted: "HELPS insights, usage statistics, related words"
+      lexicons_accessed: [helps, nas_concordance]
+
+    - source_type: "studylight"
+      url: "https://www.studylight.org/lexicons/eng/greek/1411.html"
+      data_extracted: "Abbott-Smith distinctions, Mounce definition"
+      lexicons_accessed: [abbott_smith, mounce]
+
+    - source_type: "blue_letter_bible"
+      url: "https://www.blueletterbible.org/lexicon/g1411/kjv/tr/0-1/"
+      data_extracted: "TDNT reference, cross-reference codes"
+      status: "success"  # or "ssl_error" if failed
+
+  # Data quality markers
+  data_quality:
+    inline_citations: true
+    convergence_grouping: true
+    divergence_comparative: true
+    no_fabrication: true
+    base_file_read_first: true
+    fair_use_compliant: true
+
+  # Authority level
+  authority_level: "HIGH"
+  authority_note: "All sources are published lexicons or verified concordances"
+
+  # Token usage (from LLM calls)
+  tokens_used: 2500  # Approximate for extraction + synthesis
+
+  # Validation scores
+  validation:
+    level_1_critical: "PASS"  # 100% required
+    level_2_high_priority: "95%"  # 80%+ required
+    level_3_medium_priority: "90%"  # 60%+ required
+    overall_quality: "EXCELLENT"
+
+  # Requires human review?
+  requires_human_review: false
+  review_note: "High confidence - multiple lexicon convergence, no controversies detected"
