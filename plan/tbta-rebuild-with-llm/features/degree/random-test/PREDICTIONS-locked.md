@@ -521,7 +521,7 @@ Degree: No Degree
 **Algorithm version**: v1.0 (commit d38b833)
 **Training overlap**: 2 verses (flagged)
 **Next step**: Commit this file, then check TBTA for both test sets
-**Git commit**: [To be added after commit]
+**Git commit**: 70a4460
 
 **DO NOT MODIFY THIS FILE AFTER COMMIT**
 **All changes after validation go in RESULTS.md and ERROR-ANALYSIS.md**
