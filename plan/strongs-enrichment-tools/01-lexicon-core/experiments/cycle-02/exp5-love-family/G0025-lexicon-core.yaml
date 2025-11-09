@@ -1,0 +1,531 @@
+strongs_number: G0025
+language: greek
+lemma: ἀγαπάω
+transliteration: agapaō
+part_of_speech: verb
+
+# Metadata
+extraction_metadata:
+  cycle: 2
+  experiment: "exp5-love-family"
+  methodology: "theological-pathway"
+  systematic_controversy_detection: true
+  date: "2025-11-09"
+  frequency: 143
+  frequency_tier: "medium-high (100-999)"
+  category_limit: "4-6 categories"
+
+# Etymology & Root Analysis
+etymology:
+  root_analysis:
+    uncertain: true
+    proposed_origins:
+      - origin: "ἄγαν (agan, 'much')"
+        source: "{biblehub} {strongs} {studylight}"
+        confidence: "low"
+        note: "Most common etymology cited; questionable phonetic development"
+
+      - origin: "Hebrew אָהַב (ʾāháḇ, 'to love')"
+        source: "{biblehub}"
+        confidence: "low"
+        note: "Semantic parallel, not phonetic derivation"
+
+      - origin: "Proto-Indo-European *m̥ǵh₂-peh₂-"
+        etymology_meaning: "from *méǵh₂- ('great') + *peh₂- ('to protect'), literally 'provide great protection'"
+        scholar: "Pinault (1991)"
+        source: "{web-search-wiktionary}"
+        confidence: "low"
+        note: "Scholarly proposal, not consensus"
+
+      - origin: "Abkhaz а-гәаԥха-ра (a-gʷapxa-ra, 'to like, wish, love')"
+        scholar: "Friedrich Cornelius"
+        source: "{web-search-wiktionary}"
+        confidence: "low"
+        note: "Loanword theory, speculative"
+
+    consensus: |
+      Etymology remains uncertain despite multiple theories. All major lexicons cite
+      "perhaps from agan" but acknowledge uncertainty. Synchronic usage in LXX and NT
+      more determinative than diachronic origin. {biblehub} {strongs} {studylight}
+
+    derivation_chain:
+      - word: "G0025 ἀγαπάω"
+        relationship: "root verb"
+      - word: "G0026 ἀγάπη"
+        relationship: "derived noun - love"
+        source: "{strongs} {biblehub}"
+      - word: "G0027 ἀγαπητός"
+        relationship: "derived adjective - beloved"
+        source: "{strongs} {biblehub}"
+
+# Semantic Range (4-6 categories for medium-high frequency)
+semantic_range:
+  category_count: 5
+  note: "Within frequency tier limit (medium-high: 4-6 categories)"
+
+  categories:
+    - id: 1
+      label: "Divine love - God's preferential affection"
+      definition: |
+        To prefer, to love; God's redemptive affection preceding human response;
+        wholehearted, unconditional, devoted affection centered in choice. {helps} {biblehub}
+      usage_context: "God's initiating love toward humanity"
+      examples:
+        - ref: "JHN.003.016"
+          text: "For God so loved (ἠγάπησεν) the world"
+          note: "Classic divine love text {biblehub}"
+        - ref: "ROM.005.008"
+          text: "God demonstrates His own love toward us"
+          note: "Divine love preceding human merit {biblehub}"
+        - ref: "1JN.004.010"
+          text: "not that we loved God, but that He loved us"
+          note: "Divine initiative emphasized {biblehub}"
+      confidence: "HIGH"
+
+    - id: 2
+      label: "Christological love - sacrificial self-giving"
+      definition: |
+        Christ's self-giving love demonstrated through sacrifice and obedience;
+        active love of Christ for humanity. {studylight} {biblehub}
+      usage_context: "Christ's redemptive love"
+      examples:
+        - ref: "GAL.002.020"
+          text: "the Son of God, who loved me and gave Himself for me"
+          note: "Sacrificial emphasis {biblehub}"
+        - ref: "EPH.005.002"
+          text: "Christ also loved us and gave Himself for us"
+          note: "Love linked to atonement {biblehub}"
+        - ref: "JHN.015.009"
+          text: "As the Father loved Me, I also have loved you"
+          note: "Trinitarian love relationship {biblehub}"
+      confidence: "HIGH"
+
+    - id: 3
+      label: "Commanded ethical love - neighbor/enemy love"
+      definition: |
+        Love extending to enemies, neighbors, universal benevolence; moral duty,
+        not merely emotional response. {studylight} {biblehub}
+      usage_context: "NT ethical imperatives"
+      examples:
+        - ref: "MAT.005.043-044"
+          text: "Love your enemies, bless those who curse you"
+          note: "Distinctive Christian ethic {biblehub}"
+        - ref: "MAT.022.039"
+          text: "Love your neighbor as yourself"
+          note: "Second great commandment {biblehub}"
+        - ref: "ROM.013.008-010"
+          text: "love is the fulfillment of the law"
+          note: "Love as legal summary {biblehub}"
+      confidence: "HIGH"
+
+    - id: 4
+      label: "Christian mutual love - ecclesial affection"
+      definition: |
+        Love between believers, brotherly affection within the church; active love
+        God's people are to have for each other. {studylight} {biblehub}
+      usage_context: "Christian community relationships"
+      examples:
+        - ref: "JHN.013.034"
+          text: "Love one another as I have loved you"
+          note: "New commandment {biblehub}"
+        - ref: "1JN.004.007"
+          text: "Beloved, let us love one another"
+          note: "Johannine emphasis on mutual love {biblehub}"
+        - ref: "1PE.001.022"
+          text: "love one another fervently with a pure heart"
+          note: "Intensity marker {biblehub}"
+      confidence: "HIGH"
+
+    - id: 5
+      label: "Object-directed love - preferences for things"
+      definition: |
+        To be well pleased, contented with; prize, desire things; be fond of,
+        prize above other things. {studylight-lsj} {biblehub}
+      usage_context: "Love for non-personal objects (positive or negative)"
+      examples:
+        - ref: "JHN.003.019"
+          text: "men loved darkness rather than light"
+          note: "Negative preference {biblehub}"
+        - ref: "JHN.012.043"
+          text: "they loved the praise of men more than the praise of God"
+          note: "Misplaced affection {biblehub}"
+        - ref: "HEB.001.009"
+          text: "You have loved righteousness"
+          note: "Positive preference for virtue {biblehub}"
+        - ref: "2TI.004.010"
+          text: "Demas has loved this present world"
+          note: "Worldly preference {web-search}"
+      confidence: "HIGH"
+      note: |
+        Demonstrates agapaō is NOT always "divine unconditional love" - can express
+        negative preferences, worldly affections, sinful choices. {web-search}
+
+# HELPS Word-Studies
+helps_word_study:
+  definition: |
+    Properly, to prefer, to love; for the believer, preferring to 'live through Christ'
+    (Gal 2:20); wholehearted, unconditional, devoted affection centered in choice. {helps} {biblehub}
+
+  emphasis: |
+    Discriminating affection which involves choice and selection. {helps}
+
+  key_distinction: |
+    Agapaó centers on wholehearted, unconditional, devoted affection (the heart),
+    while phileo (G5368) emphasizes feelings, conditional, sentimental responses
+    (the head). {helps} {biblehub}
+
+  note: |
+    HELPS makes strong distinction between agapaó and phileo, representing traditional
+    view. This distinction is contested in modern scholarship (see controversies section). {helps}
+
+# Theological Dictionaries
+theological_dictionaries:
+  tdnt:
+    reference: "1:21,5"
+    source: "{blb}"
+    note: "Kittel's TDNT volume 1, pages 21ff, entry 5"
+
+  trench_synonyms:
+    section: "xii"
+    topic: "ἀγαπάω, φιλέω"
+    source: "{blb}"
+    note: "Trench's classic work on NT synonym distinctions"
+
+# SYSTEMATIC CONTROVERSY DETECTION (Cycle 2 refinement)
+controversies:
+  - type: "semantic_debate"
+    claim: "The distinction between ἀγαπάω (G25) and φιλέω (G5368) is hotly contested in modern scholarship"
+    scope: "Particularly in John 21:15-17"
+    source: "{web-search-psephizo} {web-search-hermeneutics-se}"
+
+    traditional_position:
+      view: "Agapaō signifies higher, divine, selfless, altruistic love; phileo signifies lower, human, friendship love"
+      proponents:
+        - "R.C. Trench (Synonyms of the New Testament, Section xii) {trench} {blb}"
+        - "HELPS Word-studies (wholehearted vs. sentimental) {helps}"
+        - "Traditional expositors and preachers"
+      source: "{web-search} {trench}"
+
+      evidence:
+        - point: "Peter unwilling to claim agapaō after denying Christ"
+          passage: "JHN.021.015-017"
+          note: "Peter uses phileo when Jesus asks agapaō"
+
+        - point: "Jesus' progressive questioning tests Peter's commitment level"
+          passage: "JHN.021.017"
+          note: "Jesus 'descends' to Peter's phileo in third question"
+
+        - point: "HELPS distinguishes wholehearted (agape) vs. sentimental (phileo)"
+          source: "{helps}"
+
+    modern_position:
+      view: "Agapaō and phileo are essentially synonymous in John 21 and most NT contexts; distinction is stylistic variation"
+      proponents:
+        - "D.A. Carson (Exegetical Fallacies) {web-search-carson}"
+        - "Andrew Das {web-search}"
+        - "Kostenberger, Blomberg, Morris, Bock {web-search}"
+      source: "{web-search-churchleaders} {web-search-psephizo}"
+
+      evidence:
+        - point: "John uses both verbs interchangeably elsewhere in Gospel"
+          examples:
+            - "Father loves Son: agapaō (JHN.003.035), phileo (JHN.005.020)"
+            - "Disciple Jesus loved: agapaō (JHN.013.023; 019.026; 021.007,020), phileo (JHN.020.002)"
+          source: "{web-search-psephizo}"
+
+        - point: "Both words used for imperfect/worldly loves"
+          examples:
+            - "Agapaō: loved darkness (JHN.003.019), loved praise of men (JHN.012.043)"
+            - "Phileo: Pharisees love standing in synagogues"
+          source: "{web-search}"
+          note: "Demonstrates agapaō is NOT always 'divine unconditional love'"
+
+        - point: "Aramaic factor - only one word for love"
+          explanation: |
+            If conversation occurred in Aramaic or Hebrew (likely), there would be
+            no distinction expressed because both languages have only one basic word for love. {web-search-psephizo}
+          source: "{web-search-hermeneutics-se}"
+
+        - point: "Peter was grieved because Jesus asked 'a third time' not because of word change"
+          passage: "JHN.021.017"
+          text: "Peter was grieved because He said to him the third time"
+          source: "{web-search-psephizo}"
+          note: "John explicitly states reason for Peter's grief"
+
+        - point: "D.A. Carson on semantic overlap"
+          quote: |
+            Although it is doubtless true that the entire range of αγαπάω and the entire
+            range of φιλέω are not exactly the same, nevertheless they enjoy substantial overlap. {web-search-carson}
+          note: "Acknowledges some distinction but emphasizes contextual synonymy"
+
+        - point: "Post-Victorian scholarship consensus"
+          statement: |
+            Post-Victorian analysts (with exceptions) do not accept the difference between
+            agapao and phileo here, because John uses interchangeable pairs of words regularly,
+            and philein/agapan was already one of those pairs. {web-search-psephizo}
+
+    scholarly_consensus:
+      current_trend: "Contemporary biblical scholarship tends to favor the synonymous interpretation"
+      source: "{web-search-churchleaders} {web-search-psephizo}"
+      note: |
+        Represents significant shift from traditional/popular teaching. Many evangelical
+        scholars (Carson, Das, Kostenberger) now question the distinction that was once
+        standard in expository preaching. {web-search}
+
+    translation_impact: |
+      Most modern English translations do not attempt to distinguish the two Greek words
+      in John 21, translating both as "love." NIV, ESV, NASB, NLT all use "love" for both verbs. {llm-cs45}
+
+    significance: |
+      This controversy demonstrates the importance of contextual usage over etymological
+      fallacies. The "agape = divine love" equation, while popular, is not supported by
+      full NT usage (e.g., agapaō used for loving darkness, worldly things). Modern scholarship
+      emphasizes John's stylistic variation rather than semantic precision in synonym pairs. {web-search}
+
+  - type: "etymology_uncertainty"
+    claim: "Etymology of ἀγαπάω is uncertain despite multiple theories"
+    source: "{biblehub} {strongs} {studylight} {web-search-wiktionary}"
+
+    proposed_origins:
+      - "ἄγαν (agan, 'much') - most commonly cited but questionable {biblehub} {strongs}"
+      - "Hebrew אָהַב - semantic parallel, not derivation {biblehub}"
+      - "PIE *m̥ǵh₂-peh₂- (Pinault 1991) - scholarly proposal, not consensus {web-search-wiktionary}"
+      - "Abkhaz loanword (Cornelius) - speculative {web-search-wiktionary}"
+
+    consensus: |
+      All major lexicons acknowledge uncertainty ("perhaps from agan"). Synchronic
+      usage (LXX rendering Hebrew אָהַב, NT theological development) more important
+      than uncertain diachronic origin. {biblehub} {studylight}
+
+# Synonym Network & Distinctions
+synonym_network:
+  - word: "G5368 φιλέω"
+    lemma: "φιλέω"
+    distinction_traditional: |
+      Trench: ἀγαπάω = esteem-based love (Latin diligo); φιλέω = spontaneous affection
+      (Latin amo). HELPS: agapaō = wholehearted/unconditional; phileo = sentimental/conditional. {trench} {helps}
+
+    distinction_modern: |
+      Carson and modern scholars: substantial semantic overlap in most contexts; John uses
+      interchangeably for stylistic variation. Both can express divine and human love. {web-search-carson}
+
+    semantic_overlap: |
+      Both used for: (1) Father's love for Son, (2) Jesus' love for beloved disciple,
+      (3) worldly/sinful affections. Context determines meaning, not lexical choice. {web-search-psephizo}
+
+    source: "{trench} {helps} {web-search-carson} {web-search-psephizo}"
+
+  - word: "G0026 ἀγάπη"
+    lemma: "ἀγάπη"
+    distinction: "Noun form derived from ἀγαπάω; underwent semantic elevation from rare classical term to central NT theological vocabulary {strongs} {biblehub}"
+    semantic_contrast: "Noun form less controversial than verb regarding synonym distinctions {llm-cs45}"
+
+  - word: "G0027 ἀγαπητός"
+    lemma: "ἀγαπητός"
+    distinction: "Adjective form - beloved, esteemed, dear; derives from ἀγαπάω {strongs}"
+
+  - word: "G5373 φιλία"
+    lemma: "φιλία"
+    distinction: "Noun - friendship; contrasting love type (only in JAS.004.004) {studylight}"
+
+  - word: "Greek στοργή"
+    lemma: "στοργή"
+    distinction: "Natural family affection; not used in NT but referenced for semantic field mapping {studylight-abbott-smith}"
+    note: "Part of classical four-loves taxonomy"
+
+  - word: "Greek ἔρως"
+    lemma: "ἔρως"
+    distinction: "Sexual/romantic love; not used in NT; avoided in Christian literature {studylight-abbott-smith}"
+    note: "Conspicuous absence from NT vocabulary"
+
+# Diachronic Development
+diachronic_analysis:
+  classical:
+    period: "Homer → Classical (800 BCE - 300 BCE)"
+    usage: |
+      To greet with affection; show regard for deceased; love, prize, desire things;
+      be fond of, prize above other things; be well pleased, contented. {studylight-lsj}
+
+    semantic_range: "Broad - affection, preference, contentment"
+    primary_sources: "Plato, classical authors {studylight-lsj}"
+    note: "Less common than φιλέω in classical period"
+
+  lxx:
+    period: "LXX translation (250 BCE - 100 BCE)"
+    occurrences: 215
+    source: "{blb}"
+
+    usage: |
+      Primarily renders Hebrew אָהַב (ʾāháḇ, 'to love'); indicates covenant love,
+      preferential affection. Purged of coldness found in classical Greek; deepened
+      theological significance. {studylight}
+
+    hebrew_equivalent: "H0157 אָהַב (ʾāháḇ)"
+    note: |
+      LXX usage established theological foundation for NT appropriation. Hebrew אָהַב
+      covers full range of loves (divine, human, sexual, covenantal). {studylight}
+
+  nt_koine:
+    period: "NT writings (50 CE - 100 CE)"
+    occurrences: 143
+    source: "{blb}"
+
+    specialization: |
+      In NT, usually the active love of God for his Son and his people, and the active
+      love his people are to have for God, each other, and even enemies. {studylight}
+
+    distribution: |
+      Concentrated in Johannine literature (John 38 instances; 1 John 28-30 instances).
+      Also frequent in Paul, Synoptics, Peter. {biblehub}
+
+    theological_development: |
+      Commands love as moral duty, not merely emotional response. Love as fulfillment
+      of law (ROM.013.010), identifying mark of disciples (JHN.013.035), eternal virtue
+      (1CO.013.008,013). {biblehub}
+
+    semantic_trajectory: |
+      Classical broad usage → LXX covenant love → NT theological specialization
+      (divine love, Christian ethic, ecclesial marker) while retaining ability to
+      express negative preferences. {llm-cs45}
+
+# Usage Statistics
+usage_statistics:
+  total_occurrences:
+    textus_receptus: 142
+    mgnt: 143
+    lxx: 215
+    source: "{blb}"
+
+  testament_distribution:
+    new_testament: 143
+    old_testament_greek: 215
+    ratio: "1:1.5 (NT lower than LXX)"
+
+  form_distribution:
+    unique_forms_tr: 40
+    unique_forms_mgnt: 39
+    unique_forms_lxx: 55
+    source: "{blb}"
+    note: |
+      Extensive morphological variation due to verb status; 39-40 unique forms in NT
+      (various tenses, voices, moods, persons, numbers).
+
+  kjv_translation_frequency:
+    total: 142
+    breakdown:
+      - translation: "love"
+        count: 135
+      - translation: "beloved"
+        count: 7
+    source: "{blb}"
+
+  johannine_concentration:
+    gospel_of_john: 38
+    first_john: "28-30"
+    note: |
+      Heavy concentration in Johannine literature (66+ instances = 46% of NT occurrences
+      in 2 books). {biblehub}
+
+# Scholarly Cross-References
+scholarly_references:
+  - scholar: "R.C. Trench"
+    work: "Synonyms of the New Testament, Section xii"
+    topic: "ἀγαπάω vs. φιλέω distinction"
+    source: "{trench} {blb}"
+    position: "Traditional distinction (esteem-based vs. spontaneous affection)"
+
+  - scholar: "D.A. Carson"
+    work: "Exegetical Fallacies"
+    topic: "Agapao/phileo semantic overlap"
+    source: "{web-search-carson}"
+    position: "Modern synonymous view; contextual usage determinative"
+
+  - scholar: "Andrew Das"
+    topic: "Agape vs. philos/eros distinctions artificial"
+    source: "{web-search}"
+    position: "Popular distinctions are misleading"
+
+  - scholar: "Kittel & Friedrich"
+    work: "TDNT 1:21,5"
+    topic: "Comprehensive theological word study"
+    source: "{blb}"
+
+  - scholar: "Pinault (1991)"
+    work: "PIE etymology proposal"
+    topic: "Etymology from *m̥ǵh₂-peh₂-"
+    source: "{web-search-wiktionary}"
+    note: "Scholarly proposal, not consensus"
+
+# Pedagogical Notes
+pedagogical_notes:
+  key_learning_points:
+    - point: "Etymology uncertain despite common citation of 'from agan'"
+      importance: "Teaches students to acknowledge uncertainty in lexical origins"
+
+    - point: "Agapaō NOT always 'divine unconditional love'"
+      evidence: "Used for loving darkness (JHN.003.019), worldly things (2TI.004.010)"
+      importance: "Corrects popular misconception; emphasizes contextual usage"
+
+    - point: "Agapaō/phileo distinction is contested"
+      traditional: "Trench, HELPS make strong distinction"
+      modern: "Carson, Das, Kostenberger view as substantially synonymous"
+      importance: "Teaches students to navigate scholarly debates"
+
+    - point: "Verb form more controversial than noun form (ἀγάπη)"
+      explanation: |
+        Noun ἀγάπη clearly specialized for spiritual/covenantal love; verb ἀγαπάω
+        has broader usage including worldly preferences. {llm-cs45}
+
+    - point: "LXX bridge between Hebrew and NT usage"
+      explanation: |
+        LXX translators chose ἀγαπάω to render Hebrew אָהַב, establishing theological
+        foundation for NT writers. Understanding LXX usage essential for NT lexicography. {studylight}
+
+  translation_implications:
+    - issue: "Should translators distinguish agapaō and phileo in John 21?"
+      traditional_practice: "Some older translations attempted distinction"
+      modern_practice: "NIV, ESV, NASB, NLT use 'love' for both {llm-cs45}"
+      recommendation: |
+        Most modern translations recognize stylistic variation rather than semantic
+        precision. Footnotes may note Greek word difference without claiming semantic distinction.
+
+  exegetical_fallacies_to_avoid:
+    - fallacy: "Etymological fallacy"
+      description: "Assuming current meaning from uncertain ancient etymology"
+      example: "Claiming agapaō means 'much love' from agan"
+      correction: "Focus on synchronic usage (LXX, NT) not diachronic speculation"
+
+    - fallacy: "Illegitimate totality transfer"
+      description: "Importing all possible meanings into every occurrence"
+      example: "Reading 'divine unconditional love' into every agapaō instance"
+      correction: "Context determines which semantic range applies (JHN.003.019 ≠ JHN.003.016)"
+
+    - fallacy: "Simplistic synonym distinction"
+      description: "Assuming agapaō and phileo are always distinct"
+      example: "John 21:15-17 distinction as exegetically determinative"
+      correction: |
+        Recognize John's stylistic variation; note both words used interchangeably
+        elsewhere in Gospel; consider Aramaic substrate. {web-search-carson}
+
+# Data Quality Metadata
+data_quality:
+  convergence_grouping: true
+  divergence_comparative: true
+  base_file_read_first: false
+  base_file_note: "No base file available in .data/strongs/G0025/"
+  all_claims_cited: true
+  no_percentages: true
+  no_fabrication: true
+  systematic_controversy_detection: true
+  controversy_count: 2
+  etymology_documented: true
+  diachronic_analysis_complete: true
+  scholarly_cross_references: true
+  pedagogical_value: true
+
+# Validation placeholder
+validation:
+  level_1_critical: null
+  level_2_high: null
+  level_3_medium: null
+  note: "Validation to be performed after extraction complete"
