@@ -231,7 +231,24 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Authority: High
 - Note: Classical Greek lexicon, useful for etymology and diachronic analysis
 
+**Abbott-Smith's Manual Greek Lexicon of the New Testament**
+- Source code: `abbott-smith`
+- Public domain (first published 1922)
+- Available via: StudyLight, STEPBible
+- Citation format: `{abbott-smith}`
+- Authority: High
+- Note: Scholarly NT Greek lexicon with detailed syntactic analysis
+
 ### Copyrighted Resources (Fair Use)
+
+**Mounce's Expository Dictionary of Old and New Testament Words**
+- Source code: `mounce`
+- Copyright © 2006 by William D. Mounce
+- Available via: StudyLight
+- Used under fair use for scholarly citation
+- Citation format: `{mounce}`
+- Authority: Medium-High (pedagogical/expository focus)
+- Purchase: https://www.zondervan.com/
 
 **Bauer-Danker-Arndt-Gingrich (BDAG) Greek Lexicon**
 - Source code: `bdag`
