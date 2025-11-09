@@ -87,24 +87,26 @@ features:
 
   degree:
     status: in_progress
-    current_phase: 5
-    completed_phases: [1, 2, 3, 4]
+    current_phase: 7
+    completed_phases: [1, 2, 3, 4, 5, 6]
     started: "2025-11-07"
     last_updated: "2025-11-09"
     notes: |
-      - Training set designed (8 verses, 4 extracted successfully)
-      - TBTA annotations extracted (MAT 22:36, 22:38, MRK 1:35, GEN 1:1)
-      - Patterns learned: Semantic over morphological, full-word values, field names by POS
-      - Algorithm v1.0 locked (commit d38b833)
-      - Key patterns: Semantic superlative (95%), intensification (90%), field names (100%)
-      - Test sets designed with equal value coverage (11 verses each)
-      - Ready for Phase 5: Design test sets if needed, or proceed to Phase 6 predictions
-    next_action: "Review test sets from Phase 2, proceed to Phase 6: Make predictions WITHOUT checking TBTA"
+      - Training: 4 verses analyzed, algorithm v1.0 locked (d38b833)
+      - Patterns: Semantic over morphological (95%), full-word values (100%), field names by POS (100%)
+      - Phase 6: Predictions locked for both test sets (adversarial: dfe572d, random: 70a4460)
+      - Adversarial predictions: 3× N, 5× C, 2× S, 1× E (expected 45-55% accuracy)
+      - Random predictions: 3× N, 3× C, 2× S, 1× I, 1× E (expected 64-73% accuracy)
+      - Algorithm gaps: Cannot predict T, L, l, q, i, s (6 rare values)
+      - Training overlap in random: GEN 1:1, MRK 1:35 (flagged)
+      - Ready for Phase 7: Validate predictions against TBTA
+    next_action: "Extract TBTA for test verses, validate predictions, calculate accuracy per value"
     blocked_on: null
     accuracy:
       training_patterns: "95-100% for observed, 80-85% for inferred"
-      adversarial_expected: "60-70%"
-      random_expected: "80-90%"
+      adversarial_predicted: "45-55% (6 rare value gaps)"
+      random_predicted: "64-73% (clearer cases + training overlap)"
+      expected_gap: "~20 points (adversarial vs random)"
 
   person-systems:
     status: not_started
