@@ -3,7 +3,7 @@
 **Date**: 2025-11-09
 **Algorithm**: v1.0 (from METHODOLOGY-STATUS.md)
 **Status**: LOCKED - Predictions made WITHOUT checking TBTA
-**Git commit SHA**: [To be added after commit]
+**Git commit SHA**: 39462a7
 
 ---
 
