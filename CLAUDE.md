@@ -11,7 +11,7 @@ This is the myBibleToolbox project - an initiative to create the largest AI-read
  - When moving files always do a git commit before editing it so the git history is preserved
  - **Use subagents proactively from the start** - Don't wait until context is full. Delegate web research, file searches, experiments, and large tasks to subagents immediately to stay under 80% context. Focus on oversight, synthesis, and planning.
  - Prefer calling subagents in parallel, when possible 8 in parallel.
- - **Push after EACH experiment** - Run `git push -u origin <branch>` after EVERY experiment/stage completion, not in batches. Each experiment = commit + push.
+ - **Push after EVERY commit** - Run `git push -u origin <branch>` immediately after EVERY `git commit`. Never batch commits before pushing. Pattern: make change → commit → push → repeat.
 
 ### The Problem Being Solved
 
