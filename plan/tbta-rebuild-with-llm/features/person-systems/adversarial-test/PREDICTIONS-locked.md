@@ -464,6 +464,6 @@ With 2-4 verses needing replacement and conservative predictions on ambiguous ca
 
 ---
 
-**Status**: Predictions complete, ready to lock
+**Status**: LOCKED - No modifications allowed
 **Date**: 2025-11-09
-**To be locked**: Git commit SHA to be added
+**Git Commit SHA**: 77010a4
