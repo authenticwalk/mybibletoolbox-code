@@ -10,7 +10,10 @@
 - **Cultural Appropriateness**: Using plural for natural pairs (eyes, hands) sounds unnatural in dual-number languages
 - **Translation Decisions**: Translators must determine exact counts where Greek/Hebrew is ambiguous
 
-**Validation**: 91.4% prediction accuracy achieved (see experiment-001.md)
+**Validation Status** (Phase 8 complete - 2025-11-09):
+- Training: 91.4% accuracy on 35 verses (experiment-001.md)
+- Validation: 57% on 7 Genesis/Exodus verses (partial TBTA coverage - adversarial-test/RESULTS.md, random-test/RESULTS.md)
+- Algorithm: v2.0 with refined rules (see ALGORITHM-v2.md, COMPLETION-SUMMARY.md for details)
 
 ---
 
@@ -24,14 +27,19 @@ This feature analyzes grammatical number systems beyond the simple singular/plur
 
 ### Complete Value Enumeration (8 Categories)
 
-1. **Singular** - One entity (70% of Biblical text)
-2. **Dual** - Exactly two entities (3% - natural pairs, explicit "two")
-3. **Trial** - Three entities (1% - Trinity, explicit "three")
-4. **Quadrial** - Four entities (0.5% - rare, possibly theoretical)
-5. **Paucal** - A few entities (0.5% - small groups, typically 3-15 depending on language)
+1. **Singular** - One entity (70% of Biblical text) ✅ Validated: 100% accuracy
+2. **Dual** - Exactly two entities (RARE in TBTA - see v2.0 notes below)
+3. **Trial** - Three entities (1% - ANY explicit "three", not just Trinity) ✅ Validated
+4. **Quadrial** - Four entities (0.5% - rare, possibly theoretical) ⏳ Unvalidated (no NT data)
+5. **Paucal** - A few entities (0.5% - small groups, typically 3-15 depending on language) ⏳ Unvalidated
 6. **Plural** - Many entities (25% - crowds, groups, unspecified multiples)
 7. **Greater Paucal** - (Language-specific: some Oceanic languages distinguish lesser/greater paucal)
 8. **Mass/Uncountable** - (Treated as Singular in TBTA)
+
+**⚠️ Critical Update (v2.0 - 2025-11-09)**:
+- **Dual appears RARE/UNUSED in TBTA for pronouns** (0% accuracy in validation)
+- **Trial is productive for ALL explicit "three"** (not Trinity-only) ✅
+- **Pronouns follow morphological number** (plural suffix → Plural, even with 2 referents)
 
 **Greenberg's Hierarchy**: No language has trial without dual; no language has dual without plural.
 

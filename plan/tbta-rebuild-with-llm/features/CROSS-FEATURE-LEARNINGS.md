@@ -3,7 +3,8 @@
 **Purpose**: Document patterns, methodologies, and insights that apply across multiple TBTA features.
 
 **Source Experiments**:
-- number-systems/experiment-001.md (91.4% accuracy)
+- number-systems/experiment-001.md (91.4% training accuracy)
+- number-systems/validation (Phase 7-8, 2025-11-09): 57% on 7 Genesis/Exodus verses
 - degree/experiment-001.md (in progress)
 - Additional feature experiments
 
@@ -457,6 +458,207 @@ When creating new feature experiments, document:
 
 ---
 
+## Universal Principle 7: Part-of-Speech Specific Rules
+
+### Pattern
+**TBTA may apply different annotation logic for different parts of speech.**
+
+### Evidence
+
+#### Number Systems (validation 2025-11-09)
+
+**Pronouns follow morphological number**:
+- Hebrew אֹתָם (otam, plural suffix) → Plural (even with two referents)
+- Gen 1:27 "them" (male and female = 2) → **Plural** (not Dual)
+- Pattern: Morphological agreement takes priority for pronouns
+
+**Nouns follow semantic count**:
+- Hebrew שָׁמַיִם (shamayim, dual morphology) → **Singular** (one sky semantically)
+- Fossilized dual forms lexicalized as singular
+- Pattern: Semantic meaning takes priority for nouns
+
+### Application Rule
+```
+For PRONOUNS:
+1. Check morphological number FIRST
+2. Plural suffix → Plural (regardless of referent count)
+3. Semantic count secondary
+
+For NOUNS:
+1. Semantic meaning FIRST (how many entities?)
+2. Morphology secondary (confirmation or conflict resolution)
+```
+
+### Cross-Feature Implications
+- **Person**: Pronouns vs. nouns may differ in person-marking logic
+- **Proximity**: Demonstrative pronouns vs. demonstrative determiners
+- **Time**: Verbal morphology vs. adverbial time expressions
+- **Surface Realization**: Pronoun vs. noun realization marked differently
+
+---
+
+## Universal Principle 8: Productive vs. Theoretical Values
+
+### Pattern
+**Some feature values are productive (used regularly), others are rare or theoretical.**
+
+### Evidence
+
+#### Number Systems (validation 2025-11-09)
+
+**Productive values** (found in data):
+- Singular: Very common ✅
+- Plural: Very common ✅
+- Trial: Used for explicit groups of three ✅
+
+**Rare/uncertain values** (not found in limited sample):
+- Dual: Expected in Gen 1:27, Gen 22:6 → **NOT found** ❌
+- Quadrial: Not tested yet (NT data unavailable)
+- Paucal: Not tested yet
+
+**Critical finding**: Dual may be reserved for specific contexts only
+- Not used for plural pronouns with two referents
+- Not used for "both of them" (explicit dual)
+- Possibly only for natural pairs (eyes, hands) - needs validation
+
+### Application Rule
+```
+When predicting rare values:
+1. Mark as LOW CONFIDENCE by default
+2. Require strong evidence (explicit morphology + semantic match)
+3. Consider that value may be theoretical but unused in Biblical corpus
+4. Default to more common value (Plural instead of Dual, Plural instead of Paucal)
+```
+
+### Cross-Feature Implications
+- **Degree**: Excessive "too" may be rare in Biblical register
+- **Time**: Some granularities may not appear in ancient texts
+- **Honorifics**: Some levels may not exist in Biblical cultures
+- **All features**: Theoretical values ≠ productive values
+
+---
+
+## Universal Principle 9: Enumeration Triggers Specific Values
+
+### Pattern
+**Explicit enumeration (cardinal numbers) triggers specific feature values.**
+
+### Evidence
+
+#### Number Systems (validation 2025-11-09)
+
+**Trial for explicit "three"**:
+- Genesis 18:2: שְׁלֹשָׁה אֲנָשִׁים "three men" → **Trial** (not Plural)
+- Genesis 7:13: Noah's three sons (named) → **Trial**
+- Pattern: NOT limited to Trinity theology
+
+**Key insight**: Enumeration is mechanical, not theological
+- "Three X" → Trial (regardless of significance)
+- Trinity is special case of general "three" rule
+- Contrast with v1.0 assumption (Trial = Trinity only)
+
+**Validation impact**:
+- v1.0: Assumed Trial theology-specific → predicted Plural for Gen 18:2 ❌
+- v2.0: Trial for all explicit three → correct prediction ✅
+
+### Application Rule
+```
+For Number feature:
+- "One X" → Singular
+- "Two X" → Plural (Dual uncertain, needs more data)
+- "Three X" → Trial
+- "Four X" → Unknown (Quadrial? Paucal? Plural?) - needs data
+- "Five-ten X" → Paucal? or Plural? - needs data
+- Large numbers → Plural
+```
+
+### Cross-Feature Implications
+- **Degree**: Explicit comparatives ("more than", "less than") vs. implicit
+- **Time**: Explicit time markers ("three days") vs. relative time
+- **Participant Tracking**: Explicit count of participants affects annotation
+
+---
+
+## Confidence Calibration Lessons (from Number Systems)
+
+### Pattern
+**Initial confidence predictions can be systematically wrong.**
+
+### Evidence
+
+**Number Systems v1.0 confidence vs. accuracy**:
+
+| Confidence | Predictions | Correct | Actual Accuracy |
+|------------|-------------|---------|-----------------|
+| High | 5 | 2 | 40% ❌ |
+| Medium | 2 | 2 | 100% ✅ |
+| Low | 0 | - | - |
+
+**Finding**: High confidence predictions UNDER-performed!
+
+**Root cause**: Over-confidence in Dual predictions
+- Dual (High confidence): 0/2 = 0% accuracy
+- Singular (High confidence): 2/2 = 100% accuracy
+
+### Calibration Fixes
+```
+High confidence should require:
+1. Training validation (seen in training data)
+2. Clear morphological + semantic alignment
+3. Multiple confirming sources
+4. NO conflicting evidence
+
+Avoid High confidence for:
+- Rare values without validation (Dual, Paucal, Quadrial)
+- Newly learned patterns (Trial expansion - start Medium)
+- Morphology-semantic conflicts
+```
+
+### Application Rule
+```
+Confidence levels:
+HIGH (90%+): Only if training + validation confirmed
+MEDIUM (70-90%): Newly learned patterns, good evidence
+LOW (<70%): Rare values, insufficient data, conflicts
+```
+
+---
+
+## Data Coverage Limitations
+
+### Pattern
+**TBTA data availability varies significantly by book and testament.**
+
+### Evidence
+
+**Number Systems validation (2025-11-09)**:
+- Genesis/Exodus: Available ✅
+- Other OT (Ezekiel, Daniel, Ruth, Psalms): Not available ❌
+- NT (Matthew, Mark, John, Acts, Revelation): Not available ❌
+- Coverage: 7/24 test verses = 29%
+
+**Impact**:
+- Cannot validate NT-specific patterns
+- Cannot test Quadrial (appears in Revelation, Ezekiel)
+- Cannot test Paucal boundary (needs diverse examples)
+- Limited to early OT for validation
+
+### Workaround Strategies
+```
+1. Design test sets weighted toward available data (Genesis, Exodus)
+2. Use training data insights for unavailable books
+3. Mark predictions for unavailable verses as "pending validation"
+4. Document coverage gaps in methodology
+5. Acquire more data (download more verses, request access)
+```
+
+### Cross-Feature Implications
+- All features affected by OT-heavy coverage
+- NT features (Greek-specific patterns) harder to validate
+- Need to prioritize downloadable TBTA samples
+
+---
+
 ## Next Steps for Feature Development
 
 1. **Apply this methodology** to remaining features without experiments
@@ -467,6 +669,8 @@ When creating new feature experiments, document:
 
 ---
 
-**Last Updated**: 2025-11-07
-**Features Analyzed**: number-systems (complete), degree (in progress)
+**Last Updated**: 2025-11-09
+**Features Analyzed**:
+- number-systems (Phase 8 complete - algorithm v2.0 with validation)
+- degree (in progress)
 **Next Feature**: [To be determined based on priority]
