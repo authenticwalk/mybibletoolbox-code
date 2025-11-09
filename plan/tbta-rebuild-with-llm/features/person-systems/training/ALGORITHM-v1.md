@@ -3,7 +3,7 @@
 **Feature**: Person Systems (Primary: Clusivity)
 **Version**: 1.0
 **Date Locked**: 2025-11-09
-**Git Commit**: [To be added after commit]
+**Git Commit**: f373646
 **Training Set**: 20 verses (see TRAINING-SET.md)
 **Validation**: 98% agreement with real translations in 9 languages
 
