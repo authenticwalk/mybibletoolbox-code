@@ -15,9 +15,10 @@
 
 ### Accuracy (Preliminary)
 
-**Overall**: 2/4 correct = **50%** (preliminary, Genesis only)
+**Overall (including Gen 1:26 control)**: 2/4 correct = **50%** (preliminary, Genesis only)
+**Excluding control (new predictions only)**: 1/3 correct = **33%**
 
-⚠️ **Note**: This is below target accuracy (80-90%) due to limited coverage and key algorithm errors discovered.
+⚠️ **Note**: Gen 1:26 was in training set (control verse), making it guaranteed correct. True predictive accuracy on novel verses is **33%**, which is significantly below target accuracy (80-90%) due to limited coverage and key algorithm errors discovered.
 
 ---
 
@@ -188,6 +189,47 @@
 
 **Expected gap with Adversarial**: Random should be 15-25 points higher
 - Need Adversarial results to compare
+
+---
+
+## Test Set Design Validation
+
+### Accuracy Reversal Analysis
+
+**Expected pattern**: Random accuracy 15-25 points > Adversarial
+**Actual pattern**: Adversarial (67%) > Random (50% with control, 33% without) = Random is 17-34 points LOWER
+
+⚠️ **This reversal is unexpected and problematic**
+
+**Possible explanations**:
+1. **Small sample sizes** (3-4 verses) → high variance, not statistically reliable
+2. **Random test had "hard" cases**: Gen 1:27 (Dual error), Gen 18:2 (Trial error)
+   - These should have been in adversarial set, not random set
+   - Suggests random selection was unlucky or biased
+3. **Adversarial test had "easy" cases**: Mostly Singular (100% accuracy)
+   - Did not achieve goal of "challenging edge cases"
+   - Gen 22:6 Dual error, but overall still easier
+4. **Test set design may not have achieved goals**:
+   - "Adversarial" may not have been truly adversarial
+   - "Random" may not have been truly random/typical
+
+**Impact on conclusions**:
+- Cannot confidently assert test sets were properly designed
+- Accuracy gap suggests methodological issue, not algorithm performance
+- Pattern validation (e.g., Trial expansion) still valid from error analysis
+- Overall accuracy metrics less reliable
+
+**Recommendation**: Phase 3 comprehensive validation with:
+- Larger sample sizes (20+ examples per value)
+- Stratified sampling (not pure random)
+- Independent test design review
+- Statistical power analysis
+
+**Learning for future features**:
+- Test set design is critical and difficult
+- Small samples create high variance
+- Need explicit criteria for "adversarial" vs "random"
+- Consider having independent reviewer design test sets
 
 ---
 
