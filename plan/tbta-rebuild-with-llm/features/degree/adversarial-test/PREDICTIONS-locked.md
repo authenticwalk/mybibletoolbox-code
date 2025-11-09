@@ -641,7 +641,7 @@ Degree: Comparative
 **Date locked**: 2025-11-09
 **Algorithm version**: v1.0 (commit d38b833)
 **Next step**: Commit this file, then check TBTA
-**Git commit**: [To be added after commit]
+**Git commit**: dfe572d
 
 **DO NOT MODIFY THIS FILE AFTER COMMIT**
 **All changes after validation go in ERROR-ANALYSIS.md and ALGORITHM-v2.md**
