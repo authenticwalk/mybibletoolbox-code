@@ -11,6 +11,7 @@ This is the myBibleToolbox project - an initiative to create the largest AI-read
  - When moving files always do a git commit before editing it so the git history is preserved
  - Use subagents to protect your context, once you get above 60% context you'll start forget things so assign subagents tasks like planning, analyzing files, doing a bunch of work; you need to focus on overseeing it with the big picture and sharing progress in the plan files
  - Prefer calling subagents in parallel, when possible 8 in parallel.
+ - **Push after each experiment/milestone** - Run `git push -u origin <branch>` after completing each significant unit of work to ensure progress is saved remotely.
 
 ### The Problem Being Solved
 
