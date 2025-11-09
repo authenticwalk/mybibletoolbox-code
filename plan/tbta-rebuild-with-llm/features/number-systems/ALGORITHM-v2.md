@@ -120,10 +120,11 @@ Default to Plural for two-referent contexts unless specific conditions met.
 - ❌ Gen 1:27: "them" (male and female, exactly two) → Plural (not Dual)
 - ❌ Gen 22:6: "both of them" (Abraham and Isaac, explicit dual Hebrew) → No Dual found
 
-**Possible Dual contexts** (unvalidated):
+**Possible Dual contexts** (SPECULATION, unvalidated):
 - Natural body part pairs: עֵינַיִם "eyes", יָדַיִם "hands"
 - Explicit dual morphology on NOUNS (not pronouns)
-- Requires further investigation
+- **No validation data** - pure speculation based on training patterns
+- Requires further investigation with actual examples
 
 **Prediction rule (conservative)**:
 ```python

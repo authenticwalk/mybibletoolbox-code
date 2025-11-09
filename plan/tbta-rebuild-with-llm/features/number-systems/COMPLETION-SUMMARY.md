@@ -110,9 +110,10 @@
 - Gen 22:6 "both of them" (explicit dual) → No Dual found ❌
 - Zero Dual annotations found in 7 validated verses
 
-**Hypothesis**: Dual possibly only for:
-- Natural body part pairs (eyes, hands) as nouns
-- Specific contexts (needs more data to confirm)
+**Dual usage**: UNKNOWN (insufficient data)
+- Not found in pronouns with two referents (Gen 1:27, 22:6)
+- **Speculation** (unvalidated): May be used for natural body part pairs
+- Validation needed: Examples with עֵינַיִם (eyes), יָדַיִם (hands)
 
 **Impact**: Default to Plural for two-referent contexts
 
@@ -157,12 +158,15 @@
 3. ✅ Pronoun rules: Morphological agreement for pronouns
 4. ✅ Confidence calibration: Adjusted based on performance
 
-**Expected improvements**:
+**Algorithm v2.0 Validation Status**: ⚠️ **NOT INDEPENDENTLY VALIDATED**
+- v2.0 improvements based on error analysis of 7 verses
+- No new test data to confirm v2.0 actually improves accuracy
+- Expected improvements are speculative (need Phase 3 validation)
+
+**Expected improvements** (unvalidated):
 - Trial predictions: Higher accuracy (covers more cases)
 - Dual predictions: Fewer false positives (conservative approach)
 - Plural predictions: More accurate (correct pronoun handling)
-
-**Validation**: 57% on partial data (needs more coverage)
 
 ---
 
