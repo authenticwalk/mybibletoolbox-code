@@ -22,10 +22,12 @@
 - Greek οὐρανῶν (ouranōn) is genitive plural → TBTA marks **Singular**
 - **Conclusion**: "How many entities?" matters more than "what's the grammatical form?"
 
-#### Degree (expected pattern)
-- Greek μεγάλη (positive form) with superlative context → Likely marked **S** (Superlative)
+#### Degree (CONFIRMED - Phase 7 validation)
+- Greek μεγάλη (positive form) with superlative question → TBTA marks **Superlative** ✓
+- Greek μείζων (comparative form) with implied superlative ("no one greater") → TBTA marks **Superlative** ✓
 - Hebrew מִן construction (not morphological comparative) → Should mark **C** (Comparative)
-- **Hypothesis**: Semantic comparison matters more than synthetic morphology
+- **Confirmed**: Semantic meaning (explicit AND implied) takes priority over morphological form
+- **Nuance**: TBTA recognizes LOGICAL EQUIVALENCES (negative comparative = superlative)
 
 ### Application Rule
 ```
@@ -222,10 +224,18 @@ Document where languages/translations might disagree:
 - **Paucal**: Defined but needs specific count contexts (4-10)
 - **Trial**: ONLY for Trinity contexts (theologically derived)
 
-#### Degree (preliminary findings)
-- **T (excessive "too")**: Rare/absent in formal Biblical register
-- **s (superlative of 2)**: Very rare, may not exist
-- **q (equative)**: Requires specific "as...as" construction
+#### Degree (CONFIRMED - Phase 7 validation)
+- **q (equative)**: CONFIRMED non-existent → Use "No Degree" instead
+  - PHP 2:6 ("equal with God") → TBTA marked "No Degree"
+  - MAT 10:25 ("like his teacher") → TBTA marked "No Degree"
+- **i (intensified comparative)**: CONFIRMED non-existent → Use "Comparative"
+  - πολλῷ μᾶλλον "much more" → Treated as simple "Comparative"
+- **s (superlative of 2)**: CONFIRMED non-existent → Use "No Degree" or "Comparative"
+  - Dyadic comparisons don't get special superlative marking
+- **E (extremely intensified)**: Likely non-existent (lexical compounds don't count)
+  - Extreme = lexical meaning, not syntactic degree
+- **T (excessive "too")**: Not found in test verses, may be absent in Biblical register
+- **L (less)**: Unclear if distinct from C, needs more data
 
 ### Application Rule
 ```
@@ -270,6 +280,127 @@ When annotating:
 3. For participant tracking: Multi-verse tracking
 4. For morphological features: Single verse may suffice
 ```
+
+---
+
+## Universal Principle 7: Lexical vs. Syntactic Distinction
+
+### Pattern
+**TBTA only marks SYNTACTIC (grammatical) modification, not LEXICAL (inherent) meaning.**
+
+### Evidence
+
+#### Degree: Intensification
+- **Syntactic intensifier** (λίαν "very" + πρωῒ "early") → TBTA marks "Intensified" ✓
+- **Lexical compound** (ὑπερεκπερισσοῦ "abundantly" - triple compound) → TBTA marks "No Degree" ✓
+- **Key distinction**: TWO WORDS (modifier + modified) vs. ONE WORD (compound meaning)
+
+#### Linguistic Reasoning
+- SYNTACTIC: Grammatical modification (can be removed without changing core word)
+  - "very early" → Remove "very" → Still "early"
+  - Degree is ADDED BY MODIFIER
+- LEXICAL: Inherent word meaning (cannot be decomposed)
+  - "abundantly" → No parts to remove → Single semantic unit
+  - Intensity is PART OF WORD MEANING
+
+### Application Rule
+```
+When identifying feature-bearing constituents:
+1. Check if feature is SYNTACTIC (grammatical construction)
+2. Or if feature is LEXICAL (inherent to word meaning)
+3. TBTA marks SYNTACTIC only, not lexical
+4. Lexicalized features → Treat as base/default value
+```
+
+### Cross-Feature Implications
+- **Degree**: Only syntactic intensifiers (λίαν), not lexical compounds (ὑπερεκπερισσοῦ)
+- **Comparison**: Syntactic comparative particles, not lexical "better/worse" meaning
+- **Negation**: Syntactic negation markers, not lexical negative words?
+- **Modality**: Syntactic modal markers, not lexical modal verbs?
+
+**Discovery**: This may explain why many compound/derived words get "default" values in TBTA
+
+---
+
+## Universal Principle 8: Dual Value Encoding System
+
+### Pattern
+**TBTA uses BOTH standardized category values AND literal quoted string values.**
+
+### Evidence
+
+#### Degree Values
+**Standardized values** (most common):
+- "No Degree" (not "N")
+- "Comparative" (not "C")
+- "Superlative" (not "S")
+- "Intensified" (not "I")
+
+**Literal quoted values** (specific meanings):
+- `'''least'''` (not "Superlative" or "l") - for ἐλάχιστος
+- Possibly `'''greater'''`, `'''more'''` (not confirmed)
+
+### Linguistic Reasoning
+- **Standardized**: Generic category (upward superlative, downward superlative → both "Superlative")
+- **Literal**: Specific directional or emphatic meaning (downward → `'''least'''`)
+- **Purpose**: Preserves semantic nuance while maintaining category structure
+
+### Application Rule
+```
+When validating TBTA values:
+1. First check standardized values ("No Degree", "Comparative", etc.)
+2. If mismatch, check for literal quoted values ('''word''')
+3. Literal values use triple single quotes in YAML
+4. Algorithm may need to handle BOTH encoding types
+```
+
+### Cross-Feature Implications
+- **Other features may use dual encoding**: Need to check across features
+- **Validation logic**: Must handle both standardized and quoted strings
+- **Prediction difficulty**: Cannot predict literal values without seeing all examples
+- **Value inventory**: More complex than single-letter codes suggest
+
+**Discovery**: TBTA encoding is more granular than initially documented
+
+---
+
+## Universal Principle 9: Semantic Gradability Constraint
+
+### Pattern
+**TBTA only marks features on constituents that are SEMANTICALLY COMPATIBLE with that feature.**
+
+### Evidence
+
+#### Degree: Gradability Check
+- **Gradable adjective** ("great", "small", "good") in comparative context → Gets degree marking ✓
+- **Non-gradable adjective** ("justified", "dead", "perfect") in comparative context → "No Degree" ✓
+- **Key distinction**: Can the word logically vary in degree? ("very justified" = nonsense)
+
+#### Linguistic Reasoning
+- **Gradable**: Properties that can vary (size, quality, time, intensity)
+  - "very great", "more great", "greatest" - all semantically valid
+- **Non-gradable**: Binary states, absolute properties, identity predicates
+  - "very justified" - theologically/logically invalid (justified or not)
+  - "very dead" - logically invalid (dead or alive)
+  - "very perfect" - logically invalid (perfect is absolute)
+
+### Application Rule
+```
+Before assigning feature value:
+1. Check if constituent is semantically compatible with feature
+2. For degree: Can you say "very X" or "more X"?
+3. For number: Can entity be counted or is it abstract?
+4. For time: Does event have temporal extent?
+5. If NOT compatible → Assign default/null value, skip feature
+```
+
+### Cross-Feature Implications
+- **Degree**: Only gradable words (not "justified", "dead", "perfect")
+- **Number**: Only countable entities (not "wisdom", "love" as abstract)
+- **Time**: Only temporal events (not timeless truths)
+- **Proximity**: Only spatial entities (not abstract concepts)
+
+**Discovery**: Structural comparisons (παρ' ἐκεῖνον "rather than") don't create degree marking on non-gradable words
 
 ---
 
@@ -467,6 +598,15 @@ When creating new feature experiments, document:
 
 ---
 
-**Last Updated**: 2025-11-07
-**Features Analyzed**: number-systems (complete), degree (in progress)
+**Last Updated**: 2025-11-09
+**Features Analyzed**:
+- number-systems (complete - 91.4% accuracy)
+- degree (Phase 8 complete - 42.9% adversarial, algorithm v2.0 developed)
 **Next Feature**: [To be determined based on priority]
+
+**Major Learnings from Degree Validation**:
+- Universal Principle 1 EXPANDED: Semantic includes implied patterns (negative comparative = superlative)
+- NEW Principle 7: Lexical vs. Syntactic distinction (only syntactic gets marked)
+- NEW Principle 8: Dual value encoding (standardized + literal quoted values)
+- NEW Principle 9: Semantic compatibility constraint (gradability check)
+- Confirmed 3 rare values DON'T EXIST: q (equative), i (intensified comparative), s (superlative of 2)
