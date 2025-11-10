@@ -1,40 +1,50 @@
 # TBTA Features: Status Summary
 
-**Last Updated**: 2025-11-09
+**Last Updated**: 2025-11-10
 **Total Features**: 17
-**Completed**: 1 (person-systems)
+**Completed**: 0 (person-systems training complete, test validation pending)
 
 ---
 
 ## Methodology Implementation Status
 
-### 🎯 COMPLETE - Adversarial Validation Finished
+### ⏳ In Progress - Training Complete, Test Validation Pending
 
-#### 3. person-systems ✅ COMPLETE
-- **Status**: VALIDATION COMPLETE (2025-11-09)
-- **Translation Accuracy**: 100% (7/7 verses validated)
-- **Cross-linguistic**: 98%+ agreement across 9 languages
-- **TBTA Comparison**: 100% perspective-aware agreement (2/2)
-- **Algorithm**: v1.0 (100% validated), v2.0 (dual-mode enhanced)
+#### 3. person-systems (~40% COMPLETE)
+- **Status**: TRAINING PHASE COMPLETE, Test Validation Pending (2025-11-10)
+- **Training Set Accuracy**: 100% (7/7 verses validated against real translations)
+- **Cross-linguistic**: 98%+ agreement across 9 languages (training set)
+- **Test Set Coverage**: 7.4% (2/27 verses due to TBTA Genesis-Esther limitation)
+- **Test Accuracy**: UNKNOWN (adversarial and random test sets not validated)
+- **Algorithm**: v1.0 (100% training accuracy), v2.0 (experimental, based on n=1 evidence)
 - **Files**:
   - ✅ METHODOLOGY-STATUS.md
   - ✅ training/TRAINING-SET.md (20 verses)
-  - ✅ training/ALGORITHM-v1.md (locked, 100% validated)
-  - ✅ training/ALGORITHM-v2.md (dual perspective)
+  - ✅ training/ALGORITHM-v1.md (locked at commit f373646, 100% training accuracy)
+  - ⚠️ training/ALGORITHM-v2.md (premature, needs more evidence)
   - ✅ adversarial-test/TEST-SET.md (15 verses)
-  - ✅ adversarial-test/PREDICTIONS-locked.md (commit 77010a4)
-  - ✅ adversarial-test/RESULTS.md (critical discovery)
+  - ✅ adversarial-test/PREDICTIONS-locked.md (commit 77010a4, blind)
+  - ⏳ adversarial-test/RESULTS.md (only 1/15 verses validated)
   - ✅ random-test/TEST-SET.md (12 verses)
-  - ✅ random-test/PREDICTIONS-locked.md (commit 77010a4)
-  - ✅ VALIDATION-RESULTS-COMPLETE.md (comprehensive)
-  - ✅ TRANSLATION-VALIDATION.md (methodology)
-  - ✅ ERROR-ANALYSIS.md (0 genuine errors)
-  - ✅ FEATURE-COMPLETE-SUMMARY.md (executive summary)
+  - ✅ random-test/PREDICTIONS-locked.md (commit 77010a4, blind)
+  - ⏳ random-test/RESULTS.md (0/12 verses validated)
+  - ✅ VALIDATION-RESULTS-COMPLETE.md (training results, test incomplete)
+  - ✅ TRANSLATION-VALIDATION.md (methodology sound)
+  - ✅ ERROR-ANALYSIS.md (0 training errors)
+  - ✅ TRAINING-PHASE-SUMMARY.md (honest assessment)
+  - ✅ HONEST-STATUS.md (corrected claims)
+  - ✅ CRITICAL-REVIEW.md (peer review identifying overclaims)
   - ✅ PROGRESS-SUMMARY.md (session tracking)
-- **Major Achievement**: First feature with complete adversarial validation
-- **Critical Discovery**: Dual perspective framework (discourse vs. translation)
-- **Cross-Feature Contribution**: 4 new universal principles
-- **Recommendation**: APPROVED for production use ✅
+- **Accomplishments**:
+  - Excellent training work with proper methodology
+  - Test predictions properly locked (blind validation)
+  - 100% training set accuracy validated
+- **Limitations**:
+  - TBTA coverage insufficient for full test validation (7.4%)
+  - Test accuracy unknown (cannot complete advertised adversarial methodology)
+  - Dual perspective hypothesis interesting but based on n=1 example
+- **Cross-Feature Contribution**: 3 validated universal principles + 1 hypothesis
+- **Recommendation**: Complete test validation via real translations before production approval
 
 ---
 
@@ -190,7 +200,7 @@
 
 ### High Priority (Next 2 Weeks)
 
-3. **person-systems**: Begin adversarial validation
+3. **person-systems**: Complete test validation via real translations (training done)
 4. **participant-tracking**: Begin adversarial validation
 5. **discourse-genre**: Begin adversarial validation
 
@@ -347,8 +357,11 @@ Or can we use simpler validation since these are more mechanical?
 4. [ ] Error analysis
 
 **Person-systems**:
-1. [ ] Create METHODOLOGY-STATUS.md
-2. [ ] Begin training phase
+1. [x] Training phase complete (100% accuracy)
+2. [x] Test predictions locked (commit 77010a4)
+3. [ ] Validate test verses against real translations (15-20 verses)
+4. [ ] Calculate actual test accuracy
+5. [ ] Complete validation or move to next feature
 
 ---
 
