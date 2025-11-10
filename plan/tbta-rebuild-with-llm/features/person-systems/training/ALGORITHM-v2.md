@@ -1,10 +1,26 @@
-# Person Systems: Algorithm v2.0
+# Person Systems: Algorithm v2.0 ⚠️ EXPERIMENTAL
 
 **Feature**: Person Systems (Primary: Clusivity)
-**Version**: 2.0
+**Version**: 2.0 (EXPERIMENTAL)
+**Status**: ⚠️ **Premature** - Based on n=1 divergence example, needs 5-10 more cases for validation
 **Date**: 2025-11-09
 **Based on**: v1.0 (commit f373646) + validation insights
-**Validation Results**: 100% accuracy on real translations (7/7 verses)
+**Validation Results**: 100% accuracy on real translations (7/7 verses) for v1.0 foundation
+
+---
+
+## ⚠️ EXPERIMENTAL STATUS WARNING
+
+**This algorithm version is EXPERIMENTAL and premature:**
+
+- **Dual perspective theory**: Based on only 1 divergence example (Genesis 1:26)
+- **Evidence insufficient**: Need 5-10 divergence cases to establish pattern
+- **Could be**: TBTA error, algorithm error, genuine ambiguity, OR systematic pattern (unproven)
+- **Recommendation**: Use v1.0 for production, treat v2.0 as research hypothesis
+
+**For production use**: Stick with Algorithm v1.0 (100% validated)
+
+**v2.0 purpose**: Document hypothesis for future validation when more TBTA data available
 
 ---
 
