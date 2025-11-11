@@ -624,14 +624,127 @@ actual = ["Intensified", "'too'"]
 # → Partial match, not complete failure
 ```
 
+### When Mixed Annotations Are Appropriate
+
+⚠️ **CRITICAL GUIDANCE**: Not all features should allow mixed annotations. This depends on the feature's semantic nature and target language constraints.
+
+#### Features That SHOULD Allow Mixed Annotations:
+- **Degree**: Same word can be BOTH intensified AND excessive (GEN 18:11: "old" = Intensified + 'too')
+  - **Reason**: Multiple independent semantic dimensions (intensity vs capacity)
+  - **Source language**: Both Hebrew and Greek show this pattern
+
+#### Features Where Mixed May Be Target-Language Dependent:
+- **Number**: Source may be ambiguous (collective), target must choose singular/plural
+  - **Rule**: If target language FORCES a choice → Algorithm picks DOMINANT value
+  - **Dominant value selection**: Based on discourse salience (group identity vs individual members)
+  - **Language family consistency**: Romance languages consistently treat collectives as singular; Germanic varies
+
+- **Person**: Discourse role may shift, but target language may force single pronoun
+  - **Rule**: Pick dominant discourse role in that clause
+  - **Exception**: Honorifics may require mixed (2nd person + plural for respect)
+
+#### When to Choose Dominant Value (Not Mixed):
+
+**Decision Tree**:
+```
+1. Does the TARGET language feature allow multiple simultaneous values?
+   → YES: Preserve mixed annotation (e.g., Hebrew מִן with rising AND excessive meaning)
+   → NO: Continue to step 2
+
+2. Are the multiple values truly INDEPENDENT semantic dimensions?
+   → YES: Flag as "requires target language choice" (e.g., collective number)
+   → NO: Choose dominant value (e.g., most discourse-salient reading)
+
+3. For target language choice scenarios:
+   a. Identify language family of target
+   b. Apply consistent family-wide rule (see Language Family Rules below)
+   c. Exception: If context strongly favors non-default → Use context
+   d. Document choice rationale in metadata
+```
+
+#### Language Family Consistency Rules
+
+**For features requiring single value selection**:
+
+**Number (Collective Entities)**:
+- **Romance languages** (Spanish, French, Portuguese): Default SINGULAR
+  - "La gente es" (the people is) → Singular
+  - Exception: Explicit plurality markers override
+- **Germanic languages** (English, German, Dutch): Context-dependent
+  - English: "The people are" (plural), "The team is" (singular)
+  - Apply discourse salience rule per context
+- **Slavic languages**: Default PLURAL
+  - Russian: "Люди" always takes plural agreement
+
+**Person (Honorific/Polite Forms)**:
+- **European languages**: V-form distinctions
+  - French vous, German Sie → 2nd person + plural number
+  - Mixed annotation appropriate (person=2, number=plural)
+- **Asian languages**: Complex honorific systems
+  - Korean, Japanese → Multiple independent dimensions
+  - Preserve all dimensions in annotation
+
+**Degree (When Target Lacks Multiple Expressibility)**:
+- **English**: Can express multiple degrees ("too old" = excessive + old)
+  - Preserve mixed annotation
+- **Language lacking 'too' construction**: Choose DOMINANT
+  - Dominant = capacity limitation (excessive) > simple intensity
+  - "Too old to bear" → "very old" if 'too' unavailable
+
+#### Exceptions to Dominant Value Rules
+
+**Exception 1: Discourse Emphasis**
+- If discourse strongly emphasizes the non-default reading → Choose contextual reading
+- Example: Collective acting as individuals (distributive reading) → Use plural
+- Document: "Contextual override: distributive action favors plural"
+
+**Exception 2: Theological/Cultural Significance**
+- Trinity contexts: Mixed annotation required (Trial + Inclusive)
+- Honorific contexts: Mixed annotation required (person + formality)
+- Document: "Theological/cultural significance requires mixed"
+
+**Exception 3: Source Language Ambiguity Resolution**
+- Hebrew dual morphology with unclear semantics → Check LXX or other ancient translations
+- If ancient translations consistently choose one → Use that as dominant
+- Document: "Cross-translation evidence favors [value]"
+
+### Dominant Value Selection Criteria
+
+When forced to choose single value from multiple options:
+
+**Priority Order**:
+1. **Discourse salience**: What's being emphasized in this clause?
+2. **Language family default**: Follow family-wide pattern
+3. **Semantic compositionality**: Which value is derivable from context?
+4. **Cross-translation consensus**: What do 3+ major translations do?
+5. **Coin toss scenario**: If truly equal → Pick language family default
+
+**Coin Toss Identification**:
+- Multiple readings equally valid semantically
+- No discourse emphasis on either
+- Cross-translations split 50/50
+- No theological/cultural factors
+
+**For coin toss scenarios**:
+- **Same language family → same choice** (consistency within family)
+- Document: "Coin toss: [language family] default applied"
+- Future consistency: All [family] languages use same rule
+
 ### Cross-Feature Implications
-- **All features**: Check if multiple values possible
-- **Validation**: Partial match scoring needed
-- **Algorithm**: Must output lists/sets, not single values
-- **Accuracy metrics**: Precision/recall, not just exact match
-- **Testing**: Design verses with mixed annotations intentionally
+- **All features**: Determine if mixed annotations semantically valid
+- **Target language constraints**: Some features force single value
+- **Language family consistency**: Same families → same choices for coin tosses
+- **Validation**: Partial match scoring when mixed appropriate; exact match when single value forced
+- **Algorithm**: Output format depends on feature (list vs single value)
+- **Accuracy metrics**:
+  - Features allowing mixed: Precision/recall
+  - Features forcing single: Exact match + "acceptable alternative" scoring
+- **Testing**: Design verses with mixed annotations + verses requiring dominant value choice
+- **Documentation**: Explicitly state which features allow mixed, which force single value
 
 ---
+
+## Cross-Feature Algorithm Template
 
 Based on successful experiments, here's the universal template:
 
