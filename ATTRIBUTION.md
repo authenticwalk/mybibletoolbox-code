@@ -231,7 +231,70 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Authority: High
 - Note: Classical Greek lexicon, useful for etymology and diachronic analysis
 
+**Abbott-Smith's Manual Greek Lexicon of the New Testament**
+- Source code: `abbott-smith`
+- Public domain (first published 1922)
+- Available via: StudyLight, STEPBible
+- Citation format: `{abbott-smith}`
+- Authority: High
+- Note: Scholarly NT Greek lexicon with detailed syntactic analysis
+
+**Gesenius' Hebrew-Chaldee Lexicon**
+- Source code: `gesenius`
+- Author: Wilhelm Gesenius (1786-1842)
+- Translated by Samuel Prideaux Tregelles (1857) and Edward Robinson
+- Public domain
+- Available via: StudyLight, Blue Letter Bible, Internet Archive
+- Citation format: `{gesenius}`
+- Authority: High
+- Note: Classic Hebrew lexicon, foundational for Hebrew studies
+
+**Englishman's Greek Concordance of the New Testament**
+- Source code: `englishman-greek`
+- Author: George V. Wigram
+- Public domain (first published 1844)
+- Available via: BibleHub, Internet Archive
+- Citation format: `{englishman-greek}`
+- Authority: High
+- Note: Shows every NT Greek word with all its occurrences
+
+**Englishman's Hebrew Concordance of the Old Testament**
+- Source code: `englishman-hebrew`
+- Author: George V. Wigram
+- Public domain (first published 1843)
+- Available via: BibleHub, Internet Archive
+- Citation format: `{englishman-hebrew}`
+- Authority: High
+- Note: Shows every OT Hebrew word with all its occurrences
+
+**Trench's Synonyms of the New Testament**
+- Source code: `trench`
+- Author: Richard Chenevix Trench
+- Public domain (first published 1854)
+- Available via: Blue Letter Bible, StudyLight, Internet Archive
+- Citation format: `{trench}`
+- Authority: High
+- Note: Classic study of Greek word distinctions and nuances
+
+**Vine's Expository Dictionary of New Testament Words**
+- Source code: `vine`
+- Author: W.E. Vine (1873-1949)
+- Public domain (first published 1940 without copyright)
+- Available via: StudyLight, Blue Letter Bible
+- Citation format: `{vine}`
+- Authority: Medium-High
+- Note: Organized by English words with Greek analysis
+
 ### Copyrighted Resources (Fair Use)
+
+**Mounce's Expository Dictionary of Old and New Testament Words**
+- Source code: `mounce`
+- Copyright © 2006 by William D. Mounce
+- Available via: StudyLight
+- Used under fair use for scholarly citation
+- Citation format: `{mounce}`
+- Authority: Medium-High (pedagogical/expository focus)
+- Purchase: https://www.zondervan.com/
 
 **Bauer-Danker-Arndt-Gingrich (BDAG) Greek Lexicon**
 - Source code: `bdag`
@@ -249,6 +312,76 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Citation format: `{halot}`
 - Authority: High
 - Purchase: https://www.brill.com/
+
+**HELPS Word-studies**
+- Source code: `helps`
+- Provider: HELPS Ministries
+- Developed with Dr. Gleason Archer (Trinity Evangelical Divinity School)
+- Copyright © HELPS Ministries
+- Available via: BibleHub
+- Used under fair use for scholarly citation
+- Citation format: `{helps}`
+- Authority: Medium-High
+- Note: Focuses on Greek prefixes, usage patterns, and word formation
+- Website: https://www.helpsmin.com/
+
+**NAS Exhaustive Concordance**
+- Source code: `nasec`
+- Editor: Robert L. Thomas, Th.D.
+- Publisher: Foundation Publications Inc. / Lockman Foundation
+- Copyright © 1981, 1998 by The Lockman Foundation
+- Used under fair use for scholarly citation
+- Citation format: `{nasec}`
+- Authority: High
+- Note: Based on NASB translation, uses Strong's numbering system
+- Purchase: https://www.lockman.org
+
+**Theological Wordbook of the Old Testament (TWOT)**
+- Source code: `twot`
+- Editors: R. Laird Harris, Gleason L. Archer Jr., Bruce K. Waltke
+- Publisher: Moody Press
+- Copyright © 1980 by The Moody Bible Institute of Chicago
+- Used under fair use for scholarly citation
+- Citation format: `{twot}`
+- Authority: High
+- Note: 2-volume set covering 1,400+ Hebrew/Aramaic words with theological significance
+- Purchase: https://www.moodypublishers.com/
+
+**Theological Dictionary of the New Testament (TDNT)**
+- Source code: `tdnt`
+- Editors: Gerhard Kittel and Gerhard Friedrich
+- Translator: Geoffrey W. Bromiley
+- Publisher: Wm. B. Eerdmans Publishing Company
+- Copyright © 1964-1976 (10 volumes)
+- Original German: Theologisches Wörterbuch zum Neuen Testament
+- Used under fair use for scholarly citation
+- Citation format: `{tdnt}`
+- Authority: High
+- Note: Comprehensive theological word study (also known as "Kittel" or "Big Kittel")
+- Purchase: https://www.eerdmans.com/
+
+**New International Dictionary of Old Testament Theology and Exegesis (NIDOTTE)**
+- Source code: `nidotte`
+- Editor: Willem VanGemeren
+- Publisher: Zondervan Publishing House
+- Copyright © 1996 by Zondervan
+- Used under fair use for scholarly citation
+- Citation format: `{nidotte}`
+- Authority: High
+- Note: 5 volumes with 3,000+ articles by 200+ scholars
+- Purchase: https://www.zondervan.com/
+
+**New International Dictionary of New Testament Theology (NIDNTT)**
+- Source code: `nidntt`
+- Editor: Colin Brown
+- Publisher: Zondervan Publishing House
+- Copyright © 1986 by Zondervan
+- Original German: Theologisches Begriffslexikon zum Neuen Testament
+- Used under fair use for scholarly citation
+- Citation format: `{nidntt}`
+- Authority: High
+- Note: 4 volumes (3 volumes + index), organized by English concept words
+- Purchase: https://www.zondervan.com/
 
 **William Barclay's Daily Study Bible Series**
 - Copyright © various dates by Westminster John Knox Press
@@ -454,7 +587,7 @@ When adding new sources:
 
 ---
 
-**Last Updated**: 2025-10-29  
+**Last Updated**: 2025-11-09
 **Maintained By**: Project contributors
 
 For questions about attribution or to report errors, please open an issue in the project repository.

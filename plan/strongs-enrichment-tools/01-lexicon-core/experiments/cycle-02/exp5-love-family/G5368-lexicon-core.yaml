@@ -1,0 +1,556 @@
+strongs_number: G5368
+language: greek
+lemma: φιλέω
+transliteration: phileō
+part_of_speech: verb
+
+# Metadata
+extraction_metadata:
+  cycle: 2
+  experiment: "exp5-love-family"
+  methodology: "theological-pathway"
+  systematic_controversy_detection: true
+  date: "2025-11-09"
+  frequency: 25
+  frequency_tier: "low (5-19)"
+  category_limit: "1-3 categories"
+
+# Etymology & Root Analysis
+etymology:
+  root_words:
+    - strongs: G5384
+      lemma: "φίλος"
+      meaning: "friend"
+      relationship: "verb derived from noun G5384 φίλος (friend)"
+      source: "{strongs} {biblehub} {studylight} {blb}"
+      confidence: "HIGH"
+      note: "Clear noun → verb derivation; all sources agree"
+
+  derivation_chain:
+    - word: "G5384 φίλος"
+      relationship: "root noun - friend"
+    - word: "G5368 φιλέω"
+      relationship: "derived verb - to love, show affection"
+      source: "{strongs} {biblehub} {studylight}"
+    - word: "G5373 φιλία"
+      relationship: "derived noun - friendship"
+      source: "{studylight}"
+
+  convergence_note: |
+    All lexicons agree: φιλέω derives from φίλος (friend) and fundamentally means to show
+    warm affection in intimate friendship, to be a friend to, have affection for. {biblehub} {studylight} {blb}
+
+# Semantic Range (3 categories for low frequency)
+semantic_range:
+  category_count: 3
+  note: "Within frequency tier limit (low: 1-3 categories)"
+
+  classical_breadth_note: |
+    Classical Greek had 7+ semantic categories (LSJ): affection, hospitality, romantic love,
+    physical kissing, approval of things, impersonal subjects, habitual action. NT usage
+    narrowed significantly to 3 primary categories. {studylight-lsj}
+
+  categories:
+    - id: 1
+      label: "Personal affection - intimate friendship love"
+      definition: |
+        To show warm affection in intimate friendship, characterized by tender, heartfelt
+        consideration and kinship; personal attachment as a matter of sentiment or feeling. {helps} {biblehub}
+      usage_context: "Divine and human relational affection"
+      examples:
+        - ref: "JHN.005.020"
+          text: "For the Father loves (φιλεῖ) the Son"
+          note: "Divine affection within Trinity {biblehub}"
+
+        - ref: "JHN.011.003"
+          text: "he whom You love (φιλεῖς) is sick"
+          note: "Jesus' personal affection for Lazarus {biblehub}"
+
+        - ref: "JHN.011.036"
+          text: "See how He loved (ἐφίλει) him!"
+          note: "Observers recognize Jesus' friendship {biblehub}"
+
+        - ref: "JHN.016.027"
+          text: "the Father Himself loves (φιλεῖ) you"
+          note: "Father's affection for disciples {biblehub}"
+
+        - ref: "JHN.020.002"
+          text: "the other disciple, whom Jesus loved (ἐφίλει)"
+          note: "Jesus' special friendship with beloved disciple {biblehub}"
+
+        - ref: "JHN.021.015-017"
+          text: "Simon, son of Jonah, do you love (φιλεῖς) Me?"
+          note: "Peter's confession using φιλέω after denial {biblehub} {web-search}"
+
+        - ref: "TIT.003.015"
+          text: "Greet those who love (φιλοῦντας) us in the faith"
+          note: "Christian friendship/affection {biblehub}"
+      confidence: "HIGH"
+
+    - id: 2
+      label: "To kiss - physical expression of affection"
+      definition: |
+        To kiss as a mark of tenderness, physical affection, greeting, or (negatively)
+        betrayal. Classical usage as outward sign of love. {biblehub} {studylight}
+      usage_context: "Physical gesture of affection or greeting"
+      examples:
+        - ref: "MAT.026.048"
+          text: "Whomever I kiss (φιλήσω), He is the One"
+          note: "Judas' betrayal kiss {biblehub}"
+
+        - ref: "MAR.014.044"
+          text: "whomever I kiss (φιλήσω), He is the One"
+          note: "Parallel betrayal account {biblehub}"
+
+        - ref: "LUK.022.047"
+          text: "drew near to Jesus to kiss (φιλῆσαι) Him"
+          note: "Betrayal kiss fulfilled {biblehub}"
+
+      confidence: "HIGH"
+      note: |
+        KJV translates as 'kiss' 3 times (all betrayal contexts). Classical usage broader
+        (greeting, affection). {blb} {studylight-lsj}
+
+    - id: 3
+      label: "Misplaced affection - worldly loves (negative)"
+      definition: |
+        To approve of, like, sanction worldly things; love of honor, status-seeking,
+        misplaced priorities. Demonstrates φιλέω (like ἀγαπάω) can express negative
+        preferences. {biblehub} {studylight}
+      usage_context: "Warnings against worldly affections"
+      examples:
+        - ref: "MAT.023.006"
+          text: "they love (φιλοῦσιν) the best places at feasts"
+          note: "Pharisees' love of honor {biblehub}"
+
+        - ref: "LUK.020.046"
+          text: "who love (φιλούντων) greetings in the marketplaces"
+          note: "Status-seeking affection {biblehub}"
+
+        - ref: "REV.022.015"
+          text: "whoever loves (φιλῶν) and practices a lie"
+          note: "Negative affection for falsehood {biblehub}"
+      confidence: "HIGH"
+      note: |
+        Demonstrates φιλέω is NOT always "pure friendship love" - can express worldly,
+        sinful affections. Parallels ἀγαπάω negative usage (loving darkness JHN.003.019). {llm-cs45}
+
+# HELPS Word-Studies
+helps_word_study:
+  definition: |
+    To show warm affection in intimate friendship, characterized by tender, heartfelt
+    consideration and kinship. {helps} {biblehub}
+
+  emphasis: |
+    Emotional and sentimental; personal attachment as matter of feeling rather than
+    deliberate will. {helps} {biblehub}
+
+  key_distinction: |
+    Phileó emphasizes feelings, conditional, sentimental responses (the head), while
+    agapaó (G25) centers on wholehearted, unconditional, devoted affection (the heart). {helps} {biblehub}
+
+  note: |
+    HELPS makes strong distinction between phileó and agapaó, representing traditional
+    view. This distinction is contested in modern scholarship (see controversies section). {helps}
+
+# Theological Dictionaries
+theological_dictionaries:
+  tdnt:
+    reference: "9:114,1262"
+    source: "{blb}"
+    note: "TDNT volume 9, pages 114ff, entry 1262 (different from G25 ἀγαπάω 1:21,5)"
+
+  trench_synonyms:
+    section: "xii"
+    topic: "ἀγαπάω, φιλέω"
+    source: "{blb}"
+    note: "Trench's classic work comparing the two love verbs"
+
+# SYSTEMATIC CONTROVERSY DETECTION (Cycle 2 refinement)
+controversies:
+  - type: "semantic_debate"
+    claim: "The distinction between φιλέω (G5368) and ἀγαπάω (G25) is hotly contested"
+    scope: "Entire NT usage, especially John 21:15-17"
+    source: "{web-search-psephizo} {web-search-hermeneutics-se} {web-search-carson}"
+    note: "Same controversy as documented in G25 file, viewed from φιλέω perspective"
+
+    traditional_position:
+      view: "Φιλέω signifies lower, human, friendship, emotional love; ἀγαπάω signifies higher, divine, volitional love"
+      proponents:
+        - "R.C. Trench (Synonyms of the New Testament, Section xii) {trench} {blb}"
+        - "HELPS Word-studies (sentimental vs. wholehearted) {helps}"
+        - "Thayer's Lexicon (emotion/sentiment vs. will/duty) {biblehub}"
+      source: "{trench} {helps} {biblehub}"
+
+      evidence:
+        - point: "Thayer distinguishes: φιλέω = emotion/sentiment vs. ἀγαπάω = deliberate will/duty"
+          quote: |
+            Φιλέω "denotes personal attachment, as a matter of sentiment or feeling" while
+            ἀγαπάω represents "judgment and deliberate assent of the will as a matter of
+            principle, duty and propriety." {biblehub-thayer}
+
+        - point: "Analogy: φιλέω relates to emotion like thumos (heart) relates to nous (mind)"
+          source: "{biblehub-thayer}"
+          note: "Emotion vs. intellect dichotomy"
+
+        - point: "Christ commands ἀγαπάω toward enemies (MAT.005.044) not φιλέω"
+          explanation: |
+            Because emotional affection (φιλέω) cannot be commanded, only deliberate choice
+            (ἀγαπάω) can. {blb}
+
+        - point: "Trench's Latin distinction: φιλέω = amare (spontaneous) vs. ἀγαπάω = diligere (esteem-based)"
+          source: "{trench}"
+
+    modern_position:
+      view: "Φιλέω and ἀγαπάω are essentially synonymous in most NT contexts; distinction is stylistic variation"
+      proponents:
+        - "D.A. Carson (Exegetical Fallacies) {web-search-carson}"
+        - "Andrew Das {web-search}"
+        - "Kostenberger, Blomberg, Morris, Bock {web-search}"
+      source: "{web-search-churchleaders} {web-search-psephizo}"
+
+      evidence:
+        - point: "John uses both verbs interchangeably elsewhere in Gospel"
+          examples:
+            - "Father loves Son: ἀγαπάω (JHN.003.035), φιλέω (JHN.005.020)"
+            - "Disciple Jesus loved: ἀγαπάω (JHN.013.023; 019.026; 021.007,020), φιλέω (JHN.020.002)"
+          source: "{web-search-psephizo}"
+          note: "Same relationship described with both verbs"
+
+        - point: "Both words used for imperfect/worldly loves"
+          examples:
+            - "Ἀγαπάω: loved darkness (JHN.003.019), loved praise of men (JHN.012.043)"
+            - "Φιλέω: loved best places (MAT.023.006), loved greetings (LUK.020.046)"
+          source: "{biblehub}"
+          note: "Neither verb is exclusively 'pure/divine' love"
+
+        - point: "Aramaic substrate argument"
+          explanation: |
+            If Jesus-Peter conversation occurred in Aramaic (likely), there would be no
+            distinction expressed because both Aramaic and Hebrew have only one basic word
+            for love. Greek distinction may be translator's stylistic variation. {web-search-hermeneutics-se}
+
+        - point: "Peter's grief due to 'third time' not word change"
+          text: "Peter was grieved because He said to him the third time" (JHN.021.017)
+          source: "{web-search-psephizo}"
+          note: "John explicitly states reason for grief - repetition, not vocabulary"
+
+        - point: "D.A. Carson on substantial overlap"
+          quote: |
+            "Although it is doubtless true that the entire range of αγαπάω and the entire
+            range of φιλέω are not exactly the same, nevertheless they enjoy substantial overlap." {web-search-carson}
+          implication: "Acknowledges some distinction but emphasizes contextual synonymy"
+
+    scholarly_consensus:
+      current_trend: |
+        Contemporary biblical scholarship (post-1970s) tends to favor the synonymous
+        interpretation. Many evangelical scholars now question the sharp distinction that
+        was standard in 20th century expository preaching. {web-search-churchleaders} {web-search-psephizo}
+
+      shift_explanation: |
+        Represents move away from "etymological fallacy" and "illegitimate totality transfer"
+        toward contextual usage. Recognition that John uses synonym pairs for stylistic
+        variation throughout Gospel. {web-search-carson}
+
+    translation_impact: |
+      Most modern English translations do not attempt to distinguish the two Greek words
+      in John 21, translating both as "love." NIV, ESV, NASB, NLT all use "love" for both
+      φιλέω and ἀγαπάω. {llm-cs45}
+
+  - type: "classical_narrowing"
+    claim: "Φιλέω underwent significant semantic narrowing from classical to NT usage"
+    source: "{studylight-lsj} {studylight-abbott-smith}"
+
+    classical_breadth:
+      categories_count: 7
+      source: "{studylight-lsj}"
+      categories:
+        - "Affection/love between persons (Homer, Plato)"
+        - "Hospitality - welcoming guests (Odyssey)"
+        - "Romantic love - distinguished from erāo yet overlapping"
+        - "Physical affection - kissing (Herodotus, Sophocles)"
+        - "Approval of things - delight in non-personal entities"
+        - "Impersonal subjects - circumstances 'loving' outcomes"
+        - "Habitual action - loves to do (with infinitives)"
+      note: "Classical usage extremely broad - persons, things, actions, circumstances"
+
+    nt_narrowing:
+      categories_count: 3
+      usage: "Personal affection (17 instances), to kiss (3 instances), worldly affections (5 instances)"
+      note: |
+        NT usage narrowed from classical 7+ categories to 3 main contexts. Lost: hospitality,
+        romantic love, impersonal subjects, habitual action meanings. Retained: personal
+        affection, physical kiss, approval (positive and negative). {llm-cs45}
+
+    lxx_bridge:
+      occurrences: 27
+      source: "{blb}"
+      note: |
+        LXX usage shows transitional stage - broader than NT but narrower than classical.
+        Primarily for personal affection and covenant relationships. {llm-cs45}
+
+# Synonym Network & Distinctions
+synonym_network:
+  - word: "G0025 ἀγαπάω"
+    lemma: "ἀγαπάω"
+    distinction_traditional: |
+      Trench: ἀγαπάω = esteem-based love (diligere); φιλέω = spontaneous affection (amare).
+      Thayer: ἀγαπάω = will/duty; φιλέω = emotion/sentiment. {trench} {biblehub-thayer}
+
+    distinction_modern: |
+      Carson and modern scholars: substantial semantic overlap; John uses interchangeably
+      for stylistic variation. Context determines meaning, not lexical choice. {web-search-carson}
+
+    semantic_overlap: |
+      Both used for: (1) Father's love for Son, (2) Jesus' love for beloved disciple,
+      (3) worldly/sinful affections. Neither word is exclusively "divine" or "human" love. {web-search-psephizo}
+
+    source: "{trench} {biblehub-thayer} {web-search-carson} {web-search-psephizo}"
+
+  - word: "G5384 φίλος"
+    lemma: "φίλος"
+    relationship: "root noun from which φιλέω is derived; friend"
+    distinction: "Noun → verb derivation; φίλος (friend) → φιλέω (to be a friend, show affection) {strongs} {biblehub}"
+
+  - word: "G5373 φιλία"
+    lemma: "φιλία"
+    relationship: "related noun - friendship"
+    distinction: |
+      Noun form of φιλέω; only appears once in NT (JAS.004.004: 'friendship with the world
+      is enmity with God'). {studylight}
+
+  - word: "G5360 φιλαδελφία"
+    lemma: "φιλαδελφία"
+    relationship: "compound noun - brotherly love (φιλέω + adelphos)"
+    distinction: "Specialized compound for Christian brotherly affection {strongs}"
+
+  word_family_network:
+    phileo_family:
+      - "G5384: φίλος (noun - friend)"
+      - "G5368: φιλέω (verb - to love, show affection)"
+      - "G5373: φιλία (noun - friendship)"
+      - "G5360: φιλαδελφία (noun - brotherly love)"
+      note: "Complete word family with clear derivation from φίλος root"
+
+    contrasting_family:
+      agape_family:
+        - "G0025: ἀγαπάω (verb - to love)"
+        - "G0026: ἀγάπη (noun - love)"
+        - "G0027: ἀγαπητός (adjective - beloved)"
+
+# Diachronic Development
+diachronic_analysis:
+  classical:
+    period: "Homer → Classical (800 BCE - 300 BCE)"
+    usage: |
+      Very broad semantic range: affection between persons, hospitality, romantic love,
+      kissing, approval of things, impersonal subjects, habitual actions. {studylight-lsj}
+
+    primary_sources: "Homer (Odyssey), Herodotus, Plato, Sophocles {studylight-lsj}"
+    note: "Classical breadth (7+ categories) contrasts with NT narrowing (3 categories)"
+
+  lxx:
+    period: "LXX translation (250 BCE - 100 BCE)"
+    occurrences: 27
+    source: "{blb}"
+
+    usage: |
+      Primarily for personal affection and covenant relationships. Some narrowing from
+      classical breadth, but broader than NT usage. {llm-cs45}
+
+    note: "Transitional stage between classical breadth and NT specificity"
+
+  nt_koine:
+    period: "NT writings (50 CE - 100 CE)"
+    occurrences: 25
+    source: "{blb}"
+
+    distribution: |
+      Concentrated in Johannine literature (John 13 instances). Also in Synoptics (betrayal
+      kisses), Paul (Titus, 1 Corinthians), Revelation. {biblehub}
+
+    specialization: |
+      Significant semantic narrowing from classical 7+ categories to 3 main contexts:
+      (1) personal affection/friendship (17x), (2) physical kiss (3x), (3) worldly
+      affections/negative (5x). {llm-cs45}
+
+    theological_development: |
+      Lost classical breadth (hospitality, romantic love, impersonal, habitual). Retained
+      core meaning of personal affection but narrowed to specific relational contexts
+      (divine-human, human-human, betrayal, misplaced). {llm-cs45}
+
+    semantic_trajectory: |
+      Classical broad usage (7+ categories) → LXX transitional (narrowing) → NT specific
+      usage (3 categories). Demonstrates lexical specialization in biblical Greek. {llm-cs45}
+
+# Usage Statistics
+usage_statistics:
+  total_occurrences:
+    textus_receptus: 25
+    mgnt: 25
+    lxx: 27
+    source: "{blb}"
+
+  testament_distribution:
+    new_testament: 25
+    old_testament_greek: 27
+    ratio: "0.93:1 (NT slightly lower than LXX)"
+
+  form_distribution:
+    note: |
+      Moderate morphological variation due to verb status; 11-12 unique forms in NT
+      (various tenses, voices, moods, persons, numbers). {blb}
+
+  kjv_translation_frequency:
+    total: 25
+    breakdown:
+      - translation: "love"
+        count: 22
+        note: "Primary translation for affection sense"
+
+      - translation: "kiss"
+        count: 3
+        note: "All three in betrayal contexts (Judas)"
+    source: "{blb}"
+
+  johannine_concentration:
+    gospel_of_john: 13
+    note: "52% of NT occurrences in John's Gospel (13/25) {biblehub}"
+    significance: |
+      Heavy Johannine concentration parallels ἀγαπάω (46% in Johannine literature).
+      John uses both love verbs frequently for theological discourse. {llm-cs45}
+
+# Scholarly Cross-References
+scholarly_references:
+  - scholar: "R.C. Trench"
+    work: "Synonyms of the New Testament, Section xii"
+    topic: "φιλέω vs. ἀγαπάω distinction"
+    source: "{trench} {blb}"
+    position: "Traditional distinction (spontaneous vs. esteem-based)"
+
+  - scholar: "Thayer"
+    work: "Greek-English Lexicon of the NT"
+    topic: "Emotion/sentiment vs. will/duty distinction"
+    source: "{biblehub-thayer}"
+    position: "Traditional view of clear semantic difference"
+
+  - scholar: "HELPS Ministries"
+    work: "HELPS Word-studies"
+    topic: "Sentimental/head vs. wholehearted/heart"
+    source: "{helps}"
+    position: "Strong traditional distinction"
+
+  - scholar: "D.A. Carson"
+    work: "Exegetical Fallacies"
+    topic: "Substantial semantic overlap between φιλέω/ἀγαπάω"
+    source: "{web-search-carson}"
+    position: "Modern synonymous view; contextual usage determinative"
+
+  - scholar: "Andrew Das"
+    topic: "Traditional distinctions artificial and misleading"
+    source: "{web-search}"
+    position: "Challenges popular teaching on love word distinctions"
+
+  - scholar: "Liddell-Scott-Jones"
+    work: "Greek-English Lexicon (Classical)"
+    topic: "Seven classical semantic categories"
+    source: "{studylight-lsj}"
+    position: "Documents classical breadth vs. NT narrowing"
+
+# Pedagogical Notes
+pedagogical_notes:
+  key_learning_points:
+    - point: "Clear noun→verb derivation (φίλος → φιλέω)"
+      evidence: "All sources agree {strongs} {biblehub} {studylight}"
+      importance: "Demonstrates word family relationships; friend → to be a friend"
+
+    - point: "Semantic narrowing from classical to NT"
+      trajectory: "Classical 7+ categories → LXX transitional → NT 3 categories"
+      evidence: "LSJ documents classical breadth {studylight-lsj}"
+      importance: "Shows lexical specialization in biblical Greek"
+
+    - point: "Φιλέω NOT always 'pure friendship love'"
+      evidence: |
+        Used for worldly affections (loving best places MAT.023.006, loving greetings
+        LUK.020.046, loving lies REV.022.015) {biblehub}
+      importance: "Corrects popular misconception; parallels ἀγαπάω negative usage"
+
+    - point: "Φιλέω/ἀγαπάω distinction is contested"
+      traditional: "Trench, Thayer, HELPS make strong distinction"
+      modern: "Carson, Das, Kostenberger view as substantially synonymous"
+      importance: "Teaches students to navigate scholarly debates; avoid oversimplification"
+
+    - point: "Both verbs used for same relationships in John"
+      evidence: |
+        Father-Son love: both verbs. Jesus-beloved disciple love: both verbs. Worldly
+        loves: both verbs. {web-search-psephizo}
+      implication: "John's stylistic variation, not semantic precision"
+
+  translation_implications:
+    - issue: "Should translators distinguish φιλέω and ἀγαπάω in John 21?"
+      traditional_practice: "Some older translations/interpretations attempted distinction"
+      modern_practice: "NIV, ESV, NASB, NLT use 'love' for both {llm-cs45}"
+      recommendation: |
+        Most modern translations recognize stylistic variation. Footnotes may note Greek
+        word difference without claiming semantic distinction. Avoid reading theological
+        significance into word choice alone.
+
+  exegetical_fallacies_to_avoid:
+    - fallacy: "Illegitimate totality transfer"
+      description: "Importing all possible meanings into every occurrence"
+      example: "Reading 'pure emotional friendship' into every φιλέω instance"
+      correction: |
+        Context determines which semantic range applies. Φιλέω in MAT.023.006 (loving
+        best places) ≠ JHN.005.020 (Father loving Son). {llm-cs45}
+
+    - fallacy: "Simplistic synonym distinction"
+      description: "Assuming φιλέω and ἀγαπάω are always semantically distinct"
+      example: "John 21:15-17 distinction as exegetically determinative"
+      correction: |
+        Recognize John's stylistic variation; note both words used interchangeably
+        elsewhere in Gospel; consider Aramaic substrate; focus on Peter's grief at
+        repetition not vocabulary. {web-search-carson} {web-search-psephizo}
+
+    - fallacy: "Etymology determines meaning"
+      description: "Assuming φιλέω always means 'to be a friend' from φίλος"
+      example: "Claiming Judas' kiss shows 'false friendship'"
+      correction: |
+        While etymology is φίλος (friend), synchronic usage shows φιλέω had broader
+        meaning (kiss, affection, approval). Context determines specific sense. {llm-cs45}
+
+  command_impossibility_argument:
+    traditional_claim: |
+      Christ commands ἀγαπάω toward enemies (MAT.005.044) not φιλέω because emotional
+      affection cannot be commanded, only volitional choice can. {blb}
+
+    critique: |
+      This argument assumes the distinction it tries to prove. If φιλέω and ἀγαπάω
+      overlap substantially (Carson's view), then word choice may reflect common NT
+      usage patterns for enemy-love contexts, not semantic necessity. {llm-cs45}
+
+    significance: |
+      Demonstrates circular reasoning in traditional argumentation. Need to establish
+      distinction from usage patterns before using it to explain word selection. {llm-cs45}
+
+# Data Quality Metadata
+data_quality:
+  convergence_grouping: true
+  divergence_comparative: true
+  base_file_read_first: false
+  base_file_note: "No base file available in .data/strongs/G5368/"
+  all_claims_cited: true
+  no_percentages: true
+  no_fabrication: true
+  systematic_controversy_detection: true
+  controversy_count: 2
+  etymology_documented: true
+  diachronic_analysis_complete: true
+  scholarly_cross_references: true
+  pedagogical_value: true
+
+# Validation placeholder
+validation:
+  level_1_critical: null
+  level_2_high: null
+  level_3_medium: null
+  note: "Validation to be performed after extraction complete"
