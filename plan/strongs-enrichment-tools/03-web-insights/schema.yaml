@@ -1,7 +1,7 @@
 # Output Schema for Tool 3: Strong's Web Insights
 # Purpose: Modern insights and practical applications from expert web sources
 # Authority: MEDIUM to MEDIUM-LOW (clearly marked per source)
-# File Location: .data/bible/words/strongs/{num}/{num}.strongs-web-insights.yaml
+# File Location: ./bible/words/strongs/{num}/{num}-web-insights.yaml
 
 # === METADATA ===
 strongs_number: "G1234"  # or H#### for Hebrew
