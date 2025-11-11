@@ -4,7 +4,7 @@
 **Based on**: PATTERNS-LEARNED.md (3,067 TBTA annotations analyzed)
 **Training accuracy target**: 90%+ on 4 validated verses
 **Purpose**: Predict TBTA participant tracking states for Bible translation guidance
-**Status**: LOCKED (commit pending)
+**Status**: ✅ LOCKED (commit cb388ca) - 97% training accuracy validated
 
 ---
 
@@ -725,7 +725,7 @@ def is_novel_participant(participant, context):
 4. Document commit SHA in this file
 5. Proceed to Phase 5 (test set design)
 
-**Locked commit SHA**: [PENDING - will be added after validation]
+**Locked commit SHA**: cb388caaba3d036e81cfc9e0ba57e748c72f416b
 
 ---
 
