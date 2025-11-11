@@ -390,6 +390,162 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Authority: Medium
 - Purchase: https://www.wjkbooks.com
 
+**Louw-Nida Greek-English Lexicon of the New Testament Based on Semantic Domains**
+- Source code: `louw-nida`
+- Editors: Johannes P. Louw and Eugene A. Nida
+- Publisher: United Bible Societies
+- Copyright © 1988, 1989 by United Bible Societies
+- Used under fair use for scholarly citation
+- Citation format: `{louw-nida}`
+- Authority: High (Tier 1 - standard lexicon)
+- Note: 2-volume set organizing NT vocabulary by 93 semantic domains
+- Purchase: https://www.amazon.com/Greek-English-Lexicon-Testament-Semantic-Domains/dp/0826703402
+
+---
+
+## Peer-Reviewed Journal Articles and Academic Papers
+
+**Journal of Biblical Literature (JBL)**
+- Publisher: Society of Biblical Literature
+- Source code: `jbl`
+- Authority: Highest (Tier 1 - premier peer-reviewed biblical studies journal)
+- Website: https://www.sbl-site.org/publications/default.aspx
+- Citation format: `{jbl-YEAR-author}` or specific article codes
+
+**Shepherd, David. "'Do You Love Me?' A Narrative-Critical Reappraisal of ἀγαπάω and φιλέω in John 21:15–17"**
+- Source code: `shepherd-jbl-2010`
+- Journal: JBL 129, no. 4 (2010): 777–92
+- DOI: 10.2307/27821032
+- Citation format: `{shepherd-jbl-2010}`
+- Authority: Highest (Tier 1 - peer-reviewed journal article)
+- Used under fair use for scholarly citation
+
+**New Testament Studies (NTS)**
+- Publisher: Cambridge University Press
+- Source code: `nts`
+- Authority: Highest (Tier 1 - premier peer-reviewed NT journal)
+- Website: https://www.cambridge.org/core/journals/new-testament-studies
+- Citation format: `{nts-YEAR-author}`
+
+**Catholic Biblical Quarterly (CBQ)**
+- Publisher: Catholic Biblical Association of America
+- Source code: `cbq`
+- Authority: Highest (Tier 1 - peer-reviewed biblical studies journal)
+- Website: https://www.catholicbiblical.org/publications/catholic-biblical-quarterly
+- Citation format: `{cbq-YEAR-author}`
+
+---
+
+## Scholarly Monographs, Dissertations, and Commentaries
+
+**Do, Toan. "Re-thinking the Death of Jesus: An Exegetical and Theological Study of Hilasmos and Agapē in 1 John 2:1–2 and 4:7–10"**
+- Source code: `do-hilasmos-agape`
+- Author credentials: STD, PhD from Catholic University of Leuven; Associate Editor of JBL
+- Series: Contributions to Biblical Exegesis and Theology
+- Publisher: Peeters
+- Publication year: 2014
+- Authority: High (Tier 2 - PhD-level scholarly monograph)
+- Used under fair use for scholarly citation
+- Citation format: `{do-hilasmos-agape}`
+
+**Spicq, Ceslas, O.P. "Agape in the New Testament" (3 volumes)**
+- Source code: `spicq-agape`
+- Author credentials: Internationally recognized biblical scholar (1901-1993)
+- Original French title: "Agapè dans le Nouveau Testament"
+- English translation published 1963-1966
+- Publisher: B. Herder Book Co.
+- Authority: High (Tier 2 - major scholarly work)
+- Used under fair use for scholarly citation
+- Citation format: `{spicq-agape}`
+- Note: Comprehensive 3-volume study of agapē throughout the NT
+
+**Spicq, Ceslas, O.P. "Theological Lexicon of the New Testament" (3 volumes)**
+- Source code: `spicq-tlnt`
+- Translator: James D. Ernest
+- Publisher: Hendrickson Publishers
+- Copyright © 1994
+- Authority: High (Tier 1-2 - major lexical reference work)
+- Used under fair use for scholarly citation
+- Citation format: `{spicq-tlnt}`
+
+**Nygren, Anders. "Agape and Eros"**
+- Source code: `nygren-agape-eros`
+- Author credentials: Swedish theologian, Bishop of Lund, Lundensian School
+- Original Swedish publication: Two parts (1930, 1936)
+- English translation: Philip S. Watson
+- Publisher: SPCK (London) / Westminster Press (Philadelphia)
+- Publication year: 1953 (English)
+- Authority: High (Tier 2 - influential theological work)
+- Used under fair use for scholarly citation
+- Citation format: `{nygren-agape-eros}`
+- Note: Highly influential work on Christian love, though critiqued for methodology
+
+**Furnish, Victor Paul. "The Love Command in the New Testament"**
+- Source code: `furnish-love-command`
+- Author credentials: Professor, Perkins School of Theology, Southern Methodist University
+- Publisher: Abingdon Press
+- Publication year: 1972
+- Authority: High (Tier 2 - major scholarly monograph)
+- Used under fair use for scholarly citation
+- Citation format: `{furnish-love-command}`
+- Note: Critical examination of love commandment in NT ethics
+
+**Outka, Gene. "Agape: An Ethical Analysis"**
+- Source code: `outka-agape-ethics`
+- Series: Yale Publications in Religion
+- Publisher: Yale University Press
+- Publication year: 1972
+- Authority: High (Tier 2 - major ethical/theological study)
+- Used under fair use for scholarly citation
+- Citation format: `{outka-agape-ethics}`
+- Note: Comprehensive ethical analysis of agape love
+
+**Brown, Raymond E. "The Epistles of John"**
+- Source code: `brown-johannine-epistles`
+- Author credentials: SS (Sulpician), premier Johannine scholar
+- Series: Anchor Bible Commentary
+- Publisher: Doubleday / Yale University Press
+- Publication year: 1982 (840 pages)
+- Authority: High (Tier 2 - major scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{brown-johannine-epistles}`
+- Note: Comprehensive commentary on 1, 2, 3 John
+
+**Fee, Gordon D. "The First Epistle to the Corinthians"**
+- Source code: `fee-1corinthians`
+- Series: New International Commentary on the New Testament (NICNT)
+- Publisher: Wm. B. Eerdmans Publishing Company
+- Publication year: 1987 (revised edition 2014)
+- Authority: High (Tier 2 - major scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{fee-1corinthians}`
+
+**Barrett, C. K. "The Gospel According to St. John"**
+- Source code: `barrett-john`
+- Series: Multiple editions and publishers
+- Publication year: 1955 (multiple revisions)
+- Authority: High (Tier 2 - standard scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{barrett-john}`
+- Note: Classic scholarly commentary on John's Gospel
+
+**Carson, D. A. "The Difficult Doctrine of the Love of God"**
+- Source code: `carson-love-of-god`
+- Publisher: Crossway Books
+- Publication year: 2000
+- Authority: High (Tier 2 - scholarly theological work)
+- Used under fair use for scholarly citation
+- Citation format: `{carson-love-of-god}`
+
+**Carson, D. A. "The Gospel According to John"**
+- Source code: `carson-john`
+- Series: Pillar New Testament Commentary (PNTC)
+- Publisher: Wm. B. Eerdmans Publishing Company
+- Publication year: 1991
+- Authority: High (Tier 2 - major scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{carson-john}`
+
 ---
 
 ## Web Resources
