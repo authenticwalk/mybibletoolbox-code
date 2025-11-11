@@ -1,0 +1,517 @@
+strong_number: G1411
+language: greek
+lemma: δύναμις
+transliteration: dýnamis
+pathway: theological
+cycle: 4
+
+# Etymology & Root
+
+etymology:
+  root_word:
+    strongs: G1410
+    lemma: δύναμαι
+    gloss: "can, be able, have power"
+    relationship: "δύναμις derives from δύναμαι (to be able)" {strongs} {thayer} {biblehub} {abbott-smith}
+
+  convergence:
+    summary: |
+      All lexicons agree: δύναμις denotes inherent power, ability, or capacity—
+      power residing in a thing by virtue of its nature. Core semantic field
+      centers on capability and potentiality. {strongs} {thayer} {abbott-smith}
+      {lsj} {helps} {mounce}
+
+    classical_development: |
+      LSJ traces evolution: primary sense "power, might" in Homer (bodily strength),
+      expanded meanings include capability, authority, military forces, natural
+      capacity, and elemental forces. Fundamental concept: inherent capability
+      or latent potential—power-as-resource rather than power-in-use. {lsj}
+
+# Semantic Range (6 categories, high-freq tier)
+
+semantic_range:
+  categories:
+    - id: 1
+      label: "Inherent Ability & Capacity"
+      definition: |
+        Power residing in a thing by virtue of its nature; inherent strength
+        enabling performance. For believers, ability to perform by applying
+        the Lord's inherent abilities. {thayer} {helps} {biblehub}
+
+      usage_context: "Core NT meaning—foundational capacity rather than external force" {helps}
+
+      examples:
+        - "Mat.25:15 - κατὰ τὴν ἰδίαν δύναμιν (according to his own ability)" {biblehub}
+        - "2Co.8:3 - κατὰ δύναμιν, παρὰ δύναμιν (according to means, beyond means)" {thayer}
+
+      theological_note: |
+        HELPS emphasizes spiritual dimension: believers' δύναμις flows from
+        applying the Lord's inherent abilities, not self-generated capacity. {helps}
+
+    - id: 2
+      label: "Miraculous Power & Mighty Works"
+      definition: |
+        Power of performing miracles; by metonymy, the miracle itself. Frequently
+        plural (δυνάμεις) for mighty works demonstrating supernatural intervention.
+        Distinguished from mere signs (σημεῖα) or wonders (τέρατα). {thayer}
+        {abbott-smith}
+
+      usage_context: "Dominant NT application—miraculous manifestations validating divine authority" {biblehub}
+
+      examples:
+        - "Mat.7:22 - πολλὰς δυνάμεις ἐποιήσαμεν (we did many mighty works)" {thayer}
+        - "Act.2:22 - δυνάμεσιν καὶ τέρασιν καὶ σημείοις (miracles, wonders, signs)" {biblehub}
+
+      trench_reference: |
+        Trench Section xci distinguishes τέρας (prodigy exciting wonder),
+        σημεῖον (sign with revelatory purpose), δύναμις (demonstration of power),
+        μεγαλεῖον (magnificent deed). {blb}
+
+    - id: 3
+      label: "Divine Omnipotence & Creative Power"
+      definition: |
+        Power of God anchored in creation itself; eternal power and divine nature
+        evident from created order. Fundamental attribute distinguishing Creator
+        from creation. {thayer} {biblehub}
+
+      usage_context: "Foundational theological category—God's inherent, unlimited power" {biblehub}
+
+      examples:
+        - "Rom.1:20 - ἀΐδιος αὐτοῦ δύναμις (His eternal power)" {thayer}
+        - "Rom.1:16 - δύναμις θεοῦ εἰς σωτηρίαν (power of God for salvation)" {biblehub}
+        - "1Co.1:24 - Χριστὸν θεοῦ δύναμιν (Christ the power of God)" {biblehub}
+
+      christological_dimension: |
+        Jesus operates "in the power of the Spirit" (Luk.4:14); resurrection
+        declares Him Son of God "with power" (Rom.1:4). Δύναμις demonstrates
+        divine nature. {biblehub}
+
+    - id: 4
+      label: "Moral & Spiritual Power"
+      definition: |
+        Moral power and excellence of soul; pneumatological empowerment through
+        Holy Spirit enabling believers for witness, endurance, sanctification.
+        {thayer} {biblehub}
+
+      usage_context: "Applied to believer transformation and Spirit-empowered living" {biblehub}
+
+      examples:
+        - "Luk.24:49; Act.1:8 - δύναμιν ἐξ ὕψους (power from on high)" {thayer}
+        - "Eph.3:16 - κραταιωθῆναι διὰ τοῦ πνεύματος (strengthened with power through His Spirit)" {biblehub}
+
+      theological_note: |
+        Fundamental difference from external coercion—represents internal
+        transformative capability. Not momentary display but sustained
+        manifestation enabling progressive sanctification. {biblehub}
+
+    - id: 5
+      label: "Celestial Powers & Authority Figures"
+      definition: |
+        By metonymy: (a) God Himself as "the Power"; (b) angels and supernatural
+        beings with administrative power; (c) cosmic forces and heavenly hosts.
+        {abbott-smith} {mounce} {thayer}
+
+      usage_context: "Specialized NT usage—δύναμις as title or designation for supernatural authority" {mounce}
+
+      examples:
+        - "Mat.26:64 - ἐκ δεξιῶν τῆς δυνάμεως (right hand of the Power = God)" {thayer}
+        - "Rom.8:38; Eph.1:21 - δυνάμεις (powers = angelic/demonic authorities)" {biblehub}
+
+    - id: 6
+      label: "Resources & Economic Capacity"
+      definition: |
+        Pecuniary ability, wealth, material resources and means. Papyri evidence:
+        κατὰ δύναμιν standard phrase in marriage contracts for economic ability.
+        {abbott-smith} {thayer} {studylight}
+
+      usage_context: "Economic idiom preserving original sense of capability" {studylight}
+
+      examples:
+        - "2Co.8:3 - κατὰ δύναμιν, παρὰ δύναμιν (according to means, beyond means)" {thayer}
+        - "Rev.18:3 - ἐκ τῆς δυνάμεως τοῦ στρήνους (from abundance of her resources)" {biblehub}
+
+# HELPS Word-Studies
+
+helps_word_study:
+  definition: |
+    Properly, ability to perform; for believers, power to achieve by applying
+    the Lord's inherent abilities. {helps}
+
+  emphasis: |
+    Spiritual growth requires divine empowerment—believers access δύναμις not
+    from self-generated capacity but by applying God's inherent abilities
+    granted through the Spirit. {helps}
+
+  application: |
+    NT uses δύναμις 120 times emphasizing that true spiritual capability flows
+    from union with Christ and Spirit indwelling, not human effort alone.
+    Power through God's ability needed in every scene of life for sanctification
+    and preparation for heaven. {helps}
+
+# Theological Dictionaries
+
+theological_dictionaries:
+  tdnt:
+    reference: "2:284,186"
+    volume_page_entry: "Volume 2, page 284, entry 186"
+    topic: "Power in NT Theology"
+    source: "{blb}"
+
+# Controversy & Scholarly Debates
+
+controversies:
+  - type: "false_etymology"
+    claim: |
+      Popular sermon illustration claims δύναμις means "dynamite power" or
+      "explosive power" because English "dynamite" derives from Greek δύναμις.
+      {websearch}
+
+    refutation:
+      time_frame_fallacy: |
+        Approximately 1,800-year gap between NT composition (1st c.) and
+        Alfred Nobel's invention of dynamite (1867). NT writers had zero
+        concept of explosives. Reverse etymological fallacy—termed by D.A. Carson
+        as "semantic anachronism." {websearch}
+
+      semantic_incompatibility: |
+        Explosions are sudden, short-lived, momentary; δύναμις conveys
+        long-lasting, enduring, sustained strength focused on ability and
+        capability, not violent destruction. {websearch}
+
+      naming_convention: |
+        Nobel followed scientific convention of using Greek/Latin roots for
+        discoveries. He chose δύναμις because it means "power/force," not
+        because ancient word meant explosives. {websearch}
+
+      scholarly_term: |
+        Error represents "semantic back-formation and reconstruction"—
+        retroactively projecting modern meaning onto ancient term. {websearch}
+
+    translation_impact: |
+      False etymology produces distorted theology: portraying Holy Spirit as
+      violent, destructive force rather than sustaining, empowering presence.
+      Misrepresents biblical pneumatology. {llm-cs45}
+
+  - type: "theological_controversy"
+    claim: |
+      Cessationism versus continuationism debate centers on whether miraculous
+      δύναμις gifts (1Co.12:10 - working of miracles) continue today or ceased
+      with apostolic age. {websearch}
+
+    positions:
+      - view: "Cessationism"
+        description: |
+          Miraculous δύναμις gifts were unique authentication for apostolic
+          ministry and foundational revelation. With canon closure and apostolic
+          succession ending, miraculous powers ceased. Sign gifts given to
+          authenticate apostles' message and NT church foundation. {websearch}
+
+      - view: "Continuationism"
+        description: |
+          Miraculous δύναμις gifts remain active today as Spirit empowers
+          believers for witness and ministry. No biblical text explicitly
+          limits miracles to apostolic age. Charismata never ceased and will
+          only cease at Christ's return. {websearch}
+
+    significance: |
+      Δύναμις becomes locus of ecclesiological and pneumatological debate—
+      question of Spirit's ongoing activity and believers' access to
+      supernatural empowerment. Both views agree God still works and does
+      miracles; disagreement is what to expect as normative in church today.
+      {llm-cs45} {websearch}
+
+  - type: "semantic_debate"
+    claim: |
+      Philosophers debate Aristotelian δύναμις (potentiality) versus ἐνέργεια
+      (actuality)—whether term means "ability/faculty" or "political influence/power."
+      Translation remains contested: some leave terms untranslated because
+      interpretation is what's at stake. {websearch}
+
+    context: |
+      Classical philosophical usage differs from NT theological usage.
+      Aristotle's δύναμις denotes capacity not yet actualized; NT usage
+      emphasizes demonstrated capability and realized power. Second sense
+      of dunamis related not to movement (kinêsis) but to activity (energeia).
+      {lsj} {websearch}
+
+    significance: |
+      Diachronic semantic shift—from philosophical abstraction (potential
+      versus actual) to theological concreteness (divine power manifest in
+      miracles and salvation). Aristotle thinks potentiality is indefinable,
+      grasped only from consideration of cases. {llm-cs45} {websearch}
+
+# Synonym Network (Top 5)
+
+synonym_network:
+  english_translation_collapse: |
+    English "power" translates 5+ distinct Greek concepts, collapsing theological
+    precision between inherent ability (δύναμις), strength (ἰσχύς), manifested
+    power (κράτος), authority (ἐξουσία), and operative power (ἐνέργεια).
+    {thayer} {trench}
+
+  trench_section:
+    reference: "Section xci"
+    focus: "Miraculous terminology distinctions"
+    key_distinction: |
+      Trench characterizes δύναμις as "power, natural ability, general and
+      inherent"—contrasting with related concepts. Section distinguishes
+      τέρας (prodigy), σημεῖον (sign), δύναμις (power demonstration),
+      μεγαλεῖον (magnificent deed). {trench} {blb}
+
+  synonyms:
+    - strongs: G2479
+      lemma: ἰσχύς
+      gloss: "strength, might"
+      distinction: |
+        Strength especially physical, as endowment or natural possession.
+        Ἰσχύς denotes the ability to perform; δύναμις is actually performing
+        and demonstrating that strength and ability. Δύναμις broader—includes
+        physical but emphasizes functional capability. {thayer} {trench} {websearch}
+
+    - strongs: G2904
+      lemma: κράτος
+      gloss: "power, dominion, might"
+      distinction: |
+        Manifested, relative power; dominion and sovereign control, chiefly
+        of God in NT. Κράτος emphasizes displayed supremacy and power over
+        others; δύναμις emphasizes inherent capacity underlying manifestation.
+        Κράτος is no mere strength, but power over others. {thayer} {trench}
+        {websearch}
+
+    - strongs: G1849
+      lemma: ἐξουσία
+      gloss: "authority, power, right"
+      distinction: |
+        Authority, delegated power, liberty of action, legal right. Ἐξουσία
+        answers "by what right?"; δύναμις answers "by what capability?".
+        Authority versus ability. Δύναμις means capability to do something;
+        ἐξουσία means authority or right to exercise that capability. {thayer}
+        {trench} {biblehub} {websearch}
+
+      theological_significance: |
+        Jesus possesses both: ἐξουσία (Mat.28:18 - all authority given) and
+        δύναμις (Luk.4:14 - power of Spirit). Right to act requires ability
+        to execute. {biblehub}
+
+    - strongs: G1753
+      lemma: ἐνέργεια
+      gloss: "working, operation, energy"
+      distinction: |
+        Working, operative power in exercise; actualized power producing
+        effects. Ἐνέργεια has concept of movement, flow, the energy of;
+        emphasizes active operation. Δύναμις emphasizes inherent capability
+        (may be potential or active). {thayer} {trench} {websearch}
+
+      philosophical_background: |
+        Aristotelian contrast: δύναμις (potentiality) versus ἐνέργεια (actuality).
+        NT retains distinction: δύναμις can be latent or manifest; ἐνέργεια
+        always denotes actualized working. {lsj} {llm-cs45}
+
+    - strongs: G970
+      lemma: βία
+      gloss: "force, violence"
+      distinction: |
+        Forceful, oppressive power in violent deeds; coercive external force.
+        Δύναμις emphasizes inherent capability; βία emphasizes violent
+        application against resistance. In Aeschylus, kratos and bia fasten
+        Prometheus—most coercive and violent form of power. {thayer} {trench}
+        {websearch}
+
+      contrast: |
+        Βία appears only 3x in NT (Act.5:26, 21:35, 27:41) always with negative
+        connotation (violence, compulsion). Δύναμις neutral or positive. {llm-cs45}
+
+# Diachronic Development
+
+diachronic_analysis:
+  pre_nt_development:
+    period: "Classical → Hellenistic (800 BCE - 50 BCE)"
+
+    semantic_progression: |
+      Classical: Homer (bodily strength, physical might of warriors). Contested
+      meaning—1919 study: physical force in Homer, royal/divine power in Hesiod.
+      2018 study (David Lefebvre): kata dunamin expresses Greek "sense of measure"
+      and "wisdom of limits." Plato: dunameis as "genus of beings" by which "we
+      can do what we can do"—power and action, focusing on what a thing can do.
+      Aristotle: dunamis became academic term for potentiality and actuality,
+      principles for studying movement, causality, ethics, physiology. Euclid:
+      mathematical power/square. Broad range: physical → military → intellectual →
+      mathematical. {lsj} {websearch}
+
+      Hellenistic: Economic idiom κατὰ δύναμιν standard in papyri (marriage
+      contracts, legal documents). BGU IV.1050.14 (Augustan period) uses phrase
+      "according to one's means." P Oxy II.282.8 (A.D. 30–35) has contrasting
+      ὑπὲρ δύναμιν ("beyond one's means"). Religious intensification—δύναμις
+      in magical papyri as divine manifestation worthy of worship. Ramsay notes
+      characteristic terminology in pagan devotion—"power" represented fundamental
+      attribute worshipped. {studylight} {websearch}
+
+    trajectory: |
+      Development: concrete physical strength → abstract philosophical capacity →
+      religious/magical power. Economic usage stable; theological weight increasing.
+      {lsj} {studylight}
+
+  lxx_usage:
+    occurrences: 383
+    source: "{blb}"
+    hebrew_equivalents: |
+      Translates 35+ Hebrew words. Primary: חַיִל (chayil - army/strength, 138x),
+      צָבָא (tsava - army/host, 113x), גְּבוּרָה (gevurah - might), עֹז (oz -
+      strength), כֹּחַ (koach - power). Also: gibbor (warrior), chozeq (strength),
+      kavod (glory), meod (very/much/"muchness"). Demonstrates semantic breadth—
+      military, physical, divine power all mapped to δύναμις. {abbott-smith}
+      {blb} {websearch}
+
+    usage_note: |
+      LXX usage influences NT writers—δύναμις already theological term for
+      divine power in Greek OT. NT inherits this semantic specialization. {llm-cs45}
+
+  nt_specialization:
+    occurrences: 120
+    source: "{blb}"
+    specialization: |
+      NT narrows semantic range toward theological/miraculous contexts while
+      maintaining economic idioms. Dominant applications: (1) miraculous power
+      validating divine authority, (2) divine omnipotence underlying creation/
+      salvation, (3) pneumatological empowerment for believers. Classical
+      breadth gives way to focused religious application. Most prevalent of
+      Greek power words in NT. Inherent force flowing from person to give
+      ability for supernatural things—miracles or morally excellent acts.
+      {helps} {biblehub} {websearch}
+
+    semantic_trajectory: |
+      Overall development: concrete physical strength (Homer) → abstract
+      philosophical capacity (Aristotle) → religious/magical power (papyri) →
+      theological divine capability (NT). Each stage retains core sense of
+      inherent capability while adding specialized applications. {llm-cs45}
+
+# Usage Statistics
+
+usage_statistics:
+  total_occurrences:
+    tr_greek: 120
+    mgnt_greek: 119
+    lxx_greek: 383
+    source: "{blb}"
+
+  textual_basis: "mGNT (Majority Greek New Testament), TR (Textus Receptus), LXX (Septuagint)"
+
+  testament_distribution:
+    new_testament: 120
+    old_testament: 0
+    note: |
+      Greek word, NT only. LXX usage (383 forms) represents Greek translation
+      of Hebrew OT, translating 35+ Hebrew words. {blb} {abbott-smith}
+
+  morphological_distribution:
+    total_forms: 9
+    common_forms:
+      - form: "δύναμιν"
+        parsing: "accusative singular feminine"
+        occurrences: 31
+        note: "Most common form (33 in some counts)" {biblehub}
+
+      - form: "δυνάμει"
+        parsing: "dative singular feminine"
+        occurrences: 26
+
+      - form: "δυνάμεως"
+        parsing: "genitive singular feminine"
+        occurrences: 21
+
+      - form: "δυνάμεις"
+        parsing: "nominative/accusative plural feminine"
+        occurrences: 19
+        note: "Plural often denotes specific miracles or angelic powers (20 in some counts)" {biblehub}
+
+      - form: "δύναμις"
+        parsing: "nominative singular feminine"
+        occurrences: 14
+
+  kjv_translation_breakdown:
+    total: 120
+    primary: "power (77x = 64%)"
+    translations:
+      - "power": 77
+      - "mighty work": 11
+      - "strength": 7
+      - "miracle": 7
+      - "might": 4
+      - "virtue": 3
+      - "mighty": 2
+      - "miscellaneous": 9
+
+    note: |
+      Strong preference for "power" reflects theological/miraculous contexts
+      dominating NT usage. KJV translators recognized δύναμις as primary
+      "power" word versus authority (ἐξουσία) or strength (ἰσχύς). {blb}
+
+# Metadata
+
+metadata:
+  extraction_date: "2025-11-11"
+  tool: "lexicon-core"
+  tool_version: "cycle-4-exp-3"
+  methodology: "theological-pathway-unchanged-control"
+  cycle: 4
+  experiment: "exp3-G1411-dunamis-cycle4-control"
+
+  word_characteristics:
+    frequency: 120
+    frequency_tier: "high (100-999 occurrences)"
+    category_limit: "4-6 semantic categories"
+    categories_used: 6
+    word_type: "theological noun"
+    tdnt_entry: true
+    trench_entry: true
+    helps_available: true
+    controversy_found: true
+
+  cycle_4_control_status:
+    purpose: "Control experiment to verify theological pathway stability"
+    expected_result: "59 min, 8.5/10 richness (same as Cycle 3)"
+    changes_applied: "NONE - theological pathway unchanged from Cycle 3"
+    validation_focus: "Confirm no regression in quality or methodology"
+
+  cycle_3_optimizations_maintained:
+    - "Redundancy Elimination: Classical + Papyri consolidated into Pre-NT Development"
+    - "Redundancy Elimination: LSJ used once in etymology, cross-referenced in diachronic"
+    - "Redundancy Elimination: Top 5 synonyms only (vs 6 in Cycle 2)"
+    - "Adaptive Depth: Full diachronic for theological word (10 min)"
+    - "Adaptive Depth: Full controversy detection (6 patterns, theological term)"
+    - "Template Optimization: Streamlined headers (4 lines vs 11)"
+    - "Template Optimization: Reference SCHEMA.md instead of duplicating"
+    - "Source Prioritization: Trench first for synonyms (section xci)"
+    - "Source Prioritization: TDNT primary source for theology"
+    - "Parallel Extraction: All 6 controversy patterns searched simultaneously"
+    - "Parallel Extraction: TDNT + HELPS + semantic range fetched in parallel"
+
+  sources_consulted:
+    - source: "biblehub"
+      url: "https://www.biblehub.com/greek/1411.htm"
+      content: "Strong's, Thayer's, HELPS, NAS, usage statistics, semantic categories"
+
+    - source: "blb"
+      url: "https://www.blueletterbible.org/lexicon/g1411/kjv/tr/0-1/"
+      content: "Occurrence counts, TDNT reference, Trench Section xci, KJV breakdown"
+
+    - source: "studylight"
+      url: "https://www.studylight.org/lexicons/eng/greek/1411.html"
+      content: "Mounce, Abbott-Smith, LSJ, papyri evidence"
+
+    - source: "websearch"
+      queries:
+        - "δύναμις dunamis Homer Plato Aristotle Hellenistic papyri diachronic"
+        - "δύναμις dunamis LXX Septuagint Hebrew equivalents chayil gevurah"
+        - "δύναμις dunamis New Testament usage frequency theological development"
+        - "dunamis false etymology dynamite Nobel anachronism refuted"
+        - "dunamis controversy scholarly debate theological disputed"
+        - "dunamis vs exousia distinction authority power difference"
+        - "dunamis meaning disputed translation problem contested"
+        - "dunamis cessationism continuationism theological controversy"
+        - "dunamis Aristotle potentiality actuality energeia philosophical"
+        - "Trench Synonyms section xci dunamis power miracle"
+        - "dunamis vs ischus kratos bia energeia Greek power words distinctions"
+      content: "False etymology refutation, cessationism debate, Aristotelian philosophical usage, exousia distinction, translation issues, synonym distinctions, diachronic development"
+
+  validation_status: "pending"
