@@ -1,0 +1,258 @@
+# Tool 2: Scholarly Analysis Output Schema
+
+# === METADATA ===
+strongs_number: "G####|H####"
+language: "greek|hebrew"
+lemma: "{Greek/Hebrew word}"
+transliteration: "{romanized}"
+
+tool:
+  name: "strongs-scholarly-analysis"
+  version: "1.0.0"
+  generated_date: "YYYY-MM-DD"
+  extraction_time_minutes: {number}
+
+# === THEOLOGICAL SIGNIFICANCE ===
+# Authority: Tier 1-2 only (peer-reviewed)
+theological_significance:
+  importance_level: "{central|significant|moderate|minimal}"
+  rationale: "{why this classification}" {llm-cs45}
+
+  key_themes:
+    - theme: "{theological concept}"
+      explanation: "{how word relates to this theme}" {peer-reviewed-citation}
+      biblical_foundation:
+        - ref: "{BOOK}.{chapter}.{verse}"
+          relevance: "{why this verse matters}" {llm-cs45}
+      significance: "{impact on theology}" {peer-reviewed-citation}
+
+  doctrinal_relevance:
+    - doctrine: "{doctrine name - e.g., soteriology, christology}"
+      role: "{word's role in this doctrine}" {peer-reviewed-citation}
+      key_passages: ["{BOOK}.{chapter}.{verse}", "..."]
+      scholarly_consensus: "{high|moderate|low|no consensus}"
+
+# === SCHOLARLY DEBATES ===
+# Authority: Tier 1-2 only
+# Present multiple views fairly, with evidence
+scholarly_debates:
+  - debate_topic: "{specific question or controversy}"
+    debate_type: "{semantic|theological|historical|translation|textual}"
+    significance: "{high|medium|low}"
+
+    view_1:
+      position: "{first scholarly view - concise statement}"
+      proponents: ["{Scholar A}", "{Scholar B}"]
+      sources:
+        - citation: "{jbl-2020-smith}"
+          summary: "{key argument from this source}" {llm-cs45}
+      evidence: "{arguments/evidence for this view}" {jbl-2020-smith}
+      strength: "{strong|moderate|weak based on evidence}"
+
+    view_2:
+      position: "{second scholarly view}"
+      proponents: ["{Scholar C}", "{Scholar D}"]
+      sources:
+        - citation: "{nts-2019-johnson}"
+          summary: "{key argument}" {llm-cs45}
+      evidence: "{arguments/evidence}" {nts-2019-johnson}
+      strength: "{strong|moderate|weak}"
+
+    # Optional: view_3, view_4, etc. if needed
+
+    consensus_status: "{no-consensus|emerging-consensus|settled-with-minority|consensus}"
+    synthesis: "{balanced summary of debate}" {llm-cs45}
+
+# === CULTURAL & HISTORICAL CONTEXT ===
+# Authority: Tier 1-2 only
+# Focus on 1st century context for NT, ancient Near East for OT
+cultural_context:
+  historical_period: "{1st century Palestine|ancient Near East|Second Temple Judaism|etc.}"
+
+  social_context:
+    description: "{social practices, customs related to this word}" {peer-reviewed-citation}
+    significance: "{why this matters for understanding the word}" {llm-cs45}
+    examples:
+      - example: "{specific social practice}"
+        source: "{archaeological-source|historical-source}"
+        relevance: "{how this illuminates word usage}" {llm-cs45}
+
+  cultural_significance:
+    description: "{why culturally important in biblical era}" {peer-reviewed-citation}
+    contrast_modern: "{how modern understanding differs}" {llm-cs45}
+
+  biblical_era_usage:
+    description: "{how used in biblical times}" {peer-reviewed-citation}
+    textual_examples:
+      - source: "{contemporary literature - e.g., Josephus, Philo, Dead Sea Scrolls}"
+        usage: "{how word used in this source}" {scholarly-citation}
+        comparison: "{similar or different from NT/OT usage?}" {llm-cs45}
+
+# === DIACHRONIC DEVELOPMENT ===
+# Authority: Tier 1-2 only
+# Trace semantic development across time periods
+diachronic_analysis:
+  classical_usage:
+    period: "Classical Greek (5th-4th century BCE)"
+    primary_meaning: "{classical meaning}" {lsj} {scholarly-article}
+    sources: "{Homer, Plato, Aristotle, Herodotus, etc.}"
+    examples:
+      - author: "{ancient author}"
+        work: "{work title}"
+        usage: "{how word used}" {scholarly-citation}
+
+  hellenistic_usage:
+    period: "Hellenistic Greek (3rd-1st century BCE)"
+    primary_meaning: "{meaning in this period}" {scholarly-article}
+    sources: "{Septuagint, papyri, inscriptions}"
+    semantic_shift: "{how meaning changed from Classical}" {scholarly-analysis}
+
+  koine_usage:
+    period: "Koine Greek (1st-3rd century CE) / Biblical Hebrew period"
+    primary_meaning: "{NT/OT meaning}" {thayer|bdb} {scholarly-article}
+    sources: "{New Testament, early Christian literature / Old Testament, Hebrew inscriptions}"
+    semantic_shift: "{how meaning changed}" {scholarly-analysis}
+
+  patristic_usage:
+    period: "Patristic period (2nd-5th century CE)"
+    primary_meaning: "{meaning in church fathers}" {scholarly-article}
+    theological_development: "{how theology shaped word usage}" {scholarly-citation}
+
+  modern_usage:
+    period: "Modern Greek / Modern Hebrew"
+    primary_meaning: "{modern meaning}" {scholarly-source}
+    continuity: "{preserved|shifted|lost}" {llm-cs45}
+    significance: "{what semantic journey tells us}" {llm-cs45}
+
+# === SCHOLARLY INSIGHTS ===
+# Authority: Tier 1-2 only
+# Specific observations from academic sources
+scholarly_insights:
+  - insight: "{specific scholarly observation or finding}"
+    source: "{peer-reviewed-citation}"
+    field: "{NT studies|OT studies|linguistics|archaeology|theology|textual criticism}"
+    significance: "{why this matters for understanding the word}" {llm-cs45}
+    date: "YYYY"
+    confidence: "{high|moderate|low - based on evidence}"
+
+  - insight: "{another scholarly observation}"
+    source: "{peer-reviewed-citation}"
+    field: "{field name}"
+    significance: "{impact}" {llm-cs45}
+    date: "YYYY"
+
+# === INTERTEXTUAL CONNECTIONS ===
+# Authority: Tier 1-2 only
+intertextual_connections:
+  old_testament:
+    - connection: "{how word relates to OT concept}"
+      hebrew_equivalent: "{Hebrew word}"
+      strongs_hebrew: "H####"
+      scholarly_source: "{peer-reviewed-citation}"
+      significance: "{why this connection matters}" {llm-cs45}
+      key_passages: ["{BOOK}.{chapter}.{verse}", "..."]
+
+  septuagint:
+    - hebrew_word: "{Hebrew word}"
+      greek_translation: "{how LXX translated it}"
+      semantic_transfer: "{meaning carried over or shifted}" {scholarly-analysis}
+      influence_on_nt: "{how LXX usage influenced NT writers}" {scholarly-citation}
+
+  greco_roman_literature:
+    - parallel: "{usage in classical/contemporary literature}"
+      author: "{Plato|Josephus|Philo|etc.}"
+      work: "{work title}"
+      scholarly_analysis: "{how scholars analyze this parallel}" {peer-reviewed-citation}
+      significance: "{what this reveals}" {llm-cs45}
+
+  dead_sea_scrolls:
+    - document: "{scroll designation - e.g., 1QS, 4QMMT}"
+      usage: "{how word/concept appears}" {scholarly-citation}
+      significance: "{relevance for NT/OT understanding}" {llm-cs45}
+
+# === TEXTUAL CRITICISM NOTES ===
+# Authority: Tier 1-2 only
+# Include only if significant textual variants affect word usage
+textual_variants:
+  - passage: "{BOOK}.{chapter}.{verse}"
+    variant_description: "{what manuscripts differ}" {scholarly-citation}
+    significance: "{how variants affect word meaning}" {llm-cs45}
+    scholarly_consensus: "{preferred reading and why}" {peer-reviewed-citation}
+
+# === LEXICAL RELATIONSHIPS (cross-reference to Tool 1) ===
+# Build on Tool 1, add scholarly depth
+lexical_relationships:
+  synonym_scholarly_analysis:
+    - word: "{related Greek/Hebrew word}"
+      strongs: "{number}"
+      scholarly_distinction: "{how scholars distinguish these terms}" {peer-reviewed-citation}
+      debate_summary: "{if scholars disagree on distinction}" {llm-cs45}
+
+  antonyms_scholarly:
+    - word: "{opposite term}"
+      strongs: "{number}"
+      scholarly_analysis: "{how contrast illuminates meaning}" {peer-reviewed-citation}
+
+# === TRANSLATION GUIDANCE ===
+# Authority: Tier 1-2 only
+# Based on scholarly analysis
+translation_guidance:
+  challenges:
+    - challenge: "{specific translation difficulty}"
+      explanation: "{why this is difficult}" {scholarly-citation}
+      solutions: "{how translators have addressed it}" {scholarly-citation}
+      recommendation: "{scholarly consensus if any}" {llm-cs45}
+
+  receptor_language_issues:
+    - issue: "{cultural/linguistic gap}"
+      affected_languages: ["{ISO-639-3 codes}"]
+      scholarly_discussion: "{how scholars address this}" {peer-reviewed-citation}
+
+# === CONTROVERSIES & MISCONCEPTIONS ===
+# Authority: Must cite scholarly refutation (Tier 1-2)
+controversies:
+  - type: "{popular-misconception|scholarly-debate|etymological-fallacy}"
+    claim: "{the controversial or incorrect claim}"
+    prevalence: "{widespread|moderate|rare}"
+
+    scholarly_refutation:
+      correction: "{what scholarship actually says}" {peer-reviewed-citation}
+      evidence: "{evidence for correction}" {peer-reviewed-citation}
+      key_scholars: ["{names of scholars who addressed this}"]
+
+    significance: "{why this matters}" {llm-cs45}
+
+# === QUALITY METADATA ===
+metadata:
+  authority_level: "HIGH"
+
+  source_distribution:
+    tier_1_highest: {count}  # Peer-reviewed journals, premier sources
+    tier_2_high: {count}      # PhD dissertations, SBL papers
+    tier_3_plus: 0            # Should be ZERO for Tool 2
+
+  fields_represented:
+    - "{NT studies}"
+    - "{linguistics}"
+    - "{archaeology}"
+    - "{theology}"
+
+  cross_references_used: ["{bdag}", "{tdnt}", "{louw_nida}", "{halot}"]
+
+  validation:
+    inline_citations_complete: true
+    all_sources_tier_1_or_2: true
+    debates_fairly_represented: true
+    no_llm_generated_theology: true
+
+  extraction_notes: "{any challenges, limitations, or special considerations}"
+  requires_human_review: false
+
+  tokens_used: {count}
+  cost_estimate: "${amount}"
+
+# === INTEGRATION WITH OTHER TOOLS ===
+tool_integration:
+  builds_on_tool_1: true  # Uses lexicon-core as foundation
+  cross_ref_codes_from_tool_1: ["{codes used for discovery}"]
+  supplements_tool_1_with: ["{theological depth}", "{scholarly debates}", "{cultural context}"]
