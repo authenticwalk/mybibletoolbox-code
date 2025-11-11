@@ -487,21 +487,38 @@ Person-systems clusivity feature has completed all core workflow phases (1-8) wi
 5. **NT-specific patterns**: Limited NT validation (mostly OT)
 
 ### Production Recommendation
-**Status**: ✅ **APPROVED for translation guidance use** (with caveats)
+**Status**: ⚠️ **CONDITIONALLY APPROVED** - Ready for v2.1 validation, not yet production deployment
 
-**Ready For**:
-- Bible translation projects in 700+ clusivity-marking languages
-- Training materials for translators
-- Clusivity annotation of new Bible texts
-- Integration with translation software
+**Peer Review Status** (2025-11-11):
+- **Methodology**: APPROVED ✅ (exemplary)
+- **Translation Validation**: APPROVED ✅ (100%, 9 languages)
+- **Algorithm Design**: APPROVED ✅ (v2.1 well-structured)
+- **Documentation**: APPROVED ✅ (54 files, exceptional quality)
+- **Production Deployment**: CONDITIONAL ⏳ (awaiting v2.1 validation)
+
+**Critical Revisions Required Before Production**:
+1. ❌ Validate algorithm v2.1 on 21-verse test set (currently untested, only projected 75-80%)
+2. ❌ Confirm v2.1 accuracy target or document actual performance
+3. ❌ Explain/resolve random test underperformance (50-60% vs 80-90% target)
+
+**Ready For** (Current State - Algorithm v1.0):
+- Research and methodology demonstration (100% translation validation)
+- Translation training materials (with explicit caveats about limitations)
+- Pilot testing with human review (no automated deployment)
+
+**Ready For** (After v2.1 Validation):
+- Bible translation projects in 700+ clusivity-marking languages (with human review)
+- Clusivity annotation guidance (not fully automated)
+- Integration with translation software (as suggestion tool requiring validation)
 
 **Not Ready For**:
-- TBTA annotation reproduction (perspective difference unresolved)
-- Fully automated annotation (requires human review)
-- Publication without comprehensive validation
-- Claiming >75% accuracy without 100-verse validation
+- ❌ Production deployment without v2.1 validation (algorithm untested)
+- ❌ Fully automated annotation without human review (62% v1.0 accuracy insufficient)
+- ❌ TBTA annotation reproduction (perspective difference unresolved, only 2 verses validated)
+- ❌ Publication without comprehensive validation (100-verse test pending)
+- ❌ Claims of "production ready" without completing required validations
 
-**Recommendation**: Deploy for translation guidance while completing 100-verse validation
+**Recommendation**: Complete v2.1 validation on 21-verse test set, resolve random test underperformance, then deploy for translation guidance with human review while completing 100-verse comprehensive validation. See PEER-REVIEW.md for detailed conditional approval conditions.
 
 ---
 
