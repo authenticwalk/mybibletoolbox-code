@@ -1,11 +1,63 @@
 # TBTA Features: Status Summary
 
-**Last Updated**: 2025-11-07
+**Last Updated**: 2025-11-10
 **Total Features**: 17
+**Completed**: 0 (person-systems ~65% complete, algorithm revision needed)
 
 ---
 
 ## Methodology Implementation Status
+
+### ⏳ In Progress - Test Validation Complete, Algorithm Revision Needed
+
+#### 3. person-systems (~65% COMPLETE)
+- **Status**: TEST VALIDATION COMPLETE, Algorithm v2.0 Needed (2025-11-10)
+- **Training Set Accuracy**: 100% (7/7 verses validated against real translations)
+- **Cross-linguistic**: 98%+ agreement across 9 languages (training set)
+- **Test Set Validated**: 21 verses (11 adversarial + 10 random) across 5 languages
+- **Test Accuracy**: 62% overall (73% adversarial ✅, 50-60% random ❌)
+- **Algorithm**: v1.0 tested (62% test accuracy, systematic blind spots identified)
+- **Files**:
+  - ✅ METHODOLOGY-STATUS.md (updated with test results)
+  - ✅ training/TRAINING-SET.md (20 verses)
+  - ✅ training/ALGORITHM-v1.md (locked at commit f373646, 100% training, 62% test)
+  - ⚠️ training/ALGORITHM-v2.md (experimental, needs more evidence)
+  - ✅ adversarial-test/TEST-SET.md (15 verses designed)
+  - ✅ adversarial-test/PREDICTIONS-locked.md (commit 77010a4, blind)
+  - ✅ adversarial-test/RESULTS.md (73% accuracy, 8/11 correct)
+  - ✅ random-test/TEST-SET.md (12 verses designed)
+  - ✅ random-test/PREDICTIONS-locked.md (commit 77010a4, blind)
+  - ✅ random-test/RESULTS.md (50-60% accuracy, 5/10 correct + 2 mixed)
+  - ✅ TEST-VALIDATION-COMPLETE.md (comprehensive 21-verse validation)
+  - ✅ VALIDATION-RESULTS-COMPLETE.md (training results)
+  - ✅ TRANSLATION-VALIDATION.md (methodology sound)
+  - ✅ ERROR-ANALYSIS.md (4 systematic patterns identified)
+  - ✅ TRAINING-PHASE-SUMMARY.md (honest assessment)
+  - ✅ HONEST-STATUS.md (corrected claims)
+  - ✅ CRITICAL-REVIEW.md (peer review identifying overclaims)
+  - ✅ PROGRESS-SUMMARY.md (session tracking)
+- **Accomplishments**:
+  - ✅ Excellent training methodology (100% training accuracy)
+  - ✅ Test predictions properly locked (blind validation)
+  - ✅ Validated 21 verses across 5 clusivity-marking languages
+  - ✅ Adversarial test hit target (73% vs 60-70% target)
+  - ✅ Identified 4 systematic error patterns with fixes
+  - ✅ Cross-linguistic validation provides reliable ground truth
+- **Limitations**:
+  - ❌ Random test missed target (50-60% vs 80-90% target)
+  - ❌ Overall test accuracy 62% (need 80% for production)
+  - ❌ Algorithm overfits training data (38-point accuracy drop)
+  - ❌ Systematic blind spots in prayer/lament and invitation semantics
+  - ⚠️ High-confidence predictions only 50-70% accurate (need recalibration)
+- **Critical Fixes Needed** (for algorithm v2.0):
+  1. Strengthen Prayer Rule (2.1) - override "shared experience" rule
+  2. Split Invitation Rule (2.5) - distinguish "let us do" vs "stay with us"
+  3. Revise Authority Rule (3.3) - humble self-inclusion → inclusive
+  4. Add Quoted Speech Rule - outsider quoting in-group → exclusive
+- **Cross-Feature Contribution**: 3 validated principles + adversarial methodology proven
+- **Recommendation**: Implement algorithm v2.0 with 4 critical fixes, re-test on same 21 verses, target 75-80% accuracy
+
+---
 
 ### ✅ Updated with Adversarial Methodology
 
@@ -37,17 +89,6 @@
 ---
 
 ### ⏳ Has Content, Needs Methodology Update
-
-#### 3. person-systems
-- **Status**: Has comprehensive documentation
-- **Files**:
-  - ✅ README.md
-  - ❌ METHODOLOGY-STATUS.md (needs creation)
-  - ✅ Multiple analysis files
-- **Next Steps**:
-  - Create METHODOLOGY-STATUS.md
-  - Follow adversarial validation process
-  - Select training verses (15-20)
 
 #### 4. participant-tracking
 - **Status**: Has documentation
@@ -170,7 +211,7 @@
 
 ### High Priority (Next 2 Weeks)
 
-3. **person-systems**: Begin adversarial validation
+3. **person-systems**: Complete test validation via real translations (training done)
 4. **participant-tracking**: Begin adversarial validation
 5. **discourse-genre**: Begin adversarial validation
 
@@ -327,8 +368,11 @@ Or can we use simpler validation since these are more mechanical?
 4. [ ] Error analysis
 
 **Person-systems**:
-1. [ ] Create METHODOLOGY-STATUS.md
-2. [ ] Begin training phase
+1. [x] Training phase complete (100% accuracy)
+2. [x] Test predictions locked (commit 77010a4)
+3. [ ] Validate test verses against real translations (15-20 verses)
+4. [ ] Calculate actual test accuracy
+5. [ ] Complete validation or move to next feature
 
 ---
 
