@@ -176,14 +176,23 @@ features:
     peer_review_date: "2025-11-11"
 
   participant-tracking:
-    status: not_started
-    current_phase: 1
-    completed_phases: []
-    started: null
-    last_updated: null
-    notes: "Has existing documentation, needs workflow"
-    next_action: "Start Phase 2: Training set design"
+    status: in_progress
+    current_phase: 2  # Training set designed, ready for Phase 3
+    completed_phases: [1, 2]
+    started: "2025-11-11"
+    last_updated: "2025-11-11"
+    notes: |
+      - Phase 2 complete: Training set designed (15 verses, 5 active states)
+      - Equal value coverage: 3 verses per state (Routine, Generic, Frame Inferable, First Mention, Interrogative)
+      - Unused states documented: Restaging, Integration, Exiting (0% frequency in 171,875 TBTA annotations)
+      - Diverse genres: narrative, wisdom, parable, dialog
+      - Surface form correlations documented for validation
+      - Has existing documentation (experiments, learnings, theory)
+    next_action: "Phase 3: Access TBTA for training verses, analyze patterns, document learnings"
     blocked_on: null
+    deliverables:
+      phase_1: "Existing docs reviewed (README, LEARNINGS, experiments)"
+      phase_2: "TRAINING-SET.md (15 verses, equal coverage, commit 934df1f)"
 
   discourse-genre:
     status: not_started
