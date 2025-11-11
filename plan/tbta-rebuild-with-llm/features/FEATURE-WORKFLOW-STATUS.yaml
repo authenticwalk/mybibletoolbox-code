@@ -183,17 +183,18 @@ features:
 
   participant-tracking:
     status: in_progress
-    current_phase: 4  # TBTA training analysis complete, Algorithm v1.0 in development
-    completed_phases: [1, 2, 3]
+    current_phase: 5  # Algorithm v1.0 locked (97% accuracy), test set design in progress
+    completed_phases: [1, 2, 3, 4]
     started: "2025-11-11"
     last_updated: "2025-11-11"
     notes: |
       - Phase 2 complete: Training set designed (15 verses, 5 active states)
-      - Equal value coverage: 3 verses per state (Routine, Generic, Frame Inferable, First Mention, Interrogative)
       - Phase 3 complete: TBTA analysis (4 verses accessible, 3,067 corpus annotations analyzed)
-      - Frequency validated: Routine 71.6%, Generic 15.8%, Frame Inferable 6.3%, First Mention 6.0%, Interrogative 0.2%
-      - Rare states confirmed: Restaging, Integration, Exiting (0 occurrences in 215 verses - requires adversarial search)
-      - Decision framework extracted: 4 hierarchical rules (Interrogative > Generic > Frame Inferable > First Mention/Routine)
+      - Phase 4 complete: Algorithm v1.0 locked (commit cb388ca)
+      - Training accuracy: 97% (32/33 participants correct, exceeds 90% target)
+      - Perfect accuracy on all 5 active states (Routine, Generic, Frame Inferable, First Mention, Interrogative)
+      - Hierarchical rules: Interrogative > Generic > Frame Inferable > First Mention/Routine
+      - Special cases: God presupposition, frame inference, definite article disambiguation
       - Surface form correlations documented for validation
       - Has existing documentation (experiments, learnings, theory)
     next_action: "Phase 3: Access TBTA for training verses, analyze patterns, document learnings"
@@ -290,7 +291,7 @@ statistics:
   features_not_started: 8
   features_blocked: 0
   completion_percentage: 25  # 3/12 features complete
-  phases_completed_total: 33  # number-systems: 10, degree: 10, person-systems: 10, participant-tracking: 3
+  phases_completed_total: 34  # number-systems: 10, degree: 10, person-systems: 10, participant-tracking: 4
   estimated_hours_remaining: 192  # 8 features × ~24 hours per feature
 
 # Milestones
