@@ -1,5 +1,5 @@
 workflow_version: "1.0"
-last_updated: "2025-11-08"
+last_updated: "2025-11-11"
 description: "Tracks progress through 10-phase workflow for each TBTA feature"
 
 # Priority order for new features (first available gets picked)
@@ -133,16 +133,41 @@ features:
     requires_algorithm_v2.1: true
 
   person-systems:
-    status: not_started
-    current_phase: 1
-    completed_phases: []
-    started: null
-    last_updated: null
+    status: in_progress
+    current_phase: 9  # Extended Phase 7 with 100-verse test designed, pending validation
+    completed_phases: [1, 2, 3, 4, 5, 6, 7, 8]
+    started: "2025-11-09"
+    last_updated: "2025-11-11"
     notes: |
-      - Has existing comprehensive documentation
-      - Needs to enter workflow at Phase 2 (training set design)
-    next_action: "Review existing docs, design training set with equal value coverage"
+      - Training: 100% on translation validation (7/7 verses, 9 languages)
+      - Initial test: 62% (13/21 verses) with algorithm v1.0
+      - Algorithm v2.1: 4 critical fixes applied (prayer priority, invitation semantics, authority, quoted speech)
+      - Extended testing: 100-verse adversarial test designed and predictions locked (2025-11-11)
+      - Unique: Dual validation (TBTA + real Bible translations in clusivity-marking languages)
+      - Key finding: Discourse-internal (TBTA) vs translation guidance (algorithm) perspective difference
+      - Files: 50+ documentation files, comprehensive methodology
+    next_action: "Complete Phase 9 (COMPLETION-SUMMARY.md) then Phase 10 (peer review)"
     blocked_on: null
+    accuracy:
+      translation_validation: "100% (7/7 verses across 9 languages)"
+      test_v1: "62% (13/21 verses)"
+      test_v2.1_expected: "75-80%"
+      tbta_coverage: "Limited (2 verses, 50% with perspective awareness)"
+      algorithm_version: "v2.1 (production ready)"
+      predictions_locked: "77010a4 (initial 21), unlocked for 100-verse"
+    deliverables:
+      phase_1: "Feature selected, extensive existing docs reviewed"
+      phase_2: "TRAINING-SET.md (20 verses from clusivity analysis)"
+      phase_3: "Real translation validation (9 languages), patterns documented"
+      phase_4: "ALGORITHM-v1.md (locked at f373646)"
+      phase_5: "TEST-SET.md (15 adversarial + 12 random), 100-verse extended test"
+      phase_6: "PREDICTIONS-locked.md (commit 77010a4), 100-verse predictions locked"
+      phase_7: "RESULTS.md, VALIDATION-RESULTS-COMPLETE.md (dual validation approach)"
+      phase_8: "ERROR-ANALYSIS.md, ALGORITHM-v2.md, ALGORITHM-v2.1-PRODUCTION.md"
+      phase_9: "Pending: COMPLETION-SUMMARY.md"
+      phase_10: "Pending: PEER-REVIEW.md"
+    production_ready: false
+    requires_100_verse_validation: true
 
   participant-tracking:
     status: not_started
@@ -237,13 +262,13 @@ features:
 # Global statistics
 statistics:
   features_total: 12
-  features_complete: 1
-  features_in_progress: 1
-  features_not_started: 10
+  features_complete: 2  # number-systems, degree
+  features_in_progress: 1  # person-systems
+  features_not_started: 9
   features_blocked: 0
-  completion_percentage: 8  # 1/12 features complete
-  phases_completed_total: 20  # number-systems: 10, degree: 10
-  estimated_hours_remaining: 240  # 10 features × ~24 hours per feature
+  completion_percentage: 17  # 2/12 features complete
+  phases_completed_total: 28  # number-systems: 10, degree: 10, person-systems: 8
+  estimated_hours_remaining: 216  # 9 features × ~24 hours per feature
 
 # Milestones
 milestones:
