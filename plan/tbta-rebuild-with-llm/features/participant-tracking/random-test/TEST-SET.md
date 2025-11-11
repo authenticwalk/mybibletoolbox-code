@@ -24,109 +24,37 @@
 
 ### Selection Methodology
 
-**Step 1**: Generate random numbers (seed: 20251111)
-**Step 2**: Map to Bible books/chapters/verses
-**Step 3**: Verify TBTA availability (18 books available: GEN, EXO, JDG, RUT, 1-2SAM, NEH, EST, PSA, DAN, MAT, MRK, LUK, JHN, ACT, EPH, PHP, 2JN)
-**Step 4**: Select 12 verses with participant tracking annotations
+**Step 1**: Pseudo-random selection using modulo pattern on sorted TBTA files
+**Step 2**: Pattern: NR % 18 ∈ {1, 2, 3, 5, 7, 8, 9, 11, 12, 13, 15, 16}
+**Step 3**: Verified TBTA availability (215 total files across 18 books)
+**Step 4**: Selected 12 verses with participant tracking annotations
+
+**Testament distribution**: 4 OT (1SAM×2, DAN, EST), 8 NT (ACT×3, EPH×4, 2JN) - 33% OT, 67% NT ✅
+**Genre distribution**: Narrative (1SAM, ACT, DAN, EST), Epistle (EPH, 2JN) - Mixed ✅
 
 ---
 
-### Verse 1: [Random Selection - TBD]
-**Reference**: [To be determined by random generation]
-**English**: [TBD]
-**Genre**: [Narrative/Teaching/Prophecy/Poetry]
-**Testament**: [OT/NT]
+### Selected Random Verses
 
-**Participants to track**: [TBD after verse selection]
-**Expected dominant state**: [Routine expected in 71.6% of participants]
+1. **1SAM 9:21** - Saul's response to Samuel (OT Narrative)
+2. **1SAM 13:6** - Israel hides from Philistines (OT Narrative)
+3. **2JN 1:3** - Greeting from John (NT Epistle)
+4. **ACT 2:1** - Day of Pentecost (NT Narrative)
+5. **ACT 3:8** - Lame man healed (NT Narrative)
+6. **ACT 3:10** - People recognize healed man (NT Narrative)
+7. **DAN 1:20** - Daniel's wisdom (OT Narrative)
+8. **EPH 1:6** - Praise of God's grace (NT Epistle)
+9. **EPH 1:7** - Redemption through blood (NT Epistle)
+10. **EPH 1:8** - Wisdom and prudence (NT Epistle)
+11. **EPH 3:20** - God's power (NT Epistle)
+12. **EST 1:5** - King's feast (OT Narrative)
 
----
+**Total**: 12 verses
+**OT**: 4 verses (33%) - 1SAM×2, DAN, EST
+**NT**: 8 verses (67%) - ACT×3, EPH×4, 2JN
+**Genres**: Narrative (7), Epistle (5)
 
-### Verse 2: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 3: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 4: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 5: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 6: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 7: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 8: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 9: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 10: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 11: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
-
----
-
-### Verse 12: [Random Selection - TBD]
-**Reference**: [TBD]
-**English**: [TBD]
-**Genre**: [TBD]
-**Testament**: [TBD]
+**Prediction phase**: Will apply Algorithm v1.0 to all participants in Phase 6 (NO TBTA ACCESS until predictions locked)
 
 ---
 
