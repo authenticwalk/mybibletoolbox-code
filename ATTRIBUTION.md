@@ -434,6 +434,44 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Website: https://www.catholicbiblical.org/publications/catholic-biblical-quarterly
 - Citation format: `{cbq-YEAR-author}`
 
+**Gordley, Matthew E. "The Johannine Prologue and Jewish Didactic Hymn Traditions: A New Case for Reading the Prologue as a Hymn"**
+- Source code: `gordley-jbl-2009`
+- Journal: Journal of Biblical Literature, Vol. 128, No. 4 (Winter, 2009), pp. 781-802
+- Authority: Highest (Tier 1 - peer-reviewed JBL article)
+- Used under fair use for scholarly citation
+- Citation format: `{gordley-jbl-2009}`
+- Note: Analysis of Johannine Prologue in light of Jewish didactic hymn traditions
+
+**Miller, Ed. L. "The Johannine Origins of the Johannine Logos"**
+- Source code: `miller-jbl-1993`
+- Journal: Journal of Biblical Literature 112:3 (1993): 445-57
+- Authority: Highest (Tier 1 - peer-reviewed JBL article)
+- Used under fair use for scholarly citation
+- Citation format: `{miller-jbl-1993}`
+
+**Hayward, C.T.R. "The Holy Name of the God of Moses and the Prologue of St John's Gospel"**
+- Source code: `hayward-nts-1978`
+- Journal: New Testament Studies 25:24
+- Authority: Highest (Tier 1 - peer-reviewed NTS article)
+- Used under fair use for scholarly citation
+- Citation format: `{hayward-nts-1978}`
+- Note: Discusses relationship between Targumic memra and Johannine Logos
+
+**Scottish Journal of Theology (SJT)**
+- Publisher: Cambridge University Press
+- Source code: `sjt`
+- Authority: Highest (Tier 1 - peer-reviewed theology journal)
+- Website: https://www.cambridge.org/core/journals/scottish-journal-of-theology
+- Citation format: `{sjt-YEAR-author}`
+
+**Journal of Theological Studies (JTS)**
+- Publisher: Oxford University Press
+- Source code: `jts`
+- Authority: Highest (Tier 1 - premier peer-reviewed theology journal)
+- Founded: 1899
+- Website: https://academic.oup.com/jts
+- Citation format: `{jts-YEAR-author}`
+
 ---
 
 ## Scholarly Monographs, Dissertations, and Commentaries
@@ -545,6 +583,98 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Authority: High (Tier 2 - major scholarly commentary)
 - Used under fair use for scholarly citation
 - Citation format: `{carson-john}`
+
+**Dodd, C.H. "The Interpretation of the Fourth Gospel"**
+- Source code: `dodd-fourth-gospel`
+- Author credentials: Premier NT scholar (1884-1973), Cambridge University
+- Publisher: Cambridge University Press
+- Publication year: 1953
+- Authority: High (Tier 2 - foundational Johannine scholarship)
+- Used under fair use for scholarly citation
+- Citation format: `{dodd-fourth-gospel}`
+- Note: Classic work including extensive chapter on Logos concept
+
+**Bultmann, Rudolf. "The Gospel of John: A Commentary"**
+- Source code: `bultmann-john`
+- Author credentials: Major 20th century NT scholar (1884-1976)
+- Original German: "Das Evangelium des Johannes" (1941)
+- English translator: G.R. Beasley-Murray
+- Publisher: Westminster John Knox Press / Wipf & Stock (reprint)
+- Publication year: 1971 (English)
+- Series: Johannine Monograph Series
+- Authority: High (Tier 2 - influential scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{bultmann-john}`
+- Note: Argued for Gnostic origins of Johannine Logos (now largely rejected)
+
+**Brown, Raymond E. "The Gospel According to John" (2 volumes)**
+- Source code: `brown-john`
+- Author credentials: SS (Sulpician), premier Johannine scholar (1928-1998)
+- Series: Anchor Bible Commentary (Volumes 29 and 29A)
+- Publisher: Doubleday / Yale University Press
+- Publication year: 1966-1970
+- Authority: High (Tier 2 - magisterial commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{brown-john}`
+- Note: Comprehensive historical-critical commentary on John's Gospel
+
+**Thompson, Marianne Meye. "The God of the Gospel of John"**
+- Source code: `thompson-god-john`
+- Author credentials: George Eldon Ladd Professor of NT, Fuller Theological Seminary
+- Publisher: Wm. B. Eerdmans Publishing Company
+- Publication year: 2001
+- Authority: High (Tier 2 - scholarly monograph)
+- Used under fair use for scholarly citation
+- Citation format: `{thompson-god-john}`
+- Note: Study of God concept in John's Gospel, including Logos Christology
+
+**Thompson, Marianne Meye. "John: A Commentary"**
+- Source code: `thompson-john`
+- Series: New Testament Library (NTL)
+- Publisher: Westminster John Knox Press
+- Publication year: 2015
+- Authority: High (Tier 2 - scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{thompson-john}`
+
+**Peltier, Reuben. "Λόγος Christology in the Prologue of John's Gospel"**
+- Source code: `peltier-logos-2019`
+- Publication type: MTh mini-thesis
+- Institution: South African Theological Seminary (SATS)
+- Publication year: 2019
+- Authority: High (Tier 2 - graduate theological thesis)
+- Used under fair use for scholarly citation
+- Citation format: `{peltier-logos-2019}`
+- URL: https://sats.ac.za/wp-content/uploads/2019/10/Thesis_MThmini_2019_PeltierR.pdf
+
+---
+
+## Academic Encyclopedias and Philosophical References
+
+**Stanford Encyclopedia of Philosophy**
+- Source code: `sep`
+- Publisher: Stanford University / Metaphysics Research Lab
+- Authority: High (Tier 2 - peer-reviewed philosophical encyclopedia)
+- Website: https://plato.stanford.edu/
+- Citation format: `{sep-TOPIC}` or specific article codes
+- Note: Academic philosophy resource with peer-reviewed entries
+
+**Internet Encyclopedia of Philosophy**
+- Source code: `iep`
+- Authority: High (Tier 2 - peer-reviewed philosophical encyclopedia)
+- Website: https://iep.utm.edu/
+- Citation format: `{iep-TOPIC}` or specific article codes
+- Note: Peer-reviewed academic encyclopedia of philosophy
+
+**Hillar, Marian. "Philo of Alexandria" (Internet Encyclopedia of Philosophy)**
+- Source code: `hillar-philo-iep`
+- Author credentials: Center for Philosophy and Socinian Studies
+- Publication venue: Internet Encyclopedia of Philosophy
+- Authority: High (Tier 2 - peer-reviewed encyclopedia article)
+- Used under fair use for scholarly citation
+- Citation format: `{hillar-philo-iep}`
+- URL: https://iep.utm.edu/philo/
+- Note: Comprehensive analysis of Philo's Logos doctrine
 
 ---
 
