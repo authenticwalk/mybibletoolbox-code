@@ -23,10 +23,12 @@
 - Greek οὐρανῶν (ouranōn) is genitive plural → TBTA marks **Singular**
 - **Conclusion**: "How many entities?" matters more than "what's the grammatical form?"
 
-#### Degree (expected pattern)
-- Greek μεγάλη (positive form) with superlative context → Likely marked **S** (Superlative)
+#### Degree (CONFIRMED - Phase 7 validation)
+- Greek μεγάλη (positive form) with superlative question → TBTA marks **Superlative** ✓
+- Greek μείζων (comparative form) with implied superlative ("no one greater") → TBTA marks **Superlative** ✓
 - Hebrew מִן construction (not morphological comparative) → Should mark **C** (Comparative)
-- **Hypothesis**: Semantic comparison matters more than synthetic morphology
+- **Confirmed**: Semantic meaning (explicit AND implied) takes priority over morphological form
+- **Nuance**: TBTA recognizes LOGICAL EQUIVALENCES (negative comparative = superlative)
 
 ### Application Rule
 ```
@@ -211,10 +213,12 @@ Document where languages/translations might disagree:
 
 ---
 
-## Universal Principle 5: Rare/Theoretical Values Often Absent
+## Universal Principle 5: Scale Testing Required for Rare Value Discovery
 
 ### Pattern
-**Some TBTA values are RARE or NEVER USED in Biblical texts.**
+**Some TBTA values are RARE and require EXTENSIVE TESTING (100+ verses) to discover.**
+
+⚠️ **CRITICAL LEARNING**: Initial small-scale validation (7-12 verses) can INCORRECTLY conclude rare values don't exist!
 
 ### Evidence
 
@@ -223,24 +227,73 @@ Document where languages/translations might disagree:
 - **Paucal**: Defined but needs specific count contexts (4-10)
 - **Trial**: ONLY for Trinity contexts (theologically derived)
 
-#### Degree (preliminary findings)
-- **T (excessive "too")**: Rare/absent in formal Biblical register
-- **s (superlative of 2)**: Very rare, may not exist
-- **q (equative)**: Requires specific "as...as" construction
+#### Degree - Phase 7-8 vs Phase 10 CORRECTION
+
+**After 7-12 verses (Phase 7-8) - INCORRECT CONCLUSIONS**:
+- **q (equative)**: ✅ CONFIRMED non-existent (still true after 100 verses)
+  - PHP 2:6, MAT 10:25 → Both "No Degree"
+- **i (intensified comparative)**: ❌ INCORRECTLY thought non-existent
+- **s (superlative of 2)**: ❌ INCORRECTLY thought non-existent
+- **E (extremely intensified)**: ❌ INCORRECTLY thought non-existent (lexical theory)
+- **T (excessive "too")**: ❌ INCORRECTLY thought non-existent
+- **L ('less')**: ❌ Unknown status
+
+**After 100 verses (Phase 10) - CORRECTED**:
+- **i (Intensified Comparative)**: ✅ **EXISTS** - Found in 4 verses
+  - MAT 10:31, 1SAM 13:6, 2SAM 7:19, DAN 1:20, 3:19
+  - Pattern: Numerical intensifiers (7x, 10x) + comparative
+- **s (Superlative of 2 items)**: ✅ **EXISTS** - Found in 4 verses
+  - GEN 27:15, 27:42, 29:18, 48:19
+  - Pattern: Selection from exactly 2 items (older/younger of 2 sons/daughters)
+- **E (Extremely Intensified)**: ✅ **EXISTS** - Found in 18+ verses
+  - GEN 6:11-12, 25:29-32, EPH 1:6-18, PSA 14:5
+  - Pattern: Extreme emotional states, hyperbolic contexts, theological emphasis
+- **T ('too' excessive)**: ✅ **EXISTS** - Found in 12+ verses
+  - GEN 4:13, 18:11-12, ACT 2:8, RUT 1:11
+  - Pattern: Beyond capacity/ability ("too old to bear children")
+- **L ('less')**: ✅ **EXISTS** - Found in 3 verses
+  - GEN 8:1, 8:3, 8:5
+  - Pattern: Progressive decrease (flood waters receding)
+
+### Key Insight: Discovery Timeline
+
+| Verses Tested | Values Found | Missing Values |
+|---------------|--------------|----------------|
+| **7 verses** | C, S, I, '''least''' | i, E, L, T, s (assumed non-existent) |
+| **12 verses** | Same + errors identified | i, E, L, T, s (still assumed non-existent) |
+| **41 verses** | + i, T, 'least' | E, L, s (assumed non-existent) |
+| **71 verses** | + E, L, 'less', 'too' | s (assumed non-existent) |
+| **100 verses** | + s | ✅ **ALL VALUES FOUND** |
+
+**Lesson**: Rare values appear at rates of 1-4 instances per 100 verses. Small-scale testing CANNOT find them!
 
 ### Application Rule
 ```
 When encountering rare values:
-1. Mark as LOW CONFIDENCE in predictions
-2. Design specific experiments to hunt for instances
-3. Consider that value may be theoretical but unused
-4. Document whether EVER found in Biblical corpus
+1. DON'T assume non-existence from small samples (<50 verses)
+2. Design SCALE TESTING (100+ verses) across diverse books
+3. Test iteratively in batches (commit after each improvement)
+4. Correct earlier conclusions as new data emerges
+5. Document value discovery timeline
+6. Final confirmation requires comprehensive corpus coverage
 ```
 
+### Testing Methodology: Iterative Batch Approach
+
+**Proven successful in Phase 10**:
+1. **Batch 1** (verses 8-20): Expose algorithm weaknesses, discover new errors
+2. **Batch 2** (verses 21-50): Hunt for first rare values (i, T found)
+3. **Batch 3** (verses 51-80): Complete rare value search (E, L found)
+4. **Batch 4** (verses 81-100): Edge cases and final discoveries (s found)
+
+**Commit after each batch** - Push to remote after each improvement
+
 ### Cross-Feature Implications
-- **All features**: Some values are edge cases
-- **Validation**: Need comprehensive corpus search for rare values
-- **Translation**: Rare values may indicate translator choice points
+- **All features**: Small-scale validation (10-20 verses) insufficient for rare values
+- **Methodology**: Require 100+ verse testing for complete value inventory
+- **Timeline**: Expect iterative discovery across multiple batches
+- **Documentation**: Update earlier conclusions as scale testing progresses
+- **Confidence**: Only declare "non-existent" after 100+ diverse verses tested
 
 ---
 
@@ -271,6 +324,424 @@ When annotating:
 3. For participant tracking: Multi-verse tracking
 4. For morphological features: Single verse may suffice
 ```
+
+---
+
+## Universal Principle 7: Lexical vs. Syntactic Distinction
+
+### Pattern
+**TBTA only marks SYNTACTIC (grammatical) modification, not LEXICAL (inherent) meaning.**
+
+### Evidence
+
+#### Degree: Intensification
+- **Syntactic intensifier** (λίαν "very" + πρωῒ "early") → TBTA marks "Intensified" ✓
+- **Lexical compound** (ὑπερεκπερισσοῦ "abundantly" - triple compound) → TBTA marks "No Degree" ✓
+- **Key distinction**: TWO WORDS (modifier + modified) vs. ONE WORD (compound meaning)
+
+#### Linguistic Reasoning
+- SYNTACTIC: Grammatical modification (can be removed without changing core word)
+  - "very early" → Remove "very" → Still "early"
+  - Degree is ADDED BY MODIFIER
+- LEXICAL: Inherent word meaning (cannot be decomposed)
+  - "abundantly" → No parts to remove → Single semantic unit
+  - Intensity is PART OF WORD MEANING
+
+### Application Rule
+```
+When identifying feature-bearing constituents:
+1. Check if feature is SYNTACTIC (grammatical construction)
+2. Or if feature is LEXICAL (inherent to word meaning)
+3. TBTA marks SYNTACTIC only, not lexical
+4. Lexicalized features → Treat as base/default value
+```
+
+### Cross-Feature Implications
+- **Degree**: Only syntactic intensifiers (λίαν), not lexical compounds (ὑπερεκπερισσοῦ)
+- **Comparison**: Syntactic comparative particles, not lexical "better/worse" meaning
+- **Negation**: Syntactic negation markers, not lexical negative words?
+- **Modality**: Syntactic modal markers, not lexical modal verbs?
+
+**Discovery**: This may explain why many compound/derived words get "default" values in TBTA
+
+---
+
+## Universal Principle 8: Dual Value Encoding System
+
+### Pattern
+**TBTA uses BOTH standardized category values AND literal quoted string values.**
+
+### Evidence
+
+#### Degree Values
+**Standardized values** (most common):
+- "No Degree" (not "N")
+- "Comparative" (not "C")
+- "Superlative" (not "S")
+- "Intensified" (not "I")
+
+**Literal quoted values** (specific meanings):
+- `'''least'''` (not "Superlative" or "l") - for ἐλάχιστος
+- Possibly `'''greater'''`, `'''more'''` (not confirmed)
+
+### Linguistic Reasoning
+- **Standardized**: Generic category (upward superlative, downward superlative → both "Superlative")
+- **Literal**: Specific directional or emphatic meaning (downward → `'''least'''`)
+- **Purpose**: Preserves semantic nuance while maintaining category structure
+
+### Application Rule
+```
+When validating TBTA values:
+1. First check standardized values ("No Degree", "Comparative", etc.)
+2. If mismatch, check for literal quoted values ('''word''')
+3. Literal values use triple single quotes in YAML
+4. Algorithm may need to handle BOTH encoding types
+```
+
+### Cross-Feature Implications
+- **Other features may use dual encoding**: Need to check across features
+- **Validation logic**: Must handle both standardized and quoted strings
+- **Prediction difficulty**: Cannot predict literal values without seeing all examples
+- **Value inventory**: More complex than single-letter codes suggest
+
+**Discovery**: TBTA encoding is more granular than initially documented
+
+---
+
+## Universal Principle 9: Semantic Gradability Constraint
+
+### Pattern
+**TBTA only marks features on constituents that are SEMANTICALLY COMPATIBLE with that feature.**
+
+### Evidence
+
+#### Degree: Gradability Check
+- **Gradable adjective** ("great", "small", "good") in comparative context → Gets degree marking ✓
+- **Non-gradable adjective** ("justified", "dead", "perfect") in comparative context → "No Degree" ✓
+- **Key distinction**: Can the word logically vary in degree? ("very justified" = nonsense)
+
+#### Linguistic Reasoning
+- **Gradable**: Properties that can vary (size, quality, time, intensity)
+  - "very great", "more great", "greatest" - all semantically valid
+- **Non-gradable**: Binary states, absolute properties, identity predicates
+  - "very justified" - theologically/logically invalid (justified or not)
+  - "very dead" - logically invalid (dead or alive)
+  - "very perfect" - logically invalid (perfect is absolute)
+
+### Application Rule
+```
+Before assigning feature value:
+1. Check if constituent is semantically compatible with feature
+2. For degree: Can you say "very X" or "more X"?
+3. For number: Can entity be counted or is it abstract?
+4. For time: Does event have temporal extent?
+5. If NOT compatible → Assign default/null value, skip feature
+```
+
+### Cross-Feature Implications
+- **Degree**: Only gradable words (not "justified", "dead", "perfect")
+- **Number**: Only countable entities (not "wisdom", "love" as abstract)
+- **Time**: Only temporal events (not timeless truths)
+- **Proximity**: Only spatial entities (not abstract concepts)
+
+**Discovery**: Structural comparisons (παρ' ἐκεῖνον "rather than") don't create degree marking on non-gradable words
+
+---
+
+## Universal Principle 10: Context-Dependent Feature Assignment
+
+### Pattern
+**Same morphological construction can map to DIFFERENT feature values based on semantic CONTEXT.**
+
+### Evidence
+
+#### Degree: Hebrew מִן Constructions (Phase 10 discovery)
+
+Hebrew מִן can mark comparison, but maps to 3 different degree values based on context:
+
+**→ Comparative (C)**:
+- GEN 7:20: "15 cubits above/more than" (waters rising)
+- Context: Rising, increasing, growing
+- Semantic: Relative comparison with increase
+
+**→ 'too' (T) - Excessive**:
+- GEN 4:13: "Too great to bear" (מִנְּשֹׂא)
+- Context: Beyond capacity, inability
+- Semantic: Excessive degree → impossibility
+
+**→ 'less' (L) - Progressive Decrease**:
+- GEN 8:1, 8:3, 8:5: Waters "became less deep" (flood receding)
+- Context: Decreasing, receding, diminishing
+- Semantic: Progressive decrease (not comparison)
+
+### Key Insight: Morphology + Context → Feature Value
+
+```
+Same form + different context = different values
+מִן + rising verb = Comparative
+מִן + capacity expression = 'too' (excessive)
+מִן + decreasing verb = 'less' (progressive decrease)
+```
+
+### Linguistic Reasoning
+- **Morphological marker** identifies CATEGORY (comparison/degree)
+- **Semantic context** determines SPECIFIC VALUE within category
+- **Verb semantics** critical: increase vs decrease vs ability
+- **Cannot predict from morphology alone** - context analysis required
+
+### Application Rule
+```
+For context-dependent constructions:
+1. Identify morphological marker (מִן, comparative suffix, etc.)
+2. Analyze semantic context (verb type, discourse role)
+3. Check for specific triggers:
+   - Capacity expressions → Excessive/inability
+   - Progressive change → Increase vs decrease
+   - Set size → Superlative vs comparative
+4. Map construction + context → Specific feature value
+5. Test multiple verses to validate pattern
+```
+
+### Additional Context-Dependent Patterns (Phase 10)
+
+#### Set Size Determines Degree Type
+- **2 items + selection** → "Superlative of 2 items" (s)
+  - GEN 27:15: "The older (of 2 sons)" - Jacob and Esau
+  - GEN 29:18: "The younger (of 2 daughters)" - Leah and Rachel
+- **2 items + general comparison** → Comparative (C)
+  - GEN 19:31: "Older than custom"
+- **3+ items + selection** → Superlative (S)
+  - GEN 43:33: "From oldest to youngest" (12 brothers)
+
+#### Discourse Type Affects Intensification
+- **Narrative contexts** → Standard degrees (C, S, I)
+- **Poetic contexts** → Clustering of Intensified/Extremely Intensified
+  - EXO 15:14-15: Multiple "afraid" with Intensified
+  - PSA 14:5: Extremely Intensified in parallelism
+- **Epistolary/theological contexts** → Extremely Intensified clusters
+  - EPH 1:6-18: 5× Extremely Intensified for God's grace
+
+### Cross-Feature Implications
+- **All features**: Context determines value assignment, not just morphology
+- **Requires**: Semantic analysis + discourse analysis + morphological analysis
+- **Testing**: Need diverse contexts for same construction (rising vs decreasing, 2 items vs 3+ items)
+- **Algorithm complexity**: Multi-step decision trees with context checks
+- **Documentation**: Pattern libraries per construction type
+
+---
+
+## Universal Principle 11: Mixed Annotations Are Common
+
+### Pattern
+**Same constituent can receive MULTIPLE feature values SIMULTANEOUSLY in a single verse.**
+
+⚠️ **CRITICAL LEARNING**: Mixed annotations are NOT exceptional edge cases - they're common patterns (20+ instances in 100 verses)
+
+### Evidence
+
+#### Degree: Multiple Degrees on Same Word (Phase 10 discovery)
+
+**GEN 18:11** - "old" receives BOTH values:
+- "old": **Intensified** (Sarah and Abraham were very old)
+- "old": **'too'** (Sarah too old to bear children)
+- **Pattern**: Same word, two semantic aspects (intensity + excessive)
+
+**EXO 10:14** - "great" receives BOTH values:
+- "great": **Superlative** (greatest plague ever)
+- "great": **Comparative** (greater than before)
+- **Pattern**: Superlative scope + comparative contrast
+
+**EXO 11:6** - "loudly" receives THREE annotations:
+- "loudly": **Intensified** (very loud)
+- "loudly": **Comparative** (louder than before)
+- "loudly": **Comparative** (louder than will be)
+- **Pattern**: Intensity + temporal comparisons (past and future)
+
+**EST 1:5** - "important" receives FOUR annotations:
+- "important": **'least'** (from least)
+- "important": **Superlative** (to greatest)
+- "important": **'least'** (repeated in parallel)
+- "important": **Superlative** (repeated in parallel)
+- **Pattern**: Merism (least to greatest = everyone), with parallel repetition
+
+### Key Patterns in Mixed Annotations
+
+**Pattern 1: Multiple Semantic Aspects**
+- Same word can be BOTH intensified AND excessive
+- Same word can be BOTH superlative AND comparative
+- Each aspect gets separate annotation
+
+**Pattern 2: Repetition Gets Separate Annotations**
+- Each instance of repeated word annotated independently
+- Even if same semantic value, each instance marked
+- Parallelism results in duplicate annotations
+
+**Pattern 3: Complex Contexts Trigger Multiple Values**
+- Temporal comparisons: past vs future → multiple comparatives
+- Scope differences: superlative among all + comparative to one
+- Merism structures: minimum + maximum both marked
+
+### Linguistic Reasoning
+- **TBTA annotates semantic aspects independently**
+- **Each occurrence treated separately** (not merged)
+- **Multiple truths can coexist** (very old AND too old)
+- **Not an error** - reflects semantic richness
+
+### Application Rule
+```
+For mixed annotation handling:
+1. DON'T assume one value per constituent
+2. Analyze ALL semantic aspects independently
+3. Check for:
+   - Multiple semantic dimensions (intensity + excess)
+   - Repetition requiring separate annotations
+   - Complex contexts with multiple comparisons
+4. Algorithm must support:
+   - Multiple values per constituent
+   - List/array of degree values, not single value
+   - Independent evaluation of each semantic aspect
+5. Validation must check:
+   - Partial matches (got 1 of 2 values)
+   - Complete matches (got all values)
+   - Order independence (values may appear in any order)
+```
+
+### Implementation Impact
+
+**Algorithm structure**:
+```python
+# WRONG: Single value per constituent
+constituent.degree = "Comparative"
+
+# RIGHT: Multiple values per constituent
+constituent.degrees = ["Intensified", "'too'"]
+```
+
+**Validation logic**:
+```python
+# Must handle:
+predicted = ["Intensified"]
+actual = ["Intensified", "'too'"]
+# → Partial match, not complete failure
+```
+
+### When Mixed Annotations Are Appropriate
+
+⚠️ **CRITICAL GUIDANCE**: Not all features should allow mixed annotations. This depends on the feature's semantic nature and target language constraints.
+
+#### Features That SHOULD Allow Mixed Annotations:
+- **Degree**: Same word can be BOTH intensified AND excessive (GEN 18:11: "old" = Intensified + 'too')
+  - **Reason**: Multiple independent semantic dimensions (intensity vs capacity)
+  - **Source language**: Both Hebrew and Greek show this pattern
+
+#### Features Where Mixed May Be Target-Language Dependent:
+- **Number**: Source may be ambiguous (collective), target must choose singular/plural
+  - **Rule**: If target language FORCES a choice → Algorithm picks DOMINANT value
+  - **Dominant value selection**: Based on discourse salience (group identity vs individual members)
+  - **Language family consistency**: Romance languages consistently treat collectives as singular; Germanic varies
+
+- **Person**: Discourse role may shift, but target language may force single pronoun
+  - **Rule**: Pick dominant discourse role in that clause
+  - **Exception**: Honorifics may require mixed (2nd person + plural for respect)
+
+#### When to Choose Dominant Value (Not Mixed):
+
+**Decision Tree**:
+```
+1. Does the TARGET language feature allow multiple simultaneous values?
+   → YES: Preserve mixed annotation (e.g., Hebrew מִן with rising AND excessive meaning)
+   → NO: Continue to step 2
+
+2. Are the multiple values truly INDEPENDENT semantic dimensions?
+   → YES: Flag as "requires target language choice" (e.g., collective number)
+   → NO: Choose dominant value (e.g., most discourse-salient reading)
+
+3. For target language choice scenarios:
+   a. Identify language family of target
+   b. Apply consistent family-wide rule (see Language Family Rules below)
+   c. Exception: If context strongly favors non-default → Use context
+   d. Document choice rationale in metadata
+```
+
+#### Language Family Consistency Rules
+
+**For features requiring single value selection**:
+
+**Number (Collective Entities)**:
+- **Romance languages** (Spanish, French, Portuguese): Default SINGULAR
+  - "La gente es" (the people is) → Singular
+  - Exception: Explicit plurality markers override
+- **Germanic languages** (English, German, Dutch): Context-dependent
+  - English: "The people are" (plural), "The team is" (singular)
+  - Apply discourse salience rule per context
+- **Slavic languages**: Default PLURAL
+  - Russian: "Люди" always takes plural agreement
+
+**Person (Honorific/Polite Forms)**:
+- **European languages**: V-form distinctions
+  - French vous, German Sie → 2nd person + plural number
+  - Mixed annotation appropriate (person=2, number=plural)
+- **Asian languages**: Complex honorific systems
+  - Korean, Japanese → Multiple independent dimensions
+  - Preserve all dimensions in annotation
+
+**Degree (When Target Lacks Multiple Expressibility)**:
+- **English**: Can express multiple degrees ("too old" = excessive + old)
+  - Preserve mixed annotation
+- **Language lacking 'too' construction**: Choose DOMINANT
+  - Dominant = capacity limitation (excessive) > simple intensity
+  - "Too old to bear" → "very old" if 'too' unavailable
+
+#### Exceptions to Dominant Value Rules
+
+**Exception 1: Discourse Emphasis**
+- If discourse strongly emphasizes the non-default reading → Choose contextual reading
+- Example: Collective acting as individuals (distributive reading) → Use plural
+- Document: "Contextual override: distributive action favors plural"
+
+**Exception 2: Theological/Cultural Significance**
+- Trinity contexts: Mixed annotation required (Trial + Inclusive)
+- Honorific contexts: Mixed annotation required (person + formality)
+- Document: "Theological/cultural significance requires mixed"
+
+**Exception 3: Source Language Ambiguity Resolution**
+- Hebrew dual morphology with unclear semantics → Check LXX or other ancient translations
+- If ancient translations consistently choose one → Use that as dominant
+- Document: "Cross-translation evidence favors [value]"
+
+### Dominant Value Selection Criteria
+
+When forced to choose single value from multiple options:
+
+**Priority Order**:
+1. **Discourse salience**: What's being emphasized in this clause?
+2. **Language family default**: Follow family-wide pattern
+3. **Semantic compositionality**: Which value is derivable from context?
+4. **Cross-translation consensus**: What do 3+ major translations do?
+5. **Coin toss scenario**: If truly equal → Pick language family default
+
+**Coin Toss Identification**:
+- Multiple readings equally valid semantically
+- No discourse emphasis on either
+- Cross-translations split 50/50
+- No theological/cultural factors
+
+**For coin toss scenarios**:
+- **Same language family → same choice** (consistency within family)
+- Document: "Coin toss: [language family] default applied"
+- Future consistency: All [family] languages use same rule
+
+### Cross-Feature Implications
+- **All features**: Determine if mixed annotations semantically valid
+- **Target language constraints**: Some features force single value
+- **Language family consistency**: Same families → same choices for coin tosses
+- **Validation**: Partial match scoring when mixed appropriate; exact match when single value forced
+- **Algorithm**: Output format depends on feature (list vs single value)
+- **Accuracy metrics**:
+  - Features allowing mixed: Precision/recall
+  - Features forcing single: Exact match + "acceptable alternative" scoring
+- **Testing**: Design verses with mixed annotations + verses requiring dominant value choice
+- **Documentation**: Explicitly state which features allow mixed, which force single value
 
 ---
 
@@ -669,11 +1140,48 @@ LOW (<70%): Rare values, insufficient data, conflicts
 
 ---
 
-**Last Updated**: 2025-11-09
+**Last Updated**: 2025-11-11
 **Features Analyzed**:
-- number-systems (Phase 8 complete - algorithm v2.0 with validation)
-- degree (in progress)
+- number-systems (complete - 91.4% accuracy)
+- degree (Phase 10 complete - 100 verses tested, complete value inventory achieved)
+- person-systems (100% translation validation, TBTA perspective insights)
 **Next Feature**: [To be determined based on priority]
+
+**Major Learnings from Degree Phase 7-9** (Initial validation):
+- Universal Principle 1 EXPANDED: Semantic includes implied patterns (negative comparative = superlative)
+- NEW Degree Principle 7: Lexical vs. Syntactic distinction (only syntactic gets marked)
+- NEW Degree Principle 8: Dual value encoding (standardized + literal quoted values)
+- NEW Degree Principle 9: Semantic compatibility constraint (gradability check)
+
+**CRITICAL Learnings from Degree Phase 10** (100-verse scale testing):
+- Universal Principle 5 REVISED: Scale testing required - small samples lead to INCORRECT conclusions about rare values
+- NEW Degree Principle 10: Context-dependent feature assignment (Hebrew מִן → C, T, or L based on context)
+- NEW Degree Principle 11: Mixed annotations are common (20+ instances in 100 verses, not exceptional)
+- **VALUE CORRECTIONS** - 5 values thought non-existent now CONFIRMED:
+  - ✅ i (Intensified Comparative): 4 instances found
+  - ✅ E (Extremely Intensified): 18+ instances found
+  - ✅ L ('less'): 3 instances found
+  - ✅ T ('too' excessive): 12+ instances found
+  - ✅ s (Superlative of 2 items): 4 instances found
+- **ONLY q (equative) confirmed non-existent** after 100 verses
+- **Discovery timeline**: Values found at verses 41 (i, T), 71 (E, L), 100 (s)
+- **Lesson**: Don't declare values "non-existent" without 100+ verse comprehensive testing across diverse books
+
+**Methodology Success**:
+- ✅ Iterative batch testing (4 batches: 12 + 29 + 30 + 29 = 100)
+- ✅ Commit after each batch improvement
+- ✅ Progressive value discovery through scale
+- ✅ Complete value inventory achieved
+- ✅ Foundation for 90%+ accuracy algorithms
+
+**Major Learnings from Person-Systems** (Cross-linguistic validation):
+- NEW Person-Systems Principle 7: Dual Perspective in Annotation (discourse-internal vs reader-oriented)
+- NEW Person-Systems Principle 8: Cross-Linguistic Validation is Essential (5-10 real translations)
+- NEW Person-Systems Principle 9: Confidence Calibration Through Validation (high confidence = 90%+ accuracy)
+- NEW Person-Systems Principle 10: Lock Predictions Before Validation (git commit for audit trail)
+- **Translation Validation**: 98%+ agreement across 9 Austronesian languages
+- **Algorithm accuracy**: 100% (7/7) against real translations
+- **Methodology proven**: Adversarial testing + real translation validation
 
 ---
 
@@ -977,15 +1485,17 @@ AFTER all features complete:
 ## Source Metadata Updated
 
 **Features Contributing to Cross-Learnings**:
-1. number-systems (91.4% initial accuracy, comprehensive analysis)
-2. degree (in progress)
+1. number-systems (complete - 91.4% accuracy, comprehensive analysis)
+2. **degree (Phase 10 complete - 100 verses, complete value inventory)** ← UPDATED
 3. **person-systems (100% translation validation, TBTA perspective insights)** ← NEW
 
 **Validation Status**:
-- 9 principles now validated across multiple features
-- Universal Principle 7-10 from person-systems extensive validation
+- 11+ degree-specific principles validated (Principles 7-11 from comprehensive testing)
+- 10+ person-systems principles validated (Principles 7-10 from cross-linguistic validation)
+- 9+ number-systems principles validated
 - Methodology proven effective across different feature types
+- Iterative batch testing validated (4 batches to discover all rare values)
 
-**Last Updated**: 2025-11-09
+**Last Updated**: 2025-11-11
 
 ---
