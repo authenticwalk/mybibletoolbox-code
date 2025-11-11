@@ -14,32 +14,71 @@ Manages systematic implementation of Strong's word enrichment across three compl
 
 ## How It Works
 
-### Focused Grouping Approach
+### Single-Tool-to-Completion Methodology
 
-Instead of loading all tasks at once (which would fill your context), this skill:
-- **Identifies** the next logical grouping of work
-- **Loads** only that grouping's todos
-- **Guides** systematic execution
-- **Archives** completed work to plan files
-- **Moves** to the next grouping when ready
+**CRITICAL PRINCIPLE:** Take ONE tool to full production readiness before starting the next.
 
-### Example Groupings
+Instead of spreading effort across multiple tools, this skill:
+- **Focuses** on a single tool until it reaches production quality
+- **Iterates** through at least 7 improvement cycles (or until diminishing returns)
+- **Refines** prompts and context engineering systematically
+- **Validates** through peer review and quality checks
+- **Documents** all learnings before moving to next tool
 
-**Lexical Research - Tool 1:**
-- Grouping A: Research phase (3 documents)
-- Grouping B: Experimentation phase (5 test cases) ← **Current suggested focus**
-- Grouping C: Validation phase
-- Grouping D: Production phase (scale to 50 words)
+### The 7+ Cycle Improvement Process
 
-**TBTA Hints:**
-- Grouping A: Proof-of-concept (3 pronouns, 20 verses)
-- Grouping B: Measure accuracy improvement
-- Grouping C: Scale to high-value words
+For each tool (e.g., lexicon-core):
 
-**Cultural Translation:**
-- Grouping A: Tool creation
-- Grouping B: Data access setup
-- Grouping C: Pilot expansion (10-20 words)
+**Cycle 1: Initial Implementation**
+- Run 5 diverse experiments (high-freq, medium-freq, rare, Hebrew, word family)
+- Generate initial outputs following schema
+- Document what works and what fails
+
+**Cycle 2: Prompt Refinement**
+- Identify common failure patterns from Cycle 1
+- Refine extraction prompts for better accuracy
+- Test on same 5 words, compare results
+- Measure improvement
+
+**Cycle 3: Context Engineering**
+- Optimize information passed to extraction prompts
+- Add/remove context based on Cycle 2 learnings
+- Test again, measure improvement
+
+**Cycle 4: Edge Case Handling**
+- Focus on specific failure modes (rare words, controversies, etc.)
+- Create targeted improvements
+- Validate edge case handling
+
+**Cycle 5: Schema Refinement**
+- Adjust output structure based on what worked
+- Ensure fair use compliance
+- Optimize for downstream consumption
+
+**Cycle 6: Peer Review**
+- Use subagent to review outputs as an external evaluator
+- Identify subtle issues (fabrication, citation gaps, theological errors)
+- Implement feedback
+
+**Cycle 7: Production Validation**
+- Run validation checklist (Level 1/2/3)
+- Measure success metrics
+- Document final methodology
+
+**Cycle 8+: Continue if significant improvement possible**
+- Stop when improvements <5% per cycle
+- Diminishing returns = ready for production
+
+### Current Focus: Tool 1 (Lexicon-Core)
+
+**Status:** Experimentation phase (Cycle 1) ready to begin
+
+**Next Steps:**
+1. Run 5 initial experiments
+2. Document learnings
+3. Begin improvement cycles 2-7+
+4. Reach production readiness
+5. ONLY THEN move to Tool 2
 
 ## Current Status
 
@@ -58,14 +97,24 @@ As of 2025-11-08:
   - Comprehensive methodology
   - Pilot samples (3 words: agape, snow, lamb)
 
-**Suggested Next Grouping:** Tool 1 Experimentation
-1. Run Experiment 1: High-frequency word (G846 αὐτός)
-2. Run Experiment 2: Medium-frequency theological (G1411 δύναμις)
-3. Run Experiment 3: Rare word (<10 occurrences)
-4. Run Experiment 4: Hebrew word (H430 Elohim)
-5. Run Experiment 5: Word family (agape/phileo)
-6. Validate results against quality checklist
-7. Document learnings
+**Current Tool:** lexicon-core (Tool 1 of 7)
+**Current Cycle:** 2 (Prompt Refinement)
+**Cycle 1 Status:** ✅ COMPLETE (97.3% validation, zero fabrication)
+
+**Cycle 1 Achievements:**
+- ✅ All 5 experiments complete (G846, G1411, G5287, H430, agape/phileo)
+- ✅ 100% fair use compliance
+- ✅ Hebrew extraction proven identical to Greek
+- ✅ Key discovery: Theological significance > frequency
+
+**Cycle 2 Tasks:**
+1. Implement word-type auto-detection
+2. Create dual extraction pathways (theological/grammatical)
+3. Add systematic controversy detection
+4. Enforce category limits by frequency
+5. Pre-populate ATTRIBUTION.md with common sources
+6. Re-run same 5 words with refined prompts
+7. Measure improvement vs Cycle 1 baseline
 
 ## Key Planning Documents
 
@@ -102,9 +151,11 @@ You: "Let's improve strongs"
 ```
 
 The skill will:
-1. Check current status
-2. Load Tool 1 experiment todos (suggested next grouping)
-3. Guide you through experiments
+1. Check current tool and cycle status
+2. Load current cycle's todos
+3. Execute experiments/improvements systematically
+4. Document learnings
+5. Iterate through 7+ cycles until production ready
 
 ### Continue after a break:
 ```
@@ -112,19 +163,29 @@ You: "Continue improving strongs"
 ```
 
 The skill will:
-1. Check active todos
-2. Resume where you left off
-3. Or offer to switch groupings if complete
+1. Check which cycle you're on
+2. Resume current cycle's work
+3. Show progress through the 7+ cycle improvement process
 
-### Switch to different initiative:
+### See improvement metrics:
 ```
-You: "Let's work on TBTA hints for strongs"
+You: "Show me the improvement metrics for lexicon-core"
 ```
 
 The skill will:
-1. Archive current lexical todos
-2. Load TBTA hints proof-of-concept todos
-3. Guide implementation
+1. Compare outputs across cycles
+2. Show quality score trends
+3. Identify if diminishing returns reached (ready for production)
+
+## The Single-Tool Focus
+
+**Important:** This skill will NOT move to Tool 2 (lexicon-expert), TBTA hints, or cultural translation until Tool 1 (lexicon-core) reaches production quality through 7+ improvement cycles.
+
+**Why this approach:**
+- Prevents spreading effort too thin
+- Allows deep learning from one tool before applying to next
+- Ensures production-quality output before scaling
+- Each tool's learnings inform the next tool's design
 
 ## Success Metrics
 
@@ -152,4 +213,4 @@ The skill will:
 
 ---
 
-**Remember:** This skill keeps you focused on ONE grouping at a time, preventing context overload while systematically working through the comprehensive Strong's enrichment strategy.
+**Remember:** This skill focuses on ONE tool at a time, taking it through 7+ improvement cycles to production quality before moving to the next tool. This prevents spreading effort too thin and ensures each tool reaches excellence through systematic iteration and refinement.

@@ -1,0 +1,165 @@
+strongs_number: G0846
+language: greek
+lemma: αὐτός
+transliteration: autós
+
+# From base file (reference, don't duplicate)
+base_data:
+  definition: "the reflexive pronoun self, used (alone or in the comparative G1438) of the third person, and (with the proper personal pronoun) of the other persons {strongs}"
+  kjv_usage: "her, it(-self), one, the other, (mine) own, said, (self-), the) same, ((him-, my-, thy-)self, (your-)selves, she, that, their(-s), them(-selves), there(-at, -by, -in, -into, -of, -on, -with), they, (these) things, this (man), those, together, very, which {strongs}"
+  derivation: "from the particle (perhaps akin to the base of G109 through the idea of a baffling wind) (backward) {strongs}"
+  extended_definition_source: "{abbott-smith}"
+  lsj_etymology_source: "{lsj}"
+  note: "Base file contains comprehensive Abbott-Smith definition with usage categories and extensive LSJ classical etymology"
+
+# UNIQUE data from web extraction
+etymology:
+  root_words:
+    - strongs: G109
+      lemma: ἀήρ
+      relationship: "possibly akin (through the idea of a baffling wind) {strongs} {biblehub}"
+  convergence_note: "All lexicons agree on core function as reflexive/personal pronoun third person {strongs} {abbott-smith} {lsj} {mounce}"
+  diachronic_development: "Classical → Koine: maintained core reflexive and personal pronoun function with increased frequency in oblique cases for simple third person usage {lsj} {abbott-smith}"
+  pedagogical_note: "Intensified pronoun usage alongside personal pronoun functions, requiring students to distinguish reflexive versus standard third-person applications {mounce}"
+
+semantic_range:
+  categories:
+    - id: 1
+      label: "Reflexive - self"
+      definition: "Emphatic self, expressing opposition, distinction, exclusion; always in nominative except when preceded by article {abbott-smith}"
+      examples:
+        - "Jhn.2:25 - αὐτὸς ἐγινώσκεν (he himself knew)"
+        - "Luk.5:37 - αὐτὸς ἐκχυθήσεται (it itself will be spilled)"
+      note: "Frequently with ὁ αὐτός construction {abbott-smith}"
+
+    - id: 2
+      label: "Personal pronoun - he/she/it"
+      definition: "Simple pronoun in oblique cases for third person, used much more frequently in late Greek than classical {abbott-smith} {lsj}"
+      examples:
+        - "Mat.7:9 - oblique case usage"
+        - "Mat.26:44 - simple third person reference"
+      note: "Rare in Epic dialect, mostly emphatic; common in Prose to recall noun used earlier in sentence {lsj}"
+
+    - id: 3
+      label: "The same"
+      definition: "With article ὁ αὐτός, ἡ αὐτή, τὸ αὐτό - the very one, the same {abbott-smith} {lsj}"
+      examples:
+        - "Heb.13:8 - the same (Jesus Christ)"
+        - "Heb.1:12 - the same"
+      note: "Also contracted forms ταὐτό, ταὐτόν in Attic dialect {lsj}"
+
+usage_statistics:
+  total_occurrences: 5597
+  source: "{biblehub} {blb}"
+  testament_distribution:
+    new_testament: 5597
+    old_testament: 0
+    note: "Greek word, NT only (LXX usage documented separately with 22,271 forms {blb})"
+
+  form_distribution:
+    note: "High-frequency word with extensive morphological variation {biblehub}"
+    common_forms:
+      - form: "αὐτοῦ"
+        parsing: "genitive masculine singular"
+        occurrences: 1428
+      - form: "αὐτὸν"
+        parsing: "accusative masculine singular"
+        occurrences: 961
+      - form: "αὐτῷ"
+        parsing: "dative masculine singular"
+        occurrences: 856
+      - form: "αὐτῶν"
+        parsing: "genitive plural"
+        occurrences: 571
+      - form: "αὐτοῖς"
+        parsing: "dative plural"
+        occurrences: 559
+
+  kjv_translation_frequency:
+    note: "KJV uses varied translations based on context; most common: him, them, her, it, self, same, very {strongs}"
+    primary_translations: ["him", "them", "her", "it(-self)", "the same", "himself"]
+
+lexical_convergence:
+  primary_meaning: "Reflexive pronoun and personal pronoun third person"
+  lexicons_agreeing: ["strongs", "abbott-smith", "lsj", "mounce"]
+  confidence: HIGH
+  convergence_summary: "Strong consensus across all lexicons on three core functions: (1) reflexive/emphatic 'self', (2) personal pronoun 'he/she/it' in oblique cases, (3) with article 'the same' {strongs} {abbott-smith} {lsj} {mounce}"
+
+lexical_divergence:
+  - semantic_area: "Classical vs Koine frequency"
+    analysis: "LSJ notes usage was rare in Epic dialect and mostly emphatic, while Abbott-Smith emphasizes much more frequent usage in late Greek (Koine) than classical, particularly in oblique cases for simple third person reference {lsj} {abbott-smith}"
+    significance: "Diachronic development shows increased functional load in Koine period"
+
+  - semantic_area: "Pedagogical emphasis"
+    analysis: "Mounce emphasizes the pedagogical challenge for students in distinguishing intensified/reflexive usage from standard third-person pronoun function, while traditional lexicons organize by grammatical function {mounce} vs {abbott-smith} {lsj}"
+    significance: "Different organizational approaches serve different user needs (students vs scholars)"
+
+cross_references:
+  related_words:
+    - strongs: G1438
+      lemma: ἑαυτοῦ
+      relationship: "comparative reflexive form; used in comparison with αὐτός {strongs} {biblehub}"
+    - strongs: G109
+      lemma: ἀήρ
+      relationship: "possibly akin root through idea of baffling wind {strongs} {biblehub}"
+    - strongs: G848
+      lemma: αὑτοῦ
+      relationship: "related contracted form; meaningful distinctions exist {blb} {biblehub}"
+
+  tdnt_ref: null
+  note: "TDNT reference not found in available web sources {blb}"
+
+  bdag: null
+  louw_nida: null
+  trench_synonyms: null
+  note_scholarly_refs: "TDNT, Trench's Synonyms not available in web sources consulted {blb}"
+
+metadata:
+  generated_date: "2025-11-08"
+  tool: "lexicon-core"
+  tool_version: "cycle-1-exp-1"
+
+  sources_consulted:
+    - source: "base-strongs-file"
+      type: "base_file"
+      path: ".data/strongs/G0846/G0000-strongs.strongs.yaml"
+      content_extracted: "Strong's definition, KJV usage, derivation, Abbott-Smith extended definition, LSJ classical etymology"
+
+    - source: "biblehub"
+      type: "web"
+      url: "https://biblehub.com/greek/846.htm"
+      content_extracted: "Usage statistics (5,606 total, form breakdown), related words (G109, G1438, G848)"
+      issues: "HELPS Word-studies section not found on page"
+
+    - source: "studylight"
+      type: "web"
+      url: "https://www.studylight.org/lexicons/eng/greek/846.html"
+      content_extracted: "Mounce's definition emphasizing intensified pronoun usage and pedagogical distinctions"
+      note: "Abbott-Smith and LSJ already in base file, not re-extracted"
+
+    - source: "blb"
+      type: "web"
+      url: "https://www.blueletterbible.org/lexicon/g846/kjv/tr/0-1/"
+      content_extracted: "Confirmed 5,597 occurrences (mGNT), related words, morphological variation count"
+      issues: "TDNT reference not found, Trench's Synonyms not found"
+
+  extraction_learnings:
+    - "High-frequency word (5,597 occurrences) made web sources focus on usage statistics rather than semantic nuance"
+    - "HELPS Word-studies unexpectedly absent from BibleHub page"
+    - "BLB and BibleHub show slight occurrence count discrepancy (5,597 vs 5,606), used BLB as authoritative"
+    - "Base file already contained most comprehensive lexicon data (Abbott-Smith, LSJ), limiting unique web extraction"
+    - "Mounce's pedagogical emphasis provided unique angle not in traditional scholarly lexicons"
+
+  validation:
+    level_1_critical: null
+    level_2_high: null
+    level_3_medium: null
+    note: "Validation scores to be calculated after file creation"
+
+data_quality:
+  convergence_grouping: true
+  divergence_comparative: true
+  base_file_read_first: true
+  all_claims_cited: true
+  no_percentages: true
+  no_fabrication: true
