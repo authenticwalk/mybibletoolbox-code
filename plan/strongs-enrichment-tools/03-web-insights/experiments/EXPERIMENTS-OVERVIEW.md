@@ -6,96 +6,148 @@
 
 ---
 
-## Experiment Summary
+## Experiment Summary - ADVERSARIAL TESTING APPROACH
 
-| Exp | Strong's | Word | Coverage | Primary Test | Timeline |
-|-----|----------|------|----------|--------------|----------|
-| **1** | G26 | ἀγάπη (agape) | High | Abundant sources, value-add | 2.5 hrs |
-| **2** | G1343 | δικαιοσύνη (righteousness) | Medium | Moderate sources, quality maintenance | 2 hrs |
-| **3** | G1411 | δύναμις (dynamis) | High | Error correction, controversy | 2 hrs |
-| **4** | H7950 | שֶׁלֶג (snow) | Medium | Translator guidance, cultural challenges | 2.5 hrs |
-| **5** | G4944 | συνωδίνω (rare) | Low | Honesty, no fabrication | 2 hrs |
+**Design Philosophy:** Test hard cases, not easy wins. Use rare words and scholarly disagreement to stress-test the system.
+
+| Exp | Strong's | Word | Type | Adversarial Test | Timeline |
+|-----|----------|------|------|------------------|----------|
+| **1** | G4151 | πνεῦμα (pneuma) | Scholarly disagreement | Document divergent views fairly | 3 hrs |
+| **2** | G2160 | εὐτραπελία (eutrapelia) | Rare hapax (1x) | Honest insufficient coverage | 2 hrs |
+| **3** | G1161 | δέ (de) | Grammatical particle | Appropriate scope boundary (skip) | 1 hr |
+| **4** | G1411 | δύναμις (dynamis) | Known error | Error correction pattern | 2 hrs |
+| **5** | G1577 | ἐκκλησία (ekklesia) | Cultural debate | Translator disagreement handling | 3 hrs |
 
 **Total Estimated Time:** ~11 hours for all 5 experiments
+
+**Why Adversarial?** Easy words (agape, logos) guarantee success but don't reveal weaknesses. Hard cases stress-test integrity, scope boundaries, and controversial content handling.
 
 ---
 
 ## What Each Experiment Tests
 
-### Experiment 1: Abundant Coverage (G26 - Agape)
+### Experiment 1: Scholarly Disagreement (G4151 - πνεῦμα/pneuma)
+**Adversarial Test:** Word with ongoing scholarly debate
+
+**Why This Is Hard:**
+- "spirit" vs "Spirit" (capitalization debate)
+- Human spirit vs Holy Spirit disambiguation
+- Charismatic vs cessationist perspectives differ
+- Multiple expert views, none definitively "correct"
+
 **Tests:**
-- Can we find 5+ quality sources?
-- Does Tool 3 add value beyond Tool 1 (lexicon-core)?
-- Are authority levels assigned correctly?
-- Do practical applications emerge?
+- Can we document divergent views fairly without bias?
+- Do we avoid picking sides prematurely?
+- Are multiple perspectives given appropriate weight?
+- Is controversy acknowledged honestly?
 
-**Expected Outcome:** SUCCESS - Agape has excellent coverage
+**Expected Outcome:** 3-5 sources with DISAGREEMENT
 
-**Key Validation:**
-- Authority detection works
-- Content supplements (not duplicates) Tool 1
-- Multiple audience applications (translators, preachers, students)
+**Success Criteria:**
+- Documents at least 2 divergent expert positions
+- No bias toward one view
+- Evidence for each position presented
+- Acknowledges ongoing debate (not settled)
 
 ---
 
-### Experiment 2: Moderate Coverage (G1343 - Righteousness)
+### Experiment 2: Rare Hapax Legomenon (G2160 - εὐτραπελία/eutrapelia)
+**Adversarial Test:** Occurs once (Eph 5:4), minimal web coverage expected
+
+**Why This Is Hard:**
+- Too rare for most expert blogs
+- Not theologically central (won't find debates)
+- Should find 0-1 sources beyond lexicons
+- Tests honest "insufficient coverage" decision
+
 **Tests:**
-- Can we maintain quality with 2-3 sources?
-- How to handle gaps gracefully?
-- Is there still value with fewer sources?
+- Do we avoid fabrication when sources lacking?
+- Can we honestly document "skip" decision?
+- Is exhaustive search actually exhaustive?
+- Do we force content to appear "complete"?
 
-**Expected Outcome:** SUCCESS with adaptations
+**Expected Outcome:** 0-1 sources (SKIP word likely)
 
-**Key Validation:**
-- Quality maintained despite fewer sources
-- Honest about coverage limitations
-- Establishes minimum viable source count
+**Success Criteria:**
+- Exhaustive search documented (10+ queries)
+- Honest assessment: "Insufficient web coverage"
+- NO fabrication to fill gaps
+- Skip decision = SUCCESS (not failure)
 
 ---
 
-### Experiment 3: Controversy/Error Correction (G1411 - Dynamis)
+### Experiment 3: Grammatical Particle (G1161 - δέ/de)
+**Adversarial Test:** Common particle "but/and/now" - outside Tool 3 scope
+
+**Why This Is Hard:**
+- Very common (2,792 occurrences)
+- Grammatical function word (not lexical)
+- Should recognize as outside Tool 3 scope
+- Tests appropriate boundary detection
+
 **Tests:**
-- Can we find expert error corrections?
-- Is error + refutation + evidence pattern complete?
-- Are corrections authoritative?
+- Do we recognize this is Tool 1 territory?
+- Can we appropriately skip without feeling incomplete?
+- Is scope boundary clearly documented?
+- Do we avoid overreach into grammar?
 
-**Expected Outcome:** SUCCESS - Known false etymology
+**Expected Outcome:** SKIP (appropriate boundary)
 
-**Key Validation:**
-- Complete error correction pattern
-- Gracious tone (not mocking)
-- Correct teaching alongside correction
+**Success Criteria:**
+- Recognizes particle is grammatical, not lexical
+- Documents skip reason clearly
+- Cites scope boundary (Tool 3 = practical insights, not grammar)
+- Skip = SUCCESS (demonstrates appropriate scope)
 
 ---
 
-### Experiment 4: Translator Practical (H7950 - Snow)
+### Experiment 4: Known Error (G1411 - δύναμις/dynamis)
+**Adversarial Test:** Well-documented false etymology (dynamite fallacy)
+
+**Why This Is Hard:**
+- Error is widespread in popular teaching
+- Need gracious tone while correcting
+- Multiple refutations available (synthesis required)
+- Tests error correction pattern completely
+
 **Tests:**
-- Can we find field-tested translator solutions?
-- Are cultural translation challenges documented?
-- Is authority appropriate for practical guidance?
+- Can we find expert corrections (KEEP)?
+- Is error + refutation + evidence complete?
+- Is tone gracious (not mocking)?
+- Do we provide correct teaching alongside correction?
 
-**Expected Outcome:** SUCCESS if SIL/Wycliffe resources available
+**Expected Outcome:** 2-4 sources with error corrections
 
-**Key Validation:**
-- Field-tested solutions (not speculation)
-- Multiple language examples
-- MEDIUM-HIGH authority for practical applications
+**Success Criteria:**
+- Complete pattern: error + refutation + evidence
+- Gracious tone maintained
+- Correct understanding provided
+- Authority MEDIUM+ for corrections
 
 ---
 
-### Experiment 5: Low Coverage / Honesty (G4944 - Rare Word)
+### Experiment 5: Cultural/Translation Debate (G1577 - ἐκκλησία/ekklesia)
+**Adversarial Test:** "Church" vs "assembly" with cultural/theological implications
+
+**Why This Is Hard:**
+- Ongoing translator debate (not settled)
+- Cultural baggage varies by context
+- Post-colonial concerns vs traditional rendering
+- Multiple valid perspectives exist
+
 **Tests:**
-- Do we avoid fabrication when sources scarce?
-- Can we honestly say "insufficient coverage"?
-- Is skip decision acceptable?
+- Can we document translator disagreement fairly?
+- Do we avoid imposing one solution as "correct"?
+- Are cultural sensitivities acknowledged?
+- Is guidance helpful without being prescriptive?
 
-**Expected Outcome:** ZERO sources (most likely) - Test of integrity
+**Expected Outcome:** 3-5 sources with DIVERGENT approaches
 
-**Key Validation:**
-- No fabrication
-- Honest coverage assessment
-- Skip word if insufficient data
-- Quality over quantity
+**Success Criteria:**
+- Documents multiple translation approaches
+- Acknowledges cultural/theological stakes
+- No single "correct" answer imposed
+- Guidance presents options, not edicts
 
 ---
 
