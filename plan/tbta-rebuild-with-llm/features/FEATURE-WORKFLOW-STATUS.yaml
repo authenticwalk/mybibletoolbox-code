@@ -215,13 +215,18 @@ features:
     next_action: "Optional: v2.1 refinement for mixed Routine/Generic cases (EPH 1:7-type), adversarial search for rare states"
 
   discourse-genre:
-    status: not_started
-    current_phase: 1
-    completed_phases: []
-    started: null
-    last_updated: null
-    notes: "Has existing documentation"
-    next_action: "Start Phase 2: Training set design"
+    status: in_progress
+    current_phase: 2
+    completed_phases: [1]
+    started: "2025-11-11"
+    last_updated: "2025-11-11"
+    notes: |
+      - Phase 1 COMPLETE: Feature selected, context loaded
+      - 9 possible genre values identified
+      - Gateway feature: determines tense, aspect, discourse markers
+      - Has comprehensive existing documentation (README with examples)
+      - Training set target: 18 verses (2 per value)
+    next_action: "Phase 2: Design balanced training set (18 verses, 2 per genre)"
     blocked_on: null
 
   proximity:
