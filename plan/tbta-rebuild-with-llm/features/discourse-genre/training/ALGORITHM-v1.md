@@ -606,8 +606,10 @@ def predict_discourse_genre(book, chapter, verse, content_hints=None):
 
 ---
 
-**Version**: 1.0 (LOCKED - await git commit SHA)
-**Status**: Ready for locking
-**Next Step**: Git commit to lock algorithm, then proceed to test set design
+**Version**: 1.0 (LOCKED)
+**Git Commit**: 4cdb523
+**Locked Date**: 2025-11-11
+**Status**: Locked and immutable
+**Next Step**: Proceed to Phase 5 (test set design)
 **Expected Training Accuracy**: 60-70% (limited by TBTA data availability)
 **Expected Test Accuracy**: Unknown (depends on TBTA coverage of test set)
