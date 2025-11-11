@@ -216,17 +216,17 @@ features:
 
   discourse-genre:
     status: in_progress
-    current_phase: 2
-    completed_phases: [1]
+    current_phase: 3
+    completed_phases: [1, 2]
     started: "2025-11-11"
     last_updated: "2025-11-11"
     notes: |
       - Phase 1 COMPLETE: Feature selected, context loaded
-      - 9 possible genre values identified
+      - Phase 2 COMPLETE: Training set designed (18 verses, 2 per genre)
+      - 9 genre values: Climactic Narrative, Background Narrative, Procedural, Expository, Poetic, Hortatory, Prophetic, Legal, Epistolary
+      - Training set: 50% OT, 50% NT; diverse books
       - Gateway feature: determines tense, aspect, discourse markers
-      - Has comprehensive existing documentation (README with examples)
-      - Training set target: 18 verses (2 per value)
-    next_action: "Phase 2: Design balanced training set (18 verses, 2 per genre)"
+    next_action: "Phase 3: Access TBTA for training set, analyze patterns, document learnings"
     blocked_on: null
 
   proximity:
