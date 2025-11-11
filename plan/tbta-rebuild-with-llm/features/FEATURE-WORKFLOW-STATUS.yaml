@@ -216,18 +216,22 @@ features:
 
   discourse-genre:
     status: in_progress
-    current_phase: 3
-    completed_phases: [1, 2]
+    current_phase: 4
+    completed_phases: [1, 2, 3]
     started: "2025-11-11"
     last_updated: "2025-11-11"
     notes: |
       - Phase 1 COMPLETE: Feature selected, context loaded
       - Phase 2 COMPLETE: Training set designed (18 verses, 2 per genre)
-      - 9 genre values: Climactic Narrative, Background Narrative, Procedural, Expository, Poetic, Hortatory, Prophetic, Legal, Epistolary
-      - Training set: 50% OT, 50% NT; diverse books
-      - Gateway feature: determines tense, aspect, discourse markers
-    next_action: "Phase 3: Access TBTA for training set, analyze patterns, document learnings"
-    blocked_on: null
+      - Phase 3 COMPLETE: TBTA analysis - CRITICAL FINDING DISCOVERED
+      - **CRITICAL**: TBTA data shows ONLY "Climactic Narrative Story" (100% of 12,091 annotations)
+      - ALL other genres (8/9) have ZERO examples in available TBTA data
+      - Verified across: GEN, EXO, MAT, JHN, LUK, PHP, PSA (7 books, 2,088 files)
+      - Even Psalms (poetry), Ten Commandments (legal), epistles (hortatory) → all marked as narrative
+      - **DECISION**: Proceed with linguistic-theory-based algorithm (not pure TBTA-based)
+      - Approach: Book-type classification + content analysis + partial TBTA validation
+    next_action: "Phase 4: Build linguistic-theory algorithm v1.0 (document TBTA limitation)"
+    blocked_on: "Complete TBTA genre data (proceeding with alternative approach)"
 
   proximity:
     status: not_started
