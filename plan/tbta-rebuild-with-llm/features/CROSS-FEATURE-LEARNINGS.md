@@ -212,10 +212,12 @@ Document where languages/translations might disagree:
 
 ---
 
-## Universal Principle 5: Rare/Theoretical Values Often Absent
+## Universal Principle 5: Scale Testing Required for Rare Value Discovery
 
 ### Pattern
-**Some TBTA values are RARE or NEVER USED in Biblical texts.**
+**Some TBTA values are RARE and require EXTENSIVE TESTING (100+ verses) to discover.**
+
+⚠️ **CRITICAL LEARNING**: Initial small-scale validation (7-12 verses) can INCORRECTLY conclude rare values don't exist!
 
 ### Evidence
 
@@ -224,32 +226,73 @@ Document where languages/translations might disagree:
 - **Paucal**: Defined but needs specific count contexts (4-10)
 - **Trial**: ONLY for Trinity contexts (theologically derived)
 
-#### Degree (CONFIRMED - Phase 7 validation)
-- **q (equative)**: CONFIRMED non-existent → Use "No Degree" instead
-  - PHP 2:6 ("equal with God") → TBTA marked "No Degree"
-  - MAT 10:25 ("like his teacher") → TBTA marked "No Degree"
-- **i (intensified comparative)**: CONFIRMED non-existent → Use "Comparative"
-  - πολλῷ μᾶλλον "much more" → Treated as simple "Comparative"
-- **s (superlative of 2)**: CONFIRMED non-existent → Use "No Degree" or "Comparative"
-  - Dyadic comparisons don't get special superlative marking
-- **E (extremely intensified)**: Likely non-existent (lexical compounds don't count)
-  - Extreme = lexical meaning, not syntactic degree
-- **T (excessive "too")**: Not found in test verses, may be absent in Biblical register
-- **L (less)**: Unclear if distinct from C, needs more data
+#### Degree - Phase 7-8 vs Phase 10 CORRECTION
+
+**After 7-12 verses (Phase 7-8) - INCORRECT CONCLUSIONS**:
+- **q (equative)**: ✅ CONFIRMED non-existent (still true after 100 verses)
+  - PHP 2:6, MAT 10:25 → Both "No Degree"
+- **i (intensified comparative)**: ❌ INCORRECTLY thought non-existent
+- **s (superlative of 2)**: ❌ INCORRECTLY thought non-existent
+- **E (extremely intensified)**: ❌ INCORRECTLY thought non-existent (lexical theory)
+- **T (excessive "too")**: ❌ INCORRECTLY thought non-existent
+- **L ('less')**: ❌ Unknown status
+
+**After 100 verses (Phase 10) - CORRECTED**:
+- **i (Intensified Comparative)**: ✅ **EXISTS** - Found in 4 verses
+  - MAT 10:31, 1SAM 13:6, 2SAM 7:19, DAN 1:20, 3:19
+  - Pattern: Numerical intensifiers (7x, 10x) + comparative
+- **s (Superlative of 2 items)**: ✅ **EXISTS** - Found in 4 verses
+  - GEN 27:15, 27:42, 29:18, 48:19
+  - Pattern: Selection from exactly 2 items (older/younger of 2 sons/daughters)
+- **E (Extremely Intensified)**: ✅ **EXISTS** - Found in 18+ verses
+  - GEN 6:11-12, 25:29-32, EPH 1:6-18, PSA 14:5
+  - Pattern: Extreme emotional states, hyperbolic contexts, theological emphasis
+- **T ('too' excessive)**: ✅ **EXISTS** - Found in 12+ verses
+  - GEN 4:13, 18:11-12, ACT 2:8, RUT 1:11
+  - Pattern: Beyond capacity/ability ("too old to bear children")
+- **L ('less')**: ✅ **EXISTS** - Found in 3 verses
+  - GEN 8:1, 8:3, 8:5
+  - Pattern: Progressive decrease (flood waters receding)
+
+### Key Insight: Discovery Timeline
+
+| Verses Tested | Values Found | Missing Values |
+|---------------|--------------|----------------|
+| **7 verses** | C, S, I, '''least''' | i, E, L, T, s (assumed non-existent) |
+| **12 verses** | Same + errors identified | i, E, L, T, s (still assumed non-existent) |
+| **41 verses** | + i, T, 'least' | E, L, s (assumed non-existent) |
+| **71 verses** | + E, L, 'less', 'too' | s (assumed non-existent) |
+| **100 verses** | + s | ✅ **ALL VALUES FOUND** |
+
+**Lesson**: Rare values appear at rates of 1-4 instances per 100 verses. Small-scale testing CANNOT find them!
 
 ### Application Rule
 ```
 When encountering rare values:
-1. Mark as LOW CONFIDENCE in predictions
-2. Design specific experiments to hunt for instances
-3. Consider that value may be theoretical but unused
-4. Document whether EVER found in Biblical corpus
+1. DON'T assume non-existence from small samples (<50 verses)
+2. Design SCALE TESTING (100+ verses) across diverse books
+3. Test iteratively in batches (commit after each improvement)
+4. Correct earlier conclusions as new data emerges
+5. Document value discovery timeline
+6. Final confirmation requires comprehensive corpus coverage
 ```
 
+### Testing Methodology: Iterative Batch Approach
+
+**Proven successful in Phase 10**:
+1. **Batch 1** (verses 8-20): Expose algorithm weaknesses, discover new errors
+2. **Batch 2** (verses 21-50): Hunt for first rare values (i, T found)
+3. **Batch 3** (verses 51-80): Complete rare value search (E, L found)
+4. **Batch 4** (verses 81-100): Edge cases and final discoveries (s found)
+
+**Commit after each batch** - Push to remote after each improvement
+
 ### Cross-Feature Implications
-- **All features**: Some values are edge cases
-- **Validation**: Need comprehensive corpus search for rare values
-- **Translation**: Rare values may indicate translator choice points
+- **All features**: Small-scale validation (10-20 verses) insufficient for rare values
+- **Methodology**: Require 100+ verse testing for complete value inventory
+- **Timeline**: Expect iterative discovery across multiple batches
+- **Documentation**: Update earlier conclusions as scale testing progresses
+- **Confidence**: Only declare "non-existent" after 100+ diverse verses tested
 
 ---
 
@@ -404,7 +447,191 @@ Before assigning feature value:
 
 ---
 
-## Cross-Feature Algorithm Template
+## Universal Principle 10: Context-Dependent Feature Assignment
+
+### Pattern
+**Same morphological construction can map to DIFFERENT feature values based on semantic CONTEXT.**
+
+### Evidence
+
+#### Degree: Hebrew מִן Constructions (Phase 10 discovery)
+
+Hebrew מִן can mark comparison, but maps to 3 different degree values based on context:
+
+**→ Comparative (C)**:
+- GEN 7:20: "15 cubits above/more than" (waters rising)
+- Context: Rising, increasing, growing
+- Semantic: Relative comparison with increase
+
+**→ 'too' (T) - Excessive**:
+- GEN 4:13: "Too great to bear" (מִנְּשֹׂא)
+- Context: Beyond capacity, inability
+- Semantic: Excessive degree → impossibility
+
+**→ 'less' (L) - Progressive Decrease**:
+- GEN 8:1, 8:3, 8:5: Waters "became less deep" (flood receding)
+- Context: Decreasing, receding, diminishing
+- Semantic: Progressive decrease (not comparison)
+
+### Key Insight: Morphology + Context → Feature Value
+
+```
+Same form + different context = different values
+מִן + rising verb = Comparative
+מִן + capacity expression = 'too' (excessive)
+מִן + decreasing verb = 'less' (progressive decrease)
+```
+
+### Linguistic Reasoning
+- **Morphological marker** identifies CATEGORY (comparison/degree)
+- **Semantic context** determines SPECIFIC VALUE within category
+- **Verb semantics** critical: increase vs decrease vs ability
+- **Cannot predict from morphology alone** - context analysis required
+
+### Application Rule
+```
+For context-dependent constructions:
+1. Identify morphological marker (מִן, comparative suffix, etc.)
+2. Analyze semantic context (verb type, discourse role)
+3. Check for specific triggers:
+   - Capacity expressions → Excessive/inability
+   - Progressive change → Increase vs decrease
+   - Set size → Superlative vs comparative
+4. Map construction + context → Specific feature value
+5. Test multiple verses to validate pattern
+```
+
+### Additional Context-Dependent Patterns (Phase 10)
+
+#### Set Size Determines Degree Type
+- **2 items + selection** → "Superlative of 2 items" (s)
+  - GEN 27:15: "The older (of 2 sons)" - Jacob and Esau
+  - GEN 29:18: "The younger (of 2 daughters)" - Leah and Rachel
+- **2 items + general comparison** → Comparative (C)
+  - GEN 19:31: "Older than custom"
+- **3+ items + selection** → Superlative (S)
+  - GEN 43:33: "From oldest to youngest" (12 brothers)
+
+#### Discourse Type Affects Intensification
+- **Narrative contexts** → Standard degrees (C, S, I)
+- **Poetic contexts** → Clustering of Intensified/Extremely Intensified
+  - EXO 15:14-15: Multiple "afraid" with Intensified
+  - PSA 14:5: Extremely Intensified in parallelism
+- **Epistolary/theological contexts** → Extremely Intensified clusters
+  - EPH 1:6-18: 5× Extremely Intensified for God's grace
+
+### Cross-Feature Implications
+- **All features**: Context determines value assignment, not just morphology
+- **Requires**: Semantic analysis + discourse analysis + morphological analysis
+- **Testing**: Need diverse contexts for same construction (rising vs decreasing, 2 items vs 3+ items)
+- **Algorithm complexity**: Multi-step decision trees with context checks
+- **Documentation**: Pattern libraries per construction type
+
+---
+
+## Universal Principle 11: Mixed Annotations Are Common
+
+### Pattern
+**Same constituent can receive MULTIPLE feature values SIMULTANEOUSLY in a single verse.**
+
+⚠️ **CRITICAL LEARNING**: Mixed annotations are NOT exceptional edge cases - they're common patterns (20+ instances in 100 verses)
+
+### Evidence
+
+#### Degree: Multiple Degrees on Same Word (Phase 10 discovery)
+
+**GEN 18:11** - "old" receives BOTH values:
+- "old": **Intensified** (Sarah and Abraham were very old)
+- "old": **'too'** (Sarah too old to bear children)
+- **Pattern**: Same word, two semantic aspects (intensity + excessive)
+
+**EXO 10:14** - "great" receives BOTH values:
+- "great": **Superlative** (greatest plague ever)
+- "great": **Comparative** (greater than before)
+- **Pattern**: Superlative scope + comparative contrast
+
+**EXO 11:6** - "loudly" receives THREE annotations:
+- "loudly": **Intensified** (very loud)
+- "loudly": **Comparative** (louder than before)
+- "loudly": **Comparative** (louder than will be)
+- **Pattern**: Intensity + temporal comparisons (past and future)
+
+**EST 1:5** - "important" receives FOUR annotations:
+- "important": **'least'** (from least)
+- "important": **Superlative** (to greatest)
+- "important": **'least'** (repeated in parallel)
+- "important": **Superlative** (repeated in parallel)
+- **Pattern**: Merism (least to greatest = everyone), with parallel repetition
+
+### Key Patterns in Mixed Annotations
+
+**Pattern 1: Multiple Semantic Aspects**
+- Same word can be BOTH intensified AND excessive
+- Same word can be BOTH superlative AND comparative
+- Each aspect gets separate annotation
+
+**Pattern 2: Repetition Gets Separate Annotations**
+- Each instance of repeated word annotated independently
+- Even if same semantic value, each instance marked
+- Parallelism results in duplicate annotations
+
+**Pattern 3: Complex Contexts Trigger Multiple Values**
+- Temporal comparisons: past vs future → multiple comparatives
+- Scope differences: superlative among all + comparative to one
+- Merism structures: minimum + maximum both marked
+
+### Linguistic Reasoning
+- **TBTA annotates semantic aspects independently**
+- **Each occurrence treated separately** (not merged)
+- **Multiple truths can coexist** (very old AND too old)
+- **Not an error** - reflects semantic richness
+
+### Application Rule
+```
+For mixed annotation handling:
+1. DON'T assume one value per constituent
+2. Analyze ALL semantic aspects independently
+3. Check for:
+   - Multiple semantic dimensions (intensity + excess)
+   - Repetition requiring separate annotations
+   - Complex contexts with multiple comparisons
+4. Algorithm must support:
+   - Multiple values per constituent
+   - List/array of degree values, not single value
+   - Independent evaluation of each semantic aspect
+5. Validation must check:
+   - Partial matches (got 1 of 2 values)
+   - Complete matches (got all values)
+   - Order independence (values may appear in any order)
+```
+
+### Implementation Impact
+
+**Algorithm structure**:
+```python
+# WRONG: Single value per constituent
+constituent.degree = "Comparative"
+
+# RIGHT: Multiple values per constituent
+constituent.degrees = ["Intensified", "'too'"]
+```
+
+**Validation logic**:
+```python
+# Must handle:
+predicted = ["Intensified"]
+actual = ["Intensified", "'too'"]
+# → Partial match, not complete failure
+```
+
+### Cross-Feature Implications
+- **All features**: Check if multiple values possible
+- **Validation**: Partial match scoring needed
+- **Algorithm**: Must output lists/sets, not single values
+- **Accuracy metrics**: Precision/recall, not just exact match
+- **Testing**: Design verses with mixed annotations intentionally
+
+---
 
 Based on successful experiments, here's the universal template:
 
@@ -598,15 +825,35 @@ When creating new feature experiments, document:
 
 ---
 
-**Last Updated**: 2025-11-09
+**Last Updated**: 2025-11-11
 **Features Analyzed**:
 - number-systems (complete - 91.4% accuracy)
-- degree (Phase 8 complete - 42.9% adversarial, algorithm v2.0 developed)
+- degree (Phase 10 complete - 100 verses tested, complete value inventory achieved)
 **Next Feature**: [To be determined based on priority]
 
-**Major Learnings from Degree Validation**:
+**Major Learnings from Degree Phase 7-9** (Initial validation):
 - Universal Principle 1 EXPANDED: Semantic includes implied patterns (negative comparative = superlative)
 - NEW Principle 7: Lexical vs. Syntactic distinction (only syntactic gets marked)
 - NEW Principle 8: Dual value encoding (standardized + literal quoted values)
 - NEW Principle 9: Semantic compatibility constraint (gradability check)
-- Confirmed 3 rare values DON'T EXIST: q (equative), i (intensified comparative), s (superlative of 2)
+
+**CRITICAL Learnings from Degree Phase 10** (100-verse scale testing):
+- Universal Principle 5 REVISED: Scale testing required - small samples lead to INCORRECT conclusions about rare values
+- NEW Principle 10: Context-dependent feature assignment (Hebrew מִן → C, T, or L based on context)
+- NEW Principle 11: Mixed annotations are common (20+ instances in 100 verses, not exceptional)
+- **VALUE CORRECTIONS** - 5 values thought non-existent now CONFIRMED:
+  - ✅ i (Intensified Comparative): 4 instances found
+  - ✅ E (Extremely Intensified): 18+ instances found
+  - ✅ L ('less'): 3 instances found
+  - ✅ T ('too' excessive): 12+ instances found
+  - ✅ s (Superlative of 2 items): 4 instances found
+- **ONLY q (equative) confirmed non-existent** after 100 verses
+- **Discovery timeline**: Values found at verses 41 (i, T), 71 (E, L), 100 (s)
+- **Lesson**: Don't declare values "non-existent" without 100+ verse comprehensive testing across diverse books
+
+**Methodology Success**:
+- ✅ Iterative batch testing (4 batches: 12 + 29 + 30 + 29 = 100)
+- ✅ Commit after each batch improvement
+- ✅ Progressive value discovery through scale
+- ✅ Complete value inventory achieved
+- ✅ Foundation for 90%+ accuracy algorithms
