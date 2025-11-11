@@ -9,12 +9,28 @@
 
 ## Training Set Overview
 
-**Total Verses**: 15
+**Total Verses**: 15 (Phase 2 - initial training)
 **Active States**: 5 (Routine, Generic, Frame Inferable, First Mention, Interrogative)
 **Verses per State**: 3 (equal coverage)
-**Coverage**: 3 active values × 3 verses each = 15 total
+**Coverage**: 3 common values × 3 verses each = 15 total
 
-**Rationale**: Only 5 states are actively used in Biblical text (Routine 73%, Generic 13.9%, Frame Inferable 7.5%, First Mention 5.4%, Interrogative 0.2%). Restaging, Integration, and Exiting are theoretical (0% frequency in 171,875 TBTA annotations).
+**IMPORTANT LEARNING FROM DEGREE FEATURE**:
+> After 7-12 verses, degree feature concluded rare values (i, E, L, T, s) were "non-existent"
+> After 100 verses: ALL 5 rare values found at rates of 1-4 per 100 verses
+> **Lesson**: Small samples incorrectly conclude rare values don't exist
+
+**Status of "Unused" States**:
+- **Restaging (R)**: 0% in 171,875 TBTA annotations, BUT may exist at rare rates (1-4 per 100)
+- **Integration (i)**: 0% documented, BUT may exist (degree feature lesson applies)
+- **Exiting (E)**: 0% documented, BUT may exist (degree feature lesson applies)
+- **Offstage (O)**: <0.001% (extremely rare, confirmed background modifiers only)
+
+**Training Set Approach**:
+- Phase 2: Train on 5 common states (15 verses) to learn baseline patterns
+- Phase 5: Design 100+ verse adversarial test to FIND rare states (Restaging, Integration, Exiting)
+- Phase 10: Comprehensive validation with complete value inventory
+
+**Rationale**: Start with common patterns, then systematically search for rare values using adversarial testing. DO NOT conclude rare values don't exist until 100+ verses tested.
 
 ---
 
@@ -218,14 +234,30 @@
 
 ---
 
-## Unused States (Documented but 0% in TBTA)
+## Rare States (0% in Training, Will Search in 100+ Verse Test)
 
-**Restaging (R)**: Returning after absence - 0% frequency in 171,875 annotations
-**Integration (i)**: Peripheral to central - 0% frequency
-**Exiting (E)**: Departing narrative - 0% frequency
+**CRITICAL LESSON FROM DEGREE FEATURE**: Do not conclude rare values don't exist based on statistics alone.
+
+**Restaging (R)**: Returning after absence - 0% in 171,875 annotations
+- **Status**: May exist at rare rates (1-4 per 100 verses)
+- **Search Strategy**: 100+ verse adversarial test targeting narrative breaks, scene changes
+- **Example contexts to test**: Character returns after long absence, reintroduction after focus shift
+
+**Integration (i)**: Peripheral to central - 0% in documented samples
+- **Status**: May exist at rare rates
+- **Search Strategy**: Look for participants moving from background to foreground
+- **Example contexts**: Minor character suddenly becomes focal, peripheral → central shift
+
+**Exiting (E)**: Departing narrative - 0% in documented samples
+- **Status**: May exist at rare rates
+- **Search Strategy**: Character explicitly leaves scene, departures marked linguistically
+- **Example contexts**: "He departed," "They went away," explicit exits
+
 **Offstage (O)**: <0.001% (extremely rare, background modifiers only)
+- **Status**: Confirmed rare but exists (ethnic modifiers, background attributes)
+- **Not a primary tracking state** for active participants
 
-These are **theoretical** states not actively used in Biblical text. Training set focuses on 5 active states only.
+**Training Approach**: Phase 2 focuses on 5 common states. Phase 5 will design 100+ verse test specifically to FIND rare states (R, i, E). Degree feature proved this approach essential.
 
 ---
 
