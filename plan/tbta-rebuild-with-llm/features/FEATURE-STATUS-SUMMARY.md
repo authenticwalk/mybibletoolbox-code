@@ -2,49 +2,60 @@
 
 **Last Updated**: 2025-11-10
 **Total Features**: 17
-**Completed**: 0 (person-systems training complete, test validation pending)
+**Completed**: 0 (person-systems ~65% complete, algorithm revision needed)
 
 ---
 
 ## Methodology Implementation Status
 
-### ⏳ In Progress - Training Complete, Test Validation Pending
+### ⏳ In Progress - Test Validation Complete, Algorithm Revision Needed
 
-#### 3. person-systems (~40% COMPLETE)
-- **Status**: TRAINING PHASE COMPLETE, Test Validation Pending (2025-11-10)
+#### 3. person-systems (~65% COMPLETE)
+- **Status**: TEST VALIDATION COMPLETE, Algorithm v2.0 Needed (2025-11-10)
 - **Training Set Accuracy**: 100% (7/7 verses validated against real translations)
 - **Cross-linguistic**: 98%+ agreement across 9 languages (training set)
-- **Test Set Coverage**: 7.4% (2/27 verses due to TBTA Genesis-Esther limitation)
-- **Test Accuracy**: UNKNOWN (adversarial and random test sets not validated)
-- **Algorithm**: v1.0 (100% training accuracy), v2.0 (experimental, based on n=1 evidence)
+- **Test Set Validated**: 21 verses (11 adversarial + 10 random) across 5 languages
+- **Test Accuracy**: 62% overall (73% adversarial ✅, 50-60% random ❌)
+- **Algorithm**: v1.0 tested (62% test accuracy, systematic blind spots identified)
 - **Files**:
-  - ✅ METHODOLOGY-STATUS.md
+  - ✅ METHODOLOGY-STATUS.md (updated with test results)
   - ✅ training/TRAINING-SET.md (20 verses)
-  - ✅ training/ALGORITHM-v1.md (locked at commit f373646, 100% training accuracy)
-  - ⚠️ training/ALGORITHM-v2.md (premature, needs more evidence)
-  - ✅ adversarial-test/TEST-SET.md (15 verses)
+  - ✅ training/ALGORITHM-v1.md (locked at commit f373646, 100% training, 62% test)
+  - ⚠️ training/ALGORITHM-v2.md (experimental, needs more evidence)
+  - ✅ adversarial-test/TEST-SET.md (15 verses designed)
   - ✅ adversarial-test/PREDICTIONS-locked.md (commit 77010a4, blind)
-  - ⏳ adversarial-test/RESULTS.md (only 1/15 verses validated)
-  - ✅ random-test/TEST-SET.md (12 verses)
+  - ✅ adversarial-test/RESULTS.md (73% accuracy, 8/11 correct)
+  - ✅ random-test/TEST-SET.md (12 verses designed)
   - ✅ random-test/PREDICTIONS-locked.md (commit 77010a4, blind)
-  - ⏳ random-test/RESULTS.md (0/12 verses validated)
-  - ✅ VALIDATION-RESULTS-COMPLETE.md (training results, test incomplete)
+  - ✅ random-test/RESULTS.md (50-60% accuracy, 5/10 correct + 2 mixed)
+  - ✅ TEST-VALIDATION-COMPLETE.md (comprehensive 21-verse validation)
+  - ✅ VALIDATION-RESULTS-COMPLETE.md (training results)
   - ✅ TRANSLATION-VALIDATION.md (methodology sound)
-  - ✅ ERROR-ANALYSIS.md (0 training errors)
+  - ✅ ERROR-ANALYSIS.md (4 systematic patterns identified)
   - ✅ TRAINING-PHASE-SUMMARY.md (honest assessment)
   - ✅ HONEST-STATUS.md (corrected claims)
   - ✅ CRITICAL-REVIEW.md (peer review identifying overclaims)
   - ✅ PROGRESS-SUMMARY.md (session tracking)
 - **Accomplishments**:
-  - Excellent training work with proper methodology
-  - Test predictions properly locked (blind validation)
-  - 100% training set accuracy validated
+  - ✅ Excellent training methodology (100% training accuracy)
+  - ✅ Test predictions properly locked (blind validation)
+  - ✅ Validated 21 verses across 5 clusivity-marking languages
+  - ✅ Adversarial test hit target (73% vs 60-70% target)
+  - ✅ Identified 4 systematic error patterns with fixes
+  - ✅ Cross-linguistic validation provides reliable ground truth
 - **Limitations**:
-  - TBTA coverage insufficient for full test validation (7.4%)
-  - Test accuracy unknown (cannot complete advertised adversarial methodology)
-  - Dual perspective hypothesis interesting but based on n=1 example
-- **Cross-Feature Contribution**: 3 validated universal principles + 1 hypothesis
-- **Recommendation**: Complete test validation via real translations before production approval
+  - ❌ Random test missed target (50-60% vs 80-90% target)
+  - ❌ Overall test accuracy 62% (need 80% for production)
+  - ❌ Algorithm overfits training data (38-point accuracy drop)
+  - ❌ Systematic blind spots in prayer/lament and invitation semantics
+  - ⚠️ High-confidence predictions only 50-70% accurate (need recalibration)
+- **Critical Fixes Needed** (for algorithm v2.0):
+  1. Strengthen Prayer Rule (2.1) - override "shared experience" rule
+  2. Split Invitation Rule (2.5) - distinguish "let us do" vs "stay with us"
+  3. Revise Authority Rule (3.3) - humble self-inclusion → inclusive
+  4. Add Quoted Speech Rule - outsider quoting in-group → exclusive
+- **Cross-Feature Contribution**: 3 validated principles + adversarial methodology proven
+- **Recommendation**: Implement algorithm v2.0 with 4 critical fixes, re-test on same 21 verses, target 75-80% accuracy
 
 ---
 
