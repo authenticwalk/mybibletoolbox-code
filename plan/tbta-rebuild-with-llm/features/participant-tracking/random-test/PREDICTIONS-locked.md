@@ -437,7 +437,7 @@ These predictions are made using ONLY Algorithm v1.0 without accessing TBTA anno
 
 **Next step**: Git commit to lock predictions, then proceed to Phase 7 validation.
 
-**Locked commit SHA**: [TO BE ADDED AFTER COMMIT]
+**Locked commit SHA**: c485d295e59aa67948f38ab8210f7db7d6a2d3b4
 
 ---
 
