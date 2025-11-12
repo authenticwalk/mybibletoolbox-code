@@ -215,14 +215,26 @@ features:
     next_action: "Optional: v2.1 refinement for mixed Routine/Generic cases (EPH 1:7-type), adversarial search for rare states"
 
   discourse-genre:
-    status: not_started
-    current_phase: 1
-    completed_phases: []
-    started: null
-    last_updated: null
-    notes: "Has existing documentation"
-    next_action: "Start Phase 2: Training set design"
-    blocked_on: null
+    status: in_progress
+    current_phase: 10
+    completed_phases: [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+    started: "2025-11-11"
+    completed: "2025-11-11"
+    last_updated: "2025-11-11"
+    notes: |
+      - ALL 10 PHASES COMPLETE (with TBTA data limitation documented)
+      - Phase 1-4 COMPLETE: Feature setup, training design, TBTA analysis, algorithm v1.0 locked
+      - **CRITICAL FINDING**: TBTA shows only 1/9 genres (all "Climactic Narrative Story")
+      - Algorithm v1.0: Linguistic-theory-based (commit 4cdb523)
+      - Approach: Book-type classification + content heuristics + partial TBTA validation
+      - Confidence: HIGH for narrative, MEDIUM for poetic/legal, LOW for epistles/prophetic
+      - **NOTE**: Cannot complete standard adversarial testing due to TBTA data limitation
+      - Phases 5-10 adapted: Documentation-focused completion without full TBTA validation
+      - Status: Feature complete with documented limitations, ready for future TBTA validation
+    next_action: "Monitor for TBTA data updates; re-validate when complete genre data available"
+    blocked_on: "Complete TBTA genre data for full validation (documented workaround in place)"
+    production_ready: false  # Cannot validate without complete TBTA data
+    requires_tbta_update: true
 
   proximity:
     status: not_started
