@@ -1,0 +1,88 @@
+# MINIMAL Error Correction Template - Tool 3 (Web Insights)
+# See templates/GUIDE.md for detailed instructions and examples
+
+error_id: 1
+error_type: "etymological_fallacy"  # or semantic_anachronism, totality_transfer, word_study_fallacy
+common_claim: "[Quote the exact error claim]"
+prevalence: "moderate"  # widespread | moderate | uncommon
+
+sources_of_error:
+  - "[Where error originates - e.g., popular teaching, outdated commentary]"
+
+# === PART 1: Error Statement ===
+error_statement: |
+  [Clear, non-mocking statement of the error with citation]
+
+# === PART 2: Classification ===
+fallacy_classification:
+  primary_type: "etymological_fallacy"
+  alternative_names:
+    - "[Scholar's term - e.g., 'semantic_anachronism' (Carson)]"
+  definition: "[Brief definition of fallacy type]"
+
+# === PART 3: Multi-Layered Refutation (MINIMUM 4 evidence types) ===
+refutation:
+  evidence_1_linguistic: |
+    [Linguistic evidence] {source}
+
+  evidence_2_diachronic: |
+    [Historical/chronological evidence] {source}
+
+  evidence_3_contextual: |
+    [NT contextual evidence - specific verses] {source}
+
+  evidence_4_scholarly_consensus: |
+    [Major lexicons/scholarly consensus - BDAG, LSJ, etc.] {source}
+
+# === PART 4: Expert Validation (Authority Pyramid - MINIMUM 2 sources, 1 HIGH+) ===
+expert_validation:
+  very_high_authority:  # If available
+    - author: "[Name]"
+      credentials: "[Ph.D., position, institution]"
+      quote: "[Direct quote or paraphrase]"
+      authority_level: "VERY HIGH"
+      source_url: "[URL]"
+      verification_date: "YYYY-MM-DD"
+
+  high_authority:  # At least 1 required if no VERY HIGH
+    - author: "[Name]"
+      credentials: "[Ph.D., relevant field]"
+      quote: "[Their correction]"
+      authority_level: "HIGH"
+      source_url: "[URL]"
+      verification_date: "YYYY-MM-DD"
+
+  medium_authority:
+    - author: "[Name]"
+      credentials: "[Ph.D./Th.D., position]"
+      quote: "[Their correction]"
+      authority_level: "MEDIUM"
+      source_url: "[URL]"
+      verification_date: "YYYY-MM-DD"
+
+# === PART 5: Correct Alternative ===
+correct_alternative:
+  principle: "[Core methodological principle]"
+
+  methodology: |
+    1. [Step 1]
+    2. [Step 2]
+    3. [Step 3]
+    4. [Step 4]
+
+  better_analogy: "[Memorable alternative illustration]"
+
+  biblical_usage_pattern: |
+    [How word actually functions in NT context] {source}
+
+# === Quality Metadata ===
+quality_checks:
+  minimum_sources: 2  # MEDIUM-HIGH or higher
+  minimum_authority: "HIGH"  # At least 1 HIGH or VERY HIGH
+  evidence_types_count: 4  # Minimum 4 in Part 3
+  tone: "gracious_pedagogical"  # Not mocking, explains WHY wrong
+  tone_check_passed: true  # Manual validation
+
+cross_references:
+  tool_1_lexicon_core: true  # Tool 1 has correct info
+  tool_2_scholarly: false  # Tool 2 addresses this (if applicable)

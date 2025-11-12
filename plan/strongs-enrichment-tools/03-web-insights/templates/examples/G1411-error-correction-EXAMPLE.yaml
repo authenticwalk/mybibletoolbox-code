@@ -1,0 +1,100 @@
+# EXAMPLE: Error Correction Template - G1411 δύναμις (dynamis)
+# Based on Experiment 4 (exp4-error-correction/)
+# Demonstrates proper use of error-correction.yaml template
+
+error_id: 1
+error_type: "etymological_fallacy"
+common_claim: "Because δύναμις shares roots with English 'dynamite', it means explosive power"
+prevalence: "moderate"
+
+sources_of_error:
+  - "Popular preaching"
+  - "Etymology-based word studies"
+
+# === PART 1: Error Statement ===
+error_statement: |
+  Common claim: "The Greek word δύναμις (dynamis) is where we get our English word 'dynamite',
+  therefore it means explosive, earth-shattering power." {popular-teaching}
+
+# === PART 2: Classification ===
+fallacy_classification:
+  primary_type: "etymological_fallacy"
+  alternative_names:
+    - "semantic_anachronism" # D.A. Carson's term
+    - "reverse_etymological_fallacy"  # Robert Cara's term
+  definition: "Assuming English etymology determines Greek meaning, ignoring chronological impossibility"
+
+# === PART 3: Multi-Layered Refutation ===
+refutation:
+  evidence_1_linguistic: |
+    English "dynamite" was coined by Alfred Nobel in 1867 from Greek dynamis. The Greek
+    word existed 1800+ years earlier and cannot be defined by a modern English derivative. {carson-exegetical-fallacies}
+
+  evidence_2_diachronic: |
+    Chronological impossibility: NT written ~50-90 AD, dynamite invented 1867 AD.
+    Word cannot mean what didn't exist for another 1800 years. {cara-cracking-ot-code}
+
+  evidence_3_contextual: |
+    NT usage shows δύναμις means "power, ability, strength" in contexts incompatible with
+    "explosive": healing power (Luke 5:17), inherent ability (Matt 25:15), divine power (Rom 1:16).
+    No "explosion" connotation in any NT occurrence. {mounce-blog}
+
+  evidence_4_scholarly_consensus: |
+    BDAG defines as "power, might, strength, force, capability" with no "explosive" sense.
+    LSJ (classical Greek lexicon) shows continuous meaning from classical through Koine periods
+    as "power, ability". {bdag} {lsj}
+
+# === PART 4: Expert Validation (Authority Pyramid) ===
+expert_validation:
+  very_high_authority:
+    - author: "D.A. Carson"
+      credentials: "Ph.D., Research Professor of New Testament, Trinity Evangelical Divinity School"
+      quote: "Calls this type of error 'semantic anachronism' - using modern derived meanings to define ancient words"
+      authority_level: "VERY HIGH"
+      source_url: "https://www.thegospelcoalition.org/themelios/article/exegetical-fallacies/"
+      verification_date: "2025-11-11"
+
+  high_authority:
+    - author: "Robert Cara"
+      credentials: "Ph.D., Professor of New Testament and Greek, Reformed Theological Seminary"
+      quote: "Identifies as 'reverse etymological fallacy' - assuming derivative defines root"
+      authority_level: "HIGH"
+      source_url: "https://www.rts.edu/faculty/cara-robert/"
+      verification_date: "2025-11-11"
+
+  medium_authority:
+    - author: "William D. Mounce"
+      credentials: "Ph.D., Greek language expert, author of 'Basics of Biblical Greek'"
+      quote: "This is a 'very, very dangerous' error type that misleads students and congregations"
+      authority_level: "MEDIUM"
+      source_url: "https://www.billmounce.com/monday-with-mounce/etymology-fallacy"
+      verification_date: "2025-11-11"
+
+# === PART 5: Correct Alternative ===
+correct_alternative:
+  principle: "Meaning is determined by usage in historical context, not by modern derivatives"
+
+  methodology: |
+    1. Check NT usage patterns (not English etymology)
+    2. Consult historical lexicons (BDAG for Koine period)
+    3. Analyze immediate context of each occurrence
+    4. Note chronology: Greek word precedes English derivative by 1800+ years
+
+  better_analogy: "Think 'dynamo' (continuous power source) not 'dynamite' (explosive). Better yet, just use NT evidence: healing power, divine ability, inherent strength."
+
+  biblical_usage_pattern: |
+    NT uses δύναμις 120 times meaning: divine power (Rom 1:16), miracle-working ability
+    (Mark 6:5), inherent strength/capability (Matt 25:15), healing power (Luke 5:17).
+    Consistent meaning: power, ability, strength - never "explosion". {concordance-data}
+
+# === Quality Metadata ===
+quality_checks:
+  minimum_sources: 3  # Carson, Cara, Mounce
+  minimum_authority: "VERY HIGH"  # Carson
+  evidence_types_count: 4  # Linguistic, diachronic, contextual, scholarly consensus
+  tone: "gracious_pedagogical"
+  tone_check_passed: true  # Acknowledges error is widespread, explains WHY wrong, teaches correct method
+
+cross_references:
+  tool_1_lexicon_core: true  # Tool 1 has correct BDAG/LSJ definitions
+  tool_2_scholarly: false  # Not needed for this clear-cut error
