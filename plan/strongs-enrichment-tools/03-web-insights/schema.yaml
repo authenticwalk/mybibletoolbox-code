@@ -147,50 +147,176 @@ practical_applications:
         authority_note: "Named scholars, translation practitioner perspective"
         verification_date: "2025-11-11"
 
-# === ERROR CORRECTIONS (important for controversial words) ===
+# === ERROR CORRECTIONS (5-part structure from Exp 4) ===
 error_corrections:
   # Document common misconceptions with expert refutations
+  # Use 5-part structure: Error → Classification → Refutation → Validation → Alternative
 
   - error_id: 1
-    error_type: "etymological_fallacy"
+    error_type: "etymological_fallacy"  # or semantic_anachronism, reverse_etymological_fallacy
     common_claim: "This word comes from [root] therefore it ALWAYS means [X]"
     prevalence: "moderate"  # widespread | moderate | uncommon
     sources_of_error:
       - "Popular teaching"
       - "Outdated commentary"
 
-    expert_refutation:
-      correction: |
+    # PART 1: Error Statement (clear, non-mocking)
+    error_statement: |
+      Common claim: Etymology from [root] means word always carries [meaning] {source}
+
+    # PART 2: Classification (name the fallacy type)
+    fallacy_classification:
+      primary_type: "etymological_fallacy"
+      alternative_names:
+        - "semantic_anachronism"  # D.A. Carson's term
+        - "reverse_etymological_fallacy"  # Robert Cara's term
+      definition: "Assuming historical etymology determines current meaning"
+
+    # PART 3: Multi-Layered Refutation (4-5 evidence types)
+    refutation:
+      evidence_1_linguistic: |
         Etymology shows historical development, but meaning is determined by
         usage in context, not ancient roots {mounce-blog}
-      evidence: |
+      evidence_2_diachronic: |
         Semantic shift from Classical to Koine Greek shows meaning evolution.
-        NT usage differs from Homer's use {lsj} {thayer}
-      scholarly_source:
-        author: "William D. Mounce"
-        url: "https://example.com/etymology-fallacy"
-        authority_level: "MEDIUM"
-        verification_date: "2025-11-11"
+        NT usage differs from Homer's use {lsj}
+      evidence_3_contextual: |
+        Context analysis shows word used in senses incompatible with root
+        etymology in [specific verses] {netbible}
+      evidence_4_scholarly_consensus: |
+        Major lexicons (BDAG, LSJ, Thayer) all note semantic range beyond
+        etymological root {bdag}
+
+    # PART 4: Expert Validation (stack authorities - pyramid)
+    expert_validation:
+      very_high_authority:
+        - author: "D.A. Carson"
+          credentials: "Ph.D., Research Professor of New Testament"
+          quote: "Calls this 'semantic anachronism' in Exegetical Fallacies"
+          authority_level: "VERY HIGH"
+          source_url: "https://example.com/carson"
+      high_authority:
+        - author: "Robert Cara"
+          credentials: "Ph.D., Professor of New Testament"
+          quote: "Identifies as 'reverse etymological fallacy'"
+          authority_level: "HIGH"
+      medium_authority:
+        - author: "William D. Mounce"
+          credentials: "Ph.D., Greek textbook author"
+          quote: "Very, very dangerous error type"
+          authority_level: "MEDIUM"
+          source_url: "https://billmounce.com/..."
+
+    # PART 5: Correct Alternative (teach proper methodology)
+    correct_alternative:
+      principle: "Context determines meaning, not etymology"
+      methodology: |
+        1. Check word usage in NT corpus (not classical roots)
+        2. Analyze immediate context
+        3. Compare contemporary usage (Koine period)
+        4. Consult modern lexicons (BDAG, not classical dictionaries)
+      better_analogy: "Word meanings evolve like 'nice' (foolish → pleasant)"
+      biblical_usage_pattern: |
+        In NT, word appears in [X contexts] with [Y semantic range] {concordance}
+
+    # Quality metadata
+    minimum_sources: 2  # MEDIUM-HIGH or higher
+    minimum_authority: "HIGH"  # At least 1 HIGH or VERY HIGH
+    evidence_types_count: 4
+    tone: "gracious_pedagogical"
 
     cross_ref_tool1: true  # Tool 1 (lexicon-core) has correct etymology
     cross_ref_tool2: true  # Tool 2 (scholarly) may have academic treatment
 
-  - error_id: 2
-    error_type: "semantic_overload"
-    common_claim: "This word means ALL of these things simultaneously"
-    prevalence: "uncommon"
+# === SCHOLARLY DISAGREEMENTS & CULTURAL DEBATES (Multi-Perspective Framework from Exp 1, 5) ===
+scholarly_disagreements:
+  # For words with ongoing expert debate (pneuma, ekklesia patterns)
+  # Present multiple credible views without imposing single answer
 
-    expert_refutation:
-      correction: |
-        While word has semantic range, context determines which sense applies.
-        Not all meanings are active in every occurrence {netbible}
-      evidence: |
-        Contextual analysis shows specific senses in specific verses.
-        Concordance shows distribution of meanings {biblehub}
-      scholarly_source:
-        site_name: "NET Bible Notes"
-        authority_level: "MEDIUM-HIGH"
-        verification_date: "2025-11-11"
+  - disagreement_id: 1
+    topic: "Translation choice in theological contexts"
+    debate_status: "ongoing"  # or "settled" or "emerging"
+    controversy_type: "interpretive"  # or "translational" or "theological" or "cultural"
+
+    # Document all major positions fairly
+    positions:
+      - position_id: 1
+        view_name: "Traditional position"
+        advocates:
+          - name: "Scholar Name"
+            credentials: "Ph.D., Institution"
+            authority_level: "MEDIUM-HIGH"
+        key_arguments:
+          - "Argument 1 with evidence {source}"
+          - "Argument 2 with evidence {source}"
+        strengths:
+          - "Strength 1"
+          - "Strength 2"
+        considerations:
+          - "Consideration 1"
+          - "Consideration 2"
+        sources:
+          - url: "https://example.com"
+            verification_date: "2025-11-11"
+
+      - position_id: 2
+        view_name: "Reformist position"
+        advocates:
+          - name: "Another Scholar"
+            credentials: "Ph.D., Institution"
+            authority_level: "MEDIUM"
+        key_arguments:
+          - "Argument 1 with evidence {source}"
+          - "Argument 2 with evidence {source}"
+        strengths:
+          - "Strength 1"
+          - "Strength 2"
+        considerations:
+          - "Consideration 1"
+          - "Consideration 2"
+        sources:
+          - url: "https://example.com"
+            verification_date: "2025-11-11"
+
+    # Cultural sensitivity factors (from Exp 5)
+    cultural_considerations:
+      post_colonial_contexts:
+        issue: "Translation may carry colonial overtones"
+        guidance: "Consider local sensitivities to institutional terminology"
+        affected_regions: ["Global South", "post-colonial contexts"]
+      house_church_movements:
+        issue: "Building-centric language problematic"
+        guidance: "Assembly language better captures gathering concept"
+      ecumenical_contexts:
+        issue: "Denominational implications"
+        guidance: "Acknowledge theological traditions behind choices"
+
+    # Translator guidance (options, not mandates)
+    translator_guidance:
+      decision_framework:
+        - "Consider target audience theological background"
+        - "Assess cultural context (post-colonial, house church, etc.)"
+        - "Check if context is religious or secular assembly"
+        - "Consult Tool 1 for semantic range data"
+      contextual_factors:
+        - factor: "Audience theology"
+          weight: "high"
+        - factor: "Cultural sensitivity"
+          weight: "high"
+        - factor: "Semantic precision"
+          weight: "medium"
+      not_an_answer_sheet: true  # Guidance as options, not edicts
+
+    # Bias detection validation (from Exp 5)
+    bias_detection:
+      reversal_test: "passed"  # Could presentation order reverse without changing implications?
+      respect_test: "passed"  # Would advocates feel fairly represented?
+      evidence_test: "passed"  # Strongest arguments for all positions presented?
+
+    # Quality metadata
+    minimum_positions: 2
+    minimum_sources_per_position: 1
+    tone: "fair_charitable"
 
 # === TEACHING HELPS (practical pedagogy) ===
 teaching_helps:
@@ -278,8 +404,12 @@ metadata:
     modern_insights_expert_based: true
     practical_apps_grounded: true
     error_corrections_with_evidence: true
+    error_corrections_5part_complete: true  # From Exp 4
     teaching_helps_appropriate: true
     multiple_sources_when_available: true
+    multi_perspective_fairness: true  # From Exp 1, 5
+    bias_detection_passed: true  # Reversal, Respect, Evidence tests from Exp 5
+    gracious_tone_maintained: true  # Error corrections pedagogical, not harsh
 
   # Level 3: MEDIUM PRIORITY validation (60%+ pass)
   validation_level_3:
@@ -287,6 +417,9 @@ metadata:
     translator_guidance_field_tested: true  # When applicable
     cross_refs_to_other_tools: true
     verification_dates_recorded: true
+    discipline_specific_coverage_noted: true  # From Exp 2
+    cultural_sensitivity_addressed: true  # When applicable, from Exp 5
+    scope_boundaries_respected: true  # From Exp 3
 
   # Data quality indicators
   data_quality:
@@ -294,13 +427,26 @@ metadata:
     sources_vetted_against_inventory: true
     no_contradictions_with_tool_1: true
     web_search_queries_logged: true
+    disciplines_searched: ["theology", "linguistics", "translation_studies"]  # From Exp 2
 
-  # Coverage notes
+  # Coverage notes (discipline-specific from Exp 2)
   coverage_notes: |
     This word has excellent web coverage due to theological significance.
     Multiple expert sources available across all categories (insights,
     applications, teaching). Authority levels range from MEDIUM-HIGH
     (institutional) to MEDIUM (expert blogs).
+
+    Disciplines searched: Bible study platforms, systematic theology,
+    virtue ethics, linguistic analysis, translation practitioner resources.
+    Coverage is strongest in [discipline] due to [reason].
+
+  # Skip decision documentation (from Exp 3)
+  skip_decision:
+    skipped: false  # true if word excluded from Tool 3
+    skip_reason: null  # "grammatical_particle" | "function_word" | "insufficient_coverage" | "tool_1_sufficient"
+    skip_rationale: null  # Detailed explanation if skipped
+    # Example for particles: "δέ is grammatical particle with no semantic content.
+    # All sources discuss function, not practical application. Belongs in Tool 1."
 
   requires_human_review: false
   tokens_used: 1500

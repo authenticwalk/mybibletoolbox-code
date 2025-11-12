@@ -79,22 +79,39 @@ This checklist provides 3 levels of validation criteria for Tool 3 outputs. Each
 
 ### 1.5 Error Handling (When Applicable)
 
-- [ ] **If error correction: Error + refutation + evidence complete**
-  - Check: Error clearly stated (not vague)
-  - Check: Expert refutation present
-  - Check: Evidence provided for correction
-  - FAIL if: Incomplete error correction pattern
+- [ ] **If error correction: 5-part structure complete (from Exp 4)**
+  - Check: Part 1 - Error Statement (clear, non-mocking)
+  - Check: Part 2 - Classification (fallacy type named)
+  - Check: Part 3 - Multi-Layered Refutation (4-5 evidence types)
+  - Check: Part 4 - Expert Validation (authorities stacked)
+  - Check: Part 5 - Correct Alternative (methodology taught)
+  - FAIL if: Any part missing or incomplete
 
-- [ ] **Error corrections have MEDIUM+ authority minimum**
-  - Check: Corrections from Ph.D. scholars or M.Div. with sources
+- [ ] **Error corrections have proper authority minimum**
+  - Check: Minimum 2 sources (MEDIUM-HIGH or higher)
+  - Check: At least 1 HIGH or VERY HIGH authority
   - Check: Not from anonymous forums or unverified sources
-  - FAIL if: Low authority corrections
+  - FAIL if: Insufficient authority for correction
+
+### 1.6 Scope Boundaries (from Exp 3)
+
+- [ ] **Word is appropriate for Tool 3 scope**
+  - Check: Not a grammatical particle (δέ, γάρ, etc.)
+  - Check: Not a pure function word without semantic content
+  - Check: Tool 3 adds value beyond Tool 1 lexicon data
+  - FAIL if: Should be skipped (document skip decision)
+
+- [ ] **If skipped: Skip decision documented properly**
+  - Check: Skip reason clear (grammatical_particle, function_word, insufficient_coverage, tool_1_sufficient)
+  - Check: Skip rationale detailed
+  - Check: Search effort documented (if insufficient_coverage)
+  - FAIL if: Skip without proper documentation
 
 ---
 
 ## Level 2: HIGH PRIORITY Validation
 
-**Pass Requirement:** 80%+ (4 out of 5 criteria)
+**Pass Requirement:** 80%+ (7 out of 9 criteria)
 
 **If <80% pass → Review output, consider revision or flag for human review**
 
@@ -112,11 +129,32 @@ This checklist provides 3 levels of validation criteria for Tool 3 outputs. Each
   - Check: Not invented examples
   - FAIL if: Speculative applications, no grounding
 
-- [ ] **Error corrections documented with complete evidence**
-  - Check: Common claim stated
-  - Check: Why it's wrong explained
-  - Check: Correct understanding provided
-  - FAIL if: Only negative (error) without positive (correction)
+- [ ] **Error corrections use 5-part structure completely (from Exp 4)**
+  - Check: All 5 parts present (Error, Classification, Refutation, Validation, Alternative)
+  - Check: Multi-layered refutation (4-5 evidence types)
+  - Check: Expert validation (authority pyramid)
+  - Check: Positive alternative teaching included
+  - FAIL if: Incomplete structure, missing evidence types
+
+- [ ] **Error corrections maintain gracious, pedagogical tone (from Exp 4)**
+  - Check: Not mocking or condescending
+  - Check: Acknowledges error is widespread (not "stupid mistake")
+  - Check: Explains WHY wrong, not just THAT wrong
+  - Check: Teaches methodology to avoid similar errors
+  - FAIL if: Harsh, mocking, condescending tone
+
+- [ ] **Multi-perspective fairness for controversial words (from Exp 1, 5)**
+  - Check: If scholarly disagreement exists, multiple positions documented
+  - Check: Each position has evidence and advocates
+  - Check: Strengths AND considerations for each view
+  - Check: No single "correct" answer imposed
+  - FAIL if: One-sided presentation of controversial topic
+
+- [ ] **Bias detection tests passed (when applicable, from Exp 5)**
+  - Check: Reversal Test - Could presentation order reverse without changing implications?
+  - Check: Respect Test - Would advocates of each view feel fairly represented?
+  - Check: Evidence Test - Strongest arguments for all positions presented?
+  - FAIL if: Any bias test fails
 
 - [ ] **Teaching helps are appropriate and non-sensationalist**
   - Check: Pedagogically sound
@@ -134,7 +172,7 @@ This checklist provides 3 levels of validation criteria for Tool 3 outputs. Each
 
 ## Level 3: MEDIUM PRIORITY Validation
 
-**Pass Requirement:** 60%+ (3 out of 5 criteria)
+**Pass Requirement:** 60%+ (5 out of 8 criteria)
 
 **If <60% pass → Note improvements for future iterations**
 
@@ -168,6 +206,24 @@ This checklist provides 3 levels of validation criteria for Tool 3 outputs. Each
   - Check: If gaps exist, acknowledged
   - Check: Honest assessment of coverage
   - NICE TO HAVE: Transparency about limitations
+
+- [ ] **Discipline-specific coverage noted (from Exp 2)**
+  - Check: Disciplines searched documented (theology, linguistics, virtue ethics, etc.)
+  - Check: If coverage is discipline-specific, appropriate framing provided
+  - Check: Specialized coverage recognized as legitimate (not "insufficient")
+  - NICE TO HAVE: Multi-discipline search documented
+
+- [ ] **Cultural sensitivity addressed (when applicable, from Exp 5)**
+  - Check: Post-colonial sensitivities noted if relevant
+  - Check: Denominational implications acknowledged
+  - Check: Contemporary movements considered
+  - NICE TO HAVE: Cultural considerations enhance translator guidance
+
+- [ ] **Scope boundaries respected (from Exp 3)**
+  - Check: Clear distinction between Tool 1 and Tool 3 territory
+  - Check: Skip decisions appropriately made for function words/particles
+  - Check: No overreach into pure grammar
+  - NICE TO HAVE: Demonstrates appropriate self-restraint
 
 ---
 
@@ -347,17 +403,48 @@ Use this template for each output:
 
 **Pass Criteria:** Honesty maintained, no fabrication
 
-### Scenario: Error Correction Content
+### Scenario: Error Correction Content (5-Part Structure from Exp 4)
 
 **Additional Checks:**
-- [ ] Error clearly stated (specific claim)
-- [ ] Prevalence accurately described
-- [ ] Refutation from expert (MEDIUM+ authority)
-- [ ] Evidence for correction provided
-- [ ] Correct teaching included (positive)
-- [ ] Tone is gracious, not mocking
+- [ ] **Part 1 - Error Statement:** Clear, specific claim stated without mockery
+- [ ] **Part 2 - Classification:** Fallacy type named (e.g., "etymological_fallacy", "semantic_anachronism")
+- [ ] **Part 3 - Multi-Layered Refutation:** 4-5 evidence types present (linguistic, diachronic, contextual, scholarly consensus, etc.)
+- [ ] **Part 4 - Expert Validation:** Authority pyramid (VERY HIGH → HIGH → MEDIUM), minimum 2 sources, at least 1 HIGH or VERY HIGH
+- [ ] **Part 5 - Correct Alternative:** Principle + Methodology + Better Analogy + Biblical Usage Pattern
+- [ ] **Tone:** Gracious and pedagogical throughout (not condescending, acknowledges error is widespread, explains WHY wrong)
+- [ ] **Quality:** Minimum authority standards met (2 sources MEDIUM-HIGH+, 1 HIGH/VERY HIGH)
 
-**Pass Criteria:** Complete pattern, appropriate authority, gracious tone
+**Pass Criteria:** All 5 parts complete, 4+ evidence types, proper authority, gracious tone
+
+**Examples to Study:**
+- experiments/exp4-error-correction/G1411-synthesis.md (dynamis/dynamite fallacy)
+- Note Carson (VERY HIGH), Cara (HIGH), Mounce (MEDIUM) authority pyramid
+- Note gracious tone: "very, very dangerous" not "stupid"
+- Note positive teaching: "dynamo not dynamite" memorable alternative
+
+### Scenario: Scholarly Disagreement or Cultural Debate (Multi-Perspective from Exp 1, 5)
+
+**Additional Checks:**
+- [ ] **Multiple Positions:** Minimum 2 major positions documented with advocates
+- [ ] **Fair Representation:** Each position has key arguments, strengths, and considerations
+- [ ] **Evidence:** Each position supported with sources and inline citations
+- [ ] **Bias Detection Tests:**
+  - [ ] Reversal Test: Could presentation order reverse without changing implications?
+  - [ ] Respect Test: Would advocates of each view feel fairly represented?
+  - [ ] Evidence Test: Strongest arguments for all positions presented?
+- [ ] **Translator Guidance:** Decision framework provided (options, NOT mandates)
+- [ ] **Cultural Sensitivity:** Post-colonial, denominational, contemporary movement factors addressed if relevant
+- [ ] **Tone:** Fair and charitable to all views, no mockery, professional navigation of controversy
+- [ ] **No Single Answer:** Multiple valid perspectives acknowledged, no "correct" answer imposed
+
+**Pass Criteria:** All bias tests passed, fair representation, minimum 2 positions, guidance as options
+
+**Examples to Study:**
+- experiments/exp1-scholarly-disagreement/G4151-findings.md (pneuma - 4 types of disagreement)
+- experiments/exp5-cultural-debate/G1577-guidance-synthesis.md (ekklesia - church vs assembly)
+- Note multi-perspective framework in action
+- Note cultural sensitivity (post-colonial contexts, house church movements)
+- Note decision framework not answer sheet
 
 ### Scenario: Translator-Focused Word
 
@@ -371,16 +458,51 @@ Use this template for each output:
 
 **Pass Criteria:** Field evidence, practical value, appropriate authority
 
-### Scenario: Zero Web Sources Found
+### Scenario: Rare Word with Discipline-Specific Coverage (from Exp 2)
 
 **Additional Checks:**
-- [ ] Exhaustive search documented
-- [ ] Assessment: "insufficient web coverage"
+- [ ] **Multi-Discipline Search:** Bible study platforms, theology, linguistics, virtue ethics, philosophy, translation resources all checked
+- [ ] **Specialized Coverage Recognized:** If coverage exists in specific discipline (e.g., virtue ethics for eutrapelia), recognized as legitimate
+- [ ] **Appropriate Framing:** Discipline context provided (e.g., "theological virtue perspective")
+- [ ] **No Forced General Content:** Don't fabricate biblical content when coverage is specialized
+- [ ] **Honest Assessment:** Coverage limitations noted (e.g., "excellent in virtue ethics, limited in biblical studies")
+- [ ] **Synthesis Effort Realistic:** Estimate interdisciplinary synthesis time appropriately
+
+**Pass Criteria:** Multi-discipline search completed, specialized coverage appropriately framed, no fabrication
+
+**Examples to Study:**
+- experiments/exp2-rare-hapax/G2160-assessment.md (eutrapelia - virtue ethics coverage)
+- Note how specialized coverage is legitimate, not "insufficient"
+- Note appropriate framing for interdisciplinary content
+
+### Scenario: Skip Decision (Grammatical Particle or Insufficient Coverage, from Exp 3)
+
+**Additional Checks:**
+- [ ] **Skip Reason Clear:** grammatical_particle | function_word | insufficient_coverage | tool_1_sufficient
+- [ ] **Skip Rationale Detailed:** Specific explanation of why word is outside Tool 3 scope
+- [ ] **Search Documentation:** If insufficient_coverage, minimum 5 queries across multiple disciplines documented
+- [ ] **Scope Boundary Analysis:** Clear distinction between Tool 1 (grammar/lexicon) and Tool 3 (practical insights) territory
+- [ ] **Skip is Success:** Recognized as appropriate self-restraint, not failure
+- [ ] **No Output File Created:** Skip decision documented separately, no forced content
+
+**Pass Criteria:** Skip decision documented, search effort proven (if applicable), scope boundaries clear
+
+**Examples to Study:**
+- experiments/exp3-scope-boundary/G1161-boundary-assessment.md (de particle - correctly skipped)
+- Note clear scope boundary reasoning
+- Note skip = SUCCESS (appropriate judgment)
+
+### Scenario: Zero Web Sources Found (Insufficient Coverage)
+
+**Additional Checks:**
+- [ ] Exhaustive search documented (minimum 5 queries)
+- [ ] Multiple disciplines checked (Bible study, theology, linguistics, etc.)
+- [ ] Assessment: "insufficient web coverage" clearly stated
 - [ ] Recommendation: skip word OR include with major caveats
 - [ ] NO OUTPUT FILE created (skip is acceptable)
 - [ ] Search log documents attempts
 
-**Pass Criteria:** Honest assessment, no fabrication, skip decision documented
+**Pass Criteria:** Honest assessment, no fabrication, skip decision documented, exhaustive search proven
 
 ---
 
