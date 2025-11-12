@@ -21,6 +21,46 @@ tool:
   version: "1.0.0"
   generated_date: "YYYY-MM-DD"
 
+# === ERROR PREDICTION (Improvement #12) ===
+# See: ERROR-PREDICTION-SYSTEM.md
+# Predict likely errors BEFORE research to prioritize and guide discovery
+
+error_prediction:
+  risk_assessment_date: "YYYY-MM-DD"
+
+  total_risk_score: {calculated}  # Sum of all error type risk scores
+  priority_band: "{P1|P2|P3|P4|P5|P6}"  # Production priority based on risk
+
+  predicted_error_types:
+    - type: "{error_type}"
+      risk_score: {calculated}  # Based on word characteristics
+      confidence: "{HIGH|MEDIUM|LOW}"  # How certain is this prediction?
+
+      predicted_errors:  # Specific error claims likely for this word
+        - "{specific error claim}"
+        # Example: "Joy means 'jumping for joy' (physical action added)"
+
+      search_strategy: |
+        {How to efficiently find this error if it exists}
+        # Example: Search: "chara" + "jumping" OR "physical" OR "literally means"
+
+      refutation_strategy: |
+        {Where to find scholarly corrections}
+        # Example: Check BDAG semantic range; show contexts where chara ≠ physical action
+
+  proactive_warnings:  # Warnings to give EVEN IF error not yet confirmed
+    - warning_type: "{caution type}"
+      warning: |
+        {Preemptive guidance for high-risk words}
+        # Example: "This word is at high risk for over-specification. Verify 'literally means' claims."
+      risk_level: "{CRITICAL|HIGH|MEDIUM|LOW}"
+
+  validation:  # After research, compare predictions to actuals
+    predictions_made: {count}
+    predictions_confirmed: {count}
+    accuracy_rate: {percentage}  # predictions_confirmed / predictions_made
+    unexpected_errors: [{errors not predicted}]  # Learn from these
+
 # === CONTROVERSIES & MISCONCEPTIONS ===
 # Document errors from community + scholarly refutations
 # Each controversy follows: Error → Refutation → Evidence → Classification
@@ -103,6 +143,11 @@ controversies:
     # === ERROR CLASSIFICATION ===
     error_classification:
       primary_type: "{one of 7 error types}"
+
+      secondary_types:  # Optional - overlapping error patterns
+        - "{additional error type}"
+        # Example: "anachronism" (if error is both etymological + chronological)
+
       contributing_factors:
         - "{factor making error likely}"
         # Example: "English word similarity", "Memorable alliteration", "Appears in sermons"
@@ -112,6 +157,130 @@ controversies:
           strongs: "{number}"
           error_pattern: "{similar mistake}"
           # Example: word: "ἐκκλησία", strongs: "G1577", error_pattern: "Etymological fallacy (called-out ones)"
+
+    # === ERROR SEVERITY (Improvement #2) ===
+    # See: ERROR-SEVERITY-FRAMEWORK.md
+    error_severity:
+      theological_impact: "{CRITICAL|HIGH|MEDIUM|LOW}"
+      # CRITICAL: Affects core doctrine (Trinity, Christology, salvation)
+      # HIGH: Affects secondary doctrine (ecclesiology, pneumatology)
+      # MEDIUM: Affects application/practice but not doctrine
+      # LOW: Devotional/illustrative error, no doctrinal impact
+
+      propagation_level: "{EPIDEMIC|WIDESPREAD|MODERATE|ISOLATED}"
+      # EPIDEMIC: Published books, Google autocomplete, decades of use
+      # WIDESPREAD: Multiple sermon sites, common in churches
+      # MODERATE: Forums, blogs, some teaching
+      # ISOLATED: Single source, rare occurrence
+
+      priority_score: {calculated}
+      # Formula: Theological Impact × Propagation Multiplier
+      # CRITICAL(4) × EPIDEMIC(3) = 12 (highest priority)
+      # LOW(1) × ISOLATED(0.5) = 0.5 (lowest priority)
+
+      priority_band: "{P1|P2|P3|P4|P5|P6}"
+      # P1 (10-12): IMMEDIATE - research/correct immediately
+      # P2 (7-9): HIGH - first 100 words
+      # P3 (5-6): MEDIUM-HIGH - first 250 words
+      # P4 (3-4): MEDIUM - first 500 words
+      # P5 (1.5-2.5): LOW - opportunistic
+      # P6 (0.5-1): MINIMAL - skip unless discovered
+
+      impact_assessment:
+        affected_groups: ["{pastors}", "{translators}", "{students}", "{apologists}"]
+        downstream_errors: ["{errors caused by this error}"]
+        correction_urgency: "{IMMEDIATE|HIGH|MODERATE|LOW}"
+
+    # === ERROR HISTORY (Improvement #6) ===
+    # See: HISTORICAL-ERROR-TRACKING.md
+    error_history:
+      first_documented:
+        date: "YYYY or YYYY-MM-DD"  # Earliest known occurrence
+        source: "{where first seen}"
+        context: "{how error originated}"
+        # Example: "1950s sermon illustration", "1980 apologetics book"
+
+      origin_type: "{sermon_illustration|apologetics_argument|etymology_enthusiasm|translation_note}"
+      # sermon_illustration: Memorable teaching created error
+      # apologetics_argument: Doctrinal defense created error
+      # etymology_enthusiasm: Greek/Hebrew study excitement
+      # translation_note: Margin note or study Bible comment
+
+      popularization:
+        period: "YYYY-YYYY"  # When error spread widely
+        mechanism: "{oral_tradition|published_materials|institutional_adoption|digital_viral}"
+        key_sources: ["{influential source 1}", "{influential source 2}"]
+        # Example: ["Charles Spurgeon sermon", "Vine's Expository Dictionary"]
+
+        spread_factors:
+          - "{why error spread}"
+          # Example: "Memorable alliteration", "Published in popular study Bible"
+
+      peak_prevalence:
+        period: "YYYY-YYYY"  # When error was most common
+        estimated_reach: "{description}"
+        # Example: "Taught in most evangelical seminaries 1970-2000"
+
+      current_status:
+        trend: "{increasing|stable|decreasing|correcting}"
+        recent_activity:
+          - date: "YYYY-MM-DD"
+            platform: "{where seen recently}"
+            context: "{how error appeared}"
+
+        correction_efforts:
+          - date: "YYYY"
+            source: "{who corrected}"
+            impact: "{widespread|moderate|limited}"
+          # Example: D.A. Carson's 1984 "Exegetical Fallacies" (widespread impact)
+
+      projection:
+        short_term: "{next 5 years}"  # Will error increase/decrease?
+        medium_term: "{5-15 years}"
+        long_term: "{15+ years}"
+        factors: ["{what will affect trajectory}"]
+        # Example: "Digital resources spreading corrections faster"
+
+      lifecycle_stage: "{emerging|growing|peak|declining|residual|nearly_extinct}"
+      # emerging: New error appearing
+      # growing: Spreading rapidly
+      # peak: Maximum prevalence
+      # declining: Being corrected
+      # residual: Persists in older materials
+      # nearly_extinct: Rare, mostly corrected
+
+    # === LANGUAGE-SPECIFIC PATTERNS (Improvement #11) ===
+    # See: LANGUAGE-PATTERNS.md
+    language_specific_patterns:
+      primary_language: "{greek|hebrew}"
+
+      error_pattern_type: "{see below}"
+      # Greek patterns: etymological_over_analysis | english_phonetic | theological_system |
+      #                 lxx_neglect | grammar_over_interpret
+      # Hebrew patterns: theological_projection | root_fallacy | consonantal_speculation |
+      #                  alphabetic_mysticism | parallelism_misunderstanding
+
+      why_common_for_this_language: |
+        {Explanation specific to Greek or Hebrew characteristics}
+        # Example (Greek): "Compound verbs with transparent morphology tempt ek + kaleo analysis"
+        # Example (Hebrew): "Trilateral root system tempts assuming all קדש words = identical"
+
+      similar_errors_in_same_language:
+        - word: "{Strong's number}"
+          pattern: "{same error pattern}"
+          note: "{connection}"
+        # Example: G1577 ekklesia, G1411 dunamis both suffer etymological fallacies
+
+      language_learning_implications: |
+        {What students of this language should learn early to avoid}
+        # Example (Greek): "Etymology ≠ meaning - teach on Day 1 of Greek class"
+        # Example (Hebrew): "Read OT on its own terms, not through NT theology lens"
+
+      cross_language_analogy:
+        - language: "{greek|hebrew}"
+          similar_pattern: "{pattern name}"
+          example: "{word}"
+        # Example: Greek etymological fallacy similar to Hebrew root fallacy
 
     # === PEDAGOGICAL GUIDANCE ===
     helpful_guidance:
@@ -290,14 +459,31 @@ attribution:
 # === NOTES ===
 
 schema_notes:
-  version: "1.0.0"
+  version: "2.0.0"
   created: "2025-11-12"
+  last_updated: "2025-11-12"
+  changelog:
+    - "v2.0.0 (2025-11-12): Added 5 improvement frameworks"
+    - "  - error_severity: Priority scoring for production workflow"
+    - "  - error_history: Timeline and propagation tracking"
+    - "  - language_specific_patterns: Greek vs Hebrew error patterns"
+    - "  - error_prediction: Proactive risk assessment"
+    - "  - secondary_types: Allow multiple overlapping error types"
+    - "v1.0.0 (2025-11-12): Initial schema with 7 error types"
+
   follows_standards:
     - "ATTRIBUTION.md source requirements"
     - "SCHEMA.md inline citation requirements"
     - "REVIEW-GUIDELINES.md validation levels"
     - "research/controversy-patterns.md error taxonomy"
     - "research/refutation-sources.md refutation strategies"
+
+  improvement_frameworks:
+    - "ERROR-SEVERITY-FRAMEWORK.md - Priority scoring (P1-P6)"
+    - "HISTORICAL-ERROR-TRACKING.md - Error lifecycle analysis"
+    - "LANGUAGE-PATTERNS.md - Greek vs Hebrew patterns"
+    - "ERROR-PREDICTION-SYSTEM.md - Proactive risk assessment"
+    - "quick-reference-cards/ - 1-page pastor resources"
 
   critical_reminders:
     - "NEVER document error without scholarly refutation"
@@ -306,6 +492,8 @@ schema_notes:
     - "ALWAYS provide alternative framing (positive teaching)"
     - "ALWAYS mark authority levels (error=LOW, refutation=HIGH/MEDIUM)"
     - "ALWAYS integrate with Tool 1 lexicon data"
+    - "ALWAYS assess error severity for production prioritization"
+    - "ALWAYS track error history when discoverable"
 
   when_to_skip:
     - "No community discussion found for this word"
@@ -319,6 +507,7 @@ schema_notes:
     - "Popular teaching error needing correction"
     - "Etymological fallacy in circulation"
     - "Theological projection requiring clarification"
+    - "High-risk word (P1-P3) even without confirmed error (proactive warning)"
 
 # === EXAMPLE USAGE ===
 
