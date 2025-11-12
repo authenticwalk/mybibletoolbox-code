@@ -313,13 +313,13 @@ features:
 # Global statistics
 statistics:
   features_total: 12
-  features_complete: 4  # number-systems, degree, person-systems, participant-tracking (ALL phases complete)
+  features_complete: 6  # number-systems, degree, person-systems, participant-tracking, discourse-genre, proximity (ALL phases complete)
   features_in_progress: 0
-  features_not_started: 8
+  features_not_started: 6
   features_blocked: 0
-  completion_percentage: 33  # 4/12 features complete
-  phases_completed_total: 40  # number-systems: 10, degree: 10, person-systems: 10, participant-tracking: 10
-  estimated_hours_remaining: 192  # 8 features × ~24 hours per feature
+  completion_percentage: 50  # 6/12 features complete
+  phases_completed_total: 60  # 6 features × 10 phases each
+  estimated_hours_remaining: 144  # 6 features × ~24 hours per feature
 
 # Milestones
 milestones:
