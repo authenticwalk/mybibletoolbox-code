@@ -1,0 +1,349 @@
+# Schema: Strong's Community Discussions Output Format
+#
+# This schema defines the YAML structure for Tool 4 outputs documenting
+# common misconceptions, popular errors, and controversies from community
+# discussions, ALWAYS paired with scholarly refutations.
+#
+# Critical Rule: NEVER document error without scholarly refutation
+#
+# Output File: ./bible/words/strongs/{num}/{num}-community-discussions.yaml
+#
+# Example: G1411-community-discussions.yaml (dunamis → dynamite fallacy)
+
+# === METADATA ===
+strongs_number: "{G/H}{number:04d}"  # e.g., G1411, H0430
+language: "{greek|hebrew}"
+lemma: "{lexical_form}"              # e.g., δύναμις
+transliteration: "{romanized}"       # e.g., dynamis
+
+tool:
+  name: "strongs-community-discussions"
+  version: "1.0.0"
+  generated_date: "YYYY-MM-DD"
+
+# === CONTROVERSIES & MISCONCEPTIONS ===
+# Document errors from community + scholarly refutations
+# Each controversy follows: Error → Refutation → Evidence → Classification
+
+controversies:
+  - id: 1
+
+    # === ERROR DOCUMENTATION (LOW authority - community source) ===
+    error:
+      claim: "{the erroneous claim being made}"
+      # Example: "Dunamis is where we get the word 'dynamite', showing God's explosive power"
+
+      type: "{error_type}"
+      # Options: etymological_fallacy | anachronism | false_cognate |
+      #          over_specification | lexical_maximalism | theological_projection | selective_definition
+      # See: research/controversy-patterns.md for definitions
+
+      prevalence: "{widespread|moderate|uncommon}"
+      # widespread: Multiple forums/sites, Google autocomplete, published resources
+      # moderate: 2-3 locations, recurring Stack Exchange question
+      # uncommon: Single occurrence, quickly corrected
+
+      source:
+        type: "{stack_exchange|reddit|forum|blog_comments|social_media}"
+        url: "{URL to community discussion}"
+        platform: "{platform name}"  # e.g., "hermeneutics.stackexchange.com"
+        date_observed: "YYYY-MM-DD"
+        context: "{where/how error appeared}"
+        authority_note: "LOW - community discussion"
+
+      why_tempting: |
+        {Brief explanation of psychological/pedagogical reason error is appealing}
+        # Example: "Etymology feels like unlocking secret meaning; 'explosive power' is memorable teaching illustration"
+
+    # === SCHOLARLY REFUTATION (HIGH/MEDIUM authority) ===
+    scholarly_refutation:
+      correction: "{what is actually true}"
+      # Example: "Dynamis cannot derive from 'dynamite' - chronologically impossible. Dynamis from δύναμαι (to be able)"
+
+      evidence:
+        - type: "{chronological|lexical|usage|linguistic|historical}"
+          fact: "{specific evidence}"
+          source: "{citation}"
+          authority: "{HIGH|MEDIUM}"
+        # Example chronological:
+        # - type: "chronological"
+        #   fact: "NT written 1st-2nd century CE"
+        #   source: {biblical-scholarship}
+        #   authority: "HIGH"
+        # - type: "chronological"
+        #   fact: "Dynamite invented 1867 by Alfred Nobel"
+        #   source: {historical-record}
+        #   authority: "HIGH"
+        # - type: "lexical"
+        #   fact: "BDAG: δύναμις from δύναμαι (to be able)"
+        #   source: {bdag}
+        #   authority: "HIGH"
+
+      refutation_sources:
+        primary:
+          - source_type: "{lexicon|journal|book|expert_blog}"
+            citation: "{citation_code}"  # e.g., {bdag}, {carson-fallacies}
+            relevant_section: "{where correction found}"
+            authority: "{HIGH|MEDIUM}"
+            quote: "{relevant excerpt if helpful}" # Optional
+
+        supporting:  # Optional additional sources
+          - source_type: "{source_type}"
+            citation: "{citation_code}"
+            authority: "{HIGH|MEDIUM}"
+
+      correct_understanding:
+        etymology: "{actual etymology from lexicons}" {source}
+        semantic_range: "{actual meanings}" {source}
+        proper_usage: "{how to properly understand this word}" {llm-cs45 citing sources}
+
+      authority_note: "{HIGH|MEDIUM} - {type of source}"
+      # Example: "HIGH - lexicon etymology + historical chronology"
+
+    # === ERROR CLASSIFICATION ===
+    error_classification:
+      primary_type: "{one of 7 error types}"
+      contributing_factors:
+        - "{factor making error likely}"
+        # Example: "English word similarity", "Memorable alliteration", "Appears in sermons"
+
+      related_errors:  # Optional - similar errors with other words
+        - word: "{other affected word}"
+          strongs: "{number}"
+          error_pattern: "{similar mistake}"
+          # Example: word: "ἐκκλησία", strongs: "G1577", error_pattern: "Etymological fallacy (called-out ones)"
+
+    # === PEDAGOGICAL GUIDANCE ===
+    helpful_guidance:
+      what_to_avoid: |
+        {Clear statement of what NOT to claim about this word}
+        # Example: "Do not claim dunamis comes from or is related to dynamite. Avoid time-based word connections without verification."
+
+      alternative_framing: |
+        {Positive way to teach truth about this word}
+        # Example: "Dunamis (from δύναμαι 'to be able') emphasizes inherent ability and strength. God's dunamis is His inherent power to accomplish His will."
+
+      memory_aid: |
+        {Legitimate mnemonic or teaching hook that IS accurate}
+        # Example: "Think 'dynamic' (related word) - God's power is active and effective, not passive."
+
+      tone_note: "{reminder to be gracious}"
+      # Always: "While this interpretation is common, lexicons show..."
+
+# === COMMON QUESTIONS ===
+# Frequently asked questions from community with expert answers
+
+common_questions:
+  - id: 1
+    question: "{frequently asked question}"
+    # Example: "Does dunamis really mean explosive power like dynamite?"
+
+    source:
+      platform: "{stack_exchange|reddit|forum}"
+      url: "{URL to question}"
+      votes_or_views: {number}  # Indicates question popularity
+      date_asked: "YYYY-MM-DD"
+
+    community_answers:  # Optional - what community said
+      - answer: "{community member's answer}"
+        votes: {number}
+        authority_assessment: "{LOW|MEDIUM if expert}"
+        problems: ["{issues with this answer if any}"]
+
+    expert_answer:
+      answer: |
+        {Scholarly/expert answer to question}
+        {Cite sources inline with {source} format}
+
+      sources:
+        - citation: "{source_code}"
+          type: "{lexicon|journal|expert_blog}"
+          authority: "{HIGH|MEDIUM}"
+
+      related_resources:
+        - resource: "{helpful resource for further study}"
+          citation: "{source_code}"
+
+# === HELPFUL CAUTIONS ===
+# General warnings about what NOT to claim about this word
+
+helpful_cautions:
+  - caution_type: "{etymological|semantic|theological|cultural}"
+    warning: "{what to avoid claiming}"
+    reason: "{why this is problematic}"
+    evidence: "{facts showing why claim is wrong}" {source}
+    authority: "{HIGH|MEDIUM}"
+  # Example:
+  # - caution_type: "etymological"
+  #   warning: "Do not connect NT Greek words to modern English words without linguistic evidence"
+  #   reason: "Phonetic similarity does not indicate etymology; modern English postdates NT by 1500+ years"
+  #   evidence: "English developed 1000-1500 CE; NT written 50-100 CE" {linguistic-history}
+  #   authority: "HIGH"
+
+# === LEGITIMATE SCHOLARLY DEBATES ===
+# Distinguish genuine scholarly uncertainty from popular errors
+# Only include if ACTUAL scholarly debate exists (not community confusion)
+
+scholarly_debates:  # Optional - only if genuine debate exists
+  - debate_topic: "{specific scholarly question}"
+    status: "{active|emerging_consensus|settled}"
+
+    scholarly_positions:
+      - position: "{scholarly view 1}"
+        proponents: ["{Scholar A}", "{Scholar B}"]
+        evidence: "{arguments}" {source}
+        authority: "HIGH"
+
+      - position: "{scholarly view 2}"
+        proponents: ["{Scholar C}"]
+        evidence: "{arguments}" {source}
+        authority: "HIGH"
+
+    community_confusion: |
+      {How community misunderstands this debate or conflates it with errors}
+      {Clarify the distinction between legitimate debate and popular error}
+
+    translator_guidance: |
+      {How to handle this genuine uncertainty in translation work}
+
+# === INTEGRATION WITH OTHER TOOLS ===
+
+related_tool_data:
+  lexicon_core_check:
+    file: "./bible/words/strongs/{num}/{num}-lexicon-core.yaml"
+    relevant_sections:
+      - etymology  # Compare error claim vs. actual etymology
+      - semantic_range  # Compare error claim vs. actual range
+      - lexical_convergence  # What lexicons agree on
+
+  scholarly_analysis_check:  # If exists
+    file: "./bible/words/strongs/{num}/{num}-scholarly-analysis.yaml"
+    relevant_sections:
+      - scholarly_debates  # Legitimate vs. popular debates
+      - diachronic_analysis  # Historical development
+
+  web_insights_check:  # If exists
+    file: "./bible/words/strongs/{num}/{num}-web-insights.yaml"
+    relevant_sections:
+      - error_corrections  # May already document this error
+
+# === QUALITY METADATA ===
+
+metadata:
+  controversies_count: {number}
+  common_questions_count: {number}
+  helpful_cautions_count: {number}
+  scholarly_debates_count: {number}
+
+  validation:
+    level_1_critical:
+      - error_has_real_source: {true|false}  # URL to community discussion required
+      - refutation_has_high_authority: {true|false}  # HIGH or MEDIUM source required
+      - evidence_provided: {true|false}  # Not just assertion
+      - error_type_classified: {true|false}  # One of 7 types
+      - no_fabricated_controversies: {true|false}  # All errors are real
+      - tone_gracious: {true|false}  # Not mocking or dismissive
+
+    level_2_high_priority:
+      - prevalence_assessed: {true|false}
+      - multiple_refutation_sources: {true|false}  # When available
+      - guidance_provided: {true|false}  # Alternative framing offered
+      - related_errors_documented: {true|false}  # When applicable
+
+    level_3_medium_priority:
+      - pedagogical_notes: {true|false}  # Why error is tempting
+      - positive_alternative: {true|false}  # Not just correction
+      - integration_checked: {true|false}  # Compared to Tools 1-3
+
+  authority_distribution:
+    error_sources: "LOW - community discussions"
+    refutation_sources: "{HIGH|MEDIUM} - {count} lexicons, {count} journals, {count} expert blogs"
+
+  coverage_assessment:
+    genuine_controversy: {true|false}  # Is this a real error worth documenting?
+    skip_rationale: "{if no file created, why}"  # e.g., "No community discussion found", "No errors documented"
+
+  generation_stats:
+    extraction_date: "YYYY-MM-DD HH:MM:SS"
+    tokens_used: {count}
+    sources_consulted: {count}
+    web_searches_performed: {count}
+
+  requires_human_review: {true|false}
+  # Set true if:
+  # - Involves sensitive theological controversy
+  # - Refutation sources are marginal (low MEDIUM authority)
+  # - Error classification uncertain
+
+# === ATTRIBUTION ===
+
+attribution:
+  note: "All refutation sources must be in ATTRIBUTION.md with proper copyright notices"
+  sources_requiring_attribution:
+    - "{List citation codes used}" # e.g., [bdag, carson-fallacies, thayer]
+
+  fair_use_compliance:
+    strategy: "Error documentation (community, LOW authority) + scholarly correction (HIGH authority)"
+    transformative: "Educational purpose - correcting misinformation with evidence"
+    limited_excerpts: "Brief lexicon definitions and scholarly explanations only"
+
+# === NOTES ===
+
+schema_notes:
+  version: "1.0.0"
+  created: "2025-11-12"
+  follows_standards:
+    - "ATTRIBUTION.md source requirements"
+    - "SCHEMA.md inline citation requirements"
+    - "REVIEW-GUIDELINES.md validation levels"
+    - "research/controversy-patterns.md error taxonomy"
+    - "research/refutation-sources.md refutation strategies"
+
+  critical_reminders:
+    - "NEVER document error without scholarly refutation"
+    - "ALWAYS verify error from real community source (URL required)"
+    - "ALWAYS use gracious tone (not mocking)"
+    - "ALWAYS provide alternative framing (positive teaching)"
+    - "ALWAYS mark authority levels (error=LOW, refutation=HIGH/MEDIUM)"
+    - "ALWAYS integrate with Tool 1 lexicon data"
+
+  when_to_skip:
+    - "No community discussion found for this word"
+    - "No documented errors or misconceptions"
+    - "Tool 1 lexicon data is sufficient (no controversy)"
+    - "Only legitimate scholarly debate (no popular errors) - use Tool 2 instead"
+
+  when_to_create:
+    - "Known widespread error documented"
+    - "Recurring Stack Exchange question"
+    - "Popular teaching error needing correction"
+    - "Etymological fallacy in circulation"
+    - "Theological projection requiring clarification"
+
+# === EXAMPLE USAGE ===
+
+example_minimal:
+  # Minimal valid output (single error with refutation)
+  strongs_number: "G1411"
+  language: "greek"
+  lemma: "δύναμις"
+  controversies:
+    - id: 1
+      error:
+        claim: "Dunamis is where we get 'dynamite'"
+        type: "etymological_fallacy"
+        prevalence: "widespread"
+        source:
+          url: "https://example.com/discussion"
+          authority_note: "LOW"
+      scholarly_refutation:
+        correction: "Chronologically impossible - NT predates dynamite by 1800+ years"
+        evidence:
+          - type: "chronological"
+            fact: "NT written 1st-2nd century CE"
+            source: "{biblical-scholarship}"
+        authority_note: "HIGH"
+
+example_comprehensive:
+  # Full-featured output with multiple sections
+  # See: experiments/exp1-G1411-dunamis/ for complete working example
