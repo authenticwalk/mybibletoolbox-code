@@ -237,13 +237,13 @@ features:
     requires_tbta_update: true
 
   proximity:
-    status: not_started
-    current_phase: 1
-    completed_phases: []
-    started: null
-    last_updated: null
-    notes: "Has comprehensive language typology analysis"
-    next_action: "Start Phase 2: Training set design"
+    status: in_progress
+    current_phase: 2
+    completed_phases: [1]
+    started: "2025-11-12"
+    last_updated: "2025-11-12"
+    notes: "Phase 1 complete: Feature selected, context loaded (README.md, typology analysis available)"
+    next_action: "Phase 2: Design training set with equal value coverage"
     blocked_on: null
 
   polarity:
