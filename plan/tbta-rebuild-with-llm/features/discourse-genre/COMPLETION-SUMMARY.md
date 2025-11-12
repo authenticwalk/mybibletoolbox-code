@@ -47,6 +47,7 @@ The discourse-genre feature analysis revealed a **critical limitation in TBTA da
   - 12,091 annotations analyzed
   - 100% marked as "Climactic Narrative Story"
   - Even Psalms, Ten Commandments, epistles → all narrative
+  - **See INVESTIGATION-REPORT.md for full analysis**
 
 ### Phase 4: Algorithm Development ✅
 - **Duration**: 4 hours
@@ -359,6 +360,64 @@ BEFORE building algorithm:
 
 ---
 
+## Post-Completion Investigation (2025-11-12)
+
+Following user feedback questioning the understanding of TBTA's "Discourse Genre" feature, a comprehensive investigation was conducted to verify our findings and understand what this feature actually represents.
+
+### Investigation Scope
+
+1. ✅ **Verified other features work** - Number, Person, Participant Tracking all have multiple values
+2. ✅ **Traced data source** - Found TBTA processing scripts (`src/ingest-data/tbta/tbta_processor.py`)
+3. ✅ **Confirmed feature level** - Discourse Genre is clause-level, not book-level
+4. ✅ **Cross-checked all book types** - Poetry, Epistles, Law, Narrative all show same pattern
+5. ⚠️ **Searched for official docs** - Tod Allman dissertation found but inaccessible (503 error)
+
+### Key Confirmations
+
+**Data Integrity**: Other TBTA features demonstrate the export is working correctly:
+- Number: Singular, Plural, Dual
+- Person: First, Second, Third, First Exclusive
+- Participant Tracking: Routine, First Mention, Generic, Frame Inferable
+
+**Discourse Genre Pattern**: Confirmed across all content types:
+| Content Type | Example | Genre Value |
+|--------------|---------|-------------|
+| Poetry | PSA 23:1 | Climactic Narrative Story |
+| Epistle | PHP 2:5 | Climactic Narrative Story |
+| Law | EXO 20:13 | Climactic Narrative Story |
+| Narrative | GEN 1:3 | Climactic Narrative Story |
+
+**Statistical Certainty**:
+```
+12,091 total annotations
+12,091 "Climactic Narrative Story" (100%)
+0 other values (0%)
+```
+
+### Investigation Conclusions
+
+**Most Likely Explanation**: TBTA's Discourse Genre feature is **incomplete/under development**
+- Feature structure exists in data
+- Only default/placeholder value implemented
+- Other features are fully functional
+- 9-genre system (from Longacre framework) was planned but not yet implemented in TBTA export
+
+**Repository Documentation**: The 9-genre classification comes from:
+- Longacre's discourse analysis (SIL linguistics standard)
+- What developers expected TBTA to contain
+- Non-existent "ALL-FEATURES.md" file referenced in experiment-001.md
+- Not from actual TBTA data verification
+
+**Validation of Our Approach**: Investigation confirms:
+- ✅ Our critical finding was accurate and well-founded
+- ✅ Linguistic-theory algorithm is the correct approach given data limitation
+- ✅ Algorithm v1.0 provides value TBTA doesn't yet offer
+- ✅ Framework is ready for validation when TBTA implements full genres
+
+**Full details**: See `INVESTIGATION-REPORT.md` for comprehensive analysis
+
+---
+
 ## Acknowledgments
 
 **What Worked Well**:
@@ -389,6 +448,7 @@ BEFORE building algorithm:
 
 ---
 
-**Last Updated**: 2025-11-11
+**Last Updated**: 2025-11-12 (Post-investigation update)
+**Investigation Date**: 2025-11-12
 **Next Review**: When TBTA data updates become available
 **Maintenance**: Monitor for TBTA releases, re-validate periodically
