@@ -1,0 +1,170 @@
+# Error Correction Template - Tool 3 (Web Insights)
+# Based on Experiment 4 (G1411 dynamis - dynamite fallacy)
+# 5-Part Structure: Error → Classification → Refutation → Validation → Alternative
+
+error_id: 1
+error_type: "etymological_fallacy"  # or semantic_anachronism, totality_transfer, etc.
+common_claim: "[Quote the specific error claim]"
+prevalence: "moderate"  # widespread | moderate | uncommon
+
+sources_of_error:
+  - "[Where this error comes from - e.g., popular teaching, outdated commentary]"
+  - "[Additional source if applicable]"
+
+# ============================================================================
+# PART 1: Error Statement (clear, non-mocking)
+# ============================================================================
+# Purpose: State the error clearly without condescension
+# Tone: Gracious, pedagogical
+# Example: "Common claim: Because dynamis shares roots with 'dynamite',
+#          the word means explosive power {spurious-source}"
+
+error_statement: |
+  [Clear statement of the error with citation if possible]
+
+# ============================================================================
+# PART 2: Classification (name the fallacy type)
+# ============================================================================
+# Purpose: Educate about the type of error, using scholarly terminology
+# Examples: semantic_anachronism (Carson), reverse_etymological_fallacy (Cara)
+
+fallacy_classification:
+  primary_type: "etymological_fallacy"
+  alternative_names:
+    - "[Scholar's term for this error type]"
+    - "[Another scholar's term if different]"
+  definition: "[Brief definition of the fallacy type]"
+
+# ============================================================================
+# PART 3: Multi-Layered Refutation (4-5 evidence types)
+# ============================================================================
+# Purpose: Build comprehensive case against error using multiple evidence types
+# Minimum: 4 types of evidence
+# Examples: linguistic, diachronic, contextual, scholarly consensus, mathematical
+
+refutation:
+  evidence_1_linguistic: |
+    [Linguistic evidence against the error - e.g., word formation patterns,
+    semantic analysis, usage patterns in corpus]
+    {source}
+
+  evidence_2_diachronic: |
+    [Historical/chronological evidence - e.g., word X came after word Y,
+    semantic shift over time, etymology actually goes opposite direction]
+    {source}
+
+  evidence_3_contextual: |
+    [Contextual evidence from NT usage - e.g., word used in ways incompatible
+    with claimed meaning in specific verses, semantic range analysis]
+    {source}
+
+  evidence_4_scholarly_consensus: |
+    [Major lexicons and scholarly consensus - e.g., BDAG, LSJ, Thayer all
+    agree on proper understanding, standard references refute error]
+    {source}
+
+  evidence_5_additional: |
+    [Optional 5th evidence type if available - e.g., mathematical (date ranges),
+    comparative (other languages), cultural/historical context]
+    {source}
+
+# ============================================================================
+# PART 4: Expert Validation (stack authorities - pyramid structure)
+# ============================================================================
+# Purpose: Show expert consensus on the correction
+# Minimum: 2 sources (MEDIUM-HIGH+), at least 1 HIGH or VERY HIGH preferred
+# Structure: Pyramid - top scholars first, build down to broader support
+
+expert_validation:
+  very_high_authority:
+    - author: "[Name]"
+      credentials: "[Ph.D., institutional position, publications]"
+      quote: "[Direct quote or paraphrase of their correction]"
+      authority_level: "VERY HIGH"
+      authority_note: "[Why VERY HIGH - e.g., leading scholar, peer-reviewed monograph author]"
+      source_url: "[URL]"
+      verification_date: "YYYY-MM-DD"
+
+  high_authority:
+    - author: "[Name]"
+      credentials: "[Ph.D., relevant field]"
+      quote: "[Their correction or insight]"
+      authority_level: "HIGH"
+      authority_note: "[Why HIGH - e.g., published scholar, respected expert]"
+      source_url: "[URL]"
+      verification_date: "YYYY-MM-DD"
+
+  medium_authority:
+    - author: "[Name]"
+      credentials: "[Ph.D. or Th.D., teaching position]"
+      quote: "[Their correction]"
+      authority_level: "MEDIUM"
+      authority_note: "[Why MEDIUM - e.g., expert blog, not peer-reviewed]"
+      source_url: "[URL]"
+      verification_date: "YYYY-MM-DD"
+
+# ============================================================================
+# PART 5: Correct Alternative (teach proper methodology)
+# ============================================================================
+# Purpose: Build up correct understanding, not just tear down error
+# Components: Principle + Methodology + Better Analogy + Biblical Usage
+
+correct_alternative:
+  principle: "[Core principle - e.g., 'Context determines meaning, not etymology']"
+
+  methodology: |
+    [Step-by-step proper methodology to avoid this error type]
+    1. [First step]
+    2. [Second step]
+    3. [Third step]
+    4. [Fourth step]
+
+  better_analogy: |
+    [Memorable alternative that illustrates correct understanding]
+    Example: "Word meanings evolve like 'nice' (foolish → pleasant),
+    etymology doesn't lock meaning"
+    Example: "Think 'dynamo' (continuous power) not 'dynamite' (explosive)"
+
+  biblical_usage_pattern: |
+    [How the word actually functions in NT context]
+    In NT, word appears in [X contexts] with [Y semantic range] showing
+    [Z pattern] {concordance-source}
+
+# ============================================================================
+# Quality Metadata
+# ============================================================================
+
+quality_checks:
+  minimum_sources: 2  # MEDIUM-HIGH or higher
+  minimum_authority: "HIGH"  # At least 1 HIGH or VERY HIGH
+  evidence_types_count: 4  # Minimum 4 evidence types in Part 3
+  tone: "gracious_pedagogical"  # Not condescending, not harsh
+  tone_check_passed: true  # Manual validation
+
+cross_references:
+  tool_1_lexicon_core: true  # Check if Tool 1 has correct info
+  tool_2_scholarly: true  # Check if peer-reviewed literature addresses this
+
+# ============================================================================
+# Notes for Researchers
+# ============================================================================
+
+researcher_notes: |
+  TONE GUIDELINES:
+  - Acknowledge error is widespread (don't mock those who believe it)
+  - Use "common claim" not "stupid idea"
+  - Explain WHY wrong, not just THAT wrong
+  - Teach methodology to avoid similar errors
+  - Build up correct understanding positively
+
+  QUALITY STANDARDS:
+  - At least 2 sources (MEDIUM-HIGH+)
+  - At least 1 HIGH or VERY HIGH authority
+  - At least 4 evidence types
+  - Gracious, pedagogical tone throughout
+
+  EXAMPLES TO STUDY:
+  - See experiments/exp4-error-correction/G1411-synthesis.md
+  - Dynamis/dynamite fallacy correction as model
+  - Note how Carson, Cara, Mounce all cited
+  - Note gracious tone: "very, very dangerous" not "idiotic"
