@@ -1,0 +1,101 @@
+# MINIMAL Multi-Perspective Template - Tool 3 (Web Insights)
+# For scholarly disagreements and cultural/translation debates
+# See templates/GUIDE.md for detailed instructions and examples
+
+disagreement_id: 1
+topic: "[Brief description - e.g., Translation choice, Interpretive debate]"
+debate_status: "ongoing"  # ongoing | settled | emerging
+controversy_type: "translational"  # interpretive | translational | theological | cultural
+
+# === POSITIONS (Minimum 2) ===
+positions:
+  - position_id: 1
+    view_name: "[Name - e.g., Traditional, Reformed, etc.]"
+    advocates:
+      - name: "[Scholar name]"
+        credentials: "[Ph.D., institution]"
+        authority_level: "MEDIUM-HIGH"
+
+    key_arguments:
+      - "[Argument 1] {source}"
+      - "[Argument 2] {source}"
+      - "[Argument 3] {source}"
+
+    strengths:
+      - "[Strength 1]"
+      - "[Strength 2]"
+
+    considerations:
+      - "[Limitation/caveat 1]"
+      - "[Limitation/caveat 2]"
+
+    sources:
+      - url: "[URL]"
+        verification_date: "YYYY-MM-DD"
+
+  - position_id: 2
+    view_name: "[Alternative position]"
+    advocates:
+      - name: "[Scholar name]"
+        credentials: "[Ph.D., institution]"
+        authority_level: "MEDIUM"
+
+    key_arguments:
+      - "[Argument 1] {source}"
+      - "[Argument 2] {source}"
+      - "[Argument 3] {source}"
+
+    strengths:
+      - "[Strength 1]"
+      - "[Strength 2]"
+
+    considerations:
+      - "[Limitation/caveat 1]"
+      - "[Limitation/caveat 2]"
+
+    sources:
+      - url: "[URL]"
+        verification_date: "YYYY-MM-DD"
+
+# === CULTURAL CONSIDERATIONS (if applicable) ===
+cultural_considerations:
+  post_colonial_contexts:
+    issue: "[Specific sensitivity]"
+    guidance: "[How to navigate]"
+    affected_regions: ["[Region 1]", "[Region 2]"]
+
+  denominational_contexts:
+    issue: "[Denominational sensitivity]"
+    affected_traditions: ["[Tradition 1]", "[Tradition 2]"]
+
+# === TRANSLATOR GUIDANCE (Options, NOT Mandates) ===
+translator_guidance:
+  decision_framework:
+    - "[Factor 1 to consider]"
+    - "[Factor 2 to consider]"
+    - "[Factor 3 to consider]"
+
+  contextual_factors:
+    - factor: "[Factor name - e.g., Audience theology]"
+      weight: "high"  # high | medium | low
+    - factor: "[Factor name - e.g., Cultural sensitivity]"
+      weight: "high"
+
+  not_an_answer_sheet: true  # Guidance as options, not commands
+
+# === BIAS DETECTION VALIDATION ===
+bias_detection:
+  reversal_test: "passed"  # Could order reverse without changing implications?
+  respect_test: "passed"  # Would advocates feel fairly represented?
+  evidence_test: "passed"  # Strongest arguments for all positions?
+
+# === Quality Metadata ===
+quality_checks:
+  minimum_positions: 2
+  minimum_sources_per_position: 1
+  tone: "fair_charitable"
+  all_bias_tests_passed: true
+
+cross_references:
+  tool_1_lexicon_core: true  # Semantic range data
+  tool_2_scholarly: false  # Peer-reviewed treatment (if applicable)

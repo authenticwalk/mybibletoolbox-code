@@ -1,0 +1,92 @@
+# MINIMAL Skip Decision Template - Tool 3 (Web Insights)
+# For documenting when/why a word is excluded from Tool 3
+# See templates/GUIDE.md for detailed instructions and examples
+
+# === METADATA ===
+strongs_number: "G####"  # or H#### for Hebrew
+language: "greek"  # or hebrew
+lemma: "[Greek/Hebrew word]"
+transliteration: "[Transliteration]"
+gloss: "[Basic gloss]"
+
+skip_decision:
+  skipped: true
+  skip_date: "YYYY-MM-DD"
+  researcher: "[Name or agent ID]"
+
+# === SKIP REASON ===
+skip_reason: "grammatical_particle"  # Choose one:
+# - grammatical_particle (no semantic content)
+# - function_word (purely functional, no lexical meaning)
+# - insufficient_coverage (no expert web sources found after exhaustive search)
+# - tool_1_sufficient (lexicon data complete, no practical insights available)
+
+# === SKIP RATIONALE (Detailed Explanation) ===
+skip_rationale: |
+  [Explain WHY this word is being skipped]
+
+  Example for particles:
+  "δέ is a grammatical particle with no semantic content. All sources discuss
+  function, not practical application. Belongs in Tool 1 (lexicon-core)."
+
+  Example for insufficient coverage:
+  "Despite exhaustive search (10+ queries, multiple disciplines), found only 1
+  source with minimal content. Insufficient expert coverage for Tool 3 entry."
+
+# === SEARCH DOCUMENTATION (Prove exhaustive search if insufficient_coverage) ===
+search_documentation:
+  queries_executed:
+    - query: "[Search query 1]"
+      platform: "WebSearch"
+      results: "[Minimal/none relevant]"
+      date: "YYYY-MM-DD"
+
+    - query: "[Search query 2]"
+      platform: "WebSearch"
+      results: "[Only grammatical discussion]"
+      date: "YYYY-MM-DD"
+
+  disciplines_searched:
+    - "Bible study platforms"
+    - "Linguistic analysis sites"
+    - "Translation resources"
+    - "Theological sources"
+
+  total_queries: 10  # Minimum 5 for insufficient_coverage skip
+  relevant_sources_found: 0
+
+# === SCOPE BOUNDARY ANALYSIS ===
+scope_boundary_analysis:
+  belongs_in_tool_1: true  # Tool 1 vs Tool 3 territory
+  tool_1_rationale: |
+    [Why this belongs in Tool 1]
+    Example: "Grammatical particles are lexicon territory. Tool 3 focuses on
+    practical insights, modern debates, error corrections - none apply here."
+
+  tool_3_adds_value: false
+  tool_3_value_assessment: |
+    [What value Tool 3 would/wouldn't add]
+
+# === VALIDATION ===
+validation:
+  exhaustive_search_completed: true  # If insufficient_coverage
+  scope_boundaries_respected: true
+  tool_1_checked: true  # Verified Tool 1 covers this
+  no_valuable_insights_found: true
+  skip_is_success: true  # Appropriate skip = SUCCESS
+
+# === RECOMMENDATIONS ===
+recommendations:
+  recommend_tool_1_coverage: true  # Should Tool 1 cover this?
+  tool_1_scope: "grammatical_function"  # What should Tool 1 include?
+  recommend_future_review: false  # Check again later if web coverage grows?
+
+# === METADATA ===
+metadata:
+  skip_decision_date: "YYYY-MM-DD"
+  researcher: "[Name or agent ID]"
+  validated_by: "[Name or 'self-review']"
+  validation_date: "YYYY-MM-DD"
+
+  tool_1_file: ".data/bible/words/strongs/[num]/[num]-lexicon-core.yaml"
+  tool_1_sufficient: true

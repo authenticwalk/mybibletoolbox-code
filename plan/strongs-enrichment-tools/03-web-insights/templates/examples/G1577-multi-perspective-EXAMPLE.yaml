@@ -1,0 +1,109 @@
+# EXAMPLE: Multi-Perspective Template - G1577 ἐκκλησία (ekklesia)
+# Based on Experiment 5 (exp5-cultural-debate/)
+# Demonstrates proper use of multi-perspective.yaml template
+
+disagreement_id: 1
+topic: "Translation of ἐκκλησία: 'church' vs 'assembly'"
+debate_status: "ongoing"
+controversy_type: "translational"
+
+# === POSITIONS ===
+positions:
+  - position_id: 1
+    view_name: "Traditional: 'church'"
+    advocates:
+      - name: "Multiple translation committees"
+        credentials: "NIV, ESV, NASB translation teams"
+        authority_level: "MEDIUM-HIGH"
+
+    key_arguments:
+      - "Established tradition: 'church' used consistently for 400+ years in English Bibles {kjv-tradition}"
+      - "Theological continuity: Connects NT community with historical Christian ecclesiology {systematic-theology}"
+      - "Covenantal identity: Emphasizes continuity with Israel as God's assembled people {biblical-theology}"
+
+    strengths:
+      - "Preserves theological depth and historical connection"
+      - "Widely understood by English speakers as Christian gathering"
+
+    considerations:
+      - "May imply building rather than people in modern usage"
+      - "Potential colonial overtones in some post-colonial contexts"
+
+    sources:
+      - url: "https://www.tyndale.com/nlt/translators-notes"
+        verification_date: "2025-11-11"
+
+  - position_id: 2
+    view_name: "Reformist: 'assembly'"
+    advocates:
+      - name: "House church movement advocates"
+        credentials: "Translation practitioners, missiology scholars"
+        authority_level: "MEDIUM"
+
+    key_arguments:
+      - "Semantic accuracy: Greek ἐκκλησία means 'assembly, gathering' - civic term, not religious {bdag}"
+      - "Avoids building confusion: Modern 'church' often means building, not people {missiological-concern}"
+      - "Cultural sensitivity: 'Church' carries institutional/colonial baggage in some contexts {post-colonial-critique}"
+
+    strengths:
+      - "Closer to Greek semantic range"
+      - "Avoids building-centric misunderstanding"
+      - "Culturally sensitive in post-colonial contexts"
+
+    considerations:
+      - "Loses theological richness and historical continuity"
+      - "Less familiar to English readers accustomed to 'church'"
+
+    sources:
+      - url: "https://www.bible.org/article/ekklesia-church-or-assembly"
+        verification_date: "2025-11-11"
+
+# === CULTURAL CONSIDERATIONS ===
+cultural_considerations:
+  post_colonial_contexts:
+    issue: "'Church' may carry colonial/institutional overtones from missionary era"
+    guidance: "Consider local sensitivities to institutional terminology; assess whether 'assembly' better serves target audience"
+    affected_regions: ["Global South", "post-colonial contexts", "indigenous communities"]
+
+  denominational_contexts:
+    issue: "Different ecclesiologies emphasize different aspects"
+    affected_traditions: ["Reformed (covenant community)", "Baptist (gathered believers)", "House church (organic gathering)"]
+
+  contemporary_movements:
+    issue: "House church and organic church movements prefer non-institutional language"
+    guidance: "Acknowledge movement sensitivities while preserving theological content"
+
+# === TRANSLATOR GUIDANCE ===
+translator_guidance:
+  decision_framework:
+    - "Assess target audience theological background and tradition"
+    - "Consider cultural context (post-colonial sensitivities, institutional associations)"
+    - "Evaluate whether context is religious gathering or secular assembly (Acts 19:32,39,41 uses same word for civic assembly)"
+    - "Consult local church leaders and target community"
+
+  contextual_factors:
+    - factor: "Audience theological tradition"
+      weight: "high"
+    - factor: "Post-colonial cultural sensitivity"
+      weight: "high"
+    - factor: "Semantic precision vs theological continuity"
+      weight: "medium"
+
+  not_an_answer_sheet: true
+
+# === BIAS DETECTION VALIDATION ===
+bias_detection:
+  reversal_test: "passed"  # Could present 'assembly' first without changing fairness
+  respect_test: "passed"  # Both traditionalists and reformists represented fairly
+  evidence_test: "passed"  # Strongest case made for both positions
+
+# === Quality Metadata ===
+quality_checks:
+  minimum_positions: 2  # Traditional vs Reformist
+  minimum_sources_per_position: 1  # Both positions have scholarly support
+  tone: "fair_charitable"
+  all_bias_tests_passed: true
+
+cross_references:
+  tool_1_lexicon_core: true  # Tool 1 has semantic range data
+  tool_2_scholarly: true  # Academic ecclesiology resources available

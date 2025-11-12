@@ -1,0 +1,102 @@
+# EXAMPLE: Skip Decision Template - G1161 δέ (de)
+# Based on Experiment 3 (exp3-scope-boundary/)
+# Demonstrates proper use of skip-decision.yaml template
+
+# === METADATA ===
+strongs_number: "G1161"
+language: "greek"
+lemma: "δέ"
+transliteration: "de"
+gloss: "but, and, now"
+
+skip_decision:
+  skipped: true
+  skip_date: "2025-11-11"
+  researcher: "Claude Sonnet 4.5"
+
+# === SKIP REASON ===
+skip_reason: "grammatical_particle"
+
+# === SKIP RATIONALE ===
+skip_rationale: |
+  δέ is a purely grammatical particle (conjunction/adversative) with no semantic content.
+  It functions to connect clauses with adversative ("but"), continuative ("and"), or
+  transitional ("now") force, but carries no lexical meaning beyond grammatical function.
+
+  All web sources found discuss grammatical function (sentence connection, contrast marking,
+  discourse structure) rather than practical application or modern insights. This content
+  belongs in Tool 1 (lexicon-core) as technical grammar documentation.
+
+  Tool 3 is designed for practical insights, modern debates, error corrections, and
+  translator guidance - none of which apply to function words. Including δέ would merely
+  duplicate Tool 1 grammatical information without adding value.
+
+# === SEARCH DOCUMENTATION ===
+search_documentation:
+  queries_executed:
+    - query: "Greek de particle meaning"
+      platform: "WebSearch"
+      results: "Only grammatical/technical discussion"
+      date: "2025-11-11"
+
+    - query: "δέ Strong's 1161 translation"
+      platform: "WebSearch"
+      results: "Grammar explanations, no practical insights"
+      date: "2025-11-11"
+
+    - query: "de conjunction biblical Greek"
+      platform: "billmounce.com"
+      results: "Technical grammar only"
+      date: "2025-11-11"
+
+  disciplines_searched:
+    - "Bible study platforms (Bible.org, NetBible)"
+    - "Linguistic analysis sites (billmounce.com)"
+    - "Translation resources (SIL, unfoldingWord)"
+    - "Greek grammar sites"
+
+  total_queries: 5
+  relevant_sources_found: 0  # Zero sources with practical insights beyond grammar
+
+# === SCOPE BOUNDARY ANALYSIS ===
+scope_boundary_analysis:
+  belongs_in_tool_1: true
+  tool_1_rationale: |
+    Grammatical particles are lexicon territory. Tool 1 (lexicon-core) should document:
+    - Grammatical function (conjunction, adversative, transitional)
+    - Usage patterns in different discourse contexts
+    - Technical linguistic analysis
+
+    This is precisely what lexicons are designed for.
+
+  tool_3_adds_value: false
+  tool_3_value_assessment: |
+    Tool 3 could not add value beyond Tool 1 lexicon data. No modern debates exist about δέ,
+    no error corrections needed, no translator-specific guidance beyond "it's a conjunction."
+
+    Forcing a Tool 3 entry would merely duplicate Tool 1 grammatical content, violating the
+    principle that "Tool 3 supplements (not duplicates) Tool 1."
+
+# === VALIDATION ===
+validation:
+  exhaustive_search_completed: true
+  scope_boundaries_respected: true
+  tool_1_checked: true  # Verified Tool 1 covers grammatical particles
+  no_valuable_insights_found: true
+  skip_is_success: true  # Demonstrates appropriate scope boundary detection
+
+# === RECOMMENDATIONS ===
+recommendations:
+  recommend_tool_1_coverage: true
+  tool_1_scope: "grammatical_function"  # Function, usage patterns, discourse analysis
+  recommend_future_review: false  # Unlikely to develop practical insights beyond grammar
+
+# === METADATA ===
+metadata:
+  skip_decision_date: "2025-11-11"
+  researcher: "Claude Sonnet 4.5"
+  validated_by: "self-review"
+  validation_date: "2025-11-11"
+
+  tool_1_file: ".data/bible/words/strongs/G1161/G1161-lexicon-core.yaml"
+  tool_1_sufficient: true

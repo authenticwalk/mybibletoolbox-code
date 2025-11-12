@@ -1,0 +1,470 @@
+# Output Schema for Tool 3: Strong's Web Insights
+# Purpose: Modern insights and practical applications from expert web sources
+# Authority: MEDIUM to MEDIUM-LOW (clearly marked per source)
+# File Location: ./bible/words/strongs/{num}/{num}-web-insights.yaml
+
+# === METADATA ===
+strongs_number: "G1234"  # or H#### for Hebrew
+language: "greek"  # or "hebrew"
+lemma: "λέγω"
+transliteration: "legō"
+gloss: "say, speak, tell"
+
+tool:
+  name: "strongs-web-insights"
+  version: "1.0.0"
+  generated_date: "2025-11-11"
+
+# === DEPENDENCY: Tool 1 (Lexicon Core) ===
+# ALWAYS read Tool 1 output FIRST to avoid duplication
+# Tool 3 should ADD to Tool 1, not repeat it
+lexicon_core_file: ".data/bible/words/strongs/G1234/G1234.strongs-lexicon-core.yaml"
+lexicon_core_read: true
+lexicon_core_date: "2025-11-10"
+
+# === MODERN INSIGHTS (MEDIUM authority - expert web sources) ===
+modern_insights:
+  # Insights from expert blogs, structured sites, scholar commentary
+  # Must add value beyond lexicon data (not just repeating Thayer's)
+
+  - insight_id: 1
+    category: "linguistic_analysis"
+    content: |
+      Modern corpus linguistics shows this word appears in formal discourse
+      patterns, contrasting with informal speech markers in Koine Greek {mounce-2023}
+    source:
+      url: "https://example.com/article"
+      site_name: "BillMounce.com"
+      author: "William D. Mounce"
+      credentials: "Ph.D. in New Testament, author of 'Basics of Biblical Greek'"
+      authority_level: "MEDIUM"
+      authority_note: "Expert analysis by Greek textbook author, not peer-reviewed"
+      verification_date: "2025-11-11"
+
+  - insight_id: 2
+    category: "contemporary_understanding"
+    content: |
+      Recent scholarship emphasizes the semantic range includes not just speaking
+      but authoritative proclamation in certain contexts {heiser-2022}
+    source:
+      url: "https://example.com/post"
+      site_name: "Michael Heiser Blog"
+      author: "Michael S. Heiser"
+      credentials: "Ph.D. in Hebrew Bible, peer-reviewed publications"
+      authority_level: "MEDIUM"
+      authority_note: "Expert scholar, personal blog format"
+      verification_date: "2025-11-11"
+
+  - insight_id: 3
+    category: "theological_insight"
+    content: |
+      The theological weight of this word in John 1:1 has been explored in
+      contemporary Logos Christology discussions {bible-org-2021}
+    source:
+      url: "https://bible.org/article/word-studies"
+      site_name: "Bible.org"
+      author: "Daniel B. Wallace"
+      credentials: "Ph.D., Professor at Dallas Theological Seminary"
+      institution: "Dallas Theological Seminary"
+      authority_level: "MEDIUM-HIGH"
+      authority_note: "Seminary professor, institutional backing"
+      verification_date: "2025-11-11"
+
+# === PRACTICAL APPLICATIONS (MEDIUM authority) ===
+practical_applications:
+
+  # For Bible Translators
+  for_translators:
+    - application_id: 1
+      challenge: "Distinguishing formal vs. informal speech registers"
+      guidance: |
+        In languages with formal/informal distinctions (Korean, Japanese, etc.),
+        consider context: divine speech requires highest register, casual
+        conversation uses informal {sil-notes-2020}
+      evidence_type: "field_experience"
+      source:
+        url: "https://example.com/sil-notes"
+        organization: "SIL International"
+        author_role: "Bible Translation Consultant"
+        authority_level: "MEDIUM-HIGH"
+        authority_note: "HIGH for practical applications - field-tested solution"
+        verification_date: "2025-11-11"
+      cross_ref_tool6: true  # If Tool 6 (translation patterns) has related data
+
+    - application_id: 2
+      challenge: "Handling synonyms in target language"
+      guidance: |
+        When target language has multiple 'say' verbs (e.g., Indonesian:
+        berkata, mengatakan, bilang), map to Greek synonyms (legō, eipon,
+        phēmi) rather than this word alone {ufw-2021}
+      evidence_type: "translation_resource"
+      source:
+        url: "https://git.door43.org/..."
+        organization: "unfoldingWord"
+        authority_level: "MEDIUM"
+        authority_note: "Multi-scholar translation resource, open source"
+        verification_date: "2025-11-11"
+
+  # For Preachers and Teachers
+  for_preachers:
+    - application_id: 1
+      context: "Sermon illustration for John 1:1"
+      guidance: |
+        Effective teaching point: contrast 'speaking' (temporary) with 'The Word'
+        (eternal). Use analogy of breath that fades vs. written word that endures.
+        Based on Logos theology {precept-austin}
+      evidence_type: "teaching_illustration"
+      caveat: "Verify theological soundness with Tool 2 (scholarly analysis)"
+      source:
+        url: "https://preceptaustin.org/..."
+        site_name: "Precept Austin"
+        authority_level: "MEDIUM-LOW"
+        authority_note: "Helpful synthesis, verify theological claims"
+        verification_date: "2025-11-11"
+
+    - application_id: 2
+      context: "Explaining word studies to congregation"
+      guidance: |
+        When teaching on this word, avoid etymological fallacy of tracing too far
+        back to classical roots. Focus on NT usage patterns {mounce-teaching}
+      evidence_type: "pedagogical_guidance"
+      source:
+        author: "William D. Mounce"
+        authority_level: "MEDIUM"
+        verification_date: "2025-11-11"
+
+  # For Students
+  for_students:
+    - application_id: 1
+      learning_point: "Common translation equivalents"
+      guidance: |
+        English translations render this word as 'say' (most common), 'speak',
+        'tell', 'call', 'ask'. Understanding context determines choice {netbible}
+      source:
+        url: "https://netbible.org/bible/..."
+        site_name: "NET Bible Translator Notes"
+        authority_level: "MEDIUM-HIGH"
+        authority_note: "Named scholars, translation practitioner perspective"
+        verification_date: "2025-11-11"
+
+# === ERROR CORRECTIONS (5-part structure from Exp 4) ===
+error_corrections:
+  # Document common misconceptions with expert refutations
+  # Use 5-part structure: Error → Classification → Refutation → Validation → Alternative
+
+  - error_id: 1
+    error_type: "etymological_fallacy"  # or semantic_anachronism, reverse_etymological_fallacy
+    common_claim: "This word comes from [root] therefore it ALWAYS means [X]"
+    prevalence: "moderate"  # widespread | moderate | uncommon
+    sources_of_error:
+      - "Popular teaching"
+      - "Outdated commentary"
+
+    # PART 1: Error Statement (clear, non-mocking)
+    error_statement: |
+      Common claim: Etymology from [root] means word always carries [meaning] {source}
+
+    # PART 2: Classification (name the fallacy type)
+    fallacy_classification:
+      primary_type: "etymological_fallacy"
+      alternative_names:
+        - "semantic_anachronism"  # D.A. Carson's term
+        - "reverse_etymological_fallacy"  # Robert Cara's term
+      definition: "Assuming historical etymology determines current meaning"
+
+    # PART 3: Multi-Layered Refutation (4-5 evidence types)
+    refutation:
+      evidence_1_linguistic: |
+        Etymology shows historical development, but meaning is determined by
+        usage in context, not ancient roots {mounce-blog}
+      evidence_2_diachronic: |
+        Semantic shift from Classical to Koine Greek shows meaning evolution.
+        NT usage differs from Homer's use {lsj}
+      evidence_3_contextual: |
+        Context analysis shows word used in senses incompatible with root
+        etymology in [specific verses] {netbible}
+      evidence_4_scholarly_consensus: |
+        Major lexicons (BDAG, LSJ, Thayer) all note semantic range beyond
+        etymological root {bdag}
+
+    # PART 4: Expert Validation (stack authorities - pyramid)
+    expert_validation:
+      very_high_authority:
+        - author: "D.A. Carson"
+          credentials: "Ph.D., Research Professor of New Testament"
+          quote: "Calls this 'semantic anachronism' in Exegetical Fallacies"
+          authority_level: "VERY HIGH"
+          source_url: "https://example.com/carson"
+      high_authority:
+        - author: "Robert Cara"
+          credentials: "Ph.D., Professor of New Testament"
+          quote: "Identifies as 'reverse etymological fallacy'"
+          authority_level: "HIGH"
+      medium_authority:
+        - author: "William D. Mounce"
+          credentials: "Ph.D., Greek textbook author"
+          quote: "Very, very dangerous error type"
+          authority_level: "MEDIUM"
+          source_url: "https://billmounce.com/..."
+
+    # PART 5: Correct Alternative (teach proper methodology)
+    correct_alternative:
+      principle: "Context determines meaning, not etymology"
+      methodology: |
+        1. Check word usage in NT corpus (not classical roots)
+        2. Analyze immediate context
+        3. Compare contemporary usage (Koine period)
+        4. Consult modern lexicons (BDAG, not classical dictionaries)
+      better_analogy: "Word meanings evolve like 'nice' (foolish → pleasant)"
+      biblical_usage_pattern: |
+        In NT, word appears in [X contexts] with [Y semantic range] {concordance}
+
+    # Quality metadata
+    minimum_sources: 2  # MEDIUM-HIGH or higher
+    minimum_authority: "HIGH"  # At least 1 HIGH or VERY HIGH
+    evidence_types_count: 4
+    tone: "gracious_pedagogical"
+
+    cross_ref_tool1: true  # Tool 1 (lexicon-core) has correct etymology
+    cross_ref_tool2: true  # Tool 2 (scholarly) may have academic treatment
+
+# === SCHOLARLY DISAGREEMENTS & CULTURAL DEBATES (Multi-Perspective Framework from Exp 1, 5) ===
+scholarly_disagreements:
+  # For words with ongoing expert debate (pneuma, ekklesia patterns)
+  # Present multiple credible views without imposing single answer
+
+  - disagreement_id: 1
+    topic: "Translation choice in theological contexts"
+    debate_status: "ongoing"  # or "settled" or "emerging"
+    controversy_type: "interpretive"  # or "translational" or "theological" or "cultural"
+
+    # Document all major positions fairly
+    positions:
+      - position_id: 1
+        view_name: "Traditional position"
+        advocates:
+          - name: "Scholar Name"
+            credentials: "Ph.D., Institution"
+            authority_level: "MEDIUM-HIGH"
+        key_arguments:
+          - "Argument 1 with evidence {source}"
+          - "Argument 2 with evidence {source}"
+        strengths:
+          - "Strength 1"
+          - "Strength 2"
+        considerations:
+          - "Consideration 1"
+          - "Consideration 2"
+        sources:
+          - url: "https://example.com"
+            verification_date: "2025-11-11"
+
+      - position_id: 2
+        view_name: "Reformist position"
+        advocates:
+          - name: "Another Scholar"
+            credentials: "Ph.D., Institution"
+            authority_level: "MEDIUM"
+        key_arguments:
+          - "Argument 1 with evidence {source}"
+          - "Argument 2 with evidence {source}"
+        strengths:
+          - "Strength 1"
+          - "Strength 2"
+        considerations:
+          - "Consideration 1"
+          - "Consideration 2"
+        sources:
+          - url: "https://example.com"
+            verification_date: "2025-11-11"
+
+    # Cultural sensitivity factors (from Exp 5)
+    cultural_considerations:
+      post_colonial_contexts:
+        issue: "Translation may carry colonial overtones"
+        guidance: "Consider local sensitivities to institutional terminology"
+        affected_regions: ["Global South", "post-colonial contexts"]
+      house_church_movements:
+        issue: "Building-centric language problematic"
+        guidance: "Assembly language better captures gathering concept"
+      ecumenical_contexts:
+        issue: "Denominational implications"
+        guidance: "Acknowledge theological traditions behind choices"
+
+    # Translator guidance (options, not mandates)
+    translator_guidance:
+      decision_framework:
+        - "Consider target audience theological background"
+        - "Assess cultural context (post-colonial, house church, etc.)"
+        - "Check if context is religious or secular assembly"
+        - "Consult Tool 1 for semantic range data"
+      contextual_factors:
+        - factor: "Audience theology"
+          weight: "high"
+        - factor: "Cultural sensitivity"
+          weight: "high"
+        - factor: "Semantic precision"
+          weight: "medium"
+      not_an_answer_sheet: true  # Guidance as options, not edicts
+
+    # Bias detection validation (from Exp 5)
+    bias_detection:
+      reversal_test: "passed"  # Could presentation order reverse without changing implications?
+      respect_test: "passed"  # Would advocates feel fairly represented?
+      evidence_test: "passed"  # Strongest arguments for all positions presented?
+
+    # Quality metadata
+    minimum_positions: 2
+    minimum_sources_per_position: 1
+    tone: "fair_charitable"
+
+# === TEACHING HELPS (practical pedagogy) ===
+teaching_helps:
+
+  - help_id: 1
+    target_audience: "seminary_students"
+    help_type: "memory_aid"
+    content: |
+      Remember: 'legō' is the most common NT word for 'say' - it's the default
+      choice. Other verbs (eipon, phēmi, laleō) have specific nuances {mounce}
+    source:
+      author: "William D. Mounce"
+      authority_level: "MEDIUM"
+      verification_date: "2025-11-11"
+
+  - help_id: 2
+    target_audience: "bible_study_leaders"
+    help_type: "study_question"
+    content: |
+      When studying passages with this word, ask: "Who is speaking to whom?"
+      Authority and relationship context shapes meaning {bible-org}
+    source:
+      site_name: "Bible.org"
+      authority_level: "MEDIUM"
+      verification_date: "2025-11-11"
+
+  - help_id: 3
+    target_audience: "translators"
+    help_type: "cultural_note"
+    content: |
+      In honor/shame cultures, consider whether 'say' is neutral or if
+      'proclaim' better captures authoritative speech context {sil}
+    source:
+      organization: "SIL International"
+      authority_level: "MEDIUM-HIGH"
+      authority_note: "HIGH for cultural translation - field expertise"
+      verification_date: "2025-11-11"
+
+# === CROSS-REFERENCES TO OTHER TOOLS ===
+cross_references:
+  tool_1_lexicon_core:
+    file: ".data/bible/words/strongs/G1234/G1234.strongs-lexicon-core.yaml"
+    relationship: "Tool 3 supplements Tool 1 with modern insights and practical applications"
+
+  tool_2_scholarly_analysis:
+    file: ".data/bible/words/strongs/G1234/G1234.strongs-scholarly-analysis.yaml"
+    relationship: "Tool 2 provides peer-reviewed depth; Tool 3 provides accessible expert commentary"
+    notes: "Verify theological claims in Tool 3 against Tool 2 when available"
+
+  tool_6_translation_patterns:
+    file: ".data/bible/words/strongs/G1234/G1234.strongs-translation-patterns.yaml"
+    relationship: "Tool 6 provides corpus data; Tool 3 provides expert translator guidance"
+    notes: "Complementary - data-driven patterns vs. practitioner experience"
+
+# === WEB SOURCES SUMMARY ===
+sources_summary:
+  total_sources: 8
+  authority_distribution:
+    medium_high: 3
+    medium: 4
+    medium_low: 1
+  source_types:
+    expert_blogs: 3
+    structured_sites: 2
+    translator_resources: 2
+    teaching_resources: 1
+  verification_complete: true
+  all_credentials_verified: true
+
+# === QUALITY METADATA ===
+metadata:
+  extraction_date: "2025-11-11 10:30:00"
+
+  # Level 1: CRITICAL validation (must pass 100%)
+  validation_level_1:
+    all_sources_credentialed: true
+    authority_levels_marked: true
+    inline_citations_present: true
+    no_fabricated_data: true
+    tool_1_read_first: true
+    content_adds_value: true  # Beyond lexicon data
+
+  # Level 2: HIGH PRIORITY validation (80%+ pass)
+  validation_level_2:
+    modern_insights_expert_based: true
+    practical_apps_grounded: true
+    error_corrections_with_evidence: true
+    error_corrections_5part_complete: true  # From Exp 4
+    teaching_helps_appropriate: true
+    multiple_sources_when_available: true
+    multi_perspective_fairness: true  # From Exp 1, 5
+    bias_detection_passed: true  # Reversal, Respect, Evidence tests from Exp 5
+    gracious_tone_maintained: true  # Error corrections pedagogical, not harsh
+
+  # Level 3: MEDIUM PRIORITY validation (60%+ pass)
+  validation_level_3:
+    author_credentials_documented: true
+    translator_guidance_field_tested: true  # When applicable
+    cross_refs_to_other_tools: true
+    verification_dates_recorded: true
+    discipline_specific_coverage_noted: true  # From Exp 2
+    cultural_sensitivity_addressed: true  # When applicable, from Exp 5
+    scope_boundaries_respected: true  # From Exp 3
+
+  # Data quality indicators
+  data_quality:
+    authority_verification_method: "manual_credential_check"
+    sources_vetted_against_inventory: true
+    no_contradictions_with_tool_1: true
+    web_search_queries_logged: true
+    disciplines_searched: ["theology", "linguistics", "translation_studies"]  # From Exp 2
+
+  # Coverage notes (discipline-specific from Exp 2)
+  coverage_notes: |
+    This word has excellent web coverage due to theological significance.
+    Multiple expert sources available across all categories (insights,
+    applications, teaching). Authority levels range from MEDIUM-HIGH
+    (institutional) to MEDIUM (expert blogs).
+
+    Disciplines searched: Bible study platforms, systematic theology,
+    virtue ethics, linguistic analysis, translation practitioner resources.
+    Coverage is strongest in [discipline] due to [reason].
+
+  # Skip decision documentation (from Exp 3)
+  skip_decision:
+    skipped: false  # true if word excluded from Tool 3
+    skip_reason: null  # "grammatical_particle" | "function_word" | "insufficient_coverage" | "tool_1_sufficient"
+    skip_rationale: null  # Detailed explanation if skipped
+    # Example for particles: "δέ is grammatical particle with no semantic content.
+    # All sources discuss function, not practical application. Belongs in Tool 1."
+
+  requires_human_review: false
+  tokens_used: 1500
+
+# === ATTRIBUTION (required for new sources) ===
+# All sources must be documented in /ATTRIBUTION.md
+# Include: copyright notice, citation code, license type
+attribution_check:
+  all_sources_in_attribution_file: true
+  new_sources_added:
+    - site: "BillMounce.com"
+      citation_code: "{mounce}"
+      license: "Used with attribution"
+      added_date: "2025-11-11"
+
+# === CHANGE LOG (for updates) ===
+changelog:
+  - version: "1.0.0"
+    date: "2025-11-11"
+    changes: "Initial extraction from web sources"
+    author: "Claude Sonnet 4.5"

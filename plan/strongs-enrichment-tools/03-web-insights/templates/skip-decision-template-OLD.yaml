@@ -1,0 +1,244 @@
+# Skip Decision Template - Tool 3 (Web Insights)
+# Based on Experiment 3 (G1161 de - scope boundary)
+# For documenting when and why a word is excluded from Tool 3
+
+# ============================================================================
+# Skip Decision Metadata
+# ============================================================================
+
+strongs_number: "G####"  # or H#### for Hebrew
+language: "greek"  # or hebrew
+lemma: "[Greek/Hebrew word]"
+transliteration: "[Transliteration]"
+gloss: "[Basic gloss]"
+
+skip_decision:
+  skipped: true
+  skip_date: "YYYY-MM-DD"
+  researcher: "[Name or agent ID]"
+
+# ============================================================================
+# Skip Reason & Category
+# ============================================================================
+
+skip_reason: "grammatical_particle"  # Choose one:
+# - grammatical_particle (no semantic content)
+# - function_word (purely functional, no lexical meaning)
+# - insufficient_coverage (no expert web sources found)
+# - tool_1_sufficient (lexicon data is complete, no practical insights available)
+# - out_of_scope (other reason - explain in rationale)
+
+# ============================================================================
+# Skip Rationale (detailed explanation)
+# ============================================================================
+
+skip_rationale: |
+  [Detailed explanation of why this word is being skipped]
+
+  Example for grammatical particle:
+  "δέ is a purely grammatical particle (conjunction/adversative) with no
+  semantic content. All web sources found discuss grammatical function
+  (sentence connection, contrast marking) rather than practical application
+  or modern insights. This content belongs in Tool 1 (lexicon-core) as
+  technical grammar documentation. Tool 3 adds zero value for function words."
+
+  Example for insufficient coverage:
+  "Despite exhaustive search across 10+ queries and multiple disciplines
+  (Bible study platforms, linguistics, theology, translation resources),
+  found only 1 source with minimal content. Insufficient expert coverage
+  for credible Tool 3 entry. This word may benefit from specialized academic
+  research (Tool 2) but lacks accessible web commentary."
+
+  Example for tool_1_sufficient:
+  "Lexicon data in Tool 1 fully covers this word's usage and meaning.
+  Web search found no modern debates, no common errors to correct, no
+  specialized translator guidance, and no practical insights beyond
+  standard lexicon content. Tool 3 would merely duplicate Tool 1."
+
+# ============================================================================
+# Search Documentation (prove exhaustive search)
+# ============================================================================
+
+search_documentation:
+  # Document searches performed to justify skip decision
+  queries_executed:
+    - query: "[Search query 1]"
+      platform: "WebSearch"  # or specific site
+      results: "Minimal/none relevant"
+      date: "YYYY-MM-DD"
+
+    - query: "[Search query 2]"
+      platform: "WebSearch"
+      results: "Only grammatical discussion, no practical insights"
+      date: "YYYY-MM-DD"
+
+    - query: "[Search query 3]"
+      platform: "[Specific site - e.g., billmounce.com, bible.org]"
+      results: "Technical grammar only"
+      date: "YYYY-MM-DD"
+
+  # Disciplines checked
+  disciplines_searched:
+    - "Bible study platforms (Bible.org, NetBible, etc.)"
+    - "Linguistic analysis sites"
+    - "Translation practitioner resources (SIL, Wycliffe)"
+    - "Theological dictionaries online"
+    - "Scholar blogs (Mounce, etc.)"
+
+  # Total search effort
+  total_queries: 10  # Minimum 5 for insufficient_coverage skip
+  total_sources_reviewed: 15
+  relevant_sources_found: 0  # or 1-2 if insufficient
+
+# ============================================================================
+# Sources Found (if any)
+# ============================================================================
+
+sources_found:
+  # If any sources found, document them to show they're inadequate
+  - source:
+      url: "[URL]"
+      site_name: "[Site]"
+      author: "[Author if known]"
+    content_type: "grammatical_function"  # or minimal_content, lexicon_repetition
+    reason_insufficient: |
+      [Why this source doesn't justify Tool 3 inclusion]
+      Example: "Discusses conjunction function only, no practical application"
+      Example: "Only 2 sentences, repeats BDAG, no modern insight"
+
+# ============================================================================
+# Scope Boundary Analysis
+# ============================================================================
+
+scope_boundary_analysis:
+  # Tool 1 vs Tool 3 territory
+  belongs_in_tool_1: true  # true | false
+  tool_1_rationale: |
+    [Why this belongs in Tool 1 if true]
+    Example: "Grammatical particles are lexicon territory. Tool 1 should
+    document function, usage patterns, and technical grammar. Tool 3 focuses
+    on practical insights, modern debates, and translator guidance - none
+    of which apply to function words."
+
+  tool_3_adds_value: false  # true | false
+  tool_3_value_assessment: |
+    [Explain what value Tool 3 would/wouldn't add]
+    Example: "Tool 3 could not add value beyond Tool 1 lexicon data.
+    No modern debates, no error corrections needed, no translator-specific
+    guidance beyond 'it's a conjunction'. Forcing Tool 3 entry would
+    merely duplicate Tool 1 content."
+
+# ============================================================================
+# Word Category Analysis
+# ============================================================================
+
+word_category:
+  # What type of word is this?
+  part_of_speech: "conjunction"  # or particle, preposition, article, etc.
+  semantic_content: false  # true | false - does word carry meaning or just function?
+  lexical_meaning: false  # true | false - does word have lexical entry or just grammar?
+
+  # Function vs Content
+  function_word: true  # true | false
+  content_word: false  # true | false
+
+  # If function word, what function?
+  grammatical_function: "adversative_conjunction"
+  function_description: |
+    [Describe the grammatical function]
+    Example: "Connects clauses with adversative/contrastive sense ('but', 'and').
+    Purely grammatical connector with no semantic content."
+
+# ============================================================================
+# Skip Decision Validation
+# ============================================================================
+
+validation:
+  # Confirm skip is appropriate (not just lazy research)
+  exhaustive_search_completed: true
+  scope_boundaries_respected: true
+  tool_1_checked: true  # Did you verify Tool 1 covers this?
+  no_valuable_insights_found: true
+
+  # Appropriate skip = SUCCESS (not failure)
+  skip_is_success: true
+  success_rationale: |
+    [Why this skip demonstrates good judgment]
+    Example: "Recognizing scope boundaries and appropriately skipping
+    function words demonstrates system integrity. Not every word needs
+    Tool 3 coverage. Skip decision = SUCCESS."
+
+# ============================================================================
+# Recommendations
+# ============================================================================
+
+recommendations:
+  # What should happen with this word?
+  recommend_tool_1_coverage: true  # Should Tool 1 cover this?
+  tool_1_scope: "grammatical_function"  # What should Tool 1 include?
+
+  recommend_tool_2_coverage: false  # Would scholarly analysis help?
+  tool_2_note: null
+
+  recommend_future_review: false  # Check again later if web coverage grows?
+  review_timeframe: null  # e.g., "2 years" if true
+
+# ============================================================================
+# Quality Metadata
+# ============================================================================
+
+metadata:
+  skip_decision_date: "YYYY-MM-DD"
+  researcher: "[Name or agent ID]"
+  validated_by: "[Name or 'self-review']"
+  validation_date: "YYYY-MM-DD"
+
+  # Cross-references
+  tool_1_file: ".data/bible/words/strongs/[num]/[num]-lexicon-core.yaml"
+  tool_1_sufficient: true
+
+# ============================================================================
+# Notes for Researchers
+# ============================================================================
+
+researcher_notes: |
+  SKIP DECISION PHILOSOPHY:
+  - Skip is SUCCESS, not failure
+  - Demonstrates appropriate scope boundaries
+  - Shows system integrity (not forcing coverage)
+  - Honest assessment over completionism
+
+  WHEN TO SKIP:
+  1. Grammatical particles (δέ, γάρ, etc.)
+  2. Function words with no semantic content
+  3. Words with insufficient expert web coverage (after exhaustive search)
+  4. Words where Tool 1 is sufficient (no practical insights beyond lexicon)
+
+  WHEN NOT TO SKIP:
+  1. Rare words with specialized coverage (see Exp 2 - eutrapelia in virtue ethics)
+  2. Words with common errors to correct
+  3. Words with translator-specific challenges
+  4. Words with modern debates or cultural sensitivities
+
+  EXHAUSTIVE SEARCH REQUIRED:
+  - Minimum 5 queries for insufficient_coverage skip
+  - Check multiple disciplines
+  - Document all searches performed
+  - Prove insufficient, not just inconvenient
+
+  SCOPE BOUNDARY CLARITY:
+  - Tool 1: Grammar, lexicon, technical linguistics
+  - Tool 3: Practical insights, modern debates, error corrections, translator guidance
+  - If unsure, err toward inclusion and document why
+
+  EXAMPLES TO STUDY:
+  - Exp 3: experiments/exp3-scope-boundary/G1161-boundary-assessment.md
+  - See how δέ was correctly identified as outside Tool 3 scope
+  - Note documentation of search effort
+  - Note scope boundary reasoning
+
+  QUALITY STANDARD:
+  - Document search effort thoroughly
+  - Provide clear rationale
+  - Reference scope boundary criteria
+  - Appropriate skip = demonstrates good judgment
