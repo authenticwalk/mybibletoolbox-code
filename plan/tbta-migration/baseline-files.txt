@@ -1,0 +1,12 @@
+bible-study-tools/tbta/features/STAGES.md
+bible-study-tools/tbta/features/README.md
+bible-study-tools/tbta/.migration-state
+bible-study-tools/tbta/languages/README.md
+bible-study-tools/tbta/README.md
+bible-study-tools/tbta/learnings/README.md
+bible-study-tools/tbta/tbta-source/TBTA-FEATURES.md
+bible-study-tools/tbta/tbta-source/CRITIQUE.md
+bible-study-tools/tbta/tbta-source/README.md
+bible-study-tools/tbta/tbta-source/DATA-STRUCTURE.md
+bible-study-tools/tbta/tbta-source/COVERAGE.md
+bible-study-tools/tbta/structure/README.md
