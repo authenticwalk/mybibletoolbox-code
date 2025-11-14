@@ -160,11 +160,45 @@ See [../tbta-source/TBTA-FEATURES.md](../tbta-source/TBTA-FEATURES.md) for compl
 
 ---
 
+## NEW Features (Beyond TBTA's 59)
+
+**Status**: 🔵 Proposed (23 extensions documented) • See [../tbta-source/IMPROVEMENTS.md](../tbta-source/IMPROVEMENTS.md) for full details
+
+### Aktionsart (Lexical Aspect)
+**Status**: ⬜ Proposed • **Definition**: Inherent temporal structure (State/Activity/Accomplishment/Achievement/Semelfactive)
+**Languages**: Slavic, Niger-Congo, Austronesian (aspect-prominent languages)
+**Source**: NEW • **Priority**: Tier A
+
+### Evidentiality
+**Status**: ⬜ Proposed • **Definition**: Information source (witnessed/reported/inferred/assumptive)
+**Languages**: 250+ require evidentials (Quechuan, Tucanoan, Turkish, Korean)
+**Source**: NEW • **Priority**: Tier A
+
+### Switch-Reference
+**Status**: ⬜ Proposed • **Definition**: Same-subject vs different-subject marking in clause chains
+**Languages**: 80+ TNG languages, many Papuan, some Native American
+**Source**: NEW • **Priority**: Tier B
+
+### Mirativity
+**Status**: ⬜ Proposed • **Definition**: New/surprising information to speaker
+**Languages**: Albanian, Korean, Tibeto-Burman
+**Source**: NEW • **Priority**: Tier B
+
+### Honorifics/Social Register (Expanded)
+**Status**: ⬜ Proposed • **Definition**: Plain/polite/humble/exalted register marking
+**Languages**: Japanese, Korean, Javanese, many Southeast Asian
+**Source**: NEW (TBTA has limited "Speaker's Attitude") • **Priority**: Tier A
+
+**Additional Extensions** (18 more): Morphological Mood Layer, Phasal Marking, Deontic Strength Gradation, Presupposed Entities, Collective Reference, Vocative Addressing, Lesser/Greater Paucal, Morphological Number Layer, Collective Number, Emphatic Affirmative, Negation Scope, Elevation-Based Proximity, Across-Water Proximity, Excessive vs Intensification, Attenuative/Diminutive, Information Structure, Split Referent Tracking, Impersonal Agent
+
+---
+
 ## Legend
 
 - ✅ **Complete** (Stage 6): Production-ready with validation
 - 🟨 **In Progress** (Stages 2-5): Active development
 - ⬜ **Not Started** (Stage 1 or pending): Research phase or not yet prioritized
+- 🔵 **Proposed** (NEW features): Documented extensions beyond TBTA's original 59
 
 **Accuracy**: Prediction accuracy against TBTA annotations (when available)
 **Source**: TBTA original / Redefined / NEW (our additions beyond TBTA's 59)
@@ -173,18 +207,18 @@ See [../tbta-source/TBTA-FEATURES.md](../tbta-source/TBTA-FEATURES.md) for compl
 
 ## Quick Stats
 
-- **Total Features**: 59 TBTA + TBD new
+- **Total Features**: 59 TBTA + 23 NEW = 82 total
 - **Complete**: 2 (Person/Clusivity, Mood)
 - **In Progress**: 2 (Aspect, Participant Tracking)
-- **Pending**: 55+
+- **Pending**: 55 TBTA + 23 NEW = 78
 
-**Tier A Priority** (19 features): Essential for 1000+ languages
-**Tier B Priority** (20 features): Important, often inferable
-**Tier C Priority** (20 features): Specialized, language-specific
+**Tier A Priority** (19 TBTA + 5 NEW): Essential for 1000+ languages
+**Tier B Priority** (20 TBTA + 8 NEW): Important, often inferable
+**Tier C Priority** (20 TBTA + 10 NEW): Specialized, language-specific
 
 See individual feature directories for detailed experiments, prompts, and validation results.
 
 ---
 
-**Methodology**: [STAGES.md](STAGES.md) • **Learnings**: [../learnings/README.md](../learnings/README.md)
+**Methodology**: [STAGES.md](STAGES.md) • **Learnings**: [../learnings/README.md](../learnings/README.md) • **Extensions**: [../tbta-source/IMPROVEMENTS.md](../tbta-source/IMPROVEMENTS.md)
 **Last Updated**: 2025-11-14
