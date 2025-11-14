@@ -218,6 +218,8 @@ Results:
 - If NEVER present → IMPLICIT (must predict)
 ```
 
+**Note**: "EXPLICIT" refers to lexical defaults (e.g., "οὐ" is always negative), not looking at TBTA answers. This approach must work for Biblical books TBTA hasn't annotated yet.
+
 ---
 
 ### 7. Pattern Recognition Across Contexts
@@ -415,6 +417,7 @@ Test predictions against actual Bible translations to confirm accuracy.
 **Symptom**: Prediction doesn't match theological context
 **Example**: Missing that creation is exclusively God's work in Gen 1:26
 **Fix**: Add theological context questions to Level 1 prompts
+**Caution**: If a theological concept is not morphologically present in the source language but inferred from context, mark with metadata flag to avoid eisogesis. Annotators should document when interpretation goes beyond explicit source language marking.
 
 ### 2. Morphological ≠ Semantic
 
@@ -475,8 +478,6 @@ Test predictions against actual Bible translations to confirm accuracy.
 - Design adversarial test sets to find weaknesses
 - Make predictions blind (before checking TBTA)
 - Lock predictions before validation (git commit)
-- Expect 60-70% accuracy on adversarial tests
-- Expect 80-90% accuracy on random tests
 - Document all errors and learnings
 
 **DON'T**:
@@ -532,21 +533,6 @@ High Accuracy = Check Tier 0 (explicit extraction)
               + Adversarial Testing (find weaknesses early)
 ```
 
----
-
-## Timeline Estimates
-
-**Per Feature** (validated through experiments):
-- Week 1: Training Phase (15-20 verses, pattern discovery, algorithm v1)
-- Week 2: Testing Phase (adversarial + random testing, error analysis, algorithm v2)
-- **Total: 2 weeks per feature**
-
-**When to Switch to Large-Scale Validation**:
-- After completing all features with adversarial approach
-- All features have algorithm v2.0+
-- Common patterns identified across features
-- Ready for 200+ verse comprehensive validation
-- Preparing for publication/release
 
 ---
 
