@@ -212,13 +212,20 @@ Going forward, all NEW features should follow STAGES.md to maintain consistency 
 
 **Stage 6: Validation & Peer Review**
 - ✅ Blind subagent testing protocol (never pollute context)
-- ✅ 3 critical peer reviewers (theological, linguistic, methodological)
+- ✅ 4 critical peer reviewers (theological, linguistic, methodological, **translation practitioner**)
+- ✅ **Translation Practitioner Review** (NEW):
+  - Assume role of Bible translator in target language
+  - Test 5-10 verses in 2-3 language families (marking and non-marking)
+  - Document what mistakes were avoided vs. made using TBTA data
+  - Evaluate net benefit: Is data helpful or harmful?
+  - Create TRANSLATOR-IMPACT.md with real-world translation scenarios
 - ✅ **TBTA reviewer communication template**:
   - Strategic questions (annotation philosophy, edge cases, ambiguity handling)
   - Our observations and concerns about TBTA approach
   - Labeling examples for TBTA team to review/correct
   - Priority verses where we're most uncertain
-- ✅ Production readiness checklist (comprehensive criteria)
+  - **Translation practitioner impact** section (what worked/confused translators)
+- ✅ Production readiness checklist (comprehensive criteria including translator approval)
 
 ### What Was Preserved from 10-Phase Methodology
 
@@ -235,6 +242,7 @@ Going forward, all NEW features should follow STAGES.md to maintain consistency 
 3. **Balanced sampling** - Explicit requirements (testament, genre, book, difficulty)
 4. **TBTA communication** - Template for strategic reviewer questions and concerns
 5. **Subagent discipline** - Mandatory blind testing to prevent context pollution
+6. **Practical translator testing** - Real-world translation scenarios to evaluate net benefit (mistakes avoided vs. made)
 
 ---
 

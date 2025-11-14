@@ -237,9 +237,9 @@ For EVERY error, follow this rigorous debugging process:
    - If accuracy < 95%: return to Stage 5, refine prompt
    - If accuracy ≥ 95%: proceed to peer review
 
-## Critical Peer Review (3 Subagents)
+## Critical Peer Review (4 Subagents)
 
-Launch 3 subagents for independent critical review:
+Launch 4 subagents for independent critical review:
 
  - [ ] **Subagent 3 (Theological Reviewer)**: Assume junior wrote this with theological blind spots
    - Review prompt for theological soundness
@@ -259,6 +259,23 @@ Launch 3 subagents for independent critical review:
    - Review error analysis rigor (6-step process followed?)
    - Check locked predictions discipline (git commits present?)
    - Verify external validation attempted (if applicable)
+
+ - [ ] **Subagent 6 (Translation Practitioner)**: Assume role of Bible translator in target language
+   - **Context**: "I'm translating the Bible into [language with this feature]. I have the TBTA data for this feature."
+   - **Practical Questions**:
+     - Is this data actually useful for translation decisions?
+     - What's helpful vs. confusing in the annotations?
+     - What mistakes might I make when using this data?
+     - Does the algorithm guidance match real translation challenges?
+   - **Test Scenarios**: Pick 5-10 verses and translate them using the TBTA data
+     - What went right? (What mistakes did I avoid?)
+     - What went wrong? (What errors did I make? Why?)
+     - What was missing? (What information did I need but couldn't find?)
+     - What was confusing? (What annotations led me astray?)
+   - **Language Diversity**: Test with 2-3 different language families
+     - Example: Austronesian (has clusivity) vs. Romance (doesn't have clusivity)
+     - Do annotations make sense for both marking and non-marking languages?
+   - **Report Format**: Create `experiments/TRANSLATOR-IMPACT.md` with findings
 
 ## TBTA Reviewer Communication
 
@@ -335,6 +352,32 @@ Launch 3 subagents for independent critical review:
 - Accuracy: {stated}% stated, {dominant}% dominant
 - External validation: {if applicable - languages checked, agreement rate}
 
+## Translation Practitioner Impact (Real-World Testing)
+
+**Purpose**: Evaluate whether TBTA data is actually useful for Bible translators
+
+**Languages Tested**: {2-3 language families, both marking and non-marking}
+**Verses Translated**: {5-10 sample verses using TBTA annotations}
+
+### What Worked for Translators:
+1. {Specific annotation that prevented common translation error}
+2. {Guidance that clarified ambiguous passage}
+3. {Pattern that helped across multiple verses}
+
+### What Confused Translators:
+1. {Annotation that led to incorrect translation}
+2. {Missing information needed for translation decision}
+3. {Ambiguous guidance that could be interpreted multiple ways}
+
+### Translation Mistakes Analysis:
+- **Mistakes Avoided** (thanks to TBTA): {n} translation errors prevented
+- **Mistakes Made** (despite TBTA): {n} errors introduced or not prevented
+- **Net Benefit**: {Overall assessment - is TBTA data helpful or harmful?}
+
+**Key Finding**: {Most important insight from translator perspective}
+
+**Recommendation**: {Should translators use this data as-is, wait for improvements, or avoid?}
+
 ## Requested Feedback
 
 1. Are our strategic questions addressing real TBTA annotation principles?
@@ -342,6 +385,7 @@ Launch 3 subagents for independent critical review:
 3. Are any of our "suspected errors" actually correct TBTA annotations we misunderstood?
 4. Should we adjust our algorithm to match TBTA perspective, or document as valid divergence?
 5. Any systematic patterns we're missing in our approach?
+6. **From translator testing**: Are cases where TBTA confused translators actually correct annotations that need better documentation, or potential issues to address?
 
 ---
 
@@ -352,6 +396,118 @@ Launch 3 subagents for independent critical review:
 
  - [ ] Send TBTA-REVIEW.md to TBTA team (if applicable)
  - [ ] Incorporate TBTA feedback into algorithm refinement
+
+## Practical Application Testing
+
+ - [ ] Create `experiments/TRANSLATOR-IMPACT.md` documenting real-world translation scenarios:
+
+```markdown
+# Translation Practitioner Impact Assessment: {Feature Name}
+
+## Executive Summary
+- Feature: {feature-name}
+- Languages tested: {list 2-3 language families}
+- Verses translated: {5-10 sample verses}
+- Overall utility: {High/Medium/Low}
+- Key findings: {1-sentence summary}
+
+## Translation Scenarios
+
+### Scenario 1: {Language Name} ({Language Family})
+**Language Profile**:
+- Does this language grammatically mark {feature}? {Yes/No}
+- If yes: How? {brief description}
+- Target audience: {Bible translation project context}
+
+**Translation Test** (Pick 3-5 verses from validate set):
+
+| Verse | English Text | TBTA Value | My Translation | What Helped | What Confused | Mistakes Avoided | Mistakes Made |
+|-------|-------------|------------|----------------|-------------|---------------|------------------|---------------|
+| {REF} | "{snippet}" | {value} | "{my translation}" | {What was useful} | {What was unclear} | {Errors prevented} | {Errors introduced} |
+
+**Overall Assessment**:
+- **Useful**: {What annotations helped most}
+- **Confusing**: {What led me astray}
+- **Missing**: {What I needed but didn't have}
+- **Mistakes Avoided**: {Specific translation errors prevented by TBTA data}
+- **Mistakes Made**: {Errors I made despite (or because of) TBTA data}
+
+### Scenario 2: {Different Language} ({Different Family})
+[Repeat structure above]
+
+### Scenario 3: Non-Marking Language (e.g., English, Spanish)
+**Question**: If my language doesn't grammatically mark this feature, is TBTA data still useful?
+
+**Translation Test**:
+[Test how annotations help even when language doesn't require explicit marking]
+
+## Cross-Language Patterns
+
+### What Works Across All Languages:
+1. {Pattern 1: What was universally helpful}
+2. {Pattern 2: What avoided common mistakes}
+3. {Pattern 3: What clarified ambiguity}
+
+### What Doesn't Work:
+1. {Issue 1: What confused translators}
+2. {Issue 2: What led to mistakes}
+3. {Issue 3: What was irrelevant or misleading}
+
+## Real Translation Mistakes Analysis
+
+### Mistake Type 1: {Category}
+**Example**: {Specific verse where translator made error}
+- **TBTA Value**: {what TBTA said}
+- **What I Translated**: {incorrect translation}
+- **Why I Made Mistake**: {What in TBTA data confused me or what was missing}
+- **Correct Translation**: {what it should have been}
+- **Fix Needed**: {How algorithm/annotations should improve}
+
+### Mistake Type 2: {Category}
+[Repeat structure]
+
+## Mistakes Successfully Avoided
+
+### Avoidance 1: {Specific error type}
+**Example**: {Verse where TBTA data prevented common error}
+- **Common Mistake**: {What translators typically get wrong}
+- **TBTA Guidance**: {What annotation prevented this}
+- **My Translation**: {Correct result}
+- **Why TBTA Helped**: {Specific insight that made difference}
+
+## Recommendations for Algorithm Improvement
+
+### Critical (Would prevent translation errors):
+1. {Specific improvement to prevent Mistake Type 1}
+2. {Specific improvement to prevent Mistake Type 2}
+
+### Important (Would reduce confusion):
+1. {Clarity improvement}
+2. {Additional context needed}
+
+### Nice-to-have (Would enhance usability):
+1. {Convenience feature}
+
+## Production Readiness from Translator Perspective
+
+**Would I recommend this to translation teams?** {Yes/No/With caveats}
+
+**Reasoning**: {Why or why not, what needs to change}
+
+**Minimum Viable**: {What must be fixed before this is usable}
+
+**Ideal State**: {What would make this truly excellent for translators}
+```
+
+ - [ ] Test with both marking and non-marking languages
+   - Marking language: Language that grammatically requires this feature
+   - Non-marking language: Language that doesn't grammatically distinguish this feature
+   - Document whether annotations are useful for both
+
+ - [ ] Identify translation-critical issues
+   - What mistakes would a translator make WITHOUT this data?
+   - What mistakes might they make WITH this data?
+   - What's the net benefit?
 
 ## Integration & Iteration
 
@@ -374,10 +530,19 @@ Launch 3 subagents for independent critical review:
 ## Production Readiness Checklist
 
  - [ ] Accuracy ≥ 95% on validate set (≥100 verses)
- - [ ] Peer review complete (3 critical reviews passed)
+ - [ ] Peer review complete (4 critical reviews passed)
+   - [ ] Theological reviewer approval
+   - [ ] Linguistic reviewer approval
+   - [ ] Methodological reviewer approval
+   - [ ] Translation practitioner approval
  - [ ] Error analysis documented (6-step process for all failures)
  - [ ] Locked predictions throughout (git commits present)
  - [ ] External validation conducted (if applicable)
+ - [ ] Practical application testing complete (TRANSLATOR-IMPACT.md)
+   - [ ] Tested with marking language(s)
+   - [ ] Tested with non-marking language(s)
+   - [ ] Net benefit is positive (more mistakes avoided than introduced)
+   - [ ] Translation teams would recommend using this data
  - [ ] TBTA review feedback integrated (if applicable)
  - [ ] README.md updated with final status
  - [ ] CROSS-FEATURE-LEARNINGS.md updated with transferable insights
