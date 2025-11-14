@@ -2,7 +2,7 @@
 
 ## What is TBTA?
 
-TBTA (The Bible Translator's Assistant) annotates 11,649 verses across 34 books (~37% of Bible) [tbta-source/COVERAGE.md](tbta-source/COVERAGE.md) with 59 linguistic features [tbta-source/TBTA-FEATURES.md](tbta-source/TBTA-FEATURES.md) needed for translation into 1,000+ languages. TBTA intentionally focuses on narrative and discourse-heavy books where cross-linguistic features matter most.
+TBTA (The Bible Translator's Assistant) annotates 11,649 verses across 34 books (~37% of Bible) ([tbta-source/COVERAGE.md](tbta-source/COVERAGE.md)) with 59 linguistic features ([tbta-source/TBTA-FEATURES.md](tbta-source/TBTA-FEATURES.md)) needed for translation into 1,000+ languages. TBTA intentionally focuses on narrative and discourse-heavy books where cross-linguistic features matter most.
 
 Features include clusivity, number systems, participant tracking, discourse genre, and theological patterns.
 
