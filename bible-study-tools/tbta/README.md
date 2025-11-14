@@ -27,7 +27,7 @@ TBTA (The Bible Translator's Assistant) annotates 31,102 Bible verses [tbta-sour
 
 ## AI Rules
 
-**Documentation Navigation**: All documents **must** follow progressive disclosure (README ≤200 lines, topics ≤400 lines) for AI agent accessibility. [/.claude/skills/progressive-disclosure/SKILL.md]
+**Documentation Navigation**: All documents **must** follow progressive disclosure (README ≤200 lines, topics ≤400 lines) for AI agent accessibility. [/.claude/skills/progressive-disclosure/SKILL.md] [TODO: is tbta-rebuild-with-llm/methodology/PROGRESSIVE-DISCLOSURE.md have any useful info that needs to go into the features/TEMPLATE.md or an extended file about AI-RULES in this dir]
 
 **Don't write code to predict**: This is a prompt and context engineering task only, never write code that will try to predict the values as that will be too limited. 
 

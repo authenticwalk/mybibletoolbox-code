@@ -1,0 +1,1 @@
+[TODO: start with tbta-rebuild-with-llm/tbta-data folder however it is limited in that it is mostly Genesis and not broad enough on the Bible, especially needs to deal with the difference between OT and NT in how it splits files/verses]

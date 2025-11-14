@@ -1,3 +1,9 @@
 [TODO: similar to ../tbta-source/TBTA-FEATURES.md and FEATURE-SUMMARY.md but focus on progress.  Not detailed progress which will be on the README for each feature but done/not done checkmark and if not done what stage it is at, what accuracy we can achieve, our definition (which may have diverged from tbta, language families impacted, most significant notes; cannot exceed 200 lines and defers in depth analaysis to teh feature README.md files).  Broken down into our groupings of how features are grouped.  Noting if the feature is original to TBTA, redefined, or NEW)]
 
 [TODO: integrate the best from GENERIC-FEATURE-TEMPLATE, stay on point, don't bloat but pull the most helpful into this, ensure it aligns with STAGES.md and it may need to be in it's own file to keep our progressive disclosure skill format]
+
+[TODO: incorporate tbta-rebuild-with-llm/features/README.md keeping only the relevant parts consistent with our new structure]
+
+[TODO: incoporate FEATURE-AUDIT-TEMPLATE.md after making it current with our latest]
+
+[TODO: need to go through each subdir of tbta-rebuild-with-llm/features and copy that dir over to here, standardizing directory names against feature names and groupings, standardizing all the files against our new STAGES.md and feature templates]
