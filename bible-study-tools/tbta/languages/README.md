@@ -2,27 +2,9 @@
 
 **Purpose**: Document how TBTA features apply to specific language families and provide guidance for Bible translators working in 1,000+ languages.
 
-**Status**: Migration pending - comprehensive language resources exist in previous research phase and will be migrated here.
-
 ---
 
-## Migration Plan
-
-**Source Materials**:
-- `/plan/tbta-rebuild-with-llm/languages/` - Detailed language family analyses
-- `/plan/tbta-rebuild-with-llm/combined/language-adaptation-guide.md` - Cross-linguistic patterns
-
-**Migration Approach**:
-1. Review and validate existing language documentation
-2. Restructure by language family (Austronesian, Niger-Congo, Sino-Tibetan, etc.)
-3. Link features to specific language requirements
-4. Create progressive disclosure structure (≤200 lines per README)
-
-**Timeline**: After Tier A feature completion (Months 4-6)
-
----
-
-## Key Language Examples (From Source Research)
+## Language Family Highlights
 
 ### Austronesian Languages (172 languages)
 **Critical Features**: Trial number, Clusivity

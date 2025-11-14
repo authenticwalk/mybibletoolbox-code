@@ -24,20 +24,20 @@ Features include clusivity, number systems, participant tracking, discourse genr
    - Without TBTA: Translators might impose chronological precision or vagueness not present in Hebrew
    - Impact: Affects interpretation of creation timeline, prophetic fulfillment, narrative flow
 
-## Creating a workflow that will Reproduce and Extend TBTA
+## Our Approach to TBTA Reproduction
 
 **Objective**: Reproduce and improve TBTA's linguistic features using LLM-based prediction instead of manual annotation.
 
-**Why reproduce it?**: Manual annotation is slow and opaque. LLM-based reproduction enables systematic prediction, validation, and extension to new features. It allows LLM memory to draw from extensive language and Biblical knowledge.
+**Why LLM-based?**: Manual annotation is slow and opaque. LLM-based reproduction enables systematic prediction, validation, and extension to new features while leveraging extensive language and Biblical knowledge.
 
-**Approach** (High-level task list):
- - [x] Extensively research TBTA and its goals → See [tbta-source/](tbta-source/) for comprehensive source documentation
- - [x] Establish methodology for feature experiments → [features/STAGES.md](features/STAGES.md) with consolidated learnings in [learnings/README.md](learnings/README.md)
- - [ ] Extensively research linguistic theory and languages → [languages/README.md](languages/README.md)
- - [ ] Extensively research each feature independently, then use prompt engineering to correctly predict it → [features/](features/)
- - [ ] Discover the rules to structure the data in nested relationships → [structure/README.md](structure/README.md)
+**Key Resources**:
+- **TBTA Source Analysis**: [tbta-source/](tbta-source/) - Comprehensive documentation of original TBTA system
+- **Feature Methodology**: [features/STAGES.md](features/STAGES.md) - 6-stage development workflow
+- **Consolidated Learnings**: [learnings/README.md](learnings/README.md) - Validated prompt engineering patterns
+- **Language Resources**: [languages/README.md](languages/README.md) - Cross-linguistic guidance
+- **Feature Catalog**: [features/README.md](features/README.md) - Progress tracking for all 82 features
 
-**Improvements**:
+**Improvements Over Original TBTA**:
  - Add rationale to answers. The why we reach a conclusion on a label can be invaluable for applying it in each use case.
  - Allow primary and secondary answers. When the choice is arbitrary seek consistency among language families.
  - Omit default values. It is better to have no answer than the wrong answer.
