@@ -18,7 +18,7 @@ All feature work should follow the STAGES.md methodology. Existing documentation
 
 TBTA (The Bible Translator's Assistant) annotates 31,102 Bible verses with 59 linguistic features needed for translation into 1,000+ languages. Features include clusivity, number systems, participant tracking, discourse genre, and theological patterns.
 
-**Why reproduce it?**: Manual annotation is slow and opaque. LLM-based reproduction enables systematic prediction, validation, and extension to new features.
+
 
 **Key studies**:
 - [Number Systems Analysis](features/number-systems/) - Semantic vs morphological encoding

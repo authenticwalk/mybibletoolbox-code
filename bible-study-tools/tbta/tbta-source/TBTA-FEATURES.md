@@ -1,0 +1,1 @@
+[TODO: look at FEATURE-CHECKLIST.md and all other files where we analyzed the features, however I don't want a progress/status update instead a list of their features, how they define it, the values they allow.  Foreach value what the definition is and any guidance they have on when to use it.  Coverage.  Concerns we have found of large scale inconsistencies]
