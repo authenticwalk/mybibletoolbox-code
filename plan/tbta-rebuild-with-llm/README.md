@@ -2,7 +2,15 @@
 
 **Objective**: Reproduce TBTA's 59 linguistic features using LLM-based prediction instead of manual annotation.
 
-**Approach**: Adversarial validation methodology with hierarchical prompting (Theology → Grammar).
+**Approach**: 6-stage systematic workflow with subagent isolation and rigorous validation.
+
+---
+
+## Getting Started
+
+**PRIMARY WORKFLOW**: [features/STAGES.md](features/STAGES.md) - The definitive 6-stage approach for building and validating TBTA features.
+
+All feature work should follow the STAGES.md methodology. Existing documentation provides supporting context and learnings.
 
 ---
 
@@ -22,20 +30,17 @@ TBTA (The Bible Translator's Assistant) annotates 31,102 Bible verses with 59 li
 
 ## Methodology
 
-**Core Approach**: Hierarchical prompting using theological context to improve grammatical predictions.
+**PRIMARY WORKFLOW**: [features/STAGES.md](features/STAGES.md) - Follow this 6-stage approach for all feature work.
 
-### Adversarial Testing Protocol
-Rather than large random samples, we use targeted edge cases to find weaknesses faster. Training phase allows free TBTA access; validation phase requires predictions locked before checking TBTA.
+**Supporting Principles**:
+- **Subagent Isolation**: Use subagents to prevent context pollution when accessing TBTA data
+- **Rigorous Validation**: 100 verses per value across train/test/validate splits
+- **Iterative Refinement**: Multiple prompt iterations until achieving high accuracy
+- **Progressive Disclosure**: Documentation follows ≤200 line README, ≤400 line topic files
 
-**Full methodology**: [methodology/ADVERSARIAL-TESTING.md](methodology/ADVERSARIAL-TESTING.md)
+**Template**: [GENERIC-FEATURE-TEMPLATE.md](GENERIC-FEATURE-TEMPLATE.md) - Standard structure for documenting features
 
-### Progressive Disclosure Standard
-All documentation follows the ≤200 line README, ≤400 line topic file structure for navigability.
-
-**Documentation standard**: [methodology/PROGRESSIVE-DISCLOSURE.md](methodology/PROGRESSIVE-DISCLOSURE.md)
-
-### Feature Implementation Template
-**Template guide**: [GENERIC-FEATURE-TEMPLATE.md](GENERIC-FEATURE-TEMPLATE.md) - Standard structure for documenting new feature implementations
+**Historical Note**: Earlier features used a 10-phase adversarial testing protocol. While valuable learnings came from this approach, all new work should follow the simpler 6-stage STAGES.md workflow.
 
 ---
 
@@ -70,9 +75,11 @@ For features requiring discourse-level context (participant tracking, discourse 
 
 ## Workflows
 
-**Feature Checklist**: [workflows/FEATURE-CHECKLIST.md](workflows/FEATURE-CHECKLIST.md) - All 59 features with completion status
+**PRIMARY**: [features/STAGES.md](features/STAGES.md) - The 6-stage workflow for building TBTA features
 
-**Local Analysis Workflow**: [LOCAL-ANALYSIS-WORKFLOW.md](LOCAL-ANALYSIS-WORKFLOW.md) - Detailed guide for analyzing TBTA features locally with Macula data integration. Covers verse selection, data extraction, pattern analysis, and validation methodology.
+**Feature Status**: [workflows/FEATURE-CHECKLIST.md](workflows/FEATURE-CHECKLIST.md) - All 59 features with completion status
+
+**Note**: LOCAL-ANALYSIS-WORKFLOW.md has been archived. It described an alternative ebible-based validation approach that is now superseded by the STAGES.md workflow.
 
 ---
 

@@ -13,11 +13,12 @@ This template provides a standardized approach for implementing, analyzing, or p
 - [ ] Read official TBTA documentation for this feature
 - [ ] Identify feature category (Noun/Verb/Clause/Phrase/Discourse)
 - [ ] List all possible values (complete enumeration)
-- [ ] Determine if feature is **explicit in YAML** or **must be inferred**
+- [ ] Determine if feature has **clear linguistic markers** or requires **semantic inference**
 
-**Key Question**: Is this feature directly extractable from TBTA data?
-- **YES** → Go to **Phase 2A: Direct Extraction** (Mood pathway - fastest)
-- **NO** → Go to **Phase 2B: LLM Prediction Framework** (Aspect/Person pathway)
+**Key Question**: What level of context is needed for accurate prediction?
+- **Discourse-level** → Requires multi-verse context (participant tracking, discourse genre)
+- **Local-level** → Predictable from verse + grammatical analysis (mood, voice, tense)
+- **Theological-level** → Requires doctrinal understanding (Trinity, divine attributes)
 
 ### Step 1.2: Translation Impact Analysis
 - [ ] Which language families need this feature? (List 3-5)
@@ -31,81 +32,42 @@ This template provides a standardized approach for implementing, analyzing, or p
 
 ---
 
-## Phase 2A: DIRECT EXTRACTION (For Explicit Features)
+## Phase 2: LLM PREDICTION FRAMEWORK
 
-### Step 2A.1: Locate Feature in YAML Structure
+**CRITICAL**: Never look at TBTA answers before making predictions. The workflow is:
+1. Analyze source text (Greek/Hebrew)
+2. Make prediction
+3. Lock prediction (git commit)
+4. THEN check TBTA for validation
 
-**Approach**: Ask LLM to examine sample YAML and identify where feature appears
+### Step 2.1: Training Phase (Learn Freely)
 
-**Prompt Template**:
-```
-I need to extract the "{feature_name}" feature from TBTA YAML data.
+**In training phase ONLY**: You can freely access TBTA data to learn patterns.
 
-Here is a sample verse YAML:
-{paste sample YAML}
+- [ ] Select 15-20 training verses
+- [ ] Study TBTA annotations for these verses
+- [ ] Identify patterns and decision rules
+- [ ] Document what triggers each feature value
 
-Please:
-1. Identify where "{feature_name}" appears in the structure
-2. Note the path (e.g., clauses[0].children[1].{feature_name})
-3. Check if it's at clause level, phrase level, or word level
-4. Confirm the field name is consistent
-```
+**Output**: Pattern documentation explaining when each value occurs
 
-**Test with 3 sample verses** to confirm location stability
-
-### Step 2A.2: Build Extraction Strategy
-
-**Approach**: Use LLM to read YAML and extract feature values with context
-
-**Prompt Template**:
-```
-Extract all instances of "{feature_name}" from this verse:
-
-{paste verse YAML}
-
-For each instance, provide:
-- Value of {feature_name}
-- Constituent (the text it applies to)
-- Context (parent clause/phrase)
-- Location in structure
-
-Format as simple list.
-```
-
-### Step 2A.3: Validate Extraction
-- [ ] Run on 10 sample verses
-- [ ] Compare extracted values vs manual inspection
-- [ ] Check edge cases (nested structures, missing values, null handling)
-- [ ] Document extraction reliability (should be 100% for explicit features)
-
-**Success Criteria**: 100% extraction accuracy on all sampled verses
-
----
-
-## Phase 2B: LLM PREDICTION FRAMEWORK (For Implicit Features)
-
-### Step 2B.1: Apply Rarity Principle
+### Step 2.2: Apply Rarity Principle
 
 **Concept**: Identify the dominant value (baseline) that accounts for 80-90% of cases
 
-**Approach**: Ask LLM to analyze sample data and identify pattern
-
-**Prompt Template**:
+**From training data analysis**:
 ```
-Analyze the distribution of "{feature_name}" values in these {N} sample verses:
+Based on training verses, the distribution of "{feature_name}" is:
+- {COMMON_VALUE}: ~{percentage}% (baseline/default)
+- {RARE_VALUE_1}: ~{percentage}% (marked case 1)
+- {RARE_VALUE_2}: ~{percentage}% (marked case 2)
 
-{paste sample data showing feature values}
-
-1. What is the most common value? (percentage)
-2. What are the rare/marked values? (percentage)
-3. What is a good default/baseline prediction?
-
-This baseline should give 80-90% accuracy without further analysis.
+Default prediction: {COMMON_VALUE} unless evidence for marked case
 ```
 
 **Target**: Baseline should give you 80-90% accuracy immediately
 
-### Step 2B.2: Build Hierarchical Prompt Strategy
+### Step 2.3: Build Hierarchical Prompt Strategy
 
 **Concept**: Layer prompts from most deterministic to least deterministic
 
@@ -197,6 +159,46 @@ Applying baseline: {BASELINE_VALUE}
 Confidence: {baseline_accuracy}% (from distribution analysis)
 Method: Default (rarity principle)
 ```
+
+---
+
+## Phase 3: VALIDATION (Blind Prediction)
+
+**CRITICAL**: Lock predictions BEFORE checking TBTA
+
+### Step 3.1: Select Test Verses
+- [ ] Choose 10-15 verses NOT in training set
+- [ ] Mix adversarial (edge cases) and random (typical cases)
+- [ ] Document verse selection rationale
+
+### Step 3.2: Make Blind Predictions
+For each test verse:
+1. Apply hierarchical prompts (Levels 1-5)
+2. Make prediction based on analysis
+3. Assign confidence score
+4. **DO NOT check TBTA yet**
+
+### Step 3.3: Lock Predictions
+```bash
+git add predictions-locked.md
+git commit -m "Lock predictions for {feature_name} validation"
+```
+
+### Step 3.4: Validate Against TBTA
+**NOW you can check TBTA**:
+- [ ] Compare predictions vs TBTA annotations
+- [ ] Calculate accuracy percentage
+- [ ] Identify error patterns
+- [ ] Document systematic failures
+
+### Step 3.5: Error Analysis
+For each mismatch:
+1. **Assume TBTA is correct** (exhaustive debugging approach)
+2. Find the pattern you missed
+3. Update algorithm/rules
+4. Document new pattern for future features
+
+**Success Criteria**: 100% accuracy after pattern learning (not on first attempt)
 
 ### Step 2B.3: Multi-Method Validation
 
@@ -505,19 +507,19 @@ Recommend optimal context (balance accuracy vs token cost).
 **Example 1: Implementing "Voice" Feature**
 
 1. **Phase 1**: Voice = Active/Passive/Middle, Tier A priority, affects 50+ languages
-2. **Phase 2A**: Check if explicit in YAML → YES → Extract using LLM with YAML reading
-3. **Phase 3**: Validate on 100 verses → 98% accuracy
-4. **Phase 4**: Create prompts for query "find all passive divine passives"
-5. **Phase 5**: Document with Tier 1 automation
+2. **Phase 2**: Training (15 verses) → Build hierarchical prompts (morphology → semantics → theology)
+3. **Phase 3**: Blind predictions on 20 test verses → 95% accuracy → Document missed patterns
+4. **Success**: Tier 1 automation with spot checks
 
 **Example 2: Implementing "Definiteness" Feature**
 
 1. **Phase 1**: Definite/Indefinite, Tier B priority, affects article languages
-2. **Phase 2B**: Not explicit → Predict using LLM prompts
-3. **Prompt Level 1**: Theological uniqueness ("THE Messiah") → Definite
-4. **Prompt Level 2**: Discourse tracking (First Mention vs Routine) → guide decision
-5. **Prompt Level 3**: Article presence in source language
-6. **Phase 3**: 85% accuracy on 50 verses → Tier 2 automation with review
+2. **Phase 2**: Training (20 verses) → Identify rarity (70% indefinite baseline)
+3. **Hierarchical Prompts**:
+   - Level 1: Theological uniqueness ("THE Messiah") → Definite
+   - Level 2: Discourse tracking (First Mention vs Routine)
+   - Level 3: Article presence in Greek/Hebrew
+4. **Phase 3**: Blind predictions → 85% accuracy → Tier 2 automation with human review
 
 ---
 
