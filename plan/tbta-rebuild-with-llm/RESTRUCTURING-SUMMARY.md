@@ -187,4 +187,55 @@ Existing features (person-systems, number-systems, degree) were built using a ri
 
 Going forward, all NEW features should follow STAGES.md to maintain consistency and benefit from the simpler, clearer workflow.
 
-**Status**: ✅ **RESTRUCTURING COMPLETE**
+---
+
+## STAGES.md Enhancements (2025-11-14)
+
+**Based on**: Critical methodology comparison and person-systems migration learnings
+
+### Major Improvements Added
+
+**Stage 4: Dataset Generation**
+- ✅ Require complete TBTA data only (filter incomplete annotations)
+- ✅ Adversarial selection strategy for test set (edge cases, theological ambiguity)
+- ✅ External validation preparation (identify languages/families marking feature during data construction)
+- ✅ Balanced sampling requirements (OT/NT, genres, book distribution)
+- ✅ Clarified: Small datasets (<50 verses) cannot support 100% accuracy claims
+- ✅ Enhanced YAML structure with genre, difficulty, external validation metadata
+
+**Stage 5: Hypothesis & Iteration**
+- ✅ **LOCKED PREDICTIONS**: Git commit before checking TBTA (prevents cheating)
+- ✅ **6-step error analysis** for EVERY failure (verify data → source → context → cross-ref → hypotheses → determination)
+- ✅ Iterative refinement strategy (try alternatives before refining single approach)
+- ✅ External validation guidance (check real translations when feature allows)
+- ✅ Success criteria clarified (100% stated with ≥100 verses, 95% dominant)
+
+**Stage 6: Validation & Peer Review**
+- ✅ Blind subagent testing protocol (never pollute context)
+- ✅ 3 critical peer reviewers (theological, linguistic, methodological)
+- ✅ **TBTA reviewer communication template**:
+  - Strategic questions (annotation philosophy, edge cases, ambiguity handling)
+  - Our observations and concerns about TBTA approach
+  - Labeling examples for TBTA team to review/correct
+  - Priority verses where we're most uncertain
+- ✅ Production readiness checklist (comprehensive criteria)
+
+### What Was Preserved from 10-Phase Methodology
+
+1. **Adversarial testing principle** - Now integrated into Stage 4 test set selection
+2. **Locked predictions** - Now mandatory in Stage 5 (git commits before validation)
+3. **Iterative algorithm refinement** - Now explicit in Stage 5 (PROMPT1→2→3...)
+4. **6-step error debugging** - Now mandatory for all failures in Stage 5
+5. **External validation** - Now clarified in Stages 4 & 5 (identify marking languages during data construction)
+
+### What Was Improved
+
+1. **Sample size requirements** - Explicit minimum (100 verses per value) with caveat about statistical power
+2. **Dataset quality** - Must use verses with complete TBTA data
+3. **Balanced sampling** - Explicit requirements (testament, genre, book, difficulty)
+4. **TBTA communication** - Template for strategic reviewer questions and concerns
+5. **Subagent discipline** - Mandatory blind testing to prevent context pollution
+
+---
+
+**Status**: ✅ **RESTRUCTURING COMPLETE** with STAGES.md enhancements
