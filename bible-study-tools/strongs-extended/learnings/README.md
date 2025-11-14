@@ -1,0 +1,1 @@
+[TODO: go through all the strongs file and extract all the learnings, remember to keep to our progressive disclosure format/skill]
