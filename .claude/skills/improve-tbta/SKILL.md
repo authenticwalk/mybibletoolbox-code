@@ -18,57 +18,47 @@ Use this skill when user says:
 
 ## Core Workflow: 10-Phase Approach
 
-Each phase is a **separate task** to prevent context pollution. Agent completes one phase, updates status, and stops. User says "improve tbta" to continue.
+Each phase is a **separate task** to prevent context pollution. Agent completes one phase, updates status, commits and pushes to the PR then moves on till next phase till done.
 
 ### Phase 1: Feature Selection & Setup
 **Goal**: Identify next feature to work on, load context
 **Outputs**: Feature selected, initial context loaded
-**Time**: 15 minutes
 
 ### Phase 2: Training Set Design
 **Goal**: Design 15-20 training verses covering all values equally
 **Outputs**: `training/TRAINING-SET.md` with equal value coverage
-**Time**: 1-2 hours
 
-### Phase 3: Training Analysis (TBTA Access Allowed)
+### Phase 3: Training Analysis (TBTA Access Allowed but not on the training verses)
 **Goal**: Access TBTA for training set, discover patterns, document learnings
 **Outputs**: `training/TBTA-ANNOTATIONS.md`, `training/PATTERNS-LEARNED.md`
-**Time**: 2-3 hours
 
-### Phase 4: Algorithm Development
-**Goal**: Create algorithm v1.0 based on training patterns, LOCK with git commit
+### Phase 4: Prompt Development
+**Goal**: Create prompt v1.0 based on training patterns, LOCK with git commit
 **Outputs**: `training/ALGORITHM-v1.md` (locked with commit SHA)
-**Time**: 1-2 hours
 
 ### Phase 5: Test Set Design (Equal Value Coverage)
 **Goal**: Design adversarial (hard) and random (typical) test sets with equal examples per value
 **Outputs**: `adversarial-test/TEST-SET.md`, `random-test/TEST-SET.md`
-**Time**: 2-3 hours
 
 ### Phase 6: Make Predictions (NO TBTA ACCESS)
 **Goal**: Apply algorithm v1.0 to both test sets WITHOUT checking TBTA, LOCK predictions
 **Outputs**: `adversarial-test/PREDICTIONS-locked.md`, `random-test/PREDICTIONS-locked.md` (commit SHAs)
-**Time**: 2-3 hours
 
 ### Phase 7: Validation & Accuracy Calculation
 **Goal**: Check TBTA for test sets, calculate accuracy overall and per-value
 **Outputs**: `adversarial-test/RESULTS.md`, `random-test/RESULTS.md` with per-value breakdown
-**Time**: 1-2 hours
 
 ### Phase 8: Error Analysis & Algorithm Refinement
 **Goal**: Exhaustive 6-step debugging for every error, update algorithm v2.0
 **Outputs**: `ERROR-ANALYSIS.md`, `ALGORITHM-v2.md`
-**Time**: 3-5 hours
 
 ### Phase 9: Documentation & Cross-Feature Learning
 **Goal**: Update feature README, contribute learnings to CROSS-FEATURE-LEARNINGS.md
 **Outputs**: Complete feature documentation
-**Time**: 1-2 hours
 
 ### Phase 10: Peer Review & Finalization
 **Goal**: Have another agent review work, integrate feedback, mark complete
 **Outputs**: Feature marked as complete in status file
-**Time**: 1-2 hours
 
 ---
 
