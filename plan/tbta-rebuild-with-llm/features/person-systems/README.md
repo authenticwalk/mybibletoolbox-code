@@ -1,240 +1,236 @@
-# Person Systems in Bible Translation Languages
-
-## Translation Impact ⭐⭐⭐⭐⭐
-
-**Criticality: HIGHEST** - Affects 33% of all Bible translations (700+ languages). Wrong clusivity choice completely alters theological meaning: "we apostles" (exclusive authority) vs "we believers" (inclusive community). Biblical source languages don't mark clusivity, requiring contextual inference for every first-person plural pronoun.
-
-**Translation Difficulty:** ⭐⭐⭐⭐ (High) - Requires theological analysis, discourse tracking, and speaker/addressee identification for each "we/us/our" instance.
-
-**Frequency:** ⭐⭐⭐⭐⭐ (Constant) - Every first-person plural pronoun in ~700+ languages demands explicit inclusive/exclusive choice.
-
-## Local Analysis Completed ✅
-
-**Clusivity Analysis**: Comprehensive validation of TBTA Person annotations using actual Bible translations in clusivity-marking languages.
-
-- **Coverage**: 14 verses (7 inclusive + 7 exclusive) across all literary genres
-- **Languages**: 9 clusivity-marking languages (Austronesian family)
-- **Translations**: 6,500+ total scanned
-- **Agreement**: 98% consensus validating TBTA annotations
-- **Files**: 16 (3 README summaries + 14 detailed verse analyses)
-
-**See**: [clusivity/](clusivity/) for complete analysis with real translation examples
-
-**Key findings**:
-- INCLUSIVE: Speaker includes addressee in "we/us/our" - Genesis 1:26 (Trinity), Psalm 95:1 (worship)
-- EXCLUSIVE: Speaker excludes addressee from "we/us/our" - John 3:11 (Jesus vs Nicodemus), Matthew 6:9 (prayer to God)
-- Validates TBTA's ability to infer clusivity from context even when source languages don't mark it
-
-## Baseline Statistics
-
-Based on analysis of first-person plural pronouns in Biblical text:
-
-**Overall Distribution**:
-- **Exclusive "we"**: ~65-70% (speaker excludes addressee)
-- **Inclusive "we"**: ~30-35% (speaker includes addressee)
-
-**Genre Variation**:
-- **Narrative (OT, divine speech)**: 90%+ exclusive (God addressing humans, separate groups)
-- **Epistles (NT)**: 40-50% exclusive, 50-60% inclusive (mixed community/authority contexts)
-- **Prayer contexts**: 95%+ exclusive (addressing God excludes God from "our/we")
-- **Worship/Praise**: 80%+ inclusive (congregation joining together)
-- **Prophecy**: 90%+ exclusive (prophet speaks for God to people)
-
-**Prediction Baseline**: Default to exclusive (65%) unless context indicates inclusive patterns (invitation, reciprocal action, shared identity).
-
-## Quick Translator Test
-
-Answer these questions about your target language:
-
-1. ☐ Does your language distinguish inclusive vs exclusive "we"?
-2. ☐ If YES, what are the two words? (e.g., Tagalog: táyo=INCL / kamí=EXCL)
-3. ☐ Does the distinction apply to all persons or only 1st plural?
-4. ☐ Does your language have a 4th person (Algic obviation)?
-5. ☐ Does your language use T-V distinction (formal/informal "you")?
-
-**If you answered YES to #1, clusivity annotation is CRITICAL for your translation.**
-
-**Examples**: Austronesian (Indonesian, Tagalog, Tok Pisin), Algic (Algonquin, Cree), many Mayan, Cariban, and Pacific languages require clusivity marking.
-
-## Common Errors & Solutions
-
-| Error | Problem | Solution |
-|-------|---------|----------|
-| **All prayer is exclusive** | Assuming "we pray to God" = always exclusive | Distinguish prayer TO God (Matt 6:9 EXCL) from statements ABOUT divine presence (Matt 1:23 INCL) |
-| **Missing speaker shifts** | Not tracking speaker changes in passage | Identify speaker for EACH "we" separately - Jesus quoting prophet ≠ Jesus addressing disciples |
-| **Ignoring genre patterns** | Applying narrative rules (90% EXCL) to all genres | Check baseline: Narrative 90% EXCL, Epistles 50/50, Worship 80% INCL |
-| **Missing reciprocals** | Overlooking "one another" constructions | Reciprocal actions (Heb 10:24) = 100% INCL - both parties must participate |
-
-**See**: [METHODOLOGY.md](METHODOLOGY.md) for complete error analysis and prevention strategies.
-
-## Gateway Features & Prediction Rules
-
-Quick prediction rules with high accuracy:
-
-| If Context Shows... | Then Predict... | Accuracy |
-|---------------------|----------------|----------|
-| Speaker = God/Jesus, Addressee = humans | Exclusive | 95%+ |
-| Prayer context, speaker = congregation, to God | Exclusive | 95%+ |
-| Worship invitation: "Come, let us..." | Inclusive | 90%+ |
-| Apostolic "we" in eyewitness testimony | Exclusive | 95%+ |
-| Epistolary: "We send to you" | Exclusive | 90%+ |
-| Reciprocal action: "one another" | Inclusive | 100% |
-| Royal "we" (single speaker, plural form) | Exclusive | 100% |
-
-**Prediction Hierarchy**:
-1. Check speaker and addressee identity (most important)
-2. Check action capability (can addressee participate?)
-3. Check discourse function (invitation, contrast, testimony)
-4. Default to exclusive (65% baseline)
-
-**See**: [METHODOLOGY.md](METHODOLOGY.md) for complete prediction framework and prompt templates.
-
-## Key Person System Features
-
-### 1. Clusivity (Inclusive vs Exclusive "We")
-
-#### What is Clusivity?
-
-Clusivity is a grammatical distinction in first-person plural pronouns that explicitly marks whether the addressee is included or excluded:
-
-- **Inclusive "we"** = speaker + addressee(s) + possibly others ("we including you")
-- **Exclusive "we"** = speaker + others, but NOT addressee ("we but not you")
-
-#### Complete Value Enumeration
-
-| Value | Definition | Participants | Bible Examples | Languages |
-|-------|------------|--------------|----------------|-----------|
-| **Inclusive** | Speaker includes addressee | speaker + addressee ± others | Gen 1:26 (Trinity), Ps 95:1 (worship), Heb 10:24 (mutual encouragement) | táyo (Tagalog), kita (Indonesian), yumi (Tok Pisin) |
-| **Exclusive** | Speaker excludes addressee | speaker + others, NOT addressee | Jhn 3:11 (Jesus vs Nicodemus), Matt 6:9 (prayer to God), Acts 15:25 (apostles to churches) | kamí (Tagalog), kami (Indonesian), mipela (Tok Pisin) |
-
-**Note**: This feature applies ONLY to first-person plural pronouns (we/us/our). Singular "I" and second/third-person pronouns do not mark clusivity in these languages.
-
-#### Languages with Clusivity
-
-**Austronesian** (most common, 700+ languages):
-- **Philippines**: Tagalog (tayo/kami), Cebuano, Ilocano, 30+ others in TSV
-- **Indonesia/Malaysia**: Indonesian (kita/kami), Malay, 15+ regional languages
-- **Pacific**: Tok Pisin (yumi/mipela), Hawaiian, Tongan, Chamorro, 50+ PNG languages
-
-**Algic** (North America):
-- Algonquin, Cree, Ojibwe, Arapaho, Blackfoot
-
-**Other families**:
-- **Mayan**: Achi, Kaqchikel, Awakateko, Chuj (10+ in TSV)
-- **Cariban**: Akawaio, Bakairí (South America)
-- **Australian Aboriginal**: Multiple language families
-- **Various Native American families**: Quechuan, Tupi-Guarani, others
-
-**See**: [clusivity/README.md](clusivity/README.md) for detailed language data and translation examples.
-
-### 2. Fourth Person (Obviation)
-
-#### What is Obviation?
-
-Obviation distinguishes between multiple third-person referents based on discourse importance:
-- **Proximate** (3rd person): The more important/topical referent
-- **Obviative** (4th person): The less important/secondary referent
-
-**Note**: Obviation is DIFFERENT from clusivity. While clusivity distinguishes inclusive/exclusive "we," obviation distinguishes between two third-person referents by their discourse prominence.
-
-#### Languages with Obviation
-
-##### From Our TSV (Known or Likely):
-- **Algic languages**: Algonquin (alq), Cree, Ojibwe, potentially Arapaho (arp) and Blackfoot (bla)
-- **Athabaskan languages**: Apache, Western (apw) - related to Navajo which has 4th person
-
-#### Translation Implications for Obviation
-
-**Biblical narratives with multiple third-person referents**:
-- "Jesus called Peter and said to him" → Must mark whether Jesus (proximate) or Peter (obviative)
-- "The angel appeared to Mary and spoke to her" → Angel (proximate topic) vs Mary (obviative)
-- Discourse tracking: Main character typically proximate, secondary characters obviative
-- Switch-reference: When obviative becomes new topic, may promote to proximate
-
-### 3. T-V Distinction (Formal/Informal "You")
-
-#### What is T-V Distinction?
-
-T-V distinction (from Latin "tu/vos") marks social distance, formality, and respect through different second-person pronouns.
-
-**Languages with T-V**:
-- **Romance**: French (tu/vous), Spanish (tú/usted), Portuguese (tu/você), Italian (tu/Lei)
-- **Germanic**: German (du/Sie), Dutch (jij/u), Swedish (du/ni)
-- **Slavic**: Russian (ты/вы), Polish (ty/wy), Czech (ty/vy)
-- **Indo-Iranian**: Hindi (तू tū / तुम tum / आप āp - three-way system!)
-
-#### Translation Implications
-
-**Critical Biblical Passages**:
-- **Jesus addressing disciples**: Familiar (tu) - intimate relationship
-- **Jesus addressing Pharisees**: May shift to formal (vous) in confrontation or respectful discourse
-- **Prayer to God**: Varies by tradition:
-  - Traditional: Formal (vous/Sie/вы) - reverence
-  - Modern/informal: Familiar (tu/du/ты) - intimacy with God
-- **God addressing humans**: Typically familiar (tu) - sovereign intimacy
-- **Social hierarchy**: Masters/servants, parents/children, elders/youth require T-V decisions
-
-**Cultural Variation**:
-- French traditional: Always vous to God (reverence)
-- German Protestant: Often du to God (Luther's influence - intimate relationship)
-- Spanish: Varies by region and tradition
-- Russian: Growing debate between formal вы and familiar ты in prayer
-
-### 4. Number Systems Beyond Singular/Plural
-
-#### Dual Number
-Languages distinguishing exactly two items:
-
-**From our TSV:**
-- Arabic, Standard (arb): Full dual system on nouns, verbs, adjectives, pronouns
-- Hawaiian (haw): Dual pronouns (Austronesian trait)
-- Assyrian Neo-Aramaic (aii): Likely has dual (Semitic language)
-
-#### Trial Number
-Languages distinguishing exactly three items (mainly Austronesian):
-
-**Potential candidates from our TSV:**
-- Various Papua New Guinea Austronesian languages may have trial pronouns
-- Some Australian Aboriginal languages (Alyawarr-aly, Anmatyerre-amx, etc.)
-
-## Bible Translation Implications
-
-**Critical Challenge**: Biblical source languages (Hebrew, Aramaic, Greek) do NOT mark clusivity. Translators in 700+ clusivity-marking languages must infer from context.
-
-**Key Example Passages**:
-- **Matthew 6:9** "Our Father" → Exclusive (praying TO God excludes God from "our")
-- **Genesis 1:26** "Let us make" → Inclusive (Trinity addressing Trinity)
-- **John 3:11** "We speak... you do not receive" → Exclusive (contrast: Jesus vs Nicodemus)
-- **Hebrews 10:24** "Let us consider one another" → Inclusive (author joins readers)
-
-**Wrong choice alters meaning**: "We apostles" (exclusive authority) vs "we believers" (inclusive community) completely changes theological implications.
-
-**See**: [clusivity/](clusivity/) for 14 analyzed verses with real translations in Tagalog, Indonesian, Tok Pisin, and other clusivity-marking languages.
-
-## Language Detection
-
-**High Clusivity Probability**:
-- Austronesian family (Philippines, Indonesia, Pacific)
-- Algic family (North America)
-- Many Mayan, Cariban languages
-
-**Quick check**: If language is from Southeast Asia, Pacific, or indigenous Americas → likely has clusivity. Check for multiple "we" words in basic vocabulary.
-
-## For TBTA Tools
-
-**Commentary files should include**:
-- Clusivity annotations for first-person plural pronouns
-- Speaker/addressee identification
-- Genre-specific prediction patterns
-
-**Priority languages** (from TSV):
-- **Tier 1**: Tagalog, Indonesian, Malay, Tok Pisin (major languages, extensive resources)
-- **Tier 2**: 30+ Philippine languages, 15+ Indonesian languages, 50+ PNG languages
-- **Tier 3**: Mayan (10+), Algic, Cariban families
-
-## Resources
-
-- **WALS Online**: Inclusive/Exclusive Distinction chapter
-- **Clusivity analysis**: [clusivity/](clusivity/) - 14 verses, 9 languages, 98% validation
-- **Methodology**: [METHODOLOGY.md](METHODOLOGY.md) - Complete prediction framework with prompt templates
-- **Language lists**: [clusivity/README.md](clusivity/README.md) - Detailed family data
+# Person Systems Feature
+
+**Feature**: Clusivity (Inclusive vs. Exclusive first-person plural pronouns)
+**Status**: Migrated from 10-phase → STAGES.md structure
+**Production Status**: In Progress (requires Stage 6 completion)
+
+---
+
+## Stage Completion Checklist
+
+Based on [STAGES.md](../STAGES.md):
+
+- [x] **Stage 1: Research TBTA Documentation**
+  - Comprehensive feature analysis completed
+  - TBTA patterns documented
+  - Theological and linguistic research conducted
+
+- [x] **Stage 2: Language Study**
+  - 200+ person-marking languages identified
+  - Austronesian pattern analysis (dominant family)
+  - Language family predictions documented
+
+- [x] **Stage 3: Scholarly and Internet Research**
+  - Multiple theological sources consulted
+  - Cross-linguistic studies reviewed
+  - Translation patterns analyzed
+
+- [x] **Stage 4: Generate Proper Test Set**
+  - ⚠️ **Partial** - Used 10-phase methodology (adversarial + random)
+  - Training: 20 verses (should be 40% of larger set)
+  - Test: 21 verses (11 adversarial + 10 random)
+  - **Gap**: No separate validate set (100 verses per value)
+  - **Structure**: Not in standard 40/30/30 split
+
+- [x] **Stage 5: Propose Hypothesis and First Prompt**
+  - ✅ Algorithm v1.0 developed and tested
+  - ✅ Algorithm v2.0 refined
+  - ✅ Algorithm v2.1 created (UNTESTED)
+  - ✅ Iterative refinement documented
+  - ✅ Predictions locked with git commits
+  - ⚠️ **Accuracy**: 73% adversarial (✓), 50-60% random (✗ below 80-90% target)
+
+- [ ] **Stage 6: Test Against Validate Set**
+  - ❌ **Not Started** - No validate set exists
+  - ❌ Subagent validation not performed
+  - ❌ Peer review incomplete (need 3 critical reviewers)
+  - ❌ Algorithm v2.1 untested
+  - **Blocker**: Must generate validate.yaml first
+
+---
+
+## Current Status Summary
+
+### What's Working ✅
+- **Translation Validation**: 100% (7/7) - Checked against 9 person-marking languages
+- **Adversarial Test**: 73% (8/11) - Meets 60-70% target
+- **External Validation**: 98% agreement across 9 languages (unique contribution)
+- **Methodology**: Sound hierarchical prompting framework
+- **Documentation**: Now consolidated to 10 core files
+
+### What Needs Work ❌
+- **Random Test**: 50-60% (5/10) - FAILS 80-90% target
+- **TBTA Validation**: Only 2 verses checked (insufficient)
+- **Algorithm v2.1**: Untested despite "production ready" claim
+- **Validate Set**: Doesn't exist (need 100 verses per value)
+- **Peer Review**: Stage 6 not completed
+
+---
+
+## Methodology Note
+
+**Original Approach**: 10-phase adversarial testing protocol
+- Comprehensive but led to 57 files (documentation bloat)
+- Achieved good results but incomplete validation
+- Random test failure indicates overfitting or blind spots
+
+**Current Structure**: Migrated to STAGES.md organization
+- Consolidated to 10 core files in `experiments/`
+- Preserved valuable work (100% translation validation, external validation)
+- Archived 47+ files to `archive-10-phase/`
+- **Still needs Stage 6 completion**
+
+---
+
+## Files Structure
+
+### experiments/ (Core Files)
+1. **ANALYSIS.md** - Approaches analyzed (12 iterations documented)
+2. **train.yaml** - 20 training verses with metadata
+3. **test.yaml** - 21 test verses (11 adversarial + 10 random)
+4. **PROMPT1.md** - Algorithm v1.0 (73% adversarial accuracy)
+5. **PROMPT2.md** - Algorithm v2.0 (refined prompts)
+6. **PROMPT3.md** - Algorithm v2.1 (untested, projected 75-80%)
+7. **LEARNINGS.md** - Error analysis and lessons learned
+8. **VALIDATION-RESULTS.md** - Accuracy summary across all tests
+9. **EXTERNAL-VALIDATION.md** - Translation validation (9 languages, 98% agreement)
+
+### archive-10-phase/ (Historical)
+- 47+ files from original 10-phase methodology
+- Training sets, adversarial tests, methodology docs
+- Preserved for reference but not primary documentation
+
+---
+
+## Quick Reference
+
+### Feature Definition
+**Clusivity**: Grammatical distinction in "we/us/our" between:
+- **Inclusive**: Speaker includes addressee in "we"
+- **Exclusive**: Speaker excludes addressee from "we"
+
+**Example**:
+- "Let us pray" to congregation → INCLUSIVE (speaker + listeners pray together)
+- "We apostles witnessed" to crowd → EXCLUSIVE (only apostles witnessed)
+
+### High-Accuracy Rules (95%+ confidence)
+1. **Divine creative/judicial acts** → EXCLUSIVE (humans can't participate)
+2. **Prayer to God** → EXCLUSIVE (God not in "our")
+3. **Reciprocal actions** ("one another") → INCLUSIVE (requires mutual participation)
+4. **Worship invitations** → INCLUSIVE (addressees invited to participate)
+5. **Apostolic eyewitness** → EXCLUSIVE (non-apostles weren't there)
+
+### Languages with Clusivity (200+)
+- **Dominant**: Austronesian family (95% have clusivity)
+- **Geographic**: Philippines, Indonesia, Pacific, PNG
+- **Validation Available**: 9 languages checked
+
+---
+
+## Next Steps (Priority Order)
+
+### 1. Test Algorithm v2.1 (2 hours)
+- Apply PROMPT3.md to existing test.yaml (21 verses)
+- Calculate actual accuracy (is it really 75-80%?)
+- Compare with v1.0 results
+- Document if random test improves
+
+### 2. Analyze Random Test Failures (2-3 hours)
+- Identify the 5 failed verses
+- Look for common patterns
+- Determine if blind spots exist
+- Inform v2.2 improvements if needed
+
+### 3. Generate validate.yaml (Use Subagent! - 2 hours)
+**Critical**: Main agent must NOT see validate data
+- Subagent accesses TBTA repository
+- Generates 100 verses per value (200 total)
+- Creates validate.yaml in experiments/
+- Main agent receives only file path
+
+### 4. Complete Stage 6 Peer Review (3-4 hours)
+- Subagent 1: Apply best prompt to validate.yaml (blind)
+- Subagent 2: Check against TBTA, report accuracy
+- Subagents 3-5: Critical peer review (assume junior coder wrote this)
+- Main agent: Integrate feedback, iterate if needed
+
+### 5. Final Documentation Update (1 hour)
+- Update README.md with final accuracy
+- Mark Stage 6 complete
+- Document production status
+- Update RESTRUCTURING-SUMMARY.md
+
+---
+
+## Unique Contributions
+
+### External Translation Validation ⭐⭐⭐
+**Innovation**: Validated predictions against 9 real Bible translations
+- 98% agreement across languages
+- Proves real-world applicability
+- Independent verification beyond TBTA
+- **Method reusable** for other features with translation evidence
+
+### Hierarchical Prompting Framework ⭐⭐⭐
+**Innovation**: Theological analysis first, grammar last
+- 70%+ cases resolved by theological factors alone
+- Early termination strategy
+- LLM-executable prompts
+- Clear decision points
+
+### Locked Predictions ⭐⭐
+**Innovation**: Git commit predictions BEFORE checking TBTA
+- Prevents cheating
+- Documents integrity
+- Shows iterative improvement (v1 → v2 → v2.1)
+- **Practice should continue** for all features
+
+---
+
+## Critical Findings
+
+### Random Test Failure 🚨
+**Problem**: Got 50-60% (target 80-90%)
+**This is backwards**: Random should beat adversarial, not lose to it!
+
+**Implications**:
+- Potential overfitting to training data
+- Training set may not be representative
+- Algorithm may have systematic blind spots
+- Need larger validate set to diagnose
+
+---
+
+## Production Readiness
+
+**Current Assessment**: ⚠️ **NOT PRODUCTION READY**
+
+**Reasons**:
+1. Random test failure (50-60% vs 80-90% target)
+2. Minimal TBTA validation (only 2 verses)
+3. Algorithm v2.1 untested
+4. No validate set (Stage 6 incomplete)
+5. Sample sizes too small (20 training, 21 test)
+
+**To Achieve Production Ready**:
+1. ✅ Test algorithm v2.1
+2. ✅ Analyze and fix random test failures
+3. ✅ Generate 100-verse validate set
+4. ✅ Achieve 95% on validate set (per STAGES.md)
+5. ✅ Complete Stage 6 peer review
+
+**Estimated Time**: ~12-15 hours to complete
+
+---
+
+## Contact & Questions
+
+For questions about person systems or clusivity feature:
+- Review `experiments/ANALYSIS.md` for approach evolution
+- Check `experiments/LEARNINGS.md` for error patterns
+- See `experiments/EXTERNAL-VALIDATION.md` for translation evidence
+- Consult `archive-10-phase/` for historical methodology
+
+---
+
+**Summary**: Person systems feature has strong foundation (100% translation validation, unique external validation method, sound methodology) but requires Stage 6 completion before production deployment. Random test failure indicates real issues that must be addressed. Estimated 12-15 hours to complete migration and validation.
