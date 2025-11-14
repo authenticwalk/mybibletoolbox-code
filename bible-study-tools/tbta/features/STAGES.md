@@ -4,9 +4,9 @@ The following summarizes the correct stages to build a new feature. If you are i
 
  - [ ] Review the source documentation of TBTA for this feature
    - Official TBTA documentation: See `../tbta-source/README.md` for links to source materials
-   - Reference: `/plan/tbta-rebuild-with-llm/FEATURE-SUMMARY.md` for high-level feature overview
+   - Reference: `../learnings/FEATURE-SUMMARY.md` for high-level feature overview
  - [ ] Review our TBTA analysis for that feature
-   - Check existing feature directory: `/plan/tbta-rebuild-with-llm/features/{feature}/`
+   - Check existing feature directory for this feature
    - Review `../learnings/README.md` for transferable patterns
  - [ ] Generate the README.md for the feature with the information learnt about this feature
    - Include: Feature definition, theological/linguistic context, TBTA encoding details
@@ -279,11 +279,8 @@ Launch 4 subagents for independent critical review:
 
 ## TBTA Reviewer Communication
 
- - [ ] Create `experiments/TBTA-REVIEW.md` with structured review request (see template below)
- - [ ] Send to TBTA team (if applicable)
- - [ ] Incorporate TBTA feedback into algorithm refinement
+ - [ ] Create `experiments/TBTA-REVIEW.md` with:
 
-**TBTA-REVIEW.md Template**:
 ```markdown
 # TBTA Team Review Request: {Feature Name}
 
@@ -297,68 +294,113 @@ Launch 4 subagents for independent critical review:
 ## Strategic Questions (Priority Order)
 
 ### High Priority
-1. **Annotation Philosophy**: When {specific scenario}, should we annotate based on text-internal discourse structure OR translation guidance?
-2. **Edge Case Handling**: For {specific feature}, how should we annotate: {examples}
+1. **Annotation Philosophy**: When {specific scenario}, should we annotate based on:
+   - Text-internal discourse structure (speaker→listener relationship), OR
+   - Translation guidance (speaker→reader relationship)?
+   - Example: Genesis 1:26 "Let us make man"
+
+2. **Edge Case Handling**: For {specific feature}, how should we annotate:
+   - {Edge case 1 with example}
+   - {Edge case 2 with example}
+   - {Edge case 3 with example}
+
 3. **Value Ambiguity**: When multiple values seem equally valid, what is the decision rule?
+   - {Specific ambiguous example from our data}
 
 ### Medium Priority
 4. **Cross-Feature Interactions**: How does {this feature} interact with {related feature}?
-5. **Genre Handling**: Do annotation rules differ by genre?
+   - Example: {specific verse showing interaction}
+
+5. **Genre Handling**: Do annotation rules differ by genre (narrative vs. poetry vs. epistle)?
+   - We observed {pattern} - is this intentional?
 
 ## Our Observations & Concerns
 
 ### Observation 1: {Pattern we noticed}
-- **Data**: We found {pattern} in {n} verses
-- **Question**: Is this TBTA's intended approach?
-- **Impact**: Affects {aspect of algorithm}
+- **Data**: We found {specific pattern} in {n} verses
+- **Question**: Is this TBTA's intended annotation approach?
+- **Impact**: If yes, affects {aspect of algorithm}
+
+### Observation 2: {Divergence we found}
+- **Data**: Our algorithm predicts {X} but TBTA shows {Y} in these cases:
+  - {Verse 1}: {brief description}
+  - {Verse 2}: {brief description}
+- **Question**: Is this a valid perspective difference, or are we misunderstanding TBTA's annotation principle?
+
+### Concern: {Potential issue}
+- **Issue**: We suspect {possible annotation inconsistency}
+- **Evidence**: Compare {verse 1} with {verse 2} - seem contradictory
+- **Request**: Please clarify annotation rule
 
 ## Labeling Examples for Review
 
-| Verse | Text Snippet | Our Prediction | TBTA Value | Confidence | Notes |
-|-------|-------------|----------------|------------|-----------|-------|
-| {REF} | "{snippet}" | {value} | {TBTA value} | Low/Med/High | {reason} |
+**Instructions**: Please re-label these verses if our understanding is incorrect.
 
-## Our Methodology
+| Verse | Text Snippet | Our Prediction | TBTA Value | Our Confidence | Notes |
+|-------|-------------|----------------|------------|----------------|-------|
+| {REF} | "{snippet}" | {our value} | {TBTA value} | Low | We suspect TBTA may be {alternative} because {reason} |
+| {REF} | "{snippet}" | {our value} | {TBTA value} | Medium | Theological ambiguity - could be {alternative}? |
+| {REF} | "{snippet}" | {our value} | {TBTA value} | High | Strong divergence - please explain annotation rationale |
+
+**Priority for Review**: {Top 5 verses where we're most uncertain}
+
+## Our Methodology (For Context)
+
 - Sample size: {n} verses per value
 - Balanced: {OT/NT split}, {genre distribution}
-- Algorithm: {brief description}
+- Algorithm: {brief description of approach}
 - Accuracy: {stated}% stated, {dominant}% dominant
-- External validation: {if applicable}
+- External validation: {if applicable - languages checked, agreement rate}
 
-## Translation Practitioner Impact
+## Translation Practitioner Impact (Real-World Testing)
 
-**Languages Tested**: {2-3 language families}
-**Verses Translated**: {5-10 sample verses}
+**Purpose**: Evaluate whether TBTA data is actually useful for Bible translators
+
+**Languages Tested**: {2-3 language families, both marking and non-marking}
+**Verses Translated**: {5-10 sample verses using TBTA annotations}
 
 ### What Worked for Translators:
-1. {Annotation that prevented common error}
+1. {Specific annotation that prevented common translation error}
+2. {Guidance that clarified ambiguous passage}
+3. {Pattern that helped across multiple verses}
 
 ### What Confused Translators:
 1. {Annotation that led to incorrect translation}
+2. {Missing information needed for translation decision}
+3. {Ambiguous guidance that could be interpreted multiple ways}
 
 ### Translation Mistakes Analysis:
-- **Mistakes Avoided** (thanks to TBTA): {n} errors prevented
-- **Mistakes Made** (despite TBTA): {n} errors introduced
-- **Net Benefit**: {Assessment}
+- **Mistakes Avoided** (thanks to TBTA): {n} translation errors prevented
+- **Mistakes Made** (despite TBTA): {n} errors introduced or not prevented
+- **Net Benefit**: {Overall assessment - is TBTA data helpful or harmful?}
+
+**Key Finding**: {Most important insight from translator perspective}
+
+**Recommendation**: {Should translators use this data as-is, wait for improvements, or avoid?}
 
 ## Requested Feedback
+
 1. Are our strategic questions addressing real TBTA annotation principles?
 2. Do our observations match your understanding of TBTA methodology?
-3. Are any "suspected errors" actually correct TBTA annotations we misunderstood?
-4. Should we adjust our algorithm or document as valid divergence?
-5. From translator testing: Are confusing cases actually correct annotations needing better documentation?
+3. Are any of our "suspected errors" actually correct TBTA annotations we misunderstood?
+4. Should we adjust our algorithm to match TBTA perspective, or document as valid divergence?
+5. Any systematic patterns we're missing in our approach?
+6. **From translator testing**: Are cases where TBTA confused translators actually correct annotations that need better documentation, or potential issues to address?
+
+---
+
+**Contact**: {Your information}
+**Date**: {YYYY-MM-DD}
+**Feature Status**: Stage 6 validation in progress
 ```
+
+ - [ ] Send TBTA-REVIEW.md to TBTA team (if applicable)
+ - [ ] Incorporate TBTA feedback into algorithm refinement
 
 ## Practical Application Testing
 
- - [ ] Create `experiments/TRANSLATOR-IMPACT.md` documenting real-world translation scenarios
- - [ ] Test with both marking and non-marking languages
- - [ ] Identify translation-critical issues
-   - What mistakes would a translator make WITHOUT this data?
-   - What mistakes might they make WITH this data?
-   - What's the net benefit?
+ - [ ] Create `experiments/TRANSLATOR-IMPACT.md` documenting real-world translation scenarios:
 
-**TRANSLATOR-IMPACT.md Template**:
 ```markdown
 # Translation Practitioner Impact Assessment: {Feature Name}
 
@@ -371,65 +413,101 @@ Launch 4 subagents for independent critical review:
 
 ## Translation Scenarios
 
-### Scenario 1: {Language} ({Family})
+### Scenario 1: {Language Name} ({Language Family})
 **Language Profile**:
-- Grammatically marks {feature}? {Yes/No}
-- Target audience: {context}
+- Does this language grammatically mark {feature}? {Yes/No}
+- If yes: How? {brief description}
+- Target audience: {Bible translation project context}
 
-**Translation Test**:
+**Translation Test** (Pick 3-5 verses from validate set):
 
-| Verse | English | TBTA Value | My Translation | Helped | Confused | Avoided | Made |
-|-------|---------|-----------|----------------|--------|----------|---------|------|
-| {REF} | "{text}" | {value} | "{translation}" | {useful} | {unclear} | {errors prevented} | {errors introduced} |
+| Verse | English Text | TBTA Value | My Translation | What Helped | What Confused | Mistakes Avoided | Mistakes Made |
+|-------|-------------|------------|----------------|-------------|---------------|------------------|---------------|
+| {REF} | "{snippet}" | {value} | "{my translation}" | {What was useful} | {What was unclear} | {Errors prevented} | {Errors introduced} |
 
 **Overall Assessment**:
-- **Useful**: {What annotations helped}
-- **Confusing**: {What led astray}
-- **Missing**: {What was needed}
-- **Mistakes Avoided**: {Errors prevented by TBTA}
-- **Mistakes Made**: {Errors despite TBTA}
+- **Useful**: {What annotations helped most}
+- **Confusing**: {What led me astray}
+- **Missing**: {What I needed but didn't have}
+- **Mistakes Avoided**: {Specific translation errors prevented by TBTA data}
+- **Mistakes Made**: {Errors I made despite (or because of) TBTA data}
+
+### Scenario 2: {Different Language} ({Different Family})
+[Repeat structure above]
+
+### Scenario 3: Non-Marking Language (e.g., English, Spanish)
+**Question**: If my language doesn't grammatically mark this feature, is TBTA data still useful?
+
+**Translation Test**:
+[Test how annotations help even when language doesn't require explicit marking]
 
 ## Cross-Language Patterns
 
 ### What Works Across All Languages:
-1. {Universally helpful pattern}
+1. {Pattern 1: What was universally helpful}
+2. {Pattern 2: What avoided common mistakes}
+3. {Pattern 3: What clarified ambiguity}
 
 ### What Doesn't Work:
-1. {What confused translators}
+1. {Issue 1: What confused translators}
+2. {Issue 2: What led to mistakes}
+3. {Issue 3: What was irrelevant or misleading}
 
 ## Real Translation Mistakes Analysis
 
 ### Mistake Type 1: {Category}
-**Example**: {Specific verse}
-- **TBTA Value**: {value}
-- **What I Translated**: {incorrect}
-- **Why I Made Mistake**: {what confused me}
-- **Correct Translation**: {should have been}
-- **Fix Needed**: {improvement}
+**Example**: {Specific verse where translator made error}
+- **TBTA Value**: {what TBTA said}
+- **What I Translated**: {incorrect translation}
+- **Why I Made Mistake**: {What in TBTA data confused me or what was missing}
+- **Correct Translation**: {what it should have been}
+- **Fix Needed**: {How algorithm/annotations should improve}
+
+### Mistake Type 2: {Category}
+[Repeat structure]
 
 ## Mistakes Successfully Avoided
 
-### Avoidance 1: {Error type}
-**Example**: {Verse}
+### Avoidance 1: {Specific error type}
+**Example**: {Verse where TBTA data prevented common error}
 - **Common Mistake**: {What translators typically get wrong}
-- **TBTA Guidance**: {What prevented this}
-- **Why TBTA Helped**: {Specific insight}
+- **TBTA Guidance**: {What annotation prevented this}
+- **My Translation**: {Correct result}
+- **Why TBTA Helped**: {Specific insight that made difference}
 
 ## Recommendations for Algorithm Improvement
 
 ### Critical (Would prevent translation errors):
-1. {Specific improvement}
+1. {Specific improvement to prevent Mistake Type 1}
+2. {Specific improvement to prevent Mistake Type 2}
 
 ### Important (Would reduce confusion):
 1. {Clarity improvement}
+2. {Additional context needed}
+
+### Nice-to-have (Would enhance usability):
+1. {Convenience feature}
 
 ## Production Readiness from Translator Perspective
 
 **Would I recommend this to translation teams?** {Yes/No/With caveats}
-**Reasoning**: {Why or why not}
-**Minimum Viable**: {What must be fixed}
-**Ideal State**: {What would make this excellent}
+
+**Reasoning**: {Why or why not, what needs to change}
+
+**Minimum Viable**: {What must be fixed before this is usable}
+
+**Ideal State**: {What would make this truly excellent for translators}
 ```
+
+ - [ ] Test with both marking and non-marking languages
+   - Marking language: Language that grammatically requires this feature
+   - Non-marking language: Language that doesn't grammatically distinguish this feature
+   - Document whether annotations are useful for both
+
+ - [ ] Identify translation-critical issues
+   - What mistakes would a translator make WITHOUT this data?
+   - What mistakes might they make WITH this data?
+   - What's the net benefit?
 
 ## Integration & Iteration
 
