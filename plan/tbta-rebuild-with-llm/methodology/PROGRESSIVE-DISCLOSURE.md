@@ -5,6 +5,8 @@
 
 ---
 
+[ TODO: this should not be called progressive-disclosure as that is confusing with the skill progressive-disclosure, insetad reference that doc and this should be key files for each feature which then should be in the feature directory not here]
+
 ## Core Principle
 
 **Token Efficiency:** Main README target ≤500 lines. Inline only what's relevant to THIS feature.

@@ -80,70 +80,7 @@ These files returned 404 errors (not available in repository):
 
 **Note**: The TBTA database export currently covers only the early books of the Bible (Genesis through approximately the historical books). New Testament books like John are not yet available.
 
-## How to Use These Samples
 
-### Load a Sample in Python
-
-```python
-import json
-
-with open('genesis_001_001.json', 'r') as f:
-    verse = json.load(f)
-
-# verse is an array of clause objects
-for clause in verse:
-    print(f"Clause type: {clause['Type']}")
-    print(f"Illocutionary force: {clause['Illocutionary Force']}")
-```
-
-### Extract All Words
-
-```python
-def extract_words(element):
-    if 'Constituent' in element and element.get('Part') not in ['Space', 'Period']:
-        return [element['Constituent']]
-
-    words = []
-    if 'Children' in element:
-        for child in element['Children']:
-            words.extend(extract_words(child))
-    return words
-
-with open('genesis_001_001.json', 'r') as f:
-    verse = json.load(f)
-
-for i, clause in enumerate(verse):
-    words = extract_words(clause)
-    print(f"Clause {i+1}: {' '.join(words)}")
-```
-
-### Analyze Grammatical Features
-
-```python
-def find_verbs(element, verbs=[]):
-    if element.get('Part') == 'Verb':
-        verbs.append({
-            'word': element['Constituent'],
-            'tense': element.get('Time'),
-            'aspect': element.get('Aspect'),
-            'mood': element.get('Mood'),
-            'polarity': element.get('Polarity')
-        })
-
-    if 'Children' in element:
-        for child in element['Children']:
-            find_verbs(child, verbs)
-
-    return verbs
-
-with open('genesis_001_001.json', 'r') as f:
-    verse = json.load(f)
-
-for clause in verse:
-    verbs = find_verbs(clause)
-    for v in verbs:
-        print(f"{v['word']}: {v['tense']}, {v['aspect']}, {v['mood']}")
-```
 
 ## Download More Samples
 
