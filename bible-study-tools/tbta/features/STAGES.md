@@ -1,5 +1,7 @@
 The following summarizes the correct stages to build a new feature.  If you are improving a feature you should validate that it has done all of these stages
 
+[TODO: compare with tbta-rebuild-with-llm/features/STAGES.md - i originally copied this from there but that file has been improved since and those changes need to make it to here, maybe look at the git history of that file to see the changes]
+
 # 1. Research TBTA documentation
 
  - [ ] Review the source documentation of TBTA for this feature from this git repo [ TODO: add link to get to their pdf ]

@@ -1,0 +1,4 @@
+[TODO: incorporate ADVERSARIAL-TESTING.md]
+[TODO: incorporate all files from tbta-rebuild-with-llm/learnings/*, throw away bloat and outdated learnings that don't apply to our new structure]
+[TODO: incorporate CROSS-FEATURE-LEARNINGS.md potentially as own file again throw away bloat and outdated learnings that don't apply to our new structure]
+[TODO: incorporate tbta-rebuild-with-llm/combined/integration-test.md but be highly sceptical as this was not very thouroughly tested despite it's claims, try to pull potential learnings but don't be as confident as they are, more "consider" words or "in some cases" or "explore potential that"]

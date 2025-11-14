@@ -1,0 +1,2 @@
+[TODO: aggregate, copy, rebuild from tbta-rebuild-with-llm/languages/*]
+[TODO: pull in key data (much of which may be obsolete so prefer the above) from tbta-rebuild-with-llm/combined/language-adaptation-guide.md]
