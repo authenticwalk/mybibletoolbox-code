@@ -1,0 +1,18 @@
+migration:
+  status: preparing
+  current_phase: null
+  current_task: null
+  session_id: swarm-1763149850808-ovswmjk2f
+  started_at: "2025-11-14T19:50:50.832Z"
+  completed_tasks: []
+  in_progress_tasks:
+    - implement_critical_fixes
+  git_tags:
+    phase_1a_complete: null
+    phase_1b_complete: null
+    phase_3_complete: null
+  peer_review:
+    status: completed
+    verdict: block_until_fixes
+    reviewers: 3
+    critical_issues: 10
