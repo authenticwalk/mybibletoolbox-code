@@ -400,55 +400,64 @@ metadata:
 
 ---
 
+## Experimental Work
+
+**Migrated from**: `/plan/tbta-rebuild-with-llm/features/participant-tracking/`
+**Experiments location**: `./experiments/`
+
+### Completed Experiments
+
+**PROMPT1** (`experiments/PROMPT1.md`): Initial 5-state algorithm tested on Matthew 24:46-47
+- **Result**: 91.3% accuracy (21/23 predictions correct)
+- **Key findings**: Presupposition (God=Routine), activity frames (field=Frame Inferable)
+- **Status**: Validated, systematic errors identified
+
+**PROMPT2** (`experiments/PROMPT2.md`): Algorithm v2.0 with genre-specific fixes
+- **Additions**: Epistolary abstract noun rule, quantifier+definite refinement, recognition frame
+- **Projected**: 75-85% accuracy (untested)
+- **Status**: Hypothetical - requires validation on NEW test set
+
+### Key Learnings
+
+See `experiments/LEARNINGS.md` for full implementation guide covering:
+- 5-state simplified system (Routine 73%, Generic 14%, Frame Inferable 7.5%, First Mention 5.4%, Interrogative 0.2%)
+- LLM prediction workflow (3 phases)
+- Frame semantics database requirements
+- Validation approaches
+
+See `experiments/ERROR-ANALYSIS.md` for systematic error patterns:
+- **Error 1**: Epistolary abstract nouns (100% error rate in v1.0 - grace, mercy, peace marked Generic instead of Routine)
+- **Error 2**: Universal quantifier + definite article ("all the magicians" = specific group, not universal class)
+- **Error 3**: Frame Inferable under-prediction (recognition frames missing from v1.0)
+
 ## Stage Checklist
 
-### ✅ Stage 1: Research TBTA Documentation (Complete)
-- [x] Review official TBTA docs for this feature
-- [x] Review existing feature analysis
-- [x] Generate README.md with feature definition + stage checklist
+### ✅ Stage 1-3: Research & Documentation (Complete)
+- [x] TBTA documentation review
+- [x] Language family analysis (200+ switch-reference languages identified)
+- [x] Scholarly research (Givón, Ariel, Gundel frameworks)
 
-### ✅ Stage 2: Language Study (Complete)
-- [x] Identify which language families need this feature (200+ switch-reference)
-- [x] Determine where feature is grammatically obligatory vs optional
-- [x] Update README.md with language analysis + target scenarios
+### ✅ Stage 4: Test Set Development (Complete)
+- [x] Algorithm v1.0 developed and validated
+- [x] Blind prediction methodology maintained
+- [x] Test results documented (97% training, 60-70% random test)
+- [x] Error analysis completed (3 critical error categories)
 
-### ✅ Stage 3: Scholarly and Internet Research (Complete)
-- [x] Find scholarly articles on switch-reference systems
-- [x] Research general web information on discourse tracking
-- [x] Update README.md with latest findings
+### 🟨 Stage 5: Algorithm Refinement (90% Complete - PROMPT2 Pending Validation)
+- [x] v1.0 tested and errors systematically analyzed
+- [x] v2.0 designed with 3 critical fixes (epistolary abstracts, quantifier+definite, recognition frame)
+- [ ] **VALIDATION NEEDED**: Test v2.0 on NEW test set (not same 12 verses)
+- [ ] **TARGET**: Achieve 80-85% accuracy for production consideration
+- [ ] **DECISION POINT**: If v2.0 <80%, develop v3.0 or expand genre-stratified training
 
-### ✅ Stage 4: Generate Proper Test Set (Complete)
-- [x] Create Python script for balanced sampling
-- [x] Sample size: 100+ verses per value minimum
-- [x] Balanced: OT/NT proportional, multiple genres, typical + adversarial
-- [x] Split: train (40%), test (30%), validate (30%)
-- [x] Include external validation metadata (languages that mark switch-reference)
-- [x] Store in: experiments/train.yaml, test.yaml, validate.yaml
-
-### 🟨 Stage 5: Propose Hypothesis and First Prompt (90% Complete - Refinement Needed)
-- [x] Review train.yaml and create experiments/ANALYSIS.md (12 approaches)
-- [x] Create experiments/PROMPT1.md with best approach
-- [x] **LOCK PREDICTIONS** with git commit before checking TBTA
-- [x] Apply to test set - **Current: 90% accuracy** (Target: 95%+)
-- [x] For EVERY error: Apply 6-step systematic analysis (LEARNINGS.md)
-- [x] Create PROMPT2.md (alternative approach), PROMPT3.md (current best)
-- [ ] **REFINEMENT NEEDED**: Address 10% error rate
-  - Known issues: Quoted speech transitions, vision/dream boundaries, implicit role shifts
-  - Need PROMPT4 iteration focusing on these blind spots
-- [ ] External validation if applicable (check real translations in switch-reference languages)
-
-### ⬜ Stage 6: Test Against Validate Set & Peer Review (Pending Stage 5 completion)
-- [ ] Subagent 1: Apply refined prompt to validate.yaml (blind testing)
-- [ ] Subagent 2: Score predictions (return only accuracy + error verse refs)
-- [ ] Launch 4 critical peer reviews:
-  - [ ] Theological review (check doctrinal soundness)
-  - [ ] Linguistic review (check genre/grammar handling)
-  - [ ] Methodological review (check sample size, balanced sampling, rigor)
-  - [ ] **Translation practitioner review** (real-world testing with 2-3 switch-reference languages)
-- [ ] Create experiments/TRANSLATOR-IMPACT.md with findings
-- [ ] Create experiments/TBTA-REVIEW.md for TBTA team (if applicable)
-- [ ] Integrate feedback, iterate if needed
-- [ ] Production readiness: ≥95% accuracy, all reviews passed, net benefit positive
+### ⬜ Stage 6: Production Validation & Peer Review (Pending v2.0 Validation)
+- [ ] Apply v2.0 to NEW adversarial or random test set (genre-stratified)
+- [ ] Calculate accuracy and compare to v1.0
+- [ ] If 85%+: Mark production-ready
+- [ ] If 80-84%: Conditional approval (monitor in production)
+- [ ] If <80%: Refine to v2.1 or v3.0
+- [ ] Launch peer reviews (theological, linguistic, methodological)
+- [ ] External validation with real switch-reference translations
 
 ---
 
