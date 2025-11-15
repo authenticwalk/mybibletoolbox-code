@@ -4,7 +4,6 @@ The following summarizes the correct stages to build a new feature. If you are i
 
 Review the source documentation of TBTA for this feature:
 - Official TBTA documentation: See `../tbta-source/README.md` for links to source materials
-- Reference: `../learnings/FEATURE-SUMMARY.md` for high-level feature overview
 - Check existing feature directory for this feature
 
 Generate the README.md for the feature with the information learnt:
@@ -80,7 +79,7 @@ For the **test set** (30%), deliberately include challenging cases:
 
 A subagent should extract TBTA data and create stratified samples:
 
-**Script responsibilities**:
+**TBTA Analysis Script responsibilities**:
 - Clone/access TBTA data repository
 - Loop through all TBTA files looking for this feature
 - Filter to verses with complete TBTA data only
@@ -92,29 +91,32 @@ A subagent should extract TBTA data and create stratified samples:
 - Classify verses by genre and difficulty
 - Add explanatory notes for adversarial cases
 - Split into train (40%), test (30%), validate (30%)
+- 
 
 **Output YAML structure**:
 ```yaml
 feature: {feature-name}
-value: {specific-value}
-total_verses: {count}
-distribution:
-  OT: {count}
-  NT: {count}
-genres:
-  narrative: {count}
-  poetry: {count}
-  prophecy: {count}
-  epistle: {count}
-external_validation:
-  languages: [list of languages that mark this feature]
-  families: [language families with this feature]
-verses:
-  - reference: "{BOOK} {chapter}:{verse}"
-    tbta_value: "{value}"
-    genre: "{genre}"
-    difficulty: "typical|adversarial"
-    notes: "Why adversarial (if applicable)"
+value:
+  - specific_value: {specific-value}
+    total_verses: {count}
+    distribution:
+      OT: {count}
+      NT: {count}
+      Books: [list of counts per book]
+    genres:
+      narrative: {count}
+      poetry: {count}
+      prophecy: {count}
+      epistle: {count}
+    external_validation:
+      languages: [list of languages that mark this feature]
+      families: [language families with this feature]
+    verses:
+      - reference: "{BOOK} {chapter}:{verse}"
+        tbta_value: "{value}"
+        genre: "{genre}"
+        difficulty: "typical|adversarial"
+        notes: "Why adversarial (if applicable)"
 ```
 
 **Main agent**: Receives only file paths, never sees test/validate data. Files stored in: `features/{feature}/experiments/train.yaml`, `test.yaml`, `validate.yaml`

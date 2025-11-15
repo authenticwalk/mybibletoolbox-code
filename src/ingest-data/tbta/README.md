@@ -14,16 +14,70 @@ TBTA is a rules-based Bible translation assistance tool that encodes detailed cr
 
 ## Prerequisites
 
-Clone the TBTA database export:
+The TBTA processor scripts will automatically clone the TBTA database export to `/tmp/tbta_db_export` when needed. No manual setup required!
 
+## Tools
+
+### 1. extract_feature.py - Extract Feature Values for STAGES.md Step 4
+
+Extracts all verses for a specific TBTA feature field, used in feature development workflow (STAGES.md Step 4).
+
+**Quick Start:**
 ```bash
-cd /tmp
-git clone https://github.com/AllTheWord/tbta_db_export.git
+# Extract Person system (includes clusivity)
+python src/ingest-data/tbta/extract_feature.py --field Person
+
+# Extract with custom limit and output file
+python src/ingest-data/tbta/extract_feature.py \
+  --field "Participant Tracking" \
+  --max-per-value 500 \
+  --output data.yaml
+
+# Dry run to see statistics only
+python src/ingest-data/tbta/extract_feature.py --field Mood --dry-run
 ```
 
-## Usage
+**Options:**
+- `--field` (required): TBTA field name (e.g., "Person", "Mood", "Participant Tracking")
+- `--max-per-value` (default: 2000): Cap verses per value (LRU cache)
+- `--output`: Output file path (default: stdout)
+- `--dry-run`: Show statistics without writing output
 
-### Process Specific Verses
+**Output Format:**
+Generates simplified YAML for LLM processing (STAGES.md Step 4 format):
+```yaml
+feature: person
+extracted: '2025-11-15T17:47:50Z'
+tbta_commit: 07797f2
+max_per_value: 2000
+value:
+  - specific_value: First Inclusive
+    total_verses: 1386
+    distribution:
+      OT: 979
+      NT: 407
+      Books: {GEN: 123, EXO: 89, ...}
+    verses:
+      - GEN.001.026
+      - GEN.003.022
+      # ... (up to max_per_value)
+```
+
+**Common TBTA Field Names:**
+- `Person` - Person system (includes First Inclusive, First Exclusive)
+- `Number` - Number system (Singular, Dual, Trial, Paucal, Plural)
+- `Participant Tracking` - Discourse participant tracking
+- `Mood` - Verb mood (Indicative, Imperative, etc.)
+- `Aspect` - Verb aspect
+- `Proximity` - Demonstrative proximity
+- `Discourse Genre` - Text genre classification
+- See [TBTA-FEATURES.md](../../bible-study-tools/tbta/tbta-source/TBTA-FEATURES.md) for complete list
+
+**Auto-cloning:** The script automatically clones/updates TBTA data from GitHub to `/tmp/tbta_db_export`
+
+---
+
+### 2. tbta_processor.py - Process Specific Verses
 
 ```bash
 # Single verse
