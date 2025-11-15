@@ -57,27 +57,46 @@ Copy this abbreviated checklist into your feature README.md (see [STAGES.md](STA
 - [ ] Research general web information
 - [ ] Update README.md with latest findings
 
-### Stage 4: Generate Proper Test Set (USE SUBAGENT - don't see answers!)
-- [ ] Create python script for balanced sampling
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Balanced: OT/NT proportional, multiple genres, typical + adversarial
+### Stage 4: Generate Test Set with Translation Data (USE SUBAGENT - don't see answers!)
+- [ ] **Philosophy**: Discover answers from what real translators did (not just TBTA validation)
+- [ ] Sample size: 100+ verses per value minimum (statistical power)
+- [ ] Balanced: OT/NT proportional, multiple genres, books, typical + adversarial
+- [ ] **Translation Language Selection**:
+  - [ ] Identify language families that grammatically mark this feature (from Stage 2)
+  - [ ] Build translation database (5-10 representative translations)
+  - [ ] Document in experiments/TRANSLATION-DATABASE.md
+- [ ] **Dual Output Strategy**: Generate BOTH answer sheets (TBTA) AND question sheets (translations)
+  - [ ] Use extract_feature.py for TBTA data (answer sheets)
+  - [ ] Subagent samples with stratification + selects representative translations
+  - [ ] Generate question sheets with real translation texts (NO TBTA values visible)
 - [ ] Split: train (40%), test (30%), validate (30%)
-- [ ] Include external validation metadata (languages that mark this feature)
-- [ ] Store in: experiments/train.yaml, test.yaml, validate.yaml
+- [ ] Store: train.yaml + train_questions.yaml, test.yaml + test_questions.yaml, validate.yaml + validate_questions.yaml
 
-### Stage 5: Propose Hypothesis and First Prompt
-- [ ] Review train.yaml and create experiments/ANALYSIS.md (up to 12 approaches)
-- [ ] Create experiments/PROMPT1.md with best approach
-- [ ] **LOCK PREDICTIONS** with git commit before checking TBTA
-- [ ] Apply to test set, achieve 100% stated / 95% dominant accuracy
-- [ ] For EVERY error: Apply 6-step systematic analysis (LEARNINGS.md)
-- [ ] Create PROMPT2.md (alternative approach), PROMPT3+.md (refinements)
-- [ ] External validation if applicable (check real translations)
-- [ ] Cross-linguistic translation validation (Thesis approach):
-  - [ ] Create experiments/CROSS-LINGUISTIC-VALIDATION.md
-  - [ ] Find languages with same feature (prefer same family/source lineage)
-  - [ ] Check what their Bible translations did for this verse
-  - [ ] Analyze cultural/linguistic/source factors when disagreements exist
+### Stage 5: Analyze Translations & Develop Algorithm
+- [ ] **Translation Discovery Analysis** (primary source - use train_questions.yaml):
+  - [ ] For each verse: Identify feature value from real translations
+  - [ ] Check translation consensus (80%+ agreement = strong signal)
+  - [ ] Document patterns in experiments/TRANSLATION-PATTERNS.md
+  - [ ] Compare with TBTA values (train.yaml):
+    - Translations AGREE with TBTA (90%+ cases) → High confidence
+    - Translations DISAGREE → Investigate in DIVERGENCE-ANALYSIS.md
+    - Translations UNCLEAR → Rely on TBTA (lower confidence)
+- [ ] Create experiments/ANALYSIS.md (up to 12 approaches, weight translation + TBTA evidence)
+- [ ] **First Prompt Development**:
+  - [ ] Create experiments/PROMPT1.md with most likely approach
+  - [ ] **LOCK PREDICTIONS** with git commit before checking TBTA
+  - [ ] Apply to test set, record commit SHA in LEARNINGS.md
+- [ ] **Success Criteria**: 100% accuracy for stated values (with sufficient sample ≥100)
+- [ ] **Systematic Error Analysis** (6-step process for EVERY error):
+  - [ ] Verify data accuracy, re-analyze source text + context
+  - [ ] Cross-reference 3+ translations, consult commentaries (cite per ATTRIBUTION.md)
+  - [ ] Test hypotheses: Why did algorithm fail?
+  - [ ] Final determination: Is TBTA correct? Valid perspective? Potential annotation error?
+- [ ] **Iterative Refinement**:
+  - [ ] PROMPT2.md (different approach), PROMPT3+.md (refine winning approach)
+  - [ ] Each iteration: Lock predictions → Test → Analyze errors → Refine
+  - [ ] Stop when accuracy plateaus or reaches target
+- [ ] Update experiments/LEARNINGS.md and ../learnings/README.md with transferable patterns
 
 ### Stage 6: Test Against Validate Set & Peer Review
 - [ ] Subagent 1: Apply prompt to validate.yaml (blind - never sees answers)
