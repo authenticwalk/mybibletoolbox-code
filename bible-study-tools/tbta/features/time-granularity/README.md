@@ -373,6 +373,58 @@ Time Granularity interacts with:
 
 ---
 
+## Language Families Requiring Time Granularity
+
+### High Granularity Systems (10+ Distinctions)
+
+**Austronesian Family** (176 languages in TBTA):
+- Tagalog: 11 temporal distinctions from immediate past to historic past
+- Context-dependent temporal particles interact with aspect
+
+**Peba-Yaguan Family**:
+- Yagua: 5 past tense suffixes marking temporal remoteness
+- Remote past for events beyond living memory (Genesis creation)
+
+### Medium Granularity Systems (5-9 Distinctions)
+
+**Niger-Congo/Bantu** (89 languages in TBTA):
+- ChiBemba: Symmetrical 4 past + 4 future system
+- Hodiernal (today) vs pre-hodiernal (before today) distinctions
+- Swahili, Zulu: Near past vs remote past minimum
+
+**Trans-New Guinea** (141 languages in TBTA):
+- Multiple deictic temporal distance markers
+- Hodiernal/hesternal distinctions common
+
+### Aspect-Based Systems
+
+**Sino-Tibetan** (18 languages in TBTA):
+- Mandarin: Aspect particles (了, 过, 着) + temporal adverbs
+- No tense, but temporal context obligatory
+
+**Japonic, Koreanic**:
+- Aspect-based with temporal adverbs
+- Temporal distance through context, not morphology
+
+**Mayan** (41 languages in TBTA):
+- Binary aspect: Completive vs incompletive
+- Temporal meaning from discourse context
+
+For detailed language examples, see `experiments/` directory.
+
+---
+
+## Experimental Work
+
+**Location**: `/experiments/`
+
+- **PROMPT1.md**: Test cases for 6 passage types (narrative, prophecy, discourse, evidential)
+- **TEMPLATE.md**: 5-level hierarchical prediction template with examples
+
+These experiments test temporal granularity prediction across different discourse contexts and language families.
+
+---
+
 ## Stage Checklist
 
 ### ✅ Stage 1: Research TBTA Documentation (COMPLETE)
@@ -391,6 +443,8 @@ Time Granularity interacts with:
   - [x] Language family analysis
   - [x] Genesis narrative context
   - [x] Stage checklist (this section)
+- [x] Migrate experimental work to experiments/ directory
+- [x] Integrate language family documentation into README
 
 ### ⬜ Stage 2: Language Study
 
