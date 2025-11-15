@@ -62,6 +62,7 @@ Document proven solutions for translating culturally non-existent concepts and t
 ---
 
 ## Available Tools (Detailed)
+[TODO: these should not be detailed, the details should be in their own folders, see the progressive disclosure skill for our theory on this.  This should be a summary of each and an icon indiating status and a very short note on the status]
 
 ### ✅ Tool 1: Lexicon Core
 **Status:** Research complete, Experimentation ongoing (Cycle 4)
@@ -313,6 +314,27 @@ translation_guidance:
 - **Fair use verified** - No reconstruction of copyrighted content
 - **Complete documentation** - All claims traceable to sources
 
+### Level 4: PEER REVIEW (Usefulness validation)
+
+Real-world validation by target users - Bible translators, pastors, and students.
+
+**Translation Impact Testing:**
+- Would a Bible translator copy this to their translation notes?
+- Does it prevent documented translation errors?
+- Are language-specific patterns actionable (not "some cultures...")?
+
+**Practitioner Feedback:**
+- Usability testing with target audience (translators, pastors, students)
+- Error prevention documentation (mistakes avoided due to enrichment)
+- Cross-cultural validation (patterns tested across language families)
+
+**Evidence Requirements:**
+- Documented case where enrichment data prevented translation error
+- Feedback from at least 2 practitioners in target audience
+- Validated pattern accuracy across 3+ language families (when applicable)
+
+**See Also:** STAGES.md §6 "Translation Impact Testing" for evidence-based validation methodology
+
 ---
 
 ## Key Planning Documents
@@ -321,6 +343,13 @@ translation_guidance:
 - `/plan/strongs-comprehensive-strategy.md` - Overall vision, three initiatives, integration
 
 **Tool-Specific Documentation:**
+
+**Directory Structure Note:** Strong's tools use `/docs` subdirectory to separate:
+- `/docs/` - Methodology, experiments, learnings (documentation)
+- `/` - Code, scripts, production configs (implementation)
+
+This differs from TBTA features (flat structure) but is pragmatic for Strong's tools due to extensive experimentation documentation (80+ experiments across tools). The `/docs` separation keeps implementation files clean while preserving complete research trail.
+
 - `./lexicon-core/docs/` - Tool 1 complete documentation
 - `./web-insights/docs/` - Tool 3 complete documentation
 - `./tbta-hints/` - TBTA hints methodology and logic tree
@@ -336,6 +365,8 @@ translation_guidance:
 ---
 
 ## Implementation Timeline
+
+[TODO: not here, all we need is a simple icon and comment on status for each ]
 
 ### Completed ✅
 - Tool 1: Research phase, Experimentation (Cycles 1-4)
@@ -356,6 +387,8 @@ translation_guidance:
 ---
 
 ## Success Metrics
+
+[TODO: integrate this into each tool, don't relist them here]
 
 **Validation Status Legend:**
 - ✅ VALIDATED: Evidence from 30+ test words with documented validation
