@@ -11,14 +11,11 @@ TBTA (Text-Based Translation Assistance) provides linguistic annotations across 
 - **Tier B (20 features)**: Important for many projects - common features, sometimes inferable from context
 - **Tier C (20 features)**: Specialized use cases - helpful but often derivable or language-specific
 
-**Current Implementation Status**:
-- Tier A: 68% complete (13/19), 100% documented (19/19)
-- Tier B: 15% complete (3/20), 100% documented (20/20)
-- Tier C: 0% complete (0/20), 70% documented (14/20)
-
 ---
 
 ## Tier A: Essential Features (19 Features)
+
+[ TODO: why are we listed status here, I hope you mean TBTA on their own git project status but I highly doubt it, I think you got confused and blended our tbta rewrite project with the tbta original project analysis, this directory can only be about the original TBTA ]
 
 **Priority**: Highest - affects 1000+ languages, cannot be easily inferred from context
 

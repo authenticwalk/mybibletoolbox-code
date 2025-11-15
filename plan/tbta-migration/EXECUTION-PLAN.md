@@ -8,7 +8,7 @@
 
 ## Mission
 
-Complete all TODOs in `bible-study-tools/tbta/` through systematic migration of content from `plan/tbta-rebuild-with-llm/` into standardized structure.
+Complete all TODOs in `bible-study-tools/tbta/` through systematic migration of content from `plan/tbta-rebuild-with-llm/` into standardized structure.  In addition find all empty markdown files I stubbed in and ensure they are complete
 
 **Key Changes from v1.0**:
 - ✅ Fixed 6 critical dependency issues
