@@ -456,6 +456,77 @@ python extract_feature.py --field Participant
 
 ---
 
-**Status**: Ready to implement
-**Blocker**: None
-**Next Action**: Implement Phase 1 (core extraction)
+**Status**: ✅ COMPLETED (2025-11-15)
+**Location**: `/workspaces/mybibletoolbox-code/src/ingest-data/tbta/extract_feature.py`
+**Commit**: 31e3750
+
+## Implementation Results
+
+### ✅ All Phases Completed
+
+**Phase 1: Core Extraction** (2 hours)
+- ✅ Auto-clone/update TBTA repo from GitHub
+- ✅ Parse JSON files with TBTA book name mapping
+- ✅ Extract field values recursively from clause trees
+- ✅ Standardize verse references to BOOK.CCC.VVV format
+
+**Phase 2: LRU + Counting** (1 hour)
+- ✅ LRU cache implemented per value (OrderedDict)
+- ✅ Overall frequency counts (not limited by LRU)
+- ✅ Per-book distribution tracking
+- ✅ OT/NT testament distribution
+
+**Phase 3: Output + Testing** (1 hour)
+- ✅ YAML output format matching STAGES.md
+- ✅ Tested with Person field (1,386 Inclusive + 1,272 Exclusive)
+- ✅ Tested with Participant Tracking (6 values, including rare Offstage)
+- ✅ Validated against TBTA coverage (11,649 files)
+
+**Phase 4: Documentation** (30 min)
+- ✅ Usage examples in script header
+- ✅ README.md updated with extract_feature.py section
+- ✅ Common field name mapping documented
+
+### Test Results
+
+**Person Field (Clusivity)**:
+- First Inclusive: 1,386 verses (OT: 979, NT: 407)
+- First Exclusive: 1,272 verses (OT: 1,114, NT: 158)
+- Plus other person values (Third: 141,890, Second: 16,732, First: 10,207)
+
+**Participant Tracking**:
+- Routine: 125,543 verses
+- Generic: 23,856 verses
+- Frame Inferable: 12,815 verses
+- First Mention: 9,267 verses
+- Interrogative: 394 verses
+- Offstage: 1 verse (rare value confirmed!)
+
+### Usage Examples
+
+```bash
+# Basic extraction
+python src/ingest-data/tbta/extract_feature.py --field Person
+
+# With custom limits
+python src/ingest-data/tbta/extract_feature.py \
+  --field "Participant Tracking" \
+  --max-per-value 500 \
+  --output data.yaml
+
+# Dry run (statistics only)
+python src/ingest-data/tbta/extract_feature.py --field Mood --dry-run
+```
+
+### Next Steps for Feature Development
+
+1. Run script to extract feature data
+2. Use subagent to add genre/difficulty/notes (STAGES.md Step 4)
+3. Split into train/test/validate sets
+4. Proceed with STAGES.md Step 5 (Algorithm development)
+
+---
+
+**Total Time**: ~4.5 hours (as estimated)
+**Status**: Production-ready
+**Documentation**: Complete
