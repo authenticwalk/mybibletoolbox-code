@@ -8,32 +8,41 @@
 
 ## Critical Issues to Resolve
 
-### 🚨 Issue 1: Random Test Failure (CRITICAL)
-**Problem**: Random test achieved only 50-60% (target: 80-90%)
+### ✅ Issue 1: Random Test Failure - ROOT CAUSE IDENTIFIED (2025-11-15)
+**Problem**: Random test achieved only 60% (6/10) with Algorithm v1.0 (target: 80-90%)
 - Adversarial test: 73% (8/11) ✓ meets 60-70% target
-- Random test: 50-60% (5/10) ✗ FAILS 80-90% target
+- Random test: 60% (6/10) ✗ FAILS 80-90% target
 - **This is backwards** - random should beat adversarial by 15-25 points!
 
-**Possible Causes**:
-1. Overfitting to 20-verse training set
-2. Training set not representative of typical cases
-3. Algorithm has systematic blind spots
-4. Random sample happened to be harder than expected (n=10 too small)
+**Root Cause Analysis - COMPLETED**:
+✅ Systematic error analysis completed for all 4 failed verses
+✅ 3 common failure patterns identified:
 
-**Required Actions**:
-- [ ] Identify the 5 failed random test verses (check test.yaml)
-- [ ] Apply 6-step systematic error analysis to each:
-  - Step 1: Verify TBTA annotation is correct
-  - Step 2: Re-analyze verse in original language
-  - Step 3: Re-analyze context (±3 verses, chapter, book)
-  - Step 4: Cross-reference 3+ translations
-  - Step 5: Test hypotheses (why algorithm failed)
-  - Step 6: Final determination (algorithm fix needed? TBTA error? valid ambiguity?)
-- [ ] Document findings in experiments/LEARNINGS.md
-- [ ] Look for common patterns (genre? theological context? discourse type?)
-- [ ] Determine if systematic blind spots exist
+**Pattern 1: Nested Quotations** (3/4 failures)
+- Verses: 2 Kings 18:22, Jeremiah 3:22, Ezekiel 33:10
+- Problem: Algorithm doesn't analyze inner quotes separately
+- Example: Assyrian quoting Jerusalem's hypothetical "we trust in the LORD"
+- Algorithm Gap: Rule 5.2 insufficient for nested quote handling
 
-**Estimated Time**: 3-4 hours
+**Pattern 2: Genre-Specific Misapplication** (3/4 failures)
+- Prophecy: Prayer within prophetic quote not recognized (Jer 3:22)
+- Prophecy: Corporate lament speaker confused with prophet frame (Ezek 33:10)
+- Epistle: Apostolic authority overfitted, missing shared identity (Phil 3:20)
+
+**Pattern 3: Implicit vs. Explicit Markers**
+- Algorithm excels at EXPLICIT markers (contrast, theological categories)
+- Algorithm struggles with IMPLICIT patterns (shared citizenship, corporate confession)
+- Random verses have more implicit patterns than adversarial verses
+
+**Why Backwards Result Occurs**:
+- Adversarial test designed with explicit edge cases → Algorithm's strength
+- Random test contains common implicit patterns → Algorithm's weakness
+- Training set (20 verses) over-represents explicit markers, under-represents nested quotes and implicit patterns
+
+**Remaining Actions**:
+- [ ] Document full analysis in experiments/ERROR-ANALYSIS-RANDOM.md
+- [ ] Update experiments/LEARNINGS.md with 3 failure patterns
+- [ ] Test whether Algorithm v2.1 (PROMPT3.md) fixes these blind spots
 
 ---
 
