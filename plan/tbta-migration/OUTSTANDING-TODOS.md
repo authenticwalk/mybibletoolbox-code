@@ -81,9 +81,9 @@
 ## Migration Priority
 
 **HIGH PRIORITY** (Blocks feature development):
-1. Document script name/path for verse extraction
-2. Clarify LLM vs script role separation
-3. Restore "state values" documentation from git history
+1. ✅ Document script name/path for verse extraction - COMPLETE (see HIGH-PRIORITY-TODO-SOLUTIONS.md)
+2. ✅ Clarify LLM vs script role separation - COMPLETE (documented in STAGES.md)
+3. ✅ Restore "state values" documentation from git history - COMPLETE (accuracy targets table added to STAGES.md)
 
 **MEDIUM PRIORITY** (Improves quality):
 4. Add AI transparency disclaimers with model versions

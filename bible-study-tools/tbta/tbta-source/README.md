@@ -29,23 +29,6 @@ Without TBTA, translators must guess these distinctions, potentially losing theo
 
 ## Key Insights from Analysis
 
-### Reproduction is Possible
-LLM-based methods achieved **80-100% accuracy** on tested features (Phase 1 - Genesis 1):
-- Person/Clusivity: 100%
-- Mood: 100% (estimated 90-95% overall)
-- Aspect: 98.1%
-- NounListIndex: 100%
-- Participant Tracking: 90%
-- Number Systems: 80-85%
-
-### Manual Annotation is Opaque
-TBTA's original decision rules are undocumented, making consistency verification challenging. The LLM approach uses:
-- Semantic interpretation over pure morphology
-- Theological reasoning for divine/human distinctions
-- Genre awareness (narrative vs poetry vs prophecy)
-- Translation analysis across 900+ versions
-- Multiple validation with confidence scoring
-
 ### Coverage is Strategic
 Focus on high-value books (narrative, epistles) rather than comprehensive coverage:
 - **Old Testament (20 books)**: Genesis, Exodus, Numbers, Deuteronomy, Joshua, Judges, Ruth, 1-2 Samuel, 1 Kings, Jonah, minor prophets
@@ -113,25 +96,6 @@ Helpful but often derivable or language-specific:
 **Without TBTA:** Demonstratives/honorifics → Which form?
 **With TBTA:** Proximity marked → Correct これ/それ/あれ selection; Speaker Demographics → Correct honorific level
 
-## Current Implementation Status
-
-### Complete ✅
-- Data ingestion for 11,649 verses
-- YAML storage format (following SCHEMA.md)
-- 85% feature documentation
-- 32% features with experiments (19/59)
-- 80-100% accuracy on tested features
-
-### In Progress 🟨
-- Tier A feature experiments (68% → 100%)
-- Genre validation beyond Genesis 1 (narrative only)
-- Complete documentation (85% → 100%)
-
-### Not Yet Implemented ❌
-- Feature-specific query tools
-- Translation assistance workflows
-- Macula integration at verse level
-- Individual language guides (1,009 languages)
 
 ## Source Attribution
 
@@ -141,28 +105,7 @@ Helpful but often derivable or language-specific:
 - `/plan/tbta-analysis.md` - Initial findings and edge cases
 - `/plan/tbta-comprehensive-review.md` - Complete feature review and methodology
 
-## For AI Systems Using This Data
-
-When assisting with Bible translation:
-
-1. **Check Tier A features** for the target language family first
-2. **Use TBTA + Macula together** for comprehensive analysis
-3. **Flag low-confidence predictions** for human review
-4. **Respect genre differences** - narrative patterns ≠ poetry patterns
-5. **Check multiple translations** in languages with the target feature
-6. **Cite sources** - TBTA provides grounded data, not guesses
-
-**Example workflow:**
-```
-Translating [VERSE] to [LANGUAGE] ([FAMILY])
-→ Check critical features for [FAMILY] in TRANSLATION-EDGE-CASES.md
-→ Get TBTA feature values from data files
-→ Get Macula morphology/semantics
-→ Provide translation guidance with both sources
-```
 
 ---
 
 **Last Updated**: 2025-11-14
-**Status**: Phase 1 Complete (85% documented, 32% tested, 80-100% accuracy)
-**Next Priority**: Complete Tier A feature experiments
