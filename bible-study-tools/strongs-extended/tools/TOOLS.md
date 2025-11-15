@@ -1,6 +1,6 @@
-# Strong's Extended Tools - Detailed Documentation
+# Strong's Extended Tools - Overview
 
-This document provides comprehensive details on all Strong's enrichment tools. For a quick overview, see [../README.md](../README.md).
+Quick reference for all Strong's enrichment tools. For detailed methodology, see individual tool folders.
 
 ## Three Tool Categories
 
@@ -9,13 +9,7 @@ This document provides comprehensive details on all Strong's enrichment tools. F
 
 Extract authoritative lexical data (etymology, semantic range, usage statistics) from published lexicons to create the foundation for all Strong's enrichment work.
 
-**Data Sources:**
-- Published lexicons: BDB, Thayer's, BDAG, LSJ, Abbott-Smith, HELPS Word-studies
-- Web aggregators: BibleHub, StudyLight, Blue Letter Bible
-- Cross-reference codes: TDNT, Louw-Nida, Trench's Synonyms
-
 **Authority Level:** HIGH - Published lexicons only
-
 **Coverage:** All 14,197 Strong's words (8,674 Hebrew + 5,523 Greek)
 
 ### 2. TBTA Hints
@@ -23,20 +17,7 @@ Extract authoritative lexical data (etymology, semantic range, usage statistics)
 
 Extract cross-linguistic grammatical patterns from 900+ Bible translations to provide translation hints for ambiguous contexts.
 
-**Focus Areas:**
-- Number systems (dual, trial, plural)
-- Person/clusivity (inclusive vs exclusive "we")
-- Proximity (demonstrative distance: this/that/yonder)
-- Polarity (negative particles)
-- Semantic role, aspect patterns, surface realization
-
-**Data Source:** 900+ Bible translations in TBTA corpus
-
-**Expected Impact:**
-- Overall accuracy: +7% (85% → 92%)
-- Ambiguous contexts: +13% (75% → 88%)
-- Edge cases: +25% (60% → 85%)
-
+**Expected Impact:** +7% overall accuracy (85% → 92%), +25% edge cases (60% → 85%)
 **Coverage:** Top 300 high-frequency words (pronouns, demonstratives, particles)
 
 ### 3. Cultural Translation
@@ -44,215 +25,46 @@ Extract cross-linguistic grammatical patterns from 900+ Bible translations to pr
 
 Document proven solutions for translating culturally non-existent concepts and taboo subjects.
 
-**Categories:**
-- Non-existent concepts (snow in tropics, sheep in Arctic, bread in rice cultures)
-- Untranslatable abstracts (agape, grace, righteousness)
-- Cultural sensitivities (taboo numbers, offensive animals, kinship terms)
-- Redemptive analogies (Peace Child approach)
-
-**Data Source:** Same 900+ translation corpus as TBTA hints
-
-**Example Solutions:**
-- Snow (H7950) → Hawaiian: "hau" (ice/frost metaphor), Tok Pisin: "ais bilong ren" (ice of rain)
-- Lamb (G721) → Inuktitut: "nattiq" (seal pup), preserves sacrifice imagery
-- Heart (H3820) → Cultures using liver/kidneys for emotions
-
+**Example Solutions:** Snow → Hawaiian "hau" (ice/frost), Lamb → Inuktitut "nattiq" (seal pup)
 **Coverage:** Top 300-500 words with highest cultural variation
 
 ---
 
-## Available Tools (Detailed)
-[TODO: these should not be detailed, the details should be in their own folders, see the progressive disclosure skill for our theory on this.  This should be a summary of each and an icon indiating status and a very short note on the status]
+## Available Tools
 
 ### ✅ Tool 1: Lexicon Core
-**Status:** Research complete, Experimentation ongoing (Cycle 4)
-**Authority:** HIGH (published lexicons only)
-**Timeline:** 14 weeks total (Research 2wk ✅ | Experiments 4wk 🔄 | Validation 2wk | Production 6wk)
+**Status:** 🔄 Cycle 4 experiments | **Timeline:** 14 weeks | **See:** `./lexicon-core/docs/`
 
-**Methodology (4 Steps):**
-1. **Read Base File** - Extract existing data from `.data/strongs/{num}/{num}.strongs.yaml`
-2. **BibleHub Extraction** - Thayer's, HELPS Word-studies, usage statistics (parallel)
-3. **StudyLight Extraction** - LSJ, Abbott-Smith, Vocabulary of Greek NT (parallel)
-4. **Blue Letter Bible** - TDNT references, Trench's Synonyms, cross-refs (parallel)
-5. **Synthesis** - Identify convergence, document divergence, apply fair use
-
-**Experiments Completed:**
-- Cycle 1-2: Initial methodology (G846, G1411, G5287, H430, love-family)
-- Cycle 3: Optimization (G1411, G846 refined)
-- Cycle 4: Production testing (G846 final, G1161 particle, G1411 control, G1537 preposition, G5100 interrogative)
-
-**Key Innovation:** Fair use convergence grouping - "Most lexicons agree X {thayer} {bdb} {lsj}"
+Extract authoritative lexical data from published lexicons (BDB, Thayer's, BDAG, LSJ, Abbott-Smith, HELPS Word-studies). Uses fair use convergence grouping for multi-source synthesis.
 
 **Output:** `.data/strongs/{num}/{num}-lexicon-core.yaml`
-
-**See:** `./lexicon-core/docs/` for complete documentation
 
 ---
 
 ### ✅ Tool 3: Web Insights
-**Status:** PRODUCTION-READY (All phases complete ✅)
-**Authority:** MEDIUM (expert blogs, Ph.D. scholars) to MEDIUM-LOW (M.Div. practitioners)
-**Timeline:** 12 weeks total (Research 2wk ✅ | Experiments 2wk ✅ | Validation 2wk ✅ | Production 6wk)
+**Status:** ✅ Production ready | **Timeline:** 12 weeks | **See:** `./web-insights/docs/`
 
-**Methodology (3 Steps):**
-1. **Source Discovery** - WebSearch across vetted domains (11 sources)
-2. **Content Extraction** - WebFetch from vetted sources, verify credentials
-3. **Synthesis** - Read Tool 1 first, assign authority level, validate, generate YAML
-
-**Vetted Sources (11 total):**
-- MEDIUM-HIGH: Tyndale House, seminary sites (institutional backing)
-- MEDIUM: Bill Mounce, scholar blogs (Ph.D. + publications)
-- MEDIUM-LOW: Qualified practitioners (M.Div. + citations)
-
-**Experiments Completed (Adversarial Testing):**
-1. G4151 (pneuma) - Scholarly disagreement → Multi-perspective framework
-2. G2160 (eutrapelia) - Rare hapax → Discipline-specific search
-3. G1161 (de) - Scope boundary → Skip decision validation
-4. G1411 (dynamis) - Error correction → 5-part structure
-5. G1577 (ekklesia) - Cultural debate → Bias detection tests
-
-**Key Innovations:**
-- 5-Part Error Correction: Error → Classification → Refutation → Validation → Alternative
-- Multi-Perspective Framework: Present multiple views fairly
-- Bias Detection Tests: Reversal, Respect, Evidence
-- Appropriate Skip = Success (particles, Tool 1 sufficient)
-
-**Coverage Strategy:**
-- High-Priority (300): Error corrections, scholarly debates, cultural issues
-- Medium-Priority (800): Multi-source coverage, translator/preacher guidance
-- Low-Priority (400): Discipline-specific, opportunistic
-- Skip (~12,500): Grammatical particles, no expert coverage, Tool 1 sufficient
+Extract insights from vetted web sources (11 vetted domains) to complement lexical research with contemporary scholarship and error corrections. Features 5-part error correction and multi-perspective framework.
 
 **Output:** `.data/strongs/{num}/{num}-web-insights.yaml`
 
-**See:** `./web-insights/docs/` for complete documentation
-
 ---
 
-### 🔄 TBTA Hints (Strong's Word-Level Translation Patterns)
-**Status:** Proof-of-concept phase (Analysis complete, ready for pilot)
-**Data Source:** 900+ Bible translations (TBTA corpus)
-**Timeline:** 5 months (Planning 1mo ✅ | Proof-of-concept 1mo | Top 50 words 1mo | Top 300 words 2mo)
+### 🔄 TBTA Hints
+**Status:** 📋 Proof-of-concept | **Timeline:** 5 months | **See:** `./tbta-hints/`
 
-**Target Features (11 of 59 TBTA features, 19% coverage):**
-1. Number System (dual, trial, plural)
-2. Person/Clusivity (inclusive/exclusive we)
-3. Proximity (demonstrative distance)
-4. Polarity (negative particles)
-5. Lexical Sense (polysemy disambiguation)
-6. Surface Realization (pro-drop patterns)
-7. Reflexivity, Degree, Semantic Role, Aspect, Mood
-
-**High-Value Words (Top 300):**
-- Top 50 pronouns: 70% text coverage, highest cross-linguistic variation
-- Demonstratives: Clear proximity patterns
-- Theologically significant: Distinct sense translations
-- Grammatical particles: Systematic functions
-
-**Implementation Approach:**
-LLM-based logic tree (scalable to 14,197 words, no hard-coded rules):
-
-1. **Feature Applicability Check** → LLM determines if TBTA feature applies to Strong's word
-2. **Cross-Linguistic Pattern Detection** → LLM groups by language family, identifies systematic alternations
-3. **Context-Dependent Analysis** → LLM correlates translation patterns with Biblical/theological contexts
-4. **Confidence Calibration** → LLM assigns evidence-based scores (0.0-1.0)
-5. **Evidence Synthesis** → LLM generates YAML output with inline citations
-
-**See:** `./tbta-hints/METHODOLOGY.md` for complete architecture
-**See:** `./tbta-hints/LOGIC-TREE.md` for visual decision flow
-
-**Key Advantages:**
-- Generalizes to ALL Strong's words (no manual coding per word/language/feature)
-- Adaptive pattern recognition (discovers patterns from corpus data)
-- Self-calibrating confidence (evidence strength determines scores)
-- Scales via parallel processing (70% features skipped via applicability filter)
-
-**Example Output:**
-```yaml
-# G2249 ἡμεῖς (we)
-person: "first plural"
-clusivity_patterns:
-  - context: "divine speech (Trinity)"
-    pattern: "5/5 Austronesian use exclusive"
-    examples: {tgl: "kami", msa: "kami", fij: "keirau"}
-    confidence: 0.95
-  - context: "church unity passages"
-    pattern: "4/4 use inclusive"
-    examples: {tgl: "tayo", msa: "kita", fij: "keda"}
-    confidence: 0.90
-```
-
-**Expected Accuracy Gains:**
-- Overall: +7% (85% → 92%)
-- Ambiguous contexts: +13% (75% → 88%)
-- Edge cases: +25% (60% → 85%)
+Extract cross-linguistic translation patterns from 900+ Bible translations. LLM-based logic tree analyzes 11 TBTA features (number, clusivity, proximity, polarity, etc.) to provide context-dependent translation guidance.
 
 **Output:** `.data/strongs/{num}/{num}-tbta-hints.yaml`
 
-**See:** `./tbta-hints/METHODOLOGY.md` for complete methodology and implementation details
-
 ---
 
-### 📋 Cultural Translation Challenges
-**Status:** Planning complete, ready for implementation
-**Data Source:** Same 900+ translation corpus as TBTA hints
-**Timeline:** 4 months (Planning 1mo ✅ | Pilot 1mo | Top 100 1mo | Expansion 1mo)
+### 📋 Cultural Translation
+**Status:** 📋 Planning complete | **Timeline:** 4 months | **See:** `./cultural-translation/docs/`
 
-**Challenge Categories:**
-1. **Non-existent Concepts** - Physical objects unknown in target culture
-2. **Untranslatable Abstracts** - Theological concepts with no cultural equivalent
-3. **Cultural Sensitivities** - Taboo subjects, offensive animals, sacred objects
-4. **Semantic Gaps** - Missing distinctions or extra distinctions
-
-**Extraction Approach:**
-```python
-# Identify cultural adaptations
-for translation in corpus:
-    if strongs == "H7950" and translation.lang_has_no_snow():
-        if translation.word != expected_cognate:
-            record_adaptation({
-                "original": "snow",
-                "adaptation": translation.word,
-                "strategy": classify_strategy(),  # substitute, describe, loan
-                "rationale": analyze_choice()
-            })
-```
-
-**Example Output:**
-```yaml
-# H7950 שֶׁלֶג (snow)
-strongs_number: H7950
-translation_challenges:
-  category: [non_existent_concept]
-  problem: "Desert/tropical cultures have never experienced snow"
-  theological_stakes: "High - purity metaphors (Isaiah 1:18)"
-
-solutions_documented:
-  - language: "haw" # Hawaiian
-    translation: "hau" (ice/frost metaphor)
-    evaluation: "Uses closest natural phenomenon"
-
-  - language: "tpi" # Tok Pisin
-    translation: "ais bilong ren" (ice of rain)
-    evaluation: "Compound descriptive phrase"
-
-translator_guidance:
-  - "Emphasize whiteness and purity, not coldness"
-  - "Find local metaphor for absolute purity/cleansing"
-  - "Consider footnote: 'white frozen precipitation'"
-```
-
-**Priority Words:**
-- Lamb/sheep (G721, H7716) - Arctic/desert cultures
-- Snow (H7950, G5510) - Tropical cultures
-- Bread (G740, H3899) - Rice cultures
-- Agape (G26) - Love distinctions
-- Grace (G5485) - Merit-based cultures
-- Heart (H3820, G2588) - Different emotion-organs
+Document proven cultural adaptation strategies for translating non-existent concepts, untranslatable abstracts, cultural sensitivities, and semantic gaps across 900+ translations.
 
 **Output:** `.data/strongs/{num}/{num}-cultural.yaml`
-
-**See:** `./cultural-translation/docs/` for complete planning
 
 ---
 
@@ -260,24 +72,21 @@ translator_guidance:
 
 ### Example: Translating "Lamb of God" (G721 ἀρνίον) to Inuktitut (Arctic)
 
-**Tool 1 (Lexicon Core) provides:**
+**Tool 1 (Lexicon Core):**
 - Etymology: diminutive of ἀρήν (lamb)
 - Theological significance: Passover sacrifice, Messianic imagery
 - Usage: 30 NT occurrences, primarily John and Revelation
-- Cross-references: H3532 כֶּבֶשׂ (OT lamb)
 
-**Tool 2 (TBTA Hints) provides:**
+**Tool 2 (TBTA Hints):**
 - Number: singular (one specific lamb)
 - Definiteness: definite article ("THE lamb")
 - Semantic role: patient (the one sacrificed)
-- Surface realization: noun phrase
 
-**Tool 3 (Cultural Challenges) provides:**
+**Tool 3 (Cultural Challenges):**
 - **Problem:** Inuit have no sheep, no lamb concept
-- **Solution documented:** Inuktitut Bible uses "nattiq Guutimut" (seal pup of God)
+- **Solution:** "nattiq Guutimut" (seal pup of God)
 - **Rationale:** Seals are primary food/sacrifice animal
-- **Evaluation:** Successful - preserves sacrifice imagery
-- **Theological validation:** Purity and substitutionary death maintained
+- **Evaluation:** Preserves purity and substitutionary death imagery
 
 **Combined Result:**
 ```yaml
@@ -287,7 +96,6 @@ translation_guidance:
   cultural_solution: "Substitute culturally appropriate sacrificial animal"
   recommended: "seal pup" (nattiq)
   preserve: "Innocence, purity, substitutionary sacrifice imagery"
-  footnote: "Greek: arnion (young lamb)"
 ```
 
 ---
@@ -323,17 +131,18 @@ Real-world validation by target users - Bible translators, pastors, and students
 - Does it prevent documented translation errors?
 - Are language-specific patterns actionable (not "some cultures...")?
 
-**Practitioner Feedback:**
-- Usability testing with target audience (translators, pastors, students)
-- Error prevention documentation (mistakes avoided due to enrichment)
-- Cross-cultural validation (patterns tested across language families)
+**See:** STAGES.md §6 "Translation Impact Testing" for evidence-based validation methodology
 
-**Evidence Requirements:**
-- Documented case where enrichment data prevented translation error
-- Feedback from at least 2 practitioners in target audience
-- Validated pattern accuracy across 3+ language families (when applicable)
+---
 
-**See Also:** STAGES.md §6 "Translation Impact Testing" for evidence-based validation methodology
+## Implementation Status
+
+| Tool | Status | Next Step |
+|------|--------|-----------|
+| Lexicon Core | 🔄 Cycle 4 experiments | Validate methodology, begin production |
+| Web Insights | ✅ Production ready | Deploy high-priority words |
+| TBTA Hints | 📋 Proof-of-concept | Run pilot with 3 pronouns |
+| Cultural Translation | 📋 Planning complete | Begin pilot study (3-5 words) |
 
 ---
 
@@ -341,6 +150,10 @@ Real-world validation by target users - Bible translators, pastors, and students
 
 **Master Strategy:**
 - `/plan/strongs-comprehensive-strategy.md` - Overall vision, three initiatives, integration
+
+**Execution Workflow:**
+- `./STAGES.md` - Production workflow (6 stages, 7 cycles)
+- `./LEARNINGS.md` - Historical learnings (7 proven patterns with evidence)
 
 **Tool-Specific Documentation:**
 
@@ -350,10 +163,10 @@ Real-world validation by target users - Bible translators, pastors, and students
 
 This differs from TBTA features (flat structure) but is pragmatic for Strong's tools due to extensive experimentation documentation (80+ experiments across tools). The `/docs` separation keeps implementation files clean while preserving complete research trail.
 
-- `./lexicon-core/docs/` - Tool 1 complete documentation
-- `./web-insights/docs/` - Tool 3 complete documentation
-- `./tbta-hints/` - TBTA hints methodology and logic tree
-- `./cultural-translation/docs/` - Cultural challenges planning
+- `./lexicon-core/docs/` - README, METRICS, experiments
+- `./web-insights/docs/` - README, METRICS, experiments
+- `./tbta-hints/` - METHODOLOGY, LOGIC-TREE, METRICS
+- `./cultural-translation/docs/` - README, METRICS, planning
 
 **Supporting Documents:**
 - `/plan/policy/fair-use.md` - Fair use compliance guidelines
@@ -364,71 +177,5 @@ This differs from TBTA features (flat structure) but is pragmatic for Strong's t
 
 ---
 
-## Implementation Timeline
-
-[TODO: not here, all we need is a simple icon and comment on status for each ]
-
-### Completed ✅
-- Tool 1: Research phase, Experimentation (Cycles 1-4)
-- Tool 3: Research, Experiments, Validation (PRODUCTION-READY)
-- TBTA Hints: Comprehensive analysis, proof-of-concept design
-- Cultural Translation: Complete planning
-
-### In Progress 🔄
-- Tool 1: Final experiments, validation preparation
-
-### Next Steps 📋
-1. Tool 1: Complete Cycle 4 experiments, validate methodology
-2. TBTA Hints: Run proof-of-concept (3 pronouns, 20 verses), measure accuracy
-3. Cultural Translation: Pilot study (3-5 sample words)
-4. Tool 1: Begin production (top 300 high-frequency words)
-5. Tool 3: Production deployment (high-priority words)
-
----
-
-## Success Metrics
-
-[TODO: integrate this into each tool, don't relist them here]
-
-**Validation Status Legend:**
-- ✅ VALIDATED: Evidence from 30+ test words with documented validation
-- 🔄 TESTED: Evidence from 5-10 test words in experiments
-- 📋 PLANNED: Methodology designed, not yet production-tested
-- ❓ PROJECTED: Target goal based on design, not yet achieved
-
----
-
-**Tool 1 (Lexicon Core):**
-- **Status**: 🔄 TESTED (5-10 test words documented in experiments)
-- **Validation Level**: TESTED - Methodology validated on theological (G5287) and grammatical (G0846) exemplars
-- **Quality**: 100% Level 1, 80%+ Level 2 (on test set)
-- **Coverage**: 📋 PLANNED - Full 14,197-word coverage (methodology ready, production pending)
-- **Fair Use**: ✅ VALIDATED - Convergence grouping tested across experiments
-- **Authority**: ✅ VALIDATED - All sources verified in ATTRIBUTION.md
-
-**Tool 3 (Web Insights):**
-- **Status**: 🔄 TESTED (5-10 test words including G1411, G4151, G1577)
-- **Validation Level**: TESTED - Error correction (G1411), multi-perspective (G4151, G1577) templates validated
-- **Quality**: 100% Level 1, 80%+ Level 2 (on test set)
-- **Coverage**: ❓ PROJECTED - Target 1,500 high-value words (methodology ready)
-- **Authority**: ✅ VALIDATED - Multi-discipline search framework tested
-- **Integrity**: ✅ VALIDATED - Multi-perspective framework passes 3 bias tests
-
-**TBTA Hints:**
-- **Status**: 🔄 TESTED (3 pronouns tested across 20 verses, per LEARNINGS.md reference)
-- **Validation Level**: TESTED - Proof-of-concept completed (pronouns in 900+ translations)
-- **Coverage**: 📋 PLANNED - 11/59 TBTA features designed, 3 tested in production
-- **Accuracy Impact**: 🔄 TESTED - +7% overall, +25% edge cases (documented in experiments)
-- **Language Validation**: ✅ VALIDATED - Patterns tested across 50+ language families
-- **Confidence Calibration**: 🔄 TESTED - Calibration validated on proof-of-concept set
-
-**Cultural Translation:**
-- **Status**: 📋 PLANNED (methodology designed, pilot study pending)
-- **Validation Level**: ASPIRATIONAL - Target 300-500 high-variation words
-- **Coverage**: ❓ PROJECTED - Based on SIL/Wycliffe documented challenges
-- **Evidence Base**: ✅ VALIDATED - Methodology grounded in real translation case studies
-
----
-
-**Last Updated:** 2025-11-14
+**Last Updated:** 2025-11-15
 **Maintained by:** Strong's Extended Tools Development Team
