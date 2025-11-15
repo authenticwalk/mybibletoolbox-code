@@ -457,6 +457,70 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Citation format: `{hayward-nts-1978}`
 - Note: Discusses relationship between Targumic memra and Johannine Logos
 
+**Tobin, Thomas H. "The Prologue of John and Hellenistic Jewish Speculation"**
+- Source code: `cbq-tobin-1990`
+- Journal: Catholic Biblical Quarterly 52 (1990): 252-69
+- Author: Thomas H. Tobin, SJ, PhD
+- Authority: Highest (Tier 1 - peer-reviewed CBQ article)
+- Used under fair use for scholarly citation
+- Citation format: `{cbq-tobin-1990}`
+- Note: Examines relationship between John's prologue and Hellenistic Jewish speculation including Philo
+
+**Waetjen, Herman C. "Logos προς τον θεόν and the Objectification of Truth in the Prologue of the Fourth Gospel"**
+- Source code: `cbq-waetjen-2001`
+- Journal: Catholic Biblical Quarterly 63 (2001): 265-286
+- Author: Herman C. Waetjen, PhD
+- Authority: Highest (Tier 1 - peer-reviewed CBQ article)
+- Used under fair use for scholarly citation
+- Citation format: `{cbq-waetjen-2001}`
+- Note: Explores relationship between Logos and God in John 1:1
+
+**Vawter, Bruce. "What Came to Be in Him Was Life (John 1:3b-4b)"**
+- Source code: `cbq-vawter-1963`
+- Journal: Catholic Biblical Quarterly 25 (1963): 401-406
+- Author: Bruce Vawter, CM, PhD
+- Authority: Highest (Tier 1 - peer-reviewed CBQ article)
+- Used under fair use for scholarly citation
+- Citation format: `{cbq-vawter-1963}`
+- Note: Textual and theological analysis of John 1:3-4
+
+**Borgen, Peder. "Logos was the True Light: Contributions to the Interpretation of the Prologue of John"**
+- Source code: `nts-borgen-1972`
+- Journal: Novum Testamentum 14 (1972)
+- Author: Peder Borgen, PhD, Professor of New Testament
+- Authority: Highest (Tier 1 - peer-reviewed Novum Testamentum article)
+- Used under fair use for scholarly citation
+- Citation format: `{nts-borgen-1972}`
+- Note: Foundational article on Logos in Johannine prologue
+
+**Borgen, Peder. "Observations on the Targumic Character of the Prologue of John"**
+- Source code: `nts-borgen-1969`
+- Journal: New Testament Studies 16 (1969-1970)
+- Author: Peder Borgen, PhD
+- Authority: Highest (Tier 1 - peer-reviewed NTS article)
+- Used under fair use for scholarly citation
+- Citation format: `{nts-borgen-1969}`
+- Note: Examines targumic background of Johannine prologue
+
+**HTS Teologiese Studies / Theological Studies**
+- Publisher: AOSIS (African Online Scientific Information Systems)
+- Source code: `hts`
+- Authority: High (Tier 2 - peer-reviewed theological journal)
+- ISSN: 0259-9422 (print), 2072-8050 (online)
+- Website: https://hts.org.za
+- Citation format: `{hts-YEAR-author}`
+
+**Sakitey, Daniel and Ernest van Eck. "The logos Christology in the fourth gospel (Jn 1:1-5, 14): A soteriological response to an Ewe cosmic prayer"**
+- Source code: `hts-sakitey-2023`
+- Journal: HTS Teologiese Studies / Theological Studies 79:4 (2023)
+- Authors: Daniel Sakitey and Ernest van Eck, University of Pretoria
+- DOI: Available through journal
+- Authority: High (Tier 2 - peer-reviewed theological journal)
+- Used under fair use for scholarly citation
+- Citation format: `{hts-sakitey-2023}`
+- License: Creative Commons Attribution 4.0
+- Note: Examines Logos Christology in African theological context
+
 **Scottish Journal of Theology (SJT)**
 - Publisher: Cambridge University Press
 - Source code: `sjt`
@@ -538,6 +602,17 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Citation format: `{outka-agape-ethics}`
 - Note: Comprehensive ethical analysis of agape love
 
+**Brown, Raymond E. "The Gospel According to John" (2 volumes)**
+- Source code: `brown-anchor-1966`
+- Author credentials: SS (Sulpician), PhD, premier Johannine scholar
+- Series: Anchor Bible Commentary (volumes 29, 29A)
+- Publisher: Doubleday / Yale University Press
+- Publication year: 1966 (vol. 1: John I-XII), 1970 (vol. 2: John XIII-XXI)
+- Authority: Highest (Tier 1 - landmark scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{brown-anchor-1966}`
+- Note: Definitive scholarly commentary on John's Gospel, most cited work on Fourth Gospel
+
 **Brown, Raymond E. "The Epistles of John"**
 - Source code: `brown-johannine-epistles`
 - Author credentials: SS (Sulpician), premier Johannine scholar
@@ -548,6 +623,71 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Used under fair use for scholarly citation
 - Citation format: `{brown-johannine-epistles}`
 - Note: Comprehensive commentary on 1, 2, 3 John
+
+**Keener, Craig S. "The Gospel of John: A Commentary" (2 volumes)**
+- Source code: `keener-john-2003`
+- Author credentials: PhD, Professor of Biblical Studies
+- Publisher: Hendrickson Publishers / Baker Academic
+- Publication year: 2003
+- Pages: Over 1,600 pages total
+- Authority: Highest (Tier 1 - most comprehensive contemporary commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{keener-john-2003}`
+- Note: Over 20,000 ancient extrabiblical references, 4,000 secondary sources; extensive treatment of backgrounds including 30-page introduction to Logos (pp. 339-362)
+
+**Lincoln, Andrew T. "The Gospel According to Saint John"**
+- Source code: `lincoln-blacks-2005`
+- Author credentials: PhD, Portland Professor of New Testament at University of Gloucestershire
+- Series: Black's New Testament Commentary (BNTC)
+- Publisher: Hendrickson Publishers / Continuum
+- Publication year: 2005
+- Authority: Highest (Tier 1 - major scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{lincoln-blacks-2005}`
+- Note: Replaces earlier Sanders/Mastin volume in Black's series
+
+**Dodd, C. H. "The Interpretation of the Fourth Gospel"**
+- Source code: `dodd-fourth-1953`
+- Author credentials: PhD, FBA, Norris-Hulse Professor of Divinity at Cambridge
+- Publisher: Cambridge University Press
+- Publication year: 1953
+- Authority: Highest (Tier 1 - classic scholarly work)
+- Used under fair use for scholarly citation
+- Citation format: `{dodd-fourth-1953}`
+- Note: Foundational work on Johannine thought; argued for Platonic/Philonic influence on John
+
+**Thompson, Marianne Meye. "The God of the Gospel of John"**
+- Source code: `thompson-god-john`
+- Author credentials: PhD, Professor of New Testament
+- Publisher: Wm. B. Eerdmans Publishing Company
+- Publication year: 2001
+- Authority: Highest (Tier 1 - major scholarly monograph)
+- Used under fair use for scholarly citation
+- Citation format: `{thompson-god-john}`
+- Note: Comprehensive treatment of theology of God in Fourth Gospel, including Logos and Wisdom themes
+
+**Bultmann, Rudolf. "The Gospel of John: A Commentary"**
+- Source code: `bultmann-gospel-john`
+- Author credentials: PhD, Professor at Marburg, leading NT scholar
+- Original German: "Das Evangelium des Johannes" (1941)
+- English translation: G. R. Beasley-Murray, R. W. N. Hoare, J. K. Riches
+- Publisher: Westminster Press / Blackwell
+- Publication year: 1971 (English)
+- Authority: Highest (Tier 1 - influential scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{bultmann-gospel-john}`
+- Note: Pioneered form-critical approach to John; controversial Gnostic hypothesis now largely rejected
+
+**Schweizer, Eduard. "Ego Eimi: Die religionsgeschichtliche Herkunft und theologische Bedeutung der johanneischen Bildreden"**
+- Source code: `schweizer-ego-eimi-1939`
+- Author credentials: PhD, Professor of New Testament at University of Zürich
+- Series: Forschungen zur Religion und Literatur des Alten und Neuen Testaments, Neue Folge, Heft 38
+- Publisher: Vandenhoeck & Ruprecht
+- Publication year: 1939 (2nd edition 1965)
+- Authority: Highest (Tier 1 - foundational scholarly work)
+- Used under fair use for scholarly citation
+- Citation format: `{schweizer-ego-eimi-1939}`
+- Note: Seminal work on "I am" sayings in John's Gospel and their relationship to Logos Christology
 
 **Fee, Gordon D. "The First Epistle to the Corinthians"**
 - Source code: `fee-1corinthians`
@@ -646,6 +786,193 @@ This document provides attribution for all sources used in the myBibleToolbox pr
 - Used under fair use for scholarly citation
 - Citation format: `{peltier-logos-2019}`
 - URL: https://sats.ac.za/wp-content/uploads/2019/10/Thesis_MThmini_2019_PeltierR.pdf
+
+**Lincoln, Andrew T. "Ephesians"**
+- Source code: `lincoln-eph-wbc`
+- Author credentials: PhD, Portland Professor of New Testament
+- Series: Word Biblical Commentary (WBC), Volume 42
+- Publisher: Thomas Nelson / Zondervan Academic
+- Publication year: 1990
+- Authority: Highest (Tier 1 - major scholarly commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{lincoln-eph-wbc}`
+- Note: One of the most comprehensive critical commentaries on Ephesians
+
+**Hoehner, Harold W. "Ephesians: An Exegetical Commentary"**
+- Source code: `hoehner-eph`
+- Author credentials: PhD, ThD, Distinguished Professor of New Testament Studies, Dallas Theological Seminary (1935-2009)
+- Publisher: Baker Academic
+- Publication year: 2002
+- Pages: 960 pages
+- Authority: Highest (Tier 1 - most comprehensive evangelical commentary on Ephesians)
+- Used under fair use for scholarly citation
+- Citation format: `{hoehner-eph}`
+- Note: Exhaustive exegetical treatment including extensive discussion of Greek text, background, and theological issues
+
+**Best, Ernest. "Ephesians"**
+- Source code: `best-icc-eph`
+- Author credentials: PhD, Professor of Divinity and Biblical Criticism, University of Glasgow
+- Series: International Critical Commentary (ICC)
+- Publisher: T&T Clark / Bloomsbury
+- Publication year: 1998
+- Authority: Highest (Tier 1 - major critical commentary)
+- Used under fair use for scholarly citation
+- Citation format: `{best-icc-eph}`
+- Note: Detailed scholarly commentary on Greek text of Ephesians
+
+**Carrington, Philip. "The Primitive Christian Catechism: A Study in the Epistles"**
+- Source code: `carrington-catechism`
+- Author credentials: DD, Archbishop of Quebec, Anglican Church of Canada
+- Publisher: Cambridge University Press
+- Publication year: 1940
+- Authority: High (Tier 2 - classic scholarly work on early Christian ethics)
+- Used under fair use for scholarly citation
+- Citation format: `{carrington-catechism}`
+- Note: Seminal study identifying primitive Christian catechetical patterns including vice/virtue lists in NT epistles
+
+**Ferguson, Everett. "Baptism in the Early Church: History, Theology, and Liturgy in the First Five Centuries"**
+- Source code: `ferguson-2009-baptism`
+- Author credentials: PhD, Distinguished Scholar in Residence Emeritus, Abilene Christian University; internationally recognized patristics scholar
+- Publisher: Eerdmans Publishing Company
+- Publication year: 2009
+- Pages: 953 pages
+- Authority: Highest (Tier 1 - most comprehensive scholarly treatment of early Christian baptism)
+- Used under fair use for scholarly citation
+- Citation format: `{ferguson-2009-baptism}`
+- Note: Magisterial study tracing baptismal thought and practice by century, region, inscriptions, artwork and architecture across five centuries; widely cited across denominational traditions
+
+**Schreiner, Thomas R. and Wright, Shawn D. (eds.). "Believer's Baptism: Sign of the New Covenant in Christ"**
+- Source code: `schreiner-2006-believers`
+- Editor credentials: Thomas R. Schreiner - PhD, James Buchanan Harrison Professor of NT Interpretation, Southern Baptist Theological Seminary
+- Series: New American Commentary Studies in Bible and Theology (NAC)
+- Publisher: B&H Academic
+- Publication year: 2006
+- Authority: High (Tier 2 - scholarly edited volume with multiple contributors)
+- Used under fair use for scholarly citation
+- Citation format: `{schreiner-2006-believers}`
+- Note: Scholarly case for believer's baptism by immersion from Baptist perspective, with chapters on NT evidence, theology, and historical practice
+
+**Beasley-Murray, George Raymond. "Baptism in the New Testament"**
+- Source code: `beasley-murray-1962`
+- Author credentials: PhD, Principal of Spurgeon's College London; Professor of NT, Southern Baptist Theological Seminary
+- Publisher: Eerdmans / Paternoster
+- Publication year: 1962
+- Pages: 425 pages
+- Authority: Highest (Tier 1 - landmark scholarly study of NT baptism)
+- Used under fair use for scholarly citation
+- Citation format: `{beasley-murray-1962}`
+- Note: Classic comprehensive examination of baptism in NT, influential across denominational lines despite Baptist authorship
+
+**Jensen, Robin M. "Baptismal Imagery in Early Christianity: Ritual, Visual, and Theological Dimensions"**
+- Source code: `jensen-2012-baptism`
+- Author credentials: PhD, Professor of Theology, University of Notre Dame; specialist in early Christian art and archaeology
+- Publisher: Baker Academic
+- Publication year: 2012
+- Pages: 352 pages
+- Authority: Highest (Tier 1 - premier scholarly work on baptismal iconography and archaeology)
+- Used under fair use for scholarly citation
+- Citation format: `{jensen-2012-baptism}`
+- Note: Integrates visual depictions, physical settings, and textual evidence for early Christian baptism; interdisciplinary approach combining art history, archaeology, and theology
+
+**Hodge, Charles. "Systematic Theology" (3 volumes)**
+- Source code: `hodge-systematic-3`
+- Author credentials: DD, Principal of Princeton Theological Seminary (1797-1878)
+- Publisher: Scribner / various modern reprints
+- Publication year: 1871-1873
+- Authority: Highest (Tier 1 - classic Reformed systematic theology)
+- Used under fair use for scholarly citation
+- Citation format: `{hodge-systematic-3}`
+- Note: Volume III addresses sacraments including extensive treatment of baptism mode; represents historic Presbyterian/Reformed position
+- Online: https://ccel.org/ccel/hodge/theology3/theology3.html
+
+**Murray, John. "Christian Baptism"**
+- Source code: `murray-1952-baptism`
+- Author credentials: ThM, ThD, Professor of Systematic Theology, Westminster Theological Seminary (1898-1975)
+- Publisher: Presbyterian and Reformed Publishing / Committee on Christian Education, Orthodox Presbyterian Church
+- Publication year: 1952
+- Authority: High (Tier 2 - Reformed scholarly monograph)
+- Used under fair use for scholarly citation
+- Citation format: `{murray-1952-baptism}`
+- Note: Detailed Presbyterian/Reformed exegetical arguments on baptism including mode, subjects, and theology
+
+**Didache (Teaching of the Twelve Apostles)**
+- Source code: `didache-1c`
+- Document type: Early Christian catechetical manual
+- Date: c. 70-150 AD (late first to early second century)
+- Discovery: 1873 by Philotheos Bryennios in Constantinople
+- Authority: Highest (Tier 1 - earliest post-NT Christian document)
+- Used under fair use for scholarly citation
+- Citation format: `{didache-1c}`
+- Note: Contains earliest explicit instructions on baptismal practice including mode flexibility (immersion preferred, affusion permitted)
+
+**Catechism of the Catholic Church**
+- Source code: `catholic-catechism`
+- Publisher: Vatican / Libreria Editrice Vaticana
+- Publication year: 1992 (revised 1997)
+- Authority: High (Tier 2 - official magisterial teaching of Catholic Church)
+- Used under fair use for scholarly citation
+- Citation format: `{catholic-catechism}`
+- Note: Authoritative statement of Catholic doctrine including sacramental theology and baptismal practice
+- Online: https://www.vatican.va/archive/ENG0015/_INDEX.HTM
+
+---
+
+## Classical and Ancient Sources
+
+**Aristotle. "Nicomachean Ethics"**
+- Source code: `aristotle-ne`
+- Author: Aristotle (384-322 BCE)
+- Original Greek work: Ἠθικὰ Νικομάχεια
+- English translations: W.D. Ross, H. Rackham (Loeb), others
+- Authority: Highest (Tier 1 - primary classical source)
+- Available: Public domain (Perseus Digital Library, MIT Internet Classics Archive)
+- Citation format: `{aristotle-ne}`
+- Note: Foundational work in Greek ethics; Book 4.8 discusses eutrapelia as virtue (mean between boorishness and buffoonery)
+- URL: https://www.perseus.tufts.edu/hopper/text?doc=Perseus:text:1999.01.0054
+- URL: http://classics.mit.edu/Aristotle/nicomachaen.html
+
+**Philo of Alexandria. "Legatio ad Gaium" (On the Embassy to Gaius)**
+- Source code: `philo-leg`
+- Author: Philo of Alexandria (c. 20 BCE - 50 CE)
+- Original Greek work: Πρεσβεία πρὸς Γάϊον
+- English translator: F.H. Colson (Loeb Classical Library)
+- Authority: Highest (Tier 1 - primary Hellenistic Jewish source, contemporary with NT)
+- Available: Loeb Classical Library (Harvard University Press)
+- Citation format: `{philo-leg}`
+- Note: 1st century CE Hellenistic Jewish writer; contemporary usage of Greek terms provides cultural-linguistic context for NT
+- Usage: Eutrapelia appears in section 361
+- URL: https://www.loebclassics.com/ (subscription required)
+
+**Josephus, Flavius. "Antiquities of the Jews" (Antiquitates Judaicae)**
+- Source code: `josephus-ant`
+- Author: Flavius Josephus (c. 37-100 CE)
+- Original Greek work: Ἰουδαϊκὴ ἀρχαιολογία
+- English translator: William Whiston and others
+- Authority: Highest (Tier 1 - primary historical source, contemporary with NT)
+- Available: Public domain (various editions)
+- Citation format: `{josephus-ant}`
+- Note: 1st century CE Jewish historian; contemporary usage of Greek terms and descriptions of 1st century Jewish life
+- Usage: Eutrapelia appears in Book 12, sections 173 and 214
+- URL: http://www.perseus.tufts.edu/hopper/text?doc=J.+AJ
+
+**Thomas Aquinas. "Summa Theologica" (Summa Theologiae)**
+- Source code: `aquinas-st`
+- Author: Thomas Aquinas (1225-1274)
+- Original Latin work: Summa Theologiae
+- English translators: Fathers of the English Dominican Province (1920)
+- Authority: High (Tier 2 - foundational medieval theological source)
+- Available: Public domain (New Advent website, Christian Classics Ethereal Library)
+- Citation format: `{aquinas-st}`
+- Note: Comprehensive medieval systematic theology; Secunda Secundae (II-II), Question 168 treats eutrapelia as virtue of moderation in recreation
+- URL: https://www.newadvent.org/summa/
+- URL: https://www.ccel.org/ccel/aquinas/summa.html
+
+**LSJ Classical Usage Documentation**
+- Source code: `classical-usage-lsj`
+- Reference: Liddell-Scott-Jones entries citing classical authors
+- Authority: Highest (Tier 1 - standard classical Greek lexicon)
+- Citation format: `{classical-usage-lsj}`
+- Note: LSJ documents usage in Hippocrates, Plato, Diodorus Siculus, and other classical Greek authors
 
 ---
 
