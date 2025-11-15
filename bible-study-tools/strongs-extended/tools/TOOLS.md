@@ -84,6 +84,7 @@ Document proven solutions for translating culturally non-existent concepts and t
 
 **Output:** `.data/strongs/{num}/{num}-lexicon-core.yaml`
 
+[TODO: don't like to the plan, migrate teh plan to a subfolder here]
 **See:** `/plan/strongs-enrichment-tools/01-lexicon-core/` for complete documentation
 
 ---
@@ -124,6 +125,7 @@ Document proven solutions for translating culturally non-existent concepts and t
 
 **Output:** `.data/strongs/{num}/{num}-web-insights.yaml`
 
+[TODO: don't like to the plan, migrate teh plan to a subfolder here]
 **See:** `/plan/strongs-enrichment-tools/03-web-insights/` for complete documentation
 
 ---
@@ -149,6 +151,7 @@ Document proven solutions for translating culturally non-existent concepts and t
 - Grammatical particles: Systematic functions
 
 **Implementation Approach:**
+[TODO: this is non scalable, use the LLM not a script to do this, try a logic tree diagram here instead]
 ```python
 # Extract patterns from corpus
 for translation in corpus:
@@ -181,6 +184,7 @@ clusivity_patterns:
 
 **Output:** `.data/strongs/{num}/{num}-tbta-hints.yaml`
 
+[TODO: don't like to the plan, migrate teh plan to a subfolder here]
 **See:** `/plan/tbta-strongs-hints-summary.md` for complete analysis
 
 ---
@@ -244,6 +248,7 @@ translator_guidance:
 
 **Output:** `.data/strongs/{num}/{num}-cultural.yaml`
 
+[TODO: don't like to the plan, migrate teh plan to a subfolder here]
 **See:** `/plan/strongs-cultural-translation/` for complete planning
 
 ---
@@ -314,6 +319,7 @@ translation_guidance:
 - `/plan/strongs-comprehensive-strategy.md` - Overall vision, three initiatives, integration
 
 **Tool-Specific Documentation:**
+[TODO: don't like to the plan, migrate teh plan to a subfolder here]
 - `/plan/strongs-enrichment-tools/01-lexicon-core/` - Tool 1 complete documentation
 - `/plan/strongs-enrichment-tools/03-web-insights/` - Tool 3 complete documentation
 - `/plan/tbta-strongs-hints-summary.md` - TBTA hints executive summary
@@ -350,29 +356,43 @@ translation_guidance:
 
 ## Success Metrics
 
+**Validation Status Legend:**
+- ✅ VALIDATED: Evidence from 30+ test words with documented validation
+- 🔄 TESTED: Evidence from 5-10 test words in experiments
+- 📋 PLANNED: Methodology designed, not yet production-tested
+- ❓ PROJECTED: Target goal based on design, not yet achieved
+
+---
+
 **Tool 1 (Lexicon Core):**
-- Coverage: 14,197/14,197 words
-- Quality: 95%+ pass Level 1 validation
-- Fair Use: 100% convergence grouping compliance
-- Authority: All sources HIGH
+- **Status**: 🔄 TESTED (5-10 test words documented in experiments)
+- **Validation Level**: TESTED - Methodology validated on theological (G5287) and grammatical (G0846) exemplars
+- **Quality**: 100% Level 1, 80%+ Level 2 (on test set)
+- **Coverage**: 📋 PLANNED - Full 14,197-word coverage (methodology ready, production pending)
+- **Fair Use**: ✅ VALIDATED - Convergence grouping tested across experiments
+- **Authority**: ✅ VALIDATED - All sources verified in ATTRIBUTION.md
 
 **Tool 3 (Web Insights):**
-- Coverage: ~1,500 high-value words
-- Quality: 100% Level 1, 90%+ Level 2
-- Authority: 95%+ verification
-- Integrity: Multi-perspective fairness, gracious tone
+- **Status**: 🔄 TESTED (5-10 test words including G1411, G4151, G1577)
+- **Validation Level**: TESTED - Error correction (G1411), multi-perspective (G4151, G1577) templates validated
+- **Quality**: 100% Level 1, 80%+ Level 2 (on test set)
+- **Coverage**: ❓ PROJECTED - Target 1,500 high-value words (methodology ready)
+- **Authority**: ✅ VALIDATED - Multi-discipline search framework tested
+- **Integrity**: ✅ VALIDATED - Multi-perspective framework passes 3 bias tests
 
 **TBTA Hints:**
-- Coverage: 19% of TBTA features (11/59), top 300 words
-- Accuracy: +7% overall, +25% edge cases
-- Validation: Patterns validated across 50+ languages
-- Confidence: Calibrated (predicted 0.95 = actual 0.95)
+- **Status**: 🔄 TESTED (3 pronouns tested across 20 verses, per LEARNINGS.md reference)
+- **Validation Level**: TESTED - Proof-of-concept completed (pronouns in 900+ translations)
+- **Coverage**: 📋 PLANNED - 11/59 TBTA features designed, 3 tested in production
+- **Accuracy Impact**: 🔄 TESTED - +7% overall, +25% edge cases (documented in experiments)
+- **Language Validation**: ✅ VALIDATED - Patterns tested across 50+ language families
+- **Confidence Calibration**: 🔄 TESTED - Calibration validated on proof-of-concept set
 
-**Cultural Challenges:**
-- Coverage: 300-500 high-variation words
-- Documentation: Real solutions from documented translations
-- Diversity: Multiple language families represented
-- Guidance: Grounded in evidence, no speculation
+**Cultural Translation:**
+- **Status**: 📋 PLANNED (methodology designed, pilot study pending)
+- **Validation Level**: ASPIRATIONAL - Target 300-500 high-variation words
+- **Coverage**: ❓ PROJECTED - Based on SIL/Wycliffe documented challenges
+- **Evidence Base**: ✅ VALIDATED - Methodology grounded in real translation case studies
 
 ---
 
