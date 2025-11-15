@@ -386,7 +386,7 @@ def load_macula_yaml(verse_ref):
 
     # Construct Macula file path
     macula_path = (
-        COMMENTARY_DIR / book / f"{chapter:03d}" /
+        COMMENTARY_DIR / book / f"{chapter:03d}" / f"{verse:03d}" /
         f"{book}-{chapter:03d}-{verse:03d}-macula.yaml"
     )
 
