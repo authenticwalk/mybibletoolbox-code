@@ -59,15 +59,22 @@ For the **test set** (30%), deliberately include challenging cases:
 
 **Purpose**: Find algorithm blind spots, not just confirm what works
 
-## External Validation Preparation
+## External Validation Preparation (Thesis Approach)
 
-**During data construction**, identify external validation opportunities:
+**During data construction**, build the foundation for discovering answers from real translations:
 - For features with observable translation differences (clusivity, tense, etc.):
-  - List which languages/language families grammatically mark this feature
-  - Note which Bible translations exist in these languages
-  - Document expected translation patterns per value
-  - This enables validation against real translator decisions, not just TBTA
-- Store this information in train.yaml metadata for reference
+  - **Primary**: List which languages/language families grammatically mark this feature
+  - **Priority**: Identify Bible translations in those languages, preferring:
+    1. Same language family as target translation
+    2. Translations from same source lineage (e.g., all derived from Indonesian, Swahili, French, etc.)
+    3. Translations from source text (Greek/Hebrew) by local translators
+  - **Translation Database**: For each marking language, document:
+    - Which Bible translations exist (name, version, year)
+    - Source lineage (derived from what language/translation?)
+    - Language family classification
+    - Availability/access method
+  - **Thesis Application**: This enables DISCOVERING the answer by analyzing what real translators did, not just validating accuracy
+- Store this information in train.yaml metadata for cross-linguistic validation
 
 ## Data Extraction Process
 
@@ -201,15 +208,113 @@ Document analysis in `experiments/LEARNINGS.md` with:
 - Typical iterations: 3-5 prompts (v1.0 → v2.0 → v2.1 etc.)
 - Stop when: Accuracy plateaus or reaches target
 
-## External Validation (If Applicable)
+## Cross-Linguistic Translation Validation (Thesis Approach)
 
-If feature has observable translation differences:
-- Check predictions against real Bible translations in marking languages
-- Compare with expected patterns from train.yaml metadata
-- Document agreement rate (target: 95%+ across languages)
-- Note any systematic divergences (may indicate valid perspective differences)
-- Note any cultural or language family issues or shared source language for translation (example they all translated from the Indonesian vs Swahili)
-- Store results in `experiments/LEARNINGS.md`
+**Philosophy**: "There is nothing new under the sun" - with ~1000 Bible translations, someone has already dealt with your unique linguistic feature. The key is analyzing those translations to discover which ones reveal the answer.
+
+**For features with observable translation differences** (clusivity, tense, number distinctions, etc.):
+
+### Step 1: Identify Marking Languages (from Stage 2/4)
+- Which languages grammatically require this feature?
+- Which language families share this requirement?
+- Example: Dual number → many Austronesian, Polynesian languages
+
+### Step 2: Find & Prioritize Bible Translations
+**Preference order for target language X:**
+1. **Same language family** (share grammatical patterns)
+2. **Same source lineage** (translated from same intermediate language)
+   - Example: Many minority languages translate from Indonesian, Swahili, French, German
+   - Shared source → similar translation decisions
+3. **Direct from source text** (Greek/Hebrew by local translators)
+
+**Build translation database:**
+- Translation name, version, year
+- Language family classification
+- Source lineage (from Greek/Hebrew? Or from Indonesian/Swahili/etc.?)
+- Access method (online, physical copy, API)
+
+### Step 3: Cross-Linguistic Analysis Per Test Verse
+For each verse in test/validate set:
+
+**a. Check what real translators did:**
+- Query all marking-language translations for this verse
+- Extract how each translation handled this feature
+- Document the translation decisions
+
+**b. When translations AGREE (90%+ consensus):**
+- **High confidence**: This is likely the correct answer
+- **Document**: List which translations agree + their language families
+- **Use as validation**: Does our algorithm match this consensus?
+
+**c. When translations DISAGREE (split decision):**
+- **Analyze WHY** using these factors:
+  - **Cultural context**: Different cultures may interpret differently
+  - **Linguistic structure**: Language family differences
+  - **Source lineage**: Did they translate from different sources?
+  - **Theological tradition**: Different Christian traditions
+  - **Genre understanding**: Different narrative vs. poetry interpretation
+- **Document divergence patterns**: Which families agree? Which disagree?
+- **Make informed decision**: Based on analysis, which translation is most likely correct for THIS context?
+
+**d. When translations are UNAVAILABLE or UNCLEAR:**
+- Flag for manual review
+- Document what languages/families are missing
+- Note limitations of validation for this verse
+
+### Step 4: Document Results in `experiments/CROSS-LINGUISTIC-VALIDATION.md`
+
+```markdown
+# Cross-Linguistic Translation Validation: {Feature Name}
+
+## Translation Database
+- Total translations analyzed: {count}
+- Language families represented: {list}
+- Source lineages: {Greek/Hebrew direct: X, Indonesian-derived: Y, etc.}
+
+## Test Verse Results (Sample)
+
+### High Agreement Verses (90%+ consensus)
+| Verse | Our Prediction | Translation Consensus | Agreement Rate | Validating Translations |
+|-------|----------------|---------------------|----------------|------------------------|
+| {REF} | {value} | {value} | 95% (19/20) | Fijian, Samoan, Tongan, Māori... |
+
+### Divergence Verses (split decision)
+| Verse | Our Prediction | Translation Split | Analysis | Decision |
+|-------|----------------|------------------|----------|----------|
+| {REF} | {value} | Austronesian: {valueA}, Mayan: {valueB} | Different cultural context for kinship terms | Prefer Austronesian (same family as target) |
+
+## Overall Validation Metrics
+- **Agreement rate**: {X}% (our predictions match translation consensus)
+- **High-confidence verses** (90%+ translation agreement): {Y}%
+- **Divergence verses** (requiring analysis): {Z}%
+- **Unavailable/unclear**: {W}%
+
+## Patterns Discovered
+- **Cultural factors**: {What cultural differences affected translations?}
+- **Language family patterns**: {Which families consistently agreed?}
+- **Source lineage effects**: {Did Indonesian-derived differ from Greek-derived?}
+
+## Thesis Application Success
+- **Answers discovered from translations**: {count of verses where translations revealed the answer}
+- **Algorithm improvements**: {How translation analysis improved our algorithm}
+- **Remaining uncertainties**: {Verses where even translations disagreed}
+```
+
+### Step 5: Integrate Learnings into Algorithm
+- **When translations agree with TBTA**: Confirms our approach
+- **When translations disagree with TBTA**: Investigate carefully
+  - Is TBTA correct but translations got it wrong?
+  - Is this a valid perspective difference?
+  - Does this reveal an algorithm blind spot?
+- **When translations reveal patterns we missed**: Update algorithm to capture this
+
+### Success Criteria
+- **Translation agreement rate**: 90%+ (our predictions match real translator decisions)
+- **High-confidence coverage**: 80%+ of verses have clear translation consensus
+- **Divergence understanding**: All disagreements analyzed and documented
+- **Net benefit**: Translation analysis improved algorithm accuracy
+
+**Purpose**: Not just validation, but DISCOVERY - let the wisdom of 1000+ translations guide us to the correct answer.
 
 ## Documentation
 
@@ -463,7 +568,14 @@ When peer reviewers are satisfied (non-material feedback only):
   - Translation practitioner approval
 - Error analysis documented (6-step process for all failures)
 - Locked predictions throughout (git commits present)
-- External validation conducted (if applicable)
+- **Cross-Linguistic Translation Validation complete (Thesis Approach)**
+  - Translation database built (language families, source lineages documented)
+  - Test verses analyzed against real translations
+  - Agreement rate ≥ 90% (our predictions match translator consensus)
+  - High-confidence coverage ≥ 80% (verses with clear translation consensus)
+  - Divergences analyzed (cultural, linguistic, source lineage factors documented)
+  - Learnings integrated into algorithm (translation patterns incorporated)
+  - Results documented in `experiments/CROSS-LINGUISTIC-VALIDATION.md`
 - Practical application testing complete (TRANSLATOR-IMPACT.md)
   - Tested with marking language(s)
   - Tested with non-marking language(s)

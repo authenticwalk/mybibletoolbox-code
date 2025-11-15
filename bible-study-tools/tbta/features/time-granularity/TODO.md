@@ -202,6 +202,21 @@
   - Apply predictions to actual translation work
   - Identify practical challenges
   - Document translation impact
+- [ ] **Cross-linguistic translation validation (THESIS)**:
+  - Identify published Bible translations in temporal remoteness languages
+  - Target languages from Stage 2 (documented in README):
+    - **Bantu**: ChiBemba, Swahili (hodiernal/pre-hodiernal systems)
+    - **Austronesian**: Tagalog (temporal particles)
+    - **Trans-New Guinea**: Languages with deictic temporal markers
+    - **Quechuan**: Quechua (evidential-temporal fusion)
+    - **Mayan**: Languages with aspect-temporal interactions
+  - Test verses: Genesis 1:1 (ancient past), John 3:16 (timeless present), Revelation 21:1 (remote future)
+  - Analysis questions:
+    - How did ChiBemba mark ancient past (creation) vs recent past?
+    - Does Tagalog use different particles for narrative past vs teaching present?
+    - What temporal markers did Quechua use for prophetic future?
+  - Compare: Do translation choices align with TBTA predictions?
+  - Document: experiments/EXTERNAL-VALIDATION.md
 - [ ] Create `experiments/TRANSLATOR-IMPACT.md`
   - Document how predictions improve translation quality
   - Provide before/after examples

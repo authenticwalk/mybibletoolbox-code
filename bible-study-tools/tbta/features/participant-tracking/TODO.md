@@ -155,6 +155,17 @@
   - Papua New Guinea languages (Kaluli, Fasu, Kobon)
   - Native American languages (Choctaw, Chickasaw)
   - Assess: Does participant tracking data help pronoun resolution?
+- [ ] **Cross-linguistic translation validation (THESIS)**:
+  - Identify 3-5 published Bible translations in switch-reference languages
+  - Target languages from Stage 2:
+    - **Papua New Guinea**: Kaluli, Fasu, Kobon (switch-reference obligatory)
+    - **Native American**: Choctaw, Chickasaw (switch-reference obligatory)
+    - **Turkish**: Evidentiality + tracking markers
+  - Select 10-15 test verses with known participant tracking challenges
+  - Analyze how these translations handled participant reference
+  - Compare: Do translation choices align with TBTA predictions?
+  - Document patterns: What strategies do translators use for Frame Inferable, Restaging?
+  - Create: experiments/EXTERNAL-VALIDATION.md with cross-linguistic findings
 
 ---
 
