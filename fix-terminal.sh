@@ -9,3 +9,5 @@ else
     echo "✓ TERM already set to: $TERM"
 fi
 
+
+
