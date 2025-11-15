@@ -84,8 +84,7 @@ Document proven solutions for translating culturally non-existent concepts and t
 
 **Output:** `.data/strongs/{num}/{num}-lexicon-core.yaml`
 
-[TODO: don't like to the plan, migrate teh plan to a subfolder here]
-**See:** `/plan/strongs-enrichment-tools/01-lexicon-core/` for complete documentation
+**See:** `./lexicon-core/docs/` for complete documentation
 
 ---
 
@@ -125,8 +124,7 @@ Document proven solutions for translating culturally non-existent concepts and t
 
 **Output:** `.data/strongs/{num}/{num}-web-insights.yaml`
 
-[TODO: don't like to the plan, migrate teh plan to a subfolder here]
-**See:** `/plan/strongs-enrichment-tools/03-web-insights/` for complete documentation
+**See:** `./web-insights/docs/` for complete documentation
 
 ---
 
@@ -253,8 +251,7 @@ translator_guidance:
 
 **Output:** `.data/strongs/{num}/{num}-cultural.yaml`
 
-[TODO: don't like to the plan, migrate teh plan to a subfolder here]
-**See:** `/plan/strongs-cultural-translation/` for complete planning
+**See:** `./cultural-translation/docs/` for complete planning
 
 ---
 
@@ -324,11 +321,10 @@ translation_guidance:
 - `/plan/strongs-comprehensive-strategy.md` - Overall vision, three initiatives, integration
 
 **Tool-Specific Documentation:**
-[TODO: don't like to the plan, migrate teh plan to a subfolder here]
-- `/plan/strongs-enrichment-tools/01-lexicon-core/` - Tool 1 complete documentation
-- `/plan/strongs-enrichment-tools/03-web-insights/` - Tool 3 complete documentation
-- `/plan/tbta-strongs-hints-summary.md` - TBTA hints executive summary
-- `/plan/strongs-cultural-translation/` - Cultural challenges planning
+- `./lexicon-core/docs/` - Tool 1 complete documentation
+- `./web-insights/docs/` - Tool 3 complete documentation
+- `./tbta-hints/` - TBTA hints methodology and logic tree
+- `./cultural-translation/docs/` - Cultural challenges planning
 
 **Supporting Documents:**
 - `/plan/policy/fair-use.md` - Fair use compliance guidelines
