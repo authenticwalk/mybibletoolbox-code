@@ -47,6 +47,8 @@
    - Grammatical: Statistics-focused (morphology, usage patterns)
    - Nominal: Balanced approach
 
+**NOTE:** Classification optimizes extraction depth. Even for full corpus work, word type determines resource allocation and validation criteria.
+
 **REFERENCE:** See LEARNINGS.md §1 for word type classification evidence
 
 **CHECKPOINT:** Word classification strategy documented
@@ -77,10 +79,11 @@
    - Rare usage contexts (hapax legomena)
    - Cultural sensitivity (translation debates)
 
-5. **Blind development protocol:**
-   - **SPAWN:** Subagent to select test words (main agent never sees criteria)
+5. **Test set selection protocol:**
+   - **SPAWN:** Subagent to select test words (main agent never sees selection criteria)
    - Main agent receives only: word list (no metadata, no frequencies)
    - Prevents bias toward "easy" words
+   - **CRITICAL:** Test words must NOT be used in LEARNINGS.md or methodology documentation until validation complete
 
 **TEMPLATE:**
 ```yaml
@@ -101,11 +104,19 @@ test_set:
         moderate: 17 (40%)
         sparse: 8 (19%)
       adversarial: 13 (31%)
-
   words:
-    - G5287  # (rare, theological, rich, adversarial: theological depth)
-    - G0846  # (high, grammatical, sparse, normal)
-    - G1411  # (medium, theological, rich, adversarial: folk etymology)
+    - strongs: G5287
+      greek: ὑπόστασις
+      english: substance, confidence, reality
+      # (rare, theological, rich, adversarial: theological depth)
+    - strongs: G0846
+      greek: αὐτός
+      english: he, she, it, self
+      # (high, grammatical, sparse, normal)
+    - strongs: G1411
+      greek: δύναμις
+      english: power, strength, ability
+      # (medium, theological, rich, adversarial: folk etymology)
     # ... 39 more words
 ```
 
@@ -115,38 +126,28 @@ test_set:
 
 ## STAGE 2: Initial Experiments (Cycle 1) (8-12 hours)
 
-### 2.1 Lock Predictions Before Research
-
-**CRITICAL:** Prevent bias by committing predictions BEFORE checking sources.
+### 2.1 Execute Extraction Per Schema
 
 **DO:**
-1. For each test word:
-   - Read base Strong's file (`.data/strongs/{STRONGS_ID}/{STRONGS_ID}-strongs.strongs.yaml`)
-   - Predict what tool will extract (based on schema)
-   - **GIT COMMIT:** Lock predictions (`git add . && git commit -m "predictions: {STRONGS_ID}"`)
-   - **THEN** execute actual extraction
+1. Review tool-specific methodology from previous experiments:
+   - **Lexicon Core:** Word type classification → extraction depth (LEARNINGS.md §1)
+   - **Web Insights:** Multi-discipline search (5 disciplines, LEARNINGS.md §4)
+   - **TBTA Hints:** LLM logic tree pattern detection from 900+ translations
 
-2. **NEVER:** Check sources before prediction
-3. **ALWAYS:** Commit predictions separately from results
-
-**REFERENCE:** TBTA locked predictions technique (prevents confirmation bias)
-
-**CHECKPOINT:** Predictions locked (git committed) for all test words
-
-### 2.2 Execute Extraction Per Schema
-
-**DO:**
-1. For each test word:
+2. For each test word, apply proven patterns:
+   - Read base Strong's file FIRST (`.data/strongs/{STRONGS_ID}/{STRONGS_ID}-strongs.strongs.yaml`)
    - Execute tool extraction per schema/README
    - Apply inline citations: `content {source}`
    - Document time taken
    - Note any difficulties/edge cases
 
-2. Save outputs to: `{word}.strongs-{tool}.yaml`
+3. Save outputs to: `{word}.strongs-{tool}.yaml`
+
+**REFERENCE:** See LEARNINGS.md for all 7 proven patterns with evidence from 80+ experiments
 
 **CHECKPOINT:** Initial outputs created for all test words
 
-### 2.3 Apply 3-Level Validation
+### 2.2 Apply 3-Level Validation
 
 **DO:**
 1. **Level 1 (CRITICAL - Must Pass 100%):**
@@ -158,44 +159,51 @@ test_set:
      - **URL-templatable sources** → ATTRIBUTION.md (e.g., BibleHub, StudyLight with URL patterns)
      - **One-off sources** → Bottom of YAML file (unique articles, specific blog posts)
 
-2. **Level 2 (HIGH PRIORITY - Must Pass 80%+):**
+2. **Level 2 (HIGH PRIORITY - Iterate Until <5% Improvement):**
    - ✅ Etymology from 2+ lexicons
    - ✅ Semantic categories appropriate for word type/frequency
    - ✅ Usage statistics match sources exactly
    - ✅ Convergence/divergence documented
 
-3. **Level 3 (MEDIUM PRIORITY - Must Pass 60%+):**
+3. **Level 3 (MEDIUM PRIORITY - Continue Refinement):**
    - ✅ Cross-reference codes extracted
    - ✅ Diachronic analysis when relevant
    - ✅ Fair use compliant
    - ✅ Related words documented
 
+**STOPPING RULE:** Continue refinement cycles until improvements <5% per cycle (diminishing returns)
+
 **REFERENCE:** See LEARNINGS.md §7 for validation framework details
 
-**CHECKPOINT:** Validation results documented (pass/fail per level)
+**CHECKPOINT:** Validation results documented with improvement metrics
 
-### 2.4 Analyze Prediction vs Reality
+### 2.3 Analyze Extraction Quality
 
-**Validation Ground Truth:**
-- **Strong's Ground Truth**: Published lexicons + scholarly consensus (authoritative INPUT)
-- **Validation Method**: 3-tier framework (100% L1, 80%+ L2, 60%+ L3)
-- **Convergence = Validation**: 3+ independent sources agreeing = verified
+**Peer Review Validation:**
 
 **DO:**
-1. Compare locked predictions to actual results
-2. Document where predictions failed (reveals methodology gaps)
-3. Identify patterns:
+1. Document extraction analysis:
    - What was harder than expected?
    - What sources were missed?
    - What word types had surprises?
-4. **Validate against ground truth:**
+
+2. **Validate source quality:**
    - Can credentials be verified? Are sources authoritative?
    - Do 3+ independent sources agree (convergence)?
    - Can every claim be traced to a source (no fabrication)?
 
-**CHECKPOINT:** Prediction analysis documented with source validation results
+3. **User impact testing** (see TEMPLATE.md peer review methodology):
+   - Would a Bible translator copy this to their notes?
+   - Would a pastor use this in sermon preparation?
+   - Would a seminary student trust this analysis?
+   - What mistakes were avoided due to this enrichment?
+   - What data was most valuable?
 
-### 2.5 Document Cycle 1 Learnings
+**REFERENCE:** See bible-study-tools/TEMPLATE.md for peer review methodology
+
+**CHECKPOINT:** Quality analysis documented with user impact assessment
+
+### 2.4 Document Cycle 1 Learnings
 
 **DO:**
 1. Create `/plan/strongs-enrichment-tools/{tool}/experiments/cycle-01/`
@@ -221,8 +229,7 @@ test_set:
    - Time inefficiencies (over-extraction, under-extraction)
 
 3. Re-run 10-15 test words with refined prompts
-4. Lock predictions before each run (prevent bias)
-5. Document improvements (validation %, time reduction)
+4. Document improvements (validation metrics, time reduction)
 
 **CHECKPOINT:** Cycle 2 results show measurable improvement (validation +10%, time -15%)
 
@@ -236,8 +243,7 @@ test_set:
    - Multi-discipline search (5 disciplines for rare words)
 
 3. Re-run 10-15 test words with engineered context
-4. Lock predictions before each run
-5. Document improvements
+4. Document improvements
 
 **CHECKPOINT:** Cycle 3 results show further improvement (validation +5%, time -10%)
 
@@ -256,8 +262,7 @@ test_set:
    - **Bias detection tests** (reversal, respect, evidence)
 
 3. Re-run adversarial words with edge case handling
-4. Lock predictions before each run
-5. Document improvements
+4. Document improvements
 
 **REFERENCE:** See LEARNINGS.md §5-6 for error correction and multi-perspective frameworks
 
@@ -507,9 +512,8 @@ test_set:
 **DO:**
 1. Use finalized templates (standard, error-correction, multi-perspective, skip)
 2. Batch by priority (high → medium → low)
-3. Lock predictions for each word (prevent bias)
-4. Validate continuously (spot-check 10% per batch)
-5. Monitor quality trends (watch for methodology drift)
+3. Validate continuously (spot-check 10% per batch)
+4. Monitor quality trends (watch for methodology drift)
 
 **CHECKPOINT:** Production outputs created at scale
 
