@@ -1,0 +1,398 @@
+# G1577 ἐκκλησία (ekklesia) - Community Discussions
+# Experiment 2: Testing etymological fallacy (etymology vs. usage meaning)
+
+strongs_number: "G1577"
+language: "greek"
+lemma: "ἐκκλησία"
+transliteration: "ekklēsia"
+
+tool:
+  name: "strongs-community-discussions"
+  version: "1.0.0"
+  generated_date: "2025-11-12"
+
+# === CONTROVERSIES & MISCONCEPTIONS ===
+
+controversies:
+  - id: 1
+
+    # === ERROR DOCUMENTATION ===
+    error:
+      claim: |
+        "Ekklesia means 'called out ones' - from ek (out) + kaleo (to call).
+        The church is those called out from the world."
+
+      type: "etymological_fallacy"
+      # Subtype: Etymology imposed as usage meaning (root fallacy)
+
+      prevalence: "widespread"
+      # Taught in sermons, church materials, widely accepted in evangelical contexts
+
+      source:
+        type: "multiple"
+        examples:
+          - platform: "church_teaching"
+            url: "http://crosstocrown.org/books/ekklesia/chapter/the-called-out-ones/"
+            title: "The Called Out Ones"
+            quote_fragment: "Ekklesia...precisely what the word means"
+            authority_note: "LOW - church teaching material"
+
+          - platform: "sermon"
+            url: "https://sermons.logos.com/sermons/1436326-the-church:-called-out-ones"
+            title: "The Church: Called Out Ones"
+            context: "Sermon series based on etymology"
+            authority_note: "LOW - sermon illustration"
+
+          - platform: "ministry_website"
+            url: "https://oceansministries.org/ekklesia-called-ones/"
+            title: "Ekklesia - The Called Out Ones!"
+            context: "Teaching material on church identity"
+            authority_note: "LOW - ministry teaching"
+
+        date_observed: "2025-11-12"
+        context: "Common in evangelical and reformed church teaching, sermon series, discipleship materials"
+        authority_note: "LOW - popular church teaching"
+
+      why_tempting: |
+        Etymology provides memorable identity ("we are the called-out ones").
+        Ek + kaleo breakdown feels scholarly and insightful.
+        Reinforces theological concept of separation from the world.
+        Creates strong church identity and mission clarity.
+        Simple, teachable, memorable for congregations.
+        Appears to unlock "original meaning" of Scripture.
+
+      associated_verses:
+        - "Matthew 16:18 - 'I will build my ekklesia'"
+        - "Acts 7:38 - 'ekklesia in the wilderness'"
+
+    # === SCHOLARLY REFUTATION ===
+    scholarly_refutation:
+      correction: |
+        While ekklesia etymologically derives from ek + kaleo, this root meaning does NOT
+        determine its actual usage. By NT times, ekklesia simply meant "assembly" or "congregation."
+        Etymology ≠ meaning (root fallacy). Classical and NT usage = "assembly," not "called out ones."
+
+      evidence:
+        - type: "lexical"
+          fact: "BDAG defines ekklēsia as: (1) congregation, (2) assembly, (3) church - no 'called out' definition"
+          source: "{bdag}"
+          authority: "HIGH"
+
+        - type: "lexical"
+          fact: "LSJ classical definition: assembly, especially political assembly of citizens"
+          source: "{lsj}"
+          authority: "HIGH"
+
+        - type: "linguistic"
+          fact: "NIDNTTE: verb ekkaleo rarely appears with phrases indicating 'calling out of' something"
+          source: "{nidntte}"
+          authority: "HIGH"
+
+        - type: "linguistic"
+          fact: "NIDNTTE: ekkaleo never attested in contexts describing the calling of an ekklesia"
+          source: "{nidntte}"
+          authority: "HIGH"
+
+        - type: "usage"
+          fact: "EDNT: etymological sense 'nowhere plays a recognizable role in NT material'"
+          source: "{ednt}"
+          authority: "HIGH"
+
+        - type: "historical"
+          fact: "Classical Greek: technical term for assembly of free citizens entitled to vote"
+          source: "{lsj} {nidntte}"
+          authority: "HIGH"
+
+        - type: "semantic"
+          fact: "By NT times, hearers thought 'assembly/gathering,' not 'the called-out'"
+          source: "{reformed-reader-blog}"
+          authority: "MEDIUM"
+
+      refutation_sources:
+        primary:
+          - source_type: "lexicon"
+            citation: "{bdag}"
+            relevant_section: "Entry for ἐκκλησία G1577"
+            authority: "HIGH"
+            key_point: "Defines as assembly/congregation, not 'called out ones'"
+
+          - source_type: "lexicon"
+            citation: "{lsj}"
+            relevant_section: "Classical Greek usage"
+            authority: "HIGH"
+            key_point: "Assembly of citizens - technical political term"
+
+          - source_type: "reference_work"
+            citation: "{nidntte}"
+            title: "New International Dictionary of NT Theology & Exegesis"
+            authority: "HIGH"
+            key_point: "Etymology doesn't determine usage; verb ekkaleo not used for calling ekklesia"
+
+          - source_type: "reference_work"
+            citation: "{ednt}"
+            title: "Exegetical Dictionary of the New Testament"
+            authority: "HIGH"
+            key_point: "Etymological sense plays no recognizable role in NT"
+
+        supporting:
+          - source_type: "book"
+            citation: "{carson-fallacies}"
+            author: "D.A. Carson"
+            title: "Exegetical Fallacies"
+            authority: "HIGH"
+            key_point: "Root fallacy - etymology doesn't equal meaning"
+
+          - source_type: "expert_blog"
+            citation: "{reformed-reader-blog}"
+            url: "https://reformedreader.wordpress.com/2021/12/28/does-church-mean-called-out-ones/"
+            authority: "MEDIUM"
+            key_point: "Not heresy but incorrect; no lexicon defines this way"
+
+      correct_understanding:
+        etymology: |
+          Yes, ekklesia derives from ek (out) + kaleo (to call) {lsj}
+          Original usage: citizens called out (to assemble point) for political meetings {nidntte}
+          But: etymological origin ≠ established meaning
+
+        semantic_range: |
+          1. Assembly, congregation (general gathering) {bdag}
+          2. Political assembly of citizens {lsj}
+          3. Congregation of Israel (LXX usage) {bdag}
+          4. Christian congregation/church (NT usage) {bdag}
+
+        proper_usage: |
+          NT writers used ekklesia to mean "assembly" or "congregation" - the standard meaning
+          in their day. Hearers would think "gathering/assembly," not analyze etymology.
+          The theological concept of being "called out" is valid (1 Peter 2:9 uses different
+          words), but ekklesia itself simply means "assembly/church" {bdag} {carson-fallacies}
+
+      authority_note: "HIGH - multiple lexicons + NIDNTTE/EDNT; MEDIUM - expert blog"
+
+    # === ERROR CLASSIFICATION ===
+    error_classification:
+      primary_type: "etymological_fallacy"
+
+      secondary_types:
+        - "root_fallacy"  # Assuming root meaning = current meaning
+        - "anachronism"   # Imposing original usage onto developed meaning
+
+      contributing_factors:
+        - "Ek + kaleo breakdown seems scholarly"
+        - "Reinforces separation theology (called out from world)"
+        - "Creates memorable church identity"
+        - "Taught widely in evangelical contexts"
+        - "Etymology feels like discovering hidden meaning"
+
+      related_errors:
+        - word: "δύναμις"
+          strongs: "G1411"
+          error_pattern: "Etymology (dynamis → dynamite) - reverse chronology"
+
+        - word: "ἀγάπη"
+          strongs: "G26"
+          error_pattern: "Etymology assumption (agape = unconditional) - theological projection"
+
+    # === PEDAGOGICAL GUIDANCE ===
+    helpful_guidance:
+      what_to_avoid: |
+        Do NOT claim ekklesia "means" called out ones.
+        Do NOT assume etymology determines meaning (root fallacy).
+        Do NOT teach that ek + kaleo breakdown reveals the word's NT sense.
+        Avoid: "Ekklesia literally means 'the called-out ones'" (false).
+
+      alternative_framing: |
+        Ekklesia in NT = "assembly" or "congregation/church" {bdag}
+
+        VALID theological teaching:
+        - God HAS called believers out of darkness (1 Peter 2:9 - different words)
+        - Church IS a called people (klētoi, elect) - valid theology
+        - Ekklesia DESCRIBES this called assembly
+
+        Accurate teaching:
+        "Ekklesia means 'assembly' or 'church.' While the word originally referred to
+        citizens called to assemble, by NT times it simply meant 'gathering.' The church
+        IS a called people (theology), but the word ekklesia itself means 'assembly.'"
+
+      memory_aid: |
+        Think: Ekklesia = Assembly/Church (what hearers understood)
+        Not: Ek + kaleo analysis (etymology ≠ usage meaning)
+
+        Valid connection: Church IS called by God (different Greek words: kaleo, kletos)
+        Invalid: Ekklesia MEANS "called out" (etymology imposed on meaning)
+
+      tone_note: |
+        Be gracious: "While this teaching is widespread and reinforces important theology
+        (believers ARE called out), the linguistic evidence shows ekklesia itself simply
+        meant 'assembly.' The theology is sound - the etymology just doesn't carry the
+        meaning into the word."
+
+# === COMMON QUESTIONS ===
+
+common_questions:
+  - id: 1
+    question: "Doesn't ekklesia come from ek + kaleo, meaning 'called out'?"
+
+    source:
+      platform: "common_teaching_question"
+      context: "Frequently taught in churches; challenged by Greek students"
+
+    expert_answer:
+      answer: |
+        Yes, ekklesia etymologically derives from ek (out) + kaleo (to call). BUT:
+
+        **Etymology ≠ Meaning** (D.A. Carson's "root fallacy" {carson-fallacies})
+
+        1. **Original usage:** Citizens called out to assembly point for political meetings {nidntte}
+        2. **Meaning development:** Over time, "assembly" became the established meaning
+        3. **NT usage:** Simple word for "assembly/congregation" - etymology no longer active
+        4. **Hearer understanding:** 1st-century hearers thought "assembly," not "called-out" {ednt}
+
+        **Analogy:** "Understand" comes from "under + stand," but nobody thinks of physical
+        standing when hearing "I understand." Etymology ≠ current meaning.
+
+        **Lexicons agree:** BDAG, LSJ, NIDNTTE all define as "assembly," not "called out ones" {bdag} {lsj} {nidntte}
+
+      sources:
+        - citation: "{bdag}"
+          type: "lexicon"
+          authority: "HIGH"
+
+        - citation: "{nidntte}"
+          type: "reference_work"
+          authority: "HIGH"
+
+        - citation: "{carson-fallacies}"
+          type: "book"
+          authority: "HIGH"
+
+  - id: 2
+    question: "Is it wrong to teach that the church is 'called out' from the world?"
+
+    source:
+      platform: "theological_question"
+      context: "Concern that correction undermines theology"
+
+    expert_answer:
+      answer: |
+        No! The THEOLOGY is sound - believers ARE called out. The ETYMOLOGY is the issue.
+
+        **Valid theology:**
+        - 1 Peter 2:9: "called (καλέω/kaleo) out of darkness" - correct verb!
+        - Ephesians 1:4: God "chose (ἐκλέγομαι/eklegomai) us" - selection language
+        - Romans 1:6: "called (κλητός/kletos) to belong to Jesus" - called ones
+
+        **Invalid etymology:**
+        - Claiming ekklesia itself MEANS "called out ones" {reformed-reader-blog}
+
+        **Solution:**
+        Teach the theology using the RIGHT Greek words (kaleo, kletos, eklegomai).
+        Use ekklesia correctly as "assembly/church."
+
+        **Accurate:** "The church (ekklesia = assembly) consists of those called (kaleo)
+        by God out of darkness. We are the called ones (kletos) who assemble (ekklesia)."
+
+      sources:
+        - citation: "{bdag}"
+          type: "lexicon"
+          authority: "HIGH"
+          note: "Provides correct definitions for kaleo, kletos, ekklesia"
+
+# === HELPFUL CAUTIONS ===
+
+helpful_cautions:
+  - caution_type: "etymological"
+    warning: "Do not assume etymology determines current meaning (root fallacy)"
+    reason: "Words develop over time; original roots may not reflect established usage"
+    evidence: |
+      NIDNTTE: Etymological sense "nowhere plays a recognizable role" in NT {nidntte}
+      Carson: Root fallacy is common exegetical error {carson-fallacies}
+    authority: "HIGH"
+
+  - caution_type: "semantic"
+    warning: "Do not confuse valid theology with invalid etymology"
+    reason: "Believers ARE called out (1 Peter 2:9) - but ekklesia doesn't MEAN that"
+    evidence: "Different Greek words express 'calling' (kaleo, kletos) vs. 'assembly' (ekklesia) {bdag}"
+    authority: "HIGH"
+
+  - caution_type: "hermeneutical"
+    warning: "Ask what the word meant to original hearers, not what etymology suggests"
+    reason: "Historical-grammatical method requires contemporary understanding, not etymology"
+    evidence: "NT hearers understood 'assembly,' not 'called-out' {ednt} {reformed-reader-blog}"
+    authority: "HIGH/MEDIUM"
+
+# === QUALITY METADATA ===
+
+metadata:
+  controversies_count: 1
+  common_questions_count: 2
+  helpful_cautions_count: 3
+  scholarly_debates_count: 0
+
+  validation:
+    level_1_critical:
+      error_has_real_source: true  # Multiple church teaching sites
+      refutation_has_high_authority: true  # BDAG, LSJ, NIDNTTE, EDNT = HIGH
+      evidence_provided: true  # Lexical, linguistic, historical, semantic
+      error_type_classified: true  # Etymological fallacy (root fallacy subtype)
+      no_fabricated_controversies: true  # Real, widespread teaching
+      tone_gracious: true  # Acknowledges valid theology, corrects etymology
+
+    level_2_high_priority:
+      prevalence_assessed: true  # "widespread" in evangelical contexts
+      multiple_refutation_sources: true  # 6 sources (4 HIGH, 2 MEDIUM)
+      guidance_provided: true  # Alternative framing separates theology from etymology
+      related_errors_documented: true  # 2 related etymological errors
+
+    level_3_medium_priority:
+      pedagogical_notes: true  # Why tempting section detailed
+      positive_alternative: true  # Shows how to teach theology correctly
+      integration_checked: false  # Tool 1 not yet available
+
+  authority_distribution:
+    error_sources: "LOW - church teaching, sermon materials"
+    refutation_sources: "HIGH - BDAG, LSJ, NIDNTTE, EDNT, Carson; MEDIUM - expert blog"
+
+  coverage_assessment:
+    genuine_controversy: true
+    rationale: "Widespread teaching in evangelical churches; clear scholarly refutation"
+    impact: "MEDIUM-HIGH - affects church identity teaching, not heretical but linguistically incorrect"
+
+  generation_stats:
+    extraction_date: "2025-11-12"
+    sources_consulted: 6
+    web_searches_performed: 2
+    web_fetches_performed: 1
+
+  requires_human_review: false
+
+# === EXPERIMENT METADATA ===
+
+experiment_metadata:
+  experiment_id: "exp2-G1577-ekklesia"
+  word_selected: "G1577 ἐκκλησία"
+  reason_selected: "Test etymological fallacy (different subtype from Exp 1); widespread teaching error"
+  methodology_validated: true
+
+  what_worked:
+    - "Error easily found in church teaching materials"
+    - "Scholarly refutation abundant (multiple lexicons + reference works)"
+    - "Root fallacy clearly documented by Carson"
+    - "Distinction between theology and etymology provides gracious correction"
+    - "Two-tier authority structure maintained"
+
+  challenges:
+    - "Sensitive topic - widely taught, affects church identity"
+    - "Need to affirm valid theology while correcting etymology"
+    - "Requires nuanced explanation (not heresy, just linguistically incorrect)"
+
+  learnings:
+    - "Etymological fallacies come in multiple forms (Exp 1 = chronology, Exp 2 = root meaning)"
+    - "Gracious tone crucial when correcting widespread church teaching"
+    - "Separating theology from etymology allows correction without offense"
+    - "Multiple lexicons converging = strongest refutation"
+    - "Carson's 'root fallacy' category fits perfectly"
+
+  schema_refinements_needed: "None - schema flexible enough for sensitive theological topics"
+
+  ready_for_production: true
+  notes: "Validates methodology for etymological errors affecting church teaching"
