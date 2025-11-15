@@ -16,18 +16,18 @@
 **Notes**: Also handles 1st-as-3rd, 2nd-as-3rd grammaticalizations
 
 ### Number System
-**Status**: 🟨 Stage 2 (Language Study) • **Accuracy**: TBD
+**Status**: ✅ Stage 2 Complete (Language Study) • **Accuracy**: TBD
 **Definition**: Beyond singular/plural - includes Dual (2), Trial (3), Quadrial (4), Paucal (few)
-**Languages**: 172 Austronesian/Polynesian (Hawaiian, Samoan, Slovenian dual)
+**Languages**: ~501+ languages across 5 families (Austronesian 176, Trans-New Guinea 129, Indo-European 135, Australian 36, Afro-Asiatic 25)
 **Source**: TBTA original
-**Notes**: Genesis 1:26 "us" = Trial (Trinity reference)
+**Notes**: ~220+ languages require dual (44%), ~20-30 require trial, ~50-70 require paucal. Genesis 1:26 "us" creates trial/plural ambiguity in some languages. See [number-system/](./number-system/) for complete analysis.
 
 ### Participant Tracking
-**Status**: 🟨 Stage 4 (Refinement) • **Accuracy**: 90%
+**Status**: 🟨 Stage 4 (Refinement) • **Accuracy**: 90% (target: 95%)
 **Definition**: Marks discourse status - First Mention, Routine, Exiting, Restaging, Frame Inferable
 **Languages**: 200+ switch-reference (Papua New Guinea, Native American)
 **Source**: TBTA original
-**Notes**: Critical for pronoun clarity in ambiguous contexts (Genesis 4:8)
+**Notes**: Critical for pronoun clarity in ambiguous contexts (Genesis 4:8). Known issues: quoted speech boundaries, vision contexts, implicit role shifts. See [participant-tracking/](./participant-tracking/) for refinement plan.
 
 ### Proximity System
 **Status**: ⬜ Stage 1 (Research) • **Accuracy**: TBD
@@ -69,14 +69,14 @@
 **Definition**: Perfective, Imperfective, Progressive, Habitual, Inceptive, Completive
 **Languages**: Russian, Polish, Mandarin, Arabic (required aspect marking)
 **Source**: TBTA original
-**Notes**: Multi-factor convergence pattern validated
+**Notes**: Multi-factor convergence pattern validated (5-factor model). Remaining 1.9% errors justify optimal accuracy threshold. See [aspect/](./aspect/) for complete methodology and external validation (94.7% agreement across languages).
 
 ### Time Granularity
-**Status**: ⬜ Stage 1 (Research) • **Accuracy**: TBD
+**Status**: ✅ Stage 1 Complete (Research) • **Accuracy**: TBD
 **Definition**: 20+ temporal distinctions - Immediate, Today, Yesterday, Last Week, Remote Past, Discourse Time
-**Languages**: Tagalog (11 distinctions), Yagua (5 past tenses), ChiBemba (tense+aspect)
+**Languages**: 150+ languages with grammatical temporal granularity. High: Tagalog (11), Yagua (5 past); Medium: ChiBemba (4+4 symmetrical), other Bantu; Aspect-based: Japanese, Korean, Mandarin
 **Source**: TBTA original
-**Notes**: Genesis narratives require precision for creation timeline
+**Notes**: Genesis narratives require precision for creation timeline. Hebrew temporal ambiguity creates translation challenges. See [time-granularity/](./time-granularity/) for complete 20-category analysis and translation impact examples.
 
 ### Voice System
 **Status**: ⬜ Not Started • **Accuracy**: TBD
@@ -209,8 +209,9 @@ See [../tbta-source/TBTA-FEATURES.md](../tbta-source/TBTA-FEATURES.md) for compl
 
 - **Total Features**: 59 TBTA + 23 NEW = 82 total
 - **Complete**: 2 (Person/Clusivity, Mood)
+- **Stage Progress**: 4 (Number System Stage 2✅, Time Granularity Stage 1✅, Aspect Stage 5🟨, Participant Stage 4🟨)
 - **In Progress**: 2 (Aspect, Participant Tracking)
-- **Pending**: 55 TBTA + 23 NEW = 78
+- **Pending**: 53 TBTA + 23 NEW = 76
 
 **Tier A Priority** (19 TBTA + 5 NEW): Essential for 1000+ languages
 **Tier B Priority** (20 TBTA + 8 NEW): Important, often inferable
@@ -221,4 +222,4 @@ See individual feature directories for detailed experiments, prompts, and valida
 ---
 
 **Methodology**: [STAGES.md](STAGES.md) • **Learnings**: [../learnings/README.md](../learnings/README.md) • **Extensions**: [../tbta-source/IMPROVEMENTS.md](../tbta-source/IMPROVEMENTS.md)
-**Last Updated**: 2025-11-14
+**Last Updated**: 2025-11-15
