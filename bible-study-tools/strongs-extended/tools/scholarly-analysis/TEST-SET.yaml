@@ -1,0 +1,192 @@
+# Stratified Test Set for Scholarly Analysis Tool (STAGES.md v2.0)
+# Total: 40 Greek Strong's Numbers
+# Selection Protocol: BLIND (no metadata about difficulty/frequency exposed to main agent)
+
+test_set:
+  # === RARE FREQUENCY (<10 occurrences) === 12 words (30%)
+  rare_words:
+    - G1967  # epiousios - hapax, Lord's Prayer controversy
+    - G0725  # harpagmos - hapax in Phil 2:6, major theological debate
+    - G2435  # hilasterion - propitiation/mercy seat, rare theological term
+    - G3450  # morphosis - form/appearance, Pauline usage
+    - G0733  # arsenokoites - controversial, cultural sensitivity
+    - G4314  # prosopolempsia - partiality, compound rare word
+    - G2643  # katallage - reconciliation, theological richness
+    - G5287  # hupostasis - substance/confidence, technical term
+    - G3457  # mulikos - millstone type, concrete rare usage
+    - G0602  # apokalupsis - revelation, rich semantic field
+    - G2842  # koinonia - fellowship, theological depth
+    - G3628  # oiktirmos - compassion, LXX background
+
+  # === MEDIUM FREQUENCY (50-500 occurrences) === 18 words (45%)
+  medium_words:
+    - G0026  # agape - love, TDNT coverage, theological core
+    - G4102  # pistis - faith, central NT concept
+    - G5485  # charis - grace, Pauline emphasis
+    - G3056  # logos - word/reason, Johannine theology
+    - G1343  # dikaiosune - righteousness, legal/theological
+    - G2889  # kosmos - world/order, diverse contexts
+    - G4151  # pneuma - spirit/wind/breath, multivalent
+    - G0225  # aletheia - truth, philosophical/theological
+    - G2222  # zoe - life, Johannine preference
+    - G3952  # parousia - coming/presence, eschatological
+    - G4983  # soma - body, anthropological term
+    - G5590  # psuche - soul/life, anthropological
+    - G1577  # ekklesia - church/assembly, ecclesiological
+    - G0266  # hamartia - sin, soteriological key
+    - G1242  # diatheke - covenant, OT/NT bridge
+    - G3875  # parakletos - advocate/comforter, Johannine
+    - G4678  # sophia - wisdom, Pauline vs Jacobean
+    - G1849  # exousia - authority/power, diverse usage
+
+  # === HIGH FREQUENCY (1000+ occurrences) === 10 words (25%)
+  high_words:
+    - G2532  # kai - and/also/even, grammatical particle
+    - G3588  # ho/he/to - the, definite article
+    - G1161  # de - but/and, adversative conjunction
+    - G0846  # autos - he/she/it/self, pronoun complexity
+    - G1722  # en - in/on/among, locative preposition
+    - G1519  # eis - into/unto, directional preposition
+    - G3756  # ou/ouk/ouch - not, negation particle
+    - G2962  # kurios - lord/master/owner, theological title
+    - G2316  # theos - God, theological central term
+    - G0444  # anthropos - man/human, anthropological
+
+# === STRATIFICATION MATRIX ===
+stratification:
+
+  by_frequency:
+    rare_lt_10: 12  # 30%
+    medium_50_500: 18  # 45%
+    high_gt_1000: 10  # 25%
+    total: 40
+
+  by_word_type:
+    theological: 16  # 40% - agape, pistis, charis, logos, dikaiosune, pneuma, aletheia, zoe, parousia, hamartia, diatheke, parakletos, sophia, theos, kurios, hilasterion
+    grammatical: 12  # 30% - kai, ho, de, autos, en, eis, ou, anthropos, soma, psuche, ekklesia, exousia
+    nominal: 12      # 30% - kosmos, epiousios, harpagmos, morphosis, arsenokoites, prosopolempsia, katallage, hupostasis, mulikos, apokalupsis, koinonia, oiktirmos
+
+  by_lexicon_coverage:
+    rich_tdnt_lsj_trench: 16  # 40% - agape, pistis, charis, logos, dikaiosune, pneuma, aletheia, zoe, kosmos, hamartia, diatheke, theos, kurios, sophia, parousia, parakletos
+    moderate_thayer_helps_as: 16  # 40% - kai, ho, de, autos, en, eis, ou, anthropos, soma, psuche, ekklesia, exousia, koinonia, apokalupsis, katallage, hupostasis
+    sparse_limited: 8  # 20% - epiousios, harpagmos, arsenokoites, morphosis, prosopolempsia, hilasterion, mulikos, oiktirmos
+
+# === ADVERSARIAL CASES === 12 words (30%)
+adversarial:
+
+  controversial_etymology:
+    - word: G1967  # epiousios
+      reason: "Hapax legomenon, disputed etymology (epi + ousia vs epi + ienai), no classical parallels"
+    - word: G0733  # arsenokoites
+      reason: "Neologism by Paul, compound etymology disputed, cultural translation debates"
+    - word: G0725  # harpagmos
+      reason: "Active vs passive sense debate, rare morphological form, theological implications"
+
+  lexicon_divergence:
+    - word: G3056  # logos
+      reason: "Johannine vs Stoic vs OT wisdom meanings, philosophical overlay, context-dependent"
+    - word: G4102  # pistis
+      reason: "Faith vs faithfulness, subjective vs objective genitive debates"
+    - word: G4151  # pneuma
+      reason: "Spirit vs wind vs breath, capitalization debates, trinitarian implications"
+    - word: G2435  # hilasterion
+      reason: "Propitiation vs expiation vs mercy seat, atonement theology divergence"
+
+  rare_usage_contexts:
+    - word: G3457  # mulikos
+      reason: "Hapax in NT, specific millstone type unclear, limited extrabiblical attestation"
+    - word: G5287  # hupostasis
+      reason: "Technical term with shifting meaning (substance/confidence/reality), Hebrews usage unique"
+    - word: G3875  # parakletos
+      reason: "Johannine term, legal vs spiritual advocate debate, translation tradition variance"
+
+  cultural_sensitivity:
+    - word: G1242  # diatheke
+      reason: "Covenant vs testament translation debates, Jewish vs Hellenistic understanding"
+    - word: G1577  # ekklesia
+      reason: "Church vs assembly, ecclesiology debates, anachronistic translation risks"
+
+# === DIVERSITY VERIFICATION ===
+diversity:
+  nt_books_covered:
+    - Gospels: [G1967, G3056, G3875, G2222]  # Matthew, Luke, John
+    - Pauline: [G0733, G0725, G1343, G5485, G2643, G1242, G4678]  # Romans, 1Cor, Phil, Gal, 2Cor
+    - Hebrews: [G5287, G2435]
+    - General_Epistles: [G2842, G3628, G4102]  # James, 1John, 1Peter
+    - Revelation: [G0602]
+
+  semantic_domains:
+    concrete: [G3457]  # millstone
+    abstract: [G0225, G4678, G5287]  # truth, wisdom, substance
+    relational: [G0026, G2842, G2643]  # love, fellowship, reconciliation
+    theological: [G2316, G2962, G4151, G0602]  # God, lord, spirit, revelation
+    anthropological: [G0444, G4983, G5590]  # human, body, soul
+    ethical: [G1343, G0266]  # righteousness, sin
+    covenantal: [G1242]  # diatheke
+    eschatological: [G3952, G2222]  # parousia, life
+    grammatical: [G2532, G3588, G1161, G1722, G1519, G3756]  # particles, articles, prepositions
+
+  chronological_diversity:
+    early_pauline: [G5485, G1343, G0733]  # 1Thess, Galatians, 1Cor
+    later_pauline: [G0725, G2643, G4678]  # Philippians, 2Cor, Colossians
+    johannine: [G3056, G2222, G3875]  # John's Gospel, 1John
+    synoptic: [G1967, G3952]  # Matthew, Luke
+    general: [G2842, G5287]  # James, Hebrews
+
+# === BLIND SELECTION NOTES ===
+# - No words from Approach A experiments (avoided G25, G2198 mentioned in documentation)
+# - Distribution across NT corpus (not concentrated in Romans/John)
+# - Mix of Pauline, Johannine, Synoptic, General Epistles
+# - Both concrete (mulikos) and abstract (sophia, aletheia) concepts
+# - Grammatical foundation (kai, ho, de) + theological depth (agape, pistis, logos)
+# - Adversarial cases embedded without flagging difficulty to main agent
+# - Total lexicon coverage spans: TDNT, LSJ, Thayer, HELPS, Abbott-Smith, Trench, BDAG
+# - Cultural sensitivity cases included: arsenokoites, ekklesia, diatheke
+# - Etymology risks: epiousios, harpagmos, logos (folk etymology temptations)
+
+# === OUTPUT FOR MAIN AGENT ===
+# IMPORTANT: Main agent receives ONLY the word list below
+# All stratification metadata above is for test coordination only
+# Main agent should NOT see frequency bands, difficulty ratings, or adversarial flags
+
+word_list_blind:
+  - G1967
+  - G0725
+  - G2435
+  - G3450
+  - G0733
+  - G4314
+  - G2643
+  - G5287
+  - G3457
+  - G0602
+  - G2842
+  - G3628
+  - G0026
+  - G4102
+  - G5485
+  - G3056
+  - G1343
+  - G2889
+  - G4151
+  - G0225
+  - G2222
+  - G3952
+  - G4983
+  - G5590
+  - G1577
+  - G0266
+  - G1242
+  - G3875
+  - G4678
+  - G1849
+  - G2532
+  - G3588
+  - G1161
+  - G0846
+  - G1722
+  - G1519
+  - G3756
+  - G2962
+  - G2316
+  - G0444
