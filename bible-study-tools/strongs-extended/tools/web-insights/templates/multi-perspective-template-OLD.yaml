@@ -1,0 +1,269 @@
+# Multi-Perspective Template - Tool 3 (Web Insights)
+# Based on Experiments 1 (G4151 pneuma) and 5 (G1577 ekklesia)
+# For scholarly disagreements and cultural/translation debates
+
+disagreement_id: 1
+topic: "[Brief description of the disagreement - e.g., Translation choice, Interpretive debate]"
+debate_status: "ongoing"  # ongoing | settled | emerging
+controversy_type: "translational"  # interpretive | translational | theological | cultural
+
+# ============================================================================
+# Multiple Positions (minimum 2, present ALL major views)
+# ============================================================================
+# Purpose: Document all credible positions fairly without imposing single answer
+# Principle: Present multiple perspectives with evidence for each
+# NO BIAS: Each position should receive equal respect and evidence
+
+positions:
+  # -------------------------------------------------------
+  # Position 1
+  # -------------------------------------------------------
+  - position_id: 1
+    view_name: "[Name of this position - e.g., Traditional, Reformed, Cessationist, etc.]"
+
+    # Who holds this view?
+    advocates:
+      - name: "[Scholar name]"
+        credentials: "[Ph.D., institution, relevant publications]"
+        authority_level: "MEDIUM-HIGH"  # or MEDIUM, HIGH, VERY HIGH
+        authority_note: "[Why this authority level]"
+        affiliation: "[Institution or tradition]"  # Optional
+
+    # What do they argue?
+    key_arguments:
+      - "Argument 1 with inline citation {source-1}"
+      - "Argument 2 with inline citation {source-2}"
+      - "Argument 3 with inline citation {source-3}"
+
+    # Strengths of this position
+    strengths:
+      - "[Strength 1 - e.g., Maintains historical continuity]"
+      - "[Strength 2 - e.g., Supported by major commentators]"
+      - "[Strength 3 - e.g., Clear theological framework]"
+
+    # Considerations/limitations of this position
+    considerations:
+      - "[Consideration 1 - e.g., May not capture full semantic range]"
+      - "[Consideration 2 - e.g., Cultural sensitivities in some contexts]"
+      - "[Consideration 3 - e.g., Potential anachronism concerns]"
+
+    # Evidence/sources
+    sources:
+      - author: "[Name]"
+        url: "[URL]"
+        site_name: "[Site or publication]"
+        authority_level: "MEDIUM-HIGH"
+        verification_date: "YYYY-MM-DD"
+      - author: "[Name]"
+        url: "[URL]"
+        site_name: "[Site or publication]"
+        authority_level: "MEDIUM"
+        verification_date: "YYYY-MM-DD"
+
+  # -------------------------------------------------------
+  # Position 2
+  # -------------------------------------------------------
+  - position_id: 2
+    view_name: "[Alternative position name]"
+
+    advocates:
+      - name: "[Scholar name]"
+        credentials: "[Ph.D., institution, relevant publications]"
+        authority_level: "MEDIUM"
+        authority_note: "[Why this authority level]"
+
+    key_arguments:
+      - "Argument 1 with inline citation {source-1}"
+      - "Argument 2 with inline citation {source-2}"
+      - "Argument 3 with inline citation {source-3}"
+
+    strengths:
+      - "[Strength 1]"
+      - "[Strength 2]"
+      - "[Strength 3]"
+
+    considerations:
+      - "[Consideration 1]"
+      - "[Consideration 2]"
+      - "[Consideration 3]"
+
+    sources:
+      - author: "[Name]"
+        url: "[URL]"
+        site_name: "[Site or publication]"
+        authority_level: "MEDIUM"
+        verification_date: "YYYY-MM-DD"
+
+  # Add Position 3, 4, etc. if there are more major positions
+
+# ============================================================================
+# Cultural Considerations (from Experiment 5)
+# ============================================================================
+# Purpose: Flag cultural sensitivities that affect translation/interpretation
+# When: If controversy has cultural/political stakes (post-colonial, denominational, etc.)
+
+cultural_considerations:
+  post_colonial_contexts:
+    issue: "[Specific cultural sensitivity - e.g., Colonial overtones, institutional baggage]"
+    guidance: "[How to navigate - e.g., Consider local sensitivities to institutional terminology]"
+    affected_regions: ["[Region 1]", "[Region 2]"]
+    sources:
+      - "[Source documenting this cultural concern]"
+
+  denominational_contexts:
+    issue: "[How different traditions view this]"
+    guidance: "[Navigate denominational sensitivities]"
+    affected_traditions: ["[Tradition 1]", "[Tradition 2]"]
+
+  contemporary_movements:
+    issue: "[Modern theological/cultural movements affected]"
+    guidance: "[Consider contemporary sensitivities]"
+    examples: ["[Movement 1]", "[Movement 2]"]
+
+  # Add other cultural factors as relevant
+
+# ============================================================================
+# Translator Guidance (options, NOT mandates)
+# ============================================================================
+# Purpose: Help translators make informed decisions based on context
+# Principle: Provide decision framework, not answer sheet
+# NOT: "Translate it as X" - YES: "Consider these factors when deciding"
+
+translator_guidance:
+  # Decision-making framework
+  decision_framework:
+    - "[Factor 1 - e.g., Consider target audience theological background]"
+    - "[Factor 2 - e.g., Assess cultural context (post-colonial, house church, etc.)]"
+    - "[Factor 3 - e.g., Check if context is religious or secular assembly]"
+    - "[Factor 4 - e.g., Consult Tool 1 for full semantic range data]"
+    - "[Factor 5 - e.g., Consult community leaders and local churches]"
+
+  # Contextual factors to weigh
+  contextual_factors:
+    - factor: "[Factor name - e.g., Audience theology]"
+      weight: "high"  # high | medium | low
+      rationale: "[Why this factor matters]"
+    - factor: "[Factor name - e.g., Cultural sensitivity]"
+      weight: "high"
+      rationale: "[Why this factor matters]"
+    - factor: "[Factor name - e.g., Semantic precision]"
+      weight: "medium"
+      rationale: "[Why this factor matters]"
+
+  # Example scenarios (helpful for translators)
+  example_scenarios:
+    - context: "[Context description - e.g., Post-colonial setting, avoiding institutional language]"
+      considerations: "[What to consider in this context]"
+      approach_options:
+        - "[Option 1 with rationale]"
+        - "[Option 2 with rationale]"
+
+    - context: "[Context description]"
+      considerations: "[What to consider]"
+      approach_options:
+        - "[Option 1]"
+        - "[Option 2]"
+
+  # Make it explicit: this is guidance, not commands
+  not_an_answer_sheet: true
+  guidance_philosophy: "Equip translators to navigate wisely, not impose single answer"
+
+# ============================================================================
+# Bias Detection Validation (from Experiment 5)
+# ============================================================================
+# Purpose: Ensure fair presentation of all positions
+# Required: All three tests must pass before publication
+
+bias_detection:
+  # Test 1: Could you reverse the presentation order without changing implications?
+  reversal_test:
+    passed: true  # true | false
+    notes: "[If false, explain what bias was detected and how corrected]"
+
+  # Test 2: Would advocates of each view feel fairly represented?
+  respect_test:
+    passed: true  # true | false
+    notes: "[If false, explain which position felt unfairly characterized]"
+
+  # Test 3: Did you present the strongest arguments for all positions?
+  evidence_test:
+    passed: true  # true | false
+    notes: "[If false, explain which position's arguments were weak or strawman]"
+
+  # Overall fairness assessment
+  fairness_validated: true
+  validator: "[Name or 'self-review']"
+  validation_date: "YYYY-MM-DD"
+
+# ============================================================================
+# Debate Context & Status
+# ============================================================================
+
+debate_context:
+  historical_background: |
+    [Brief history of this debate - when did it start? Why?]
+
+  current_status: |
+    [Where does the debate stand now? Intensifying? Waning? New developments?]
+
+  likelihood_of_resolution: "unlikely"  # likely | possible | unlikely
+  resolution_note: |
+    [Why is/isn't this debate likely to resolve? E.g., "Depends on theological
+    commitments more than exegetical data"]
+
+# ============================================================================
+# Quality Metadata
+# ============================================================================
+
+quality_checks:
+  minimum_positions: 2  # At least 2 major positions documented
+  minimum_sources_per_position: 1  # At least 1 credible source per position
+  all_positions_credentialed: true  # All advocates have verifiable credentials
+  tone: "fair_charitable"  # Charitable to all views, no mockery
+  bias_tests_passed: 3  # All 3 bias tests (Reversal, Respect, Evidence)
+
+cross_references:
+  tool_1_lexicon_core: true  # Semantic range data
+  tool_2_scholarly: true  # Peer-reviewed academic treatment if available
+
+# ============================================================================
+# Notes for Researchers
+# ============================================================================
+
+researcher_notes: |
+  FAIRNESS PRINCIPLES:
+  - Present ALL major positions with equal respect
+  - Provide strongest arguments for each (not strawman versions)
+  - Acknowledge where evidence supports each view
+  - Don't impose single "correct" answer
+  - Cultural sensitivity is crucial
+
+  BIAS DETECTION:
+  - Reversal Test: Could you flip order without changing implications?
+  - Respect Test: Would advocates feel fairly represented?
+  - Evidence Test: Did you present strongest case for all sides?
+
+  TONE GUIDELINES:
+  - Charitable engagement with all views
+  - Professional navigation of controversy
+  - Acknowledge legitimacy of different perspectives
+  - Avoid: "Obviously X is wrong", "Clearly Y is right"
+  - Use: "Position X argues...", "Position Y emphasizes..."
+
+  TRANSLATOR GUIDANCE:
+  - Decision framework, NOT answer sheet
+  - Options, NOT mandates
+  - Contextual factors to consider
+  - Trust translator's judgment with local context
+
+  QUALITY STANDARDS:
+  - Minimum 2 positions documented
+  - All advocates credentialed
+  - All bias tests passed
+  - Fair, charitable tone throughout
+
+  EXAMPLES TO STUDY:
+  - Exp 1: experiments/exp1-scholarly-disagreement/G4151-findings.md (pneuma)
+  - Exp 5: experiments/exp5-cultural-debate/G1577-guidance-synthesis.md (ekklesia)
+  - Note multi-perspective framework in action
+  - Note how bias detection catches unfairness
