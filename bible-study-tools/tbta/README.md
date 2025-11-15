@@ -43,6 +43,10 @@ Features include clusivity, number systems, participant tracking, discourse genr
  - Omit default values. It is better to have no answer than the wrong answer.
  - Divide New Testament by verses to maintain consistency with myBibleToolbox structure, allowing overlapping thoughts/words from neighboring verses to maintain relationships. (Note: TBTA's OT/NT division strategy documented in [tbta-source/DATA-STRUCTURE.md](tbta-source/DATA-STRUCTURE.md))
 
+## Thesis
+
+In the Bible it says, "there is nothing new under the sun".  The problem we are solving is how does a new translation deal with unique linguistical features not present in the original text.  We have access to about 1000 translations so likely several of them have already dealt with this.  The key is to analyze those translations and figure out which ones are the clue that reveals the answer.  Say your language requires not just (he, they) but (1,2,3,4,5,more) people.  You would not be alone.  Find another language that does that and see what they did for this verse and do the same.  Prefer languages of the same family or translations derived from the source text (since local translators are hard to find often they use what they know like Indonesian, Swahali, French, German, etc).  When multiple languages have that feature and disagree on your verse then understand the cultural, linguistic, translation source lineage and other reasons to help you make your decision.
+
 ## AI Rules
 
 **Documentation Navigation**: All documents **must** follow progressive disclosure for AI agent accessibility:
