@@ -68,6 +68,19 @@
   - Methodological review
   - Translation practitioner review
 - [ ] Create experiments/TRANSLATOR-IMPACT.md
+- [ ] **Cross-linguistic translation validation (THESIS)**:
+  - Identify published Bible translations in dual/trial/paucal languages
+  - Target languages from Stage 2 (documented in README):
+    - **Dual-marking**: Slovenian (obligatory), Samoan, Fijian, Upper Sorbian
+    - **Trial-marking**: Tok Pisin, Larike, Tolai, Raga
+    - **Paucal-marking**: Selected Austronesian languages
+  - Test verses: Genesis 1:26 (Trinity/trial), Luke 24:13 (dual), Matthew 18:20 (paucal)
+  - Analysis questions:
+    - How did Slovenian handle dual vs plural in Luke 24:13?
+    - Did Tok Pisin use trial for Genesis 1:26? (theological implications)
+    - What number did trial-languages use for "two or three" (Matthew 18:20)?
+  - Compare: Do published translations align with TBTA predictions?
+  - Document: experiments/EXTERNAL-VALIDATION.md
 - [ ] Address all critical feedback
 - [ ] Mark feature production-ready
 

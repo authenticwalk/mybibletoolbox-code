@@ -30,6 +30,7 @@ features/{feature-name}/
 │   ├── LEARNINGS.md              (6-step error analysis)
 │   ├── VALIDATION-RESULTS.md     (accuracy metrics)
 │   ├── EXTERNAL-VALIDATION.md    (real translation checks - if applicable)
+│   ├── CROSS-LINGUISTIC-VALIDATION.md  (Thesis approach - compare across languages)
 │   ├── TRANSLATOR-IMPACT.md      (Stage 6 - real-world testing)
 │   └── TBTA-REVIEW.md            (communication with TBTA team)
 └── archive/                       (old iterations if migrated)
@@ -72,6 +73,11 @@ Copy this abbreviated checklist into your feature README.md (see [STAGES.md](STA
 - [ ] For EVERY error: Apply 6-step systematic analysis (LEARNINGS.md)
 - [ ] Create PROMPT2.md (alternative approach), PROMPT3+.md (refinements)
 - [ ] External validation if applicable (check real translations)
+- [ ] Cross-linguistic translation validation (Thesis approach):
+  - [ ] Create experiments/CROSS-LINGUISTIC-VALIDATION.md
+  - [ ] Find languages with same feature (prefer same family/source lineage)
+  - [ ] Check what their Bible translations did for this verse
+  - [ ] Analyze cultural/linguistic/source factors when disagreements exist
 
 ### Stage 6: Test Against Validate Set & Peer Review
 - [ ] Subagent 1: Apply prompt to validate.yaml (blind - never sees answers)
@@ -113,6 +119,8 @@ Copy this abbreviated checklist into your feature README.md (see [STAGES.md](STA
 ✅ **Correct**: Check real Bible translations when feature is observable (clusivity, tense, etc.)
 
 **Why**: TBTA might have perspective differences. Real translations validate approach.
+
+**Thesis approach**: Find languages with the same feature (prefer same family/source lineage), see what their Bible translations did for this verse, analyze cultural/linguistic/source factors when disagreements exist. This cross-linguistic validation informs our algorithm.
 
 ### 5. **Unbalanced Sampling**
 ❌ **Wrong**: All verses from Romans, all narrative genre
@@ -169,6 +177,7 @@ Copy this abbreviated checklist into your feature README.md (see [STAGES.md](STA
 - `LEARNINGS.md` (error analysis with 6-step process)
 - `VALIDATION-RESULTS.md` (accuracy metrics)
 - `EXTERNAL-VALIDATION.md` (real translation checks)
+- `CROSS-LINGUISTIC-VALIDATION.md` (Thesis approach - compare across languages)
 - `TRANSLATOR-IMPACT.md` (Stage 6 real-world testing)
 - `TBTA-REVIEW.md` (communication with TBTA team)
 
