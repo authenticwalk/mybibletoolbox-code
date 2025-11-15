@@ -1,0 +1,538 @@
+# Schema: Strong's Community Discussions Output Format
+#
+# This schema defines the YAML structure for Tool 4 outputs documenting
+# common misconceptions, popular errors, and controversies from community
+# discussions, ALWAYS paired with scholarly refutations.
+#
+# Critical Rule: NEVER document error without scholarly refutation
+#
+# Output File: ./bible/words/strongs/{num}/{num}-community-discussions.yaml
+#
+# Example: G1411-community-discussions.yaml (dunamis → dynamite fallacy)
+
+# === METADATA ===
+strongs_number: "{G/H}{number:04d}"  # e.g., G1411, H0430
+language: "{greek|hebrew}"
+lemma: "{lexical_form}"              # e.g., δύναμις
+transliteration: "{romanized}"       # e.g., dynamis
+
+tool:
+  name: "strongs-community-discussions"
+  version: "1.0.0"
+  generated_date: "YYYY-MM-DD"
+
+# === ERROR PREDICTION (Improvement #12) ===
+# See: ERROR-PREDICTION-SYSTEM.md
+# Predict likely errors BEFORE research to prioritize and guide discovery
+
+error_prediction:
+  risk_assessment_date: "YYYY-MM-DD"
+
+  total_risk_score: {calculated}  # Sum of all error type risk scores
+  priority_band: "{P1|P2|P3|P4|P5|P6}"  # Production priority based on risk
+
+  predicted_error_types:
+    - type: "{error_type}"
+      risk_score: {calculated}  # Based on word characteristics
+      confidence: "{HIGH|MEDIUM|LOW}"  # How certain is this prediction?
+
+      predicted_errors:  # Specific error claims likely for this word
+        - "{specific error claim}"
+        # Example: "Joy means 'jumping for joy' (physical action added)"
+
+      search_strategy: |
+        {How to efficiently find this error if it exists}
+        # Example: Search: "chara" + "jumping" OR "physical" OR "literally means"
+
+      refutation_strategy: |
+        {Where to find scholarly corrections}
+        # Example: Check BDAG semantic range; show contexts where chara ≠ physical action
+
+  proactive_warnings:  # Warnings to give EVEN IF error not yet confirmed
+    - warning_type: "{caution type}"
+      warning: |
+        {Preemptive guidance for high-risk words}
+        # Example: "This word is at high risk for over-specification. Verify 'literally means' claims."
+      risk_level: "{CRITICAL|HIGH|MEDIUM|LOW}"
+
+  validation:  # After research, compare predictions to actuals
+    predictions_made: {count}
+    predictions_confirmed: {count}
+    accuracy_rate: {percentage}  # predictions_confirmed / predictions_made
+    unexpected_errors: [{errors not predicted}]  # Learn from these
+
+# === CONTROVERSIES & MISCONCEPTIONS ===
+# Document errors from community + scholarly refutations
+# Each controversy follows: Error → Refutation → Evidence → Classification
+
+controversies:
+  - id: 1
+
+    # === ERROR DOCUMENTATION (LOW authority - community source) ===
+    error:
+      claim: "{the erroneous claim being made}"
+      # Example: "Dunamis is where we get the word 'dynamite', showing God's explosive power"
+
+      type: "{error_type}"
+      # Options: etymological_fallacy | anachronism | false_cognate |
+      #          over_specification | lexical_maximalism | theological_projection | selective_definition
+      # See: research/controversy-patterns.md for definitions
+
+      prevalence: "{widespread|moderate|uncommon}"
+      # widespread: Multiple forums/sites, Google autocomplete, published resources
+      # moderate: 2-3 locations, recurring Stack Exchange question
+      # uncommon: Single occurrence, quickly corrected
+
+      source:
+        type: "{stack_exchange|reddit|forum|blog_comments|social_media}"
+        url: "{URL to community discussion}"
+        platform: "{platform name}"  # e.g., "hermeneutics.stackexchange.com"
+        date_observed: "YYYY-MM-DD"
+        context: "{where/how error appeared}"
+        authority_note: "LOW - community discussion"
+
+      why_tempting: |
+        {Brief explanation of psychological/pedagogical reason error is appealing}
+        # Example: "Etymology feels like unlocking secret meaning; 'explosive power' is memorable teaching illustration"
+
+    # === SCHOLARLY REFUTATION (HIGH/MEDIUM authority) ===
+    scholarly_refutation:
+      correction: "{what is actually true}"
+      # Example: "Dynamis cannot derive from 'dynamite' - chronologically impossible. Dynamis from δύναμαι (to be able)"
+
+      evidence:
+        - type: "{chronological|lexical|usage|linguistic|historical}"
+          fact: "{specific evidence}"
+          source: "{citation}"
+          authority: "{HIGH|MEDIUM}"
+        # Example chronological:
+        # - type: "chronological"
+        #   fact: "NT written 1st-2nd century CE"
+        #   source: {biblical-scholarship}
+        #   authority: "HIGH"
+        # - type: "chronological"
+        #   fact: "Dynamite invented 1867 by Alfred Nobel"
+        #   source: {historical-record}
+        #   authority: "HIGH"
+        # - type: "lexical"
+        #   fact: "BDAG: δύναμις from δύναμαι (to be able)"
+        #   source: {bdag}
+        #   authority: "HIGH"
+
+      refutation_sources:
+        primary:
+          - source_type: "{lexicon|journal|book|expert_blog}"
+            citation: "{citation_code}"  # e.g., {bdag}, {carson-fallacies}
+            relevant_section: "{where correction found}"
+            authority: "{HIGH|MEDIUM}"
+            quote: "{relevant excerpt if helpful}" # Optional
+
+        supporting:  # Optional additional sources
+          - source_type: "{source_type}"
+            citation: "{citation_code}"
+            authority: "{HIGH|MEDIUM}"
+
+      correct_understanding:
+        etymology: "{actual etymology from lexicons}" {source}
+        semantic_range: "{actual meanings}" {source}
+        proper_usage: "{how to properly understand this word}" {llm-cs45 citing sources}
+
+      authority_note: "{HIGH|MEDIUM} - {type of source}"
+      # Example: "HIGH - lexicon etymology + historical chronology"
+
+    # === ERROR CLASSIFICATION ===
+    error_classification:
+      primary_type: "{one of 7 error types}"
+
+      secondary_types:  # Optional - overlapping error patterns
+        - "{additional error type}"
+        # Example: "anachronism" (if error is both etymological + chronological)
+
+      contributing_factors:
+        - "{factor making error likely}"
+        # Example: "English word similarity", "Memorable alliteration", "Appears in sermons"
+
+      related_errors:  # Optional - similar errors with other words
+        - word: "{other affected word}"
+          strongs: "{number}"
+          error_pattern: "{similar mistake}"
+          # Example: word: "ἐκκλησία", strongs: "G1577", error_pattern: "Etymological fallacy (called-out ones)"
+
+    # === ERROR SEVERITY (Improvement #2) ===
+    # See: ERROR-SEVERITY-FRAMEWORK.md
+    error_severity:
+      theological_impact: "{CRITICAL|HIGH|MEDIUM|LOW}"
+      # CRITICAL: Affects core doctrine (Trinity, Christology, salvation)
+      # HIGH: Affects secondary doctrine (ecclesiology, pneumatology)
+      # MEDIUM: Affects application/practice but not doctrine
+      # LOW: Devotional/illustrative error, no doctrinal impact
+
+      propagation_level: "{EPIDEMIC|WIDESPREAD|MODERATE|ISOLATED}"
+      # EPIDEMIC: Published books, Google autocomplete, decades of use
+      # WIDESPREAD: Multiple sermon sites, common in churches
+      # MODERATE: Forums, blogs, some teaching
+      # ISOLATED: Single source, rare occurrence
+
+      priority_score: {calculated}
+      # Formula: Theological Impact × Propagation Multiplier
+      # CRITICAL(4) × EPIDEMIC(3) = 12 (highest priority)
+      # LOW(1) × ISOLATED(0.5) = 0.5 (lowest priority)
+
+      priority_band: "{P1|P2|P3|P4|P5|P6}"
+      # P1 (10-12): IMMEDIATE - research/correct immediately
+      # P2 (7-9): HIGH - first 100 words
+      # P3 (5-6): MEDIUM-HIGH - first 250 words
+      # P4 (3-4): MEDIUM - first 500 words
+      # P5 (1.5-2.5): LOW - opportunistic
+      # P6 (0.5-1): MINIMAL - skip unless discovered
+
+      impact_assessment:
+        affected_groups: ["{pastors}", "{translators}", "{students}", "{apologists}"]
+        downstream_errors: ["{errors caused by this error}"]
+        correction_urgency: "{IMMEDIATE|HIGH|MODERATE|LOW}"
+
+    # === ERROR HISTORY (Improvement #6) ===
+    # See: HISTORICAL-ERROR-TRACKING.md
+    error_history:
+      first_documented:
+        date: "YYYY or YYYY-MM-DD"  # Earliest known occurrence
+        source: "{where first seen}"
+        context: "{how error originated}"
+        # Example: "1950s sermon illustration", "1980 apologetics book"
+
+      origin_type: "{sermon_illustration|apologetics_argument|etymology_enthusiasm|translation_note}"
+      # sermon_illustration: Memorable teaching created error
+      # apologetics_argument: Doctrinal defense created error
+      # etymology_enthusiasm: Greek/Hebrew study excitement
+      # translation_note: Margin note or study Bible comment
+
+      popularization:
+        period: "YYYY-YYYY"  # When error spread widely
+        mechanism: "{oral_tradition|published_materials|institutional_adoption|digital_viral}"
+        key_sources: ["{influential source 1}", "{influential source 2}"]
+        # Example: ["Charles Spurgeon sermon", "Vine's Expository Dictionary"]
+
+        spread_factors:
+          - "{why error spread}"
+          # Example: "Memorable alliteration", "Published in popular study Bible"
+
+      peak_prevalence:
+        period: "YYYY-YYYY"  # When error was most common
+        estimated_reach: "{description}"
+        # Example: "Taught in most evangelical seminaries 1970-2000"
+
+      current_status:
+        trend: "{increasing|stable|decreasing|correcting}"
+        recent_activity:
+          - date: "YYYY-MM-DD"
+            platform: "{where seen recently}"
+            context: "{how error appeared}"
+
+        correction_efforts:
+          - date: "YYYY"
+            source: "{who corrected}"
+            impact: "{widespread|moderate|limited}"
+          # Example: D.A. Carson's 1984 "Exegetical Fallacies" (widespread impact)
+
+      projection:
+        short_term: "{next 5 years}"  # Will error increase/decrease?
+        medium_term: "{5-15 years}"
+        long_term: "{15+ years}"
+        factors: ["{what will affect trajectory}"]
+        # Example: "Digital resources spreading corrections faster"
+
+      lifecycle_stage: "{emerging|growing|peak|declining|residual|nearly_extinct}"
+      # emerging: New error appearing
+      # growing: Spreading rapidly
+      # peak: Maximum prevalence
+      # declining: Being corrected
+      # residual: Persists in older materials
+      # nearly_extinct: Rare, mostly corrected
+
+    # === LANGUAGE-SPECIFIC PATTERNS (Improvement #11) ===
+    # See: LANGUAGE-PATTERNS.md
+    language_specific_patterns:
+      primary_language: "{greek|hebrew}"
+
+      error_pattern_type: "{see below}"
+      # Greek patterns: etymological_over_analysis | english_phonetic | theological_system |
+      #                 lxx_neglect | grammar_over_interpret
+      # Hebrew patterns: theological_projection | root_fallacy | consonantal_speculation |
+      #                  alphabetic_mysticism | parallelism_misunderstanding
+
+      why_common_for_this_language: |
+        {Explanation specific to Greek or Hebrew characteristics}
+        # Example (Greek): "Compound verbs with transparent morphology tempt ek + kaleo analysis"
+        # Example (Hebrew): "Trilateral root system tempts assuming all קדש words = identical"
+
+      similar_errors_in_same_language:
+        - word: "{Strong's number}"
+          pattern: "{same error pattern}"
+          note: "{connection}"
+        # Example: G1577 ekklesia, G1411 dunamis both suffer etymological fallacies
+
+      language_learning_implications: |
+        {What students of this language should learn early to avoid}
+        # Example (Greek): "Etymology ≠ meaning - teach on Day 1 of Greek class"
+        # Example (Hebrew): "Read OT on its own terms, not through NT theology lens"
+
+      cross_language_analogy:
+        - language: "{greek|hebrew}"
+          similar_pattern: "{pattern name}"
+          example: "{word}"
+        # Example: Greek etymological fallacy similar to Hebrew root fallacy
+
+    # === PEDAGOGICAL GUIDANCE ===
+    helpful_guidance:
+      what_to_avoid: |
+        {Clear statement of what NOT to claim about this word}
+        # Example: "Do not claim dunamis comes from or is related to dynamite. Avoid time-based word connections without verification."
+
+      alternative_framing: |
+        {Positive way to teach truth about this word}
+        # Example: "Dunamis (from δύναμαι 'to be able') emphasizes inherent ability and strength. God's dunamis is His inherent power to accomplish His will."
+
+      memory_aid: |
+        {Legitimate mnemonic or teaching hook that IS accurate}
+        # Example: "Think 'dynamic' (related word) - God's power is active and effective, not passive."
+
+      tone_note: "{reminder to be gracious}"
+      # Always: "While this interpretation is common, lexicons show..."
+
+# === COMMON QUESTIONS ===
+# Frequently asked questions from community with expert answers
+
+common_questions:
+  - id: 1
+    question: "{frequently asked question}"
+    # Example: "Does dunamis really mean explosive power like dynamite?"
+
+    source:
+      platform: "{stack_exchange|reddit|forum}"
+      url: "{URL to question}"
+      votes_or_views: {number}  # Indicates question popularity
+      date_asked: "YYYY-MM-DD"
+
+    community_answers:  # Optional - what community said
+      - answer: "{community member's answer}"
+        votes: {number}
+        authority_assessment: "{LOW|MEDIUM if expert}"
+        problems: ["{issues with this answer if any}"]
+
+    expert_answer:
+      answer: |
+        {Scholarly/expert answer to question}
+        {Cite sources inline with {source} format}
+
+      sources:
+        - citation: "{source_code}"
+          type: "{lexicon|journal|expert_blog}"
+          authority: "{HIGH|MEDIUM}"
+
+      related_resources:
+        - resource: "{helpful resource for further study}"
+          citation: "{source_code}"
+
+# === HELPFUL CAUTIONS ===
+# General warnings about what NOT to claim about this word
+
+helpful_cautions:
+  - caution_type: "{etymological|semantic|theological|cultural}"
+    warning: "{what to avoid claiming}"
+    reason: "{why this is problematic}"
+    evidence: "{facts showing why claim is wrong}" {source}
+    authority: "{HIGH|MEDIUM}"
+  # Example:
+  # - caution_type: "etymological"
+  #   warning: "Do not connect NT Greek words to modern English words without linguistic evidence"
+  #   reason: "Phonetic similarity does not indicate etymology; modern English postdates NT by 1500+ years"
+  #   evidence: "English developed 1000-1500 CE; NT written 50-100 CE" {linguistic-history}
+  #   authority: "HIGH"
+
+# === LEGITIMATE SCHOLARLY DEBATES ===
+# Distinguish genuine scholarly uncertainty from popular errors
+# Only include if ACTUAL scholarly debate exists (not community confusion)
+
+scholarly_debates:  # Optional - only if genuine debate exists
+  - debate_topic: "{specific scholarly question}"
+    status: "{active|emerging_consensus|settled}"
+
+    scholarly_positions:
+      - position: "{scholarly view 1}"
+        proponents: ["{Scholar A}", "{Scholar B}"]
+        evidence: "{arguments}" {source}
+        authority: "HIGH"
+
+      - position: "{scholarly view 2}"
+        proponents: ["{Scholar C}"]
+        evidence: "{arguments}" {source}
+        authority: "HIGH"
+
+    community_confusion: |
+      {How community misunderstands this debate or conflates it with errors}
+      {Clarify the distinction between legitimate debate and popular error}
+
+    translator_guidance: |
+      {How to handle this genuine uncertainty in translation work}
+
+# === INTEGRATION WITH OTHER TOOLS ===
+
+related_tool_data:
+  lexicon_core_check:
+    file: "./bible/words/strongs/{num}/{num}-lexicon-core.yaml"
+    relevant_sections:
+      - etymology  # Compare error claim vs. actual etymology
+      - semantic_range  # Compare error claim vs. actual range
+      - lexical_convergence  # What lexicons agree on
+
+  scholarly_analysis_check:  # If exists
+    file: "./bible/words/strongs/{num}/{num}-scholarly-analysis.yaml"
+    relevant_sections:
+      - scholarly_debates  # Legitimate vs. popular debates
+      - diachronic_analysis  # Historical development
+
+  web_insights_check:  # If exists
+    file: "./bible/words/strongs/{num}/{num}-web-insights.yaml"
+    relevant_sections:
+      - error_corrections  # May already document this error
+
+# === QUALITY METADATA ===
+
+metadata:
+  controversies_count: {number}
+  common_questions_count: {number}
+  helpful_cautions_count: {number}
+  scholarly_debates_count: {number}
+
+  validation:
+    level_1_critical:
+      - error_has_real_source: {true|false}  # URL to community discussion required
+      - refutation_has_high_authority: {true|false}  # HIGH or MEDIUM source required
+      - evidence_provided: {true|false}  # Not just assertion
+      - error_type_classified: {true|false}  # One of 7 types
+      - no_fabricated_controversies: {true|false}  # All errors are real
+      - tone_gracious: {true|false}  # Not mocking or dismissive
+
+    level_2_high_priority:
+      - prevalence_assessed: {true|false}
+      - multiple_refutation_sources: {true|false}  # When available
+      - guidance_provided: {true|false}  # Alternative framing offered
+      - related_errors_documented: {true|false}  # When applicable
+
+    level_3_medium_priority:
+      - pedagogical_notes: {true|false}  # Why error is tempting
+      - positive_alternative: {true|false}  # Not just correction
+      - integration_checked: {true|false}  # Compared to Tools 1-3
+
+  authority_distribution:
+    error_sources: "LOW - community discussions"
+    refutation_sources: "{HIGH|MEDIUM} - {count} lexicons, {count} journals, {count} expert blogs"
+
+  coverage_assessment:
+    genuine_controversy: {true|false}  # Is this a real error worth documenting?
+    skip_rationale: "{if no file created, why}"  # e.g., "No community discussion found", "No errors documented"
+
+  generation_stats:
+    extraction_date: "YYYY-MM-DD HH:MM:SS"
+    tokens_used: {count}
+    sources_consulted: {count}
+    web_searches_performed: {count}
+
+  requires_human_review: {true|false}
+  # Set true if:
+  # - Involves sensitive theological controversy
+  # - Refutation sources are marginal (low MEDIUM authority)
+  # - Error classification uncertain
+
+# === ATTRIBUTION ===
+
+attribution:
+  note: "All refutation sources must be in ATTRIBUTION.md with proper copyright notices"
+  sources_requiring_attribution:
+    - "{List citation codes used}" # e.g., [bdag, carson-fallacies, thayer]
+
+  fair_use_compliance:
+    strategy: "Error documentation (community, LOW authority) + scholarly correction (HIGH authority)"
+    transformative: "Educational purpose - correcting misinformation with evidence"
+    limited_excerpts: "Brief lexicon definitions and scholarly explanations only"
+
+# === NOTES ===
+
+schema_notes:
+  version: "2.0.0"
+  created: "2025-11-12"
+  last_updated: "2025-11-12"
+  changelog:
+    - "v2.0.0 (2025-11-12): Added 5 improvement frameworks"
+    - "  - error_severity: Priority scoring for production workflow"
+    - "  - error_history: Timeline and propagation tracking"
+    - "  - language_specific_patterns: Greek vs Hebrew error patterns"
+    - "  - error_prediction: Proactive risk assessment"
+    - "  - secondary_types: Allow multiple overlapping error types"
+    - "v1.0.0 (2025-11-12): Initial schema with 7 error types"
+
+  follows_standards:
+    - "ATTRIBUTION.md source requirements"
+    - "SCHEMA.md inline citation requirements"
+    - "REVIEW-GUIDELINES.md validation levels"
+    - "research/controversy-patterns.md error taxonomy"
+    - "research/refutation-sources.md refutation strategies"
+
+  improvement_frameworks:
+    - "ERROR-SEVERITY-FRAMEWORK.md - Priority scoring (P1-P6)"
+    - "HISTORICAL-ERROR-TRACKING.md - Error lifecycle analysis"
+    - "LANGUAGE-PATTERNS.md - Greek vs Hebrew patterns"
+    - "ERROR-PREDICTION-SYSTEM.md - Proactive risk assessment"
+    - "quick-reference-cards/ - 1-page pastor resources"
+
+  critical_reminders:
+    - "NEVER document error without scholarly refutation"
+    - "ALWAYS verify error from real community source (URL required)"
+    - "ALWAYS use gracious tone (not mocking)"
+    - "ALWAYS provide alternative framing (positive teaching)"
+    - "ALWAYS mark authority levels (error=LOW, refutation=HIGH/MEDIUM)"
+    - "ALWAYS integrate with Tool 1 lexicon data"
+    - "ALWAYS assess error severity for production prioritization"
+    - "ALWAYS track error history when discoverable"
+
+  when_to_skip:
+    - "No community discussion found for this word"
+    - "No documented errors or misconceptions"
+    - "Tool 1 lexicon data is sufficient (no controversy)"
+    - "Only legitimate scholarly debate (no popular errors) - use Tool 2 instead"
+
+  when_to_create:
+    - "Known widespread error documented"
+    - "Recurring Stack Exchange question"
+    - "Popular teaching error needing correction"
+    - "Etymological fallacy in circulation"
+    - "Theological projection requiring clarification"
+    - "High-risk word (P1-P3) even without confirmed error (proactive warning)"
+
+# === EXAMPLE USAGE ===
+
+example_minimal:
+  # Minimal valid output (single error with refutation)
+  strongs_number: "G1411"
+  language: "greek"
+  lemma: "δύναμις"
+  controversies:
+    - id: 1
+      error:
+        claim: "Dunamis is where we get 'dynamite'"
+        type: "etymological_fallacy"
+        prevalence: "widespread"
+        source:
+          url: "https://example.com/discussion"
+          authority_note: "LOW"
+      scholarly_refutation:
+        correction: "Chronologically impossible - NT predates dynamite by 1800+ years"
+        evidence:
+          - type: "chronological"
+            fact: "NT written 1st-2nd century CE"
+            source: "{biblical-scholarship}"
+        authority_note: "HIGH"
+
+example_comprehensive:
+  # Full-featured output with multiple sections
+  # See: experiments/exp1-G1411-dunamis/ for complete working example
