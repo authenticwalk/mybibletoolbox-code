@@ -1,214 +1,149 @@
-# TBTA Reproduction Project
+# TBTA Feature Reproduction with LLM
 
-**Goal**: Reverse-engineer TBTA's linguistic annotation methodology to reproduce Bible translation annotations systematically.
+**Objective**: Reproduce TBTA's 59 linguistic features using LLM-based prediction instead of manual annotation.
 
-**Status**: Training phase (2/17 features complete) | **Approach**: [Adversarial validation](METHODOLOGY-ADVERSARIAL.md)
+**Approach**: 6-stage systematic workflow with subagent isolation and rigorous validation.
+
+---
+
+## Getting Started
+
+**PRIMARY WORKFLOW**: [features/STAGES.md](features/STAGES.md) - The definitive 6-stage approach for building and validating TBTA features.
+
+All feature work should follow the STAGES.md methodology. Existing documentation provides supporting context and learnings.
 
 ---
 
 ## What is TBTA?
 
-**TBTA (The Bible Translator's Assistant)** is a linguistic annotation dataset by SIL International that tags every constituent in all 31,102 Bible verses with **57 features** needed for translation into 1,000+ languages.
+TBTA (The Bible Translator's Assistant) annotates 31,102 Bible verses with 59 linguistic features needed for translation into 1,000+ languages. Features include clusivity, number systems, participant tracking, discourse genre, and theological patterns.
 
-**Why it matters**: Most languages aren't like English. They need explicit features:
-- **Clusivity** (176 languages): "We" = inclusive (including you) vs exclusive (excluding you)
-  - Gen 1:26 "Let us make" = Exclusive (Trinity only, not humans)
-- **Number** beyond singular/plural: Trial (3), dual (2), paucal (3-10)
-  - Trinity references = Trial number
-- **Participant tracking**: First mention vs routine vs presupposed
-- **Theological patterns**: Divine speech differs from human speech
 
-**The challenge**: Manual annotation by experts is expensive, slow, error-prone, and opaque.
 
-**Our goal**:
-1. Understand TBTA's annotation rules (reverse-engineering)
-2. Reproduce annotations systematically
-3. Validate/improve existing annotations
-4. Extend to new features
-5. Build self-improving annotation systems
+**Key studies**:
+- [Number Systems Analysis](features/number-systems/) - Semantic vs morphological encoding
+- [Degree Feature Analysis](features/degree/) - Comparative/superlative prediction
+- [Cross-Feature Learnings](features/CROSS-FEATURE-LEARNINGS.md) - Universal patterns across features
+- [Person Systems](features/person-systems/) - Clusivity and theological context
 
 ---
 
-## Three-Phase Approach
+## Methodology
 
-### Phase 1: Training (Current)
-**Method**: Analyze TBTA to discover patterns
-- 15-20 training verses per feature
-- Study TBTA annotations freely
-- Document decision rules
-- Build algorithm v1.0
+**PRIMARY WORKFLOW**: [features/STAGES.md](features/STAGES.md) - Follow this 6-stage approach for all feature work.
 
-**Status**: 2/17 features complete
-- ✅ Number systems (algorithm v1.0 locked, 91.4% initial prediction accuracy)
-- ✅ Degree (ready for train/test split)
+**Supporting Principles**:
+- **Subagent Isolation**: Use subagents to prevent context pollution when accessing TBTA data
+- **Rigorous Validation**: 100 verses per value across train/test/validate splits
+- **Iterative Refinement**: Multiple prompt iterations until achieving high accuracy
+- **Progressive Disclosure**: Documentation follows ≤200 line README, ≤400 line topic files
 
-### Phase 2: Adversarial Validation (Next)
-**Method**: Test on edge cases + typical cases
-- Adversarial: 10-15 hard verses (target 60-70% accuracy)
-- Random: 10-15 typical verses (target 80-90% accuracy)
-- Predict BEFORE checking TBTA (no data leakage)
+**Template**: [GENERIC-FEATURE-TEMPLATE.md](GENERIC-FEATURE-TEMPLATE.md) - Standard structure for documenting features
 
-**Why adversarial?**: Edge cases find weaknesses faster than large random samples
-- 2 weeks per feature vs months for comprehensive testing
-- 65% hard + 85% easy > 90% all easy (more trustworthy)
-
-**See**: [METHODOLOGY-ADVERSARIAL.md](METHODOLOGY-ADVERSARIAL.md)
-
-### Phase 3: Comprehensive Validation (After Q1 2026)
-**Method**: Large-scale after all features complete
-- 200+ verses per feature
-- Cross-validation, confidence intervals
-- Ready for production
+**Historical Note**: Earlier features used a 10-phase adversarial testing protocol. While valuable learnings came from this approach, all new work should follow the simpler 6-stage STAGES.md workflow.
 
 ---
 
-## Key Discoveries
+## Key Learnings
 
-### Universal Patterns (from number-systems analysis)
+Our experiments across features have identified transferable patterns that improve prediction accuracy:
 
-1. **Semantic over morphological**: TBTA marks meaning, not grammar form
-   - Hebrew שָׁמַיִם (dual morphology) → Singular ("one sky")
-2. **Theological context matters**: Trinity = Trial, divine speech gets special treatment
-3. **Discourse role determines features**: Same entity, different values by role
-4. **Ancient translations guide interpretation**: LXX/Vulgate show semantic meaning
-5. **Rare values often absent**: Biblical text may lack theoretical values
+**Pattern Overview**: [learnings/OVERVIEW.md](learnings/OVERVIEW.md) - Top 10 patterns summary
 
-**See**: [features/CROSS-FEATURE-LEARNINGS.md](features/CROSS-FEATURE-LEARNINGS.md)
+**Core Patterns**:
+- [Hierarchical Prompts](learnings/HIERARCHICAL-PROMPTS.md) - Theology → Grammar hierarchy
+- [Rarity Principle](learnings/RARITY-PRINCIPLE.md) - Default to common, prove rare
+- [Multi-Factor Convergence](learnings/MULTI-FACTOR-CONVERGENCE.md) - Agreement-based confidence
+- [Advanced Patterns](learnings/ADVANCED-PATTERNS.md) - Edge cases and failure modes
 
-### Methodology Lessons
+**Cross-Feature Analysis**: [features/CROSS-FEATURE-LEARNINGS.md](features/CROSS-FEATURE-LEARNINGS.md) - Universal patterns from completed experiments
 
-- ❌ Training on test data → misleading "100% accuracy"
-- ✅ Separate training (learn freely) from test (predict first, check after)
-- ✅ Adversarial testing faster than large samples
-- ✅ Locked predictions (git commit) before checking TBTA
+---
 
-**See**: [Critical review](../../tbta-experiment-critical-review.md) | [Methodology fixes](../../tbta-experiment-methodology-fixes.md)
+## Discourse Context Strategies
+
+For features requiring discourse-level context (participant tracking, discourse genre, register), three approaches are being evaluated:
+
+**Approach Overview**: [discourse/OVERVIEW.md](discourse/OVERVIEW.md) - Comparison of three strategies
+
+**Detailed Strategies**:
+- [Approach 1: LLM Conversation Memory](discourse/APPROACH-1-LLM-MEMORY.md)
+- [Approach 2: Expanded Context Window](discourse/APPROACH-2-EXPANDED-CONTEXT.md)
+- [Approach 3: Two-Pass Processing](discourse/APPROACH-3-TWO-PASS.md)
+
+---
+
+## Workflows
+
+**PRIMARY**: [features/STAGES.md](features/STAGES.md) - The 6-stage workflow for building TBTA features
+
+**Feature Status**: [workflows/FEATURE-CHECKLIST.md](workflows/FEATURE-CHECKLIST.md) - All 59 features with completion status
+
+**Note**: LOCAL-ANALYSIS-WORKFLOW.md has been archived. It described an alternative ebible-based validation approach that is now superseded by the STAGES.md workflow.
 
 ---
 
 ## Current Status
 
-**Completed (2)**:
-- number-systems: 35 training verses, patterns documented, awaiting adversarial validation
-- degree: 12 verses, ready for proper train/test split
+**Feature Progress**: See [workflows/FEATURE-CHECKLIST.md](workflows/FEATURE-CHECKLIST.md) for complete status of all 59 features.
 
-**In progress (15)**:
-- Semantic: person, participant-tracking, discourse-genre, time-granularity, proximity, polarity, surface-realization, honorifics-register, illocutionary-force, verb-tam
-- Structural: 02-verbs, 07-phrasal-elements, 101-noun-phrases, 105-clauses, topic-np
+**Completed Features**:
+- Person Systems: Clusivity, Trinity trial number, theological patterns
+- Number Systems: Semantic encoding, dual morphology analysis
+- Degree: Comparative/superlative, implicit semantics
+- Polarity: Affirmative/negative, scope analysis
 
-**See**: [features/FEATURE-STATUS-SUMMARY.md](features/FEATURE-STATUS-SUMMARY.md)
-
----
-
-## Timeline
-
-**Q4 2025**: 5 features | **Q1 2026**: All 17 features | **Q2 2026**: Comprehensive validation | **Q3 2026**: Production | **Q4 2026**: Self-improving pipeline
+**Active Development**:
+- Participant Tracking: Discourse-level analysis
+- Discourse Genre: Chapter-level context
+- Illocutionary Force: Speech act classification
+- Time Granularity: Temporal precision
 
 ---
 
-## How to Join
+## Feature Categories
 
-### New Contributors: Read These in Order
+TBTA provides 59 features organized by translation priority:
 
-1. **This README** (you are here) - 10 min
-2. **[METHODOLOGY-ADVERSARIAL.md](METHODOLOGY-ADVERSARIAL.md)** - Testing protocol - 15 min
-3. **[features/number-systems/](features/number-systems/)** - Completed example - 30 min
-4. **[features/FEATURE-STATUS-SUMMARY.md](features/FEATURE-STATUS-SUMMARY.md)** - Pick a feature - 5 min
+**Tier A - Critical** (12 features): Person, Number, Gender, Tense, Aspect, Mood, Clause Types, Illocutionary Force, Polarity, Participant Reference, Discourse Genre, Register
 
-### Your First 2 Weeks
+**Tier B - Important** (20 features): Evidentiality, Reflexivity, Honorifics, Proximity, Deixis, Time Granularity, Lexical Sense, Surface Realization
 
-**Week 1: Training**
-- Select 15-20 training verses
-- Access TBTA for training set
-- Analyze patterns, build algorithm v1.0
-- Lock algorithm (git commit)
+**Tier C - Enhanced** (27 features): Noun Classifier, Directionals, Inclusiveness, Distributivity, Associated Motion, and others
 
-**Week 2: Validation**
-- Design adversarial (10 hard) + random (10 typical) test sets
-- Predict WITHOUT checking TBTA
-- Lock predictions (git commit)
-- Check TBTA, calculate accuracy
-- Error analysis, algorithm v2.0
-
-**Then**: Move to next feature or help others. Celebrate! 🎉
-
-### Prerequisites
-
-**You need**:
-- Basic linguistics (morphology, semantics, syntax)
-- Bible familiarity (Genesis, Gospels)
-- Greek/Hebrew interlinear reading (tools provided)
-- Systematic analysis skills
-
-**You DON'T need**:
-- Linguistics degree (we explain as we go)
-- Greek/Hebrew fluency (lexicons provided)
-- Machine learning expertise (rule-based, not ML)
+**Complete breakdown**: [FEATURE-SUMMARY.md](FEATURE-SUMMARY.md) - Detailed tier descriptions and translation impact
+**Feature specifications**: [features/](features/) directory (59 subdirectories)
 
 ---
 
-## Quick Reference
+## Integration Examples
 
-### File Structure
-`README.md` (overview) | `METHODOLOGY-ADVERSARIAL.md` (protocol) | `features/FEATURE-STATUS-SUMMARY.md` (status) | `features/CROSS-FEATURE-LEARNINGS.md` (patterns) | `features/[feature]/` (17 feature dirs)
+**Master Prompts**: Combined prompts for production use
+- [Part 1: Core Prompts](combined/TBTA-MASTER-PROMPT-PART1.md)
+- [Part 2: Feature-Specific](combined/TBTA-MASTER-PROMPT-PART2.md)
+- [Part 3: Advanced Techniques](combined/TBTA-MASTER-PROMPT-PART3.md)
 
-### Success Metrics
-
-**Per feature**:
-- Adversarial: 60-70% (hard cases)
-- Random: 80-90% (typical cases)
-- Gap: Random > Adversarial by 15-25 points
-
-**Overall**: 85%+ average across all features after comprehensive validation
-
-### Key Links
-
-- **Methodology**: [METHODOLOGY-ADVERSARIAL.md](METHODOLOGY-ADVERSARIAL.md)
-- **Feature status**: [features/FEATURE-STATUS-SUMMARY.md](features/FEATURE-STATUS-SUMMARY.md)
-- **Patterns**: [features/CROSS-FEATURE-LEARNINGS.md](features/CROSS-FEATURE-LEARNINGS.md)
-- **Critical review**: [../../tbta-experiment-critical-review.md](../../tbta-experiment-critical-review.md)
-- **Example feature**: [features/number-systems/](features/number-systems/)
-
-### Resources
-
-- **TBTA data**: `.data/tbta/` (local)
-- **TBTA website**: [sil.org/tbta](https://www.sil.org/)
-- **SIL resources**: [ethnologue.com](https://www.ethnologue.com/)
+**Worked Examples**:
+- [Genesis 1:4 Complete Analysis](combined/worked-example-genesis-1-4.md)
+- [Language Adaptation Guide](combined/language-adaptation-guide.md)
+- [TBTA Predictor Skill](combined/tbta-predictor-skill.md)
 
 ---
 
-## FAQ
+## File Organization
 
-**Can we use TBTA data?** Yes! For training (learn freely). Predict BEFORE checking test data. | **Disagree with TBTA?** Flag as potential error after exhaustive analysis (1-5% expected). | **Time per feature?** 2 weeks (training + validation). | **Multiple features?** Yes, but validate one at a time.
-
----
-
-## Contributing
-
-**We need**: Feature validators (15 remaining), pattern analysts, documentation writers, theological researchers
-
-**Start**: [features/FEATURE-STATUS-SUMMARY.md](features/FEATURE-STATUS-SUMMARY.md)
-
-**Questions**: Check docs first, then create an issue
-
----
-
-## Complementary Approaches
-
-### Strong's Hints as Context Enhancement
-
-**Alternative**: Supplement predictions with Strong's word-level translation patterns
-
-Add cross-linguistic hints to Strong's entries extracted from 900+ translations:
-- Pattern example: "When Tagalog uses 'kami' → exclusive, 'tayo' → inclusive"
-- Expected gain: +7% overall accuracy, +25% on edge cases
-- Best for: Lexical features (Number, Person, Proximity, Lexical Sense)
-
-**See detailed analysis**:
-- `../tbta-strongs-hints-summary.md` - Executive summary and decision guide
-- `../tbta-strongs-hints-llm-enhancement.md` - Integration approaches
-- `../tbta-strongs-hints-evaluation.md` - Feature-by-feature analysis
+```
+plan/tbta-rebuild-with-llm/
+├── README.md                      # This file - navigation hub
+├── methodology/                   # Testing and documentation standards
+├── learnings/                     # Transferable patterns across features
+├── discourse/                     # Context strategy approaches
+├── workflows/                     # Practical analysis guides
+├── features/                      # 59 TBTA feature specifications
+├── combined/                      # Integration examples and master prompts
+└── archive/                       # Historical analysis documents
+```
 
 ---
 
-**Last Updated**: 2025-11-07 | **Next Milestone**: 5 features by end of Q4 2025
+**Documentation Navigation**: All documents follow progressive disclosure (README ≤200 lines, topics ≤400 lines) for AI agent accessibility.
