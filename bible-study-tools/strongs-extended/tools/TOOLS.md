@@ -59,6 +59,24 @@ Extract cross-linguistic translation patterns from 900+ Bible translations. LLM-
 
 ---
 
+### 🔄 Tool 2: Scholarly Analysis
+**Status:** 🔄 Experiments complete (5/5) | **Timeline:** TBD | **See:** `./scholarly-analysis/docs/`
+
+Extract academic insights, theological analysis, and scholarly research from peer-reviewed sources. Adds deeper theological significance, scholarly debates, cultural context, and diachronic analysis to complement lexicon-core.
+
+**Output:** `.data/strongs/{num}/{num}-scholarly-analysis.yaml`
+
+---
+
+### ✅ Tool 4: Community Discussions
+**Status:** ✅ Production ready | **Timeline:** 7 months | **See:** `./community-discussions/docs/`
+
+Document common misconceptions and popular errors from community discussions, paired with scholarly refutations. Prevents misinformation propagation through error-correction pairing.
+
+**Output:** `.data/strongs/{num}/{num}-community-discussions.yaml`
+
+---
+
 ### 📋 Cultural Translation
 **Status:** 📋 Planning complete | **Timeline:** 4 months | **See:** `./cultural-translation/docs/`
 
@@ -140,7 +158,9 @@ Real-world validation by target users - Bible translators, pastors, and students
 | Tool | Status | Next Step |
 |------|--------|-----------|
 | Lexicon Core | 🔄 Cycle 4 experiments | Validate methodology, begin production |
+| Scholarly Analysis | 🔄 Experiments complete (5/5) | Design production methodology |
 | Web Insights | ✅ Production ready | Deploy high-priority words |
+| Community Discussions | ✅ Production ready | Begin production (500 words) |
 | TBTA Hints | 📋 Proof-of-concept | Run pilot with 3 pronouns |
 | Cultural Translation | 📋 Planning complete | Begin pilot study (3-5 words) |
 
@@ -164,7 +184,9 @@ Real-world validation by target users - Bible translators, pastors, and students
 This differs from TBTA features (flat structure) but is pragmatic for Strong's tools due to extensive experimentation documentation (80+ experiments across tools). The `/docs` separation keeps implementation files clean while preserving complete research trail.
 
 - `./lexicon-core/docs/` - README, METRICS, experiments
+- `./scholarly-analysis/docs/` - README (full docs in /plan)
 - `./web-insights/docs/` - README, METRICS, experiments
+- `./community-discussions/docs/` - README (full docs in /plan)
 - `./tbta-hints/` - METHODOLOGY, LOGIC-TREE, METRICS
 - `./cultural-translation/docs/` - README, METRICS, planning
 
