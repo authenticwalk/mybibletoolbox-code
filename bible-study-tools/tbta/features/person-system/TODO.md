@@ -46,26 +46,45 @@
 
 ---
 
-### 🚨 Issue 2: Algorithm v2.1 Untested (HIGH PRIORITY)
-**Problem**: PROMPT3.md (Algorithm v2.1) marked "production ready" but NEVER tested
-- Projected accuracy: 75-80%
-- Based on error analysis of v1.0 failures
-- 4 critical fixes documented
-- **Zero actual validation**
+### 🟡 Issue 2: Algorithm v2.1 Testing - COMPLETED (2025-11-15)
+**Status**: v2.1 tested → 71.4% accuracy (FAILED 75-80% target)
 
-**Required Actions**:
-- [ ] Apply PROMPT3.md to existing test.yaml (21 verses)
-- [ ] Calculate actual accuracy (compare to 75-80% projection)
-- [ ] Compare results with v1.0:
-  - Did adversarial improve? (currently 73%)
-  - Did random improve? (currently 50-60%)
-- [ ] Document whether v2.1 fixes random test failure
-- [ ] If accuracy still below target:
-  - Analyze new failure patterns
-  - Create v2.2 with additional refinements
-  - Test again
+**Test Results**:
+- Accuracy: 15/21 (71.4%)
+- vs. v1.0: +9 points (v1.0 was 62%)
+- vs. Projection: MISSED 75-80% target by 3.6-8.6 points
 
-**Estimated Time**: 2-3 hours
+**What Worked** (3/4 fixes):
+✅ Fix 2 (Invitation split): Luke 24:29 fixed
+✅ Fix 3 (Authority): James 3:1 fixed
+✅ Fix 4 (Outsider quote): 2 Kings 18:22 fixed
+
+**What Broke** (1/4 fixes):
+❌ Fix 1 (Prayer Rule Priority): Overeager trigger
+  - Fixed: Psalm 44:1, Jonah 1:14 (direct address TO God)
+  - Broke: Psalm 66:6 ("in him" - 3rd person reference)
+  - Broke: Ezekiel 33:10 (quoted lament, not direct prayer)
+  - Net gain: ZERO (should have been +2)
+
+**Root Cause**: Rule 2.1 triggers on ANY God-reference, not just direct address
+
+**Required Fix for v2.2**:
+```
+Rule 2.1 trigger should be:
+IF direct address TO God (vocative or 2nd person)
+AND NOT third-person reference ("he", "him")
+AND NOT prepositional phrase ("in him", "with the LORD")
+THEN EXCLUSIVE
+```
+
+**Projected v2.2 accuracy**: 17/21 = 81% ✅ (meets threshold)
+
+**Detailed Analysis**: `/plan/person-system-v2.1-validation/test-results.md`
+
+**Remaining Actions**:
+- [ ] Implement v2.2 with strict Rule 2.1 trigger
+- [ ] Re-test on 21-verse test set
+- [ ] If ≥ 81%, proceed to validate.yaml generation (Issue 3)
 
 ---
 
