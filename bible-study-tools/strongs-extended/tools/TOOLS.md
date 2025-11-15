@@ -151,16 +151,22 @@ Document proven solutions for translating culturally non-existent concepts and t
 - Grammatical particles: Systematic functions
 
 **Implementation Approach:**
-[TODO: this is non scalable, use the LLM not a script to do this, try a logic tree diagram here instead]
-```python
-# Extract patterns from corpus
-for translation in corpus:
-    if strongs == "G2249" and translation.lang == "tgl":
-        if translation.word == "kami":
-            record_pattern("exclusive_we")
-        elif translation.word == "tayo":
-            record_pattern("inclusive_we")
-```
+LLM-based logic tree (scalable to 14,197 words, no hard-coded rules):
+
+1. **Feature Applicability Check** → LLM determines if TBTA feature applies to Strong's word
+2. **Cross-Linguistic Pattern Detection** → LLM groups by language family, identifies systematic alternations
+3. **Context-Dependent Analysis** → LLM correlates translation patterns with Biblical/theological contexts
+4. **Confidence Calibration** → LLM assigns evidence-based scores (0.0-1.0)
+5. **Evidence Synthesis** → LLM generates YAML output with inline citations
+
+**See:** `./tbta-hints/METHODOLOGY.md` for complete architecture
+**See:** `./tbta-hints/LOGIC-TREE.md` for visual decision flow
+
+**Key Advantages:**
+- Generalizes to ALL Strong's words (no manual coding per word/language/feature)
+- Adaptive pattern recognition (discovers patterns from corpus data)
+- Self-calibrating confidence (evidence strength determines scores)
+- Scales via parallel processing (70% features skipped via applicability filter)
 
 **Example Output:**
 ```yaml
@@ -184,8 +190,7 @@ clusivity_patterns:
 
 **Output:** `.data/strongs/{num}/{num}-tbta-hints.yaml`
 
-[TODO: don't like to the plan, migrate teh plan to a subfolder here]
-**See:** `/plan/tbta-strongs-hints-summary.md` for complete analysis
+**See:** `./tbta-hints/METHODOLOGY.md` for complete methodology and implementation details
 
 ---
 
