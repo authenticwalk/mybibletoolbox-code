@@ -166,6 +166,8 @@ For EVERY error, follow this rigorous debugging process:
 - Check 3+ Bible translations
 - Review LXX/Vulgate if OT
 - Consult commentaries if available
+- **ATTRIBUTION**: URL-templatable sources go in ATTRIBUTION.md (BibleHub, StudyLight, etc.)
+- **One-off sources**: Add citation at bottom of individual YAML file (unique articles, specific blog posts)
 
 **Step 5: Test Hypotheses**
 - Why did algorithm predict X when answer is Y?
