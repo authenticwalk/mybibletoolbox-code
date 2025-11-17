@@ -4,7 +4,6 @@ The following summarizes the correct stages to build a new feature. If you are i
 
 Review the source documentation of TBTA for this feature:
 - Official TBTA documentation: See `../tbta-source/README.md` for links to source materials
-- Check existing feature directory for this feature
 
 Generate the README.md for the feature with the information learnt:
 - Include: Feature definition, theological/linguistic context, TBTA encoding details
@@ -15,11 +14,12 @@ Generate the README.md for the feature with the information learnt:
 Review language families to determine which languages need this feature:
 - Check: `../languages/` directory
 - Reference: Language codes and families
-- Consider: Which language families grammatically encode this feature?
+- Consider: Which language families grammatically encode this feature?  Are there any unique cultural distinctives in any language families or languages where they treat this feature differently than others with this feature.  For instance in North America there has grown a sensitivity towards inclusive language so cases where brothers is said but refers to the whole church some would be offended it did not say brothers and sisters.
 
 Update README.md with language analysis:
 - List: Language families that require this feature
 - Note: Languages where feature is grammatically obligatory vs optional
+- Note: Distinct cultural adaptations and unique concerns.
 - Example: Target translation scenarios
 
 # 3. Scholarly and Internet Research
@@ -27,6 +27,51 @@ Update README.md with language analysis:
 - Look for scholarly articles about this subject to get the latest research into it
 - Look into general web information
 - Update the README
+
+## Identify Arbitrary vs Non-Arbitrary Contexts
+
+**Critical theological requirement**: Not all lexical choices have equal theological weight.
+
+### Classification Criteria
+
+A feature value is **NON-ARBITRARY** (theologically significant) if it affects:
+1. **Doctrine** (Trinity, salvation, God's nature, etc.)
+2. **Divine speech** (commands, promises, judgments)
+3. **Interpretation** (literal vs figurative, resolves theological ambiguity)
+4. **Church practice** (authority, worship, ethics)
+5. **Denominational differences** (interpretations vary by tradition)
+
+**Default**: Assume ARBITRARY unless proven otherwise
+
+### Required Analysis
+
+Create `experiments/ARBITRARITY-CLASSIFICATION.md`:
+```yaml
+feature: {feature-name}
+default_classification: arbitrary  # Only mark non-arbitrary when significant
+
+non_arbitrary_contexts:
+  - verse_pattern: "Gen 1:26 (Trinity references)"
+    affected_values: [trial, plural]
+    theological_stakes: high
+    affected_doctrines: [Trinity, nature of God]
+    denominational_implications: true
+    cultural_sensitivity: [monotheistic contexts]
+
+  - verse_pattern: "Matt 6:9 (prayer contexts)"
+    affected_values: [inclusive, exclusive]
+    theological_stakes: medium
+    affected_doctrines: [prayer theology, corporate worship]
+    denominational_implications: false
+    cultural_sensitivity: [individualist vs collectivist]
+
+arbitrary_contexts:
+  - pattern: "Crowd sizes, travel narratives"
+    rationale: "Theology unchanged by specific number"
+    percentage_of_feature: 85%
+```
+
+**Key principle**: Space-saving design - only mark non-arbitrary (default=arbitrary not stored)
 
 # 4. Generate Test Set with Translation Data
 
@@ -41,6 +86,7 @@ Update README.md with language analysis:
 **Sample Size**: 100 verses per value minimum
 - Small datasets (<50 verses) cannot support claims of 100% accuracy
 - Need statistical power to distinguish algorithm quality from chance
+- Include at least 2 cases of each kind of non-arbitrary reason group.
 
 **Balanced Sampling** across multiple dimensions:
 1. **Testament**: Proportional OT/NT distribution
@@ -48,9 +94,41 @@ Update README.md with language analysis:
 3. **Book Distribution**: Avoid concentration in single book
 4. **Difficulty**: Include both typical cases AND adversarial cases
 
+## Non-arbitrary reason groups
+
+Some decisions are arbitrary (there where 3 or 4 maybe 5 people in a group, we don't know, the original text does not say, something just needs to be picked).  Others are non-arbitrary.  Gen 1:1 let "us" (how many people is us; making the wrong choice could greatly influence theology.
+
+ - Think deeply about all the verses determining which are arbitrary/non-arbitrary
+ - For all arbitrary group them into reasons (ex. Trinity)
+ - Include at least 2 occurances (or more) for each group.
+
+### Theological Stratification (Non-Arbitrary Features)
+
+For features with non-arbitrary contexts:
+
+**Sample Requirements**:
+- ✅ Include ALL identified non-arbitrary verses (Trinity, divine commands, etc.)
+- ✅ Mark with theological metadata: `arbitrarity: non-arbitrary`
+- ✅ Note affected doctrines and cultural sensitivities
+- ✅ Ensure balanced representation across theological contexts
+
+**Example**:
+```yaml
+verses:
+  - reference: "GEN.001.026"
+    tbta_value: "trial"  # or plural
+    arbitrarity: non-arbitrary
+    theological_stakes: high
+    affected_doctrines: [Trinity, creation]
+    requires_multi_answer: true
+    notes: "Trinity doctrine - prefer trial but document plural alternative"
+```
+
+**Arbitrary verses**: Don't add metadata (space-saving - default is arbitrary)
+
 ## Adversarial Selection Strategy
 
-For the **test set** (30%), deliberately include challenging cases:
+For the **test set** (30%), deliberately include challenging non-arbitrary cases:
 - Edge cases where multiple values might apply
 - Verses with theological ambiguity
 - Contexts where annotation rules might conflict
@@ -298,7 +376,160 @@ For each approach (up to 12), consider:
 - ⚠️ Translations unclear for this approach
 - ❌ Contradicts translation evidence
 
+## Ramification Analysis for Non-Arbitrary Contexts
+
+**Required for verses marked `arbitrarity: non-arbitrary`**
+
+Create `experiments/THEOLOGICAL-ANALYSIS.md` documenting:
+
+### Framework Template
+
+For each non-arbitrary context:
+
+```yaml
+verse: GEN.001.026
+feature: number-system
+arbitrarity: non-arbitrary
+theological_stakes: high
+affected_doctrines: [Trinity, nature of God, creation theology]
+
+preferred_answer:
+  value: trial
+  rationale: "Trinity doctrine - Father, Son, Spirit create together"
+  confidence: high
+  theological_support:
+    - "NT Trinitarian revelation (Matt 28:19, 2 Cor 13:14)"
+    - "Church fathers' interpretation (Augustine, Athanasius)"
+    - "Creedal statements (Nicene, Athanasian)"
+  translation_support:
+    - "Fijian: 'kedatou' (trial inclusive)"
+    - "Hawaiian: 'kākou' (trial)"
+    - "8/9 trial-marking translations use trial"
+
+alternative_answers:
+  - value: plural_3_or_more
+    rationale: "Could include angels in divine council"
+    theological_problems:
+      - "Implies angels participate in creation (contra Isa 44:24 'I alone')"
+      - "Diminishes uniqueness of Trinity"
+      - "Opens door to polytheistic misunderstanding"
+    supporting_evidence:
+      - "Some Jewish interpretations (divine council theology)"
+      - "Psalm 82, Job 1-2 (divine assembly)"
+    why_rejected: "Conflicts with NT Trinitarian revelation and Isa 44:24"
+    denominational_notes: "Jewish interpretation may prefer this"
+
+  - value: majestic_plural
+    rationale: "Royal 'we' - singular God speaking majestically"
+    theological_problems:
+      - "Doesn't explain plural 'our image'"
+      - "Weak linguistic evidence for Hebrew majestic plural"
+    why_rejected: "Inconsistent with 'Let us' + 'our image' construction"
+
+cultural_considerations:
+  - culture: "Monotheistic (Jewish/Islamic)"
+    implication: "May resist Trinitarian interpretation"
+    guidance: "Respect monotheistic sensitivity; present both readings"
+    safety: "Never force Trinity on monotheistic translation"
+
+  - culture: "Polytheistic backgrounds"
+    implication: "May misinterpret plural as multiple gods"
+    guidance: "Emphasize Deut 6:4 (monotheism) alongside Trinity"
+    safety: "Clarify Trinity ≠ three gods"
+
+  - culture: "Honor/shame (East Asian)"
+    implication: "Plural of modesty culturally resonant"
+    guidance: "Connect with cultural communication patterns"
+
+translator_guidance:
+  critical_warnings:
+    - "NEVER suggest angels participate in creation"
+    - "NEVER obscure Trinity reference for cultural comfort"
+    - "FLAG for theological review before finalizing"
+  safe_choices:
+    - "Trial number (if language has it) for Trinity"
+    - "Plural with footnote explaining Trinity"
+  unsafe_choices:
+    - "Plural suggesting 3+ beings without Trinity context"
+  denominational_flexibility:
+    - "Catholic/Orthodox/Protestant: Trinity preferred"
+    - "Jewish: Majestic plural or angels acceptable"
+    - "Messianic Jewish: Trial/Trinity"
+```
+
+### Multi-Answer Output Format
+
+For non-arbitrary cases, prompt must output:
+
+```yaml
+verse: GEN.001.026
+feature: number-system
+arbitrarity: non-arbitrary  # Flag this!
+preferred: trial
+alternatives:
+  - value: plural
+    rationale: "Divine council interpretation"
+    problems: ["Diminishes Trinity", "Contra Isa 44:24"]
+  - value: majestic_plural
+    rationale: "Royal we"
+    problems: ["Weak linguistic evidence"]
+
+# Provide to translator:
+translator_recommendation: |
+  Prefer TRIAL if your language has it (Trinity doctrine).
+  If only singular/plural: use PLURAL with footnote about Trinity.
+  AVOID: Suggesting angels participate in creation.
+
+denominational_notes: |
+  Christian traditions: Trinity (trial/plural with context)
+  Jewish tradition: Majestic plural or angels acceptable
+```
+
+**Arbitrary cases**: Single answer only (no alternatives needed)
+
 ## First Prompt Development
+
+### Multi-Path Prompts for Non-Arbitrary Features
+
+**If feature has non-arbitrary contexts**, prompt must:
+
+1. **Detect arbitrarity**:
+   ```
+   First, determine: Is this verse arbitrary or non-arbitrary?
+   - Check theological significance
+   - Check denominational implications
+   - Check cultural sensitivity
+   ```
+
+2. **Branching logic**:
+   ```
+   IF ARBITRARY:
+     → Output single best answer
+
+   IF NON-ARBITRARY:
+     → Output preferred + alternatives with ramifications
+     → Flag for theological review
+     → Provide translator guidance
+   ```
+
+3. **Output format**:
+   ```yaml
+   arbitrarity: arbitrary | non-arbitrary
+
+   # If arbitrary:
+   answer: {single value}
+   confidence: {high/medium/low}
+
+   # If non-arbitrary:
+   preferred: {value}
+   preferred_rationale: "{why}"
+   alternatives:
+     - value: {alternative}
+       problems: ["{issue1}", "{issue2}"]
+       when_appropriate: "{context where this might be used}"
+   translator_warning: "{critical guidance}"
+   ```
+
 - Given the top methods, create `experiments/PROMPT1.md` with most likely approach
 - **LOCKED PREDICTIONS**: Before testing against TBTA, commit predictions to git
   ```bash
@@ -441,11 +672,29 @@ Update `../learnings/README.md` with transferable patterns:
 Launch 4 subagents for independent critical review:
 
 **Subagent 3 (Theological Reviewer)**: Assume junior wrote this with theological blind spots
+
+**Enhanced for Arbitrarity**:
 - Review prompt for theological soundness
 - Check if prompt handles key doctrinal distinctions
 - Look for oversimplifications or category errors
 - Consider how translators might accidentally create theological issues
 - Test edge cases: Does prompt handle divine speech correctly? Prayer contexts? Prophetic literature?
+
+Additional checks for non-arbitrary features:
+- [ ] All non-arbitrary contexts identified correctly?
+- [ ] Preferred answer theologically sound?
+- [ ] Alternative answers fairly represented?
+- [ ] Theological problems with alternatives documented?
+- [ ] Denominational flexibility respected?
+- [ ] False teaching risks identified and prevented?
+- [ ] Cultural ramifications considered?
+- [ ] Translator warnings clear and actionable?
+- [ ] Multi-answer output format correct?
+
+**Test cases**: Apply prompt to known non-arbitrary verses:
+- Gen 1:26 (Trinity) - should output trial + alternatives
+- Matt 6:9 (prayer) - should flag cultural sensitivity
+- Deut 6:4 (monotheism) - should not introduce polytheism
 
 **Subagent 4 (Linguistic Reviewer)**: Assume junior missed linguistic nuances
 - Review prompt for linguistic accuracy
@@ -662,6 +911,17 @@ When peer reviewers are satisfied (non-material feedback only):
   - Divergences analyzed and documented (DIVERGENCE-ANALYSIS.md if applicable)
   - Agreement rate ≥ 90% (algorithm predictions match translator consensus)
   - High-confidence coverage ≥ 80% (verses with clear 80%+ translation agreement)
+
+- ✅ **Arbitrarity handling** (if feature has non-arbitrary contexts):
+  - All non-arbitrary contexts identified (ARBITRARITY-CLASSIFICATION.md)
+  - Ramification analysis complete (THEOLOGICAL-ANALYSIS.md)
+  - Multi-answer output format implemented
+  - Preferred + alternatives documented
+  - Theological problems identified
+  - Cultural considerations addressed
+  - Translator guidance provided
+  - Denominational flexibility respected
+  - No false teaching enabled
 
 - ✅ **Methodological rigor**:
   - Error analysis documented (6-step process for all failures)
