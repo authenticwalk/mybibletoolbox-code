@@ -1,8 +1,40 @@
 # TBTA Attempt 2: Hive Mind Coordinated Feature Development
 
-**Status**: Planning Phase
+**Status**: Methodology Corrected - Ready for Feature Development
 **Created**: 2025-11-16
-**Purpose**: Systematic TBTA feature development using Hive Mind coordination
+**Updated**: 2025-11-17 (Corrected methodology, integrated arbitrary/non-arbitrary framework)
+**Purpose**: Systematic TBTA feature development using Hive Mind coordination with blind testing
+
+---
+
+## ⚠️ CRITICAL UPDATES (2025-11-17)
+
+### Extraction Cheating Discovery & Fix
+**What happened**: Initial feature development (polarity, person-system, number-system) extracted answers from TBTA YAML instead of developing prediction prompts. This was the **third time** this mistake occurred.
+
+**Root cause**: Misleading "Tier 0 Check" pattern promoted extraction as valid solution.
+
+**Actions taken**:
+1. ✅ Archived invalid work to `features-archive/attempt2-invalid-cheating/`
+2. ✅ Created CORRECTED-INSTRUCTIONS.md with blind testing enforcement
+3. ✅ Documented root cause in ROOT-CAUSE-AND-FIX.md
+4. ✅ Added cheating detection checklist
+
+**See**: `CORRECTED-INSTRUCTIONS.md`, `ROOT-CAUSE-AND-FIX.md`, `FAILURE-ANALYSIS.md`
+
+### Arbitrary/Non-Arbitrary Framework Integration
+**What**: Critical theological framework to prevent false teaching in Bible translation.
+
+**Integration**: User updated `/workspace/bible-study-tools/tbta/features/STAGES.md` with complete framework.
+
+**Key concepts**:
+- Default: arbitrary (85-90% of cases, space-saving)
+- Non-arbitrary: theologically significant (Trinity, divine speech, doctrinal impact)
+- Multi-answer output for non-arbitrary contexts
+- Cultural ramifications per context
+- Enhanced validation with 9 additional theological checks
+
+**See**: `STAGES-INTEGRATION-COMPLETE.md`, `theological-analysis/ARBITRARY-VS-NON-ARBITRARY.md`
 
 ---
 
@@ -10,15 +42,25 @@
 
 This attempt uses coordinated subagents (Hive Mind pattern) to develop TBTA features following STAGES.md systematically. Each agent has specialized expertise and all coordinate through shared memory.
 
+**MANDATORY METHODOLOGY**: Blind testing - agents develop prediction prompts WITHOUT seeing TBTA answer sheets. TBTA's 37% coverage used for validation only.
+
 ## Key Documents
 
-### Planning Documents (Created)
+### Methodology Documents (CRITICAL - Read First)
+
+1. **CORRECTED-INSTRUCTIONS.md** - Anti-cheating edition with blind testing enforcement
+2. **STAGES-INTEGRATION-COMPLETE.md** - Arbitrary/non-arbitrary framework integration details
+3. **ROOT-CAUSE-AND-FIX.md** - Root cause analysis of extraction cheating error
+4. **FAILURE-ANALYSIS.md** - Why instructions weren't clear enough (third failure)
+5. **theological-analysis/ARBITRARY-VS-NON-ARBITRARY.md** - Theological framework for preventing false teaching
+
+### Planning Documents (Initial Phase)
 
 1. **feature-inventory.yaml** - Complete inventory of 72 TBTA features with status analysis
 2. **INVENTORY-SUMMARY.md** - Executive summary of feature status and recommendations
-3. **reusable-patterns.md** - Identified patterns across completed features
+3. **reusable-patterns.md** - ⚠️ Contains deprecated "Tier 0 Check" pattern (ignore)
 4. **execution-plan.md** - Detailed execution strategy for Hive Mind coordination
-5. **validation-framework.md** - Comprehensive validation system (THIS DOCUMENT)
+5. **validation-framework.md** - Comprehensive validation system
 
 ### Review Templates
 
@@ -161,14 +203,40 @@ templates/practitioner-review-template.md
     └── practitioner-review-template.md
 ```
 
+## Production Readiness Criteria (Updated)
+
+A feature is production-ready when ALL criteria met (including new arbitrary/non-arbitrary requirements):
+
+1. ✅ All stages complete (STAGES.md checklist)
+2. ✅ All required files present (file structure validator)
+3. ✅ Sample size adequate (≥100 verses per value)
+4. ✅ Validate accuracy ≥95% (accuracy calculator)
+5. ✅ All peer reviews documented (4 review files exist)
+6. ✅ All peer reviews pass (PASS or non-material feedback only)
+7. ✅ Translation testing positive (net benefit documented)
+8. ✅ Git commits verified (locked predictions throughout)
+9. ✅ **Arbitrarity handling** (if feature has non-arbitrary contexts):
+   - All non-arbitrary contexts identified (ARBITRARITY-CLASSIFICATION.md)
+   - Ramification analysis complete (THEOLOGICAL-ANALYSIS.md)
+   - Multi-answer output format implemented
+   - Preferred + alternatives documented
+   - Theological problems identified
+   - Cultural considerations addressed
+   - Translator guidance provided
+   - Denominational flexibility respected
+   - No false teaching enabled
+
 ## Reference Documents
 
-- **STAGES.md**: `/workspace/plan/tbta-rebuild-with-llm/features/STAGES.md`
+- **STAGES.md**: `/workspace/bible-study-tools/tbta/features/STAGES.md` (Official, updated with arbitrary/non-arbitrary)
+- **CORRECTED-INSTRUCTIONS.md**: `CORRECTED-INSTRUCTIONS.md` (Blind testing enforcement)
+- **STAGES-INTEGRATION-COMPLETE.md**: `STAGES-INTEGRATION-COMPLETE.md` (Integration details)
 - **REVIEW-GUIDELINES.md**: `/workspace/REVIEW-GUIDELINES.md`
 - **Execution Plan**: `execution-plan.md`
 - **Validation Framework**: `validation-framework.md`
 
 ---
 
-**Status**: Validation framework complete, ready for implementation
-**Next Phase**: Create validation scripts and test on existing features
+**Status**: ✅ Methodology corrected, arbitrary/non-arbitrary framework integrated
+**Next Phase**: Begin Phase 1A feature development with corrected blind testing methodology
+**Critical**: Read CORRECTED-INSTRUCTIONS.md before starting any feature development
