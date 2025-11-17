@@ -598,6 +598,48 @@ non_christian_translators_awareness: |
   # Push to remote
   # Record commit SHA in LEARNINGS.md
   ```
+
+### ⚠️ CRITICAL: Pattern Detection vs Verse Memorization
+
+When developing your algorithm in `PROMPT1.md`, you MUST use **generalizable patterns**, not verse-specific memorization:
+
+**❌ OVERFITTING (Verse Memorization)**:
+```
+If verse reference is GEN.001.026:
+  → Return Trial
+
+If verse reference is MAT.028.019:
+  → Return Trial
+```
+**Why this fails**: The algorithm memorizes specific verses instead of learning the underlying pattern. It will fail on any new Trinity reference not in the training data.
+
+**✅ CORRECT (Pattern Detection)**:
+```
+If verse contains divine first-person plural ("us", "our") in these contexts:
+- Creation contexts (God creating/forming/making)
+- Divine judgment contexts (God going down to judge)
+- Divine deliberation (God speaking in council)
+
+Detection criteria:
+- Speaker is God/Lord/YHWH
+- Uses first person plural pronouns
+- Context involves divine action
+
+→ Return Trial (Christian Trinitarian interpretation)
+```
+**Why this works**: The algorithm learns the *theological and linguistic pattern* (divine plural in creation/judgment contexts). It will correctly classify **any** Trinity reference, including verses not in training data.
+
+**Examples of Pattern-Based Rules**:
+- ✅ "If explicit numeric word ('two', 'three', 'four') → Dual/Trial/Quadrial"
+- ✅ "If 'both' referring to paired entities → Dual"
+- ✅ "If 'where two or three gather' (small indefinite group) → Paucal"
+- ✅ "If 'many'/'crowd'/'multitude' → Plural"
+- ❌ "If John 3:16 → Singular" (verse-specific)
+- ❌ "If Matthew 28:19 → Trial" (verse-specific)
+
+**Testing for Overfitting**:
+After developing your algorithm, ask: "If I removed this verse from the training data, would my algorithm still predict it correctly using the pattern?" If no, you've overfit.
+
 - Apply prompt to each verse in test set, predicting main value
   - If one clear option: predict only the value
   - If multiple good options: predict dominant with rationale (which may include language family preferences)
