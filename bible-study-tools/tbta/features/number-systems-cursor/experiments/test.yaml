@@ -1,0 +1,1615 @@
+feature: number-systems
+translation_database:
+  languages:
+  - fij
+  - haw
+  - smo
+  - slv
+  - tpi
+  families:
+  - Austronesian
+  - Indo-European
+  rationale: 'Selected for dual/trial marking: Fijian (dual+trial), Hawaiian (dual+trial),
+    Samoan (dual), Slovenian (obligatory dual), Tok Pisin (trial)'
+value:
+- specific_value: Dual
+  total_verses: 90
+  distribution:
+    OT: 67
+    NT: 23
+    Books:
+      JDG: 5
+      MRK: 3
+      LUK: 11
+      GEN: 25
+      EXO: 16
+      COL: 2
+      JHN: 1
+      MAT: 4
+      1KI: 4
+      1SA: 4
+      RUT: 2
+      JOS: 5
+      NEH: 1
+      PRO: 1
+      HAB: 1
+      2SA: 2
+      PHP: 2
+      DAN: 1
+  genres:
+    narrative: 83
+    epistle: 4
+    poetry: 1
+    prophecy: 2
+  verses:
+  - reference: JDG.001.006
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.011.001
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.024.013
+    tbta_value: Dual
+    genre: narrative
+    difficulty: adversarial
+    notes: Dual - two disciples
+  - reference: GEN.027.036
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.001.016
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.003.025
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.035
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.005.003
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.028
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.040.008
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: COL.001.005
+    tbta_value: Dual
+    genre: epistle
+    difficulty: typical
+  - reference: JHN.001.042
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.048.016
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.017.036
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.026.034
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.024.041
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.024.056
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.016.005
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.005.021
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.016.012
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.009.016
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.015
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.010.019
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.020.030
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.006.008
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: RUT.001.008
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.002.013
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.014.009
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.025.031
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.042
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.033
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.031.014
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.007.011
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.013.015
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.014.017
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.010.039
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: COL.001.010
+    tbta_value: Dual
+    genre: epistle
+    difficulty: typical
+  - reference: EXO.025.020
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.010
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.021.027
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.002.041
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.034
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.024.014
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.008.020
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.014.006
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.017
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.001
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.034.025
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: NEH.012.031
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.014.065
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.018
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.016.029
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: PRO.021.025
+    tbta_value: Dual
+    genre: poetry
+    difficulty: typical
+  - reference: 1SA.014.009
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.022.005
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.009.029
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: HAB.003.019
+    tbta_value: Dual
+    genre: prophecy
+    difficulty: typical
+  - reference: LUK.015.005
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.013.019
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.021.018
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.016
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: PHP.001.001
+    tbta_value: Dual
+    genre: epistle
+    difficulty: typical
+  - reference: LUK.009.030
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.004.040
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.019
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.015
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.017.019
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.014
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.013
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.008.009
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.006.022
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: PHP.001.001
+    tbta_value: Dual
+    genre: epistle
+    difficulty: typical
+  - reference: EXO.017.011
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.025.022
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: RUT.001.008
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.021.002
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.001.017
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.016.010
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.002.022
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.007.038
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.040.008
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.002.012
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.002.050
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.048.008
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.031.053
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.002.041
+    tbta_value: Dual
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.006.020
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.019.001
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.001.005
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.017.012
+    tbta_value: Dual
+    genre: narrative
+    difficulty: typical
+- specific_value: Paucal
+  total_verses: 15
+  distribution:
+    OT: 5
+    NT: 10
+    Books:
+      LUK: 8
+      MAT: 1
+      RUT: 1
+      JOS: 2
+      GEN: 2
+      MRK: 1
+  genres:
+    narrative: 15
+  verses:
+  - reference: LUK.005.019
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.025.023
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.010.002
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.005.018
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: RUT.002.007
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.008.013
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.010.020
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.008.005
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.030.030
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.006.005
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.022.058
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.005.003
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.018.003
+    tbta_value: Paucal
+    genre: narrative
+    difficulty: typical
+- specific_value: Plural
+  total_verses: 34
+  distribution:
+    OT: 0
+    NT: 34
+    Books:
+      TIT: 5
+      1TH: 17
+      2JN: 3
+      REV: 3
+      PHM: 3
+      2TH: 3
+  genres:
+    epistle: 31
+    prophecy: 3
+  verses:
+  - reference: TIT.002.014
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.005.004
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.005.008
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.002.017
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.002.005
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 2JN.001.004
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.005.004
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: REV.001.001
+    tbta_value: Plural
+    genre: prophecy
+    difficulty: typical
+  - reference: REV.001.003
+    tbta_value: Plural
+    genre: prophecy
+    difficulty: typical
+  - reference: 1TH.005.013
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: REV.001.010
+    tbta_value: Plural
+    genre: prophecy
+    difficulty: typical
+  - reference: 1TH.005.013
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.003.014
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.002.006
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.001
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.004.011
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.001
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.003.015
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.001.003
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.001.004
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.001.001
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.003.013
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.003.004
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.006
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.003.007
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.003.011
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.003.001
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 2JN.001.004
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.002.013
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.003.001
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.003.002
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.002.016
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.004.016
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+  - reference: 2JN.001.001
+    tbta_value: Plural
+    genre: epistle
+    difficulty: typical
+- specific_value: Quadrial
+  total_verses: 55
+  distribution:
+    OT: 53
+    NT: 2
+    Books:
+      GEN: 20
+      EXO: 6
+      DAN: 14
+      JOS: 4
+      1SA: 2
+      JHN: 1
+      MAT: 1
+      1KI: 5
+      JDG: 1
+      2SA: 1
+  genres:
+    narrative: 41
+    prophecy: 14
+  verses:
+  - reference: GEN.036.015
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.025
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.019
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: JOS.021.029
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.016.010
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.006
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.016
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.036.017
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.032.011
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.008.008
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.014.011
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.032.011
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.014
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.022.001
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.020
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.014.013
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.018
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.007.001
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.014.024
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.014
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.022.024
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.008.022
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: JHN.004.035
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.003
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.014
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.015
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.002
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.010
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.020
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: DAN.008.008
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: MAT.024.031
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.021.018
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.008.023
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: EXO.006.014
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.027.009
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.013.021
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.007.002
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.018.010
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.007.003
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: 1KI.007.030
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.014
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: JDG.019.003
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.032
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.017
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: 1KI.007.002
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.002.028
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.010.026
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.022.041
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.007
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.010.010
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.021.022
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.021.024
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.021.018
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.020
+    tbta_value: Quadrial
+    genre: prophecy
+    difficulty: typical
+  - reference: EXO.025.025
+    tbta_value: Quadrial
+    genre: narrative
+    difficulty: typical
+- specific_value: Singular
+  total_verses: 27
+  distribution:
+    OT: 0
+    NT: 27
+    Books:
+      2JN: 2
+      COL: 2
+      TIT: 4
+      1TH: 6
+      2TH: 5
+      PHM: 5
+      REV: 3
+  genres:
+    epistle: 24
+    prophecy: 3
+  verses:
+  - reference: 2JN.001.003
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: COL.004.007
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.002.009
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.005.015
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.003.013
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.002.017
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.003.003
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.022
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: COL.004.014
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.005.015
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.004.014
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.009
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.002.014
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.003.011
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.002.009
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: TIT.001.004
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: REV.001.009
+    tbta_value: Singular
+    genre: prophecy
+    difficulty: typical
+  - reference: REV.001.007
+    tbta_value: Singular
+    genre: prophecy
+    difficulty: typical
+  - reference: TIT.003.008
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 2TH.001.001
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.019
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.008
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 1TH.005.027
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: PHM.001.009
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: 2JN.001.010
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+  - reference: REV.001.002
+    tbta_value: Singular
+    genre: prophecy
+    difficulty: typical
+  - reference: 2TH.003.005
+    tbta_value: Singular
+    genre: epistle
+    difficulty: typical
+- specific_value: Trial
+  total_verses: 148
+  distribution:
+    OT: 121
+    NT: 27
+    Books:
+      GEN: 29
+      MRK: 16
+      2SA: 14
+      DAN: 22
+      JON: 2
+      LUK: 4
+      1SA: 8
+      JDG: 12
+      EXO: 14
+      1KI: 10
+      JOS: 8
+      MAT: 4
+      JHN: 1
+      EST: 2
+      COL: 2
+  genres:
+    narrative: 122
+    prophecy: 24
+    epistle: 2
+  verses:
+  - reference: GEN.036.021
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.014.040
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.024.013
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.018
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: DAN.003.016
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.026.031
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.014.058
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JON.003.003
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: JON.001.017
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.042.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.014.030
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.009.037
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.015
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.018.004
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.040.020
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.031.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.008.018
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.018.005
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.026.031
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.031.006
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.014.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.020.022
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.007.007
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.024.025
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.014.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.018.001
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.008.002
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.003.018
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.005.003
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.012.012
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.023.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.002.018
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: EXO.003.018
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.017.028
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.021
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.018.005
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.017.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.007.020
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: JDG.006.035
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.004
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.019.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.009.001
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.011.001
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.019.021
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.009.032
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.009.009
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.025
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.005.040
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.001.011
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.023.018
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.006.010
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.024
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.009.036
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.009.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.007.007
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.015.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.014.041
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.006.002
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: JDG.019.015
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.013.038
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.013.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.005
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.027.063
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.023.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.007.013
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.012
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.036.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JHN.002.020
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.009.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EST.004.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.007.003
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: 2SA.008.002
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.001
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: 2SA.014.027
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.012
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.009.010
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.010.023
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.015
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: JDG.019.015
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.009.008
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.010.001
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.019
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.027
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: DAN.003.026
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: MRK.009.009
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.014.040
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.030.036
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.017
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: JOS.002.022
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.015.041
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.010.029
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.009.022
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.019.015
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.033
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.040.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.007.007
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.003.002
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.012.007
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: MRK.014.041
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.023.019
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.017.004
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.018.005
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.018
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: DAN.003.027
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: MAT.027.040
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.023.019
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.015
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: MRK.015.040
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.027
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.026.031
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.006.019
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.006.003
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.010.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.018.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.011.026
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: LUK.002.046
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.019.021
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.022.004
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1KI.007.035
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.026.030
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.015.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JOS.015.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.011.011
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.024.013
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MAT.026.040
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: COL.004.011
+    tbta_value: Trial
+    genre: epistle
+    difficulty: typical
+  - reference: JDG.019.004
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.025.032
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.019.018
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.030.012
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.009.005
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EXO.015.022
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.001.005
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: DAN.006.002
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: EXO.006.004
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: DAN.003.018
+    tbta_value: Trial
+    genre: prophecy
+    difficulty: typical
+  - reference: GEN.036.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.023.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: GEN.018.005
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: EST.004.016
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.023.018
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 1SA.017.013
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: COL.004.011
+    tbta_value: Trial
+    genre: epistle
+    difficulty: typical
+  - reference: 1KI.010.017
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: MRK.009.012
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: 2SA.018.014
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
+  - reference: JDG.001.020
+    tbta_value: Trial
+    genre: narrative
+    difficulty: typical
