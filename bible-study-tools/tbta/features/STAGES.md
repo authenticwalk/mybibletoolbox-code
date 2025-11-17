@@ -27,7 +27,7 @@ Update README.md with language analysis:
 - Look for scholarly articles about this subject to get the latest research into it
 - Look into general web information
 - Update the README
-
+- 
 ## Identify Arbitrary vs Non-Arbitrary Contexts
 
 **Critical theological requirement**: Not all lexical choices have equal theological weight.
@@ -72,6 +72,7 @@ arbitrary_contexts:
 ```
 
 **Key principle**: Space-saving design - only mark non-arbitrary (default=arbitrary not stored)
+
 
 # 4. Generate Test Set with Translation Data
 
@@ -143,6 +144,7 @@ For the **test set** (30%), deliberately include challenging non-arbitrary cases
 For every feature, identify which languages grammatically mark this feature:
 
 **Step 1: Language Family Analysis** (from Stage 2)
+- Load one of your verses from the training dataset using quote Bible skill; this will get you all our language codes and you can look at what languages use this feature
 - Which language families grammatically require this feature?
 - Example: Dual number → Austronesian (176 langs), Trans-New Guinea (129 langs)
 - Example: Clusivity → 200+ languages (Tagalog, Malay, Fijian, Vietnamese, many Native American)
@@ -158,9 +160,10 @@ For each marking language, document:
   2. Same source lineage (e.g., all derived from Indonesian)
   3. Direct from source text by local translators
 
-**Step 3: Select 5-10 Representative Translations**
+**Step 3: Select 5-21 Representative Translations**
 - Cover multiple language families
 - Mix of direct (Greek/Hebrew) and derived translations
+- If languages deal with this feature in a diverse/distinct way than others in the group put them into groupings and ensure you have at least 1 from each group.
 - Prioritize accessible online translations
 - Document in `experiments/TRANSLATION-DATABASE.md`
 
@@ -263,6 +266,7 @@ value:
       - reference: "{BOOK}.{chapter:03d}.{verse:03d}"
         tbta_value: "{value}"
         genre: "{genre}"
+        arbitrary: true|false
         difficulty: "typical|adversarial"
         notes: "Why adversarial (if applicable)"
 ```
@@ -346,13 +350,14 @@ After translation analysis, compare with TBTA (from train.yaml):
 **Case B: Translations DISAGREE with TBTA** (rare, <5%)
 - ⚠️ **Investigate carefully**: Why the divergence?
   - Is TBTA correct but translators missed it?
+  - Is this non-arbitrary?  If non-arbitrary what theological impact would this disagreement create. Do pros and cons of both.
   - Is this a valid perspective difference (translation vs. discourse analysis)?
   - Is TBTA potentially incorrect?
 - Document analysis in `experiments/DIVERGENCE-ANALYSIS.md`
 - Flag for review (see Step 6)
 
 **Case C: Translations UNCLEAR** (feature not observable in translations)
-- 📝 **Rely on TBTA**: Use TBTA value
+- Try to reverse engineer why TBTA selected that value; potentially a policy that we could use in our prompt?
 - Lower confidence: Cannot verify with translations
 - Document: "TBTA only (feature not observable in selected translations)"
 
@@ -409,52 +414,103 @@ preferred_answer:
 alternative_answers:
   - value: plural_3_or_more
     rationale: "Could include angels in divine council"
-    theological_problems:
-      - "Implies angels participate in creation (contra Isa 44:24 'I alone')"
-      - "Diminishes uniqueness of Trinity"
-      - "Opens door to polytheistic misunderstanding"
+    interpretive_considerations:
+      - tradition: "Christian (Trinitarian)"
+        issue: "Implies angels participate in creation (contra Isa 44:24 'I alone')"
+        concern: "Diminishes Trinitarian interpretation"
+      - tradition: "Islamic"
+        issue: "Opens door to polytheistic misunderstanding (conflicts with Tawhid)"
     supporting_evidence:
-      - "Some Jewish interpretations (divine council theology)"
-      - "Psalm 82, Job 1-2 (divine assembly)"
-    why_rejected: "Conflicts with NT Trinitarian revelation and Isa 44:24"
-    denominational_notes: "Jewish interpretation may prefer this"
+      - "Some Jewish non-Messianic interpretations (divine council theology)"
+      - "Textual: Psalm 82, Job 1-2 (divine assembly imagery)"
+    textual_clarification: "If divine council used, must clarify creation by God alone (Isa 44:24)"
+    faith_tradition_validity:
+      jewish_non_messianic: "Valid within this tradition with proper clarification"
+      christian_trinitarian: "Less preferred; conflicts with Trinitarian theology"
+      islamic: "Not compatible with strict monotheism (Tawhid)"
 
   - value: majestic_plural
     rationale: "Royal 'we' - singular God speaking majestically"
-    theological_problems:
-      - "Doesn't explain plural 'our image'"
-      - "Weak linguistic evidence for Hebrew majestic plural"
-    why_rejected: "Inconsistent with 'Let us' + 'our image' construction"
+    linguistic_considerations:
+      - "Weak linguistic evidence for majestic plural in Hebrew"
+      - "Doesn't fully explain plural pronoun 'our image'"
+      - "Inconsistent with 'Let us' cohortative + 'our image' construction"
+    supporting_evidence:
+      - "Royal speech patterns in ANE (Ancient Near East) texts"
+      - "Some Islamic interpretations (preserves Tawhid)"
+    scholarly_debate: "Contested among Hebrew linguists"
+    faith_tradition_validity:
+      islamic: "Valid within this tradition (singular God, Tawhid)"
+      jewish_non_messianic: "Less common, but acceptable"
+      christian_trinitarian: "Less preferred; doesn't account for NT Trinitarian revelation"
 
 cultural_considerations:
-  - culture: "Monotheistic (Jewish/Islamic)"
-    implication: "May resist Trinitarian interpretation"
-    guidance: "Respect monotheistic sensitivity; present both readings"
-    safety: "Never force Trinity on monotheistic translation"
+  - faith_tradition: "Jewish (non-Messianic)"
+    interpretation: "Majestic plural or divine council (angels)"
+    textual_basis: "Singular monotheism (Deut 6:4), royal speech patterns"
+    guidance: "Provide data supporting this interpretation alongside others"
+    translator_note: "Respect traditional Jewish exegesis; present multiple valid interpretations"
 
-  - culture: "Polytheistic backgrounds"
-    implication: "May misinterpret plural as multiple gods"
-    guidance: "Emphasize Deut 6:4 (monotheism) alongside Trinity"
-    safety: "Clarify Trinity ≠ three gods"
+  - faith_tradition: "Islamic"
+    interpretation: "Majestic plural (singular God speaking royally)"
+    textual_basis: "Strict monotheism (Tawhid), royal/dignified speech"
+    guidance: "Provide data supporting singular reference with plural form"
+    translator_note: "Respect Islamic theological framework; present interpretations consistent with Tawhid"
 
-  - culture: "Honor/shame (East Asian)"
-    implication: "Plural of modesty culturally resonant"
-    guidance: "Connect with cultural communication patterns"
+  - faith_tradition: "Christian (Trinitarian)"
+    interpretation: "Trinity (Father, Son, Spirit in creative dialogue)"
+    textual_basis: "NT revelation (Matt 28:19), church fathers, creeds"
+    guidance: "Provide data supporting trial/plural with Trinitarian context"
+    translator_note: "Respect Trinitarian theology; trial number preferred where available"
+
+  - faith_tradition: "Messianic Jewish"
+    interpretation: "Trinity within Jewish framework"
+    textual_basis: "Integration of Hebrew scripture with NT Trinitarian revelation"
+    guidance: "Provide data supporting both Jewish context and Trinitarian interpretation"
+    translator_note: "Bridge tradition; honor both Jewish exegesis and Trinitarian theology"
+
+  - cultural_context: "Polytheistic background communities"
+    consideration: "Plural forms may align with existing polytheistic concepts"
+    guidance: "Provide clarity that biblical monotheism (one God) differs from polytheism (many gods)"
+    translator_note: "Clarify monotheistic framework; explain Trinity as one God (not three gods) if applicable"
+
+  - cultural_context: "Honor/shame societies (e.g., East Asian)"
+    consideration: "Plural of modesty/dignity culturally resonant"
+    guidance: "Connect with cultural communication patterns around dignified speech"
+    translator_note: "Leverage cultural understanding of honorific plural forms"
 
 translator_guidance:
-  critical_warnings:
-    - "NEVER suggest angels participate in creation"
-    - "NEVER obscure Trinity reference for cultural comfort"
-    - "FLAG for theological review before finalizing"
-  safe_choices:
-    - "Trial number (if language has it) for Trinity"
-    - "Plural with footnote explaining Trinity"
-  unsafe_choices:
-    - "Plural suggesting 3+ beings without Trinity context"
-  denominational_flexibility:
-    - "Catholic/Orthodox/Protestant: Trinity preferred"
-    - "Jewish: Majestic plural or angels acceptable"
-    - "Messianic Jewish: Trial/Trinity"
+  data_provision_principles:
+    - "Provide data supporting ALL valid interpretations within their respective traditions"
+    - "Present interpretations objectively without imposing theological preferences"
+    - "Document textual and traditional basis for each interpretation"
+    - "Enable translators to make informed decisions consistent with their faith tradition"
+
+  interpretive_options_by_tradition:
+    jewish_non_messianic:
+      - "Majestic plural (singular God speaking with royal dignity)"
+      - "Divine council (God + angels, but creation by God alone per Isa 44:24)"
+      recommended_approach: "Provide data supporting these readings"
+
+    islamic:
+      - "Majestic plural (singular God, Tawhid preserved)"
+      recommended_approach: "Provide data consistent with strict monotheism"
+
+    christian_trinitarian:
+      - "Trial number (Father, Son, Spirit) if language has trial"
+      - "Plural with Trinitarian context (three persons, one God)"
+      recommended_approach: "Provide data supporting Trinitarian interpretation"
+
+    messianic_jewish:
+      - "Trinity within Hebrew scripture context"
+      - "Integration of Jewish exegesis with NT revelation"
+      recommended_approach: "Provide data bridging both traditions"
+
+  theological_clarity_notes:
+    - "Angels do not participate in creation (Isa 44:24) - clarify if divine council interpretation used"
+    - "Trinity = three persons, one God (not three gods) - clarify distinction from polytheism"
+    - "Majestic plural interpretation has weak Hebrew linguistic support - note scholarly debate"
+    - "All interpretations should be flagged for theological review before finalizing"
 ```
 
 ### Multi-Answer Output Format
@@ -474,15 +530,34 @@ alternatives:
     rationale: "Royal we"
     problems: ["Weak linguistic evidence"]
 
-# Provide to translator:
-translator_recommendation: |
-  Prefer TRIAL if your language has it (Trinity doctrine).
-  If only singular/plural: use PLURAL with footnote about Trinity.
-  AVOID: Suggesting angels participate in creation.
+# Provide to translator (faith-tradition aware):
+translator_data_provision: |
+  This verse has multiple valid interpretations across faith traditions.
+  Data provided below supports each interpretation.
 
-denominational_notes: |
-  Christian traditions: Trinity (trial/plural with context)
-  Jewish tradition: Majestic plural or angels acceptable
+  For Christian (Trinitarian) translations:
+    - Trial number preferred if available (Father, Son, Spirit)
+    - Plural with Trinitarian footnote if trial unavailable
+    - Note: Trinity = three persons, one God (not three gods)
+
+  For Jewish (non-Messianic) translations:
+    - Majestic plural (royal speech) or divine council options
+    - Note: Divine council = God + angels (creation by God alone, Isa 44:24)
+
+  For Islamic translations:
+    - Majestic plural (singular God, Tawhid preserved)
+    - Emphasize strict monotheism
+
+  For Messianic Jewish translations:
+    - Trial/Trinity within Hebrew scripture context
+    - Bridge Jewish exegesis and NT Trinitarian revelation
+
+  All interpretations flagged for theological review within translator's tradition.
+
+faith_tradition_notes: |
+  Multiple valid interpretive traditions exist for this verse.
+  TBTA provides data to support translation decisions within each tradition.
+  No single interpretation is imposed; translator chooses based on their faith community.
 ```
 
 **Arbitrary cases**: Single answer only (no alternatives needed)
@@ -539,8 +614,9 @@ denominational_notes: |
   # Record commit SHA in LEARNINGS.md
   ```
 - Apply prompt to each verse in test set, predicting main value
-  - If one clear option: predict only the value
+  - If one clear option: predict only the value (this we will call a *stated value*)
   - If multiple good options: predict dominant with rationale (which may include language family preferences)
+- Apply prompt to a verse in Leviticus (which TBTA does not have an answer) to confirm you did not cheat by looking at TBTA answer and just predicting it. 
 
 ## Success Criteria & Iteration
 
@@ -603,7 +679,7 @@ Document analysis in `experiments/LEARNINGS.md` with:
   - Examples (few-shot learning)
   - Logic flowcharts (decision trees)
   - Minimal prompt optimization (remove unnecessary complexity)
-- Repeat until you cannot achieve better results
+- Repeat until you cannot achieve better results and cannot make the prompt shorter
 - Each iteration: Lock predictions → Test → Analyze errors → Refine
 - Typical iterations: 3-5 prompts (v1.0 → v2.0 → v2.1 etc.)
 - Stop when: Accuracy plateaus or reaches target
@@ -660,8 +736,7 @@ Update `../learnings/README.md` with transferable patterns:
 - Load validate.yaml (has TBTA answers)
 - Load predictions file
 - Calculate accuracy (stated values, dominant values)
-- Identify errors for analysis
-- Return only: accuracy percentages + list of error verse references (NOT the answers)
+- Return only: accuracy percentages
 
 **Main agent**: Analyze errors using 6-step process
 - If accuracy < 95%: return to Stage 5, refine prompt
@@ -672,8 +747,6 @@ Update `../learnings/README.md` with transferable patterns:
 Launch 4 subagents for independent critical review:
 
 **Subagent 3 (Theological Reviewer)**: Assume junior wrote this with theological blind spots
-
-**Enhanced for Arbitrarity**:
 - Review prompt for theological soundness
 - Check if prompt handles key doctrinal distinctions
 - Look for oversimplifications or category errors
@@ -692,9 +765,9 @@ Additional checks for non-arbitrary features:
 - [ ] Multi-answer output format correct?
 
 **Test cases**: Apply prompt to known non-arbitrary verses:
-- Gen 1:26 (Trinity) - should output trial + alternatives
-- Matt 6:9 (prayer) - should flag cultural sensitivity
-- Deut 6:4 (monotheism) - should not introduce polytheism
+- Gen 1:26 ("Let us") - should output multiple interpretations (trial/plural/majestic) with faith-tradition validity noted
+- Matt 6:9 (prayer "Our Father") - should flag cultural and theological diversity considerations
+- Deut 6:4 (Shema "Hear O Israel, the LORD our God, the LORD is one") - should provide data consistent with all monotheistic traditions
 
 **Subagent 4 (Linguistic Reviewer)**: Assume junior missed linguistic nuances
 - Review prompt for linguistic accuracy
@@ -707,6 +780,7 @@ Additional checks for non-arbitrary features:
 **Subagent 5 (Methodological Reviewer)**: Assume junior cut corners
 - Check sample size adequacy (is n=100+ per value?)
 - Verify balanced sampling (OT/NT, genres)
+- Confirm they did not cheat by looking at TBTA answers and predicting that. 
 - Review error analysis rigor (6-step process followed?)
 - Check locked predictions discipline (git commits present?)
 - Verify external validation attempted (if applicable)
