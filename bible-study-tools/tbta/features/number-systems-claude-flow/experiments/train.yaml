@@ -1,0 +1,1787 @@
+feature: number-systems
+dataset: train
+generated: '2025-11-17T23:39:45.357321Z'
+total_verses: 236
+values:
+- name: Dual
+  count: 48
+  distribution:
+    OT: 30
+    NT: 18
+  genres:
+    narrative: 43
+    law: 3
+    wisdom: 2
+  books:
+    JOS: 4
+    EST: 2
+    GEN: 13
+    EXO: 3
+    PRO: 2
+    1KI: 2
+    MAT: 8
+    MRK: 6
+    1SA: 2
+    JDG: 1
+    LUK: 4
+    RUT: 1
+  verses:
+  - reference: JOS.002.023
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EST.009.022
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: EST
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.027.023
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.022.009
+    tbta_value: Dual
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PRO.007.018
+    tbta_value: Dual
+    testament: OT
+    genre: wisdom
+    book: PRO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1KI.020.029
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: 1KI
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JOS.002.012
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.020.031
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.002.016
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.010.008
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1SA.009.013
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: 1SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JDG.019.024
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: JDG
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.020.034
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.021.002
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PRO.014.007
+    tbta_value: Dual
+    testament: OT
+    genre: wisdom
+    book: PRO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.031.015
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.019.018
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.032.002
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.010.001
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: non-arbitrary
+    reason_group: Paired disciples
+    theological_stakes: low
+  - reference: MAT.022.013
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.033.002
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.019.003
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.005.021
+    tbta_value: Dual
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JOS.022.033
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JOS.017.005
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.016.013
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.031.006
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.008.028
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1SA.014.012
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: 1SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.032.010
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.021.014
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.024.022
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.027.044
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.019.025
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.011.004
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.026.060
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.025.016
+    tbta_value: Dual
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.006.007
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: non-arbitrary
+    reason_group: Paired disciples
+    theological_stakes: low
+  - reference: 1KI.007.019
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: 1KI
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.008.031
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.048.013
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.010.035
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EST.002.021
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: EST
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.024.013
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: non-arbitrary
+    reason_group: Paired disciples
+    theological_stakes: low
+  - reference: GEN.048.009
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.015.032
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: RUT.003.012
+    tbta_value: Dual
+    testament: OT
+    genre: narrative
+    book: RUT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.006.007
+    tbta_value: Dual
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: non-arbitrary
+    reason_group: Paired disciples
+    theological_stakes: low
+- name: Paucal
+  count: 20
+  distribution:
+    OT: 6
+    NT: 14
+  genres:
+    narrative: 18
+    law: 1
+    prophecy: 1
+  books:
+    MAT: 3
+    LUK: 11
+    JOS: 1
+    EXO: 1
+    1SA: 2
+    DAN: 1
+    GEN: 1
+  verses:
+  - reference: MAT.015.036
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JOS.008.006
+    tbta_value: Paucal
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.025.023
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.015.034
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.008.013
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.012.045
+    tbta_value: Paucal
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.019
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.022.058
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1SA.004.004
+    tbta_value: Paucal
+    testament: OT
+    genre: narrative
+    book: 1SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: DAN.002.016
+    tbta_value: Paucal
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.019
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1SA.025.039
+    tbta_value: Paucal
+    testament: OT
+    genre: narrative
+    book: 1SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.019
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.030.030
+    tbta_value: Paucal
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.019
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.005.002
+    tbta_value: Paucal
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+- name: Plural
+  count: 60
+  distribution:
+    OT: 0
+    NT: 60
+  genres:
+    epistle: 56
+    prophecy: 4
+  books:
+    2TH: 13
+    TIT: 11
+    REV: 4
+    1TH: 29
+    PHM: 2
+    COL: 1
+  verses:
+  - reference: 2TH.003.014
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.011
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.009
+    tbta_value: Plural
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.001.012
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.002.017
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.004
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.013
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.004
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.013
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.002.013
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.004
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.001
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.001
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.001
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.015
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.003
+    tbta_value: Plural
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.001.008
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.005
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.003
+    tbta_value: Plural
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.003
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.013
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.012
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.011
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.001.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.012
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.002.010
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.001.007
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.005
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.014
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.008
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.014
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.009
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: COL.004.016
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: COL
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.004
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.002
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.008
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.017
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.012
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.001
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.004
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.003
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.015
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.005
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.007
+    tbta_value: Plural
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.002
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.001.005
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.008
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.006
+    tbta_value: Plural
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+- name: Quadrial
+  count: 8
+  distribution:
+    OT: 5
+    NT: 3
+  genres:
+    narrative: 7
+    law: 1
+  books:
+    GEN: 2
+    1KI: 2
+    MAT: 1
+    EXO: 1
+    JHN: 1
+    MRK: 1
+  verses:
+  - reference: GEN.014.016
+    tbta_value: Quadrial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1KI.002.028
+    tbta_value: Quadrial
+    testament: OT
+    genre: narrative
+    book: 1KI
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.024.031
+    tbta_value: Quadrial
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.025.012
+    tbta_value: Quadrial
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1KI.007.030
+    tbta_value: Quadrial
+    testament: OT
+    genre: narrative
+    book: 1KI
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JHN.004.035
+    tbta_value: Quadrial
+    testament: NT
+    genre: narrative
+    book: JHN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.014.014
+    tbta_value: Quadrial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.013.027
+    tbta_value: Quadrial
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+- name: Singular
+  count: 60
+  distribution:
+    OT: 0
+    NT: 60
+  genres:
+    epistle: 55
+    prophecy: 5
+  books:
+    1TH: 15
+    REV: 5
+    PHM: 11
+    TIT: 16
+    2JN: 2
+    COL: 3
+    2TH: 8
+  verses:
+  - reference: 1TH.005.003
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.008
+    tbta_value: Singular
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.013
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.009
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.013
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.001.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.004
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.010
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2JN.001.012
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2JN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.013
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.015
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.008
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: COL.004.009
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: COL
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.002
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.016
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.001.006
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.017
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.002.004
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.015
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.001.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.018
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.005
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.001.008
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.004
+    tbta_value: Singular
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: COL.004.016
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: COL
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.003
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2JN.001.007
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2JN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.001
+    tbta_value: Singular
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.006
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.002
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.012
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.010
+    tbta_value: Singular
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.001.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.003.005
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.012
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.003.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.024
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.002.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.011
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.014
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.005.018
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.004
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.013
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.012
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.003
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.002.014
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.011
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.005
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.002.013
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.010
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 1TH.004.006
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 1TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: PHM.001.019
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: PHM
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.001.007
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: REV.001.005
+    tbta_value: Singular
+    testament: NT
+    genre: prophecy
+    book: REV
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.001.008
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2TH.002.001
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: 2TH
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: TIT.003.005
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: TIT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: COL.004.012
+    tbta_value: Singular
+    testament: NT
+    genre: epistle
+    book: COL
+    difficulty: typical
+    arbitrarity: arbitrary
+- name: Trial
+  count: 40
+  distribution:
+    OT: 28
+    NT: 12
+  genres:
+    prophecy: 6
+    narrative: 29
+    epistle: 1
+    law: 4
+  books:
+    DAN: 6
+    MRK: 4
+    MAT: 3
+    2SA: 4
+    LUK: 4
+    GEN: 9
+    JOS: 2
+    COL: 1
+    EXO: 4
+    EST: 1
+    1KI: 1
+    JDG: 1
+  verses:
+  - reference: DAN.007.005
+    tbta_value: Trial
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.014.041
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.018.020
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: adversarial
+    arbitrarity: non-arbitrary
+    reason_group: Small group theology
+    theological_stakes: medium
+  - reference: 2SA.013.038
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: 2SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.009.033
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.040.012
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.029.034
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.014.042
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.026.075
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: DAN.003.016
+    tbta_value: Trial
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: DAN.003.015
+    tbta_value: Trial
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2SA.023.017
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: 2SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JOS.015.014
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.040.020
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: COL.004.011
+    tbta_value: Trial
+    testament: NT
+    genre: epistle
+    book: COL
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: DAN.010.002
+    tbta_value: Trial
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.003.018
+    tbta_value: Trial
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.036.016
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.022.034
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.018.005
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.036.016
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.009.037
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.006.003
+    tbta_value: Trial
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: LUK.001.056
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: LUK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EST.004.016
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: EST
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.006.016
+    tbta_value: Trial
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.007.007
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.001.026
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: adversarial
+    arbitrarity: non-arbitrary
+    reason_group: Trinity references
+    theological_stakes: high
+  - reference: MRK.014.058
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2SA.002.018
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: 2SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: 2SA.023.018
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: 2SA
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: DAN.003.018
+    tbta_value: Trial
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: GEN.001.026
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: GEN
+    difficulty: adversarial
+    arbitrarity: non-arbitrary
+    reason_group: Trinity references
+    theological_stakes: high
+  - reference: 1KI.007.035
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: 1KI
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: EXO.006.024
+    tbta_value: Trial
+    testament: OT
+    genre: law
+    book: EXO
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JOS.003.002
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: JOS
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: JDG.019.021
+    tbta_value: Trial
+    testament: OT
+    genre: narrative
+    book: JDG
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MAT.018.020
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MAT
+    difficulty: adversarial
+    arbitrarity: non-arbitrary
+    reason_group: Small group theology
+    theological_stakes: medium
+  - reference: DAN.002.018
+    tbta_value: Trial
+    testament: OT
+    genre: prophecy
+    book: DAN
+    difficulty: typical
+    arbitrarity: arbitrary
+  - reference: MRK.009.014
+    tbta_value: Trial
+    testament: NT
+    genre: narrative
+    book: MRK
+    difficulty: typical
+    arbitrarity: arbitrary
