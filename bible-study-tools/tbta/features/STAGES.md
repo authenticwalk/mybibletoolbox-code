@@ -409,52 +409,97 @@ preferred_answer:
 alternative_answers:
   - value: plural_3_or_more
     rationale: "Could include angels in divine council"
-    theological_problems:
-      - "Implies angels participate in creation (contra Isa 44:24 'I alone')"
-      - "Diminishes uniqueness of Trinity"
-      - "Opens door to polytheistic misunderstanding"
-    supporting_evidence:
-      - "Some Jewish interpretations (divine council theology)"
-      - "Psalm 82, Job 1-2 (divine assembly)"
-    why_rejected: "Conflicts with NT Trinitarian revelation and Isa 44:24"
-    denominational_notes: "Jewish interpretation may prefer this"
+    christian_orthodox_assessment:
+      status: "REJECTED by Christian orthodoxy"
+      theological_problems:
+        - "Implies angels participate in creation (contra Isa 44:24 'I alone')"
+        - "Diminishes uniqueness of Trinity"
+        - "Opens door to polytheistic misunderstanding"
+      why_rejected: "Conflicts with NT Trinitarian revelation and Isa 44:24; not compatible with Christian theology"
+
+    non_orthodox_use:
+      - tradition: "Jewish (non-Messianic)"
+        status: "May use this interpretation"
+        notes: "Valid within Judaism with proper clarification that creation is by God alone"
+        supporting_texts: "Psalm 82, Job 1-2 (divine assembly imagery)"
 
   - value: majestic_plural
     rationale: "Royal 'we' - singular God speaking majestically"
-    theological_problems:
-      - "Doesn't explain plural 'our image'"
-      - "Weak linguistic evidence for Hebrew majestic plural"
-    why_rejected: "Inconsistent with 'Let us' + 'our image' construction"
+    christian_orthodox_assessment:
+      status: "WEAK / LESS PREFERRED"
+      theological_problems:
+        - "Doesn't explain plural 'our image'"
+        - "Weak linguistic evidence for Hebrew majestic plural"
+        - "Doesn't account for NT Trinitarian revelation"
+      why_less_preferred: "Inconsistent with 'Let us' + 'our image' construction; Trinity is clearer interpretation"
 
-cultural_considerations:
-  - culture: "Monotheistic (Jewish/Islamic)"
-    implication: "May resist Trinitarian interpretation"
-    guidance: "Respect monotheistic sensitivity; present both readings"
-    safety: "Never force Trinity on monotheistic translation"
+    non_orthodox_use:
+      - tradition: "Islamic"
+        status: "May use this interpretation"
+        notes: "Preserves Tawhid (strict monotheism); valid within Islam but not Christian orthodox interpretation"
 
-  - culture: "Polytheistic backgrounds"
-    implication: "May misinterpret plural as multiple gods"
-    guidance: "Emphasize Deut 6:4 (monotheism) alongside Trinity"
-    safety: "Clarify Trinity ≠ three gods"
+theological_framework:
+  christian_orthodox_position:
+    interpretation: "Trinity (Father, Son, Spirit in creative dialogue)"
+    textual_basis: "NT revelation (Matt 28:19, John 1:1-3, 2 Cor 13:14), Nicene Creed"
+    church_fathers: "Augustine, Athanasius - unanimous on Trinity in creation"
+    denominational_unity:
+      - "Protestant: Trinity affirmed, trial number if language has it"
+      - "Catholic: Trinity affirmed, trial number if language has it"
+      - "Orthodox: Trinity affirmed, trial number if language has it"
+      - "Coptic: Trinity affirmed, trial number if language has it"
+    denominational_variations: "Minor differences in explaining 'persons' vs 'hypostases', but Trinity doctrine is unified"
+    recommended_translation: "Trial number if available (grammatically encodes Trinity), plural with footnote if not"
 
-  - culture: "Honor/shame (East Asian)"
-    implication: "Plural of modesty culturally resonant"
-    guidance: "Connect with cultural communication patterns"
+  non_orthodox_views_for_awareness:
+    - group: "Jehovah's Witnesses (cult)"
+      interpretation: "Jehovah + Michael the Archangel creating"
+      why_rejected_by_christianity: "Denies deity of Christ (John 1:1 'and the Word was God'); makes 'us' = God + created being, introducing Arian heresy"
+      translator_warning: "CRITICAL: This interpretation enables false teaching about Christ's nature"
+
+    - group: "Mormons / LDS (cult)"
+      interpretation: "Council of gods creating"
+      why_rejected_by_christianity: "Polytheism; contradicts biblical monotheism (Deut 6:4, Isa 44:6-8)"
+      translator_warning: "CRITICAL: Violates monotheism, introduces polytheistic heresy"
+
+    - group: "Jewish (non-Messianic)"
+      interpretation: "Majestic plural or divine council (God + angels, but creation by God alone)"
+      why_not_christian_orthodox: "Rejects NT Trinitarian revelation; does not recognize Jesus as Messiah or second person of Trinity"
+      notes: "Valid within Judaism; translators serving Jewish communities may use this interpretation"
+      textual_concern: "Divine council view must clarify Isa 44:24 'I alone' - angels do not participate in creation"
+
+    - group: "Islamic"
+      interpretation: "Majestic plural (singular God speaking royally)"
+      why_not_christian_orthodox: "Rejects Trinity (Tawhid - strict monotheism); denies deity of Christ"
+      notes: "Valid within Islam; not compatible with Christian theology"
+      textual_concern: "Weak Hebrew linguistic evidence for majestic plural; doesn't explain 'our image'"
+
+cultural_application_notes:
+  - context: "Polytheistic background communities"
+    consideration: "May misunderstand plural as multiple gods"
+    christian_guidance: "Emphasize biblical monotheism (Deut 6:4) AND Trinity (one God, three persons)"
+    clarification: "Trinity ≠ three gods; Trinity = three persons, one God"
+
+  - context: "Honor/shame cultures (e.g., East Asian)"
+    consideration: "Plural of modesty/dignity culturally resonant"
+    christian_guidance: "Can connect Trinity with cultural understanding of honorific speech while maintaining theological accuracy"
 
 translator_guidance:
-  critical_warnings:
-    - "NEVER suggest angels participate in creation"
-    - "NEVER obscure Trinity reference for cultural comfort"
-    - "FLAG for theological review before finalizing"
-  safe_choices:
-    - "Trial number (if language has it) for Trinity"
-    - "Plural with footnote explaining Trinity"
-  unsafe_choices:
-    - "Plural suggesting 3+ beings without Trinity context"
-  denominational_flexibility:
-    - "Catholic/Orthodox/Protestant: Trinity preferred"
-    - "Jewish: Majestic plural or angels acceptable"
-    - "Messianic Jewish: Trial/Trinity"
+  for_christian_translators:
+    - "Trinity is the orthodox Christian interpretation of Gen 1:26"
+    - "Trial number (if your language has it) grammatically encodes Trinity"
+    - "Plural with footnote explaining Trinity if trial unavailable"
+    - "NEVER obscure Trinity reference - this is core Christian doctrine"
+    - "NEVER suggest angels participate in creation (contradicts Isa 44:24)"
+
+  denominational_considerations:
+    - "Protestant/Catholic/Orthodox/Coptic: Unified on Trinity, minor variations in technical terminology"
+    - "Messianic Jewish: Affirm Trinity within Hebrew scripture context"
+
+  avoiding_heresy:
+    - "JW/Arian interpretation (Jesus as created being): REJECT - contradicts John 1:1-3"
+    - "Mormon/polytheistic interpretation (council of gods): REJECT - contradicts Deut 6:4"
+    - "Unitarian interpretation (denies Trinity): REJECT - contradicts NT revelation and creeds"
 ```
 
 ### Multi-Answer Output Format
@@ -474,15 +519,30 @@ alternatives:
     rationale: "Royal we"
     problems: ["Weak linguistic evidence"]
 
-# Provide to translator:
-translator_recommendation: |
-  Prefer TRIAL if your language has it (Trinity doctrine).
-  If only singular/plural: use PLURAL with footnote about Trinity.
-  AVOID: Suggesting angels participate in creation.
+# Provide to Christian translators:
+christian_orthodox_guidance: |
+  TRINITY is the Christian orthodox interpretation of Genesis 1:26.
 
-denominational_notes: |
-  Christian traditions: Trinity (trial/plural with context)
-  Jewish tradition: Majestic plural or angels acceptable
+  Recommended Translation:
+  - TRIAL number if your language has it (grammatically encodes Father, Son, Spirit)
+  - PLURAL with footnote explaining Trinity if trial not available
+  - Example footnote: "The plural 'us' and 'our' refers to the Trinity—Father, Son, and Holy Spirit (cf. John 1:1-3, Matt 28:19)"
+
+  CRITICAL WARNINGS:
+  - NEVER obscure the Trinity reference - this is core Christian doctrine
+  - NEVER suggest angels participate in creation (contradicts Isa 44:24 "I alone")
+  - NEVER use interpretations that deny Christ's deity (JW/Arian heresy)
+
+  Denominational Unity:
+  - Protestant/Catholic/Orthodox/Coptic: Unified on Trinity doctrine
+  - Minor variations in technical terminology, but substance is identical
+
+non_christian_translators_awareness: |
+  If translating for non-Christian communities (Jewish, Islamic, etc.):
+  - Non-orthodox interpretations exist (majestic plural, divine council)
+  - These are NOT Christian orthodox; they reject NT revelation
+  - Translators should understand WHY these differ from Christian interpretation
+  - Purpose: Avoid accidentally introducing non-Christian theology into Christian translations
 ```
 
 **Arbitrary cases**: Single answer only (no alternatives needed)

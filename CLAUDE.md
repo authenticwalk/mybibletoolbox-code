@@ -8,6 +8,63 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the myBibleToolbox project - an initiative to create the largest AI-readable commentary on the entire Bible. The goal is to provide extensive context data for AI systems to ground their responses in truth when working with Biblical texts, especially for Bible translators, pastors, and students.
 
+### Theological Foundation: Conservative Protestant Christian
+
+**CRITICAL**: This is a CHRISTIAN project, grounded in conservative Protestant orthodoxy. All theological content follows this framework:
+
+**1. Primary Perspective: Historic Christian Orthodoxy**
+- Conservative Protestant Christian is the PRIMARY theological perspective
+- Grounded in Scripture as God's inerrant Word
+- Affirms historic Christian creeds (Nicene, Apostles', Athanasian)
+- Core doctrines: Trinity, deity of Christ, salvation by grace through faith, biblical authority
+
+**2. Christian Denominational Variations**
+- Show views of ALL Christian traditions for consideration:
+  - Protestant (various denominations)
+  - Catholic (Roman Catholic)
+  - Orthodox (Eastern Orthodox, Oriental Orthodox)
+  - Coptic
+  - Other historic Christian traditions
+- Present these as VALID CHRISTIAN perspectives worth considering
+- Note where they differ on non-essential matters while affirming shared orthodoxy
+
+**3. Non-Orthodox Views (Cults and Other Religions)**
+- May note alternate views from:
+  - Cults claiming to be Christian (Jehovah's Witnesses, Mormons, etc.)
+  - Non-Christian religions (Judaism, Islam, etc.)
+- MUST explain WHY these are rejected by Christian orthodoxy
+- Label clearly as "not recognized by Christian orthodoxy"
+- Purpose: Help translators avoid theological errors, understand why certain interpretations are problematic
+
+**Example Structure**:
+```yaml
+christian_orthodox_position:
+  interpretation: "Trinity (Father, Son, Spirit in creative dialogue)"
+  textual_basis: "NT revelation (Matt 28:19, John 1:1-3, 2 Cor 13:14)"
+  denominational_considerations:
+    - "Protestant/Catholic/Orthodox: Trinity affirmed"
+    - "Minor variations in explaining 'persons' vs 'hypostases'"
+
+non_orthodox_views_for_awareness:
+  - group: "Jehovah's Witnesses"
+    interpretation: "Michael the Archangel + Jehovah creating"
+    why_rejected_by_christianity: "Denies deity of Christ (John 1:1 'and the Word was God')"
+
+  - group: "Jewish (non-Messianic)"
+    interpretation: "Majestic plural or divine council (angels)"
+    why_not_christian: "Rejects NT Trinitarian revelation, does not recognize Jesus as Messiah"
+```
+
+**Language to Use**:
+- ✅ "Christian orthodox position"
+- ✅ "Denominational considerations within Christianity"
+- ✅ "Rejected by Christian orthodoxy because..."
+- ✅ "Non-orthodox view from [group]"
+- ❌ "All interpretations equally valid"
+- ❌ Treating cults/other religions as valid Christian alternatives
+
+**Scope**: Applies to all theological content - TBTA features, commentary, translation guidance
+
 ## AGENT behaviour
  - NEVER write notes or summaries to the home directory, instead create a plan in ./plans/{your-plan}/README.md then update it with results.  Keep the home directory clean.
  - When moving files always do a git commit before editing it so the git history is preserved
