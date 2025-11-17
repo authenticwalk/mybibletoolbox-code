@@ -365,6 +365,57 @@ From now on:
 
 ---
 
+---
+
+## ARBITRARY VS NON-ARBITRARY FRAMEWORK (OFFICIAL)
+
+**Now integrated into STAGES.md** - See `/workspace/bible-study-tools/tbta/features/STAGES.md`
+
+### Quick Reference
+
+**Classification** (Stage 3):
+- Default: arbitrary (space-saving - not stored)
+- Only mark non-arbitrary when theologically significant
+- Required file: `experiments/ARBITRARITY-CLASSIFICATION.md`
+
+**Non-Arbitrary Criteria** (any one triggers non-arbitrary):
+1. Affects core doctrine (Trinity, salvation, God's nature)
+2. Divine speech impact (commands, promises, judgments)
+3. Interpretive disambiguation (theological ambiguity)
+4. Church practice/authority implications
+5. Denominational differences exist
+
+**Output Format Difference**:
+```yaml
+# Arbitrary (85-90% of cases):
+answer: {single value}
+confidence: {high/medium/low}
+
+# Non-arbitrary (10-15% of cases):
+arbitrarity: non-arbitrary
+preferred: {value}
+preferred_rationale: "{why}"
+alternatives:
+  - value: {alternative}
+    problems: ["{issue1}", "{issue2}"]
+    when_appropriate: "{context}"
+translator_warning: "{critical guidance}"
+```
+
+**Required Files for Non-Arbitrary Features**:
+1. `experiments/ARBITRARITY-CLASSIFICATION.md` (Stage 3)
+2. `experiments/THEOLOGICAL-ANALYSIS.md` (Stage 5)
+3. Multi-answer prompt implementation (Stage 5)
+
+**Enhanced Validation** (Stage 6):
+- 9 additional theological checks
+- Test cases must include non-arbitrary contexts
+- Production checklist: 9-point arbitrarity handling
+
+**See**: `/workspace/plan/tbta-attempt2/STAGES-INTEGRATION-COMPLETE.md` for complete details
+
+---
+
 **Status**: Corrected instructions ready for Phase 1A restart
 **Next Action**: Apply to new feature development attempts
-**Prevention**: Cheating detection checklist + corrected patterns
+**Prevention**: Cheating detection checklist + corrected patterns + arbitrary/non-arbitrary framework
