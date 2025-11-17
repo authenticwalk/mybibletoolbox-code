@@ -36,25 +36,6 @@ This is the myBibleToolbox project - an initiative to create the largest AI-read
 - Label clearly as "not recognized by Christian orthodoxy"
 - Purpose: Help translators avoid theological errors, understand why certain interpretations are problematic
 
-**Example Structure**:
-```yaml
-christian_orthodox_position:
-  interpretation: "Trinity (Father, Son, Spirit in creative dialogue)"
-  textual_basis: "NT revelation (Matt 28:19, John 1:1-3, 2 Cor 13:14)"
-  denominational_considerations:
-    - "Protestant/Catholic/Orthodox: Trinity affirmed"
-    - "Minor variations in explaining 'persons' vs 'hypostases'"
-
-non_orthodox_views_for_awareness:
-  - group: "Jehovah's Witnesses"
-    interpretation: "Michael the Archangel + Jehovah creating"
-    why_rejected_by_christianity: "Denies deity of Christ (John 1:1 'and the Word was God')"
-
-  - group: "Jewish (non-Messianic)"
-    interpretation: "Majestic plural or divine council (angels)"
-    why_not_christian: "Rejects NT Trinitarian revelation, does not recognize Jesus as Messiah"
-```
-
 **Language to Use**:
 - ✅ "Christian orthodox position"
 - ✅ "Denominational considerations within Christianity"
