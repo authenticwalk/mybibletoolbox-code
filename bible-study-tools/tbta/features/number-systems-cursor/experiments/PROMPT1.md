@@ -14,23 +14,63 @@ Follow this hierarchical decision tree from top to bottom. Stop at the first mat
 
 ---
 
-## Level 1: Hardcoded Critical Verses (100% Confidence)
+## Level 1: Explicit Count Detection (High Confidence)
 
-These verses have been pre-determined based on theological and linguistic analysis:
+**Strategy**: Look for explicit numerical indicators in the verse context.
 
-| Verse | Value | Rationale |
-|-------|-------|-----------|
-| GEN.001.026 | **Trial** | "Let us make" - Trinity reference (Father, Son, Spirit) |
-| GEN.001.027 | **Trial** | "In the image of God he created them; male and female" - continues Trinity context, but also dual human pair |
-| GEN.011.007 | **Trial** | "Let us go down" - Trinity in judgment |
-| LUK.024.013 | **Dual** | "Two of them were going" - explicit two disciples |
-| MAT.018.020 | **Paucal** | "Where two or three gather" - small group (2-3) |
-| ACT.013.002 | **Dual** | "Set apart for me Barnabas and Saul" - two missionaries |
-| ACT.015.025 | **Plural** | "It seemed good to us" - apostolic council (multiple leaders) |
-| ACT.015.028 | **Plural** | "It seemed good to the Holy Spirit and to us" - apostolic decision (multiple) |
-| MRK.006.007 | **Dual** | "He sent them out two by two" - explicit pairing |
+### Rule 1.1: Explicit "Two" References
+If verse context clearly indicates **exactly two** entities:
+- Text contains "two" (δύο, שְׁנַיִם)
+- Two specific individuals named together
+- "Both" referring to paired entities
+- "Sent two by two" / "pair by pair"
 
-**Action**: If verse matches above table, return the specified value immediately.
+→ Return **Dual**
+
+**Examples**: "Two disciples", "Two angels", "Barnabas and Saul", "Both of them"
+
+### Rule 1.2: Explicit "Three" References  
+If verse context clearly indicates **exactly three** entities:
+- Text contains "three" (τρεῖς, שְׁלֹשָׁה)
+- Three specific individuals named together
+
+→ Return **Trial**
+
+**Note**: This is rare - most "three" contexts are paucal (a few) not trial (exactly 3)
+
+### Rule 1.3: Explicit "Four" References
+If verse context clearly indicates **exactly four** entities:
+- Text contains "four" (τέσσαρες, אַרְבָּעָה)  
+- Four specific symbolic elements (four living creatures, four corners, four winds, four rivers)
+
+→ Return **Quadrial**
+
+### Rule 1.4: Small Group Indicators ("Two or Three", "A Few")
+If verse context indicates **small indefinite group**:
+- "Two or three" (not specific count)
+- "A few" / "some" (small group)
+- Small house gathering context
+- Small prayer group
+
+→ Return **Paucal**
+
+**Examples**: "Where two or three gather", "A few disciples", "Some of them"
+
+### Rule 1.5: Large Group/Many Indicators
+If verse context indicates **many** or **large group**:
+- "Many" / "crowd" / "multitude"
+- Large assembly / church
+- Explicit large numbers (70, 120, 5000)
+
+→ Return **Plural**
+
+### Rule 1.6: Single Individual
+If verse context clearly indicates **one** entity:
+- Single person named without others
+- "He" / "She" referring to one person
+- Individual prophet, king, apostle
+
+→ Return **Singular**
 
 ---
 
@@ -70,17 +110,25 @@ If verse references these paired elements:
 
 ## Level 3: Theological Context (Medium-High Confidence)
 
-### Rule 3.1: Trinity Contexts
-If verse is in Genesis 1-3 OR Genesis 11:1-9 AND contains:
-- First person plural ("us", "our")
-- Divine creative action
-- God speaking in council
+### Rule 3.1: Trinity/Divine Plural Contexts
+If verse contains **divine first-person plural** ("us", "our") in these contexts:
+- **Creation contexts** (Gen 1-3): God creating, forming, making
+- **Divine judgment contexts** (Gen 11): "Let us go down"
+- **Divine deliberation**: God speaking in council
 
-→ Return **Trial** (Trinitarian interpretation)
+**Detection**:
+- Speaker is God/Lord
+- Uses first person plural ("us", "our", "we")
+- Context is creation, judgment, or divine action
 
-**Examples**:
-- Any "Let us" statements in Gen 1-11 → **Trial**
-- Divine council language in creation → **Trial**
+→ Return **Trial** (Christian Trinitarian interpretation: Father, Son, Holy Spirit)
+
+**Theological Note**: This is Christian orthodox interpretation. Jewish/Islamic traditions may interpret as majestic plural or divine council. For Christian translation, Trial grammatically encodes Trinity.
+
+**Pattern Examples**:
+- "Let us make mankind in our image" (Gen 1:26) → **Trial**
+- "Let us go down and confuse their language" (Gen 11:7) → **Trial**
+- Similar divine plural constructions in creation/judgment contexts → **Trial**
 
 ### Rule 3.2: Small Group Worship/Gathering
 If verse describes small intimate gathering (NOT large assembly):
