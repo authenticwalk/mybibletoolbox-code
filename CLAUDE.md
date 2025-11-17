@@ -8,67 +8,6 @@ This file provides guidance to Claude Code (claude.ai/code) when working with co
 
 This is the myBibleToolbox project - an initiative to create the largest AI-readable commentary on the entire Bible. The goal is to provide extensive context data for AI systems to ground their responses in truth when working with Biblical texts, especially for Bible translators, pastors, and students.
 
-### Core Principle: Faith Tradition Inclusivity
-
-**CRITICAL**: This project serves translators and scholars across ALL faith traditions that use the Bible/Hebrew Scriptures, including but not limited to:
-- Jewish (non-Messianic and Messianic)
-- Christian (all denominations: Catholic, Orthodox, Protestant, etc.)
-- Islamic (Quranic engagement with biblical narratives)
-- Academic/scholarly communities
-
-**When working with theological content**:
-1. ✅ **Present multiple valid interpretations** - Document how different faith traditions understand the text
-2. ✅ **Use objective, descriptive language** - Describe what each tradition teaches WITHOUT imposing preferences
-3. ✅ **Respect all traditions equally** - No tradition is "default" or "correct"; each is valid within its framework
-4. ✅ **Provide data, not prescriptions** - Enable translators to make informed decisions consistent with THEIR faith tradition
-5. ❌ **NEVER assume a default theology** - Don't write as if Christianity/Trinity is assumed and others are exceptions
-6. ❌ **NEVER use hierarchical language** - Avoid "preferred/rejected", "correct/resistant", "forcing/obscuring"
-7. ❌ **NEVER impose interpretations** - Present options; let translators choose based on their community
-
-**Example of WRONG approach**:
-```yaml
-# ❌ BAD: Assumes Christian default, treats others as problems
-cultural_considerations:
-  - culture: "Monotheistic (Jewish/Islamic)"
-    implication: "May resist Trinitarian interpretation"
-    guidance: "Never force Trinity on monotheistic translation"
-```
-
-**Example of CORRECT approach**:
-```yaml
-# ✅ GOOD: Objective presentation of multiple valid traditions
-faith_tradition_considerations:
-  - tradition: "Christian (Trinitarian)"
-    interpretation: "Trinity (Father, Son, Spirit in dialogue)"
-    textual_basis: "NT revelation, church fathers, creeds"
-    data_provided: "Support for Trinitarian reading"
-
-  - tradition: "Jewish (non-Messianic)"
-    interpretation: "Majestic plural or divine council"
-    textual_basis: "Singular monotheism (Deut 6:4), royal speech"
-    data_provided: "Support for non-Trinitarian reading"
-
-  - tradition: "Islamic"
-    interpretation: "Majestic plural (singular God, Tawhid)"
-    textual_basis: "Strict monotheism"
-    data_provided: "Support for singular reference"
-```
-
-**Language to use**:
-- ✅ "Multiple valid interpretations exist across traditions"
-- ✅ "Data supports [X interpretation] within [Y tradition]"
-- ✅ "Valid within this tradition" / "Consistent with this theology"
-- ✅ "Faith-tradition aware" / "Tradition-specific guidance"
-- ❌ "May resist" / "May misinterpret" / "Force" / "Obscure"
-- ❌ "Preferred" / "Rejected" / "Correct" / "Wrong" (when referring to theological positions)
-- ❌ "Never force [theology]" (instead: "Provide data supporting [alternative theology]")
-
-**This applies to**:
-- TBTA feature development (arbitrary/non-arbitrary analysis)
-- Commentary generation (cultural/theological notes)
-- Translation guidance (denominational considerations)
-- All theological content creation
-
 ## AGENT behaviour
  - NEVER write notes or summaries to the home directory, instead create a plan in ./plans/{your-plan}/README.md then update it with results.  Keep the home directory clean.
  - When moving files always do a git commit before editing it so the git history is preserved
@@ -116,7 +55,7 @@ The following are key files you can load.  Don't load them automatically as it w
    - 3-phase: data extraction first, then analysis, then validation
    - output schema with required fields (verse, inline citations, metadata)
    - define tool-specific Level 2 validation requirements
- - **Working with TBTA features**: Read `/bible-study-tools/tbta/README.md`
+ - **Working with TBTA features**: Read `/plan/tbta-rebuild-with-llm/README.md`
 
 ## Repository Structure
 
