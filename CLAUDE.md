@@ -102,7 +102,7 @@ The following are key files you can load.  Don't load them automatically as it w
 All generated commentary data follows this strict directory structure: (See STANDARIZATION.md for examples, edge cases if unsure)
 
 ```
-$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml
+$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml
 $DATA_DIR/strongs/(H|G){strongs-number:04d}/(H|G){strongs-number:04d}-{tool}.strongs.yaml
 $DATA_DIR/topics/{lcc-code}/{slug}/{slug}[-{subsection}]-{tool}.yaml
 $DATA_DIR/languages/{ISO-639-3}/{ISO-639-3}-{tool}.yaml
