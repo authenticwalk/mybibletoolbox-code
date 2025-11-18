@@ -166,77 +166,67 @@ For each marking language, document:
 
 **Purpose**: Not just validation, but DISCOVERY - analyze what these translators chose to understand the correct answer
 
-## Data Extraction Process (Integrated TBTA + Translations)
+## Data Extraction Process (TBTA Data + Optional Translations)
 
-**Dual Output Strategy**: For every verse, generate BOTH answer sheet (TBTA values) AND question sheet (real translations)
+**Key Insight**: TBTA already contains the answers! Use TBTA for algorithm development; fetch translations only when needed for validation.
 
-### Step 1: Extract TBTA Data (Answer Sheet)
+### Step 1: Extract TBTA Data
 
 **Using extract_feature.py script**:
 ```bash
 python src/ingest-data/tbta/extract_feature.py \
   --field "Person" \
   --max-per-value 2000 \
-  --output features/{feature}/raw_tbta_data.yaml
+  --output features/{feature}/experiments/raw_tbta_data.yaml
 ```
 
 **Script outputs**:
-- All verses with this TBTA feature
+- All verses with this TBTA feature (from your memory of TBTA corpus)
 - Frequency counts per value
 - OT/NT and book distribution
 - Up to 2000 verses per value (LRU cache)
 
-### Step 2: LLM Sample Selection (Subagent)
+### Step 2: Sample & Split with Optional Translation Fetching
 
-**Subagent responsibilities** (with access to raw TBTA data only):
-1. **Ensure sparse checkout of translation data**:
-   ```bash
-   cd .data
-   git sparse-checkout add 'commentary/**/*-ebible.yaml'
-   ```
+**Using stratified sampling script**:
+```bash
+python experiments/sample_and_split.py \
+  --input raw_tbta_data.yaml \
+  --target-languages tgl,mri,fij,smo,ind \
+  --fetch-translations  # OPTIONAL: fetch during generation
+```
 
-2. **Sample with stratification**:
+**Script responsibilities**:
+1. **Stratified sampling**:
    - Testament: Proportional OT/NT
    - Genre: Classify as narrative/poetry/prophecy/epistle
    - Difficulty: Mark typical vs adversarial cases
    - Book distribution: Avoid concentration
 
-3. **Use Quote Bible skill**:
-   - In /.claude/skills/quote-bible/SKILL.md
-   - Query 3-5 sample verses
-   - Identify available translation languages/codes
-   - Verify accessibility
+2. **Split into train/test/validate** (40%/30%/30%)
 
-4. **Select representative translations** (5-10 languages):
-   - Prioritize languages that mark this feature
-   - Cover multiple language families
-   - Mix direct (Greek/Hebrew) and derived translations
-   - Document selection rationale
+3. **Generate answer sheets** with TBTA values:
+   - `train.yaml`, `test.yaml`, `validate.yaml`
+   - Contains verse references + TBTA values + metadata
 
-5. **Split into train/test/validate** (40%/30%/30%)
+4. **OPTIONAL: Fetch translations during generation**:
+   - If `--fetch-translations` flag provided
+   - Uses Quote Bible skill (.claude/skills/quote-bible/scripts/fetch_verse.py)
+   - Fetches specified languages for each verse
+   - Generates `train_questions.yaml`, `test_questions.yaml`, `validate_questions.yaml`
+   - **Advantage**: Single integrated workflow
+   - **Trade-off**: Takes longer (network calls) but avoids separate fetching step
 
-### Step 3: Generate Question Sheets (Translation Data)
+5. **Without --fetch-translations**:
+   - Generates question sheets with placeholder: `translations: TO_BE_FETCHED`
+   - Fetch later only if needed for validation/refinement
+   - Faster initial dataset generation
 
-**For each split (train, test, validate)**, generate question sheet with real translations:
-
-**Script usage** (concept - to be implemented):
-```bash
-python src/ingest-data/generate_question_sheet.py \
-  --answer-sheet features/{feature}/experiments/train.yaml \
-  --translations tgl,mri,fij,smo,ind \
-  --output features/{feature}/experiments/train_questions.yaml
-```
-
-**Script responsibilities**:
-- Read answer sheet verses
-- For each verse, lookup `.data/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-ebible.yaml`
-- Extract specified translation language texts
-- Format as question sheet (translations only, NO TBTA values)
-
-**Alternative (manual process)**:
-- Use Quote Bible skill for each verse
-- Extract selected language translations
-- Create question YAML manually
+**Selecting Target Languages**:
+1. Query 3-5 sample verses using Quote Bible skill
+2. Identify available translation languages/codes
+3. Select 5-10 languages that mark this feature
+4. Document selection in `TRANSLATION-DATABASE.md`
 
 ### Output File Structure
 
@@ -297,21 +287,40 @@ features/{feature}/experiments/
 ```
 
 **Main Agent Workflow**:
-- Receives only paths to question sheets (never sees answer sheets until scoring)
-- Uses translations to discover/validate predictions
+- Primary: Uses TBTA answer sheets (train.yaml) for algorithm development
+- Optional: Uses translation question sheets (train_questions.yaml) for validation/refinement
+- Locks predictions before checking test/validate answer sheets
 - Compares against TBTA answers only after predictions are locked
 
-# 5. Analyze Translations & Develop Algorithm
+**Key Point**: You already know the answers from TBTA data in your memory. Don't fetch 1,000+ verses to "discover" what you already know!
 
-**Core Principle**: Discover answers from what real translators did, not just from TBTA annotations alone.
+# 5. Develop Algorithm Using TBTA Data
 
-## Translation Discovery Analysis (Primary Source)
+**Core Principle**: TBTA contains the answers in your memory. Use TBTA data (train.yaml) for algorithm development. Translations are optional for validation/refinement.
 
-For each verse in `train_questions.yaml`, analyze what real translators chose:
+## Primary Workflow: TBTA-Based Development
 
-### Step 1: Translation Pattern Analysis
+**You already have the answers**: `train.yaml` contains TBTA values for all training verses.
 
-**For each training verse**:
+### Step 1: Analyze TBTA Patterns
+
+**For each training verse in `train.yaml`**:
+1. **Read verse reference + TBTA value**
+2. **Identify the pattern** that predicts this value
+   - Example: "Let us make" (divine plural + creation context) → Trial
+   - Example: "Two of them" (explicit count) → Dual
+3. **Group verses by pattern type**
+4. **Document patterns in `experiments/ANALYSIS.md`**
+
+## Optional: Translation-Informed Refinement
+
+**When to use translations**:
+- Validating ambiguous cases
+- Checking cross-linguistic consistency
+- Refining edge case handling
+- Building confidence in non-arbitrary contexts
+
+**How to use translations** (if `*_questions.yaml` files exist):
 1. **Read the translations** (from train_questions.yaml)
 2. **Identify the feature value** each translation reveals
    - Example (clusivity): Tagalog uses "tayo" (inclusive) vs "kami" (exclusive)

@@ -8,894 +8,3294 @@ verses:
   testament: OT
   genre: narrative
   book: 1KI
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kahore he mea i roto i te aaka, ko nga papa kohatu e rua anake i whaowhina
+      nei ki reira e Mohi i Horepa i ta Ihowa whakaritenga kawenata ki nga tama a
+      Iharaira, i to ratou putanga mai i te whenua o Ihipa.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: There was nothing in the ark except the two stone tablets that Moses had
+      placed in it at Horeb, where the LORD made a covenant with the Israelites after
+      they came out of Egypt.
+    eus: NOT_AVAILABLE
 - reference: 1KI.008.038
   testament: OT
   genre: narrative
   book: 1KI
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ki te mea he inoi, he karanga ranei na tetahi tangata, na tau iwi katoa
+      ranei, na Iharaira, ina mohio ratou ki te mate o tona ngakau, o tona ngakau,
+      a ka wherahia ona ringa ki te ritenga mai o tenei whare:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: and when a prayer or plea is made by anyone among your people Israel--being
+      aware of the afflictions of their own hearts, and spreading out their hands
+      toward this temple--
+    eus: NOT_AVAILABLE
 - reference: 1KI.010.017
   testament: OT
   genre: narrative
   book: 1KI
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A i hangaia e ia etahi pukupuku iti iho e toru rau, he mea patu te koura:
+      e toru pauna koura ki te pukupuku kotahi: a hoatu ana e te kingi ki te whare
+      o te ngahere o Repanona.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: He also made three hundred small shields of hammered gold, with three minas
+      of gold in each shield. The king put them in the Palace of the Forest of Lebanon.
+    eus: NOT_AVAILABLE
 - reference: 1KI.012.005
   testament: OT
   genre: narrative
   book: 1KI
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka mea ia ki a ratou, Haere, kia toru nga ra, ka hoki mai ano ki ahau.
+      Na haere ana te iwi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Rehoboam answered, "Go away for three days and then come back to me." So
+      the people went away.
+    eus: NOT_AVAILABLE
 - reference: 1KI.020.027
   testament: OT
   genre: narrative
   book: 1KI
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka taua ano nga tama a Iharaira, a ka whai kai, a ka haere ki te tu i
+      a ratou: a noho ana nga tama a Iharaira i to ratou ritenga atu, koia ano kei
+      nga kahui iti e rua o nga kuao koati; ko nga Hiriani ia, kapi ana te whenua
+      i a ratou.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: When the Israelites were also mustered and given provisions, they marched
+      out to meet them. The Israelites camped opposite them like two small flocks
+      of goats, while the Arameans covered the countryside.
+    eus: NOT_AVAILABLE
 - reference: 1SA.006.008
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka tiki i te aaka a Ihowa, ka whakatakoto ki runga ki te kaata; a ka hoatu
+      ki tona taha, ki roto i tetahi pouaka, nga mea koura, ta koutou whakahere mo
+      te he hei whakahokinga ki a ia; a ka tuku ai kia haere.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Take the ark of the LORD and put it on the cart, and in a chest beside it
+      put the gold objects you are sending back to him as a guilt offering. Send it
+      on its way,
+    eus: NOT_AVAILABLE
 - reference: 1SA.009.020
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A ko au kaihe, ka toru nei nga ra e ngaro ana, kaua tou ngakau e whai ki
+      era; kua kitea hoki. Kei a wai koia te hiahia katoa o Iharaira? he teka ianei
+      kei a koe, kei te whare katoa ano hoki o tou papa?
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: As for the donkeys you lost three days ago, do not worry about them; they
+      have been found. And to whom is all the desire of Israel turned, if not to you
+      and your whole family line?"
+    eus: NOT_AVAILABLE
 - reference: 1SA.010.003
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Katahi ka haere tonu atu koe i reira, a ka tae ki te oki o Taporo, ka tupono
+      ki a koe etahi tangata tokotoru e haere ana ki runga, ki te Atua, ki Peteere,
+      e toru nga kuao koati e kawea ana e tetahi, e toru nga rohi taro e kawea ana
+      e tetahi, a ko tetahi e mau ana i te pounamu waina.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: '"Then you will go on from there until you reach the great tree of Tabor.
+      Three men going up to worship God at Bethel will meet you there. One will be
+      carrying three young goats, another three loaves of bread, and another a skin
+      of wine.'
+    eus: NOT_AVAILABLE
 - reference: 1SA.020.020
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A maku e kopere etahi pere kia toru ki tona taha, ano e kopere ana ki tetahi
+      koperenga pere.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: I will shoot three arrows to the side of it, as though I were shooting at
+      a target.
+    eus: NOT_AVAILABLE
 - reference: 1SA.030.001
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, no ka tae a Rawiri ratou ko ana tangata ki Tikiraka i te toru o nga ra,
+      na kua huaki nga Amareki ki te tonga, ki Tikiraka ano, patua ana a Tikiraka
+      e ratou, tahuna ake ki te ahi;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: David and his men reached Ziklag on the third day. Now the Amalekites had
+      raided the Negev and Ziklag. They had attacked Ziklag and burned it,
+    eus: NOT_AVAILABLE
 - reference: 1SA.031.007
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, no te kitenga o nga tangata o Iharaira i tera taha o te raorao, i tawhi
+      ano o Horano, kua whati nga tangata o Iharaira, a kua mate a Haora ratou ko
+      ana tama, whakarerea ake e ratou nga pa, a rere ana; na ka haere nga Pirihitini
+      nohoia iho.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: When the Israelites along the valley and those across the Jordan saw that
+      the Israelite army had fled and that Saul and his sons had died, they abandoned
+      their towns and fled. And the Philistines came and occupied them.
+    eus: NOT_AVAILABLE
 - reference: 1SA.031.012
   testament: OT
   genre: narrative
   book: 1SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ka whakatika nga marohirohi katoa, a haere ana pau noa taua po katoa; na
+      tangohia iho e ratou te tinana o Haora, me nga tinana o ana tama i te taiepa
+      o Petehana, a haere ana ki Iapehe, tahuna ana ki reira.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: all their valiant men marched through the night to Beth Shan. They took down
+      the bodies of Saul and his sons from the wall of Beth Shan and went to Jabesh,
+      where they burned them.
+    eus: NOT_AVAILABLE
 - reference: 1TH.001.001
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na Paora, na ratou ko Hirawanu, ko Timoti, ki te hahi o te hunga o Teharonika
+      i roto i te Atua Matua, i te Ariki hoki, i a Ihu Karaiti: Kia tau te aroha noa
+      ki a koutou me te rangimarie.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: 'Paul, Silas and Timothy, To the church of the Thessalonians in God the Father
+      and the Lord Jesus Christ: Grace and peace to you.'
+    eus: PAVLEC eta Siluanoc eta Timotheoc Thessaloniceanoén Eliça, Iainco Aitán eta
+      Iesus Christ gure Iaunean denari, Gratia dela çuequin eta baquea gure Iainco
+      Aitaganic, eta Iesus Christ Iaunaganic.
 - reference: 1TH.001.005
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kihai hoki ta matou rongopai i tae atu ki a koutou i runga i te kupu anake,
+      engari i te kaha, i te Wairua Tapu, nui atu hoki te u o te ngakau; pera ano
+      me koutou e matau na ki to matou ahua i roto i a koutou, he whakaaro ki a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: because our gospel came to you not simply with words but also with power,
+      with the Holy Spirit and deep conviction. You know how we lived among you for
+      your sake.
+    eus: Ecen gure Euangelioa consistitu içan da çuec baithan ez hitzean solament,
+      baina verthutean-ere, eta Spiritu sainduan, eta segurança handitan, daquiçuen
+      beçala nolaco içan garen çuen artean çuengatic.
 - reference: 1TH.001.006
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A ka whai koutou i ta matou tauira, i ta te Ariki hoki, i riro uaua atu na
+      i a koutou te kupu, me te whakahari ano ia a te Wairua Tapu.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: You became imitators of us and of the Lord, for you welcomed the message
+      in the midst of severe suffering with the joy given by the Holy Spirit.
+    eus: 'Çuec-ere gure imitaçale eguin içan çarete eta Iaunaren, recebituric hitza
+      anhitz tribulationerequin, Spiritu sainduaren bozcariorequin:'
 - reference: 1TH.001.007
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: No ka waiho koutou hei tauira ki te hunga whakapono katoa o Makeronia, o
+      Akaia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: And so you became a model to all the believers in Macedonia and Achaia.
+    eus: Hala non Macedonian eta Achaian sinhesten duten gucién exemplu içan baitzarete.
 - reference: 1TH.002.002
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Heoi mate ana matou i mua ra, tukinotia ana i Piripai, e matau na koutou,
+      otira maia tonu matou i roto i to tatou Atua ki te korero i te rongopai o te
+      Atua ki a koutou i roto i te uaua nui.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: We had previously suffered and been treated outrageously in Philippi, as
+      you know, but with the help of our God we dared to tell you his gospel in the
+      face of strong opposition.
+    eus: Baina are, daquiçuen beçala, lehenetic affligitu eta iniuriatu içan baguinen-ere
+      Philippesen, hardieça hartu vkan dugu gure Iaincoan, çuey Iaincoaren Euangelioaren
+      predicatzera combat handirequin.
 - reference: 1TH.002.004
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Engari, ka pai nei te Atua kia tukua ki a matou te rongopai, ka pera ta matou
+      korero; ehara i te mea kia whakamanawarekatia te tangata, engari te Atua, e
+      whakamatautau nei i o tatou ngakau.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: On the contrary, we speak as those approved by God to be entrusted with the
+      gospel. We are not trying to please people but God, who tests our hearts.
+    eus: Baina nola Iaincoaz approbatu içan baicara Euangelioaren predicationea eman
+      lequigun, hala minçatzen gara, ez guiçonén gogara eguin nahi baguendu beçala,
+      baina Iaincoaren, ceinec gure bihotzac approbatzen baititu.
 - reference: 1TH.002.008
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Pera tonu to matou matenui ki a koutou, ehara i te mea ko te rongopai anake
+      o te Atua ta matou i pai ai kia hoatu ki a koutou, engari ko o matou ake wairua,
+      i te mea kua aroha nui matou ki a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: so we cared for you. Because we loved you so much, we were delighted to share
+      with you not only the gospel of God but our lives as well.
+    eus: Hunela çuetara affectionatuac guinelaric, desir guenduen çuey partitzera
+      ez solament Iaincoaren Euangelioa, baina gure arima propriac-ere, ceren guçaz
+      onhetsiac baitzineten.
 - reference: 1TH.002.009
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'E mahara ana hoki koutou, e oku teina, ki ta matou mahi, ki to matou mauiui:
+      mahi ana matou i te po, i te ao, kei taimaha ki tetahi o koutou, kauwhautia
+      ana hoki e matou te rongopai o te Atua ki a koutou.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Surely you remember, brothers and sisters, our toil and hardship; we worked
+      night and day in order not to be a burden to anyone while we preached the gospel
+      of God to you.
+    eus: 'Ecen orhoit çarete, anayeác, gure trabailluaz eta nequeaz: ecen gau eta
+      egun languiten ari guinela, çuetaric nehoren phorogu ezguinençát, predicatu
+      vkan dugu çuec baithan Iaincoaren Euangelioa.'
 - reference: 1TH.002.015
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ratou hoki i whakamate te Ariki, a Ihu, me nga poropiti, a i pana matou
+      ki waho; kahore a ratou whakamanawareka ki te Atua, a he hoariri ratou no nga
+      tangata katoa.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: who killed the Lord Jesus and the prophets and also drove us out. They displease
+      God and are hostile to everyone
+    eus: 'Ceinéc Iesus Iauna-ere hil vkan baituté, eta berén Propheta propriac, gu-ere
+      persecutatu vkan gaituzté, eta eztirade Iaincoaren gogaraco, eta guiçon gucién
+      contrario dirade:'
 - reference: 1TH.002.017
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko matou ia, e oku teina, he iti nei te wahi kua wehea mai nei matou i a
+      koutou, ko nga tinana, kahore te ngakau, hira rawa to matou takare kia kite
+      i to koutou kanohi, nui atu te hiahia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: But, brothers and sisters, when we were orphaned by being separated from
+      you for a short time (in person, not in thought), out of our intense longing
+      we made every effort to see you.
+    eus: Eta gu, anayeác, çuetaric separaturic dembora appurbatetacotz ikustez, ez
+      bihotzez, hambat cineçago emplegatu içan gara çuen beguithartearen ikustera,
+      desir handirequin.
 - reference: 1TH.002.018
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: No reira, i te whai kia tae atu ki a koutou, ko ahau, ko Paora, i tuatahi,
+      a i tuarua; heoi na Hatana matou i whakaware.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: For we wanted to come to you--certainly I, Paul, did, again and again--but
+      Satan blocked our way.
+    eus: Halacotz ethorri nahi içan gara çuetara (ni Paul behinçát) behin eta berriz,
+      baina empatchatu vkan gaitu Satanec.
 - reference: 1TH.003.001
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, i te kore e taea te ngakau te pehi tonu, i pai matou kia mahue ko matou
+      anake i Atene.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: So when we could stand it no longer, we thought it best to be left by ourselves
+      in Athens.
+    eus: Halacotz guehiagoric ecin pairatuz, on irudi içan çaicu gueuroc Athenesen
+      gueldi guentecen.
 - reference: 1TH.003.001
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, i te kore e taea te ngakau te pehi tonu, i pai matou kia mahue ko matou
+      anake i Atene.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: So when we could stand it no longer, we thought it best to be left by ourselves
+      in Athens.
+    eus: Halacotz guehiagoric ecin pairatuz, on irudi içan çaicu gueuroc Athenesen
+      gueldi guentecen.
 - reference: 1TH.003.008
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko to matou ora nei hoki tenei, ara kia tu tonu koutou i runga i te Ariki.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: For now we really live, since you are standing firm in the Lord.
+    eus: Ecen orain gara vici, baldin çuec fermu baçaudete Iaunean.
 - reference: 1TH.003.011
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ma te Atua ake ano, ara ma to tatou Matua, ma to tatou Ariki hoki, ma
+      Ihu Karaiti, e whakatika to matou ara ki a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Now may our God and Father himself and our Lord Jesus clear the way for us
+      to come to you.
+    eus: Bada, gure Iainco eta Aitac, eta Iesus Christ gure Iaunac chuchent deçala
+      gure çuetaratco bidea.
 - reference: 1TH.003.011
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ma te Atua ake ano, ara ma to tatou Matua, ma to tatou Ariki hoki, ma
+      Ihu Karaiti, e whakatika to matou ara ki a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Now may our God and Father himself and our Lord Jesus clear the way for us
+      to come to you.
+    eus: Bada, gure Iainco eta Aitac, eta Iesus Christ gure Iaunac chuchent deçala
+      gure çuetaratco bidea.
 - reference: 1TH.004.001
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Heoi, e oku teina, he mea tenei na matou, he whakahau ki a koutou i roto
+      i te Ariki, i a Ihu, kua riro atu na hoki ta matou i a koutou, a e meinga na
+      hoki e koutou, ara te tikanga mo ta koutou haere, mo ta koutou whakamanawareka
+      atu ki te Atua, n a, kia tino hira rawa tera a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: As for other matters, brothers and sisters, we instructed you how to live
+      in order to please God, as in fact you are living. Now we ask you and urge you
+      in the Lord Jesus to do this more and more.
+    eus: Gaineracoaz bada anayeác, othoizten çaituztegu, eta requeritzen Iesus Iaunaz,
+      gureganic recebitu vkan duçuen beçala, nola ebili behar çareten eta Iaincoaren
+      gogaraco içan, guerotic guerora auançago çaitezten.
 - reference: 1TH.004.003
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko ta te Atua hoki tenei e pai ai, ara ko to koutou whakatapunga, kia mawehe
+      koutou i te moepuku.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: 'It is God''s will that you should be sanctified: that you should avoid sexual
+      immorality;'
+    eus: 'Ecen haur da Iaincoaren vorondatea,çuen sanctificationea, paillardiçataric
+      beguira çaitezten:'
 - reference: 1TH.004.006
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia kaua tetahi e tinihanga, e whakapati i te mea a tona teina; no te mea
+      ko te Ariki te kairapu utu mo era mahi katoa; ko ta matou hoki ia i korero ai
+      i mua, i whakaatu atu ai ki a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: and that in this matter no one should wrong or take advantage of a brother
+      or sister. The Lord will punish all those who commit such sins, as we told you
+      and warned you before.
+    eus: 'Nehorc ezteçala aurizqui edo engana bere anayea eceinere eguitecotan: ecen
+      Iauna gauça hauen gucién mendecaçale da, nola lehen-ere erran eta testificatu
+      baitrauçuegu.'
 - reference: 1TH.004.009
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te aroha ia ki nga teina, kahore a koutou mea e tuhituhi atu ai ahau ki
+      a koutou; he mea whakaako hoki koutou na ano e te Atua ki te aroha tetahi ki
+      tetahi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Now about your love for one another we do not need to write to you, for you
+      yourselves have been taught by God to love each other.
+    eus: Anayetassunezco charitateaz den becembatean, eztuçue mengoaric scriba dieçaçuedan
+      ecen ceuroc Iaincoaz iracatsiac çarete, elkar onhets deçaçuen.
 - reference: 1TH.004.010
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko ta koutou hoki tena e mea na ki nga teina katoa a puta noa i Makeronia.
+      Heoi he whakahau ano tenei na matou ki a koutou, e oku teina, kia hira rawa
+      tena a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: And in fact, you do love all of God's family throughout Macedonia. Yet we
+      urge you, brothers and sisters, to do so more and more,
+    eus: 'Ecen eguiten-ere baduçue haur Maeedonia gucian diraden anaye orotará: baina
+      othoizten çaituztegu, anayeác, guerotic guerora auançago çaitezten,'
 - reference: 1TH.004.013
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: E kore ia matou e pai, e oku teina, kia kuware koutou ki te hunga kua moe,
+      kei koingo koutou, kei pera me era atu kahore nei o ratou tumanakotanga atu.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Brothers and sisters, we do not want you to be uninformed about those who
+      sleep in death, so that you do not grieve like the rest of mankind, who have
+      no hope.
+    eus: Eta eztut nahi çuec ignorant çareten, anayeác, lo daunçanéz den becembatean,
+      contrista etzaiteztençát, berce goitico sperançaric eztutenac-ere beçala.
 - reference: 1TH.004.016
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: No te mea ko te Ariki pu ano e heke iho i te rangi me te karanga, me te reo
+      o te tino anahera, me te tetere a te Atua; a ko te hunga kua mate i roto i a
+      te Karaiti e ara i mua.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: For the Lord himself will come down from heaven, with a loud command, with
+      the voice of the archangel and with the trumpet call of God, and the dead in
+      Christ will rise first.
+    eus: 'Ecen Iauna bera exhortationezco oihurequin, eta Archangelu vozequin, eta
+      Iaincoaren trompettarequin iautsiren da cerutic: eta Christean hilac resuscitaturen
+      dirade lehenic:'
 - reference: 1TH.005.001
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko nga wa ia me nga taima, e oku teina, kahore he take e tuhituhi atu ai
+      ahau ki a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Now, brothers and sisters, about times and dates we do not need to write
+      to you,
+    eus: Demboréz eta momentéz den becembatean, anayeác, ezta mengoaric scriba dieçaçuedan.
 - reference: 1TH.005.002
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: E matau pu ana hoki koutou, tera e haere mai te ra o te Ariki, ano he tahae
+      i te po.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: for you know very well that the day of the Lord will come like a thief in
+      the night.
+    eus: Ecen ceuroc badaquiçue vngui ecen Iaunaren eguna ethorriren dela, ohoina
+      gauaz beçala.
 - reference: 1TH.005.005
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'He tama koutou katoa no te marama, he tama no te ra: ehara tatou i te po,
+      ehara i te pouri.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: You are all children of the light and children of the day. We do not belong
+      to the night or to the darkness.
+    eus: 'Çuec gucioc arguiaren haour çarete, eta egunaren haour: ezgara gauaren edo
+      ilhumbearen haour.'
 - reference: 1TH.005.008
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia whai whakaaro tatou, ko tatou nei te hunga o te ra, kia kakahuria iho
+      te whakapono me te aroha hei pukupuku; hei potae hoki, ko te tumanako atu ki
+      te ora.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: But since we belong to the day, let us be sober, putting on faith and love
+      as a breastplate, and the hope of salvation as a helmet.
+    eus: Baina gu egunaren garenoc, garén sobre, fedezco eta charitatezco halacretaz
+      veztituac, eta casquet orde, saluamendutaco sperançáz.
 - reference: 1TH.005.008
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia whai whakaaro tatou, ko tatou nei te hunga o te ra, kia kakahuria iho
+      te whakapono me te aroha hei pukupuku; hei potae hoki, ko te tumanako atu ki
+      te ora.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: But since we belong to the day, let us be sober, putting on faith and love
+      as a breastplate, and the hope of salvation as a helmet.
+    eus: Baina gu egunaren garenoc, garén sobre, fedezco eta charitatezco halacretaz
+      veztituac, eta casquet orde, saluamendutaco sperançáz.
 - reference: 1TH.005.023
   testament: NT
   genre: epistle
   book: 1TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A ma te Atua pu ano o te rangimarie e tino whakatapu rawa koutou: kia tiakina
+      hoki o koutou wairua, o koutou ngakau, o koutou tinana, kia toitu, kia hekore,
+      i te taenga mai o to tatou Ariki, o Ihu karaiti.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: May God himself, the God of peace, sanctify you through and through. May
+      your whole spirit, soul and body be kept blameless at the coming of our Lord
+      Jesus Christ.
+    eus: 'Bada Iainco baquezcoac ossoqui sanctifica çaitzatela: eta çuen spiritu gucia
+      eta arima eta gorputza hoguen gabe, Iesus Christ gure Iaunaren aduenimenduco
+      beguira ditecela.'
 - reference: 2JN.001.001
   testament: NT
   genre: epistle
   book: 2JN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na te kaumatua ki te wahine rangatira whiriwhiri ratou ko ana tamariki,
+      e arohatia ponotia nei e ahau; ehara i te mea e ahau anake, engari e nga tangata
+      katoa kua matau ki te pono:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: The elder, To the lady chosen by God and to her children, whom I love in
+      the truth--and not I only, but also all who know the truth--
+    eus: 'ANCIANOAC andre elegituari, eta haren haourrey, cein nic eguiaz maite baititut,
+      eta ez nic neurorrec solament, baina eguiá eçagutu vkan duten guciéc-ere:'
 - reference: 2JN.001.003
   testament: NT
   genre: epistle
   book: 2JN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia tau ki a koutou te aroha noa, te mahi tohu, me te rangimarie, he mea
+      na te Atua Matua, na te Ariki hoki, na Ihu Karaiti, na te Tama a te Matua, i
+      runga ano i te pono, i te aroha.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Grace, mercy and peace from God the Father and from Jesus Christ, the Father's
+      Son, will be with us in truth and love.
+    eus: Gratia, misericordia, baquea dela çuequin Iainco Aitaganic, eta Aitaren Seme
+      Iesus Christ Iaunaganic, eguiarequin eta charitaterequin.
 - reference: 2JN.001.005
   testament: NT
   genre: epistle
   book: 2JN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, tenei ano taku kupu ki a koe, e tai, ehara i te ture hou taku e tuhituhi
+      atu nei ki a koe, engari ko tera i a tatou no te timatanga, kia aroha tatou
+      tetahi ki tetahi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: And now, dear lady, I am not writing you a new command but one we have had
+      from the beginning. I ask that we love one another.
+    eus: Eta orain othoitz eguiten draunat, andreá, ez manamendu berriric scribatzen
+      banaraun beçala, baina hatseandanic vkan duguna, elkarri on daritzogun.
 - reference: 2JN.001.007
   testament: NT
   genre: epistle
   book: 2JN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: He tokomaha hoki te hunga whakapohehe kua tae mai ki te ao, kahore nei i
+      whakaae i haere mai a Ihu Karaiti i te kikokiko. Ko te kaiwhakapohehe tenei,
+      ko te anatikaraiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: I say this because many deceivers, who do not acknowledge Jesus Christ as
+      coming in the flesh, have gone out into the world. Any such person is the deceiver
+      and the antichrist.
+    eus: 'Ecen anhitz abusari sarthu içan da mundura, ceinéc ezpaitute confessatzen
+      Iesus Christ haraguitan ethorri içan dela: halacoa abusari da eta Antechrist.'
 - reference: 2JN.001.009
   testament: NT
   genre: epistle
   book: 2JN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ko te tangata e poka ke ana, kahore nei e mau ki te ako a te Karaiti, kahore
+      te Atua i a ia: ko te tangata e mau ana ki te ako a te Karaiti, kei tenei te
+      Matua me te Tama.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Anyone who runs ahead and does not continue in the teaching of Christ does
+      not have God; whoever continues in the teaching has both the Father and the
+      Son.
+    eus: 'Norc-ere iragaiten baitu, eta ezpaita egoiten Christen doctrinán, Iaincoa
+      eztu: Christen doctrinán egoiten denac Aita eta Semea baditu.'
 - reference: 2JN.001.012
   testament: NT
   genre: epistle
   book: 2JN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'He maha nga mea hei tuhituhinga atu maku ki a koutou, heoi kihai ahau i
+      pai kia tuhia atu ki te pepa, ki te mangumangu: engari e mea ana ahau tera ahau
+      e haere atu ki a koutou, a ka korero atu, he mangai, he mangai, kia tino nui
+      ai to tatou hari.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: I have much to write to you, but I do not want to use paper and ink. Instead,
+      I hope to visit you and talk with you face to face, so that our joy may be complete.
+    eus: Anhitz gauça banuen-ere çuey scribatzecoric, eztitut paperez eta tintaz scribatu
+      nahi vkan, baina sperança dut ethorriren naicela çuetara eta ahoz aho minçaturen,
+      gure bozcarioa complitua dençát.
 - reference: 2SA.002.014
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka mea a Apanere ki a Ioapa, Tena, kia whakatika nga tamariki ki te takaro
+      ki to taua aroaro. Ano ra ko Ioapa, Me whakatika ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Then Abner said to Joab, "Let's have some of the young men get up and fight
+      hand to hand in front of us." "All right, let them do it," Joab said.
+    eus: NOT_AVAILABLE
 - reference: 2SA.004.012
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na whakahaua ana nga taitamariki e Rawiri, a patua ana raua e ratou, tapahia
+      ana hoki o raua ringa me o raua waewae, whakairihia ake ki runga i te poka wai
+      i Heperona. Ko te upoko ia o Ihipohete i tangohia, i tanumia ki te tanumanga
+      o Apanere ki Heperona.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: So David gave an order to his men, and they killed them. They cut off their
+      hands and feet and hung the bodies by the pool in Hebron. But they took the
+      head of Ish-Bosheth and buried it in Abner's tomb at Hebron.
+    eus: NOT_AVAILABLE
 - reference: 2SA.014.027
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A tokotoru nga tama i whanau ma Apoharama, kotahi hoki te kotiro, ko tona
+      ingoa ko Tamara; he wahine kanohi ataahua ano ia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Three sons and a daughter were born to Absalom. His daughter's name was Tamar,
+      and she became a beautiful woman.
+    eus: NOT_AVAILABLE
 - reference: 2SA.015.007
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ka pau nga tau e wha, ka mea a Apoharama ki te kingi, Tukua ahau kia
+      haere ki te whakamana i aku kupu taurangi, ki Heperona, i puaki ra i ahau ki
+      a Ihowa.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: At the end of four years, Absalom said to the king, "Let me go to Hebron
+      and fulfill a vow I made to the LORD.
+    eus: NOT_AVAILABLE
 - reference: 2SA.015.020
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Nonanahi noa nei koe i tae mai ai, a kia mea ahau i a koe i tenei ra kia
+      kopikopiko noa iho i a matou, i taku haere noa atu? Hoki atu, whakahokia ano
+      ou teina; kia whai tahi te pono me te aroha i a koe.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: You came only yesterday. And today shall I make you wander about with us,
+      when I do not know where I am going? Go back, and take your people with you.
+      May the LORD show you kindness and faithfulness."
+    eus: NOT_AVAILABLE
 - reference: 2SA.019.004
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te kingi ia, taupoki tonu tona mata, nui atu te reo o te kingi ki te tangi,
+      E Apoharama, e taku tama, e Apoharama, e taku tama, e taku tama.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: The king covered his face and cried aloud, "O my son Absalom! O Absalom,
+      my son, my son!"
+    eus: NOT_AVAILABLE
 - reference: 2SA.022.007
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'I karanga ahau ki a Ihowa i toku paweratanga, ae ra, i karanga ahau ki toku
+      Atua: a i whakarongo ia ki toku reo i roto i tona temepara, i tae hoki taku
+      hamama ki ona taringa.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: '"In my distress I called to the LORD; I called out to my God. From his temple
+      he heard my voice; my cry came to his ears.'
+    eus: NOT_AVAILABLE
 - reference: 2SA.023.009
   testament: OT
   genre: narrative
   book: 2SA
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'I muri i a ia ko Ereatara tama a Roro Ahohi; ko ia tetahi o nga marohirohi,
+      o nga hoa tokotoru o Rawiri i ta ratou whakataranga ki nga Pirihitini i huihui
+      ki reira ki te whawhai, i te mea kua riro nga tangata o Iharaira:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: Next to him was Eleazar son of Dodai the Ahohite. As one of the three mighty
+      warriors, he was with David when they taunted the Philistines gathered at Pas
+      Dammim for battle. Then the Israelites retreated,
+    eus: NOT_AVAILABLE
 - reference: 2TH.001.001
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na Paora, na ratou ko Hirawanu, ko Timoti, ki te hahi o te hunga o Teharonika
+      i roto i te Atua, i to tatou Matua, i te Ariki hoki, i a Ihu Karaiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: 'Paul, Silas and Timothy, To the church of the Thessalonians in God our Father
+      and the Lord Jesus Christ:'
+    eus: 'PAVLEC eta Siluanoc eta Timotheoc gure Iainco Aitan eta Iesus Christ gure
+      Iaunean Thessaloniceanoen den Eliçari:'
 - reference: 2TH.001.003
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: He tika rawa kia whakawhetai matou ki te Atua i nga wa katoa mo koutou, e
+      oku teina, he mea pai ra hoki ia, no te mea e neke ake ana to koutou whakapono,
+      hu nui rawa hoki te aroha o koutou katoa, o tetahi ki tetahi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: We ought always to thank God for you, brothers and sisters, and rightly so,
+      because your faith is growing more and more, and the love all of you have for
+      one another is increasing.
+    eus: 'Esquerrac eman behar drauzquiogu Iaincoari bethiere çuengatic, anayeác,
+      raçoina den beçala, ceren haguitz handitzen den çuen fedea eta ceren abundatzen
+      den çuen guciotaric batbederaren elkarganaco charitatea:'
 - reference: 2TH.001.008
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: I roto i te mura ahi e rapu utu ana i te hunga kahore e matau ki te Atua,
+      kahore nei hoki e ngohengohe ki te rongopai o to tatou Ariki, o Ihu Karaiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: He will punish those who do not know God and do not obey the gospel of our
+      Lord Jesus.
+    eus: 'Suzco garrequin, mendecatzen delaric Iaincoa eçagutzen eztutenéz, eta Iesus
+      Christ gure Iaunaren Euangelioari behatzen etzaizquionéz:'
 - reference: 2TH.001.008
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: I roto i te mura ahi e rapu utu ana i te hunga kahore e matau ki te Atua,
+      kahore nei hoki e ngohengohe ki te rongopai o to tatou Ariki, o Ihu Karaiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: He will punish those who do not know God and do not obey the gospel of our
+      Lord Jesus.
+    eus: 'Suzco garrequin, mendecatzen delaric Iaincoa eçagutzen eztutenéz, eta Iesus
+      Christ gure Iaunaren Euangelioari behatzen etzaizquionéz:'
 - reference: 2TH.001.009
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te utu hoki e whakapangia ki a ratou he whakangaromanga, he mea mutungakore
+      i te aroaro ano o te Ariki, i te kororia ano hoki o tona kaha;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: They will be punished with everlasting destruction and shut out from the
+      presence of the Lord and from the glory of his might
+    eus: 'Cein punituren baitirade punitione eternalez, condemnaturic Iaunaren presentiáz
+      eta haren botherearen gloriáz:'
 - reference: 2TH.001.009
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te utu hoki e whakapangia ki a ratou he whakangaromanga, he mea mutungakore
+      i te aroaro ano o te Ariki, i te kororia ano hoki o tona kaha;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: They will be punished with everlasting destruction and shut out from the
+      presence of the Lord and from the glory of his might
+    eus: 'Cein punituren baitirade punitione eternalez, condemnaturic Iaunaren presentiáz
+      eta haren botherearen gloriáz:'
 - reference: 2TH.001.010
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ina haere mai ia kia whakakororiatia i roto i tana hunga tapu, kia whakamoemititia
+      i roto i te hunga whakapono katoa i taua ra; i whakapono na hoki koutou ki ta
+      matou whakaatu i roto i a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: on the day he comes to be glorified in his holy people and to be marveled
+      at among all those who have believed. This includes you, because you believed
+      our testimony to you.
+    eus: 'Dathorrenean glorificatu dençát bere sainduetan, eta miragarri eguin dadinçat
+      sinhesten duten gucietan (ceren gure çuec baitharaco testimoniagea sinhetsi
+      içan baita) egun hartan:'
 - reference: 2TH.001.010
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ina haere mai ia kia whakakororiatia i roto i tana hunga tapu, kia whakamoemititia
+      i roto i te hunga whakapono katoa i taua ra; i whakapono na hoki koutou ki ta
+      matou whakaatu i roto i a koutou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: on the day he comes to be glorified in his holy people and to be marveled
+      at among all those who have believed. This includes you, because you believed
+      our testimony to you.
+    eus: 'Dathorrenean glorificatu dençát bere sainduetan, eta miragarri eguin dadinçat
+      sinhesten duten gucietan (ceren gure çuec baitharaco testimoniagea sinhetsi
+      içan baita) egun hartan:'
 - reference: 2TH.001.011
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Koia nei matou ka inoi tonu nei mo koutou, kia meinga koutou e to tatou Atua
+      he tau mo tenei karangatanga, kia whakaotia ano hoki e ia i runga i te kaha
+      nga mea katoa i ahuareka ai tona pai, me te mahi ano hoki o te whakapono,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: With this in mind, we constantly pray for you, that our God may make you
+      worthy of his calling, and that by his power he may bring to fruition your every
+      desire for goodness and your every deed prompted by faith.
+    eus: 'Causa hunegatic-ere othoitz eguiten dugu bethiere çuengatic, çuec vocationearen
+      digne gure Iaincoac eguin çaitzatençat, eta compli deçan bere ontassunaren placer
+      on gucia, eta fedearen obrá botheretsuqui:'
 - reference: 2TH.001.011
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Koia nei matou ka inoi tonu nei mo koutou, kia meinga koutou e to tatou Atua
+      he tau mo tenei karangatanga, kia whakaotia ano hoki e ia i runga i te kaha
+      nga mea katoa i ahuareka ai tona pai, me te mahi ano hoki o te whakapono,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: With this in mind, we constantly pray for you, that our God may make you
+      worthy of his calling, and that by his power he may bring to fruition your every
+      desire for goodness and your every deed prompted by faith.
+    eus: 'Causa hunegatic-ere othoitz eguiten dugu bethiere çuengatic, çuec vocationearen
+      digne gure Iaincoac eguin çaitzatençat, eta compli deçan bere ontassunaren placer
+      on gucia, eta fedearen obrá botheretsuqui:'
 - reference: 2TH.001.012
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia whakakororiatia ai te ingoa o to tatou Ariki, o Ihu Karaiti, i roto i
+      a koutou, me koutou hoki i roto i a ia, kia rite ai ki ta te aroha noa o to
+      tatou Atua, o te Ariki hoki, o Ihu Karaiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: We pray this so that the name of our Lord Jesus may be glorified in you,
+      and you in him, according to the grace of our God and the Lord Jesus Christ.
+    eus: Glorifica dadinçát Iesus Christ gure Iaunaren icena çuetan, eta çuec hartan,
+      gure Iaincoaren eta Iesus Christ Iaunaren gratiaren araura.
 - reference: 2TH.001.012
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia whakakororiatia ai te ingoa o to tatou Ariki, o Ihu Karaiti, i roto i
+      a koutou, me koutou hoki i roto i a ia, kia rite ai ki ta te aroha noa o to
+      tatou Atua, o te Ariki hoki, o Ihu Karaiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: We pray this so that the name of our Lord Jesus may be glorified in you,
+      and you in him, according to the grace of our God and the Lord Jesus Christ.
+    eus: Glorifica dadinçát Iesus Christ gure Iaunaren icena çuetan, eta çuec hartan,
+      gure Iaincoaren eta Iesus Christ Iaunaren gratiaren araura.
 - reference: 2TH.002.009
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ara a ia pu, i rite nei tona taenga mai ki te mahinga a Hatana, i runga i
+      te mana, i nga tohu, i nga merekara teka,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: The coming of the lawless one will be in accordance with how Satan works.
+      He will use all sorts of displays of power through signs and wonders that serve
+      the lie,
+    eus: 'Hura diot ceinen ethortea baita Satanen operationearen araura, puissança
+      gucirequin eta signorequin eta gueçurrezco miraculurequin:'
 - reference: 2TH.002.012
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia tukua ai ki te he te hunga katoa kahore i whakapono ki te pono, i ahuareka
+      ke ki te he.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: and so that all will be condemned who have not believed the truth but have
+      delighted in wickedness.
+    eus: Condemna ditecençat eguia sinhetsi vkan eztuten guciac, baina iniquitatean
+      placer hartu vkan dutenac.
 - reference: 2TH.002.012
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia tukua ai ki te he te hunga katoa kahore i whakapono ki te pono, i ahuareka
+      ke ki te he.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: and so that all will be condemned who have not believed the truth but have
+      delighted in wickedness.
+    eus: Condemna ditecençat eguia sinhetsi vkan eztuten guciac, baina iniquitatean
+      placer hartu vkan dutenac.
 - reference: 2TH.002.013
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Tika tonu ia kia whakawhetai atu matou ki te Atua mo koutou i nga wa katoa,
+      e oku teina e arohaina nei e te Ariki, he mea whiriwhiri na hoki koutou na te
+      Atua no te timatanga ra ano mo te ora, i runga i te whakatapu a te Wairua, i
+      runga ano i te whakapono ki te pono;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: But we ought always to thank God for you, brothers and sisters loved by the
+      Lord, because God chose you as firstfruits to be saved through the sanctifying
+      work of the Spirit and through belief in the truth.
+    eus: 'Baina guc, Iaunaz onhetsi anayeac, behar drauzquiogu bethi esquerrac eman
+      Iaincoari çueçaz, ceren hatseandanic elegitu baitzaituzte Iaincoac saluamendutara
+      Spirituaren sanctificationez, eta eguiazco fedeaz:'
 - reference: 2TH.002.016
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ma to tatou Ariki, ma Ihu Karaiti pu ano, ma te Atua, ma to tatou Matua,
+      i aroha mai nei ki a tatou, i homai nei i te whakamarie mutungakore, me te mea
+      pai e tumanakohia atu nei, he meatanga na te aroha noa,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: May our Lord Jesus Christ himself and God our Father, who loved us and by
+      his grace gave us eternal encouragement and good hope,
+    eus: Bada Iesus Christ gure Iaun berac, eta gure Iainco eta Aita onhetsi gaituenac,
+      eta eman consolatione eternala eta sperança ona gratiaz,
 - reference: 2TH.002.017
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Mana e whakamarie o koutou ngakau, mana koutou e whakau ki runga ki nga kupu,
+      ki nga mahi pai katoa.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: encourage your hearts and strengthen you in every good deed and word.
+    eus: Consola ditzala çuen bihotzac, eta confirma çaitzatela hitz eta obra on orotan.
 - reference: 2TH.003.001
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Heoi, E oku teina, inoi mo matou, kia rere te kupu a te Ariki, kia whai
+      kororia, kia pena me tena i a koutou:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: As for other matters, brothers and sisters, pray for us that the message
+      of the Lord may spread rapidly and be honored, just as it was with you.
+    eus: 'Gaineracoaz, anayeác, othoitz eguiçue guregatic, Iaunaren hitzac laster
+      daguiançat, eta glorifica dadin çuec baithan-ere beçala:'
 - reference: 2TH.003.002
   testament: NT
   genre: epistle
   book: 2TH
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Kia whakaorangia hoki matou i nga tangata poauau, i nga tangata kino: kahore
+      hoki nga tangata katoa e whakapono.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: NOT_AVAILABLE
+    eng: And pray that we may be delivered from wicked and evil people, for not everyone
+      has faith.
+    eus: 'Eta gu deliura gaitecen gende desordenatu eta gaichto hautaric: ecen fedea
+      ezta gucién.'
 - reference: COL.001.009
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: No konei hoki, mai o te ra i rongo ai matou, Kahore e mutu ta matou karakia
+      me ta matou inoi mo koutou, kia whakakiia koutou ki te mohio ki tana e pai ai,
+      i runga i nga whakaaro nui katoa, i te mahara wairua ano hoki;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Derhalben auch wir von dem Tage an, da wir's gehöret haben, hören wir nicht
+      auf, für euch zu beten und zu bitten, daß ihr erfüllet werdet mit Erkenntnis
+      seines Willens in allerlei geistlicher Weisheit und Verstand,
+    eng: For this reason, since the day we heard about you, we have not stopped praying
+      for you. We continually ask God to fill you with the knowledge of his will through
+      all the wisdom and understanding that the Spirit gives,
+    eus: 'Halacotz gu-ere haur ençun vkan guenduen egunaz gueroztic, ezgara baratzen
+      çuengatic othoitz eguitetic eta galdeguitetic betha çaitezten haren vorondatearen
+      eçagutzeaz, sapientia eta adimendu spiritual gucirequin:'
 - reference: COL.003.017
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko nga mea katoa hoki e mea ai koutou, ko nga kupu, ko nga mahi ranei, kia
+      meinga katoatia i runga i te ingoa o te Ariki, o Ihu, me te whakawhetai ano
+      ki te Atua, ara ki te Matua, i roto i a ia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und alles, was ihr tut mit Worten oder mit Werken, das tut alles in dem Namen
+      des HERRN Jesu und danket Gott und dem Vater durch ihn.
+    eng: And whatever you do, whether in word or deed, do it all in the name of the
+      Lord Jesus, giving thanks to God the Father through him.
+    eus: Eta cerere eguin baiteçaçue hitzez edo obraz, Iesus Iaunaren icenean eguiçue,
+      esquerrac emaiten drautzaçuela gure Iainco eta Aitari harçaz.
 - reference: COL.004.003
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Me te inoi ano mo matou, kia whakapuaretia e te Atua he kuwaha korero ki
+      a matou, hei korerotanga i te mea ngaro a te Karaiti i hereherea ai ahau.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und betet zugleich auch für uns, auf daß Gott uns die Tür des Worts auftue,
+      zu reden das Geheimnis Christi, darum ich auch gebunden bin,
+    eng: And pray for us, too, that God may open a door for our message, so that we
+      may proclaim the mystery of Christ, for which I am in chains.
+    eus: Othoitz eguiten duçuelaric elkarrequin guregatic-ere hitzaren borthá Iaincoac
+      irequi dieçagunçát, Christen mysterioaren denuntiatzeco, ceinagatic presoner-ere
+      bainaiz.
 - reference: COL.004.008
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te tino putake tenei i tonoa atu ai ia e ahau ki a koutou, kia matau ai
+      koutou ki to matou ahua, a kia whakamarietia ai o koutou ngakau;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: welchen ich habe darum zu euch gesandt, daß er erfahre, wie es sich mit euch
+      verhält, und daß er eure Herzen ermahne,
+    eng: I am sending him to you for the express purpose that you may know about our
+      circumstances and that he may encourage your hearts.
+    eus: Cein igorri vkan baitut çuetara berariaz, eçagut ditzançát çuen eguitecoac,
+      eta consola ditzançát çuen bihotzac,
 - reference: COL.004.008
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te tino putake tenei i tonoa atu ai ia e ahau ki a koutou, kia matau ai
+      koutou ki to matou ahua, a kia whakamarietia ai o koutou ngakau;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: welchen ich habe darum zu euch gesandt, daß er erfahre, wie es sich mit euch
+      verhält, und daß er eure Herzen ermahne,
+    eng: I am sending him to you for the express purpose that you may know about our
+      circumstances and that he may encourage your hearts.
+    eus: Cein igorri vkan baitut çuetara berariaz, eçagut ditzançát çuen eguitecoac,
+      eta consola ditzançát çuen bihotzac,
 - reference: COL.004.011
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Me Ihu ano hoki, tetahi ingoa ona ko Hutuha; no te kotinga ratou. Ko enei
+      anake oku hoa mahi ki te rangatiratanga o te Atua, he oranga ngakau ano ratou
+      ki ahau.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und Jesus, der da heißt Just, die aus der Beschneidung sind. Diese sind allein
+      meine Gehilfen am Reich Gottes, die mir ein Trost worden sind.
+    eng: Jesus, who is called Justus, also sends greetings. These are the only Jews
+      among my co-workers for the kingdom of God, and they have proved a comfort to
+      me.
+    eus: Eta Iesus Iusto deitzen denac, cein baitirade circoncisionetic, hauc solament
+      ditut aiutaçale Iaincoaren resumán, eta ene solageamendutaco içan dirade.
 - reference: COL.004.013
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko ahau hoki tona pono mo tana mahi nui mo koutou, mo te hunga hoki i Raorikia,
+      a mo te hunga i Hierapori.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Ich gebe ihm Zeugnis, daß er großen Fleiß hat um euch und um die zu Laodicea
+      und zu Hierapolis.
+    eng: I vouch for him that he is working hard for you and for those at Laodicea
+      and Hierapolis.
+    eus: Ecen haur harçaz testificatzen dut, ecen zelo handia duela çuengatic eta
+      Laodicean, eta Hyerapolen diradenacgatic.
 - reference: COL.004.013
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko ahau hoki tona pono mo tana mahi nui mo koutou, mo te hunga hoki i Raorikia,
+      a mo te hunga i Hierapori.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Ich gebe ihm Zeugnis, daß er großen Fleiß hat um euch und um die zu Laodicea
+      und zu Hierapolis.
+    eng: I vouch for him that he is working hard for you and for those at Laodicea
+      and Hierapolis.
+    eus: Ecen haur harçaz testificatzen dut, ecen zelo handia duela çuengatic eta
+      Laodicean, eta Hyerapolen diradenacgatic.
 - reference: COL.004.015
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Oha atu ki nga teina i Raorikia, ki a Naimapa hoki, ki te hahi ano hoki i
+      to ratou whare.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Grüßet die Brüder zu Laodicea und den, Nymphas und die Gemeinde in seinem
+      Hause.
+    eng: Give my greetings to the brothers and sisters at Laodicea, and to Nympha
+      and the church in her house.
+    eus: Salutaitzaçue Laodicean diraden anayeac, eta Nympha, eta haren etchean den
+      Eliçá.
 - reference: COL.004.016
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A ka korerotia tenei pukapuka ki a koutou, meinga kia korerotia ano hoki
+      i roto i te hahi o nga Raorikia; korerotia ano hoki e koutou tera i tuhia mai
+      i Raorikia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und wenn der Brief bei euch gelesen ist, so schaffet, daß er auch in der
+      Gemeinde zu Laodicea gelesen werde, und daß ihr den von Laodicea leset.
+    eng: After this letter has been read to you, see that it is also read in the church
+      of the Laodiceans and that you in turn read the letter from Laodicea.
+    eus: 'Eta epistola haur çuec baithan iracurri datenean, eguiçue Laodiceacoén Eliçan-ere
+      iracur dadin: eta Laodiceatic scribatua, çuec-ere iracur deçaçuen.'
 - reference: COL.004.018
   testament: NT
   genre: epistle
   book: COL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko te aha aku, a Paora, na toku ringaringa ake. Kia mahara ki oku mekameka.
+      Kia tau te aroha noa ki a koutou. Amine.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Mein Gruß mit meiner, des Paulus, Hand. Gedenket meiner Bande! Die Gnade
+      sei mit euch! Amen.
+    eng: I, Paul, write this greeting in my own hand. Remember my chains. Grace be
+      with you.
+    eus: Salutationea, ene Paulen escuz. Çareten orhoit ene estecaduréz. Gratia dela
+      çuequin. Amen.
 - reference: DAN.002.018
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia inoia ai e ratou he mahi tohu i te Atua o te rangi, he mea mo tenei mea
+      ngaro; kei mate tahi a Raniera ratou ko ona hoa, me era atu tangata whakaaro
+      nui o Papurona.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: daß sie Gott vom Himmel um Gnade bäten solches verborgenen Dings halben,
+      damit Daniel und seine Gesellen nicht samt den andern Weisen zu Babel umkämen.
+    eng: He urged them to plead for mercy from the God of heaven concerning this mystery,
+      so that he and his friends might not be executed with the rest of the wise men
+      of Babylon.
+    eus: NOT_AVAILABLE
 - reference: DAN.003.015
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ki te hihiko koutou i te wa e rongo ai koutou i te tangi o te koronete,
+      o te putorino, o te hapa, o te hakaputa, o te hatere, o te taratimere, o nga
+      mea tangi katoa, a ka takoto, ka koropiko, ki te whakapakoko i hanga e ahau,
+      he pai; tena ki te kahore koutou e koropiko, ka maka koutou i taua haora ki
+      te oumu he mura rawa tona ngiha; a ko wai te atua hei whakaora i a koutou i
+      roto i oku ringa?
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Wohlan, schicket euch! Sobald ihr hören werdet den Schall der Posaunen, Trommeten,
+      Harfen, Geigen, Psalter, Lauten und allerlei Saitenspiel, so fallet nieder und
+      betet das Bild an, das ich habe machen lassen! Werdet ihr's nicht anbeten, so
+      sollt ihr von Stund an in den glühenden Ofen geworfen werden. Laßt sehen, wer
+      der Gott sei, der euch aus meiner Hand erretten werde!
+    eng: Now when you hear the sound of the horn, flute, zither, lyre, harp, pipe
+      and all kinds of music, if you are ready to fall down and worship the image
+      I made, very good. But if you do not worship it, you will be thrown immediately
+      into a blazing furnace. Then what god will be able to rescue you from my hand?"
+    eus: NOT_AVAILABLE
 - reference: DAN.003.015
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ki te hihiko koutou i te wa e rongo ai koutou i te tangi o te koronete,
+      o te putorino, o te hapa, o te hakaputa, o te hatere, o te taratimere, o nga
+      mea tangi katoa, a ka takoto, ka koropiko, ki te whakapakoko i hanga e ahau,
+      he pai; tena ki te kahore koutou e koropiko, ka maka koutou i taua haora ki
+      te oumu he mura rawa tona ngiha; a ko wai te atua hei whakaora i a koutou i
+      roto i oku ringa?
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Wohlan, schicket euch! Sobald ihr hören werdet den Schall der Posaunen, Trommeten,
+      Harfen, Geigen, Psalter, Lauten und allerlei Saitenspiel, so fallet nieder und
+      betet das Bild an, das ich habe machen lassen! Werdet ihr's nicht anbeten, so
+      sollt ihr von Stund an in den glühenden Ofen geworfen werden. Laßt sehen, wer
+      der Gott sei, der euch aus meiner Hand erretten werde!
+    eng: Now when you hear the sound of the horn, flute, zither, lyre, harp, pipe
+      and all kinds of music, if you are ready to fall down and worship the image
+      I made, very good. But if you do not worship it, you will be thrown immediately
+      into a blazing furnace. Then what god will be able to rescue you from my hand?"
+    eus: NOT_AVAILABLE
 - reference: DAN.003.015
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ki te hihiko koutou i te wa e rongo ai koutou i te tangi o te koronete,
+      o te putorino, o te hapa, o te hakaputa, o te hatere, o te taratimere, o nga
+      mea tangi katoa, a ka takoto, ka koropiko, ki te whakapakoko i hanga e ahau,
+      he pai; tena ki te kahore koutou e koropiko, ka maka koutou i taua haora ki
+      te oumu he mura rawa tona ngiha; a ko wai te atua hei whakaora i a koutou i
+      roto i oku ringa?
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Wohlan, schicket euch! Sobald ihr hören werdet den Schall der Posaunen, Trommeten,
+      Harfen, Geigen, Psalter, Lauten und allerlei Saitenspiel, so fallet nieder und
+      betet das Bild an, das ich habe machen lassen! Werdet ihr's nicht anbeten, so
+      sollt ihr von Stund an in den glühenden Ofen geworfen werden. Laßt sehen, wer
+      der Gott sei, der euch aus meiner Hand erretten werde!
+    eng: Now when you hear the sound of the horn, flute, zither, lyre, harp, pipe
+      and all kinds of music, if you are ready to fall down and worship the image
+      I made, very good. But if you do not worship it, you will be thrown immediately
+      into a blazing furnace. Then what god will be able to rescue you from my hand?"
+    eus: NOT_AVAILABLE
 - reference: DAN.003.027
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ko te huihuinga o nga ariki, o nga kawana, o nga rangatira, o nga kaiwhakatakoto
+      whakaaro a te kingi, ka kite ratou i enei tangata, kihai nei te ahi i whai kaha
+      ki o ratou tinana, kihai ano nga makawe o o ratou mahunga i hunua, kihai ano
+      o r atou koti i puta ke, kihai ano te haunga ahi i rere i runga i a ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und die Fürsten, HERREN, Vögte und Räte des Königs kamen zusammen und sahen,
+      daß das Feuer keine Macht am Leibe dieser Männer beweiset hatte, und ihr Haupthaar
+      nicht versenget und ihre Mäntel nicht versehrt waren; ja, man konnte keinen
+      Brand an ihnen riechen.
+    eng: and the satraps, prefects, governors and royal advisers crowded around them.
+      They saw that the fire had not harmed their bodies, nor was a hair of their
+      heads singed; their robes were not scorched, and there was no smell of fire
+      on them.
+    eus: NOT_AVAILABLE
 - reference: DAN.008.005
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na i ahau e whakaaroaro ana, na ko te putanga mai o tetahi koati toa i te
+      hauauru, i te mata o te whenua katoa, kihai ano ia i pa ki te whenua: a he haona
+      to te koati i waenganui i ona kanohi, he mea e whakamaua e te titiro.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und indem ich darauf merkte, siehe, so kommt ein Ziegenbock vom Abend her
+      über die ganze Erde, daß er die Erde nicht rührete; und der Bock hatte ein ansehnlich
+      Horn zwischen seinen Augen.
+    eng: As I was thinking about this, suddenly a goat with a prominent horn between
+      its eyes came from the west, crossing the whole earth without touching the ground.
+    eus: NOT_AVAILABLE
 - reference: DAN.008.008
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na kua nui noa atu te koati toa, kua kaha, na ka whati te haona nui, a e
+      wha nga mea e whakamaua atu e te titiro i puta ake i tona turanga, he mea e
+      anga ana ki nga hau e wha o te rangi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und der Ziegenbock ward sehr groß. Und da er aufs stärkste worden war, zerbrach
+      das große Horn; und wuchsen an des Statt ansehnliche vier gegen die vier Winde
+      des Himmels.
+    eng: The goat became very great, but at the height of its power the large horn
+      was broken off, and in its place four prominent horns grew up toward the four
+      winds of heaven.
+    eus: NOT_AVAILABLE
 - reference: DAN.010.016
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na, kua pa tetahi ki oku ngutu, ko tona ahua kei to nga tama a te tangata:
+      na ka puaki toku mangai, a ka korero ahau, ka mea ki tera i tu ra ki toku aroaro,
+      E toku ariki, na te kite ra, kua tahuri iho oku pouritanga ngakau ki ahau, kahore
+      hoki h e kaha e mau ana ki ahau.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und siehe, einer, gleich einem Menschen, rührete meine Lippen an. Da tat
+      ich meinen Mund auf und redete und sprach zu dem, der vor mir stund: Mein HERR,
+      meine Gelenke beben mir über dem Gesicht, und ich habe keine Kraft mehr.'
+    eng: Then one who looked like a man touched my lips, and I opened my mouth and
+      began to speak. I said to the one standing before me, "I am overcome with anguish
+      because of the vision, my lord, and I feel very weak.
+    eus: NOT_AVAILABLE
 - reference: DAN.011.020
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Katahi ka tu ake i tona wahi tetahi mana e mea he kaitono takoha kia takahi
+      i roto i te kororia o te kingitanga: otiia kia torutoru ake nga ra ka whakangaromia
+      ai, kahore he riri, kahore hoki he whawhai.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und an seiner Statt wird einer aufkommen, der wird in königlichen Ehren sitzen
+      wie ein Scherge. Aber nach wenig Tagen wird er brechen, doch weder durch Zorn
+      noch durch Streit.
+    eng: '"His successor will send out a tax collector to maintain the royal splendor.
+      In a few years, however, he will be destroyed, yet not in anger or in battle.'
+    eus: NOT_AVAILABLE
 - reference: DAN.011.034
   testament: OT
   genre: prophecy
   book: DAN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A ka hinga ratou, ka awhinatia mai ratou, he iti ia te awhina: he tokomaha
+      ia e piri ki a ratou, he mea whakapati.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und wenn sie so fallen, wird ihnen dennoch eine kleine Hilfe geschehen. Aber
+      viele werden sich zu ihnen tun betrüglich.
+    eng: When they fall, they will receive a little help, and many who are not sincere
+      will join them.
+    eus: NOT_AVAILABLE
 - reference: EST.002.021
   testament: OT
   genre: narrative
   book: EST
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: I aua ra, i te mea e noho ana a Mororekai i te kuwaha o te kingi, ka riri
+      a Pikitana raua ko Terehe, tokorua o nga rangatira ruma a te kingi, he kaitiaki
+      i te tatau, a ka whai kia pa te ringa ki a Kingi Ahahueruha.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Zur selbigen Zeit, da Mardachai im Tor des Königs saß, wurden zween Kämmerer
+      des Königs, Bigthan und Theres, die der Tür hüteten, zornig und trachteten,
+      ihre Hände an den König Ahasveros zu legen.
+    eng: During the time Mordecai was sitting at the king's gate, Bigthana and Teresh,
+      two of the king's officers who guarded the doorway, became angry and conspired
+      to assassinate King Xerxes.
+    eus: NOT_AVAILABLE
 - reference: EST.002.022
   testament: OT
   genre: narrative
   book: EST
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na kua mohiotia taua mea e Mororekai, a ka whakaaturia e ia ki a Ehetere,
+      ki te kuini; korerotia ana e Ehetere ki te kingi i runga ano i te ingoa o Mororekai.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Das ward Mardachai kund, und er sagte es an der Königin Esther, und Esther
+      sagte es dem Könige in Mardachais Namen.
+    eng: But Mordecai found out about the plot and told Queen Esther, who in turn
+      reported it to the king, giving credit to Mordecai.
+    eus: NOT_AVAILABLE
 - reference: EST.005.001
   testament: OT
   genre: narrative
   book: EST
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na i te toru o nga ra ka kakahuria e Ehetere ona kakahu kuini, a tu ana ia
+      i te marae o roto o te whare o te kingi, i te ritenga atu o te whare o te kingi;
+      ko te kingi hoki e noho ana i runga i te torona o tona kingitanga i te whare
+      kingi, i te r itenga mai o te tatau o te whare.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und am dritten Tage zog sich Esther königlich an und trat in den Hof am Hause
+      des Königs inwendig gegen dem Hause des Königs. Und der König saß auf seinem
+      königlichen Stuhl im königlichen Hause, gegen der Tür des Hauses.
+    eng: On the third day Esther put on her royal robes and stood in the inner court
+      of the palace, in front of the king's hall. The king was sitting on his royal
+      throne in the hall, facing the entrance.
+    eus: NOT_AVAILABLE
 - reference: EST.006.004
   testament: OT
   genre: narrative
   book: EST
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka mea te kingi, Ko wai kei te marae? Na tera a Hamana kua tae mai ki
+      te marae o waho o te whare o te kingi, ki te korero ki te kingi, kia taronatia
+      a Mororekai ki runga ki te tarawa kua oti te hanga mona.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und der König sprach: Wer ist im Hofe? (Denn Haman war in den Hof gegangen,
+      draußen vor des Königs Hause, daß er dem Könige sagte, Mardachai zu hängen an
+      den Baum, den er ihm zubereitet hatte.)'
+    eng: The king said, "Who is in the court?" Now Haman had just entered the outer
+      court of the palace to speak to the king about impaling Mordecai on the pole
+      he had set up for him.
+    eus: NOT_AVAILABLE
 - reference: EXO.006.017
   testament: OT
   genre: law
   book: EXO
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko nga tama a Kerehona; ko Ripini, ko Himei, i o raua hapu.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Die Kinder Gersons sind diese: Libni und Simei in ihren Geschlechtern.'
+    eng: The sons of Gershon, by clans, were Libni and Shimei.
+    eus: NOT_AVAILABLE
 - reference: EXO.006.024
   testament: OT
   genre: law
   book: EXO
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ko nga tama a Koraha: ko Ahira, ko Erekana, ko Apihapa: ko nga hapu enei
+      o nga Korahi.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Die Kinder Korahs sind diese: Assir, Elkana, Abiasaph. Das sind die Geschlechter
+      der Korahiter.'
+    eng: The sons of Korah were Assir, Elkanah and Abiasaph. These were the Korahite
+      clans.
+    eus: NOT_AVAILABLE
 - reference: EXO.022.004
   testament: OT
   genre: law
   book: EXO
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ki te mau pu ki tona ringa te mea i tahaetia, he kau, he kaihe ranei, he
+      hipi ranei, a e ora ana; kia rua nga utu e homai e ia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Findet man aber bei ihm den Diebstahl lebendig, es sei Ochse, Esel oder Schaf,
+      so soll er's zwiefältig wiedergeben.
+    eng: If the stolen animal is found alive in their possession--whether ox or donkey
+      or sheep--they must pay back double.
+    eus: NOT_AVAILABLE
 - reference: EXO.025.014
   testament: OT
   genre: law
   book: EXO
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ka kuhu ai i nga rakau amo ki roto ki nga mowhiti i nga taha o te aaka, kia
+      ai aua mea hei maunga mo te aaka.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und stecke sie in die Rinken an der Lade Seiten, daß man sie dabei trage;
+    eng: Insert the poles into the rings on the sides of the ark to carry it.
+    eus: NOT_AVAILABLE
 - reference: GEN.001.026
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka mea te Atua, Kia hanga tatou i te tangata kia rite ki a tatou, hei
+      to tatou ano te ahua: a kia waiho ko ratou hei rangatira mo nga ika o te moana,
+      mo te manu o te rangi, mo nga kararehe hoki, mo te whenua katoa, mo nga mea
+      ngokingoki katoa ano hoki e ngokingoki ana i runga i te whenua.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und Gott sprach: Laßt uns Menschen machen, ein Bild, das uns gleich sei,
+      die da herrschen über die Fische im Meer und über die Vögel unter dem Himmel
+      und über das Vieh und über die ganze Erde und über alles Gewürm, das auf Erden
+      kreucht.'
+    eng: Then God said, "Let us make mankind in our image, in our likeness, so that
+      they may rule over the fish in the sea and the birds in the sky, over the livestock
+      and all the wild animals, and over all the creatures that move along the ground."
+    eus: NOT_AVAILABLE
 - reference: GEN.001.028
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka manaakitia raua e te Atua, a ka mea te Atua ki a raua, Kia hua, kia
+      tini, kia kapi hoki te whenua i a korua, kia mate hoki ona tara i a korua: ko
+      korua hei rangatira mo te ika o te moana, mo te manu hoki o te rangi, mo nga
+      mea ora katoa an o hoki e ngokingoki ana i runga i te whenua.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und Gott segnete sie und sprach zu ihnen: Seid fruchtbar und mehret euch
+      und füllet die Erde und macht sie euch untertan, und herrschet über Fische im
+      Meer und über Vögel unter dem Himmel und über alles Tier, das auf Erden kreucht.'
+    eng: God blessed them and said to them, "Be fruitful and increase in number; fill
+      the earth and subdue it. Rule over the fish in the sea and the birds in the
+      sky and over every living creature that moves on the ground."
+    eus: NOT_AVAILABLE
 - reference: GEN.003.001
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ko te nakahi he mohio rawa i nga kirehe katoa o te parae i hanga nei e
+      Ihowa, e te Atua. Na ko tana meatanga ki te wahine, Koia, i mea ano te Atua,
+      Kaua e kainga e korua nga hua o tetahi rakau o te kari?
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und die Schlange war listiger denn alle Tiere auf dem Felde, die Gott der
+      HERR gemacht hatte, und sprach zu dem Weibe: Ja, sollte Gott gesagt haben: Ihr
+      sollt nicht essen von allerlei Bäumen im Garten.'
+    eng: Now the serpent was more crafty than any of the wild animals the LORD God
+      had made. He said to the woman, "Did God really say, 'You must not eat from
+      any tree in the garden'?"
+    eus: NOT_AVAILABLE
 - reference: GEN.003.002
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A ka mea te wahine ki te nakahi, E kai ano maua i nga hua o nga rakau o
+      te kari:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Da sprach das Weib zu der Schlange: Wir essen von den Früchten der Bäume
+      im Garten;'
+    eng: The woman said to the serpent, "We may eat fruit from the trees in the garden,
+    eus: NOT_AVAILABLE
 - reference: GEN.003.022
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka mea a Ihowa, te Atua, Nana, kua rite nei te tangata ki tetahi o tatou,
+      te mohio ki te pai, ki te kino: na kei totoro atu tona ringa aianei, kei tango
+      i tetahi o nga hua o te rakau o te ora, kei kai, a ka ora tonu:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und Gott der HERR sprach: Siehe, Adam ist worden als unsereiner und weiß,
+      was gut und böse ist. Nun aber, daß er nicht ausstrecke seine Hand und breche
+      auch von dem Baum des Lebens und esse und lebe ewiglich:'
+    eng: And the LORD God said, "The man has now become like one of us, knowing good
+      and evil. He must not be allowed to reach out his hand and take also from the
+      tree of life and eat, and live forever."
+    eus: NOT_AVAILABLE
 - reference: GEN.014.011
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na murua ana e ratou nga taonga katoa o Horoma, o Komora, me a ratou kai
+      katoa, a haere ana.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Da nahmen sie alle Habe zu Sodom und Gomorrha und alle Speise und zogen davon.
+    eng: The four kings seized all the goods of Sodom and Gomorrah and all their food;
+      then they went away.
+    eus: NOT_AVAILABLE
 - reference: GEN.014.014
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, i te rongonga o Aperama, kua hereherea atu tona iramutu, takiritia ana
+      e ia ana tangata mohio, nga mea i whanau ki tona whare, e toru rau kotahi tekau
+      ma waru, a whaia ana ratou ki Rana.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Als nun Abram hörete, daß sein Bruder gefangen war, wappnete er seine Knechte,
+      dreihundertundachtzehn, in seinem Hause geboren, und jagte ihnen nach bis gen
+      Dan;
+    eng: When Abram heard that his relative had been taken captive, he called out
+      the 318 trained men born in his household and went in pursuit as far as Dan.
+    eus: NOT_AVAILABLE
 - reference: GEN.018.003
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ka mea, E toku Ariki, ki te mea he pai toku ki tau titiro, kaua ra e kapea
+      tau pononga:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'und sprach: HERR, habe ich Gnade funden vor deinen Augen, so gehe nicht
+      vor deinem Knechte über.'
+    eng: He said, "If I have found favor in your eyes, my lord, do not pass your servant
+      by.
+    eus: NOT_AVAILABLE
 - reference: GEN.018.008
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka tikina e ia he pata, he waiu, me te kuao i raweketia e ia, a whakatakotoria
+      ana ki to ratou aroaro; me te tu ano ia i to ratou taha i raro i te rakau, a
+      ka kai ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und er trug auf Butter und Milch und von dem Kalbe, das er zubereitet hatte,
+      und setzte es ihnen vor und trat vor sie unter dem Baum, und sie aßen.
+    eng: He then brought some curds and milk and the calf that had been prepared,
+      and set these before them. While they ate, he stood near them under a tree.
+    eus: NOT_AVAILABLE
 - reference: GEN.019.034
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A i te aonga ake ka mea te tuakana ki to muri, Nana, i takoto ahau inapo
+      ki toku papa: taua ano ka whakainu i a ia ki te waina i tenei po; a mau e haere
+      atu, e takoto ki a ia, kia tupu ai i a taua tetahi uri mo to taua papa.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Des Morgens sprach die älteste zu der jüngsten: Siehe, ich habe gestern
+      bei meinem Vater gelegen. Laß uns ihm diese Nacht auch Wein zu trinken geben,
+      daß du hineingehest und legest dich zu ihm, daß wir Samen von unserm Vater erhalten:'
+    eng: The next day the older daughter said to the younger, "Last night I slept
+      with my father. Let's get him to drink wine again tonight, and you go in and
+      sleep with him so we can preserve our family line through our father."
+    eus: NOT_AVAILABLE
 - reference: GEN.022.019
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka hoki a Aperahama ki ana taitamariki, a whakatika ana ratou, haere tahi
+      ana ki Peerehepa; a ka noho a Aperahama ki Peerehepa.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Also kehrete Abraham wieder zu seinen Knaben; und machten sich auf und zogen
+      miteinander gen Bersaba und wohnete daselbst.
+    eng: Then Abraham returned to his servants, and they set off together for Beersheba.
+      And Abraham stayed in Beersheba.
+    eus: NOT_AVAILABLE
 - reference: GEN.029.020
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na e whitu nga tau i mahi ai a Hakopa mo Rahera; a he rangi torutoru noa
+      ake te rite o aua tau ki tona whakaaro, i tona aroha ki a ia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Also dienete Jakob um Rahel sieben Jahre, und deuchten ihn, als wären es
+      einzelne Tage, so lieb hatte er sie.
+    eng: So Jacob served seven years to get Rachel, but they seemed like only a few
+      days to him because of his love for her.
+    eus: NOT_AVAILABLE
 - reference: GEN.031.007
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko to korua papa ia i tinihanga ki ahau, ka tekau rawa ana whakaputanga ketanga
+      i oku utu; otiia kihai ia i tukua e te Atua kia tukino i ahau.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und er hat mich getäuschet und nun zehnmal meinen Lohn verändert; aber Gott
+      hat ihm nicht gestattet, daß er mir Schaden täte.
+    eng: yet your father has cheated me by changing my wages ten times. However, God
+      has not allowed him to harm me.
+    eus: NOT_AVAILABLE
 - reference: GEN.036.016
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ko Koraha ariki, ko Katama ariki, ko Amareke ariki: na Eripata enei ariki
+      i te whenua o Eroma; ko nga tama enei a Araha.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: der Fürst Korah, der Fürst Gaetham, der Fürst Amalek. Das sind die Fürsten
+      von Eliphas, im Lande Edom, und sind Kinder von der Ada.
+    eng: Korah, Gatam and Amalek. These were the chiefs descended from Eliphaz in
+      Edom; they were grandsons of Adah.
+    eus: NOT_AVAILABLE
 - reference: GEN.036.017
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A ko nga tama enei a Reuere tama a Ehau; ko Nahata ariki, ko Heraha ariki,
+      ko Hamaha ariki, ko Miha ariki: na Reuere enei ariki i te whenua o Eroma; ko
+      nga tama enei a Pahemata wahine a Ehau.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und das sind die Kinder Reguels, Esaus Sohns: der Fürst Nahath, der Fürst
+      Serah, der Fürst Samma, der Fürst Missa. Das sind die Fürsten von Reguel im
+      Lande der Edomiter und sind Kinder von der Basmath, Esaus Weib.'
+    eng: 'The sons of Esau''s son Reuel: Chiefs Nahath, Zerah, Shammah and Mizzah.
+      These were the chiefs descended from Reuel in Edom; they were grandsons of Esau''s
+      wife Basemath.'
+    eus: NOT_AVAILABLE
 - reference: GEN.040.008
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A ka mea raua ki a ia, I moe maua i tetahi moe, a kahore he kaiwhakaatu i
+      tona tikanga. Na ka mea a Hohepa ki a raua, Ehara ianei te Atua i te kaiwhakaatu?
+      tena, korerotia mai ki ahau.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Sie antworteten: Es hat uns geträumet, und haben niemand, der es uns auslege.
+      Joseph sprach: Auslegen gehöret Gott zu, doch erzählet mir''s.'
+    eng: '"We both had dreams," they answered, "but there is no one to interpret them."
+      Then Joseph said to them, "Do not interpretations belong to God? Tell me your
+      dreams."'
+    eus: NOT_AVAILABLE
 - reference: GEN.043.032
   testament: OT
   genre: narrative
   book: GEN
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka whakatakotoria e ratou, mana ki a ia anake, ma ratou ki a ratou anake,
+      ma nga Ihipiana, i kai tahi me ia, ki a ratou anake: e kore hoki e ahei i nga
+      Ihipiana te kai taro tahi me nga Hiperu; he mea whakarihariha hoki tena ki nga
+      Ihipiana.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und man trug ihm besonders auf und jenen auch besonders und den Ägyptern,
+      die mit ihm aßen, auch besonders. Denn die Ägypter dürfen nicht Brot essen mit
+      den Ebräern, denn es ist ein Greuel vor ihnen.
+    eng: They served him by himself, the brothers by themselves, and the Egyptians
+      who ate with him by themselves, because Egyptians could not eat with Hebrews,
+      for that is detestable to Egyptians.
+    eus: NOT_AVAILABLE
 - reference: JDG.001.020
   testament: OT
   genre: narrative
   book: JDG
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'I hoatu ano e ratou a Heperona ki a Karepe, i pera me ta Mohi i korero ai:
+      a peia atu ana e ia i reira nga tama tokotoru a Anaka.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und sie gaben dem Kaleb Hebron, wie Mose gesagt hatte; und er vertrieb daraus
+      die drei Söhne des Enak.
+    eng: As Moses had promised, Hebron was given to Caleb, who drove from it the three
+      sons of Anak.
+    eus: NOT_AVAILABLE
 - reference: JOS.002.017
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Katahi ka mea aua tangata ki a ia, E kore maua e whai hara mo tenei oati
+      au i whakaoati nei koe i a maua.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Die Männer aber sprachen zu ihr: Wir wollen aber des Eides los sein, den
+      du von uns genommen hast,'
+    eng: Now the men had said to her, "This oath you made us swear will not be binding
+      on us
+    eus: NOT_AVAILABLE
 - reference: JOS.002.022
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka haere raua, a ka tae ki te maunga, a noho ana i reira e toru nga ra,
+      a hoki noa nga kaiwhai: a rapu noa nga kaiwhai i a raua i te huarahi katoa,
+      a kahore i kitea.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Sie aber gingen hin und kamen aufs Gebirge und blieben drei Tage daselbst,
+      bis daß die wiederkamen, die ihnen nachjagten. Denn sie hatten sie gesucht auf
+      allen Straßen und doch nicht funden.
+    eng: When they left, they went into the hills and stayed there three days, until
+      the pursuers had searched all along the road and returned without finding them.
+    eus: NOT_AVAILABLE
 - reference: JOS.005.015
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A ka mea te rangatira o te ope a Ihowa ki a Hohua, Wetekina tou hu i tou
+      waewae; he tapu hoki te wahi e tu na koe. A pera ana a Hohua.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und der Fürst über das Heer des HERRN sprach zu Josua: Zeuch deine Schuhe
+      aus von deinen Füßen; denn die Stätte, darauf du stehest, ist heilig. Und Josua
+      tat also.'
+    eng: The commander of the LORD's army replied, "Take off your sandals, for the
+      place where you are standing is holy." And Joshua did so.
+    eus: NOT_AVAILABLE
 - reference: JOS.005.015
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A ka mea te rangatira o te ope a Ihowa ki a Hohua, Wetekina tou hu i tou
+      waewae; he tapu hoki te wahi e tu na koe. A pera ana a Hohua.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und der Fürst über das Heer des HERRN sprach zu Josua: Zeuch deine Schuhe
+      aus von deinen Füßen; denn die Stätte, darauf du stehest, ist heilig. Und Josua
+      tat also.'
+    eng: The commander of the LORD's army replied, "Take off your sandals, for the
+      place where you are standing is holy." And Joshua did so.
+    eus: NOT_AVAILABLE
 - reference: JOS.008.005
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'A maku, ma te hunga katoa hoki i ahau, e whakatata ki te pa: a ka puta mai
+      ratou ki te tu i a matou, ka pera me to mua, na ka rere matou i to ratou aroaro;'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Ich aber und alles Volk, das mit mir ist, wollen uns zu der Stadt machen.
+      Und wenn sie uns entgegen herausfahren wie vorhin, so wollen wir vor ihnen fliehen,
+    eng: I and all those with me will advance on the city, and when the men come out
+      against us, as they did before, we will flee from them.
+    eus: NOT_AVAILABLE
 - reference: JOS.010.020
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, no ka mutu i a Hohua ratou ko nga tama a Iharaira te patu i a ratou, he
+      nui rawa te parekura a poto noa ratou, ko nga morehu o ratou i toe i riro ki
+      roto ki nga pa whai taiepa,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und da Josua und die Kinder Israel vollendet hatten diese sehr große Schlacht
+      an ihnen und gar geschlagen: was überblieb von ihnen, das kam in die festen
+      Städte.'
+    eng: So Joshua and the Israelites defeated them completely, but a few survivors
+      managed to reach their fortified cities.
+    eus: NOT_AVAILABLE
 - reference: JOS.013.031
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ko tetahi hawhe o Kireara, me Ahataroto, me Eterei, ko nga pa o te kingitanga
+      o Oka i Pahana, i riro era i nga tama a Makiri, a te tama a Manahi, ara i tetahi
+      taanga o nga tama a Makiri, he mea whakarite ki o ratou hapu.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und das halbe Gilead, Astharoth, Edrei, die Städte des Königreichs Ogs zu
+      Basan, gab er den Kindern Machirs, des Sohns Manasses, das ist, der Hälfte der
+      Kinder Machirs, nach ihren Geschlechtern.
+    eng: half of Gilead, and Ashtaroth and Edrei (the royal cities of Og in Bashan).
+      This was for the descendants of Makir son of Manasseh--for half of the sons
+      of Makir, according to their clans.
+    eus: NOT_AVAILABLE
 - reference: JOS.015.014
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka peia e Karepe i reira nga tama tokotoru a Anaka, a Hehai, a Ahimana,
+      a Taramai, nga tama a Anaka.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und Kaleb vertrieb von dannen die drei Söhne Enaks: Sesai, Ahiman und Thalmai,
+      geboren von Enak.'
+    eng: From Hebron Caleb drove out the three Anakites--Sheshai, Ahiman and Talmai,
+      the sons of Anak.
+    eus: NOT_AVAILABLE
 - reference: JOS.022.032
   testament: OT
   genre: narrative
   book: JOS
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Katahi ka hoki a Penehaha tama a Ereatara tohunga, me nga rangatira, i nga
+      tama a Reupena ratou ko nga tama a Kara i te whenua o Kireara, ki te whenua
+      o Kanaana, ki nga tama a Iharaira, ki te whakahoki i te korero ki a ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Da zog Pinehas, der Sohn Eleasars, des Priesters, und die Obersten aus dem
+      Lande Gilead von den Kindern Ruben und Gad wieder ins Land Kanaan zu den Kindern
+      Israel und sagten es ihnen an.
+    eng: Then Phinehas son of Eleazar, the priest, and the leaders returned to Canaan
+      from their meeting with the Reubenites and Gadites in Gilead and reported to
+      the Israelites.
+    eus: NOT_AVAILABLE
 - reference: LUK.002.046
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, muri iho i nga ra e toru ka kitea ia i roto i te temepara, e noho ana
+      i waenganui o nga kaiwhakaako, e whakarongo ana ki a ratou, e ui ana ki a ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und begab sich, nach dreien Tagen fanden sie ihn im Tempel sitzen mitten
+      unter den Lehrern, daß er ihnen zuhörete und sie fragete.
+    eng: After three days they found him in the temple courts, sitting among the teachers,
+      listening to them and asking them questions.
+    eus: Eta guertha cedin, hirur egunen buruän eriden baitzeçaten hura templean,
+      iarriric cegoela doctoren artean, hæy behatzen çayela eta hec interrogatzen
+      cituela.
 - reference: LUK.005.003
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka eke ia ki tetahi o nga kaipuke, ki te Haimona, ka mea ki a ia kia neke
+      atu ki waho tata. Na noho ana ia, whakaakona ana e ia te mano i runga i te kaipuke.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: trat er in der Schiffe eines, welches Simons war, und bat ihn, daß er's ein
+      wenig vom Lande führete. Und er setzte sich und lehrete das Volk aus dem Schiff.
+    eng: He got into one of the boats, the one belonging to Simon, and asked him to
+      put out a little from shore. Then he sat down and taught the people from the
+      boat.
+    eus: 'Eta sarthuric vnci hetaric batetara, cein baitzén Simonena, othoitz ceguión
+      lurretit retira leçan appurbat: guero iarriric vncitic iracasten cituen gendetzeac.'
 - reference: LUK.005.018
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka kawea mai e etahi tangata i runga i te moenga tetahi tangata, he pararutiki:
+      mea noa ratou kia kawea ia ki roto, kia whakatakotoria ki tona aroaro.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und siehe, etliche Männer brachten einen Menschen auf einem Bette, der war
+      gichtbrüchig; und sie suchten, wie sie ihn hineinbrächten und vor ihn legten.
+    eng: Some men came carrying a paralyzed man on a mat and tried to take him into
+      the house to lay him before Jesus.
+    eus: 'Orduan huná batzu, dacarqueitela ohean guiçon-bat cein baitzén paralytico:
+      eta çabiltzan hura barnera ekarri nahaiz, eta haren aitzinean eçarri nahiz.'
 - reference: LUK.005.018
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka kawea mai e etahi tangata i runga i te moenga tetahi tangata, he pararutiki:
+      mea noa ratou kia kawea ia ki roto, kia whakatakotoria ki tona aroaro.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und siehe, etliche Männer brachten einen Menschen auf einem Bette, der war
+      gichtbrüchig; und sie suchten, wie sie ihn hineinbrächten und vor ihn legten.
+    eng: Some men came carrying a paralyzed man on a mat and tried to take him into
+      the house to lay him before Jesus.
+    eus: 'Orduan huná batzu, dacarqueitela ohean guiçon-bat cein baitzén paralytico:
+      eta çabiltzan hura barnera ekarri nahaiz, eta haren aitzinean eçarri nahiz.'
 - reference: LUK.005.018
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka kawea mai e etahi tangata i runga i te moenga tetahi tangata, he pararutiki:
+      mea noa ratou kia kawea ia ki roto, kia whakatakotoria ki tona aroaro.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und siehe, etliche Männer brachten einen Menschen auf einem Bette, der war
+      gichtbrüchig; und sie suchten, wie sie ihn hineinbrächten und vor ihn legten.
+    eng: Some men came carrying a paralyzed man on a mat and tried to take him into
+      the house to lay him before Jesus.
+    eus: 'Orduan huná batzu, dacarqueitela ohean guiçon-bat cein baitzén paralytico:
+      eta çabiltzan hura barnera ekarri nahaiz, eta haren aitzinean eçarri nahiz.'
 - reference: LUK.005.018
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na ka kawea mai e etahi tangata i runga i te moenga tetahi tangata, he pararutiki:
+      mea noa ratou kia kawea ia ki roto, kia whakatakotoria ki tona aroaro.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und siehe, etliche Männer brachten einen Menschen auf einem Bette, der war
+      gichtbrüchig; und sie suchten, wie sie ihn hineinbrächten und vor ihn legten.
+    eng: Some men came carrying a paralyzed man on a mat and tried to take him into
+      the house to lay him before Jesus.
+    eus: 'Orduan huná batzu, dacarqueitela ohean guiçon-bat cein baitzén paralytico:
+      eta çabiltzan hura barnera ekarri nahaiz, eta haren aitzinean eçarri nahiz.'
 - reference: LUK.005.019
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, i te korenga e kitea e ratou he huarahi hei kawenga mai ia ia ki roto,
+      i te mano o te tangata, ka kakea te whare, a tukua iho ana ia ra nga taera,
+      me te moenga ano, ki waenganui, ki te aroaro o Ihu.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und da sie vor dem Volk nicht fanden, an welchem Ort sie ihn hineinbrächten,
+      stiegen sie auf das Dach und ließen ihn durch die Ziegel hernieder mit dem Bettlein,
+      mitten unter sie, vor Jesus.
+    eng: When they could not find a way to do this because of the crowd, they went
+      up on the roof and lowered him on his mat through the tiles into the middle
+      of the crowd, right in front of Jesus.
+    eus: 'Eta erideiten etzutenean nondic hura barnera liroiten, gendetzearen causaz,
+      iganic etche gainera, teuletaric erauts ceçaten ohetchoarequin artera, Iesusen
+      aitzinera:'
 - reference: LUK.005.019
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A, i te korenga e kitea e ratou he huarahi hei kawenga mai ia ia ki roto,
+      i te mano o te tangata, ka kakea te whare, a tukua iho ana ia ra nga taera,
+      me te moenga ano, ki waenganui, ki te aroaro o Ihu.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und da sie vor dem Volk nicht fanden, an welchem Ort sie ihn hineinbrächten,
+      stiegen sie auf das Dach und ließen ihn durch die Ziegel hernieder mit dem Bettlein,
+      mitten unter sie, vor Jesus.
+    eng: When they could not find a way to do this because of the crowd, they went
+      up on the roof and lowered him on his mat through the tiles into the middle
+      of the crowd, right in front of Jesus.
+    eus: 'Eta erideiten etzutenean nondic hura barnera liroiten, gendetzearen causaz,
+      iganic etche gainera, teuletaric erauts ceçaten ohetchoarequin artera, Iesusen
+      aitzinera:'
 - reference: LUK.007.042
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'I te kore nga mea a raua hei whakautu, whakarerea noatia ana e ia ki a raua:
+      tena, ko wai o raua e tino nui tona aroha ki a ia?'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Da sie aber nicht hatten zu bezahlen, schenkte er's beiden. Sage an, welcher
+      unter denen wird ihn am meisten lieben?
+    eng: Neither of them had the money to pay him back, so he forgave the debts of
+      both. Now which of them will love him more?"
+    eus: Eta hec ez vkanez nondic paga, quitta cieceán biey. Hautaric bada, errac,
+      ceinec hura maiteago vkanen du?
 - reference: LUK.023.032
   testament: NT
   genre: narrative
   book: LUK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na tera atu etahi tokorua, he hunga mahi kino, e arahina ngatahitia ana me
+      ia kia whakamatea.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Es wurden aber auch hingeführt zwei andere Übeltäter, daß sie mit ihm abgetan
+      würden.
+    eng: Two other men, both criminals, were also led out with him to be executed.
+    eus: Eta eramaiten ciraden berceric bi gaizquiguile-ere harequin hil eraciteco.
 - reference: MAL.001.005
   testament: OT
   genre: prophecy
   book: MAL
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: E kite ano o koutou kanohi, a ka mea koutou, Kia whakanuia a Ihowa i tua
+      i te rohe o Iharaira.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Das sollen eure Augen sehen, und werdet sagen: Der HERR ist herrlich in
+      den Grenzen Israels.'
+    eng: You will see it with your own eyes and say, 'Great is the LORD--even beyond
+      the borders of Israel!'
+    eus: NOT_AVAILABLE
 - reference: MAT.018.020
   testament: NT
   genre: narrative
   book: MAT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ko te wahi e whakaminea ai te hunga tokorua, tokotoru ranei, he whakaaro
+      ki toku ingoa, kei reira ahau kei waenganui i a ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Denn wo zwei oder drei versammelt sind in meinem Namen, da bin ich mitten
+      unter ihnen.
+    eng: For where two or three gather in my name, there am I with them."
+    eus: Ecen non baitirade biga edo hirur bilduric ene icenean, han naiz hayén artean.
 - reference: MAT.018.020
   testament: NT
   genre: narrative
   book: MAT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ko te wahi e whakaminea ai te hunga tokorua, tokotoru ranei, he whakaaro
+      ki toku ingoa, kei reira ahau kei waenganui i a ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Denn wo zwei oder drei versammelt sind in meinem Namen, da bin ich mitten
+      unter ihnen.
+    eng: For where two or three gather in my name, there am I with them."
+    eus: Ecen non baitirade biga edo hirur bilduric ene icenean, han naiz hayén artean.
 - reference: MAT.018.020
   testament: NT
   genre: narrative
   book: MAT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ko te wahi e whakaminea ai te hunga tokorua, tokotoru ranei, he whakaaro
+      ki toku ingoa, kei reira ahau kei waenganui i a ratou.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Denn wo zwei oder drei versammelt sind in meinem Namen, da bin ich mitten
+      unter ihnen.
+    eng: For where two or three gather in my name, there am I with them."
+    eus: Ecen non baitirade biga edo hirur bilduric ene icenean, han naiz hayén artean.
 - reference: MAT.025.021
   testament: NT
   genre: narrative
   book: MAT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ka mea tona ariki ki a ia, Pai rawa, e te pononga pai, e te pononga pono;
+      pono tau mahi ki nga mea ruarua, maku koe e mea hei rangatira mo nga mea maha:
+      uru mai koe ki te hari o tou ariki.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Da sprach sein HERR zu ihm: Ei, du frommer und getreuer Knecht, du bist
+      über wenigem getreu gewesen; ich will dich über viel setzen. Gehe ein zu deines
+      HERRN Freude!'
+    eng: '"His master replied, ''Well done, good and faithful servant! You have been
+      faithful with a few things; I will put you in charge of many things. Come and
+      share your master''s happiness!'''
+    eus: 'Erran cieçón bere nabussiac, Vngui, cerbitzari oná eta leyalá: gauça gutian
+      içan aiz leyal, anhitzaren gaineco eçarriren aut: sar adi eure nabussiaren alegrançan.'
 - reference: MAT.027.038
   testament: NT
   genre: narrative
   book: MAT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na tokorua nga tahae i ripekatia ngatahitia me ia, kotahi ki matau, kotahi
+      ki maui.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und da wurden zwei Mörder mit ihm gekreuziget, einer zur Rechten und einer
+      zur Linken.
+    eng: Two rebels were crucified with him, one on his right and one on his left.
+    eus: Orduan crucificatu içan dirade harequin bi gaichtaguin bata escuinetic eta
+      bercea ezquerretic.
 - reference: MRK.001.017
   testament: NT
   genre: narrative
   book: MRK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na ka mea a Ihu ki a raua, Haere mai i muri i ahau, a maku korua e mea hei
+      kaihao tangata.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und Jesus sprach zu ihnen: Folget mir nach! Ich will euch zu Menschenfischern
+      machen.'
+    eng: '"Come, follow me," Jesus said, "and I will send you out to fish for people."'
+    eus: Eta erran ciecen Iesusec, Çatozte ene ondoan eta eguinen çaituztet guiça
+      pescadore.
 - reference: MRK.006.005
   testament: NT
   genre: narrative
   book: MRK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A kihai ia i ahei te mea i tetahi merekara ki reira, heoi ano ko te whakapa
+      i ona ringa ki etahi tangata turoro torutoru kia ora ai.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und er konnte allda nicht eine einzige Tat tun; ohne wenig Siechen legte
+      er die Hände auf und heilete sie.
+    eng: He could not do any miracles there, except lay his hands on a few sick people
+      and heal them.
+    eus: Eta ecin eguin çuen han verthuteric batre, cembeit eri bakoitz, escuac hayén
+      gainean eçarriric, senda baitzitzan baicen.
 - reference: MRK.006.007
   testament: NT
   genre: narrative
   book: MRK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Katahi ia ka karanga i te tekau ma rua, ka anga ka tono i a ratou tokorua,
+      tokorua; a hoatu ana ki a ratou he mana hei pei i nga wairua poke.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und er berief die Zwölfe und hub an und sandte sie je zwei und zwei und gab
+      ihnen Macht über die unsauberen Geister.
+    eng: Calling the Twelve to him, he began to send them out two by two and gave
+      them authority over impure spirits.
+    eus: 'Orduan dei citzan hamabiac, eta has cedin hayén igorten birá: eta eman ciecén
+      bothere spiritu satsuén gainean.'
 - reference: MRK.008.007
   testament: NT
   genre: narrative
   book: MRK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'He ika ano a ratou torutoru nei, he mea nonohi: a ka mutu te whakapai, ka
+      mea ia kia whakatakotoria hoki era.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Und hatten ein wenig Fischlein; und er dankte und hieß dieselbigen auch vortragen.
+    eng: They had a few small fish as well; he gave thanks for them also and told
+      the disciples to distribute them.
+    eus: Bacituzten halaber arrain guti batzu, eta gratiác rendaturic, erran ceçan
+      hec-ere presenta litzaten.
 - reference: MRK.009.010
   testament: NT
   genre: narrative
   book: MRK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: A i puritia taua kupu e ratou, ka uiui ki a ratou ano, he aha ra te aranga
+      ake i te hunga mate.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und sie behielten das Wort bei sich und befragten sich untereinander: Was
+      ist doch das Auferstehen von den Toten?'
+    eng: They kept the matter to themselves, discussing what "rising from the dead"
+      meant.
+    eus: Eta hec erran haur eduqui ceçaten berac baithan, elkarri galde eguiten ceraucatela,
+      cer erran nahi çuen, hiletaric resuscitatze harc.
 - reference: MRK.014.041
   testament: NT
   genre: narrative
   book: MRK
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Na haere ana ano ia, ko te toru o nga haerenga, ka mea ki a ratou, E moe
+      ra, whakata i a koutou: heoi ra, kua taea te haora; na, ka tukua te Tama a te
+      tangata ki nga ringa o te hunga hara.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Und er kam zum drittenmal und sprach zu ihnen: Ach, wollt ihr nun schlafen
+      und ruhen? Es ist genug; die Stunde ist kommen. Siehe, des Menschen Sohn wird
+      überantwortet in der Sünder Hände.'
+    eng: Returning the third time, he said to them, "Are you still sleeping and resting?
+      Enough! The hour has come. Look, the Son of Man is delivered into the hands
+      of sinners.
+    eus: 'Eta ethor cedin herén aldian, eta dioste, Lo eguiçue gaurguero, eta reposa
+      çaitezte: asco da, ethorri da orena: huná, liuratzen da guiçonaren Semea gaichtoén
+      escuetara.'
 - reference: PHM.001.001
   testament: NT
   genre: epistle
   book: PHM
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na Paora, na te herehere a Karaiti Ihu, na to taua teina hoki, na Timoti,
+      ki ta maua e aroha nei, ki to maua hoa mahi, ki a Pirimona,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Paulus, der Gebundene Christi Jesu, und Timotheus, der Bruder: Philemon,
+      dem Lieben und unserm Gehilfen,'
+    eng: Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon our
+      dear friend and fellow worker--
+    eus: PAVLEC Iesus Christen presonerac, eta anaye Timotheoc, Philemon gure maiteari
+      eta lagunari,
 - reference: PHM.001.001
   testament: NT
   genre: epistle
   book: PHM
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na Paora, na te herehere a Karaiti Ihu, na to taua teina hoki, na Timoti,
+      ki ta maua e aroha nei, ki to maua hoa mahi, ki a Pirimona,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Paulus, der Gebundene Christi Jesu, und Timotheus, der Bruder: Philemon,
+      dem Lieben und unserm Gehilfen,'
+    eng: Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon our
+      dear friend and fellow worker--
+    eus: PAVLEC Iesus Christen presonerac, eta anaye Timotheoc, Philemon gure maiteari
+      eta lagunari,
 - reference: PHM.001.003
   testament: NT
   genre: epistle
   book: PHM
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia tau te aroha noa ki a koutou, me te rangimarie, he mea na te Atua, na
+      to tatou Matua, na te Ariki hoki, na Ihu Karaiti.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Gnade sei mit euch und Friede von Gott, unserm Vater, und dem HERRN Jesu
+      Christo!
+    eng: Grace and peace to you from God our Father and the Lord Jesus Christ.
+    eus: Gratia dela çuequin eta baquea gure Iainco Aitaganic eta Iesus Christ Iaunaganic.
 - reference: PHM.001.017
   testament: NT
   genre: epistle
   book: PHM
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Na, ki te mea kua waiho ahau hei hoa mou, manako mai ki a ia me te mea ko
+      ahau.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: So du nun mich hältst für deinen Gesellen, so wollest du ihn als mich selbst
+      annehmen.
+    eng: So if you consider me a partner, welcome him as you would welcome me.
+    eus: Bada baldin lagunetan banaducac, recebi eçac ni beçala.
 - reference: PHM.001.021
   testament: NT
   genre: epistle
   book: PHM
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: He u no toku whakaaro ki a koe ka ngohengohe, i tuhituhi atu ai ahau ki a
+      koe, e mohio ana hoki, tera e nui atu tau e mea ai i taku e korero atu nei.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Ich hab' aus Zuversicht deines Gehorsams dir geschrieben; denn ich weiß,
+      du wirst mehr tun, denn ich sage.
+    eng: Confident of your obedience, I write to you, knowing that you will do even
+      more than I ask.
+    eus: Hire obedientiáz segur içanez scribatu drauat, daquidalaric ecen erraiten
+      dudan baino guehiago-ere eguinen duála.
 - reference: PHM.001.024
   testament: NT
   genre: epistle
   book: PHM
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ratou tahi ko Maka, ko Aritaku, ko Rimaha, ko Ruka, oku hoa mahi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Markus, Aristarchus, Demas, Lukas, meine Gehilfen.
+    eng: And so do Mark, Aristarchus, Demas and Luke, my fellow workers.
+    eus: Marc-ec, Aristarchec, Demasec eta Luc-ec, ene aiutariec, salutatzen auté.
 - reference: REV.001.001
   testament: NT
   genre: prophecy
   book: REV
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ko te whakakitenga a Ihu Karaiti, i homai nei e te Atua ki a ia, kia whakapuakina
+      ki ana pononga nga mea meake nei rite; na whakaaturia mai ana e ia, ara e tana
+      anahera i tonoa mai e ia, ki tana pononga, ki a Hoani:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Dies ist die Offenbarung Jesu Christi, die ihm Gott gegeben hat, seinen Knechten
+      zu zeigen, was in der Kürze geschehen soll; und hat sie gedeutet und gesandt
+      durch seinen Engel zu seinem Knecht Johannes,
+    eng: The revelation from Jesus Christ, which God gave him to show his servants
+      what must soon take place. He made it known by sending his angel to his servant
+      John,
+    eus: 'IESVS CHRISTEN Apocalypsea, cein eman vkan baitrauca hari Iaincoac, declara
+      dietzençát bere cerbitzariey sarri eguin behar diraden gauçác: eta harc bere
+      Aingueruärequin igorriric Ioannes bere cerbitzariari significatu vkan drautza.'
 - reference: REV.001.003
   testament: NT
   genre: prophecy
   book: REV
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ka hari te tangata e titiro ana i te pukapuka, me te hunga ano hoki e whakarongo
+      ana ki nga kupu o te poropititanga, e pupuri ana hoki i nga mea kua oti te tuhituhi
+      ki reira: kua tata hoki te taima.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Selig ist, der da lieset, und die da hören die Worte der Weissagung und behalten,
+      was darinnen geschrieben ist; denn die Zeit ist nahe.
+    eng: Blessed is the one who reads aloud the words of this prophecy, and blessed
+      are those who hear it and take to heart what is written in it, because the time
+      is near.
+    eus: 'Dohatsu da iracurtzen duena, eta dohatsu dirade prophetia hunetaco hitzac
+      ençuten, eta hartan scribatuac diraden gauçác beguiratzen dituztenac: ecen demborá
+      sarri da.'
 - reference: RUT.001.012
   testament: OT
   genre: narrative
   book: RUT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Hoki atu, e aku tamahine, haere, kua ruruhitia nei hoki ahau, a e kore e
+      whai tahu. Me i ki ahau, Kei te tumanako ahau, tera ano ahau e whai tane i tenei
+      po, a ka whanau ano he tama maku;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Kehret um, meine Töchter, und gehet hin; denn ich bin nun zu alt, daß ich
+      einen Mann nehme. Und wenn ich spräche: Es ist zu hoffen, daß ich diese Nacht
+      einen Mann nehme und Kinder gebäre,'
+    eng: Return home, my daughters; I am too old to have another husband. Even if
+      I thought there was still hope for me--even if I had a husband tonight and then
+      gave birth to sons--
+    eus: NOT_AVAILABLE
 - reference: TIT.001.002
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: I runga ano i te tumanako atu ki te ora tonu, i whakaaria mai nei i mua atu
+      o te ao e te Atua e kore nei e teka;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: auf Hoffnung des ewigen Lebens, welches verheißen hat, der nicht lüget, Gott,
+      vor den Zeiten der Welt,
+    eng: in the hope of eternal life, which God, who does not lie, promised before
+      the beginning of time,
+    eus: 'Vicitze eternalaren sperançacotzát, cein promettatu vkan baitu Iainco gueçurti
+      eztenac dembora eternalén altzinetic, eta manifestatu bere demboretan:'
 - reference: TIT.001.004
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ki a Taituha, ki taku tamaiti pono i runga i to tatou whakapono tahi: Kia
+      tau te aroha noa me te rangimarie, he mea na te Atua Matua, na Karaiti Ihu,
+      na to tatou kaiwhakaora.'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: 'Titus, meinem rechtschaffenen Sohn, nach unser beider Glauben: Gnade, Barmherzigkeit,
+      Friede von Gott dem Vater und dem HERRN Jesu Christo, unserm Heilande.'
+    eng: 'To Titus, my true son in our common faith: Grace and peace from God the
+      Father and Christ Jesus our Savior.'
+    eus: Gratia dela hirequin misericordia eta baquea Iainco Aitaganic, eta Iesus
+      Christ Iaun gure Saluadoreaganic.
 - reference: TIT.001.008
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Engari e atawhai ana i te manuhiri, e aroha ana ki te pai, e whai whakaaro
+      ana, e tika ana, e tapu ana, e pehi ana i ona hiahia;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: sondern gastfrei, gütig, züchtig, gerecht, heilig, keusch
+    eng: Rather, he must be hospitable, one who loves what is good, who is self-controlled,
+      upright, holy and disciplined.
+    eus: 'Baina estrangerén ostatuz gogotic recebiçale, onén onhetsle, çuhur, iusto,
+      saindu, moderatu:'
 - reference: TIT.001.014
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kei tahuri hoki ratou ki nga kupu tito a nga Hurai, ki nga ture a nga tangata
+      e whakaputa ke ana i te pono.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: und nicht achten auf die jüdischen Fabeln und Menschengebote, welche sich
+      von der Wahrheit abwenden.
+    eng: and will pay no attention to Jewish myths or to the merely human commands
+      of those who reject the truth.
+    eus: Behatzen eztutelaric Iuduén fabletara, eta eguiatic aldaratzen diraden guiçonén
+      manuetara.
 - reference: TIT.001.016
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Ki ta ratou ki kua matau ratou ki te Atua; heoi ko a ratou mahi hei whakakahore
+      ki a ia, he hunga whakarihariha ratou, he hunga tutu, e kore ano e tikangatia
+      mo tetahi mahi pai.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Sie sagen, sie erkennen Gott; aber mit den Werken verleugnen sie es, sintemal
+      sie sind, an welchen Gott Greuel hat, und gehorchen nicht und sind zu allem
+      guten Werk untüchtig.
+    eng: They claim to know God, but by their actions they deny him. They are detestable,
+      disobedient and unfit for doing anything good.
+    eus: Professione eguiten dié Iaincoa eçagutzen dutela, baina obraz vkatzen dié,
+      abominable diradelaric eta desobedient eta obra on orotara reprobatuac.
 - reference: TIT.002.002
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: 'Ko nga kaumatua kia ata whakahaere i a ratou, kia tu kaumatua, kia whai
+      whakaaro, kia ora te whakapono, te aroha, te manawanui:'
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: den Alten, daß sie nüchtern seien, ehrbar, züchtig, gesund im Glauben, in
+      der Liebe, in der Geduld;
+    eng: Teach the older men to be temperate, worthy of respect, self-controlled,
+      and sound in faith, in love and in endurance.
+    eus: Guiçon çaharrac sobre diraden, graue, moderatu, sano fedean, charitatean
+      eta patientián.
 - reference: TIT.002.003
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Me nga wahine taikaumatua hoki, kia rite nga tikanga ki a te hunga e whakaaro
+      ana ki te tapu, kia kaua e ngautuara, kia kaua e riro hei pononga ma te waina,
+      kia whakaako i nga mea pai;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: den alten Weibern desselbigengleichen, daß sie sich stellen, wie den Heiligen
+      ziemet, nicht Lästerinnen seien, nicht Weinsäuferinnen, gute Lehrerinnen,4.
+      daß sie die jungen Weiber lehren züchtig sein, ihre Männer lieben, Kinder lieben,
+    eng: Likewise, teach the older women to be reverent in the way they live, not
+      to be slanderers or addicted to much wine, but to teach what is good.
+    eus: 'Emazte çaharrac halaber diraden saindutassunari dagocan continentiataco,
+      ez gaitzerraile, ez mahatsarno anhitzari emanac, gauça honestén iracatsle:'
 - reference: TIT.002.003
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Me nga wahine taikaumatua hoki, kia rite nga tikanga ki a te hunga e whakaaro
+      ana ki te tapu, kia kaua e ngautuara, kia kaua e riro hei pononga ma te waina,
+      kia whakaako i nga mea pai;
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: den alten Weibern desselbigengleichen, daß sie sich stellen, wie den Heiligen
+      ziemet, nicht Lästerinnen seien, nicht Weinsäuferinnen, gute Lehrerinnen,4.
+      daß sie die jungen Weiber lehren züchtig sein, ihre Männer lieben, Kinder lieben,
+    eng: Likewise, teach the older women to be reverent in the way they live, not
+      to be slanderers or addicted to much wine, but to teach what is good.
+    eus: 'Emazte çaharrac halaber diraden saindutassunari dagocan continentiataco,
+      ez gaitzerraile, ez mahatsarno anhitzari emanac, gauça honestén iracatsle:'
 - reference: TIT.002.005
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia whai whakaaro, kia tika, kia pukumahi i te kainga, kia atawhai, kia ngohengohe
+      ki a ratou tane, kei korerotia kinotia te kupu a te Atua.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: sittig sein, keusch, häuslich, gütig, ihren Männern untertan, auf daß nicht
+      das Wort Gottes verlästert werde.
+    eng: to be self-controlled and pure, to be busy at home, to be kind, and to be
+      subject to their husbands, so that no one will malign the word of God.
+    eus: 'Çuhur içaten, chahu, etchean egoile, on, bere senharrén suiet: Iaincoaren
+      hitza blasphema eztadinçát.'
 - reference: TIT.002.008
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia ora te kupu, kei taea te whakahe; kia whakama ai te tangata tikanga ke,
+      te ai he mea e korerotia kinotia ai tatou e ia.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: mit heilsamem und untadeligem Wort, auf daß der Widerwärtige sich schäme
+      und nichts habe, daß er von uns möge Böses sagen.
+    eng: and soundness of speech that cannot be condemned, so that those who oppose
+      you may be ashamed because they have nothing bad to say about us.
+    eus: 'Hitza sano, eta condemna ecin daiten beçalaco: contrastatzen dena confundi
+      dadinçát, çueçaz gaizquiric cer erran ez vkanez.'
 - reference: TIT.002.010
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kaua e kaia, engari kia kitea he pai, he nui, to ratou pono; kia ai ratou
+      i nga mea katoa hei whakapaipai i te whakaako i te Atua, a to tatou Kaiwhakaora.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: nicht veruntreuen, sondern alle gute Treue erzeigen, auf daß sie die Lehre
+      Gottes, unsers Heilandes, zieren in allen Stücken.
+    eng: and not to steal from them, but to show that they can be fully trusted, so
+      that in every way they will make the teaching about God our Savior attractive.
+    eus: Deus appartatzen eztutelaric, baina leyaltate on gucia eracusten dutelaric,
+      gauça gucietan Iainco gure Saluadorearen doctriná orna deçatençát.
 - reference: TIT.002.010
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kaua e kaia, engari kia kitea he pai, he nui, to ratou pono; kia ai ratou
+      i nga mea katoa hei whakapaipai i te whakaako i te Atua, a to tatou Kaiwhakaora.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: nicht veruntreuen, sondern alle gute Treue erzeigen, auf daß sie die Lehre
+      Gottes, unsers Heilandes, zieren in allen Stücken.
+    eng: and not to steal from them, but to show that they can be fully trusted, so
+      that in every way they will make the teaching about God our Savior attractive.
+    eus: Deus appartatzen eztutelaric, baina leyaltate on gucia eracusten dutelaric,
+      gauça gucietan Iainco gure Saluadorearen doctriná orna deçatençát.
 - reference: TIT.003.003
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: He whakaarokore hoki tatou i mua, he tutu, e tinihangatia ana, he pononga
+      na nga hiahia, na nga whakaahuareka maha, e noho ana i runga i te nanakia, i
+      te hae, he hunga whakarihariha, e mauahara ana tetahi ki tetahi.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Denn wir waren auch weiland unweise, ungehorsam, irrig, dienend den Lüsten
+      und mancherlei Wollüsten und wandelten in Bosheit und Neid und hasseten uns
+      untereinander.
+    eng: At one time we too were foolish, disobedient, deceived and enslaved by all
+      kinds of passions and pleasures. We lived in malice and envy, being hated and
+      hating one another.
+    eus: 'Ecen gu-ere noizpait adimendu gabe guentuán, desobediént, abusatuac, anhitz
+      moldetaco desirac eta voluptateac cerbitzatzen guentuela, malitiatan eta inuidiatan
+      vici guinela, gaitzetsiac guinela: eta elkarri gaitz erizle.'
 - reference: TIT.003.004
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Otira i te mea ka puta mai nei te tikanga ngawari me te aroha o te Atua,
+      o to tatou Kaiwhakaora ki nga tangata,
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Da aber erschien die Freundlichkeit und Leutseligkeit Gottes, unsers Heilandes,
+    eng: But when the kindness and love of God our Savior appeared,
+    eus: Baina Iainco gure Saluadorearen benignitatea eta guiçonetaraco amorioa aguertu
+      içan denean,
 - reference: TIT.003.007
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Kia whakatikaia ai tatou e tona aroha noa, kia whiwhi ai ki te taonga, ara
+      ki te ora tonu e tumanakohia atu nei.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: auf daß wir durch desselbigen Gnade gerecht und Erben seien des ewigen Lebens
+      nach der Hoffnung.
+    eng: so that, having been justified by his grace, we might become heirs having
+      the hope of eternal life.
+    eus: Haren gratiaz iustificaturic heredero eguin guentecençát vicitze eternaleraco
+      sperançaren araura.
 - reference: TIT.003.008
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: He korero pono tenei; e mea ana hoki ahau kia kaha tau kauwhau i enei mea,
+      kia mahara ai te hunga kua whakapono ki te Atua ki te mahi i nga mahi pai. Ko
+      nga mea enei e ataahua ana, e whai pai ana mo nga tangata.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Das ist je gewißlich wahr. Solches will ich, daß du fest lehrest, auf daß
+      die, so an Gott gläubig sind worden, in einem Stand guter Werke funden werden.
+      Solches ist gut und nütze den Menschen.
+    eng: This is a trustworthy saying. And I want you to stress these things, so that
+      those who have trusted in God may be careful to devote themselves to doing what
+      is good. These things are excellent and profitable for everyone.
+    eus: 'Hitz segura duc haur, eta gauça hauc nahi diat affirma ditzán, artha dutençát
+      obra onén entretenitzera Iaincoa sinhetsi dutenéc: huná, guiçonen on eta probetchutaco
+      diraden gauçác.'
 - reference: TIT.003.015
   testament: NT
   genre: epistle
   book: TIT
-  translations: TO_BE_FETCHED
+  translations:
+    smo: NOT_AVAILABLE
+    fij: NOT_AVAILABLE
+    mri: Tenei te oha atu nei ki a koe oku hoa katoa. Oha atu ki te hunga e aroha
+      ana ki a matou i runga i te whakapono. Kia tau te aroha noa ki a koutou katoa.
+      Amine.
+    ceb: NOT_AVAILABLE
+    slv: NOT_AVAILABLE
+    hsb: NOT_AVAILABLE
+    deu: Es grüßen dich alle, die mit mir sind. Grüße alle, die uns lieben im Glauben.
+      Die Gnade sei mit euch allen! Amen.
+    eng: Everyone with me sends you greetings. Greet those who love us in the faith.
+      Grace be with you all.
+    eus: Salutatzen auté enequin diraden guciéc. Salutaitzac fedez on darizcutenac.
+      Iaincoaren gratia dela çuequin gucioquin, Amen.
