@@ -1,0 +1,1659 @@
+feature: number-systems
+dataset: train_predictions_v2
+prompt_version: PROMPT2
+generated: '2025-11-18T05:40:00Z'
+total_verses: 236
+note: 'PROMPT2: Verse text analysis with explicit number detection'
+predictions:
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1KI.002.028
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.4 (Quadrial Markers)
+  rationale: 'Quadrial marker: "four"'
+  text_evidence: four
+  arbitrarity: arbitrary
+  reference: 1KI.007.019
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.4 (Quadrial Markers)
+  rationale: 'Quadrial marker: "four"'
+  text_evidence: four
+  arbitrarity: arbitrary
+  reference: 1KI.007.030
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1KI.007.035
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: 1KI.020.029
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: 1SA.004.004
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1SA.009.013
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1SA.014.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1SA.025.039
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "grace"'
+  text_evidence: grace
+  arbitrarity: arbitrary
+  reference: 1TH.001.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "grace"'
+  text_evidence: grace
+  arbitrarity: arbitrary
+  reference: 1TH.001.001
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "all the believers"'
+  text_evidence: all the believers
+  arbitrarity: arbitrary
+  reference: 1TH.001.007
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "faith"'
+  text_evidence: faith
+  arbitrarity: arbitrary
+  reference: 1TH.001.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "faith"'
+  text_evidence: faith
+  arbitrarity: arbitrary
+  reference: 1TH.001.008
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.001.009
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "gospel"'
+  text_evidence: gospel
+  arbitrarity: arbitrary
+  reference: 1TH.002.002
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.002.003
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.002.005
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.002.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the gospel"'
+  text_evidence: the gospel
+  arbitrarity: arbitrary
+  reference: 1TH.002.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the word"'
+  text_evidence: the word
+  arbitrarity: arbitrary
+  reference: 1TH.002.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the word"'
+  text_evidence: the word
+  arbitrarity: arbitrary
+  reference: 1TH.002.013
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 1TH.002.014
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "everyone"'
+  text_evidence: everyone
+  arbitrarity: arbitrary
+  reference: 1TH.002.015
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.003.001
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.003.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "faith"'
+  text_evidence: faith
+  arbitrarity: arbitrary
+  reference: 1TH.003.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "faith"'
+  text_evidence: faith
+  arbitrarity: arbitrary
+  reference: 1TH.003.006
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "each other"'
+  text_evidence: each other
+  arbitrarity: arbitrary
+  reference: 1TH.003.012
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.003.013
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.003.013
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.003
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.003
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.004
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.004
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: 1TH.004.006
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: 1TH.004.006
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: 1TH.004.009
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: 1TH.004.009
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "your hands"'
+  text_evidence: your hands
+  arbitrarity: arbitrary
+  reference: 1TH.004.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "word"'
+  text_evidence: word
+  arbitrarity: arbitrary
+  reference: 1TH.004.015
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.004.017
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.005.002
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.005.002
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "peace"'
+  text_evidence: peace
+  arbitrarity: arbitrary
+  reference: 1TH.005.003
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 1TH.005.004
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 1TH.005.004
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.005.006
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "salvation"'
+  text_evidence: salvation
+  arbitrarity: arbitrary
+  reference: 1TH.005.009
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "each other"'
+  text_evidence: each other
+  arbitrarity: arbitrary
+  reference: 1TH.005.013
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 1TH.005.018
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "many"'
+  text_evidence: many
+  arbitrarity: arbitrary
+  reference: 2JN.001.007
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "hope"'
+  text_evidence: hope
+  arbitrarity: arbitrary
+  reference: 2JN.001.012
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: 2SA.002.018
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: 2SA.013.038
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: 2SA.023.017
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: 2SA.023.018
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.001.001
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.001.005
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.001.006
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the gospel"'
+  text_evidence: the gospel
+  arbitrarity: arbitrary
+  reference: 2TH.001.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the grace"'
+  text_evidence: the grace
+  arbitrarity: arbitrary
+  reference: 2TH.001.012
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.002.001
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.002.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: himself
+  arbitrarity: arbitrary
+  reference: 2TH.002.004
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "love"'
+  text_evidence: love
+  arbitrarity: arbitrary
+  reference: 2TH.002.010
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the truth"'
+  text_evidence: the truth
+  arbitrarity: arbitrary
+  reference: 2TH.002.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "word"'
+  text_evidence: word
+  arbitrarity: arbitrary
+  reference: 2TH.002.017
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.003.001
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.003.001
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.003.001
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.003.004
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.003.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.003.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  rationale: 'Collective noun in epistle: "brothers"'
+  text_evidence: brothers
+  arbitrarity: arbitrary
+  reference: 2TH.003.006
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.003.009
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.003.014
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: 2TH.003.017
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: COL.004.009
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: COL.004.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: COL.004.012
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: COL.004.016
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: COL.004.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: DAN.002.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: DAN.002.018
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: DAN.003.015
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: DAN.003.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: DAN.003.018
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: DAN.007.005
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: DAN.010.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: EST.002.021
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: EST.004.016
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: EST.009.022
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: EXO.003.018
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: EXO.005.021
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: EXO.006.003
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: EXO.006.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: EXO.006.024
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: EXO.012.045
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: EXO.022.009
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: EXO.025.012
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: EXO.025.016
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 1, Rule 1.1 (Trinity Reference)
+  rationale: 'Trinity reference: GEN.001.026'
+  text_evidence: Trinity pattern
+  arbitrarity: non-arbitrary
+  reference: GEN.001.026
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 1, Rule 1.1 (Trinity Reference)
+  rationale: 'Trinity reference: GEN.001.026'
+  text_evidence: Trinity pattern
+  arbitrarity: non-arbitrary
+  reference: GEN.001.026
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.007.007
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.014.014
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.014.016
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.018.005
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.019.003
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.019.018
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.019.025
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "her shoulders"'
+  text_evidence: her shoulders
+  arbitrarity: arbitrary
+  reference: GEN.021.014
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: GEN.024.022
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "his hands"'
+  text_evidence: his hands
+  arbitrarity: arbitrary
+  reference: GEN.027.023
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: GEN.029.034
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.030.030
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.031.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.031.015
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.032.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: GEN.032.010
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.033.002
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.036.016
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.036.016
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: GEN.040.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.040.020
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: GEN.048.009
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "both"'
+  text_evidence: both
+  arbitrarity: arbitrary
+  reference: GEN.048.013
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "their feet"'
+  text_evidence: their feet
+  arbitrarity: arbitrary
+  reference: JDG.019.021
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: JDG.019.024
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "your eyes"'
+  text_evidence: your eyes
+  arbitrarity: arbitrary
+  reference: JHN.004.035
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: JOS.002.012
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: JOS.002.023
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: JOS.003.002
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: JOS.008.006
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: JOS.015.014
+- predicted_value: Paucal
+  confidence: High
+  rule_applied: Level 2, Rule 2.5 (Paucal Markers)
+  rationale: 'Paucal marker: "ten"'
+  text_evidence: ten
+  arbitrarity: arbitrary
+  reference: JOS.017.005
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: JOS.022.033
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: LUK.001.056
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: LUK.008.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: LUK.009.033
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: LUK.009.037
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.010.001
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.010.035
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.021.002
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: LUK.022.034
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: LUK.022.058
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: LUK.024.013
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: MAT.002.016
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: MAT.008.028
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MAT.008.031
+- predicted_value: Paucal
+  confidence: High
+  rule_applied: Level 2, Rule 2.5 (Paucal Markers)
+  rationale: 'Paucal marker: "a few"'
+  text_evidence: a few
+  arbitrarity: arbitrary
+  reference: MAT.015.034
+- predicted_value: Paucal
+  confidence: High
+  rule_applied: Level 2, Rule 2.5 (Paucal Markers)
+  rationale: 'Paucal marker: "seven"'
+  text_evidence: seven
+  arbitrarity: arbitrary
+  reference: MAT.015.036
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: MAT.018.020
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: MAT.018.020
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: MAT.020.031
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "their eyes"'
+  text_evidence: their eyes
+  arbitrarity: arbitrary
+  reference: MAT.020.034
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MAT.022.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: MAT.024.031
+- predicted_value: Paucal
+  confidence: High
+  rule_applied: Level 2, Rule 2.5 (Paucal Markers)
+  rationale: 'Paucal marker: "a few"'
+  text_evidence: a few
+  arbitrarity: arbitrary
+  reference: MAT.025.023
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: MAT.026.060
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: MAT.026.075
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MAT.027.044
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: MRK.006.007
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "two"'
+  text_evidence: two
+  arbitrarity: arbitrary
+  reference: MRK.006.007
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "crowd"'
+  text_evidence: crowd
+  arbitrarity: arbitrary
+  reference: MRK.009.014
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: MRK.010.008
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MRK.011.004
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.4 (Quadrial Markers)
+  rationale: 'Quadrial marker: "four"'
+  text_evidence: four
+  arbitrarity: arbitrary
+  reference: MRK.013.027
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MRK.014.041
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MRK.014.042
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.3 (Trial Markers)
+  rationale: 'Trial marker: "three"'
+  text_evidence: three
+  arbitrarity: arbitrary
+  reference: MRK.014.058
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MRK.015.032
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: MRK.016.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "grace"'
+  text_evidence: grace
+  arbitrarity: arbitrary
+  reference: PHM.001.003
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "love"'
+  text_evidence: love
+  arbitrarity: arbitrary
+  reference: PHM.001.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the faith"'
+  text_evidence: the faith
+  arbitrarity: arbitrary
+  reference: PHM.001.006
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PHM.001.008
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PHM.001.010
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PHM.001.010
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "both"'
+  text_evidence: both
+  arbitrarity: arbitrary
+  reference: PHM.001.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the gospel"'
+  text_evidence: the gospel
+  arbitrarity: arbitrary
+  reference: PHM.001.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the gospel"'
+  text_evidence: the gospel
+  arbitrarity: arbitrary
+  reference: PHM.001.013
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "both"'
+  text_evidence: both
+  arbitrarity: arbitrary
+  reference: PHM.001.016
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PHM.001.018
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PHM.001.019
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PHM.001.024
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PRO.007.018
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: PRO.014.007
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: REV.001.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: REV.001.003
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: REV.001.003
+- predicted_value: Paucal
+  confidence: High
+  rule_applied: Level 2, Rule 2.5 (Paucal Markers)
+  rationale: 'Paucal marker: "seven"'
+  text_evidence: seven
+  arbitrarity: arbitrary
+  reference: REV.001.004
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: REV.001.005
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: REV.001.007
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: REV.001.008
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: REV.001.009
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  rationale: No explicit markers - genre default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: REV.001.010
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: No explicit markers - narrative default
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: RUT.003.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "faith"'
+  text_evidence: faith
+  arbitrarity: arbitrary
+  reference: TIT.001.004
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "faith"'
+  text_evidence: faith
+  arbitrarity: arbitrary
+  reference: TIT.001.004
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.001.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: a man
+  arbitrarity: arbitrary
+  reference: TIT.001.006
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.001.007
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.001.009
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.001.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: TIT.001.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: TIT.001.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: TIT.001.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  rationale: 'Abstract theological concept: "the truth"'
+  text_evidence: the truth
+  arbitrarity: arbitrary
+  reference: TIT.001.014
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.2 (Dual Markers)
+  rationale: 'Dual marker: "both"'
+  text_evidence: both
+  arbitrarity: arbitrary
+  reference: TIT.001.015
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.002.006
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.002.008
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.002.009
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.002.009
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.6 (Plural Markers)
+  rationale: 'Plural marker: "all people"'
+  text_evidence: all people
+  arbitrarity: arbitrary
+  reference: TIT.002.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: himself
+  arbitrarity: arbitrary
+  reference: TIT.002.014
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: himself
+  arbitrarity: arbitrary
+  reference: TIT.002.014
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.002.015
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.003.001
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.003.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2, Rule 2.1 (Singular Markers)
+  rationale: Singular marker detected in text
+  text_evidence: one
+  arbitrarity: arbitrary
+  reference: TIT.003.002
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.003.005
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.003.012
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.003.012
+- predicted_value: Singular
+  confidence: Low
+  rule_applied: Level 6, Rule 6.2 (Epistle Default)
+  rationale: No explicit markers - epistle default (abstract)
+  text_evidence: fallback
+  arbitrarity: arbitrary
+  reference: TIT.003.013
