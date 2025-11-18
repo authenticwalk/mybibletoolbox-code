@@ -5,1136 +5,2643 @@ translations_included:
 - smo
 - slv
 - tpi
-note: Translation texts need to be fetched from eBible.org or Bible.com APIs
 verses:
 - reference: PRO.016.030
-  translations: {}
-  note: Fetch from .data/commentary/PRO/016/030-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.003.003
-  translations: {}
-  note: Fetch from .data/commentary/GEN/003/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.033.007
-  translations: {}
-  note: Fetch from .data/commentary/GEN/033/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: RUT.001.008
-  translations: {}
-  note: Fetch from .data/commentary/RUT/001/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.006.003
-  translations: {}
-  note: Fetch from .data/commentary/2SA/006/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.041.001
-  translations: {}
-  note: Fetch from .data/commentary/GEN/041/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PRO.021.025
-  translations: {}
-  note: Fetch from .data/commentary/PRO/021/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.025.022
-  translations: {}
-  note: Fetch from .data/commentary/MAT/025/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.046.022
-  translations: {}
-  note: Fetch from .data/commentary/GEN/046/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.023.039
-  translations: {}
-  note: Fetch from .data/commentary/LUK/023/039-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PRO.023.033
-  translations: {}
-  note: Fetch from .data/commentary/PRO/023/033-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.019.001
-  translations: {}
-  note: Fetch from .data/commentary/GEN/019/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.027.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/027/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.011.026
-  translations: {}
-  note: Fetch from .data/commentary/JDG/011/026-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.014
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.019.031
-  translations: {}
-  note: Fetch from .data/commentary/GEN/019/031-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.017.012
-  translations: {}
-  note: Fetch from .data/commentary/EXO/017/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.008.007
-  translations: {}
-  note: Fetch from .data/commentary/JDG/008/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.015.025
-  translations: {}
-  note: Fetch from .data/commentary/1KI/015/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.020.034
-  translations: {}
-  note: Fetch from .data/commentary/MAT/020/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.014.010
-  translations: {}
-  note: Fetch from .data/commentary/1SA/014/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.021.008
-  translations: {}
-  note: Fetch from .data/commentary/2SA/021/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.016.007
-  translations: {}
-  note: Fetch from .data/commentary/EXO/016/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.022.019
-  translations: {}
-  note: Fetch from .data/commentary/GEN/022/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.005.021
-  translations: {}
-  note: Fetch from .data/commentary/EXO/005/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.010.038
-  translations: {}
-  note: Fetch from .data/commentary/MRK/010/038-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EST.009.027
-  translations: {}
-  note: Fetch from .data/commentary/EST/009/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.019.018
-  translations: {}
-  note: Fetch from .data/commentary/GEN/019/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.014.030
-  translations: {}
-  note: Fetch from .data/commentary/MRK/014/030-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.027.038
-  translations: {}
-  note: Fetch from .data/commentary/MAT/027/038-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.028.009
-  translations: {}
-  note: Fetch from .data/commentary/GEN/028/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.009.007
-  translations: {}
-  note: Fetch from .data/commentary/1SA/009/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.016.029
-  translations: {}
-  note: Fetch from .data/commentary/JDG/016/029-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.009.001
-  translations: {}
-  note: Fetch from .data/commentary/MAT/009/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.040.008
-  translations: {}
-  note: Fetch from .data/commentary/GEN/040/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.006.014
-  translations: {}
-  note: Fetch from .data/commentary/1SA/006/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.002.001
-  translations: {}
-  note: Fetch from .data/commentary/MRK/002/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.037
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/037-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.027
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.010.039
-  translations: {}
-  note: Fetch from .data/commentary/MRK/010/039-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.047
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/047-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.001.002
-  translations: {}
-  note: Fetch from .data/commentary/COL/001/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.018.010
-  translations: {}
-  note: Fetch from .data/commentary/LUK/018/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.048.014
-  translations: {}
-  note: Fetch from .data/commentary/GEN/048/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PRO.021.025
-  translations: {}
-  note: Fetch from .data/commentary/PRO/021/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.028.025
-  translations: {}
-  note: Fetch from .data/commentary/1SA/028/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.009.027
-  translations: {}
-  note: Fetch from .data/commentary/MAT/009/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.005.004
-  translations: {}
-  note: Fetch from .data/commentary/EXO/005/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.006.004
-  translations: {}
-  note: Fetch from .data/commentary/DAN/006/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.021.013
-  translations: {}
-  note: Fetch from .data/commentary/1KI/021/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.008.021
-  translations: {}
-  note: Fetch from .data/commentary/JDG/008/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.008.008
-  translations: {}
-  note: Fetch from .data/commentary/LUK/008/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.011.002
-  translations: {}
-  note: Fetch from .data/commentary/MRK/011/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.009
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EST.002.021
-  translations: {}
-  note: Fetch from .data/commentary/EST/002/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.002.014
-  translations: {}
-  note: Fetch from .data/commentary/JOS/002/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.008.003
-  translations: {}
-  note: Fetch from .data/commentary/DAN/008/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.012.033
-  translations: {}
-  note: Fetch from .data/commentary/MRK/012/033-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.014.010
-  translations: {}
-  note: Fetch from .data/commentary/1SA/014/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.002.009
-  translations: {}
-  note: Fetch from .data/commentary/GEN/002/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.011.003
-  translations: {}
-  note: Fetch from .data/commentary/MRK/011/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.015.011
-  translations: {}
-  note: Fetch from .data/commentary/LUK/015/011-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.040.020
-  translations: {}
-  note: Fetch from .data/commentary/GEN/040/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.024.004
-  translations: {}
-  note: Fetch from .data/commentary/JOS/024/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.014
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.009.027
-  translations: {}
-  note: Fetch from .data/commentary/MAT/009/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.014.018
-  translations: {}
-  note: Fetch from .data/commentary/MAT/014/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PRO.006.028
-  translations: {}
-  note: Fetch from .data/commentary/PRO/006/028-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.025.022
-  translations: {}
-  note: Fetch from .data/commentary/MAT/025/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.005.002
-  translations: {}
-  note: Fetch from .data/commentary/LUK/005/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.025.024
-  translations: {}
-  note: Fetch from .data/commentary/GEN/025/024-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.034.031
-  translations: {}
-  note: Fetch from .data/commentary/GEN/034/031-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.011.005
-  translations: {}
-  note: Fetch from .data/commentary/1SA/011/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.008.021
-  translations: {}
-  note: Fetch from .data/commentary/JDG/008/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.002.002
-  translations: {}
-  note: Fetch from .data/commentary/2SA/002/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: NEH.013.020
-  translations: {}
-  note: Fetch from .data/commentary/NEH/013/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.041.032
-  translations: {}
-  note: Fetch from .data/commentary/GEN/041/032-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PRO.004.025
-  translations: {}
-  note: Fetch from .data/commentary/PRO/004/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.007.004
-  translations: {}
-  note: Fetch from .data/commentary/DAN/007/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.011.002
-  translations: {}
-  note: Fetch from .data/commentary/MRK/011/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.022.015
-  translations: {}
-  note: Fetch from .data/commentary/JOS/022/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.001.016
-  translations: {}
-  note: Fetch from .data/commentary/EXO/001/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.016.003
-  translations: {}
-  note: Fetch from .data/commentary/JDG/016/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.020.019
-  translations: {}
-  note: Fetch from .data/commentary/1SA/020/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.007
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: RUT.002.020
-  translations: {}
-  note: Fetch from .data/commentary/RUT/002/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.025.024
-  translations: {}
-  note: Fetch from .data/commentary/1SA/025/024-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.003.022
-  translations: {}
-  note: Fetch from .data/commentary/1KI/003/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.031.015
-  translations: {}
-  note: Fetch from .data/commentary/GEN/031/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.004.012
-  translations: {}
-  note: Fetch from .data/commentary/2SA/004/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.015.036
-  translations: {}
-  note: Fetch from .data/commentary/MAT/015/036-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: NEH.002.012
-  translations: {}
-  note: Fetch from .data/commentary/NEH/002/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: RUT.001.001
-  translations: {}
-  note: Fetch from .data/commentary/RUT/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.005.019
-  translations: {}
-  note: Fetch from .data/commentary/LUK/005/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.025.039
-  translations: {}
-  note: Fetch from .data/commentary/1SA/025/039-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.002.016
-  translations: {}
-  note: Fetch from .data/commentary/DAN/002/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.005.018
-  translations: {}
-  note: Fetch from .data/commentary/LUK/005/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.005.002
-  translations: {}
-  note: Fetch from .data/commentary/LUK/005/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.025.021
-  translations: {}
-  note: Fetch from .data/commentary/MAT/025/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.015.020
-  translations: {}
-  note: Fetch from .data/commentary/2SA/015/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.008.007
-  translations: {}
-  note: Fetch from .data/commentary/MRK/008/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.037.013
-  translations: {}
-  note: Fetch from .data/commentary/GEN/037/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.010.020
-  translations: {}
-  note: Fetch from .data/commentary/JOS/010/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.007.014
-  translations: {}
-  note: Fetch from .data/commentary/MAT/007/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.005.019
-  translations: {}
-  note: Fetch from .data/commentary/LUK/005/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.012.045
-  translations: {}
-  note: Fetch from .data/commentary/EXO/012/045-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.011.034
-  translations: {}
-  note: Fetch from .data/commentary/DAN/011/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.003.003
-  translations: {}
-  note: Fetch from .data/commentary/TIT/003/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.001.004
-  translations: {}
-  note: Fetch from .data/commentary/2TH/001/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.005.014
-  translations: {}
-  note: Fetch from .data/commentary/1TH/005/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.005.009
-  translations: {}
-  note: Fetch from .data/commentary/1TH/005/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: REV.001.009
-  translations: {}
-  note: Fetch from .data/commentary/REV/001/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.001.009
-  translations: {}
-  note: Fetch from .data/commentary/1TH/001/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2JN.001.010
-  translations: {}
-  note: Fetch from .data/commentary/2JN/001/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.002.007
-  translations: {}
-  note: Fetch from .data/commentary/1TH/002/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.001.001
-  translations: {}
-  note: Fetch from .data/commentary/TIT/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2JN.001.001
-  translations: {}
-  note: Fetch from .data/commentary/2JN/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.003.001
-  translations: {}
-  note: Fetch from .data/commentary/TIT/003/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.002.015
-  translations: {}
-  note: Fetch from .data/commentary/2TH/002/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2JN.001.010
-  translations: {}
-  note: Fetch from .data/commentary/2JN/001/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.003.004
-  translations: {}
-  note: Fetch from .data/commentary/TIT/003/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.001.014
-  translations: {}
-  note: Fetch from .data/commentary/TIT/001/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.001.009
-  translations: {}
-  note: Fetch from .data/commentary/TIT/001/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.003.005
-  translations: {}
-  note: Fetch from .data/commentary/1TH/003/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.004.018
-  translations: {}
-  note: Fetch from .data/commentary/COL/004/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.004.002
-  translations: {}
-  note: Fetch from .data/commentary/1TH/004/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.002.015
-  translations: {}
-  note: Fetch from .data/commentary/1TH/002/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.005.023
-  translations: {}
-  note: Fetch from .data/commentary/1TH/005/023-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2JN.001.012
-  translations: {}
-  note: Fetch from .data/commentary/2JN/001/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.001.001
-  translations: {}
-  note: Fetch from .data/commentary/1TH/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.004.004
-  translations: {}
-  note: Fetch from .data/commentary/1TH/004/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.003.001
-  translations: {}
-  note: Fetch from .data/commentary/TIT/003/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.002.017
-  translations: {}
-  note: Fetch from .data/commentary/2TH/002/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.002.013
-  translations: {}
-  note: Fetch from .data/commentary/1TH/002/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.003.012
-  translations: {}
-  note: Fetch from .data/commentary/2TH/003/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2JN.001.001
-  translations: {}
-  note: Fetch from .data/commentary/2JN/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.001.009
-  translations: {}
-  note: Fetch from .data/commentary/TIT/001/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: REV.001.007
-  translations: {}
-  note: Fetch from .data/commentary/REV/001/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.002.009
-  translations: {}
-  note: Fetch from .data/commentary/1TH/002/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.002.012
-  translations: {}
-  note: Fetch from .data/commentary/TIT/002/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2JN.001.004
-  translations: {}
-  note: Fetch from .data/commentary/2JN/001/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.007
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.025
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.002.028
-  translations: {}
-  note: Fetch from .data/commentary/1KI/002/028-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.010.007
-  translations: {}
-  note: Fetch from .data/commentary/GEN/010/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: NEH.010.032
-  translations: {}
-  note: Fetch from .data/commentary/NEH/010/032-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.015
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.007.034
-  translations: {}
-  note: Fetch from .data/commentary/1KI/007/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.027
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.002.003
-  translations: {}
-  note: Fetch from .data/commentary/MRK/002/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.021.022
-  translations: {}
-  note: Fetch from .data/commentary/2SA/021/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.013.027
-  translations: {}
-  note: Fetch from .data/commentary/MRK/013/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JHN.004.035
-  translations: {}
-  note: Fetch from .data/commentary/JHN/004/035-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.009.034
-  translations: {}
-  note: Fetch from .data/commentary/JDG/009/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.017
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.020
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.001.015
-  translations: {}
-  note: Fetch from .data/commentary/DAN/001/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.021.022
-  translations: {}
-  note: Fetch from .data/commentary/JOS/021/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.008.023
-  translations: {}
-  note: Fetch from .data/commentary/DAN/008/023-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.007
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.020
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.014
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.006
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/006-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.007.006
-  translations: {}
-  note: Fetch from .data/commentary/DAN/007/006-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.024
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/024-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.017
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.010.006
-  translations: {}
-  note: Fetch from .data/commentary/GEN/010/006-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.010
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.021.039
-  translations: {}
-  note: Fetch from .data/commentary/JOS/021/039-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.015
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.025
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.007.034
-  translations: {}
-  note: Fetch from .data/commentary/1KI/007/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.019.008
-  translations: {}
-  note: Fetch from .data/commentary/LUK/019/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: NEH.006.004
-  translations: {}
-  note: Fetch from .data/commentary/NEH/006/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.007.017
-  translations: {}
-  note: Fetch from .data/commentary/DAN/007/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.025
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.011.004
-  translations: {}
-  note: Fetch from .data/commentary/DAN/011/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.019.015
-  translations: {}
-  note: Fetch from .data/commentary/GEN/019/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.021.037
-  translations: {}
-  note: Fetch from .data/commentary/JOS/021/037-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.015
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.008.008
-  translations: {}
-  note: Fetch from .data/commentary/DAN/008/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.014
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.025
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.026.031
-  translations: {}
-  note: Fetch from .data/commentary/GEN/026/031-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.007.030
-  translations: {}
-  note: Fetch from .data/commentary/1KI/007/030-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.015
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.001.020
-  translations: {}
-  note: Fetch from .data/commentary/DAN/001/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.021.035
-  translations: {}
-  note: Fetch from .data/commentary/JOS/021/035-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.007.017
-  translations: {}
-  note: Fetch from .data/commentary/DAN/007/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.020.047
-  translations: {}
-  note: Fetch from .data/commentary/JDG/020/047-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.011
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/011-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.022.004
-  translations: {}
-  note: Fetch from .data/commentary/EXO/022/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.026
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/026-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.009.001
-  translations: {}
-  note: Fetch from .data/commentary/GEN/009/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.027
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.021.039
-  translations: {}
-  note: Fetch from .data/commentary/JOS/021/039-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.002.010
-  translations: {}
-  note: Fetch from .data/commentary/GEN/002/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.003.002
-  translations: {}
-  note: Fetch from .data/commentary/1TH/003/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.002.010
-  translations: {}
-  note: Fetch from .data/commentary/TIT/002/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: REV.001.006
-  translations: {}
-  note: Fetch from .data/commentary/REV/001/006-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.001.009
-  translations: {}
-  note: Fetch from .data/commentary/TIT/001/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.001
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.003.010
-  translations: {}
-  note: Fetch from .data/commentary/TIT/003/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.002.015
-  translations: {}
-  note: Fetch from .data/commentary/1TH/002/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.002.004
-  translations: {}
-  note: Fetch from .data/commentary/2TH/002/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.002.013
-  translations: {}
-  note: Fetch from .data/commentary/TIT/002/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: REV.001.006
-  translations: {}
-  note: Fetch from .data/commentary/REV/001/006-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: REV.001.008
-  translations: {}
-  note: Fetch from .data/commentary/REV/001/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.004.003
-  translations: {}
-  note: Fetch from .data/commentary/COL/004/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.002.002
-  translations: {}
-  note: Fetch from .data/commentary/1TH/002/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.003.025
-  translations: {}
-  note: Fetch from .data/commentary/COL/003/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.009
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.004.017
-  translations: {}
-  note: Fetch from .data/commentary/COL/004/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.002.012
-  translations: {}
-  note: Fetch from .data/commentary/2TH/002/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1TH.004.013
-  translations: {}
-  note: Fetch from .data/commentary/1TH/004/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2TH.003.003
-  translations: {}
-  note: Fetch from .data/commentary/2TH/003/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.004
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.011
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/011-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.004.009
-  translations: {}
-  note: Fetch from .data/commentary/COL/004/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.010
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.021
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: REV.001.001
-  translations: {}
-  note: Fetch from .data/commentary/REV/001/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: TIT.001.007
-  translations: {}
-  note: Fetch from .data/commentary/TIT/001/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.023
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/023-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: PHM.001.013
-  translations: {}
-  note: Fetch from .data/commentary/PHM/001/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: COL.004.001
-  translations: {}
-  note: Fetch from .data/commentary/COL/004/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.040.010
-  translations: {}
-  note: Fetch from .data/commentary/GEN/040/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.002
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.024.012
-  translations: {}
-  note: Fetch from .data/commentary/2SA/024/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.029.008
-  translations: {}
-  note: Fetch from .data/commentary/GEN/029/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: NEH.002.011
-  translations: {}
-  note: Fetch from .data/commentary/NEH/002/011-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.001.024
-  translations: {}
-  note: Fetch from .data/commentary/1SA/001/024-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.015
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.040.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/040/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.011.002
-  translations: {}
-  note: Fetch from .data/commentary/DAN/011/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.002.018
-  translations: {}
-  note: Fetch from .data/commentary/DAN/002/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.015.014
-  translations: {}
-  note: Fetch from .data/commentary/JOS/015/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.002
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.012
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.006.036
-  translations: {}
-  note: Fetch from .data/commentary/1KI/006/036-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.040.018
-  translations: {}
-  note: Fetch from .data/commentary/GEN/040/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.006.024
-  translations: {}
-  note: Fetch from .data/commentary/EXO/006/024-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.016
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.017
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.016.006
-  translations: {}
-  note: Fetch from .data/commentary/MRK/016/006-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.045.022
-  translations: {}
-  note: Fetch from .data/commentary/GEN/045/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.010.036
-  translations: {}
-  note: Fetch from .data/commentary/LUK/010/036-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.002.018
-  translations: {}
-  note: Fetch from .data/commentary/2SA/002/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.025.033
-  translations: {}
-  note: Fetch from .data/commentary/EXO/025/033-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.031.012
-  translations: {}
-  note: Fetch from .data/commentary/1SA/031/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.008.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/008/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.019.021
-  translations: {}
-  note: Fetch from .data/commentary/JDG/019/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.024.046
-  translations: {}
-  note: Fetch from .data/commentary/LUK/024/046-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.012
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.009.013
-  translations: {}
-  note: Fetch from .data/commentary/MRK/009/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.010.003
-  translations: {}
-  note: Fetch from .data/commentary/DAN/010/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.020.004
-  translations: {}
-  note: Fetch from .data/commentary/2SA/020/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.010.027
-  translations: {}
-  note: Fetch from .data/commentary/GEN/010/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.027
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.024.012
-  translations: {}
-  note: Fetch from .data/commentary/2SA/024/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.006.013
-  translations: {}
-  note: Fetch from .data/commentary/DAN/006/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.020.021
-  translations: {}
-  note: Fetch from .data/commentary/1SA/020/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.026.034
-  translations: {}
-  note: Fetch from .data/commentary/MAT/026/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.033.003
-  translations: {}
-  note: Fetch from .data/commentary/GEN/033/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.006.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/006/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.002.022
-  translations: {}
-  note: Fetch from .data/commentary/JOS/002/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EST.004.016
-  translations: {}
-  note: Fetch from .data/commentary/EST/004/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JHN.002.019
-  translations: {}
-  note: Fetch from .data/commentary/JHN/002/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.024.049
-  translations: {}
-  note: Fetch from .data/commentary/GEN/024/049-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.026
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/026-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.010.003
-  translations: {}
-  note: Fetch from .data/commentary/1SA/010/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.022.061
-  translations: {}
-  note: Fetch from .data/commentary/LUK/022/061-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.002.017
-  translations: {}
-  note: Fetch from .data/commentary/DAN/002/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.010.003
-  translations: {}
-  note: Fetch from .data/commentary/GEN/010/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.007.016
-  translations: {}
-  note: Fetch from .data/commentary/JDG/007/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.017
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.024.013
-  translations: {}
-  note: Fetch from .data/commentary/2SA/024/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.010.001
-  translations: {}
-  note: Fetch from .data/commentary/GEN/010/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.005
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.019.019
-  translations: {}
-  note: Fetch from .data/commentary/JDG/019/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.020.019
-  translations: {}
-  note: Fetch from .data/commentary/MAT/020/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.019.014
-  translations: {}
-  note: Fetch from .data/commentary/JDG/019/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.020.020
-  translations: {}
-  note: Fetch from .data/commentary/1SA/020/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.010.022
-  translations: {}
-  note: Fetch from .data/commentary/EXO/010/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.019
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.007.012
-  translations: {}
-  note: Fetch from .data/commentary/DAN/007/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.009.032
-  translations: {}
-  note: Fetch from .data/commentary/LUK/009/032-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.008.003
-  translations: {}
-  note: Fetch from .data/commentary/LUK/008/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.006.022
-  translations: {}
-  note: Fetch from .data/commentary/EXO/006/022-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.002
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.009.018
-  translations: {}
-  note: Fetch from .data/commentary/GEN/009/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.028.019
-  translations: {}
-  note: Fetch from .data/commentary/1SA/028/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.008.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/008/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.016
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.018.020
-  translations: {}
-  note: Fetch from .data/commentary/MAT/018/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.004
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.014
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.009
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.010.028
-  translations: {}
-  note: Fetch from .data/commentary/GEN/010/028-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.022.009
-  translations: {}
-  note: Fetch from .data/commentary/JOS/022/009-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.023.014
-  translations: {}
-  note: Fetch from .data/commentary/EXO/023/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.020.020
-  translations: {}
-  note: Fetch from .data/commentary/1SA/020/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.009.010
-  translations: {}
-  note: Fetch from .data/commentary/MRK/009/010-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.016
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.008.016
-  translations: {}
-  note: Fetch from .data/commentary/GEN/008/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.017.028
-  translations: {}
-  note: Fetch from .data/commentary/2SA/017/028-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.034.025
-  translations: {}
-  note: Fetch from .data/commentary/GEN/034/025-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.016
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.018.020
-  translations: {}
-  note: Fetch from .data/commentary/MAT/018/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.013
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.026.075
-  translations: {}
-  note: Fetch from .data/commentary/MAT/026/075-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.021
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.026.028
-  translations: {}
-  note: Fetch from .data/commentary/GEN/026/028-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.008
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.043.032
-  translations: {}
-  note: Fetch from .data/commentary/GEN/043/032-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.017.004
-  translations: {}
-  note: Fetch from .data/commentary/1SA/017/004-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.036.018
-  translations: {}
-  note: Fetch from .data/commentary/GEN/036/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.015.041
-  translations: {}
-  note: Fetch from .data/commentary/MRK/015/041-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.014.017
-  translations: {}
-  note: Fetch from .data/commentary/GEN/014/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.016
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.002.016
-  translations: {}
-  note: Fetch from .data/commentary/JOS/002/016-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.015.014
-  translations: {}
-  note: Fetch from .data/commentary/JOS/015/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.009.017
-  translations: {}
-  note: Fetch from .data/commentary/JOS/009/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.018.020
-  translations: {}
-  note: Fetch from .data/commentary/MAT/018/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.031.007
-  translations: {}
-  note: Fetch from .data/commentary/1SA/031/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.019.019
-  translations: {}
-  note: Fetch from .data/commentary/JDG/019/019-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.009.001
-  translations: {}
-  note: Fetch from .data/commentary/GEN/009/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.021.032
-  translations: {}
-  note: Fetch from .data/commentary/JOS/021/032-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.004.023
-  translations: {}
-  note: Fetch from .data/commentary/1KI/004/023-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.009.007
-  translations: {}
-  note: Fetch from .data/commentary/MRK/009/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.007.012
-  translations: {}
-  note: Fetch from .data/commentary/DAN/007/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.018.005
-  translations: {}
-  note: Fetch from .data/commentary/GEN/018/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.023
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/023-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.002.021
-  translations: {}
-  note: Fetch from .data/commentary/1SA/002/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.017
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/017-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.031.008
-  translations: {}
-  note: Fetch from .data/commentary/1SA/031/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.018.020
-  translations: {}
-  note: Fetch from .data/commentary/MAT/018/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.020.021
-  translations: {}
-  note: Fetch from .data/commentary/1SA/020/021-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.019.020
-  translations: {}
-  note: Fetch from .data/commentary/JDG/019/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.010.034
-  translations: {}
-  note: Fetch from .data/commentary/MRK/010/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.014.034
-  translations: {}
-  note: Fetch from .data/commentary/MRK/014/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MAT.018.020
-  translations: {}
-  note: Fetch from .data/commentary/MAT/018/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.030.012
-  translations: {}
-  note: Fetch from .data/commentary/1SA/030/012-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.002.018
-  translations: {}
-  note: Fetch from .data/commentary/DAN/002/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.017.013
-  translations: {}
-  note: Fetch from .data/commentary/1SA/017/013-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.010.002
-  translations: {}
-  note: Fetch from .data/commentary/DAN/010/002-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.009.018
-  translations: {}
-  note: Fetch from .data/commentary/GEN/009/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.016.005
-  translations: {}
-  note: Fetch from .data/commentary/MRK/016/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.015
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.022.001
-  translations: {}
-  note: Fetch from .data/commentary/JOS/022/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.006.003
-  translations: {}
-  note: Fetch from .data/commentary/EXO/006/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.009.008
-  translations: {}
-  note: Fetch from .data/commentary/MRK/009/008-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.023.014
-  translations: {}
-  note: Fetch from .data/commentary/EXO/023/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.015.014
-  translations: {}
-  note: Fetch from .data/commentary/JOS/015/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.023.035
-  translations: {}
-  note: Fetch from .data/commentary/LUK/023/035-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.016.015
-  translations: {}
-  note: Fetch from .data/commentary/JDG/016/015-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.015.028
-  translations: {}
-  note: Fetch from .data/commentary/1KI/015/028-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.015.014
-  translations: {}
-  note: Fetch from .data/commentary/JOS/015/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: EXO.006.024
-  translations: {}
-  note: Fetch from .data/commentary/EXO/006/024-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.016.005
-  translations: {}
-  note: Fetch from .data/commentary/MRK/016/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JDG.001.020
-  translations: {}
-  note: Fetch from .data/commentary/JDG/001/020-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.014.034
-  translations: {}
-  note: Fetch from .data/commentary/MRK/014/034-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: LUK.013.007
-  translations: {}
-  note: Fetch from .data/commentary/LUK/013/007-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.008.018
-  translations: {}
-  note: Fetch from .data/commentary/GEN/008/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.010.003
-  translations: {}
-  note: Fetch from .data/commentary/1SA/010/003-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: JOS.022.001
-  translations: {}
-  note: Fetch from .data/commentary/JOS/022/001-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.020.005
-  translations: {}
-  note: Fetch from .data/commentary/2SA/020/005-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: GEN.001.026
-  translations: {}
-  note: Fetch from .data/commentary/GEN/001/026-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1SA.017.014
-  translations: {}
-  note: Fetch from .data/commentary/1SA/017/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 2SA.023.018
-  translations: {}
-  note: Fetch from .data/commentary/2SA/023/018-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: DAN.003.014
-  translations: {}
-  note: Fetch from .data/commentary/DAN/003/014-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: 1KI.007.027
-  translations: {}
-  note: Fetch from .data/commentary/1KI/007/027-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null
 - reference: MRK.015.029
-  translations: {}
-  note: Fetch from .data/commentary/MRK/015/029-ebible.yaml
+  translations:
+    fij: null
+    haw: null
+    smo: null
+    slv: null
+    tpi: null

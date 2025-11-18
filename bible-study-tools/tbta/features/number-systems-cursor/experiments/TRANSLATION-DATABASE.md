@@ -1,5 +1,25 @@
 # Translation Database for Number-Systems Feature
 
+## ⚠️ Data Availability Limitation (Updated 2025-11-17)
+
+**Issue**: Target minority languages NOT available from BibleHub or cached data
+
+**Languages Selected**: Fijian, Hawaiian, Samoan, Slovenian, Tok Pisin
+**Reason Selected**: Grammatical dual/trial number marking (ideal for validation)
+**Reality**: These languages are not indexed by BibleHub; cached .data directory has no translations
+
+**Impact**: Cannot perform cross-linguistic validation with actual dual/trial-marking translations
+
+**Mitigation Strategy**:
+1. ✅ Algorithm uses pattern detection (not verse memorization) → generalizable
+2. ✅ Validation against TBTA answer keys (train/test/validate.yaml)
+3. ✅ English translations can still validate logical consistency
+4. 📝 Future work: Source translations from eBible.org API or direct downloads
+
+**Stage 6 Modified Approach**: Proceed with TBTA-based validation instead of translation-based validation
+
+---
+
 ## Selected Languages
 
 ### Trial-Marking Languages (Genesis 1:26 validation)
