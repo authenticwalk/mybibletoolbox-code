@@ -1,0 +1,366 @@
+accuracy: 42.13197969543147
+correct: 83
+total: 197
+errors: 114
+by_value:
+  Quadrial:
+    correct: 2
+    total: 8
+  Dual:
+    correct: 15
+    total: 47
+  Trial:
+    correct: 17
+    total: 37
+  Paucal:
+    correct: 3
+    total: 13
+  Singular:
+    correct: 42
+    total: 50
+  Plural:
+    correct: 4
+    total: 42
+by_confidence:
+  Low:
+    correct: 19
+    total: 73
+  Very High:
+    correct: 57
+    total: 100
+  Very Low:
+    correct: 4
+    total: 19
+  High:
+    correct: 3
+    total: 5
+by_genre:
+  narrative:
+    correct: 35
+    total: 86
+  epistle:
+    correct: 42
+    total: 85
+  prophecy:
+    correct: 5
+    total: 15
+  law:
+    correct: 1
+    total: 9
+  wisdom:
+    correct: 0
+    total: 2
+by_level:
+  '6':
+    correct: 23
+    total: 92
+  '2':
+    correct: 46
+    total: 77
+  '3':
+    correct: 13
+    total: 27
+  '1':
+    correct: 1
+    total: 1
+error_list:
+- reference: 1KI.002.028
+  predicted: Plural
+  actual: Quadrial
+  confidence: Low
+  rule: Level 6, Rule 6.1 (Narrative Default)
+  genre: narrative
+- reference: 1KI.007.019
+  predicted: Quadrial
+  actual: Dual
+  confidence: Very High
+  rule: Level 2, Rule 2.4 (Quadrial Markers)
+  genre: narrative
+- reference: 1KI.007.035
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule: Level 6, Rule 6.1 (Narrative Default)
+  genre: narrative
+- reference: 1KI.020.029
+  predicted: Singular
+  actual: Dual
+  confidence: Very High
+  rule: Level 2, Rule 2.1 (Singular Markers)
+  genre: narrative
+- reference: 1SA.004.004
+  predicted: Dual
+  actual: Paucal
+  confidence: Very High
+  rule: Level 2, Rule 2.2 (Dual Markers)
+  genre: narrative
+- reference: 1SA.009.013
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule: Level 6, Rule 6.1 (Narrative Default)
+  genre: narrative
+- reference: 1SA.014.012
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule: Level 6, Rule 6.1 (Narrative Default)
+  genre: narrative
+- reference: 1SA.025.039
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule: Level 6, Rule 6.1 (Narrative Default)
+  genre: narrative
+- reference: 1TH.001.009
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.002.002
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 1TH.002.003
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.002.005
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.002.008
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 1TH.002.015
+  predicted: Plural
+  actual: Singular
+  confidence: Very High
+  rule: Level 2, Rule 2.6 (Plural Markers)
+  genre: epistle
+- reference: 1TH.003.001
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.003.006
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 1TH.003.012
+  predicted: Dual
+  actual: Plural
+  confidence: Very High
+  rule: Level 2, Rule 2.2 (Dual Markers)
+  genre: epistle
+- reference: 1TH.003.013
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.004.004
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.004.005
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.004.008
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.004.011
+  predicted: Dual
+  actual: Plural
+  confidence: Very High
+  rule: Level 2, Rule 2.2 (Dual Markers)
+  genre: epistle
+- reference: 1TH.004.015
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 1TH.005.006
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 1TH.005.009
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 1TH.005.013
+  predicted: Dual
+  actual: Plural
+  confidence: Very High
+  rule: Level 2, Rule 2.2 (Dual Markers)
+  genre: epistle
+- reference: 2JN.001.007
+  predicted: Plural
+  actual: Singular
+  confidence: Very High
+  rule: Level 2, Rule 2.6 (Plural Markers)
+  genre: epistle
+- reference: 2TH.001.005
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 2TH.001.012
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 2TH.002.001
+  predicted: Plural
+  actual: Singular
+  confidence: Very High
+  rule: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  genre: epistle
+- reference: 2TH.002.010
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 2TH.002.013
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 2TH.002.017
+  predicted: Singular
+  actual: Plural
+  confidence: Very High
+  rule: Level 3, Rule 3.1 (Epistle + Abstract Nouns)
+  genre: epistle
+- reference: 2TH.003.001
+  predicted: Plural
+  actual: Singular
+  confidence: Very High
+  rule: Level 3, Rule 3.2 (Epistle + Collective Nouns)
+  genre: epistle
+- reference: 2TH.003.004
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 2TH.003.009
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 2TH.003.014
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: 2TH.003.017
+  predicted: Singular
+  actual: Plural
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: COL.004.011
+  predicted: Singular
+  actual: Trial
+  confidence: Low
+  rule: Level 6, Rule 6.2 (Epistle Default)
+  genre: epistle
+- reference: DAN.002.016
+  predicted: Singular
+  actual: Paucal
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: prophecy
+- reference: DAN.002.018
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: prophecy
+- reference: DAN.003.015
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: prophecy
+- reference: DAN.003.016
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: prophecy
+- reference: DAN.003.018
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: prophecy
+- reference: DAN.007.005
+  predicted: Singular
+  actual: Trial
+  confidence: Very High
+  rule: Level 2, Rule 2.1 (Singular Markers)
+  genre: prophecy
+- reference: EST.009.022
+  predicted: Singular
+  actual: Dual
+  confidence: Very High
+  rule: Level 2, Rule 2.1 (Singular Markers)
+  genre: narrative
+- reference: EXO.005.021
+  predicted: Singular
+  actual: Dual
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: law
+- reference: EXO.006.003
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: law
+- reference: EXO.006.016
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: law
+- reference: EXO.006.024
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule: Level 6, Rule 6.3 (Prophecy/Wisdom Default)
+  genre: law
