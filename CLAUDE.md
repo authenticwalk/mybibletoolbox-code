@@ -113,16 +113,7 @@ $DATA_DIR/languages/{ISO-639-3}/words/{word}/{ISO-639-3}-{word}-{tool}.yaml
 Default $DATA_DIR should be .data
 If unset/not exists run `setup-minimal-data.sh`
 
-### Working with Sparse Checkout
 
-The data directory uses Git sparse-checkout to limit which files are downloaded. This is important to know:
-
-- **Adding files**: If you try to create/add files in directories not in the sparse-checkout scope, Git will filter them out on commit
-- **Solutions**:
-  - Add the directory to sparse-checkout: `cd $DATA_DIR && git sparse-checkout add commentary/ROM`
-  - Or disable sparse-checkout temporarily: `cd $DATA_DIR && git sparse-checkout disable`
-- **Check current scope**: `cd $DATA_DIR && git sparse-checkout list`
-- **Re-enable**: `cd $DATA_DIR && git sparse-checkout init --cone` then set patterns again
 
 ## Development Notes
 
@@ -154,3 +145,13 @@ The data directory uses Git sparse-checkout to limit which files are downloaded.
 ## Git Commit Guidelines
 
 When committing changes to this repository, follow these guidelines:
+### Working with Sparse Checkout
+
+The data directory uses Git sparse-checkout to limit which files are downloaded. This is important to know:
+
+- **Adding files**: If you try to create/add files in directories not in the sparse-checkout scope, Git will filter them out on commit
+- **Solutions**:
+  - Add the directory to sparse-checkout: `cd $DATA_DIR && git sparse-checkout add commentary/ROM`
+  - Or disable sparse-checkout temporarily: `cd $DATA_DIR && git sparse-checkout disable`
+- **Check current scope**: `cd $DATA_DIR && git sparse-checkout list`
+- **Re-enable**: `cd $DATA_DIR && git sparse-checkout init --cone` then set patterns again

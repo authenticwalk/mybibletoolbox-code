@@ -4,6 +4,13 @@
     "dockerfile": "Dockerfile"
   },
   "remoteUser": "devuser",
+  "mounts": [
+    "source=${localEnv:HOME}/projects/ebible,target=/ebible,type=bind,readonly"
+  ],
+  "containerEnv": {
+    "DATA_DIR": "/workspace/.data",
+    "EBIBLE_DIR": "/ebible"
+  },
   "customizations": {
     "vscode": {
       "extensions": [

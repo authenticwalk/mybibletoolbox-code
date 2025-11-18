@@ -1,0 +1,22 @@
+# Docker Compose Override Example
+# Copy this to docker-compose.override.yml and customize as needed
+#
+# This file allows you to override settings in docker-compose.yml
+# without modifying the main file.
+
+version: '3.8'
+
+services:
+  dev:
+    volumes:
+      # Override eBible path if it's in a different location
+      # Uncomment and adjust the path:
+      # - /path/to/your/ebible:/ebible:ro
+      
+      # Or comment out eBible mount entirely if you don't have it:
+      - .:/workspace
+    environment:
+      # You can override environment variables here:
+      # - EBIBLE_DIR=/tmp/ebible
+      # - DATA_DIR=/workspace/.data
+

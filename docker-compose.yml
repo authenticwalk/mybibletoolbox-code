@@ -7,6 +7,14 @@ services:
     volumes:
       # Mount project as read-write
       - .:/workspace
+      # Mount eBible corpus as read-only (if it exists on host)
+      # Adjust the path if your eBible is in a different location
+      - ${HOME}/projects/ebible:/ebible:ro
+    environment:
+      # Data directory (sparse checkout of mybibletoolbox-data)
+      - DATA_DIR=/workspace/.data
+      # eBible corpus directory (1000+ translations)
+      - EBIBLE_DIR=/ebible
     # Security settings - isolate from host
     security_opt:
       - no-new-privileges:true
