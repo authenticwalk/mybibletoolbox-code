@@ -36,8 +36,9 @@ if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
 from biblehub_fetcher import VerseFetchError, fetch_verses_from_biblehub
-from src.ingest_data.ebible.ebible_fetcher import fetch_verses_from_ebible
 from book_codes import parse_reference
+
+from src.ingest_data.ebible.ebible_fetcher import fetch_verses_from_ebible
 
 # Public API for library/MCP usage
 __all__ = ['fetch_verse', 'VerseFetchError']

@@ -4,6 +4,7 @@ This module provides functions to fetch and parse BibleHub's multi-translation H
 and extract all available Bible translations with their verse text.
 """
 import html
+import os
 import quopri
 import re
 import sys
@@ -42,7 +43,8 @@ except ImportError:
     except ImportError:
         VERSION_NAME_PREFIXES = {}
 
-CACHE_ROOT = Path('data/commentary/commentary')
+# Use $DATA_DIR environment variable, default to .data
+CACHE_ROOT = Path(os.environ.get('DATA_DIR', '.data')) / 'commentary'
 # IMPORTANT: you must keep the .cache suffix as this is copyrighted works and .gitignore will skip adding it to source
 SUFFIX = "translations-biblehub.cache"
 
