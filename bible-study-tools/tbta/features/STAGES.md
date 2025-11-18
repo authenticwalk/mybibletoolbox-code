@@ -202,6 +202,7 @@ python src/ingest-data/tbta/extract_feature.py \
    - Book distribution: Avoid concentration
 
 3. **Use Quote Bible skill**:
+   - In /.claude/skills/quote-bible/SKILL.md
    - Query 3-5 sample verses
    - Identify available translation languages/codes
    - Verify accessibility

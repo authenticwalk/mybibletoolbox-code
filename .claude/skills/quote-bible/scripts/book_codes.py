@@ -81,8 +81,12 @@ def parse_reference(reference: str) -> tuple[str, int, int]:
     """
     Parse a USFM reference string into book, chapter, and verse.
     
+    Supports multiple formats per STANDARDIZATION.md:
+    - Standard: "MAT-005-003" (hyphens, zero-padded)
+    - Alternative: "MAT 5:3", "GEN.1.1" (convenience formats)
+    
     Args:
-        reference: USFM reference (e.g., "MAT.5.3" or "MAT 5:3")
+        reference: USFM reference in any supported format
     
     Returns:
         Tuple of (book_code, chapter, verse)
@@ -90,14 +94,15 @@ def parse_reference(reference: str) -> tuple[str, int, int]:
     Raises:
         ValueError: If the reference format is invalid
     """
-    # Normalize separators
-    reference = reference.replace(":", ".").replace(" ", ".")
+    # Normalize all separators to hyphens for parsing
+    # This handles: MAT-005-003, MAT.5.3, MAT 5:3, "GEN 1:1"
+    normalized = reference.strip().replace(":", "-").replace(".", "-").replace(" ", "-")
     
-    parts = reference.split(".")
+    parts = normalized.split("-")
     if len(parts) != 3:
         raise ValueError(
             f"Invalid reference format: '{reference}'. "
-            "Expected format: BOOK.CHAPTER.VERSE (e.g., MAT.5.3)"
+            "Expected format: BOOK-CCC-VVV (e.g., MAT-005-003) or BOOK C:V (e.g., MAT 5:3)"
         )
     
     book_code = parts[0].upper()

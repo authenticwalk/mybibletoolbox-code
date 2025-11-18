@@ -4,49 +4,46 @@ Fetch translations for number-systems question sheets.
 
 This script:
 1. Reads *_questions.yaml files
-2. Fetches translations from .data/commentary/ (eBible) OR BibleHub
+2. Fetches translations using the fetch_verse.py skill
 3. Populates the translations field with actual text
 4. Focuses on: Fijian (fij), Hawaiian (haw), Samoan (smo), Slovenian (slv), Tok Pisin (tpi)
+5. Also fetches common languages for algorithm refinement: English, Greek, Hebrew
 """
 
 import yaml
 import sys
 from pathlib import Path
-import json
 
 # Find project root (go up from experiments/)
-PROJECT_ROOT = Path(__file__).resolve().parents[4]  # experiments -> features -> tbta -> bible-study-tools -> root
+# __file__ = experiments/fetch_translations.py
+# .parents[0] = experiments/
+# .parents[1] = number-systems-cursor/
+# .parents[2] = features/
+# .parents[3] = tbta/
+# .parents[4] = bible-study-tools/
+# .parents[5] = mybibletoolbox-code/ (PROJECT ROOT)
+PROJECT_ROOT = Path(__file__).resolve().parents[5]
 
 # Add quote-bible scripts to path
-QUOTE_BIBLE_DIR = PROJECT_ROOT / ".claude/skills/quote-bible/scripts"
+QUOTE_BIBLE_DIR = PROJECT_ROOT / ".claude" / "skills" / "quote-bible" / "scripts"
 sys.path.insert(0, str(QUOTE_BIBLE_DIR))
 
 try:
-    from biblehub_fetcher import fetch_verses_from_biblehub, VerseFetchError
-    BIBLEHUB_AVAILABLE = True
+    from fetch_verse import fetch_verse, filter_by_languages, VerseFetchError
+    FETCH_VERSE_AVAILABLE = True
 except ImportError:
-    print("⚠️  BibleHub fetcher not available. Will only use cached data.")
-    BIBLEHUB_AVAILABLE = False
+    print("⚠️  fetch_verse not available. Cannot fetch translations.")
+    FETCH_VERSE_AVAILABLE = False
+    sys.exit(1)
 
-# Data directory - try multiple possible locations
-DATA_DIRS = [
-    PROJECT_ROOT / ".data",
-    PROJECT_ROOT.parent / ".data",  # Parent of mybibletoolbox-code
-    Path("/Users/chrispriebe/projects/mybibletoolbox/.data"),
-]
-
-DATA_DIR = None
-for data_path in DATA_DIRS:
-    if data_path.exists() and (data_path / "commentary").exists():
-        DATA_DIR = data_path
-        break
-
-if DATA_DIR is None:
-    print("⚠️  No .data/commentary directory found. Will only use BibleHub.")
-    DATA_DIR = DATA_DIRS[0]  # Use first as fallback
-
-# Target languages
+# Target languages for number system validation
 TARGET_LANGUAGES = ['fij', 'haw', 'smo', 'slv', 'tpi']
+
+# Additional useful languages for algorithm refinement
+REFERENCE_LANGUAGES = ['eng', 'grc', 'heb']
+
+# All languages to fetch
+ALL_LANGUAGES = TARGET_LANGUAGES + REFERENCE_LANGUAGES
 
 def parse_verse_ref(ref: str):
     """Parse GEN.001.026 format into book, chapter, verse."""
@@ -56,88 +53,47 @@ def parse_verse_ref(ref: str):
     verse = int(parts[2])
     return book, chapter, verse
 
-def fetch_from_ebible_cache(book: str, chapter: int, verse: int, lang: str):
+def fetch_translations_for_verse(verse_ref: str, languages: list):
     """
-    Try to fetch from .data/commentary/ eBible cache.
+    Fetch all translations for a verse using the fetch_verse skill.
     
-    Expected path: .data/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-ebible.yaml
-    """
-    chapter_dir = DATA_DIR / "commentary" / book / f"{chapter:03d}"
-    verse_dir = chapter_dir / f"{verse:03d}"
-    ebible_file = verse_dir / f"{book}-{chapter:03d}-{verse:03d}-ebible.yaml"
+    Args:
+        verse_ref: Verse reference (e.g., "GEN.001.026")
+        languages: List of language codes to fetch (e.g., ['eng', 'fij', 'haw'])
     
-    if not ebible_file.exists():
-        return None
-    
-    try:
-        with open(ebible_file, 'r', encoding='utf-8') as f:
-            ebible_data = yaml.safe_load(f)
-        
-        # eBible data structure may vary - look for translations by language code
-        if 'translations' in ebible_data and lang in ebible_data['translations']:
-            return ebible_data['translations'][lang].get('text', '')
-        
-        # Alternative structure: direct language key
-        if lang in ebible_data:
-            if isinstance(ebible_data[lang], dict):
-                return ebible_data[lang].get('text', '')
-            elif isinstance(ebible_data[lang], str):
-                return ebible_data[lang]
-        
-        return None
-    except Exception as e:
-        print(f"  Warning: Could not read {ebible_file}: {e}")
-        return None
-
-def fetch_from_biblehub(book: str, chapter: int, verse: int, lang: str):
-    """
-    Try to fetch from BibleHub as fallback.
-    
-    Note: BibleHub primarily has English translations. Non-English (fij, haw, smo, slv, tpi)
-    may not be available.
-    """
-    if not BIBLEHUB_AVAILABLE:
-        return None
-    
-    try:
-        translations = fetch_verses_from_biblehub(book, chapter, verse, use_cache=True)
-        
-        # Look for language code in translations
-        # BibleHub uses different format: might be lang-VERSION
-        for key, text in translations.items():
-            if key.startswith(f"{lang}-") or key == lang:
-                return text
-        
-        return None
-    except VerseFetchError as e:
-        print(f"  BibleHub error for {book} {chapter}:{verse}: {e}")
-        return None
-    except Exception as e:
-        print(f"  Unexpected error fetching from BibleHub: {e}")
-        return None
-
-def fetch_translation(verse_ref: str, lang: str):
-    """
-    Fetch translation for a verse in a specific language.
-    
-    Priority:
-    1. Try eBible cache (.data/commentary/)
-    2. Try BibleHub
-    3. Return None if not found
+    Returns:
+        dict: {lang_code: translation_text, ...}
     """
     book, chapter, verse = parse_verse_ref(verse_ref)
     
-    # Try eBible cache first
-    text = fetch_from_ebible_cache(book, chapter, verse, lang)
-    if text:
-        return text, "ebible-cache"
-    
-    # Try BibleHub as fallback
-    text = fetch_from_biblehub(book, chapter, verse, lang)
-    if text:
-        return text, "biblehub"
-    
-    return None, None
+    try:
+        # fetch_verse() returns dict like: {'eng-NIV': 'text', 'eng-KJV': 'text', ...}
+        # NOTE: It fetches ALL available translations, then we filter
+        all_translations = fetch_verse(book, chapter, verse)
+        
+        if not all_translations:
+            return {}
+        
+        # Filter to only requested languages
+        filtered = filter_by_languages(all_translations, languages)
+        
+        # Group by language code - take first version we find for each language
+        by_language = {}
+        for version_code, text in filtered.items():
+            lang = version_code.split('-')[0]  # Extract language code (before dash)
+            if lang in languages:
+                # Store the first version we find for each language
+                if lang not in by_language:
+                    by_language[lang] = text
+        
+        return by_language
+        
+    except VerseFetchError as e:
+        print(f"  Warning: Could not fetch {verse_ref}: {e}")
+        return {}
+    except Exception as e:
+        print(f"  Warning: Unexpected error fetching {verse_ref}: {e}")
+        return {}
 
 def process_question_sheet(input_file: Path, output_file: Path = None):
     """
@@ -162,14 +118,17 @@ def process_question_sheet(input_file: Path, output_file: Path = None):
         return False
     
     total_verses = len(data['verses'])
-    translations_included = data.get('translations_included', TARGET_LANGUAGES)
+    # Use ALL_LANGUAGES (target + reference languages)
+    translations_included = ALL_LANGUAGES
     
     print(f"  Verses: {total_verses}")
-    print(f"  Target languages: {', '.join(translations_included)}")
+    print(f"  Languages: {', '.join(translations_included)}")
+    print(f"  Target languages (number systems): {', '.join(TARGET_LANGUAGES)}")
+    print(f"  Reference languages (algorithm refinement): {', '.join(REFERENCE_LANGUAGES)}")
     print()
     
     # Statistics
-    stats = {lang: {'found': 0, 'missing': 0, 'sources': {}} for lang in translations_included}
+    stats = {lang: {'found': 0, 'missing': 0} for lang in translations_included}
     
     # Process each verse
     for i, verse_entry in enumerate(data['verses'], 1):
@@ -178,28 +137,25 @@ def process_question_sheet(input_file: Path, output_file: Path = None):
         if i % 50 == 0:
             print(f"  Progress: {i}/{total_verses} verses...")
         
+        # Fetch all translations for this verse at once
+        fetched_translations = fetch_translations_for_verse(verse_ref, translations_included)
+        
         # Initialize translations dict if not exists
         if 'translations' not in verse_entry or not isinstance(verse_entry['translations'], dict):
             verse_entry['translations'] = {}
         
-        # Fetch each language
+        # Update with fetched translations
         for lang in translations_included:
-            # Skip if already has translation
-            if lang in verse_entry['translations'] and verse_entry['translations'][lang]:
+            if lang in fetched_translations and fetched_translations[lang]:
+                verse_entry['translations'][lang] = fetched_translations[lang]
                 stats[lang]['found'] += 1
-                continue
-            
-            # Fetch translation
-            text, source = fetch_translation(verse_ref, lang)
-            
-            if text:
-                verse_entry['translations'][lang] = text
-                stats[lang]['found'] += 1
-                if source:
-                    stats[lang]['sources'][source] = stats[lang]['sources'].get(source, 0) + 1
             else:
-                verse_entry['translations'][lang] = None  # Explicitly mark as not found
-                stats[lang]['missing'] += 1
+                # Don't overwrite existing translations
+                if lang not in verse_entry['translations'] or not verse_entry['translations'][lang]:
+                    verse_entry['translations'][lang] = None  # Explicitly mark as not found
+                    stats[lang]['missing'] += 1
+                else:
+                    stats[lang]['found'] += 1  # Already had translation
         
         # Remove the "note" field if it exists (was placeholder)
         if 'note' in verse_entry:
@@ -208,6 +164,9 @@ def process_question_sheet(input_file: Path, output_file: Path = None):
     # Remove top-level note if exists
     if 'note' in data:
         del data['note']
+    
+    # Update translations_included field
+    data['translations_included'] = translations_included
     
     # Write output
     with open(output_file, 'w', encoding='utf-8') as f:
@@ -222,11 +181,7 @@ def process_question_sheet(input_file: Path, output_file: Path = None):
         total = found + missing
         pct = (found / total * 100) if total > 0 else 0
         
-        sources_str = ", ".join(f"{src}:{cnt}" for src, cnt in stats[lang]['sources'].items())
-        if not sources_str:
-            sources_str = "none"
-        
-        print(f"  {lang:5} Found: {found:3}/{total:3} ({pct:5.1f}%)  Sources: {sources_str}")
+        print(f"  {lang:5} Found: {found:3}/{total:3} ({pct:5.1f}%)")
     
     print(f"\n  ✓ Output written to: {output_file.name}")
     return True
@@ -245,9 +200,10 @@ def main():
     print("TRANSLATION FETCHER FOR NUMBER-SYSTEMS FEATURE")
     print("=" * 80)
     print(f"\nFound {len(question_files)} question sheet(s)")
-    print(f"Target languages: {', '.join(TARGET_LANGUAGES)}")
-    print(f"Data directory: {DATA_DIR}")
-    print(f"BibleHub available: {BIBLEHUB_AVAILABLE}")
+    print(f"Target languages (number systems): {', '.join(TARGET_LANGUAGES)}")
+    print(f"Reference languages (refinement): {', '.join(REFERENCE_LANGUAGES)}")
+    print(f"Fetching {len(ALL_LANGUAGES)} languages total")
+    print(f"Using: fetch_verse.py skill")
     
     success_count = 0
     for question_file in sorted(question_files):
