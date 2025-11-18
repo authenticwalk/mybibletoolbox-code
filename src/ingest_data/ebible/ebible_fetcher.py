@@ -117,7 +117,7 @@ def fetch_verses_from_ebible(book: str, chapter: int, verse: int,
 
     # Check cache first if enabled
     if use_cache:
-        return fetch_verse_from_cache(book, chapter, verse, suffix="translations-ebible", onMissing=_fetch_and_structure_verse, cache_root=CACHE_ROOT) 
+        return fetch_verse_from_cache(book, chapter, verse, suffix="translations-ebible", extension="yaml", onMissing=_fetch_and_structure_verse, cache_root=CACHE_ROOT) 
 
     else:
         return _fetch_and_structure_verse(book, chapter, verse)

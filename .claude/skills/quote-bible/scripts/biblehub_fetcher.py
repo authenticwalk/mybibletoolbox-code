@@ -45,8 +45,9 @@ except ImportError:
 
 # Use $DATA_DIR environment variable, default to .data
 CACHE_ROOT = Path(os.environ.get('DATA_DIR', '.data')) / 'commentary'
-# IMPORTANT: you must keep the .cache suffix as this is copyrighted works and .gitignore will skip adding it to source
-SUFFIX = "translations-biblehub.cache"
+# IMPORTANT: you must keep the .cache extension as this is copyrighted works and .gitignore will skip adding it to source
+SUFFIX = "translations-biblehub"
+EXTENSION = "cache"
 
 class VerseFetchError(Exception):
     """Exception raised when verse fetching fails."""
@@ -86,7 +87,7 @@ def fetch_verses_from_biblehub(book: str, chapter: int, verse: int,
         >>> translations = fetch_verse("MAT", 5, 3, suffix="custom.json")
     """
     if use_cache:   
-        return fetch_verse_from_cache(book, chapter, verse, suffix=SUFFIX, onMissing=fetch_verse_from_web, cache_root=CACHE_ROOT) 
+        return fetch_verse_from_cache(book, chapter, verse, suffix=SUFFIX, extension=EXTENSION, onMissing=fetch_verse_from_web, cache_root=CACHE_ROOT) 
     else:
         return fetch_verse_from_web(book, chapter, verse)
 
@@ -513,6 +514,7 @@ def main():
     print("Test complete!")
     print(f"Cache location: {CACHE_ROOT}")
     print(f"Cache suffix: {SUFFIX}")
+    print(f"Cache extension: {EXTENSION}")
 
 
 if __name__ == "__main__":
