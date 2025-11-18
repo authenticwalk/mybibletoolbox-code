@@ -1,0 +1,278 @@
+accuracy: 30.96446700507614
+by_confidence:
+  Low:
+    correct: 16
+    total: 69
+  Very High:
+    correct: 42
+    total: 114
+  Very Low:
+    correct: 3
+    total: 14
+by_genre:
+  epistle:
+    correct: 36
+    total: 85
+  law:
+    correct: 4
+    total: 9
+  narrative:
+    correct: 14
+    total: 86
+  prophecy:
+    correct: 7
+    total: 15
+  wisdom:
+    correct: 0
+    total: 2
+by_level:
+  '1':
+    correct: 1
+    total: 1
+  '2':
+    correct: 10
+    total: 51
+  '3':
+    correct: 9
+    total: 17
+  '4':
+    correct: 15
+    total: 29
+  '5':
+    correct: 7
+    total: 16
+  '6':
+    correct: 19
+    total: 83
+by_value:
+  Dual:
+    correct: 7
+    total: 47
+  Paucal:
+    correct: 0
+    total: 13
+  Plural:
+    correct: 30
+    total: 42
+  Quadrial:
+    correct: 5
+    total: 8
+  Singular:
+    correct: 12
+    total: 50
+  Trial:
+    correct: 7
+    total: 37
+correct: 61
+errors:
+- actual: Quadrial
+  confidence: Low
+  genre: narrative
+  predicted: Plural
+  reference: 1KI.002.028
+  rule: Level 6.1 (Narrative Default)
+  subject: unclear
+- actual: Dual
+  confidence: Very High
+  genre: narrative
+  predicted: Quadrial
+  reference: 1KI.007.019
+  rule: Level 4.3 (Four Subject)
+  subject: four
+- actual: Trial
+  confidence: Low
+  genre: narrative
+  predicted: Plural
+  reference: 1KI.007.035
+  rule: Level 6.1 (Narrative Default)
+  subject: unclear
+- actual: Dual
+  confidence: Low
+  genre: narrative
+  predicted: Plural
+  reference: 1KI.020.029
+  rule: Level 6.1 (Narrative Default)
+  subject: unclear
+- actual: Paucal
+  confidence: Very High
+  genre: narrative
+  predicted: Dual
+  reference: 1SA.004.004
+  rule: Level 3.1 (Two Named)
+  subject: Hophni and Phinehas
+- actual: Dual
+  confidence: Low
+  genre: narrative
+  predicted: Plural
+  reference: 1SA.009.013
+  rule: Level 6.1 (Narrative Default)
+  subject: unclear
+- actual: Paucal
+  confidence: Very High
+  genre: narrative
+  predicted: Singular
+  reference: 1SA.025.039
+  rule: Level 2.1 (Singular Pronoun)
+  subject: I/he/she/it
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Trial
+  reference: 1TH.001.001
+  rule: Level 3.2 (Three Named)
+  subject: Paul, Silas and Timothy
+- actual: Plural
+  confidence: Very High
+  genre: epistle
+  predicted: Dual
+  reference: 1TH.001.007
+  rule: Level 3.1 (Two Named)
+  subject: Macedonia and Achaia
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Dual
+  reference: 1TH.001.008
+  rule: Level 3.1 (Two Named)
+  subject: Macedonia and Achaia
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.002.013
+  rule: Level 2.2 (Plural Pronoun)
+  subject: we/they/you
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.002.015
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Plural
+  confidence: Very High
+  genre: epistle
+  predicted: Singular
+  reference: 1TH.003.006
+  rule: Level 5.4 (Abstract Noun - Epistle)
+  subject: faith/love/etc
+- actual: Plural
+  confidence: Very High
+  genre: epistle
+  predicted: Dual
+  reference: 1TH.003.013
+  rule: Level 3.1 (Two Named)
+  subject: God and Father
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.004.003
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.004.006
+  rule: Level 2.2 (Plural Pronoun)
+  subject: we/they/you
+- actual: Plural
+  confidence: Very High
+  genre: epistle
+  predicted: Singular
+  reference: 1TH.004.015
+  rule: Level 5.4 (Abstract Noun - Epistle)
+  subject: faith/love/etc
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.004.017
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.005.002
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.005.003
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Plural
+  confidence: Very High
+  genre: epistle
+  predicted: Singular
+  reference: 1TH.005.013
+  rule: Level 5.4 (Abstract Noun - Epistle)
+  subject: faith/love/etc
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Plural
+  reference: 1TH.005.018
+  rule: Level 4.5 (Many/All Subject)
+  subject: many/all
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Plural
+  reference: 2JN.001.007
+  rule: Level 4.5 (Many/All Subject)
+  subject: many/all
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 2JN.001.012
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Trial
+  confidence: Low
+  genre: narrative
+  predicted: Plural
+  reference: 2SA.013.038
+  rule: Level 6.1 (Narrative Default)
+  subject: unclear
+- actual: Trial
+  confidence: Very High
+  genre: narrative
+  predicted: Singular
+  reference: 2SA.023.017
+  rule: Level 2.1 (Singular Pronoun)
+  subject: I/he/she/it
+- actual: Trial
+  confidence: Low
+  genre: narrative
+  predicted: Plural
+  reference: 2SA.023.018
+  rule: Level 6.1 (Narrative Default)
+  subject: unclear
+- actual: Singular
+  confidence: Very High
+  genre: epistle
+  predicted: Trial
+  reference: 2TH.001.001
+  rule: Level 3.2 (Three Named)
+  subject: Paul, Silas and Timothy
+- actual: Singular
+  confidence: Low
+  genre: epistle
+  predicted: Plural
+  reference: 2TH.001.006
+  rule: Level 6.2 (Epistle Default)
+  subject: unclear
+- actual: Plural
+  confidence: Very High
+  genre: epistle
+  predicted: Singular
+  reference: 2TH.001.012
+  rule: Level 5.4 (Abstract Noun - Epistle)
+  subject: faith/love/etc
+total: 197
