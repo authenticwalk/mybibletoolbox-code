@@ -19,13 +19,13 @@ def format_filename(book: str, chapter: int, verse: int, suffix: str, extension:
         suffix: File suffix (e.g., "biblehub.json", "ebible.tsv")
     
     Returns:
-        Formatted filename (e.g., "MAT_5_003.biblehub.json")
+        Formatted filename (e.g., "MAT_005_003.biblehub.json")
     
     Example:
         >>> format_cache_filename("MAT", 5, 3, "biblehub.json")
-        'MAT_5_003.biblehub.json'
+        'MAT_005_003.biblehub.json'
     """
-    return f"{book}_{chapter}_{verse:03d}.{suffix}.{extension}"
+    return f"{book}_{chapter:03d}_{verse:03d}.{suffix}.{extension}"
 
 
 def get_file_path(book: str, chapter: int, verse: int, suffix: str, extension: str = "json",
@@ -46,13 +46,13 @@ def get_file_path(book: str, chapter: int, verse: int, suffix: str, extension: s
     
     Example:
         >>> get_file_path("MAT", 5, 3, "biblehub.json")
-        PosixPath('/path/to/project/cache/MAT/5/MAT_5_003.biblehub.json')
+        PosixPath('/path/to/project/cache/MAT/005/MAT_005_003.biblehub.json')
     """
     if cache_root is None:
         cache_root = DEFAULT_CACHE_ROOT
     
     filename = format_filename(book, chapter, verse, suffix, extension)
-    return Path(cache_root) / book / str(chapter) / filename
+    return Path(cache_root) / book / f"{chapter:03d}" / filename
 
 
 

@@ -21,7 +21,8 @@ except ImportError:
     from constants.bible import get_all_verses, parse_verse_ref
     from util.cache import fetch_verse_from_cache
 
-CACHE_ROOT = Path('data/bible')
+# Use $DATA_DIR environment variable, default to .data
+CACHE_ROOT = Path(os.environ.get('DATA_DIR', '.data')) / 'commentary'
 
 class EbibleFetchError(Exception):
     """Exception raised when eBible fetching fails."""
@@ -124,45 +125,73 @@ def fetch_verses_from_ebible(book: str, chapter: int, verse: int,
 def get_ebible_dir() -> Optional[Path]:
     """
     Get the eBible directory path from environment or default location.
+    
+    Search order:
+    1. EBIBLE_DIR environment variable
+    2. $DATA_DIR/ebible (if DATA_DIR is set)
+    3. .data/ebible (project default)
+    4. /tmp/ebible (existing valid clone)
+    5. Clone to /tmp/ebible as last resort
 
     Returns:
         Path to eBible directory, or None if not found
     """
-    # Try environment variable first
+    def is_valid_ebible_dir(path: Path) -> bool:
+        """Check if a path contains a valid eBible corpus."""
+        corpus_dir = path / 'corpus'
+        vref_file = path / 'metadata' / 'vref.txt'
+        return path.exists() and corpus_dir.exists() and vref_file.exists()
+    
+    # 1. Try environment variable first
     ebible_dir = os.environ.get('EBIBLE_DIR')
     if ebible_dir:
         path = Path(ebible_dir)
-        if path.exists():
+        if is_valid_ebible_dir(path):
             return path
-
-    # Check /tmp/ebible first. If it looks valid, use it.
+    
+    # 2. Try $DATA_DIR/ebible if DATA_DIR is set
+    data_dir = os.environ.get('DATA_DIR')
+    if data_dir:
+        path = Path(data_dir) / 'ebible'
+        if is_valid_ebible_dir(path):
+            return path
+    
+    # 3. Try .data/ebible (project default)
+    default_path = Path('.data/ebible')
+    if is_valid_ebible_dir(default_path):
+        return default_path
+    
+    # 4. Check /tmp/ebible if it exists and is valid
     tmp_path = Path('/tmp/ebible')
-    corpus_dir = tmp_path / 'corpus'
-    vref_file = tmp_path / 'metadata' / 'vref.txt'
-    if tmp_path.exists() and corpus_dir.exists() and vref_file.exists():
+    if is_valid_ebible_dir(tmp_path):
         return tmp_path
 
-    # If not, attempt to clone the repo
+    # 5. Last resort: attempt to clone the repo to /tmp/ebible
     import subprocess
 
     repo_url = "https://github.com/BibleNLP/ebible.git"
     try:
-        # Clone if /tmp/ebible doesn't exist or is invalid
-        if not tmp_path.exists() or not corpus_dir.exists() or not vref_file.exists():
-            # Remove incomplete clone if necessary
-            if tmp_path.exists():
-                import shutil
-                shutil.rmtree(str(tmp_path))
-            subprocess.check_call([
-                "git", "clone", "--depth", "1", repo_url, str(tmp_path)
-            ])
-        # Check again after clone
-        if tmp_path.exists() and corpus_dir.exists() and vref_file.exists():
+        # Remove incomplete clone if necessary
+        if tmp_path.exists():
+            import shutil
+            shutil.rmtree(str(tmp_path))
+        
+        subprocess.check_call([
+            "git", "clone", "--depth", "1", repo_url, str(tmp_path)
+        ])
+        
+        # Check if clone was successful
+        if is_valid_ebible_dir(tmp_path):
             return tmp_path
     except Exception as e:
-        pass  # Let the code fall through to try default locations and error at the end
+        pass  # Let the code fall through to error message
 
-    raise EbibleFetchError("eBible directory not found. Set EBIBLE_DIR environment variable.")
+    raise EbibleFetchError(
+        "eBible directory not found. Options:\n"
+        "  1. Set EBIBLE_DIR environment variable\n"
+        "  2. Clone to .data/ebible: git clone --depth 1 https://github.com/BibleNLP/ebible .data/ebible\n"
+        "  3. Allow automatic clone to /tmp/ebible (requires network access)"
+    )
 
 
 def ebible_available() -> bool:
