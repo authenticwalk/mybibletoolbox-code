@@ -79,9 +79,22 @@ arbitrary_contexts:
 
 **Philosophy**: "There is nothing new under the sun" - with ~1000 Bible translations, someone has already dealt with your unique linguistic feature. Don't just validate against TBTA - **discover answers from what real translators actually did**.
 
+## Use Source Languages First
+
+**PRIORITY ORDER for data sources**:
+1. **Greek/Hebrew morphology** (Macula data in `.data/commentary/{BOOK}/{chapter}/{verse}/{BOOK}-{chapter}-{verse}-macula.yaml`) - grammatical number is marked in source
+2. **Target language translations** with grammatical marking (Samoan trial, Slovenian dual, etc.)
+3. **English translations** (last resort - lacks many grammatical distinctions)
+
 ## Dataset Requirements
 
 **Data Source**: Use only verses that have TBTA data (complete annotation)
+
+**File Organization**: Keep experiments clean:
+- `experiments/v1/`, `experiments/v2/`, etc. - One folder per algorithm iteration
+- `experiments/data/` - All data files (train.yaml, test.yaml, raw extracts)
+- `experiments/` root - Only current work and final docs (README, LEARNINGS, CERTIFICATION)
+- Delete intermediate progress/thinking files after work completes
 
 **Sample Size**: 100 verses per value minimum
 - Small datasets (<50 verses) cannot support claims of 100% accuracy
