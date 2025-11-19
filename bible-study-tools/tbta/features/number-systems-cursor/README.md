@@ -402,15 +402,25 @@ arbitrarity: arbitrary
 - Added section "⚠️ CRITICAL: Pattern Detection vs Verse Memorization" with clear examples
 - This learning applies to ALL 59 TBTA features
 
-**Validation Results**:
-- **Representative Sample**: 12 verses (2 per number value)
-- **Accuracy**: 100% (12/12 correct predictions)
-- **Confidence**: Very High (83.3% very high confidence predictions)
-- **Method**: English translations + PROMPT1.md application
-- **Cross-Linguistic Check**: Hebrew/Greek confirm Trinity pattern
-- **Status**: ✅ **PRODUCTION READY**
+**Validation Status**: ⚠️ **CORRECTION IN PROGRESS**
 
-See `experiments/ALGORITHM-VALIDATION.md` for detailed test cases
+**Issue Identified**: Previous validation violated train/test separation (data leakage)
+- ❌ Was looking at TBTA answers while "testing" algorithm
+- ⚠️ This is methodologically invalid (circular reasoning)
+
+**Corrective Actions**:
+- ✅ STAGES.md updated with explicit train/test separation rules
+- ✅ Invalid validation deleted
+- ✅ Error documented in `experiments/METHODOLOGY-ERROR-AND-FIX.md`
+- ⏳ **Next**: Perform proper blind testing on test set
+
+**Proper Methodology**:
+1. Train on train.yaml (✅ completed - PROMPT1.md developed)
+2. Blind prediction on test_questions.yaml (⏳ to do - NO peeking at answers!)
+3. Lock predictions (git commit)
+4. Score against test.yaml
+
+See `experiments/METHODOLOGY-ERROR-AND-FIX.md` for full explanation
 
 **Limitations Documented**:
 - ⚠️ Minority language translations unavailable from BibleHub (future: source from eBible.org)

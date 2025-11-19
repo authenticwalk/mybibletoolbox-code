@@ -287,12 +287,28 @@ features/{feature}/experiments/
 ```
 
 **Main Agent Workflow**:
-- Primary: Uses TBTA answer sheets (train.yaml) for algorithm development
-- Optional: Uses translation question sheets (train_questions.yaml) for validation/refinement
-- Locks predictions before checking test/validate answer sheets
-- Compares against TBTA answers only after predictions are locked
 
-**Key Point**: You already know the answers from TBTA data in your memory. Don't fetch 1,000+ verses to "discover" what you already know!
+**TRAINING PHASE** (train.yaml + train_questions.yaml):
+- ✅ **CAN see**: train.yaml (TBTA answers) - this is your training data
+- ✅ **CAN see**: train_questions.yaml (translations) - optional
+- ✅ **Goal**: Develop algorithm by analyzing TBTA patterns in training data
+
+**TESTING PHASE** (test_questions.yaml ONLY):
+- ❌ **CANNOT see**: test.yaml (TBTA answers) - this would be cheating!
+- ✅ **CAN see**: test_questions.yaml (translations only, NO TBTA values)
+- ✅ **Process**:
+  1. Apply algorithm to test_questions.yaml → generate predictions
+  2. **LOCK predictions** (git commit) BEFORE seeing answers
+  3. ONLY THEN compare predictions with test.yaml
+- ⚠️ **CRITICAL**: If you see test.yaml answers before locking predictions = DATA LEAKAGE
+
+**VALIDATION PHASE** (validate_questions.yaml ONLY):
+- Same as testing phase - blind predictions, lock, then compare
+
+**Key Point**: 
+- ✅ Training data (train.yaml): See answers to learn patterns
+- ❌ Test/validate data: NEVER see answers until after predictions locked
+- This is fundamental to proper train/test separation!
 
 # 5. Develop Algorithm Using TBTA Data
 
