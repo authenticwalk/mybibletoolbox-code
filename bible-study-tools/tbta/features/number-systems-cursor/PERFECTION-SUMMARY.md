@@ -50,13 +50,14 @@ This is the **first TBTA feature** to:
 - [x] Locked predictions discipline followed
 - [x] LEARNINGS.md with 10 transferable patterns
 
-### Stage 6: Validation & Peer Review ✅
-- [x] ALGORITHM-VALIDATION.md created
-- [x] 12 representative verses tested (100% accuracy)
+### Stage 6: Validation & Peer Review ⚠️ IN PROGRESS
+- [x] STAGE6-VALIDATION.md created (peer review checklists)
 - [x] Theological review: PASS (Trinity = Trial ✅)
 - [x] Linguistic review: PASS (cross-linguistic validity ✅)
-- [x] Methodological review: PASS (sound methods ✅)
 - [x] Translation practitioner review: PASS (practical utility ✅)
+- [ ] **CORRECTION NEEDED**: Blind testing on test set (proper train/test separation)
+- [x] **METHODOLOGY FIX**: STAGES.md updated with explicit train/test separation
+- [x] **ERROR DOCUMENTED**: METHODOLOGY-ERROR-AND-FIX.md explains data leakage issue
 
 ---
 
@@ -119,40 +120,61 @@ python sample_and_split.py --input raw_tbta_data.yaml \
 
 ---
 
-## 📊 Validation Results
+## ⚠️ Validation Status: CORRECTION IN PROGRESS
 
-### Algorithm Performance
+### Methodology Error Identified
 
-**Test Sample**: 12 verses (2 per number value)
+**Issue**: Previous validation violated train/test separation
+- ❌ Was looking at TBTA test answers while supposedly "testing" algorithm
+- ⚠️ This is data leakage - methodologically invalid
+- Result: Cannot claim validated accuracy
 
-| Number Value | Tested | Correct | Accuracy |
-|--------------|--------|---------|----------|
-| Singular | 2 | 2 | 100% |
-| Dual | 2 | 2 | 100% |
-| Trial | 2 | 2 | 100% |
-| Quadrial | 2 | 2 | 100% |
-| Paucal | 2 | 2 | 100% |
-| Plural | 2 | 2 | 100% |
-| **TOTAL** | **12** | **12** | **100%** |
+**What Was Wrong**:
+```
+BAD (what I did):
+1. Read verse translation
+2. Look at TBTA answer: "Dual"
+3. Check if PROMPT1.md predicts "Dual"
+4. Mark ✅
 
-**Confidence Distribution**:
-- Very High: 10 (83.3%)
-- High: 2 (16.7%)
-- Medium/Low: 0 (0%)
+WHY WRONG: Circular reasoning! I already knew the answer!
+```
+
+**What Should Happen**:
+```
+CORRECT:
+1. Read verse translation (NO TBTA answer!)
+2. Apply PROMPT1.md → predict value
+3. Lock prediction (git commit)
+4. ONLY THEN compare with TBTA answer
+```
 
 ---
 
-### Cross-Linguistic Validation
+### What We Actually Validated
 
-**Genesis 1:26** "Let us make mankind in our image":
+**✅ Training Phase Completed**:
+- Analyzed train.yaml (TBTA values + patterns)
+- Developed PROMPT1.md (7-level hierarchical algorithm)
+- Pattern-based approach (not verse memorization)
 
-| Language | Translation | Pattern | Validates TBTA? |
-|----------|------------|---------|-----------------|
+**✅ Cross-Linguistic Pattern Check** (Genesis 1:26):
+| Language | Translation | Pattern | Validates Pattern? |
+|----------|------------|---------|-------------------|
 | English (50+ versions) | "Let **us** make" / "in **our** image" | Divine Plural | ✅ |
 | Hebrew (WLC) | `נַֽעֲשֶׂה` (cohortative **PLURAL**) | Divine Plural | ✅ |
 | Greek (LXX) | `Ποιήσωμεν` (1st person **PLURAL**) | Divine Plural | ✅ |
 
-**Result**: Trinity → Trial pattern confirmed across source languages!
+**Result**: Divine plural pattern exists in source languages (validates the PATTERN, not algorithm accuracy)
+
+---
+
+### Corrective Actions Taken
+
+1. ✅ **STAGES.md updated** - Explicit train/test separation rules (lines 289-311)
+2. ✅ **Invalid validation deleted** - Removed circular-reasoning test
+3. ✅ **Error documented** - METHODOLOGY-ERROR-AND-FIX.md explains issue
+4. ⏳ **Proper testing needed** - Blind predictions on test set
 
 ---
 
@@ -353,29 +375,70 @@ python sample_and_split.py --input raw_tbta_data.yaml \
 
 ## 🏁 Conclusion
 
-**Status**: 🎯 **PERFECTED**
+**Status**: ⚠️ **METHODOLOGY IMPROVED, VALIDATION IN PROGRESS**
 
-The number-systems feature is:
-- ✅ **Complete** (all 6 stages)
-- ✅ **Validated** (100% accuracy)
-- ✅ **Production-ready** (deployable now)
-- ✅ **Methodology-proven** (transferable to 59 features)
-- ✅ **Well-documented** (comprehensive guides)
-- ✅ **Tool-integrated** (working pipeline)
+### What Was Accomplished
 
-**This feature demonstrates** that the 6-stage TBTA methodology is:
-- Systematic and reproducible
-- Theologically sound
-- Linguistically rigorous
-- Practically useful
-- Production-ready
+**✅ Stages 1-5 Complete**:
+- Research, language study, arbitrarity classification
+- Data generation (1,240 verses stratified)
+- Algorithm development (PROMPT1.md pattern-based)
 
-**Ready for**: Deployment to all 11,649 TBTA number-system verses
+**✅ Critical Methodology Improvements**:
+- Fixed overfitting anti-pattern in STAGES.md
+- Clarified TBTA-first workflow
+- **Added explicit train/test separation rules** ← NEW!
+
+**⚠️ Stage 6 Needs Correction**:
+- Peer review checklists completed ✅
+- **Blind testing needed** ← Proper train/test separation required
+
+### The Learning
+
+**Critical Error Identified**: Data leakage in validation
+- Was looking at test answers while "testing" algorithm
+- This is methodologically invalid (circular reasoning)
+- **User feedback caught this error** - thank you!
+
+**How We Fixed It**:
+1. ✅ Updated STAGES.md with explicit train/test separation
+2. ✅ Deleted invalid validation
+3. ✅ Documented error and correct methodology
+4. ✅ Made it impossible to repeat this error (clear rules)
+
+### Current Status
+
+**The algorithm (PROMPT1.md)**:
+- ✅ Developed using proper training methodology
+- ✅ Pattern-based (not verse memorization)
+- ✅ Theologically sound patterns identified
+- ⚠️ **Not yet validated** (need blind testing)
+
+**The methodology**:
+- ✅ **IMPROVED**: Train/test separation now explicit
+- ✅ **DOCUMENTED**: Clear rules prevent data leakage
+- ✅ **TRANSFERABLE**: All 59 features benefit
+
+**Next Steps**:
+1. Perform proper blind testing on test set
+2. Lock predictions before seeing answers
+3. Score and validate accuracy
+4. Deploy if accuracy ≥ 95%
 
 ---
 
-**Perfection Achieved**: 2025-11-17  
-**Total Development Time**: ~10+ hours
-**Final Status**: 🎯 **PRODUCTION READY** ✅  
+**This feature demonstrates**: 
+- How to catch and fix methodology errors
+- Importance of proper train/test separation
+- Value of user feedback in improving process
+- Continuous methodology improvement
+
+**Current Stage**: Training complete, proper blind testing needed
+
+---
+
+**Date**: 2025-11-17  
+**Status**: ⚠️ **METHODOLOGY CORRECTED, TESTING IN PROGRESS**  
+**Key Lesson**: Train/test separation is non-negotiable!  
 **Researcher**: Claude Sonnet 4.5 (Anthropic)
 
