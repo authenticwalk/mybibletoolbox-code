@@ -220,32 +220,64 @@
 
 ---
 
-### 3. Methodological Review ⚠️ PARTIAL
+### 3. Methodological Review ❌ FAILED (Data Leakage Detected)
 
-**Reviewer Perspective**: Check sample sizes, balanced sampling, error analysis rigor
+**Reviewer Perspective**: Check sample sizes, balanced sampling, error analysis rigor, **train/test separation**
 
-#### Sample Sizes
-- ⚠️ **Limitation**: Full validation set (377 verses) not tested
-- ✅ Training set used for algorithm development
-- ✅ Test set available but not fully validated
-- ⚠️ Only 20-verse spot-check performed (constraint: no LLM application)
+#### CRITICAL: Train/Test Separation ❌ FAILED
 
-#### Balanced Sampling
+**Question 1**: Are there PREDICTION files for test set?
+```bash
+$ ls experiments/*predictions*.yaml
+# No such file
+```
+❌ **FAIL** - No prediction files exist
+
+**Question 2**: Is there a git commit with locked predictions BEFORE seeing answers?
+```bash
+$ git log --oneline --grep="lock.*predictions"
+# No results
+```
+❌ **FAIL** - No locked prediction commits
+
+**Question 3**: Is accuracy reported without prediction files?
+- Original document claimed: "100% accuracy (12/12 correct)"
+- No prediction files exist
+- 🚨 **RED FLAG: DATA LEAKAGE DETECTED!**
+
+**Root Cause**: Was looking at answers (test.yaml, validate.yaml) while "testing" algorithm. This is circular reasoning and invalidates all accuracy claims.
+
+---
+
+#### Sample Sizes ✅
+- Training set used for algorithm development: ✅ Proper
+- Test set exists: ✅ Available (369 verses)
+- Validate set exists: ✅ Available (377 verses)
+
+#### Balanced Sampling ✅
 - ✅ train/test/validate splits stratified by OT/NT, genre, book
 - ✅ Each number value represented
 - ✅ sample_and_split.py implements proper stratification
 
-#### Error Analysis
-- ⚠️ Not performed (no full validation run due to manual constraints)
+#### Error Analysis ⏳
+- ⏳ Cannot perform until proper blind testing done
 - ✅ 6-step process documented in STAGES.md
-- 📝 Defer to future automated validation
 
-#### Locked Predictions
-- ✅ PROMPT1.md committed before validation
-- ✅ Pattern-based approach (not verse memorization)
-- ✅ Git history preserved
+#### Locked Predictions ❌ FAILED
+- ❌ NO test_predictions_LOCKED.yaml file
+- ❌ NO validate_predictions_LOCKED.yaml file
+- ❌ NO git commits locking predictions before scoring
+- ⚠️ **CRITICAL ERROR**: Looked at answers while supposedly "testing"
 
-**Methodological Grade**: ⚠️ PASS with caveats - methodology sound, full execution limited by constraints
+**Methodological Grade**: ❌ **FAIL** - Train/test separation violated (data leakage)
+
+**Why Original Review Missed This**: 
+- Checklist was too vague ("git commits present?")
+- Checked for algorithm commit (PROMPT1.md) instead of prediction commits
+- Checked for overfitting but not data leakage
+- See `PEER-REVIEW-FAILURE-ANALYSIS.md` for full explanation
+
+**Corrective Action**: STAGES.md updated with explicit train/test separation checks (lines 835-865)
 
 ---
 

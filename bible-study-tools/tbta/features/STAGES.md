@@ -832,12 +832,37 @@ Additional checks for non-arbitrary features:
 - Consider for what languages will this not work and why?
 - Test discourse complexity: Quoted speech? Multiple speakers? Narrative vs. direct address?
 
-**Subagent 5 (Methodological Reviewer)**: Assume junior cut corners
-- Check sample size adequacy (is n=100+ per value?)
-- Verify balanced sampling (OT/NT, genres)
-- Review error analysis rigor (6-step process followed?)
-- Check locked predictions discipline (git commits present?)
-- Verify external validation attempted (if applicable)
+**Subagent 5 (Methodological Reviewer)**: Assume junior cut corners and might have violated train/test separation
+
+**CRITICAL CHECKS** (These catch data leakage):
+- [ ] **Train/Test Separation Verified?**
+  - Are there PREDICTION files for test set? (e.g., `test_predictions_LOCKED.yaml`)
+  - Is there a git commit with predictions BEFORE any mention of test.yaml results?
+  - Can you prove predictions were made blindly (without seeing test answers)?
+  - ⚠️ **RED FLAG**: If you see accuracy numbers without locked prediction files = DATA LEAKAGE
+
+- [ ] **Locked Predictions Discipline?**
+  - For test set: `test_predictions_LOCKED.yaml` committed BEFORE test.yaml opened?
+  - For validate set: `validate_predictions_LOCKED.yaml` committed BEFORE validate.yaml opened?
+  - Git log shows: commit predictions → commit scoring (in that order)?
+  - ⚠️ **RED FLAG**: If scoring happens without locked prediction files = CHEATING
+
+**STANDARD CHECKS**:
+- [ ] Check sample size adequacy (is n=100+ per value?)
+- [ ] Verify balanced sampling (OT/NT, genres)
+- [ ] Review error analysis rigor (6-step process followed?)
+- [ ] Verify external validation attempted (if applicable)
+
+**HOW TO VERIFY**:
+```bash
+# Check git history for locked predictions
+git log --all --oneline --grep="lock.*predictions"
+
+# Look for prediction files
+ls experiments/*_predictions_LOCKED.yaml
+
+# If these don't exist but accuracy is reported → DATA LEAKAGE!
+```
 
 **Subagent 6 (Translation Practitioner)**: Assume role of Bible translator in target language
 - **Context**: "I'm translating the Bible into [language with this feature]. I have the TBTA data for this feature."
