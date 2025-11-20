@@ -92,9 +92,9 @@ arbitrary_contexts:
 
 **File Organization**: Keep experiments clean:
 - `experiments/v1/`, `experiments/v2/`, etc. - One folder per algorithm iteration
-- `experiments/data/` - All data files (train.yaml, test.yaml, raw extracts)
+- `experiments/data/` - All data files (train_answers.yaml, train_questions.yaml, test_questions.yaml, README.md summarizing data selection process and key decisions in doing that)
 - `experiments/` root - Only current work and final docs (README, LEARNINGS, CERTIFICATION)
-- Delete intermediate progress/thinking files after work completes
+- Summarize then delete intermediate progress/thinking files after work completes
 
 **Sample Size**: 100 verses per value minimum
 - Small datasets (<50 verses) cannot support claims of 100% accuracy

@@ -15,17 +15,16 @@ import re
 from pathlib import Path
 from collections import defaultdict
 
-# Add fetch_verse to path
+# Set up paths for imports
 PROJECT_ROOT = Path(__file__).resolve().parents[6]
-sys.path.insert(0, str(PROJECT_ROOT / '.claude' / 'skills' / 'quote-bible' / 'scripts'))
+QUOTE_BIBLE_SCRIPTS = PROJECT_ROOT / '.claude' / 'skills' / 'quote-bible' / 'scripts'
 
-try:
-    from fetch_verse import fetch_verse
-except ImportError:
-    print("Warning: fetch_verse not available. Using cached data only.", file=sys.stderr)
-    def fetch_verse(book, chapter, verse):
-        """Fallback that returns empty dict."""
-        return {}
+# Add necessary paths
+sys.path.insert(0, str(QUOTE_BIBLE_SCRIPTS))
+sys.path.insert(0, str(PROJECT_ROOT))
+
+# Now import fetch_verse (with all its dependencies in path)
+from fetch_verse import fetch_verse, VerseFetchError
 
 def parse_verse_ref(ref):
     """Parse USFM reference like 'GEN.001.026' into book, chapter, verse."""
@@ -37,12 +36,19 @@ def get_verse_text(ref):
     book, chapter, verse = parse_verse_ref(ref)
     try:
         translations = fetch_verse(book, chapter, verse)
-        # Get first English version
+        # Get first English version (prefer NIV, ESV, NASB, then any)
+        preferred = ['eng-NIV', 'eng-ESV', 'eng-NASB']
+        for pref in preferred:
+            if pref in translations:
+                return translations[pref]
+        # Fall back to any English version
         for version, text in translations.items():
             if version.startswith('eng-'):
                 return text
-    except Exception as e:
+    except VerseFetchError as e:
         print(f"  Warning: Could not fetch {ref}: {e}", file=sys.stderr)
+    except Exception as e:
+        print(f"  Warning: Unexpected error fetching {ref}: {e}", file=sys.stderr)
     return ""
 
 def classify_verse(text, ref):
