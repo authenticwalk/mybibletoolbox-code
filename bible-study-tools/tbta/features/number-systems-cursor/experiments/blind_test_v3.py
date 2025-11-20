@@ -14,17 +14,19 @@ Process:
 6. ONLY THEN can we score against test.yaml
 """
 
-import yaml
 import sys
-from pathlib import Path
 from collections import defaultdict
+from pathlib import Path
+
+import yaml
 
 # Set up paths
 PROJECT_ROOT = Path(__file__).resolve().parents[5]
 sys.path.insert(0, str(PROJECT_ROOT / '.claude' / 'skills' / 'quote-bible' / 'scripts'))
 sys.path.insert(0, str(PROJECT_ROOT))
 
-from fetch_verse import fetch_verse, VerseFetchError
+from fetch_verse import VerseFetchError, fetch_verse
+
 
 def parse_verse_ref(ref):
     """Parse USFM reference like 'GEN.001.026'."""
