@@ -129,6 +129,9 @@ If unset/not exists run `setup-minimal-data.sh`
 - **NO summary files in root directory** - Do not create CHANGES-SUMMARY.md, COMPLETION-SUMMARY.md, PR-DESCRIPTION.md, or similar files in the project root
 - **Use `/plan` directory** - For planning and tracking work, create files in `/plan/{task-name}.md` and update them as you learn and progress
 - **Keep root clean** - Root should only contain permanent project documentation
+- **Organize your task directory** 
+  - When there will be more than one file or version put in subdirectories (ex. ./experiments/v1; ./data; ./research)
+  - Clean up all your thinking, analysis, temporary and other files.  Be concise, I brag about how few lines something took not how massive a project grew.
 
 ### Documentation Philosophy
 - **Prefer concise over comprehensive** - Simple instructions let AI figure things out; verbose explanations create confusion
@@ -137,14 +140,17 @@ If unset/not exists run `setup-minimal-data.sh`
 - **Avoid redundancy** - Don't create "-quick" versions of docs; extract relevant parts directly into tool READMEs
 - **Use progressive disclosure for ALL .md files** - When creating/editing ANY markdown file, use `/progressive-disclosure` skill: README ≤200 lines (self-contained overview), topic files ≤400 lines, plan ahead to create directories if content will exceed limits, append to existing files before creating new ones
 
+### Fixing Bugs and Problems
+
+ - When something does not work (ex. can't import a file or call Quote Verse), fix it.  Never just add a placeholder and pretend your results worked.
+ - Debug what went wrong in your instructions; update that in a generic and very concise way so other sessions will not have the same problem.  Commit that change independently with git flow of "FIX: AI SYSTEM: {short summary}\n{diagnosis and solution}
+
 ### Tool Development Process
 - **Experiments optimize, researchers execute** - Tool experimentation phase should test sources and optimize lookups; researchers should use the optimized approach directly
 - **Document sources, not tools** - In tool READMEs, list helpful webpages, not the obvious fact that WebSearch/WebFetch exist
 - **Tailored standards** - Tools dealing with words need word standards; tools without words don't need them. Include only relevant standards.
 
-## Git Commit Guidelines
 
-When committing changes to this repository, follow these guidelines:
 ### Working with Sparse Checkout
 
 The data directory uses Git sparse-checkout to limit which files are downloaded. This is important to know:

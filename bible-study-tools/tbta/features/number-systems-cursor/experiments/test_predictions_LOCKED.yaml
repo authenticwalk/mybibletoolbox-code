@@ -183,7 +183,7 @@ predictions:
   predicted_value: S
   rule_applied: L4 - One person (the servant)
   confidence: medium
-  reasoning: '"The servant" singular actor
+  reasoning: '"The servant" singular actor'
 
 - reference: JOS.021.029
   predicted_value: Q
