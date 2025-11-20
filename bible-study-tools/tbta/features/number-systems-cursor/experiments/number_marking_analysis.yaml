@@ -1,0 +1,421 @@
+analysis: cross-linguistic-number-marking
+total_analyzed: 30
+with_evidence: 25
+agreement:
+  disagree: 19
+  agree: 6
+results:
+- &id001
+  reference: JDG.001.006
+  tbta_value: D
+  english: And Adoni-Bezek flees, and they pursue after him, and seize him, and cut
+    off his thumbs and his grea
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    tok_pisin:
+      value: D
+      marker: tok_pisin_tupela
+      text: Adoni Besek i ranawe, tasol ol Juda i ranim em na holimpasim em na katim
+        tupela bikpela pinga long h
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: Holo aku la o Adonibezeka, a hahai aku la lakou ia ia, a loaa oia, alaila
+        ooki ae la lakou i na mana
+- &id002
+  reference: MRK.011.001
+  tbta_value: D
+  english: And when they drew near to Jerusalem, to Bethphage and Bethany, towards
+    the Mount of Olives, He sent
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    tok_pisin:
+      value: D
+      marker: tok_pisin_tupela
+      text: Jisas wantaim ol disaipel bilong en i kamap klostu long Jerusalem, na
+        ol i kamap long ples Betfage n
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: A KOKOKE mai la lakou i Ierusalema, ua hiki i Betepage, a me Betania ma
+        ka mauna o Oliveta, hoouna m
+- &id003
+  reference: LUK.024.013
+  tbta_value: D
+  english: Now behold, two of them were traveling that same day to a village called
+    Emmaus, which was about sev
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    tok_pisin:
+      value: D
+      marker: tok_pisin_tupela
+      text: Long dispela de tasol ol meri i bin i go long matmat, tupela disaipel
+        i wokabaut i go long wanpela p
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: Aia hoi, elua o lakou e hele ana ia la, i ke kulanakauhale i mamao kanaono
+        setadia aku mai Ierusalem
+- reference: GEN.001.016
+  tbta_value: D
+  english: And God makes the two great luminaries, the great luminary for the rule
+    of the day, and the small lu
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    tok_pisin:
+      value: D
+      marker: tok_pisin_tupela
+      text: God i mekim kamap tupela bikpela lait. Bikpela em san bilong givim lait
+        long de, na liklik em mun bi
+- &id004
+  reference: LUK.005.019
+  tbta_value: p
+  english: And when they could not find how they might bring him in, because of the
+    crowd, going up on the roof
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: Aole hoi i loaa ia lakou ke hookomo ia ia, no ka nui o na kanaka, pii
+        ae la lakou iluna o ka hale, a
+- &id005
+  reference: LUK.010.002
+  tbta_value: p
+  english: Then He said to them, “The harvest indeed is great, but the workers are
+    few; therefore pray to the L
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_oukou
+      text: Alaila olelo mai la oia ia lakou. He nui ka ai i oo, he uuku ka poe nana
+        e ohi; nolaila e pule aku a
+- &id006
+  reference: LUK.005.018
+  tbta_value: p
+  english: And behold, men were carrying on a bed a man who was paralyzed, and they
+    were seeking to bring him i
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: Aia hoi, lawe mai la na kanaka ma ka moe i kekahi kanaka, i loohia e ka
+        lolo; a huli lakou e hookomo
+- &id007
+  reference: TIT.002.014
+  tbta_value: P
+  english: who gave Himself for us, that He might redeem us from every lawless deed
+    and purify for Himself a pe
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_kakou
+      text: 'O ka mea i haawi mai ia ia iho no kakou, e hoopakele ia kakou i ka hewa
+        a pau, a e huikala mai nona '
+- &id008
+  reference: 1TH.005.004
+  tbta_value: P
+  english: But you, brothers, are not in darkness, so that this Day should overtake
+    you as a thief.
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_oukou
+      text: 'Aka, o oukou, e na hoahanau, aole oukou iloko o ka pouli, e loohia ai
+        oukou e ua ia la, me he aihue '
+- &id009
+  reference: 1TH.005.008
+  tbta_value: P
+  english: But we, since we are of the day, let us be sober, putting on a breastplate
+    of faith and love, and as
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_kakou
+      text: Aka, o kakou ka poe o ke ao, e kuoo kakou, e komo ana i ka pale umauma
+        o ka manaoio a me ke aloha; a
+- &id010
+  reference: 1TH.002.017
+  tbta_value: P
+  english: But we, brothers, being unwillingly separated from you for a short season,
+    in presence, not in heart
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_makou
+      text: Aka, o makou la, e na hoahanau, ua hookaawaleia mai nei mai o oukou mai
+        la, i keia mau la, o ko mako
+- &id011
+  reference: 1TH.002.005
+  tbta_value: P
+  english: For neither were we using flattering speech, as you know, nor covering
+    up greed, God is our witness.
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_makou
+      text: 'Aole makou i lawe i na hua olelo malimali, ua ike oukou; aole hoi i ka
+        hookohu o ka makee waiwai; o '
+- &id012
+  reference: GEN.036.015
+  tbta_value: Q
+  english: 'These [are] chiefs of the sons of Esau: sons of Eliphaz, firstborn of
+    Esau: Chief Teman, Chief Omar,'
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: 'O lakou nei na makualii o na moopuna a Esau: o na keikikane a Elipaza
+        a ka makahiapo na Esau, o Tema'
+- &id013
+  reference: DAN.001.019
+  tbta_value: Q
+  english: And the king speaks with them, and there has not been found among them
+    all like Daniel, Hananiah, Mi
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: A kamailio pu ke alii me lakou; aole nae i loaa iwaena o lakou a pau kekahi
+        mea e like me Daniela, a
+- &id014
+  reference: 1SA.016.010
+  tbta_value: Q
+  english: And Jesse causes seven of his sons to pass by before Samuel, and Samuel
+    says to Jesse, “YHWH has not
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: Hoike aku la o Iese i kana mau keikikane ehiku imua o Samuela. I mai la
+        o Samuela ia Iese, Aole o Ie
+- &id015
+  reference: 2JN.001.003
+  tbta_value: S
+  english: 'Grace, mercy, and peace will be with us from God the Father and from the
+    Lord Jesus Christ, the Son '
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_oukou
+      text: E alohaia mai oukou, a e lokomaikaiia mai, a e maluhia hoi e ke Akua ka
+        Makua, a me ka Haku o Iesu K
+- &id016
+  reference: COL.004.007
+  tbta_value: S
+  english: Tychicus, our beloved brother and faithful minister, and fellow servant
+    in the Lord, will tell you a
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_oukou
+      text: A o ko'u noho ana, na Tukiko ia e hai aku ia oukou, na ka hoahanau aloha,
+        ka lawehana hoopono, ka ho
+- &id017
+  reference: TIT.002.009
+  tbta_value: S
+  english: Exhort bondservants to be subject to their own masters, to be well pleasing
+    in all things, not talki
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: E ao aku i na kauwa e hoolohe lakou i ko lakou mau haku iho, a e hooluolu
+        lea aku hoi ma ua mea a pa
+- &id018
+  reference: 1TH.005.015
+  tbta_value: S
+  english: See that no one pays back evil for evil to anyone, but always pursue that
+    which is good, both for on
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_oukou
+      text: E malama hoi, i hoihoi ole aku kekahi i ka hewa no ka hewa i kekahi; e
+        hahai mau oukou i ka pono iwa
+- &id019
+  reference: 1TH.003.013
+  tbta_value: S
+  english: so that He may establish your hearts blameless in holiness before our God
+    and Father at the coming o
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_kakou
+      text: I hookupaa mai oia i ko oukou naau i kina ole ka hemolele imua o ke Akua,
+        o ko kakou Makua, i ka hik
+- reference: GEN.036.021
+  tbta_value: T
+  english: and Dishon, and Ezer, and Dishan; these [are] chiefs of the Horites, sons
+    of Seir, in the land of Ed
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: 'O Disona, o Ezera, a o Disana: o lakou na makualii o ka Hori, o na keikikane
+        a Seira, ma ka aina o E'
+- reference: MRK.014.040
+  tbta_value: T
+  english: 'And having returned, He found them sleeping again, for their eyes were
+    heavy; and they did not know '
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: A hoi mai la ia, loaa hou no lakou e hiamoe ana, (no ka mea, ua maloeloe
+        ko lakou maka,) aole nae la
+- reference: 2SA.024.013
+  tbta_value: T
+  english: 'And Gad comes to David, and declares [it] to him, and says to him, “Does
+    seven years of famine come '
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    tok_pisin:
+      value: T
+      marker: tok_pisin_tripela
+      text: 'Gat i go lukim em, na em i autim tok bilong Bikpela long Devit. Na em
+        i askim Devit olsem, “Bikpela '
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: 'Hele mai la o Gada io Davida la, a hai mai la ia ia, i mai la, E hiki
+        mai anei na makahiki wi ehiku '
+- reference: DAN.001.018
+  tbta_value: T
+  english: 'And at the end of the days that the king had said to bring them in, the
+    chief of the eunuchs brings '
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    tok_pisin:
+      value: T
+      marker: tok_pisin_tripela
+      text: Olgeta dispela yangpela man i pinisim tripela yia bilong skul King Nebukatnesar
+        i bin makim, na Aspe
+    hawaiian:
+      value: T
+      marker: hawaiian_lakou
+      text: A i ka pau ana o na la a ke alii i olelo ai i alakaiia mai lakou, alaila,
+        alakai aku la ka luna o ka
+- reference: DAN.003.016
+  tbta_value: T
+  english: 'Shadrach, Meshach, and Abed-Nego have answered, indeed, they are saying
+    to King Nebuchadnezzar, “We '
+  available:
+    hawaiian: true
+    tok_pisin: true
+    hebrew: true
+  evidence:
+    hawaiian:
+      value: T
+      marker: hawaiian_makou
+      text: Olelo mai la o Saderaka, o Mesaka, a me Abedenego, i mai la i ke alii,
+        E Nebukaneza, aole o makou me
+disagreements:
+- *id001
+- *id002
+- *id003
+- *id004
+- *id005
+- *id006
+- *id007
+- *id008
+- *id009
+- *id010
+- *id011
+- *id012
+- *id013
+- *id014
+- *id015
+- *id016
+- *id017
+- *id018
+- *id019
