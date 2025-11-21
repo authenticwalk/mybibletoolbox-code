@@ -6,7 +6,7 @@
 
 ## Goal
 
-Develop and refine the logic to predict the feature using parallel experimental tracks. We move from "Analysis" (understanding data) to "Engineering" (building the predictor).
+Develop and refine the logic to predict the feature using parallel experimental tracks, then refine the winning approach.
 
 ## Core Requirement: The "One-Pass" Evaluator
 
@@ -33,69 +33,54 @@ All experiments must use a standardized evaluation loop:
     - (Optional) Fetch Target Language translations (if available/useful).
 3.  **Output**: `experiments/data/train_enhanced.jsonl` (This is the new input for experiments).
 
-### 2. Track A: The "Baseline" (Zero-Shot)
+### 2. Phase 1: Parallel Tracks (Find the Best Path)
 
-**Goal**: Establish the floor. How well does a smart LLM do with just the definition?
-**Prompt**:
+**Track A: The "Baseline" (Zero-Shot)**
 
-- "You are a Bible translation assistant."
-- "Feature Definition: {Definition from Stage 1}"
-- "Verse: {Text}"
-- "Task: Predict the value for this feature."
-  **Action**: Run against `train_enhanced.jsonl`. Record accuracy.
+- **Prompt**: Just definitions and text. Establish the floor.
 
-### 3. Track B: The "Concise Logic" (Chain of Thought)
+**Track B: The "Concise Logic" (Chain of Thought)**
 
-**Goal**: Distill the feature into a minimal set of human-readable rules.
-**Process**:
+- **Process**: Ask LLM to analyze Stage 2 patterns. Draft `PROMPT-LOGIC.md` ("If context X -> Y").
+- **Constraint**: Minimalist rules.
 
-- Ask LLM to analyze the high-confidence patterns from Stage 2 (Analysis).
-- Draft a `PROMPT-LOGIC.md`: "If context has X and word is Y -> Z".
-- **Constraint**: Keep it simple. No 100-page rulebooks.
-- **Test**: Use this logic in a prompt. Measure accuracy vs Baseline.
+**Track C: The "Strong's Annotation" (Data Enrichment)**
 
-### 4. Track C: The "Strong's Annotation" (Data Enrichment)
+- **Goal**: Shift logic to data.
+- **Action**: Create `data/strongs/{G|H}{number}-tbta.yaml` for deterministic words or words with clear rules (e.g., "us" = Trinity if Divine).
+- **Integration**: Update `augment_data.py` to inject these notes.
 
-**Goal**: Shift logic from the _Prompt_ to the _Data_.
-**Concept**: Instead of "If word is 'us'...", we annotate the Strong's definition itself.
-**Action**:
+**Track D: Decision Tree Hints (Hybrid)**
 
-1.  Identify Strong's words that are **deterministic** (100% correlation in Stage 2).
-2.  Identify Strong's words that have **clear conditional rules** (e.g., "us" = Trinity if Divine).
-3.  **Create Note Files**: `data/strongs/{G|H}{number}-tbta.yaml`
-    ```yaml
-    strongs: G1234
-    tbta_feature: { feature_name }
-    default_value: { most_common_value }
-    rules:
-      - condition: 'Speaker is God'
-        value: 'Trial'
-    ```
-4.  **Integration**: Update `augment_data.py` to inject these notes into the prompt context.
-5.  **Test**: Run prediction with these "Hinted" prompts.
+- **Action**: Inject Stage 2 ML insights as "Expert Hints" into the prompt.
 
-### 5. Track D: Decision Tree Hints (Hybrid)
+**Selection**:
 
-**Goal**: Use the ML insights from Stage 2.
-**Action**:
+- Run all tracks on `test_inputs.jsonl`.
+- Pick the clear winner.
 
-1.  Take the Decision Tree rules from Stage 2 (Analysis).
-2.  Inject them as "Expert Hints" into the prompt.
-    - _Example_: "Hint: Historical analysis suggests that when 'language X' uses 'word Y', the value is likely 'Z'."
-3.  **Test**: Measure if these hints help or confuse the LLM.
+### 3. Phase 2: Refinement (Optimize the Winner)
 
-## Execution Strategy
+**Goal**: Take the winning track and polish it for production.
+**Input**: The winning method from Phase 1.
+**Tasks**:
 
-- Run Tracks A, B, C, D in parallel (or sequential rapid iterations).
-- **Compare**: Which method yields the highest accuracy on `test_inputs.jsonl`?
-- **Select**: Pick the winner (or combine B+C).
-- **Finalize**: Write the winning logic into `PROMPT.md`.
+1.  **Error Analysis (Train Set)**: Run the winner on `train.jsonl`. Identify remaining systematic errors.
+2.  **Edge Case Handling**: Add specific logic for the hard cases identified in Stage 1 (Research).
+3.  **Token Optimization**: Remove unnecessary context or instructions to improve speed/cost.
+4.  **Prompt Polish**: Ensure clear, unambiguous language.
+
+### 4. Phase 3: The "Pre-Flight" Check
+
+- **Action**: Run the _refined_ winner against `test_inputs.jsonl` one last time.
+- **Success Check**: Did accuracy improve over Phase 1?
+- **Lock**: Commit the final `PROMPT.md` and any helper scripts.
 
 ## Deliverables
 
 1.  `augment_data.py` (Script)
-2.  `experiments/training/baseline_results.md`
-3.  `experiments/training/logic_results.md`
+2.  `experiments/training/track_comparison.md` (Results of Phase 1)
+3.  `experiments/training/refinement_log.md` (Results of Phase 2)
 4.  `data/strongs/*-tbta.yaml` (The generated annotation files)
 5.  `PROMPT.md` (The final best performing prompt)
 
@@ -103,4 +88,4 @@ All experiments must use a standardized evaluation loop:
 
 - One method achieves >90% accuracy (or best possible given data limits).
 - Logic is explainable (not a black box).
-- No "Hardcoded Exceptions" in code; rules live in data or concise logic.
+- Refinement phase demonstrates measurable improvement over the raw experimental track.
