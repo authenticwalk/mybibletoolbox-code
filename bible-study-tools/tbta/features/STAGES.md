@@ -224,7 +224,7 @@ python experiments/sample_and_split.py \
 
 4. **OPTIONAL: Fetch translations during generation**:
    - If `--fetch-translations` flag provided
-   - Uses Quote Bible skill (.claude/skills/quote-bible/scripts/fetch_verse.py)
+   - Uses Quote Bible skill (src/tools/fetch_verse.py)
    - Fetches specified languages for each verse
    - Generates `train_questions.yaml`, `test_questions.yaml`, `validate_questions.yaml`
    - **Advantage**: Single integrated workflow

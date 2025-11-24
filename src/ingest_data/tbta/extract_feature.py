@@ -3,22 +3,35 @@
 TBTA Feature Extraction Script
 ================================
 
-Extracts feature values from TBTA dataset for STAGES.md Step 4.
+Unified script for extracting feature values from TBTA dataset.
+Supports both YAML output (for STAGES.md workflow) and JSONL output (for ML pipelines).
 
 Usage:
+    # Extract to YAML (default, for STAGES.md Step 4)
     python extract_feature.py --field Clusivity
-    python extract_feature.py --field Mood --max-per-value 500
-    python extract_feature.py --field Participant --output data.yaml
+    python extract_feature.py --field Mood --max-per-value 500 --output data.yaml
+
+    # Extract to JSONL (for ML training pipelines)
+    python extract_feature.py --field Number --format jsonl --output data.jsonl
+    python extract_feature.py --source-dir /path/to/tbta --field Person --format jsonl
 
 Features:
-- Downloads fresh TBTA data from GitHub
+- Downloads fresh TBTA data from GitHub (or use custom --source-dir)
 - Extracts all verses for a given feature field
+- Multiple output formats: YAML (summary), JSONL (detailed)
 - Counts distribution across OT/NT and books
 - LRU cache to cap verses per value (default: 2000)
-- Outputs simplified YAML for LLM processing
+- Hierarchical path tracking for detailed analysis
 
-Output format matches STAGES.md Step 4 requirements (simplified version).
-LLM will add genre/difficulty/notes in subsequent step.
+Output Formats:
+1. YAML: Simplified summary format for STAGES.md Step 4
+   - Feature metadata and distribution statistics
+   - Limited verses per value (LRU cached)
+
+2. JSONL: Detailed format for ML pipelines
+   - One annotation per line
+   - Fields: verse, label, constituent, part, path
+   - All occurrences included (no LRU limit)
 """
 
 import os
@@ -28,14 +41,16 @@ import subprocess
 from pathlib import Path
 from datetime import datetime
 from collections import OrderedDict, Counter, defaultdict
+from typing import Dict, List, Any, Optional
 import argparse
 import logging
 
 try:
     import yaml
 except ImportError:
-    print("ERROR: PyYAML not installed. Run: pip install pyyaml")
-    sys.exit(1)
+    print("WARNING: PyYAML not installed. YAML output will be unavailable.")
+    print("Install with: pip install pyyaml")
+    yaml = None
 
 # Configure logging
 logging.basicConfig(
@@ -175,58 +190,97 @@ def get_git_commit_hash():
 
 def parse_filename(filename):
     """
-    Parse TBTA filename like '00_001_001_Genesis.json'
-    Returns (book_name, chapter, verse) tuple
+    Parse TBTA filename.
+
+    Handles two formats:
+    1. GitHub format: '00_001_001_Genesis.json'
+    2. Standard format: 'GEN-001-001.json' or 'BOOK-CCC-VVV.json'
+
+    Returns (book_code, chapter, verse) tuple
     """
     import re
+
+    # Try GitHub format first: 00_001_001_Genesis.json
     match = re.match(r'(\d+)_(\d+)_(\d+)_([^.]+)\.json', filename)
     if match:
         chapter = int(match.group(2))
         verse = int(match.group(3))
         book_name = match.group(4)
-        return book_name, chapter, verse
+        book_code = BOOK_NAME_MAP.get(book_name)
+        if book_code:
+            return book_code, chapter, verse
+
+    # Try standard format: GEN-001-001.json
+    match = re.match(r'([A-Z0-9]+)-(\d+)-(\d+)\.json', filename)
+    if match:
+        book_code = match.group(1)
+        chapter = int(match.group(2))
+        verse = int(match.group(3))
+        return book_code, chapter, verse
+
     return None, None, None
 
 
-def extract_field_from_clause(clause_data, field_name):
+def extract_field_from_clause(clause_data, field_name, results=None, path=""):
     """
     Recursively search for field in clause tree.
-    Returns list of values found (can be multiple in nested clauses).
+
+    Args:
+        clause_data: TBTA clause dictionary
+        field_name: Field to extract (e.g., 'Number', 'Person')
+        results: Accumulator list (internal)
+        path: Hierarchical path for tracking location
+
+    Returns:
+        List of dicts with keys: value, constituent, part, path
     """
-    values = []
+    if results is None:
+        results = []
 
     if not isinstance(clause_data, dict):
-        return values
+        return results
 
-    # Check if field exists at this level
-    if field_name in clause_data:
-        value = clause_data[field_name]
-        # Filter out nullish values
-        if value and value not in ["Not Applicable", "Unspecified", "."]:
-            values.append(value)
+    # Extract current element data
+    constituent = clause_data.get('Constituent', '')
+    value = clause_data.get(field_name, '')
+    part = clause_data.get('Part', '')
+
+    # Check if field exists at this level and has meaningful value
+    if value and value not in ["Not Applicable", "Unspecified", "."]:
+        results.append({
+            'value': value,
+            'constituent': constituent,
+            'part': part,
+            'path': path
+        })
 
     # Recurse into Children
     if "Children" in clause_data and isinstance(clause_data["Children"], list):
-        for child in clause_data["Children"]:
-            values.extend(extract_field_from_clause(child, field_name))
+        for i, child in enumerate(clause_data["Children"]):
+            # Build hierarchical path
+            child_path = f"{path}/{part}[{i}]" if path else f"{part}[{i}]"
+            extract_field_from_clause(child, field_name, results, child_path)
 
-    return values
+    return results
 
 
-def process_json_file(json_file, field_name):
+def process_json_file(json_file, field_name, output_format='yaml'):
     """
     Process a single TBTA JSON file.
-    Returns list of (book_code, chapter, verse, value) tuples.
+
+    Args:
+        json_file: Path to JSON file
+        field_name: TBTA field to extract
+        output_format: 'yaml' or 'jsonl'
+
+    Returns:
+        For 'yaml': list of (book_code, chapter, verse, value) tuples
+        For 'jsonl': list of annotation dicts with verse references
     """
-    book_name, chapter, verse = parse_filename(json_file.name)
+    book_code, chapter, verse = parse_filename(json_file.name)
 
-    if not book_name:
-        return []
-
-    # Get USFM book code
-    book_code = BOOK_NAME_MAP.get(book_name)
     if not book_code:
-        logger.warning(f"Unknown book name: {book_name}")
+        logger.warning(f"Cannot parse filename: {json_file.name}")
         return []
 
     # Load JSON
@@ -237,126 +291,212 @@ def process_json_file(json_file, field_name):
         logger.error(f"Failed to parse {json_file.name}: {e}")
         return []
 
-    # Extract field values
-    values = []
+    # Handle both list and dict structures
+    clauses = tbta_data if isinstance(tbta_data, list) else [tbta_data]
 
-    if isinstance(tbta_data, list):
-        for clause in tbta_data:
-            values.extend(extract_field_from_clause(clause, field_name))
-    elif isinstance(tbta_data, dict):
-        values.extend(extract_field_from_clause(tbta_data, field_name))
-
-    # Return tuples for each value found
     results = []
-    for value in values:
-        results.append((book_code, chapter, verse, value))
+
+    for clause_idx, clause in enumerate(clauses):
+        try:
+            # Build path prefix for this clause
+            clause_path = f"Clause[{clause_idx}]"
+
+            # Extract features from this clause
+            annotations = extract_field_from_clause(clause, field_name, path=clause_path)
+
+            # Format based on output type
+            if output_format == 'jsonl':
+                # JSONL format: detailed annotations with verse reference
+                verse_ref = f"{book_code}.{chapter:03d}.{verse:03d}"
+                for ann in annotations:
+                    results.append({
+                        'verse': verse_ref,
+                        'label': ann['value'],
+                        'constituent': ann['constituent'],
+                        'part': ann['part'],
+                        'path': ann['path']
+                    })
+            else:
+                # YAML format: simple tuples for aggregation
+                for ann in annotations:
+                    results.append((book_code, chapter, verse, ann['value']))
+
+        except Exception as e:
+            logger.warning(f"Error processing clause {clause_idx} in {json_file.name}: {e}")
+            continue
 
     return results
 
 
-def extract_feature(field_name, max_per_value=2000, dry_run=False):
+def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False):
     """
     Extract all verses for a given feature field from TBTA data.
 
-    Returns dict with:
-    - feature: field name
-    - extracted: timestamp
-    - tbta_commit: git commit hash
-    - max_per_value: LRU cache size
-    - value: list of value data
+    Args:
+        field_name: TBTA field to extract
+        source_dir: Custom source directory (or None to use default TBTA repo)
+        max_per_value: LRU cache size (YAML format only)
+        output_format: 'yaml' or 'jsonl'
+        dry_run: Show stats without writing output
+
+    Returns:
+        For 'yaml': dict with feature metadata and aggregated data
+        For 'jsonl': list of annotation dicts
     """
     logger.info("=" * 60)
     logger.info(f"Extracting feature: {field_name}")
-    logger.info(f"Max verses per value: {max_per_value}")
+    logger.info(f"Output format: {output_format}")
+    if output_format == 'yaml':
+        logger.info(f"Max verses per value: {max_per_value}")
     if dry_run:
         logger.info("DRY RUN MODE - No output file will be written")
     logger.info("=" * 60)
 
-    # Initialize data structures
-    lru_cache = LRUCache(max_per_value)
-    total_counts = Counter()  # Overall counts (not limited by LRU)
-    book_counts = defaultdict(Counter)  # Per-book counts per value
-    ot_counts = Counter()  # OT counts per value
-    nt_counts = Counter()  # NT counts per value
+    # Determine source directory
+    if source_dir:
+        json_dir = Path(source_dir)
+        if not json_dir.exists():
+            logger.error(f"Source directory not found: {json_dir}")
+            sys.exit(1)
+    else:
+        # Use default TBTA repo
+        clone_tbta_repo()
+        json_dir = TBTA_JSON_DIR
 
     # Get all JSON files
-    json_files = sorted(TBTA_JSON_DIR.glob("*.json"))
+    json_files = sorted(json_dir.rglob("*.json"))
     logger.info(f"Found {len(json_files)} TBTA verse files")
 
-    # Process files
-    processed = 0
-    for json_file in json_files:
-        results = process_json_file(json_file, field_name)
+    if len(json_files) == 0:
+        logger.error(f"No JSON files found in {json_dir}")
+        sys.exit(1)
 
-        for book_code, chapter, verse, value in results:
-            # Create verse reference
-            verse_ref = f"{book_code}.{chapter:03d}.{verse:03d}"
+    # Initialize data structures based on format
+    if output_format == 'yaml':
+        # YAML: aggregated format with LRU caching
+        lru_cache = LRUCache(max_per_value)
+        total_counts = Counter()
+        book_counts = defaultdict(Counter)
+        ot_counts = Counter()
+        nt_counts = Counter()
 
-            # Update counts (always count, regardless of LRU)
-            total_counts[value] += 1
-            book_counts[value][book_code] += 1
+        # Process files
+        processed = 0
+        for json_file in json_files:
+            results = process_json_file(json_file, field_name, output_format='yaml')
 
-            # Testament counts
-            if book_code in OT_BOOKS:
-                ot_counts[value] += 1
-            else:
-                nt_counts[value] += 1
+            for book_code, chapter, verse, value in results:
+                verse_ref = f"{book_code}.{chapter:03d}.{verse:03d}"
 
-            # Add to LRU cache
-            lru_cache.add(value, verse_ref)
+                # Update counts
+                total_counts[value] += 1
+                book_counts[value][book_code] += 1
 
-        processed += 1
-        if processed % 1000 == 0:
-            logger.info(f"  Processed {processed} files...")
+                # Testament counts
+                if book_code in OT_BOOKS:
+                    ot_counts[value] += 1
+                else:
+                    nt_counts[value] += 1
 
-    logger.info(f"✓ Processed {processed} files")
+                # Add to LRU cache
+                lru_cache.add(value, verse_ref)
 
-    # Build output structure
-    feature_data = {
-        "feature": field_name.lower(),
-        "extracted": datetime.utcnow().isoformat() + "Z",
-        "tbta_commit": get_git_commit_hash(),
-        "max_per_value": max_per_value,
-        "value": []
-    }
+            processed += 1
+            if processed % 1000 == 0:
+                logger.info(f"  Processed {processed} files...")
 
-    # Add data for each value
-    for value in sorted(lru_cache.values()):
-        value_data = {
-            "specific_value": value,
-            "total_verses": total_counts[value],
-            "distribution": {
-                "OT": ot_counts[value],
-                "NT": nt_counts[value],
-                "Books": dict(book_counts[value])
-            },
-            "verses": lru_cache.get(value)
+        logger.info(f"✓ Processed {processed} files")
+
+        # Build output structure
+        feature_data = {
+            "feature": field_name.lower(),
+            "extracted": datetime.utcnow().isoformat() + "Z",
+            "tbta_commit": get_git_commit_hash() if not source_dir else "custom",
+            "max_per_value": max_per_value,
+            "value": []
         }
-        feature_data["value"].append(value_data)
 
-    # Summary
-    logger.info("=" * 60)
-    logger.info("EXTRACTION SUMMARY")
-    logger.info("=" * 60)
-    logger.info(f"Feature: {field_name}")
-    logger.info(f"Total values found: {len(feature_data['value'])}")
+        # Add data for each value
+        for value in sorted(lru_cache.values()):
+            value_data = {
+                "specific_value": value,
+                "total_verses": total_counts[value],
+                "distribution": {
+                    "OT": ot_counts[value],
+                    "NT": nt_counts[value],
+                    "Books": dict(book_counts[value])
+                },
+                "verses": lru_cache.get(value)
+            }
+            feature_data["value"].append(value_data)
 
-    for value_data in feature_data["value"]:
-        value = value_data["specific_value"]
-        total = value_data["total_verses"]
-        cached = len(value_data["verses"])
-        ot = value_data["distribution"]["OT"]
-        nt = value_data["distribution"]["NT"]
+        # Summary
+        logger.info("=" * 60)
+        logger.info("EXTRACTION SUMMARY")
+        logger.info("=" * 60)
+        logger.info(f"Feature: {field_name}")
+        logger.info(f"Total values found: {len(feature_data['value'])}")
 
-        logger.info(f"  {value}:")
-        logger.info(f"    Total verses: {total}")
-        logger.info(f"    Cached verses: {cached} (OT: {ot}, NT: {nt})")
-        if cached < total:
-            logger.info(f"    ⚠ Truncated by LRU (showing first {cached} of {total})")
+        for value_data in feature_data["value"]:
+            value = value_data["specific_value"]
+            total = value_data["total_verses"]
+            cached = len(value_data["verses"])
+            ot = value_data["distribution"]["OT"]
+            nt = value_data["distribution"]["NT"]
 
-    logger.info("=" * 60)
+            logger.info(f"  {value}:")
+            logger.info(f"    Total verses: {total}")
+            logger.info(f"    Cached verses: {cached} (OT: {ot}, NT: {nt})")
+            if cached < total:
+                logger.info(f"    ⚠ Truncated by LRU (showing first {cached} of {total})")
 
-    return feature_data
+        logger.info("=" * 60)
+
+        return feature_data
+
+    else:
+        # JSONL: detailed format with all annotations
+        all_annotations = []
+        error_count = 0
+        file_count = 0
+
+        total_files = len(json_files)
+
+        for idx, json_file in enumerate(json_files, 1):
+            # Progress indicator
+            if idx % 100 == 0 or idx == total_files:
+                logger.info(f"Processing: {idx}/{total_files} files ({idx*100//total_files}%)")
+
+            try:
+                results = process_json_file(json_file, field_name, output_format='jsonl')
+                all_annotations.extend(results)
+                file_count += 1
+            except Exception as e:
+                error_count += 1
+                logger.error(f"Failed to process {json_file}: {e}")
+                continue
+
+        # Summary statistics
+        logger.info("=" * 60)
+        logger.info("EXTRACTION COMPLETE")
+        logger.info("=" * 60)
+        logger.info(f"Files processed successfully: {file_count}/{total_files}")
+        logger.info(f"Files with errors: {error_count}")
+        logger.info(f"Total annotations extracted: {len(all_annotations)}")
+
+        # Calculate label distribution
+        if all_annotations:
+            stats = defaultdict(int)
+            for result in all_annotations:
+                stats[result['label']] += 1
+
+            logger.info("\nLabel distribution:")
+            for label, count in sorted(stats.items(), key=lambda x: x[1], reverse=True):
+                logger.info(f"  {label}: {count}")
+
+        logger.info("=" * 60)
+
+        return all_annotations
 
 
 def main():
@@ -366,22 +506,40 @@ def main():
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
+  # Extract to YAML (for STAGES.md workflow)
   python extract_feature.py --field Clusivity
-  python extract_feature.py --field Mood --max-per-value 500
-  python extract_feature.py --field Participant --output data.yaml --dry-run
+  python extract_feature.py --field Mood --max-per-value 500 --output mood.yaml
+
+  # Extract to JSONL (for ML pipelines)
+  python extract_feature.py --field Number --format jsonl --output number.jsonl
+  python extract_feature.py --field Person --format jsonl --source-dir /path/to/tbta
+
+  # Dry run to see statistics
+  python extract_feature.py --field Gender --dry-run
         """
     )
 
     parser.add_argument(
         "--field",
         required=True,
-        help="TBTA field name (e.g., Clusivity, Mood, Participant)"
+        help="TBTA field name (e.g., Clusivity, Mood, Number, Person, Gender, Tense)"
+    )
+    parser.add_argument(
+        "--source-dir",
+        type=Path,
+        help="TBTA source directory containing JSON files (default: auto-clone from GitHub)"
+    )
+    parser.add_argument(
+        "--format",
+        choices=['yaml', 'jsonl'],
+        default='yaml',
+        help="Output format: 'yaml' (summary) or 'jsonl' (detailed, default: yaml)"
     )
     parser.add_argument(
         "--max-per-value",
         type=int,
         default=2000,
-        help="Maximum verses per value (LRU cache size, default: 2000)"
+        help="Maximum verses per value for YAML format (LRU cache size, default: 2000)"
     )
     parser.add_argument(
         "--output",
@@ -393,35 +551,62 @@ Examples:
         action="store_true",
         help="Show statistics without writing output"
     )
+    parser.add_argument(
+        "--verbose",
+        action="store_true",
+        help="Enable verbose logging"
+    )
 
     args = parser.parse_args()
 
-    # Clone/update TBTA repo
-    clone_tbta_repo()
+    # Set log level
+    if args.verbose:
+        logger.setLevel(logging.DEBUG)
+
+    # Validate YAML dependency
+    if args.format == 'yaml' and yaml is None and not args.dry_run:
+        logger.error("PyYAML is required for YAML output. Install with: pip install pyyaml")
+        sys.exit(1)
 
     # Extract feature
-    feature_data = extract_feature(
+    result = extract_feature(
         args.field,
+        source_dir=args.source_dir,
         max_per_value=args.max_per_value,
+        output_format=args.format,
         dry_run=args.dry_run
     )
 
     # Output
     if not args.dry_run:
-        yaml_output = yaml.dump(
-            feature_data,
-            default_flow_style=False,
-            allow_unicode=True,
-            sort_keys=False
-        )
+        if args.format == 'yaml':
+            # YAML output
+            yaml_output = yaml.dump(
+                result,
+                default_flow_style=False,
+                allow_unicode=True,
+                sort_keys=False
+            )
 
-        if args.output:
-            args.output.parent.mkdir(parents=True, exist_ok=True)
-            with open(args.output, 'w', encoding='utf-8') as f:
-                f.write(yaml_output)
-            logger.info(f"✓ Output written to: {args.output}")
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                with open(args.output, 'w', encoding='utf-8') as f:
+                    f.write(yaml_output)
+                logger.info(f"✓ Output written to: {args.output}")
+            else:
+                print("\n" + yaml_output)
+
         else:
-            print("\n" + yaml_output)
+            # JSONL output
+            if args.output:
+                args.output.parent.mkdir(parents=True, exist_ok=True)
+                with open(args.output, 'w', encoding='utf-8') as f:
+                    for annotation in result:
+                        f.write(json.dumps(annotation, ensure_ascii=False) + '\n')
+                logger.info(f"✓ Output written to: {args.output}")
+            else:
+                for annotation in result:
+                    print(json.dumps(annotation, ensure_ascii=False))
 
 
 if __name__ == "__main__":

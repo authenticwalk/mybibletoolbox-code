@@ -68,7 +68,7 @@ We already have:
 **For each selected verse**:
 
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py <VERSE> --lang eng,grc,heb
+python3 src/tools/fetch_verse.py <VERSE> --lang eng,grc,heb
 ```
 
 **Analysis Questions**:
@@ -171,7 +171,7 @@ Create `experiments/REFINEMENT-RESULTS.md`:
 
 ### Fetch
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py GEN.1.26 --lang eng,grc,heb
+python3 src/tools/fetch_verse.py GEN.1.26 --lang eng,grc,heb
 ```
 
 ### Observe
