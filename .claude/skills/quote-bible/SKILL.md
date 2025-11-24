@@ -59,16 +59,16 @@ Use the script from the project root:
 
 ```bash
 # All languages (1000+ translations)
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "MAT-005-003"
+python3 src/tools/fetch_verse.py "MAT-005-003"
 
 # English only
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "JHN 3:16" --lang eng
+python3 src/tools/fetch_verse.py "JHN 3:16" --lang eng
 
 # Multiple languages
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "GEN 1:1" --lang eng,spa,fra
+python3 src/tools/fetch_verse.py "GEN 1:1" --lang eng,spa,fra
 
 # Original languages only
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "ROM 8:28" -l grc,heb
+python3 src/tools/fetch_verse.py "ROM 8:28" -l grc,heb
 ```
 
 **Supported formats:**
@@ -98,7 +98,7 @@ Format the output clearly:
 
 **Action:** Convert "John" to USFM code "JHN", then execute:
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "JHN 3:16"
+python3 src/tools/fetch_verse.py "JHN 3:16"
 ```
 
 **Expected behavior:** Display John 3:16 in 1000+ translations from all languages
@@ -109,7 +109,7 @@ python3 .claude/skills/quote-bible/scripts/fetch_verse.py "JHN 3:16"
 
 **Action:** Convert "Matthew" to USFM code "MAT", use `eng` language code:
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "MAT 5:3" --lang eng
+python3 src/tools/fetch_verse.py "MAT 5:3" --lang eng
 ```
 
 **Expected behavior:** Display Matthew 5:3 in English translations only (~50 versions)
@@ -120,7 +120,7 @@ python3 .claude/skills/quote-bible/scripts/fetch_verse.py "MAT 5:3" --lang eng
 
 **Action:** Convert "Genesis" to USFM code "GEN", use multiple language codes:
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "GEN 1:1" --lang eng,spa,fra
+python3 src/tools/fetch_verse.py "GEN 1:1" --lang eng,spa,fra
 ```
 
 **Expected behavior:** Display Genesis 1:1 in English, Spanish, and French translations
@@ -131,7 +131,7 @@ python3 .claude/skills/quote-bible/scripts/fetch_verse.py "GEN 1:1" --lang eng,s
 
 **Action:** Convert "Romans" to USFM code "ROM", use Greek and Hebrew codes:
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "ROM 8:28" -l grc,heb
+python3 src/tools/fetch_verse.py "ROM 8:28" -l grc,heb
 ```
 
 **Expected behavior:** Display Romans 8:28 in Greek (and Hebrew if available for NT context)
@@ -142,7 +142,7 @@ python3 .claude/skills/quote-bible/scripts/fetch_verse.py "ROM 8:28" -l grc,heb
 
 **Action:** Convert to standardized format with zero-padding:
 ```bash
-python3 .claude/skills/quote-bible/scripts/fetch_verse.py "MAT-005-003"
+python3 src/tools/fetch_verse.py "MAT-005-003"
 ```
 
 **Expected behavior:** Display Matthew 5:3 in all available translations (using STANDARDIZATION.md format)
