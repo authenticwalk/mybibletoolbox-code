@@ -1,0 +1,398 @@
+feature: aspect
+default_classification: arbitrary # Default: choice is stylistic/optional
+theological_significance: EXISTS # Flag: Does this ever matter doctrinally?
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+non_arbitrary_contexts:
+
+  # ========== HIGH THEOLOGICAL STAKES ==========
+
+  - verse_pattern: 'John 19:30 - Christ''s finished work (τετέλεσται) (unverified)'
+    affected_values: [perfect, perfective, imperfective]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Substitutionary Atonement
+      - Completed work of Christ
+      - Sufficiency of the Cross
+
+    non_arbitrary_rationale: |
+      The perfect aspect in Greek (τετέλεσται - "It is finished") communicates not merely
+      that Christ's work ended, but that it stands completed with ongoing efficacy.
+      This is foundational to Protestant soteriology - salvation is accomplished, not ongoing.
+      Imperfective aspect would incorrectly suggest Christ's atoning work continues.
+
+    christian_orthodox_position:
+      preferred_value: perfect
+      acceptable_alternatives: [perfective]
+      forbidden_values: [imperfective]
+      theological_basis: 'Hebrews 10:10-14 - Christ offered one sacrifice for all time, sat down (completed action with ongoing results)'
+      translator_guidance: |
+        - FIRST CHOICE: Use PERFECT aspect if available (completed with ongoing results)
+        - SECOND CHOICE: Use PERFECTIVE if no perfect (completed action)
+        - FORBIDDEN: Never use imperfective/continuous (would suggest ongoing sacrifice, contradicting Hebrews)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Ongoing sacrifice of Christ'
+        used_by: [Roman Catholic Mass theology (some interpretations)]
+        christian_assessment: REJECTED by Protestant orthodoxy (Hebrews 10:12 - "sat down" indicates finished work)
+      - interpretation: 'Christ still suffering'
+        used_by: [Some mystical traditions]
+        christian_assessment: HERETICAL (Denies completed atonement)
+
+  - verse_pattern: 'Mark 16:6, Luke 24:6, Matt 28:6 - Christ''s Resurrection (ἐγήγερται) (unverified)'
+    affected_values: [perfect, aorist/perfective, imperfective]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Resurrection of Christ
+      - Present ministry of Christ
+      - Bodily resurrection
+
+    non_arbitrary_rationale: |
+      Greek perfect tense (ἐγήγερται - "He has risen") emphasizes both the historical
+      resurrection AND Christ's current risen state. This is not merely past history
+      but present reality. The aspect choice affects whether we communicate Christ
+      is currently alive or merely rose in the past.
+
+    christian_orthodox_position:
+      preferred_value: perfect
+      acceptable_alternatives: [perfective_with_resultative_emphasis]
+      forbidden_values: [simple_past_without_ongoing_implications]
+      theological_basis: 'Romans 6:9 - Christ, having been raised, dies no more; He lives in ongoing resurrection life'
+      translator_guidance: |
+        - FIRST CHOICE: PERFECT aspect (completed action with permanent ongoing state)
+        - ACCEPTABLE: Perfective if language adds explicit resultative markers
+        - CRITICAL: Must communicate Christ REMAINS risen, not just "rose once"
+        - AVOID: Simple past tense without ongoing state implications
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Spiritual resurrection only'
+        used_by: [Liberal theology, Jehovah''s Witnesses (spiritual body)]
+        christian_assessment: HERETICAL (Denies physical, bodily resurrection - Luke 24:39)
+
+  - verse_pattern: 'Rom 5:1, Rom 3:24, Titus 3:7 - Justification by faith (δικαιωθέντες) (unverified)'
+    affected_values: [perfect, aorist/perfective, imperfective]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Justification by faith
+      - Imputation of righteousness
+      - Assurance of salvation
+
+    non_arbitrary_rationale: |
+      Whether justification is portrayed as completed (perfective/perfect) or ongoing
+      (imperfective) affects core Protestant doctrine. The aorist participle δικαιωθέντες
+      ("having been justified") presents it as a definitive act, not a process.
+      This distinguishes Protestant (forensic declaration) from Catholic (ongoing process) views.
+
+    christian_orthodox_position:
+      preferred_value: aorist_perfective
+      acceptable_alternatives: [perfect]
+      forbidden_values: [imperfective_progressive]
+      theological_basis: 'Romans 5:1 - "Therefore, having been justified by faith, we have peace" (definitive act, not process)'
+      translator_guidance: |
+        - FIRST CHOICE: Aorist/perfective (completed definitive act)
+        - ACCEPTABLE: Perfect (completed with ongoing status of "justified")
+        - FORBIDDEN: Imperfective/progressive (would suggest ongoing process vs instantaneous declaration)
+        - DOCTRINAL POINT: Justification is instantaneous forensic declaration, not gradual process
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Justification as ongoing process'
+        used_by: [Roman Catholic theology]
+        christian_assessment: REJECTED by Protestant orthodoxy (justification is declaration, sanctification is process)
+      - interpretation: 'Justification can be lost and regained'
+        used_by: [Roman Catholic, Arminian debate]
+        christian_assessment: DEBATED among Protestant denominations (Reformed vs Arminian)
+
+  - verse_pattern: 'John 15:4-7 - Abiding in Christ (μείνατε/μένω) (unverified)'
+    affected_values: [present_continuous, aorist, imperfective]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Perseverance of the saints
+      - Union with Christ
+      - Sanctification
+
+    non_arbitrary_rationale: |
+      Jesus commands "abide in me" using present imperative (μείνατε) indicating
+      continuous, ongoing action. This is not a one-time decision but continuous
+      dependence. Aspect affects whether we teach momentary decision vs lifelong walk.
+
+    christian_orthodox_position:
+      preferred_value: present_continuous
+      acceptable_alternatives: [imperfective_habitual]
+      forbidden_values: [aorist_punctiliar]
+      theological_basis: 'John 15:4 - "Abide in me, and I in you" - ongoing, continuous relationship, not one-time act'
+      translator_guidance: |
+        - FIRST CHOICE: Present continuous/imperfective (ongoing, habitual action)
+        - CRITICAL: Must communicate continuous, not momentary, abiding
+        - FORBIDDEN: Aorist/perfective (would suggest one-time decision suffices)
+        - PASTORAL POINT: Christian life requires ongoing dependence, not just initial decision
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Decisional theology - one decision secures relationship'
+        used_by: [Some evangelical "easy believism"]
+        christian_assessment: INCOMPLETE (True saving faith perseveres - 1 John 2:19)
+
+  - verse_pattern: '1 Thess 5:17 - Pray without ceasing (προσεύχεσθε) (unverified)'
+    affected_values: [present_continuous, aorist, imperfective]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prayer theology
+      - Spiritual disciplines
+      - Christian practice
+
+    non_arbitrary_rationale: |
+      Present imperative (προσεύχεσθε) commands continuous prayer, not one-time prayer.
+      Aspect determines whether this is understood as constant attitude of prayer or
+      merely frequent prayers. Affects practical discipleship teaching.
+
+    christian_orthodox_position:
+      preferred_value: present_continuous
+      acceptable_alternatives: [imperfective_habitual]
+      forbidden_values: [aorist_once]
+      theological_basis: 'Context of ongoing spiritual life - maintain constant prayerful attitude'
+      translator_guidance: |
+        - FIRST CHOICE: Continuous/habitual aspect
+        - MEANING: Constant attitude of prayer, not literally non-stop vocalization
+        - AVOID: One-time aorist (contradicts "without ceasing")
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Eph 2:8 - Saved by grace through faith (σεσῳσμένοι) (unverified)'
+    affected_values: [perfect, aorist, imperfective]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Salvation by grace
+      - Assurance of salvation
+      - Perseverance
+
+    non_arbitrary_rationale: |
+      Perfect participle (σεσῳσμένοι - "having been saved") emphasizes completed
+      salvation with ongoing saved state. This supports assurance - we ARE saved,
+      not merely "were saved" or "are being saved." Critical for Protestant soteriology.
+
+    christian_orthodox_position:
+      preferred_value: perfect
+      acceptable_alternatives: [aorist_with_resultative_force]
+      forbidden_values: [imperfective_only]
+      theological_basis: 'Ephesians 2:8 - "you have been saved" - completed act with ongoing state'
+      translator_guidance: |
+        - FIRST CHOICE: Perfect aspect (completed with ongoing results)
+        - ACCEPTABLE: Aorist if language can add resultative emphasis
+        - CAUTION: Imperfective alone suggests process without completion (incomplete soteriology)
+        - BALANCE: Salvation has definitive beginning (justification) AND ongoing aspect (sanctification)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Salvation entirely future or entirely process'
+        used_by: [Liberal theology, process theology]
+        christian_assessment: INCOMPLETE (salvation has past/present/future aspects in Scripture)
+
+  - verse_pattern: 'Rom 8:15 - Received Spirit of adoption (ἐλάβετε) (unverified)'
+    affected_values: [aorist, perfect, imperfective]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Adoption into God''s family
+      - Work of the Holy Spirit
+      - Assurance of salvation
+
+    non_arbitrary_rationale: |
+      Aorist tense (ἐλάβετε - "you received") indicates definitive reception of
+      the Spirit at conversion. Not a gradual process but a definitive event.
+      Affects understanding of when believers receive the Holy Spirit.
+
+    christian_orthodox_position:
+      preferred_value: aorist_perfective
+      acceptable_alternatives: [perfect]
+      forbidden_values: [imperfective_progressive]
+      theological_basis: 'Adoption is legal declaration at conversion, not gradual process'
+      translator_guidance: |
+        - FIRST CHOICE: Aorist/perfective (definitive past reception)
+        - ACCEPTABLE: Perfect (received and still have)
+        - AVOID: Progressive/imperfective (adoption is legal act, not process)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Spirit received in second blessing after conversion'
+        used_by: [Pentecostal "second blessing" theology]
+        christian_assessment: DEBATED among Christian denominations (not heretical, but not universal)
+
+  # ========== MEDIUM THEOLOGICAL STAKES (Contextual Clarity) ==========
+
+  - verse_pattern: 'Narrative Past Tense Selection - Storyline vs Background (unverified)'
+    affected_values: [aorist, imperfect, perfect]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Biblical interpretation accuracy
+      - Understanding of events
+
+    non_arbitrary_rationale: |
+      Greek narrative uses aorist for main storyline (foreground) and imperfect for
+      background/simultaneous action. Mixing these creates confusion about sequence
+      and relationships of events. Not doctrinal heresy but affects accurate understanding.
+
+    christian_orthodox_position:
+      preferred_value: aorist_for_mainline_imperfect_for_background
+      acceptable_alternatives: [language_specific_equivalents]
+      forbidden_values: []
+      theological_basis: 'Greek narrative convention reflects original author''s emphasis and structure'
+      translator_guidance: |
+        - Follow source language aspectual distinctions where possible
+        - Aorist = main storyline events
+        - Imperfect = background, simultaneous, or repeated action
+        - Affects clarity of "what happened when" but not core doctrine
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Imperative Commands - Urgent (aorist) vs Continuous (present) (unverified)'
+    affected_values: [aorist_imperative, present_imperative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Obedience to biblical commands
+      - Practical Christian living
+
+    non_arbitrary_rationale: |
+      Greek distinguishes aorist imperative (do this now, urgently) from present
+      imperative (keep doing this, continuous). Example: "Repent!" (aorist - decisive
+      action) vs "Love one another" (present - continuous action). Affects understanding
+      of what obedience looks like.
+
+    christian_orthodox_position:
+      preferred_value: match_source_aspect
+      acceptable_alternatives: [use_lexical_markers_if_no_aspectual_system]
+      forbidden_values: []
+      theological_basis: 'Preserving authorial intent in commands'
+      translator_guidance: |
+        - Aorist imperative: decisive, urgent, one-time action
+        - Present imperative: continuous, habitual, repeated action
+        - Example: "Repent" (aorist) vs "Keep believing" (present)
+        - Use adverbs if language lacks aspectual imperatives
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Prophecy Fulfillment Language (unverified)'
+    affected_values: [perfect, aorist, future]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Fulfillment of prophecy
+      - Messianic predictions
+
+    non_arbitrary_rationale: |
+      Prophetic perfect ("prophetic perfect" or "perfect of certainty") treats future
+      events as completed because of certainty of fulfillment. Example: Isaiah 53
+      uses past tense for Christ's future suffering. Aspect choice affects whether
+      readers understand this as prophecy or historical report.
+
+    christian_orthodox_position:
+      preferred_value: maintain_prophetic_perfect
+      acceptable_alternatives: [add_contextual_markers_if_confusing]
+      forbidden_values: []
+      theological_basis: 'Prophetic perfect communicates certainty of God''s promises'
+      translator_guidance: |
+        - Recognize prophetic perfect in source
+        - Maintain past tense if target language understands this convention
+        - Add clarifying notes if aspect would confuse chronology
+        - Communicates God's sovereignty over future events
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Stative vs Fientive (Being vs Becoming) (unverified)'
+    affected_values: [stative, fientive_inceptive]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Clarity of meaning
+
+    non_arbitrary_rationale: |
+      Some verbs can be stative (describing a state) or fientive/inceptive (describing
+      entering a state). Example: "be angry" vs "become angry." Usually contextually
+      clear but can affect meaning in edge cases.
+
+    christian_orthodox_position:
+      preferred_value: context_determined
+      acceptable_alternatives: [either_if_contextually_clear]
+      forbidden_values: []
+      theological_basis: 'Follow natural language patterns'
+      translator_guidance: |
+        - Usually not theologically critical
+        - Follow context and natural target language usage
+
+    non_orthodox_alternatives_awareness: []
+
+  # ========== LOW STAKES (Usually Arbitrary) ==========
+
+  - verse_pattern: 'Historical Present (vivid narrative style) (unverified)'
+    affected_values: [historical_present, aorist]
+    theological_stakes: LOW
+    affected_doctrines: []
+
+    non_arbitrary_rationale: |
+      Greek sometimes uses present tense for past events (historical present) for
+      vividness. This is stylistic, not theological. Can be translated as past without
+      loss of meaning, though some vividness may be lost.
+
+    christian_orthodox_position:
+      preferred_value: translator_choice
+      acceptable_alternatives: [present_for_vividness, past_for_clarity]
+      forbidden_values: []
+      theological_basis: 'Stylistic device, not doctrinal content'
+      translator_guidance: |
+        - Either present or past acceptable
+        - Present tense maintains Greek vividness
+        - Past tense may be clearer in target language
+        - No doctrinal implications
+
+    non_orthodox_alternatives_awareness: []
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+arbitrary_contexts:
+  - pattern: "Travel narratives (e.g., 'Paul was going/went to Damascus')"
+    rationale: 'Whether portrayed as ongoing journey or completed trip rarely affects meaning.'
+    estimated_percentage: 15%
+
+  - pattern: "Descriptive background in parables (e.g., 'A man had/was having two sons')"
+    rationale: 'Stylistic choice for storytelling; does not affect parable meaning.'
+    estimated_percentage: 20%
+
+  - pattern: "Crowd reactions and movements (e.g., 'They were following/followed Jesus')"
+    rationale: 'Whether action is portrayed as ongoing or completed is usually contextually clear and theologically neutral.'
+    estimated_percentage: 15%
+
+  - pattern: "Weather and environmental descriptions (e.g., 'Storm was raging/raged')"
+    rationale: 'Aspectual choice affects vividness but not theological content.'
+    estimated_percentage: 10%
+
+  - pattern: "Incidental actions in narrative (e.g., 'Peter was sitting/sat by the fire')"
+    rationale: 'Background actions where aspect choice is stylistic preference.'
+    estimated_percentage: 15%
+
+  - pattern: "Generic statements and proverbs (e.g., wisdom literature)"
+    rationale: 'Timeless truths where specific aspect is less critical.'
+    estimated_percentage: 10%
+
+# SUMMARY STATISTICS
+summary:
+  non_arbitrary_percentage: 15%
+  arbitrary_percentage: 85%
+  high_stakes_contexts: 7
+  medium_stakes_contexts: 4
+  low_stakes_contexts: 1
+
+  critical_note: |
+    Aspect is HIGHLY SIGNIFICANT in Greek source texts, particularly for:
+    1. Completed work of Christ (atonement, resurrection)
+    2. Justification vs sanctification distinction
+    3. Command types (one-time vs continuous)
+    4. Narrative structure and clarity
+
+    Most contexts (85%) are stylistic, but the 15% non-arbitrary contexts include
+    some of the most critical doctrines in Christianity. Translators must preserve
+    aspectual distinctions in high-stakes theological contexts.
+
+  source_language_dependency: |
+    This classification is heavily dependent on Greek aspectual system.
+    Hebrew has less developed aspectual system (primarily perfective/imperfective).
+    Analysis above focuses on Greek NT contexts where aspect carries theological weight.
+
+    For Hebrew OT, aspectual distinctions are less theologically critical except in:
+    - Covenant promise language (completed vs ongoing)
+    - Prophetic perfects
+    - Narrative structure
+
+  citation: '{llm-cs45}'
+  verification_status: 'UNVERIFIED - Based on LLM internal knowledge of Scripture. Requires verification against actual source texts.'
