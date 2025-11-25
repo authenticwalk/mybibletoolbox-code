@@ -1,0 +1,1578 @@
+feature: number-systems
+prompt_version: PROMPT1.md v1.0
+total_errors: 143
+note: Errors requiring 6-step analysis (STAGES.md §5)
+errors:
+- reference: 1KI.002.028
+  predicted: Plural
+  actual: Quadrial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1KI
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1KI.007.019
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1KI
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1KI.007.035
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1KI
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1KI.020.029
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1KI
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1SA.004.004
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1SA.009.013
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1SA.014.012
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1SA.025.039
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 1SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.001.007
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.001.009
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.002.002
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.002.003
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.002.005
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.002.005
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.002.008
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.002.014
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.003.001
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.003.001
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.003.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.003.012
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.003.013
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.003.013
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.004.004
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.004.004
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.004.005
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.004.008
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.004.011
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.004.015
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.005.004
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.005.004
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.005.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.005.009
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 1TH.005.013
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 1TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2SA.002.018
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 2SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2SA.013.038
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 2SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2SA.023.017
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 2SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2SA.023.018
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: 2SA
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.001.005
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.001.012
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.002.010
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.002.013
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.002.017
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.004
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.009
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.014
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: 2TH.003.017
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: 2TH
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: COL.004.011
+  predicted: Singular
+  actual: Trial
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: COL
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: DAN.002.016
+  predicted: Singular
+  actual: Paucal
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: OT
+  book: DAN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: DAN.002.018
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: OT
+  book: DAN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: DAN.003.015
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: OT
+  book: DAN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: DAN.003.016
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: OT
+  book: DAN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: DAN.003.018
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: OT
+  book: DAN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: DAN.010.002
+  predicted: Singular
+  actual: Trial
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: OT
+  book: DAN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EST.002.021
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: EST
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EST.004.016
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: EST
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EST.009.022
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: EST
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.003.018
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.005.021
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.006.003
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.006.016
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.006.024
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.012.045
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.022.009
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: EXO.025.016
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6 (Law Default)
+  rationale: Law genre - defaulting to Plural
+  genre: law
+  testament: OT
+  book: EXO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.007.007
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.014.014
+  predicted: Plural
+  actual: Quadrial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.018.005
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.019.003
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.019.018
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.019.025
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.021.014
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.029.034
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.030.030
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.031.006
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.031.015
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.032.002
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.032.010
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.033.002
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.036.016
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.036.016
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: GEN.048.009
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: GEN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JDG.019.021
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JDG
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JDG.019.024
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JDG
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JHN.004.035
+  predicted: Plural
+  actual: Quadrial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: JHN
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.002.012
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.002.023
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.003.002
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.008.006
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.015.014
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.017.005
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: JOS.022.033
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: JOS
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.001.056
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.002
+  predicted: Dual
+  actual: Paucal
+  confidence: High
+  rule_applied: Level 2, Explicit Number Detection (Dual)
+  rationale: Two boats
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.002
+  predicted: Dual
+  actual: Paucal
+  confidence: High
+  rule_applied: Level 2, Explicit Number Detection (Dual)
+  rationale: Two boats
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.002
+  predicted: Dual
+  actual: Paucal
+  confidence: High
+  rule_applied: Level 2, Explicit Number Detection (Dual)
+  rationale: Two boats
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.002
+  predicted: Dual
+  actual: Paucal
+  confidence: High
+  rule_applied: Level 2, Explicit Number Detection (Dual)
+  rationale: Two boats
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.002
+  predicted: Dual
+  actual: Paucal
+  confidence: High
+  rule_applied: Level 2, Explicit Number Detection (Dual)
+  rationale: Two boats
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.019
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.019
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.019
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.005.019
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.008.013
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.009.033
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.009.037
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.021.002
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.022.034
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: LUK.022.058
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: LUK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.002.016
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.008.028
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.008.031
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.020.031
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.020.034
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.022.013
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.025.023
+  predicted: Plural
+  actual: Paucal
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.026.075
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MAT.027.044
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MAT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.010.008
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.013.027
+  predicted: Plural
+  actual: Quadrial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.014.041
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.014.042
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.014.058
+  predicted: Plural
+  actual: Trial
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.015.032
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: MRK.016.013
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: NT
+  book: MRK
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: PHM.001.003
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: PHM
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: PHM.001.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: PHM
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: PRO.007.018
+  predicted: Singular
+  actual: Dual
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Wisdom Default)
+  rationale: Wisdom genre - defaulting to Singular
+  genre: wisdom
+  testament: OT
+  book: PRO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: PRO.014.007
+  predicted: Singular
+  actual: Dual
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Wisdom Default)
+  rationale: Wisdom genre - defaulting to Singular
+  genre: wisdom
+  testament: OT
+  book: PRO
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: REV.001.003
+  predicted: Singular
+  actual: Plural
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: NT
+  book: REV
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: REV.001.003
+  predicted: Singular
+  actual: Plural
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: NT
+  book: REV
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: REV.001.007
+  predicted: Singular
+  actual: Plural
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: NT
+  book: REV
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: REV.001.009
+  predicted: Singular
+  actual: Plural
+  confidence: Very Low
+  rule_applied: Level 6, Rule 6.3 (Prophecy Default)
+  rationale: Prophecy genre - defaulting to Singular (symbolic/abstract)
+  genre: prophecy
+  testament: NT
+  book: REV
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: RUT.003.012
+  predicted: Plural
+  actual: Dual
+  confidence: Low
+  rule_applied: Level 6, Rule 6.1 (Narrative Default)
+  rationale: Narrative genre - defaulting to Plural (general groups/participants)
+  genre: narrative
+  testament: OT
+  book: RUT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.001.009
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.001.011
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.001.014
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.001.015
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.002.006
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.002.008
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.002.009
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary
+- reference: TIT.002.009
+  predicted: Singular
+  actual: Plural
+  confidence: Medium
+  rule_applied: Level 3, Rule 3.1 (Epistle + Abstract Pattern)
+  rationale: Epistle genre - defaulting to Singular (abstract theological concepts)
+  genre: epistle
+  testament: NT
+  book: TIT
+  difficulty: typical
+  arbitrarity: arbitrary

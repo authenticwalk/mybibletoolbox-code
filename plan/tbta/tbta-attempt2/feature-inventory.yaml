@@ -1,0 +1,326 @@
+inventory_date: "2025-11-16"
+total_features: 14
+methodology_reference: /workspace/bible-study-tools/tbta/features/STAGES.md
+archive_location: /workspace/bible-study-tools/tbta/features/features-archive/
+
+summary:
+  stage_0: 14  # Not started
+  stage_1: 0   # Research TBTA Documentation
+  stage_2: 0   # Language Study
+  stage_3: 0   # Scholarly and Internet Research
+  stage_4: 0   # Generate Test Set with Translation Data
+  stage_5: 0   # Analyze Translations & Develop Algorithm
+  stage_6: 0   # Test Against Validate Set & Peer Review
+  production_ready: 0
+
+features:
+  - name: aspect
+    directory: /workspace/bible-study-tools/tbta/features/aspect
+    description: "Grammatical aspect (perfective, imperfective, etc.)"
+    category: grammatical
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium  # Based on file count
+    blockers: []
+    priority: high
+    complexity: high
+    notes: "Aspect is fundamental for many language families; complex theological implications for narrative interpretation"
+
+  - name: degree
+    directory: /workspace/bible-study-tools/tbta/features/degree
+    description: "Degree of comparison or intensity"
+    category: grammatical
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: medium
+    complexity: medium
+    notes: "Comparison systems vary widely; moderate impact on translation"
+
+  - name: discourse-genre
+    directory: /workspace/bible-study-tools/tbta/features/discourse-genre
+    description: "Type of discourse (narrative, poetry, prophecy, etc.)"
+    category: discourse
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: high
+    complexity: high
+    notes: "Critical for translation approach; genre affects all other features"
+
+  - name: honorifics-register
+    directory: /workspace/bible-study-tools/tbta/features/honorifics-register
+    description: "Social register and honorific language use"
+    category: discourse
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: very_large  # 9 files in archive including detailed guides
+    blockers: []
+    priority: high
+    complexity: very_high
+    notes: "Extensive archive (AGE-RELATIONSHIP-GUIDE, ATTITUDE-EXAMPLES, LANGUAGE-APPLICATIONS, etc.); extremely complex due to cultural/social dynamics; critical for many Asian languages"
+
+  - name: illocutionary-force
+    directory: /workspace/bible-study-tools/tbta/features/illocutionary-force
+    description: "Speech act force (command, question, statement, etc.)"
+    category: discourse
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: high
+    complexity: high
+    notes: "Critical for direct speech, commands, rhetorical questions; theological implications"
+
+  - name: mood
+    directory: /workspace/bible-study-tools/tbta/features/mood
+    description: "Grammatical mood (indicative, subjunctive, imperative, etc.)"
+    category: grammatical
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: high
+    complexity: high
+    notes: "Greek mood system is rich; critical for command vs suggestion distinctions"
+
+  - name: number-system
+    directory: /workspace/bible-study-tools/tbta/features/number-system
+    description: "Grammatical number (singular, dual, plural)"
+    category: grammatical
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: small
+    blockers: []
+    priority: high
+    complexity: medium
+    notes: "Dual number important for some language families (Austronesian); clearer patterns than some features"
+
+  - name: participant-tracking
+    directory: /workspace/bible-study-tools/tbta/features/participant-tracking
+    description: "How participants are tracked across discourse"
+    category: discourse
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: high
+    complexity: very_high
+    notes: "Complex discourse-level feature; requires context beyond single verses"
+
+  - name: person-system
+    directory: /workspace/bible-study-tools/tbta/features/person-system
+    description: "Grammatical person (1st, 2nd, 3rd person)"
+    category: grammatical
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium  # Has TODO.md and experiments in archive
+    blockers: []
+    priority: high
+    complexity: medium
+    notes: "Fundamental grammatical category; relatively clear patterns; may overlap with clusivity"
+
+  - name: polarity
+    directory: /workspace/bible-study-tools/tbta/features/polarity
+    description: "Affirmation vs negation"
+    category: grammatical
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: medium
+    complexity: low
+    notes: "Relatively straightforward; negation systems vary but patterns are clearer"
+
+  - name: proximity-system
+    directory: /workspace/bible-study-tools/tbta/features/proximity-system
+    description: "Spatial/temporal proximity (near, far, etc.)"
+    category: spatial_temporal
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: small
+    blockers: []
+    priority: medium
+    complexity: medium
+    notes: "Demonstrative systems vary; moderate complexity"
+
+  - name: surface-realization
+    directory: /workspace/bible-study-tools/tbta/features/surface-realization
+    description: "How semantic content is expressed on the surface"
+    category: surface
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: very_large  # 9 files in archive
+    blockers: []
+    priority: medium
+    complexity: very_high
+    notes: "Broad category covering many surface-level variations; extensive archive suggests high complexity"
+
+  - name: time-granularity
+    directory: /workspace/bible-study-tools/tbta/features/time-granularity
+    description: "Temporal granularity and precision"
+    category: spatial_temporal
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: small
+    blockers: []
+    priority: medium
+    complexity: medium
+    notes: "Temporal systems vary; moderate complexity; may interact with aspect"
+
+  - name: topic-np
+    directory: /workspace/bible-study-tools/tbta/features/topic-np
+    description: "Topic-prominent vs subject-prominent language features"
+    category: discourse
+    stage: 0
+    files_present:
+      - README.md
+      - experiments/ (empty)
+    archive_size: medium
+    blockers: []
+    priority: high
+    complexity: high
+    notes: "Critical for topic-prominent languages (Chinese, Japanese, Korean); discourse-level analysis"
+
+priority_breakdown:
+  high: 10  # aspect, discourse-genre, honorifics-register, illocutionary-force, mood, number-system, participant-tracking, person-system, topic-np
+  medium: 4  # degree, polarity, proximity-system, surface-realization, time-granularity
+  low: 0
+
+complexity_breakdown:
+  very_high: 3  # honorifics-register, participant-tracking, surface-realization
+  high: 6      # aspect, discourse-genre, illocutionary-force, mood, topic-np
+  medium: 4    # degree, number-system, person-system, proximity-system, time-granularity
+  low: 1       # polarity
+
+recommended_development_order:
+  # Start with simpler features to build methodology confidence
+  phase_1_foundations:
+    - polarity          # Simplest; test the 6-stage methodology
+    - person-system     # Clear patterns; fundamental
+    - number-system     # Well-defined; dual number interesting but not too complex
+
+  # Move to moderate complexity with high impact
+  phase_2_core_grammatical:
+    - mood              # High priority; Greek mood system well-documented
+    - degree            # Moderate complexity; good for building skills
+    - time-granularity  # Spatial/temporal baseline
+    - proximity-system  # Related to time-granularity
+
+  # Tackle high-complexity discourse features
+  phase_3_discourse:
+    - illocutionary-force  # Speech acts; high priority
+    - topic-np             # Topic-prominent languages critical
+    - discourse-genre      # Affects all other features; foundational
+
+  # Most complex features requiring significant prior learning
+  phase_4_advanced:
+    - aspect                  # Complex but critical; benefits from prior grammatical work
+    - participant-tracking    # Very complex discourse-level; needs methodology refinement
+    - honorifics-register     # Very complex; extensive archive to leverage
+    - surface-realization     # Broad and complex; save for last
+
+next_steps:
+  immediate:
+    - "Review /workspace/plan/tbta-rebuild-with-llm/README.md for any additional context"
+    - "Check features-archive/ for learnings from previous attempts"
+    - "Decide: Restart from scratch OR build on archive work"
+    - "Select first feature to develop (recommend: polarity or person-system)"
+
+  before_starting_stage_1:
+    - "Ensure TBTA source data is accessible (sparse-checkout configured)"
+    - "Verify translation data availability (eBible, etc.)"
+    - "Set up subagent coordination protocols"
+    - "Create experiments/ directory structure"
+
+  methodology_refinements:
+    - "Document learnings across features in /workspace/bible-study-tools/tbta/learnings/"
+    - "Build reusable scripts for Stage 4 (translation data extraction)"
+    - "Create templates for TRANSLATION-PATTERNS.md, DIVERGENCE-ANALYSIS.md, etc."
+    - "Establish peer review subagent coordination patterns"
+
+blockers_and_dependencies:
+  global_blockers:
+    - "Need TBTA source documentation access (check ../tbta-source/README.md)"
+    - "Translation data sparse-checkout configuration needed"
+    - "Subagent spawning patterns need to be established"
+
+  feature_dependencies:
+    - "discourse-genre should inform other discourse features"
+    - "aspect and time-granularity may interact"
+    - "person-system and honorifics-register overlap"
+    - "participant-tracking depends on understanding discourse patterns"
+
+archive_insights:
+  honorifics_register:
+    - "Extensive prior work: 9 documentation files"
+    - "Files: AGE-RELATIONSHIP-GUIDE, ATTITUDE-EXAMPLES, LANGUAGE-APPLICATIONS, LANGUAGE-MATRIX, SPEAKER-DEMOGRAPHICS-README, SPEAKER-LISTENER-CODES, VALIDATION-CHECKLIST"
+    - "Suggests very high complexity and significant research already completed"
+
+  surface_realization:
+    - "Very large archive (9+ files)"
+    - "Broad category; may need subdivision"
+
+  person_system:
+    - "Has TODO.md and experiments/ in archive"
+    - "Prior work stopped at some stage; review for learnings"
+
+  all_features:
+    - "All have README.md in archive suggesting documentation existed"
+    - "All have experiments/ directories suggesting data generation attempted"
+    - "Previous approach likely didn't follow complete 6-stage methodology"
+
+assessment_notes:
+  methodology_status:
+    - "6-stage STAGES.md is authoritative and comprehensive"
+    - "TEMPLATE.md provides clear structure"
+    - "All features reset to Stage 0 with empty experiments/"
+    - "Archive contains valuable prior work but methodology was incomplete"
+
+  readiness_to_start:
+    - "Documentation is solid (STAGES.md, TEMPLATE.md, README.md)"
+    - "Feature directories are prepared with checklists"
+    - "Archive provides reference material"
+    - "READY: Can start Stage 1 for any feature immediately"
+
+  success_factors:
+    - "Strict adherence to 6-stage methodology"
+    - "Blind testing with subagents (prevent seeing answers)"
+    - "Translation-informed development (dual sources: TBTA + real translations)"
+    - "Locked predictions before TBTA checks"
+    - "100% accuracy goal with adequate sample sizes (100+ verses)"
+    - "4 critical peer reviews before production"
+
+  risk_areas:
+    - "Very high complexity features (honorifics, participant-tracking, surface-realization) may require multiple iterations"
+    - "Translation data availability may vary by feature"
+    - "Subagent coordination overhead could slow progress"
+    - "Sample size requirements (100+ per value) may be challenging for rare values"

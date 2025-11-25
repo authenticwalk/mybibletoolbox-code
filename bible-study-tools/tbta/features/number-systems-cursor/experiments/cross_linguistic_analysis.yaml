@@ -1,0 +1,153 @@
+analysis: cross-linguistic-validation
+target_languages:
+- fij
+- haw
+- smo
+- slv
+- tpi
+sample_size: 20
+language_availability:
+  fij: 0
+  haw: 0
+  smo: 0
+  slv: 0
+  tpi: 0
+results:
+- reference: 2SA.023.019
+  tbta_value: T
+  predicted_value: T
+  english_text: Was he not held in greater honor than the Three? He became their commander,
+    even though he was not i...
+  available_languages: []
+  translations: {}
+- reference: LUK.015.005
+  tbta_value: D
+  predicted_value: D
+  english_text: And when he finds it, he joyfully puts it on his shoulders
+  available_languages: []
+  translations: {}
+- reference: GEN.048.016
+  tbta_value: D
+  predicted_value: D
+  english_text: the Angel who has delivered me from all harm --may he bless these
+    boys. May they be called by my nam...
+  available_languages: []
+  translations: {}
+- reference: EXO.025.025
+  tbta_value: Q
+  predicted_value: S
+  english_text: Also make around it a rim a handbreadth wide and put a gold molding
+    on the rim.
+  available_languages: []
+  translations: {}
+- reference: 1TH.001.001
+  tbta_value: P
+  predicted_value: T
+  english_text: Paul, Silas and Timothy, To the church of the Thessalonians in God
+    the Father and the Lord Jesus Chr...
+  available_languages: []
+  translations: {}
+- reference: 1TH.005.013
+  tbta_value: P
+  predicted_value: P
+  english_text: Hold them in the highest regard in love because of their work. Live
+    in peace with each other.
+  available_languages: []
+  translations: {}
+- reference: PHP.001.001
+  tbta_value: D
+  predicted_value: D
+  english_text: Paul and Timothy, servants of Christ Jesus, To all God's holy people
+    in Christ Jesus at Philippi, to...
+  available_languages: []
+  translations: {}
+- reference: PRO.021.025
+  tbta_value: D
+  predicted_value: D
+  english_text: The craving of a sluggard will be the death of him, because his hands
+    refuse to work.
+  available_languages: []
+  translations: {}
+- reference: MAT.026.040
+  tbta_value: T
+  predicted_value: P
+  english_text: Then he returned to his disciples and found them sleeping. "Couldn't
+    you men keep watch with me for ...
+  available_languages: []
+  translations: {}
+- reference: DAN.006.002
+  tbta_value: T
+  predicted_value: T
+  english_text: with three administrators over them, one of whom was Daniel. The satraps
+    were made accountable to th...
+  available_languages: []
+  translations: {}
+- reference: JDG.014.006
+  tbta_value: D
+  predicted_value: D
+  english_text: The Spirit of the LORD came powerfully upon him so that he tore the
+    lion apart with his bare hands a...
+  available_languages: []
+  translations: {}
+- reference: GEN.010.001
+  tbta_value: T
+  predicted_value: T
+  english_text: This is the account of Shem, Ham and Japheth, Noah's sons, who themselves
+    had sons after the flood.
+  available_languages: []
+  translations: {}
+- reference: 1TH.005.027
+  tbta_value: S
+  predicted_value: P
+  english_text: I charge you before the Lord to have this letter read to all the brothers
+    and sisters.
+  available_languages: []
+  translations: {}
+- reference: GEN.024.056
+  tbta_value: D
+  predicted_value: P
+  english_text: But he said to them, "Do not detain me, now that the LORD has granted
+    success to my journey. Send me...
+  available_languages: []
+  translations: {}
+- reference: MAT.024.041
+  tbta_value: D
+  predicted_value: D
+  english_text: Two women will be grinding with a hand mill; one will be taken and
+    the other left.
+  available_languages: []
+  translations: {}
+- reference: GEN.034.025
+  tbta_value: D
+  predicted_value: D
+  english_text: Three days later, while all of them were still in pain, two of Jacob's
+    sons, Simeon and Levi, Dinah'...
+  available_languages: []
+  translations: {}
+- reference: 1TH.005.004
+  tbta_value: P
+  predicted_value: P
+  english_text: But you, brothers and sisters, are not in darkness so that this day
+    should surprise you like a thief...
+  available_languages: []
+  translations: {}
+- reference: PHM.001.001
+  tbta_value: P
+  predicted_value: D
+  english_text: Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon
+    our dear friend and fellow wo...
+  available_languages: []
+  translations: {}
+- reference: 1SA.017.014
+  tbta_value: T
+  predicted_value: T
+  english_text: David was the youngest. The three oldest followed Saul,
+  available_languages: []
+  translations: {}
+- reference: GEN.030.036
+  tbta_value: T
+  predicted_value: p
+  english_text: Then he put a three-day journey between himself and Jacob, while Jacob
+    continued to tend the rest of...
+  available_languages: []
+  translations: {}

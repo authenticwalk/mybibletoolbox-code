@@ -1,0 +1,36 @@
+version: '3.8'
+
+services:
+  dev:
+    image: python:3.11
+    working_dir: /workspace
+    volumes:
+      # Mount project as read-write
+      - .:/workspace
+      # Mount eBible corpus as read-only (if it exists on host)
+      # Adjust the path if your eBible is in a different location
+      - ${HOME}/projects/ebible:/ebible:ro
+    environment:
+      # Data directory (sparse checkout of mybibletoolbox-data)
+      - DATA_DIR=/workspace/.data
+      # eBible corpus directory (1000+ translations)
+      - EBIBLE_DIR=/ebible
+    # Security settings - isolate from host
+    security_opt:
+      - no-new-privileges:true
+    cap_drop:
+      - ALL
+    cap_add:
+      - CHOWN
+      - SETGID
+      - SETUID
+    # Resource limits
+    mem_limit: 12g
+    cpus: 4
+    # Keep container running
+    stdin_open: true
+    tty: true
+    command: bash
+    # Optionally limit network access (uncomment to restrict)
+    # network_mode: none
+

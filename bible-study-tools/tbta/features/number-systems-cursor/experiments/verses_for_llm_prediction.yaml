@@ -1,0 +1,167 @@
+feature: number-systems
+algorithm: v3
+note: Verses prepared for LLM blind testing
+instruction: Apply prompts/v3/PROMPT.md to each verse naturally
+methodology: LLM pattern recognition, not hard-coded rules
+total_verses: 50
+verses:
+- reference: 2SA.023.019
+  text: Was he not held in greater honor than the Three? He became their commander,
+    even though he was not included among them.
+- reference: LUK.015.005
+  text: And when he finds it, he joyfully puts it on his shoulders
+- reference: GEN.048.016
+  text: the Angel who has delivered me from all harm --may he bless these boys. May
+    they be called by my name and the names of my fathers Abraham and Isaac, and may
+    they increase greatly on the earth."
+- reference: EXO.025.025
+  text: Also make around it a rim a handbreadth wide and put a gold molding on the
+    rim.
+- reference: 1TH.001.001
+  text: 'Paul, Silas and Timothy, To the church of the Thessalonians in God the Father
+    and the Lord Jesus Christ: Grace and peace to you.'
+- reference: 1TH.005.013
+  text: Hold them in the highest regard in love because of their work. Live in peace
+    with each other.
+- reference: PHP.001.001
+  text: 'Paul and Timothy, servants of Christ Jesus, To all God''s holy people in
+    Christ Jesus at Philippi, together with the overseers and deacons:'
+- reference: PRO.021.025
+  text: The craving of a sluggard will be the death of him, because his hands refuse
+    to work.
+- reference: MAT.026.040
+  text: Then he returned to his disciples and found them sleeping. "Couldn't you men
+    keep watch with me for one hour?" he asked Peter.
+- reference: DAN.006.002
+  text: with three administrators over them, one of whom was Daniel. The satraps were
+    made accountable to them so that the king might not suffer loss.
+- reference: JDG.014.006
+  text: The Spirit of the LORD came powerfully upon him so that he tore the lion apart
+    with his bare hands as he might have torn a young goat. But he told neither his
+    father nor his mother what he had done.
+- reference: GEN.010.001
+  text: This is the account of Shem, Ham and Japheth, Noah's sons, who themselves
+    had sons after the flood.
+- reference: 1TH.005.027
+  text: I charge you before the Lord to have this letter read to all the brothers
+    and sisters.
+- reference: GEN.024.056
+  text: But he said to them, "Do not detain me, now that the LORD has granted success
+    to my journey. Send me on my way so I may go to my master."
+- reference: MAT.024.041
+  text: Two women will be grinding with a hand mill; one will be taken and the other
+    left.
+- reference: GEN.034.025
+  text: Three days later, while all of them were still in pain, two of Jacob's sons,
+    Simeon and Levi, Dinah's brothers, took their swords and attacked the unsuspecting
+    city, killing every male.
+- reference: 1TH.005.004
+  text: But you, brothers and sisters, are not in darkness so that this day should
+    surprise you like a thief.
+- reference: PHM.001.001
+  text: Paul, a prisoner of Christ Jesus, and Timothy our brother, To Philemon our
+    dear friend and fellow worker--
+- reference: 1SA.017.014
+  text: David was the youngest. The three oldest followed Saul,
+- reference: GEN.030.036
+  text: Then he put a three-day journey between himself and Jacob, while Jacob continued
+    to tend the rest of Laban's flocks.
+- reference: LUK.017.036
+  text: '"Two men will be in the field; one will be taken and the other will be left."'
+- reference: DAN.003.012
+  text: But there are some Jews whom you have set over the affairs of the province
+    of Babylon--Shadrach, Meshach and Abednego--who pay no attention to you, Your
+    Majesty. They neither serve your gods nor worship the image of gold you have set
+    up."
+- reference: LUK.005.002
+  text: He saw at the water's edge two boats, left there by the fishermen, who were
+    washing their nets.
+- reference: MRK.009.012
+  text: Jesus replied, "To be sure, Elijah does come first, and restores all things.
+    Why then is it written that the Son of Man must suffer much and be rejected?
+- reference: 2SA.006.019
+  text: Then he gave a loaf of bread, a cake of dates and a cake of raisins to each
+    person in the whole crowd of Israelites, both men and women. And all the people
+    went to their homes.
+- reference: 2SA.023.017
+  text: '"Far be it from me, LORD, to do this!" he said. "Is it not the blood of men
+    who went at the risk of their lives?" And David would not drink it. Such were
+    the exploits of the three mighty warriors.'
+- reference: PHM.001.019
+  text: I, Paul, am writing this with my own hand. I will pay it back--not to mention
+    that you owe me your very self.
+- reference: REV.001.001
+  text: The revelation from Jesus Christ, which God gave him to show his servants
+    what must soon take place. He made it known by sending his angel to his servant
+    John,
+- reference: JON.001.017
+  text: Now the LORD provided a huge fish to swallow Jonah, and Jonah was in the belly
+    of the fish three days and three nights.
+- reference: 1SA.009.008
+  text: The servant answered him again. "Look," he said, "I have a quarter of a shekel
+    of silver. I will give it to the man of God so that he will tell us what way to
+    take."
+- reference: JOS.021.029
+  text: Jarmuth and En Gannim, together with their pasturelands--four towns;
+- reference: GEN.027.036
+  text: 'Esau said, "Isn''t he rightly named Jacob? This is the second time he has
+    taken advantage of me: He took my birthright, and now he''s taken my blessing!"
+    Then he asked, "Haven''t you reserved any blessing for me?"'
+- reference: JOS.002.012
+  text: '"Now then, please swear to me by the LORD that you will show kindness to
+    my family, because I have shown kindness to you. Give me a sure sign'
+- reference: DAN.003.018
+  text: But even if he does not, we want you to know, Your Majesty, that we will not
+    serve your gods or worship the image of gold you have set up."
+- reference: 1SA.013.021
+  text: The price was two-thirds of a shekel for sharpening plow points and mattocks,
+    and a third of a shekel for sharpening forks and axes and for repointing goads.
+- reference: LUK.007.038
+  text: As she stood behind him at his feet weeping, she began to wet his feet with
+    her tears. Then she wiped them with her hair, kissed them and poured perfume on
+    them.
+- reference: 2JN.001.004
+  text: It has given me great joy to find some of your children walking in the truth,
+    just as the Father commanded us.
+- reference: EXO.006.014
+  text: 'These were the heads of their families: The sons of Reuben the firstborn
+    son of Israel were Hanok and Pallu, Hezron and Karmi. These were the clans of
+    Reuben.'
+- reference: 2JN.001.003
+  text: Grace, mercy and peace from God the Father and from Jesus Christ, the Father's
+    Son, will be with us in truth and love.
+- reference: MRK.014.065
+  text: Then some began to spit at him; they blindfolded him, struck him with their
+    fists, and said, "Prophesy!" And the guards took him and beat him.
+- reference: 1KI.007.002
+  text: He built the Palace of the Forest of Lebanon a hundred cubits long, fifty
+    wide and thirty high, with four rows of cedar columns supporting trimmed cedar
+    beams.
+- reference: GEN.018.010
+  text: Then one of them said, "I will surely return to you about this time next year,
+    and Sarah your wife will have a son." Now Sarah was listening at the entrance
+    to the tent, which was behind him.
+- reference: DAN.003.017
+  text: If we are thrown into the blazing furnace, the God we serve is able to deliver
+    us from it, and he will deliver us from Your Majesty's hand.
+- reference: 1TH.003.002
+  text: We sent Timothy, who is our brother and co-worker in God's service in spreading
+    the gospel of Christ, to strengthen and encourage you in your faith,
+- reference: 1KI.010.019
+  text: The throne had six steps, and its back had a rounded top. On both sides of
+    the seat were armrests, with a lion standing beside each of them.
+- reference: GEN.040.020
+  text: 'Now the third day was Pharaoh''s birthday, and he gave a feast for all his
+    officials. He lifted up the heads of the chief cupbearer and the chief baker in
+    the presence of his officials:'
+- reference: LUK.009.036
+  text: When the voice had spoken, they found that Jesus was alone. The disciples
+    kept this to themselves and did not tell anyone at that time what they had seen.
+- reference: LUK.004.040
+  text: At sunset, the people brought to Jesus all who had various kinds of sickness,
+    and laying his hands on each one, he healed them.
+- reference: EXO.025.025
+  text: Also make around it a rim a handbreadth wide and put a gold molding on the
+    rim.
+- reference: LUK.002.041
+  text: Every year Jesus' parents went to Jerusalem for the Festival of the Passover.

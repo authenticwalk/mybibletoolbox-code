@@ -1,14 +1,16 @@
 {
   "name": "myBibleToolbox Development",
-  "image": "mcr.microsoft.com/devcontainers/python:3.11",
-  
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "20"
-    },
-    "ghcr.io/devcontainers/features/git:1": {}
+  "build": {
+    "dockerfile": "Dockerfile"
   },
-  
+  "remoteUser": "devuser",
+  "mounts": [
+    "source=${localEnv:HOME}/projects/ebible,target=/ebible,type=bind,readonly"
+  ],
+  "containerEnv": {
+    "DATA_DIR": "/workspace/.data",
+    "EBIBLE_DIR": "/ebible"
+  },
   "customizations": {
     "vscode": {
       "extensions": [
@@ -16,10 +18,6 @@
         "ms-python.vscode-pylance"
       ]
     }
-  },
-  
-  "postCreateCommand": "pip install -r requirements.txt",
-  
-  "remoteUser": "vscode"
+  }
 }
 

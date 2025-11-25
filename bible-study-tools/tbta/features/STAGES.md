@@ -4,8 +4,6 @@ The following summarizes the correct stages to build a new feature. If you are i
 
 Review the source documentation of TBTA for this feature:
 - Official TBTA documentation: See `../tbta-source/README.md` for links to source materials
-- Reference: `../learnings/FEATURE-SUMMARY.md` for high-level feature overview
-- Check existing feature directory for this feature
 
 Generate the README.md for the feature with the information learnt:
 - Include: Feature definition, theological/linguistic context, TBTA encoding details
@@ -16,11 +14,12 @@ Generate the README.md for the feature with the information learnt:
 Review language families to determine which languages need this feature:
 - Check: `../languages/` directory
 - Reference: Language codes and families
-- Consider: Which language families grammatically encode this feature?
+- Consider: Which language families grammatically encode this feature?  Are there any unique cultural distinctives in any language families or languages where they treat this feature differently than others with this feature.  For instance in North America there has grown a sensitivity towards inclusive language so cases where brothers is said but refers to the whole church some would be offended it did not say brothers and sisters.
 
 Update README.md with language analysis:
 - List: Language families that require this feature
 - Note: Languages where feature is grammatically obligatory vs optional
+- Note: Distinct cultural adaptations and unique concerns.
 - Example: Target translation scenarios
 
 # 3. Scholarly and Internet Research
@@ -29,17 +28,78 @@ Update README.md with language analysis:
 - Look into general web information
 - Update the README
 
-# 4. Generate a Proper Test Set
+## Identify Arbitrary vs Non-Arbitrary Contexts
+
+**Critical theological requirement**: Not all lexical choices have equal theological weight.
+
+### Classification Criteria
+
+A feature value is **NON-ARBITRARY** (theologically significant) if it affects:
+1. **Doctrine** (Trinity, salvation, God's nature, etc.)
+2. **Divine speech** (commands, promises, judgments)
+3. **Interpretation** (literal vs figurative, resolves theological ambiguity)
+4. **Church practice** (authority, worship, ethics)
+5. **Denominational differences** (interpretations vary by tradition)
+
+**Default**: Assume ARBITRARY unless proven otherwise
+
+### Required Analysis
+
+Create `experiments/ARBITRARITY-CLASSIFICATION.md`:
+```yaml
+feature: {feature-name}
+default_classification: arbitrary  # Only mark non-arbitrary when significant
+
+non_arbitrary_contexts:
+  - verse_pattern: "Gen 1:26 (Trinity references)"
+    affected_values: [trial, plural]
+    theological_stakes: high
+    affected_doctrines: [Trinity, nature of God]
+    denominational_implications: true
+    cultural_sensitivity: [monotheistic contexts]
+
+  - verse_pattern: "Matt 6:9 (prayer contexts)"
+    affected_values: [inclusive, exclusive]
+    theological_stakes: medium
+    affected_doctrines: [prayer theology, corporate worship]
+    denominational_implications: false
+    cultural_sensitivity: [individualist vs collectivist]
+
+arbitrary_contexts:
+  - pattern: "Crowd sizes, travel narratives"
+    rationale: "Theology unchanged by specific number"
+    percentage_of_feature: 85%
+```
+
+**Key principle**: Space-saving design - only mark non-arbitrary (default=arbitrary not stored)
+
+# 4. Generate Test Set with Translation Data
 
 **CRITICAL**: This stage MUST be done in a subagent to prevent seeing the answers!
+
+**Philosophy**: "There is nothing new under the sun" - with ~1000 Bible translations, someone has already dealt with your unique linguistic feature. Don't just validate against TBTA - **discover answers from what real translators actually did**.
+
+## Use Source Languages First
+
+**PRIORITY ORDER for data sources**:
+1. **Greek/Hebrew morphology** (Macula data in `.data/commentary/{BOOK}/{chapter}/{verse}/{BOOK}-{chapter}-{verse}-macula.yaml`) - grammatical number is marked in source
+2. **Target language translations** with grammatical marking (Samoan trial, Slovenian dual, etc.)
+3. **English translations** (last resort - lacks many grammatical distinctions)
 
 ## Dataset Requirements
 
 **Data Source**: Use only verses that have TBTA data (complete annotation)
 
+**File Organization**: Keep experiments clean:
+- `experiments/v1/`, `experiments/v2/`, etc. - One folder per algorithm iteration
+- `experiments/data/` - All data files (train_answers.yaml, train_questions.yaml, test_questions.yaml, README.md summarizing data selection process and key decisions in doing that)
+- `experiments/` root - Only current work and final docs (README, LEARNINGS, CERTIFICATION)
+- Summarize then delete intermediate progress/thinking files after work completes
+
 **Sample Size**: 100 verses per value minimum
 - Small datasets (<50 verses) cannot support claims of 100% accuracy
 - Need statistical power to distinguish algorithm quality from chance
+- Include at least 2 cases of each kind of non-arbitrary reason group.
 
 **Balanced Sampling** across multiple dimensions:
 1. **Testament**: Proportional OT/NT distribution
@@ -47,9 +107,41 @@ Update README.md with language analysis:
 3. **Book Distribution**: Avoid concentration in single book
 4. **Difficulty**: Include both typical cases AND adversarial cases
 
+## Non-arbitrary reason groups
+
+Some decisions are arbitrary (there where 3 or 4 maybe 5 people in a group, we don't know, the original text does not say, something just needs to be picked).  Others are non-arbitrary.  Gen 1:1 let "us" (how many people is us; making the wrong choice could greatly influence theology.
+
+ - Think deeply about all the verses determining which are arbitrary/non-arbitrary
+ - For all arbitrary group them into reasons (ex. Trinity)
+ - Include at least 2 occurances (or more) for each group.
+
+### Theological Stratification (Non-Arbitrary Features)
+
+For features with non-arbitrary contexts:
+
+**Sample Requirements**:
+- ✅ Include ALL identified non-arbitrary verses (Trinity, divine commands, etc.)
+- ✅ Mark with theological metadata: `arbitrarity: non-arbitrary`
+- ✅ Note affected doctrines and cultural sensitivities
+- ✅ Ensure balanced representation across theological contexts
+
+**Example**:
+```yaml
+verses:
+  - reference: "GEN.001.026"
+    tbta_value: "trial"  # or plural
+    arbitrarity: non-arbitrary
+    theological_stakes: high
+    affected_doctrines: [Trinity, creation]
+    requires_multi_answer: true
+    notes: "Trinity doctrine - prefer trial but document plural alternative"
+```
+
+**Arbitrary verses**: Don't add metadata (space-saving - default is arbitrary)
+
 ## Adversarial Selection Strategy
 
-For the **test set** (30%), deliberately include challenging cases:
+For the **test set** (30%), deliberately include challenging non-arbitrary cases:
 - Edge cases where multiple values might apply
 - Verses with theological ambiguity
 - Contexts where annotation rules might conflict
@@ -59,77 +151,484 @@ For the **test set** (30%), deliberately include challenging cases:
 
 **Purpose**: Find algorithm blind spots, not just confirm what works
 
-## External Validation Preparation (Thesis Approach)
+## Translation Language Selection (Core Workflow)
 
-**During data construction**, build the foundation for discovering answers from real translations:
-- For features with observable translation differences (clusivity, tense, etc.):
-  - **Primary**: List which languages/language families grammatically mark this feature
-  - **Priority**: Identify Bible translations in those languages, preferring:
-    1. Same language family as target translation
-    2. Translations from same source lineage (e.g., all derived from Indonesian, Swahili, French, etc.)
-    3. Translations from source text (Greek/Hebrew) by local translators
-  - **Translation Database**: For each marking language, document:
-    - Which Bible translations exist (name, version, year)
-    - Source lineage (derived from what language/translation?)
-    - Language family classification
-    - Availability/access method
-  - **Thesis Application**: This enables DISCOVERING the answer by analyzing what real translators did, not just validating accuracy
-- Store this information in train.yaml metadata for cross-linguistic validation
+For every feature, identify which languages grammatically mark this feature:
 
-## Data Extraction Process
+**Step 1: Language Family Analysis** (from Stage 2)
+- Which language families grammatically require this feature?
+- Example: Dual number → Austronesian (176 langs), Trans-New Guinea (129 langs)
+- Example: Clusivity → 200+ languages (Tagalog, Malay, Fijian, Vietnamese, many Native American)
 
-A subagent should extract TBTA data and create stratified samples:
+**Step 2: Build Translation Database**
+For each marking language, document:
+- **Translation name, version, year**
+- **Language family classification**
+- **Source lineage**: Direct from Greek/Hebrew? Or derived from Indonesian/Swahili/French/German?
+- **Availability**: Online (eBible, Bible.com), API access, physical copy
+- **Priority ranking**:
+  1. Same language family as typical target translations
+  2. Same source lineage (e.g., all derived from Indonesian)
+  3. Direct from source text by local translators
 
-**Script responsibilities**:
-- Clone/access TBTA data repository
-- Loop through all TBTA files looking for this feature
-- Filter to verses with complete TBTA data only
-- Generate frequency counts for each VALUE this feature can have
+**Step 3: Select 5-10 Representative Translations**
+- Cover multiple language families
+- Mix of direct (Greek/Hebrew) and derived translations
+- Prioritize accessible online translations
+- Document in `experiments/TRANSLATION-DATABASE.md`
 
-**LLM responsibilities** (subagent with access to train data only):
-- Sample with stratification across Testament (OT/NT), Genre (narrative/poetry/prophecy/epistle/etc.), and Difficulty (typical + adversarial)
-- Identify which languages/families mark this feature
-- Classify verses by genre and difficulty
-- Add explanatory notes for adversarial cases
-- Split into train (40%), test (30%), validate (30%)
+**Purpose**: Not just validation, but DISCOVERY - analyze what these translators chose to understand the correct answer
 
-**Output YAML structure**:
-```yaml
-feature: {feature-name}
-value: {specific-value}
-total_verses: {count}
-distribution:
-  OT: {count}
-  NT: {count}
-genres:
-  narrative: {count}
-  poetry: {count}
-  prophecy: {count}
-  epistle: {count}
-external_validation:
-  languages: [list of languages that mark this feature]
-  families: [language families with this feature]
-verses:
-  - reference: "{BOOK} {chapter}:{verse}"
-    tbta_value: "{value}"
-    genre: "{genre}"
-    difficulty: "typical|adversarial"
-    notes: "Why adversarial (if applicable)"
+## Data Extraction Process (TBTA Data + Optional Translations)
+
+**Key Insight**: TBTA already contains the answers! Use TBTA for algorithm development; fetch translations only when needed for validation.
+
+### Step 1: Extract TBTA Data
+
+**Using extract_feature.py script**:
+```bash
+python src/ingest-data/tbta/extract_feature.py \
+  --field "Person" \
+  --max-per-value 2000 \
+  --output features/{feature}/experiments/raw_tbta_data.yaml
 ```
 
-**Main agent**: Receives only file paths, never sees test/validate data. Files stored in: `features/{feature}/experiments/train.yaml`, `test.yaml`, `validate.yaml`
+**Script outputs**:
+- All verses with this TBTA feature (from your memory of TBTA corpus)
+- Frequency counts per value
+- OT/NT and book distribution
+- Up to 2000 verses per value (LRU cache)
 
-# 5. Propose your Hypothesis and First Prompt
+### Step 2: Sample & Split with Optional Translation Fetching
 
-## Analysis Phase
-- Review the train.yaml file and the source TBTA files for the training verses
-- Review `../learnings/README.md` for transferable patterns from other features
-- Create `experiments/ANALYSIS.md` with up to 12 different approaches
-  - Weight pros and cons of each approach
-  - Consider: theological factors, grammatical cues, discourse patterns, genre signals
-  - Identify which approaches might work best for this feature
+**Using stratified sampling script**:
+```bash
+python experiments/sample_and_split.py \
+  --input raw_tbta_data.yaml \
+  --target-languages tgl,mri,fij,smo,ind \
+  --fetch-translations  # OPTIONAL: fetch during generation
+```
+
+**Script responsibilities**:
+1. **Stratified sampling**:
+   - Testament: Proportional OT/NT
+   - Genre: Classify as narrative/poetry/prophecy/epistle
+   - Difficulty: Mark typical vs adversarial cases
+   - Book distribution: Avoid concentration
+
+2. **Split into train/test/validate** (40%/30%/30%)
+
+3. **Generate answer sheets** with TBTA values:
+   - `train.yaml`, `test.yaml`, `validate.yaml`
+   - Contains verse references + TBTA values + metadata
+
+4. **OPTIONAL: Fetch translations during generation**:
+   - If `--fetch-translations` flag provided
+   - Uses Quote Bible skill (src/tools/fetch_verse.py)
+   - Fetches specified languages for each verse
+   - Generates `train_questions.yaml`, `test_questions.yaml`, `validate_questions.yaml`
+   - **Advantage**: Single integrated workflow
+   - **Trade-off**: Takes longer (network calls) but avoids separate fetching step
+
+5. **Without --fetch-translations**:
+   - Generates question sheets with placeholder: `translations: TO_BE_FETCHED`
+   - Fetch later only if needed for validation/refinement
+   - Faster initial dataset generation
+
+**Selecting Target Languages**:
+1. Query 3-5 sample verses using Quote Bible skill
+2. Identify available translation languages/codes
+3. Select 5-10 languages that mark this feature
+4. Document selection in `TRANSLATION-DATABASE.md`
+
+### Output File Structure
+
+**Answer Sheet** (TBTA values - for scoring only):
+```yaml
+# features/{feature}/experiments/train.yaml (or test.yaml, validate.yaml)
+feature: {feature-name}
+translation_database:
+  languages: [tgl, mri, fij, smo, ind, ...]  # Selected for this feature
+  families: [Austronesian, Polynesian, ...]
+  rationale: "Why these languages selected"
+value:
+  - specific_value: {specific-value}
+    total_verses: {count}
+    distribution:
+      OT: {count}
+      NT: {count}
+      Books: {GEN: X, EXO: Y, ...}
+    genres:
+      narrative: {count}
+      poetry: {count}
+      prophecy: {count}
+      epistle: {count}
+    verses:
+      - reference: "{BOOK}.{chapter:03d}.{verse:03d}"
+        tbta_value: "{value}"
+        genre: "{genre}"
+        difficulty: "typical|adversarial"
+        notes: "Why adversarial (if applicable)"
+```
+
+**Question Sheet** (real translations - for analysis):
+```yaml
+# features/{feature}/experiments/train_questions.yaml (or test_questions.yaml, validate_questions.yaml)
+feature: {feature-name}
+translations_included: [tgl, mri, fij, smo, ind, ...]
+verses:
+  - reference: "{BOOK}.{chapter:03d}.{verse:03d}"
+    translations:
+      tgl: "{Tagalog text}"
+      mri: "{Māori text}"
+      fij: "{Fijian text}"
+      smo: "{Samoan text}"
+      ind: "{Indonesian text}"
+      # ... other selected languages
+```
+
+**File Organization**:
+```
+features/{feature}/experiments/
+  ├── train.yaml              # Answer sheet (TBTA values)
+  ├── train_questions.yaml    # Question sheet (translations)
+  ├── test.yaml              # Answer sheet (TBTA values)
+  ├── test_questions.yaml    # Question sheet (translations)
+  ├── validate.yaml          # Answer sheet (TBTA values)
+  ├── validate_questions.yaml # Question sheet (translations)
+  └── TRANSLATION-DATABASE.md # Documentation of translation selection
+```
+
+**Main Agent Workflow**:
+
+**TRAINING PHASE** (train.yaml + train_questions.yaml):
+- ✅ **CAN see**: train.yaml (TBTA answers) - this is your training data
+- ✅ **CAN see**: train_questions.yaml (translations) - optional
+- ✅ **Goal**: Develop algorithm by analyzing TBTA patterns in training data
+
+**TESTING PHASE** (test_questions.yaml ONLY):
+- ❌ **CANNOT see**: test.yaml (TBTA answers) - this would be cheating!
+- ✅ **CAN see**: test_questions.yaml (translations only, NO TBTA values)
+- ✅ **Process**:
+  1. Apply algorithm to test_questions.yaml → generate predictions
+  2. **LOCK predictions** (git commit) BEFORE seeing answers
+  3. ONLY THEN compare predictions with test.yaml
+- ⚠️ **CRITICAL**: If you see test.yaml answers before locking predictions = DATA LEAKAGE
+
+**VALIDATION PHASE** (validate_questions.yaml ONLY):
+- Same as testing phase - blind predictions, lock, then compare
+
+**Key Point**: 
+- ✅ Training data (train.yaml): See answers to learn patterns
+- ❌ Test/validate data: NEVER see answers until after predictions locked
+- This is fundamental to proper train/test separation!
+
+# 5. Develop Algorithm Using TBTA Data
+
+**Core Principle**: TBTA contains the answers in your memory. Use TBTA data (train.yaml) for algorithm development. Translations are optional for validation/refinement.
+
+## Primary Workflow: TBTA-Based Development
+
+**You already have the answers**: `train.yaml` contains TBTA values for all training verses.
+
+### Step 1: Analyze TBTA Patterns
+
+**For each training verse in `train.yaml`**:
+1. **Read verse reference + TBTA value**
+2. **Identify the pattern** that predicts this value
+   - Example: "Let us make" (divine plural + creation context) → Trial
+   - Example: "Two of them" (explicit count) → Dual
+3. **Group verses by pattern type**
+4. **Document patterns in `experiments/ANALYSIS.md`**
+
+## Optional: Translation-Informed Refinement
+
+**When to use translations**:
+- Validating ambiguous cases
+- Checking cross-linguistic consistency
+- Refining edge case handling
+- Building confidence in non-arbitrary contexts
+
+**How to use translations** (if `*_questions.yaml` files exist):
+1. **Read the translations** (from train_questions.yaml)
+2. **Identify the feature value** each translation reveals
+   - Example (clusivity): Tagalog uses "tayo" (inclusive) vs "kami" (exclusive)
+   - Example (dual): Fijian uses dual pronoun vs plural
+3. **Check for consensus**:
+   - **High agreement** (80%+ translations agree) → Strong signal
+   - **Split decision** (mixed) → Investigate why
+   - **Unclear** (feature not observable) → Flag for TBTA check
+
+**Document patterns in `experiments/TRANSLATION-PATTERNS.md`**:
+```markdown
+## Verse GEN.001.026
+**Translations**:
+- Tagalog: "tayo" (inclusive we) → INCLUSIVE
+- Māori: "tātou" (inclusive we) → INCLUSIVE
+- Fijian: "kedatou" (inclusive we, trial) → INCLUSIVE
+- Samoan: "tatou" (inclusive we) → INCLUSIVE
+- Indonesian: "kita" (inclusive we) → INCLUSIVE
+
+**Consensus**: 100% (5/5) → INCLUSIVE
+**Confidence**: Very High
+```
+
+### Step 2: Compare with TBTA Values
+
+After translation analysis, compare with TBTA (from train.yaml):
+
+**Case A: Translations AGREE with TBTA** (90%+ of cases)
+- ✅ **High confidence**: Both sources confirm same answer
+- Document: "Validated by translations (5/5 consensus)"
+- Use this verse for algorithm training
+
+**Case B: Translations DISAGREE with TBTA** (rare, <5%)
+- ⚠️ **Investigate carefully**: Why the divergence?
+  - Is TBTA correct but translators missed it?
+  - Is this a valid perspective difference (translation vs. discourse analysis)?
+  - Is TBTA potentially incorrect?
+- Document analysis in `experiments/DIVERGENCE-ANALYSIS.md`
+- Flag for review (see Step 6)
+
+**Case C: Translations UNCLEAR** (feature not observable in translations)
+- 📝 **Rely on TBTA**: Use TBTA value
+- Lower confidence: Cannot verify with translations
+- Document: "TBTA only (feature not observable in selected translations)"
+
+### Step 3: Integration Analysis
+
+Review `../learnings/README.md` for transferable patterns, then create `experiments/ANALYSIS.md`:
+
+**Dual-Source Analysis**:
+For each approach (up to 12), consider:
+- **Translation evidence**: What do translators consistently do?
+- **TBTA patterns**: What does discourse analysis reveal?
+- **Convergence**: Where do both sources agree?
+- **Theological factors**: Divine speech, prayer, prophecy patterns
+- **Grammatical cues**: Person markers, verb forms, context
+- **Discourse patterns**: Genre, speaker, participant tracking
+- **Genre signals**: Narrative vs. epistle vs. poetry
+
+**Weight pros/cons** of each approach:
+- ✅ Supported by translation consensus
+- ✅ Matches TBTA patterns
+- ⚠️ Translations unclear for this approach
+- ❌ Contradicts translation evidence
+
+## Ramification Analysis for Non-Arbitrary Contexts
+
+**Required for verses marked `arbitrarity: non-arbitrary`**
+
+Create `experiments/THEOLOGICAL-ANALYSIS.md` documenting:
+
+### Framework Template
+
+For each non-arbitrary context:
+
+```yaml
+verse: GEN.001.026
+feature: number-system
+arbitrarity: non-arbitrary
+theological_stakes: high
+affected_doctrines: [Trinity, nature of God, creation theology]
+
+preferred_answer:
+  value: trial
+  rationale: "Trinity doctrine - Father, Son, Spirit create together"
+  confidence: high
+  theological_support:
+    - "NT Trinitarian revelation (Matt 28:19, 2 Cor 13:14)"
+    - "Church fathers' interpretation (Augustine, Athanasius)"
+    - "Creedal statements (Nicene, Athanasian)"
+  translation_support:
+    - "Fijian: 'kedatou' (trial inclusive)"
+    - "Hawaiian: 'kākou' (trial)"
+    - "8/9 trial-marking translations use trial"
+
+alternative_answers:
+  - value: plural_3_or_more
+    rationale: "Could include angels in divine council"
+    christian_orthodox_assessment:
+      status: "REJECTED by Christian orthodoxy"
+      theological_problems:
+        - "Implies angels participate in creation (contra Isa 44:24 'I alone')"
+        - "Diminishes uniqueness of Trinity"
+        - "Opens door to polytheistic misunderstanding"
+      why_rejected: "Conflicts with NT Trinitarian revelation and Isa 44:24; not compatible with Christian theology"
+
+    non_orthodox_use:
+      - tradition: "Jewish (non-Messianic)"
+        status: "May use this interpretation"
+        notes: "Valid within Judaism with proper clarification that creation is by God alone"
+        supporting_texts: "Psalm 82, Job 1-2 (divine assembly imagery)"
+
+  - value: majestic_plural
+    rationale: "Royal 'we' - singular God speaking majestically"
+    christian_orthodox_assessment:
+      status: "WEAK / LESS PREFERRED"
+      theological_problems:
+        - "Doesn't explain plural 'our image'"
+        - "Weak linguistic evidence for Hebrew majestic plural"
+        - "Doesn't account for NT Trinitarian revelation"
+      why_less_preferred: "Inconsistent with 'Let us' + 'our image' construction; Trinity is clearer interpretation"
+
+    non_orthodox_use:
+      - tradition: "Islamic"
+        status: "May use this interpretation"
+        notes: "Preserves Tawhid (strict monotheism); valid within Islam but not Christian orthodox interpretation"
+
+theological_framework:
+  christian_orthodox_position:
+    interpretation: "Trinity (Father, Son, Spirit in creative dialogue)"
+    textual_basis: "NT revelation (Matt 28:19, John 1:1-3, 2 Cor 13:14), Nicene Creed"
+    church_fathers: "Augustine, Athanasius - unanimous on Trinity in creation"
+    denominational_unity:
+      - "Protestant: Trinity affirmed, trial number if language has it"
+      - "Catholic: Trinity affirmed, trial number if language has it"
+      - "Orthodox: Trinity affirmed, trial number if language has it"
+      - "Coptic: Trinity affirmed, trial number if language has it"
+    denominational_variations: "Minor differences in explaining 'persons' vs 'hypostases', but Trinity doctrine is unified"
+    recommended_translation: "Trial number if available (grammatically encodes Trinity), plural with footnote if not"
+
+  non_orthodox_views_for_awareness:
+    - group: "Jehovah's Witnesses (cult)"
+      interpretation: "Jehovah + Michael the Archangel creating"
+      why_rejected_by_christianity: "Denies deity of Christ (John 1:1 'and the Word was God'); makes 'us' = God + created being, introducing Arian heresy"
+      translator_warning: "CRITICAL: This interpretation enables false teaching about Christ's nature"
+
+    - group: "Mormons / LDS (cult)"
+      interpretation: "Council of gods creating"
+      why_rejected_by_christianity: "Polytheism; contradicts biblical monotheism (Deut 6:4, Isa 44:6-8)"
+      translator_warning: "CRITICAL: Violates monotheism, introduces polytheistic heresy"
+
+    - group: "Jewish (non-Messianic)"
+      interpretation: "Majestic plural or divine council (God + angels, but creation by God alone)"
+      why_not_christian_orthodox: "Rejects NT Trinitarian revelation; does not recognize Jesus as Messiah or second person of Trinity"
+      notes: "Valid within Judaism; translators serving Jewish communities may use this interpretation"
+      textual_concern: "Divine council view must clarify Isa 44:24 'I alone' - angels do not participate in creation"
+
+    - group: "Islamic"
+      interpretation: "Majestic plural (singular God speaking royally)"
+      why_not_christian_orthodox: "Rejects Trinity (Tawhid - strict monotheism); denies deity of Christ"
+      notes: "Valid within Islam; not compatible with Christian theology"
+      textual_concern: "Weak Hebrew linguistic evidence for majestic plural; doesn't explain 'our image'"
+
+cultural_application_notes:
+  - context: "Polytheistic background communities"
+    consideration: "May misunderstand plural as multiple gods"
+    christian_guidance: "Emphasize biblical monotheism (Deut 6:4) AND Trinity (one God, three persons)"
+    clarification: "Trinity ≠ three gods; Trinity = three persons, one God"
+
+  - context: "Honor/shame cultures (e.g., East Asian)"
+    consideration: "Plural of modesty/dignity culturally resonant"
+    christian_guidance: "Can connect Trinity with cultural understanding of honorific speech while maintaining theological accuracy"
+
+translator_guidance:
+  for_christian_translators:
+    - "Trinity is the orthodox Christian interpretation of Gen 1:26"
+    - "Trial number (if your language has it) grammatically encodes Trinity"
+    - "Plural with footnote explaining Trinity if trial unavailable"
+    - "NEVER obscure Trinity reference - this is core Christian doctrine"
+    - "NEVER suggest angels participate in creation (contradicts Isa 44:24)"
+
+  denominational_considerations:
+    - "Protestant/Catholic/Orthodox/Coptic: Unified on Trinity, minor variations in technical terminology"
+    - "Messianic Jewish: Affirm Trinity within Hebrew scripture context"
+
+  avoiding_heresy:
+    - "JW/Arian interpretation (Jesus as created being): REJECT - contradicts John 1:1-3"
+    - "Mormon/polytheistic interpretation (council of gods): REJECT - contradicts Deut 6:4"
+    - "Unitarian interpretation (denies Trinity): REJECT - contradicts NT revelation and creeds"
+```
+
+### Multi-Answer Output Format
+
+For non-arbitrary cases, prompt must output:
+
+```yaml
+verse: GEN.001.026
+feature: number-system
+arbitrarity: non-arbitrary  # Flag this!
+preferred: trial
+alternatives:
+  - value: plural
+    rationale: "Divine council interpretation"
+    problems: ["Diminishes Trinity", "Contra Isa 44:24"]
+  - value: majestic_plural
+    rationale: "Royal we"
+    problems: ["Weak linguistic evidence"]
+
+# Provide to Christian translators:
+christian_orthodox_guidance: |
+  TRINITY is the Christian orthodox interpretation of Genesis 1:26.
+
+  Recommended Translation:
+  - TRIAL number if your language has it (grammatically encodes Father, Son, Spirit)
+  - PLURAL with footnote explaining Trinity if trial not available
+  - Example footnote: "The plural 'us' and 'our' refers to the Trinity—Father, Son, and Holy Spirit (cf. John 1:1-3, Matt 28:19)"
+
+  CRITICAL WARNINGS:
+  - NEVER obscure the Trinity reference - this is core Christian doctrine
+  - NEVER suggest angels participate in creation (contradicts Isa 44:24 "I alone")
+  - NEVER use interpretations that deny Christ's deity (JW/Arian heresy)
+
+  Denominational Unity:
+  - Protestant/Catholic/Orthodox/Coptic: Unified on Trinity doctrine
+  - Minor variations in technical terminology, but substance is identical
+
+non_christian_translators_awareness: |
+  If translating for non-Christian communities (Jewish, Islamic, etc.):
+  - Non-orthodox interpretations exist (majestic plural, divine council)
+  - These are NOT Christian orthodox; they reject NT revelation
+  - Translators should understand WHY these differ from Christian interpretation
+  - Purpose: Avoid accidentally introducing non-Christian theology into Christian translations
+```
+
+**Arbitrary cases**: Single answer only (no alternatives needed)
 
 ## First Prompt Development
+
+### Multi-Path Prompts for Non-Arbitrary Features
+
+**If feature has non-arbitrary contexts**, prompt must:
+
+1. **Detect arbitrarity**:
+   ```
+   First, determine: Is this verse arbitrary or non-arbitrary?
+   - Check theological significance
+   - Check denominational implications
+   - Check cultural sensitivity
+   ```
+
+2. **Branching logic**:
+   ```
+   IF ARBITRARY:
+     → Output single best answer
+
+   IF NON-ARBITRARY:
+     → Output preferred + alternatives with ramifications
+     → Flag for theological review
+     → Provide translator guidance
+   ```
+
+3. **Output format**:
+   ```yaml
+   arbitrarity: arbitrary | non-arbitrary
+
+   # If arbitrary:
+   answer: {single value}
+   confidence: {high/medium/low}
+
+   # If non-arbitrary:
+   preferred: {value}
+   preferred_rationale: "{why}"
+   alternatives:
+     - value: {alternative}
+       problems: ["{issue1}", "{issue2}"]
+       when_appropriate: "{context where this might be used}"
+   translator_warning: "{critical guidance}"
+   ```
+
 - Given the top methods, create `experiments/PROMPT1.md` with most likely approach
 - **LOCKED PREDICTIONS**: Before testing against TBTA, commit predictions to git
   ```bash
@@ -138,6 +637,48 @@ verses:
   # Push to remote
   # Record commit SHA in LEARNINGS.md
   ```
+
+### ⚠️ CRITICAL: Pattern Detection vs Verse Memorization
+
+When developing your algorithm in `PROMPT1.md`, you MUST use **generalizable patterns**, not verse-specific memorization:
+
+**❌ OVERFITTING (Verse Memorization)**:
+```
+If verse reference is GEN.001.026:
+  → Return Trial
+
+If verse reference is MAT.028.019:
+  → Return Trial
+```
+**Why this fails**: The algorithm memorizes specific verses instead of learning the underlying pattern. It will fail on any new Trinity reference not in the training data.
+
+**✅ CORRECT (Pattern Detection)**:
+```
+If verse contains divine first-person plural ("us", "our") in these contexts:
+- Creation contexts (God creating/forming/making)
+- Divine judgment contexts (God going down to judge)
+- Divine deliberation (God speaking in council)
+
+Detection criteria:
+- Speaker is God/Lord/YHWH
+- Uses first person plural pronouns
+- Context involves divine action
+
+→ Return Trial (Christian Trinitarian interpretation)
+```
+**Why this works**: The algorithm learns the *theological and linguistic pattern* (divine plural in creation/judgment contexts). It will correctly classify **any** Trinity reference, including verses not in training data.
+
+**Examples of Pattern-Based Rules**:
+- ✅ "If explicit numeric word ('two', 'three', 'four') → Dual/Trial/Quadrial"
+- ✅ "If 'both' referring to paired entities → Dual"
+- ✅ "If 'where two or three gather' (small indefinite group) → Paucal"
+- ✅ "If 'many'/'crowd'/'multitude' → Plural"
+- ❌ "If John 3:16 → Singular" (verse-specific)
+- ❌ "If Matthew 28:19 → Trial" (verse-specific)
+
+**Testing for Overfitting**:
+After developing your algorithm, ask: "If I removed this verse from the training data, would my algorithm still predict it correctly using the pattern?" If no, you've overfit.
+
 - Apply prompt to each verse in test set, predicting main value
   - If one clear option: predict only the value
   - If multiple good options: predict dominant with rationale (which may include language family preferences)
@@ -208,113 +749,30 @@ Document analysis in `experiments/LEARNINGS.md` with:
 - Typical iterations: 3-5 prompts (v1.0 → v2.0 → v2.1 etc.)
 - Stop when: Accuracy plateaus or reaches target
 
-## Cross-Linguistic Translation Validation (Thesis Approach)
+## Translation-Informed Algorithm Development
 
-**Philosophy**: "There is nothing new under the sun" - with ~1000 Bible translations, someone has already dealt with your unique linguistic feature. The key is analyzing those translations to discover which ones reveal the answer.
+**Continuous Integration**: As you develop PROMPT1.md, PROMPT2.md, etc., incorporate translation evidence:
 
-**For features with observable translation differences** (clusivity, tense, number distinctions, etc.):
+**Algorithm Design Principles**:
+1. **Prioritize high-consensus patterns**: If 90%+ of translations agree, algorithm should match
+2. **Handle split decisions**: When translations disagree, algorithm should consider:
+   - Language family preferences (same family as target language)
+   - Source lineage (direct from Greek/Hebrew vs. derived)
+   - Cultural context
+   - Theological tradition
+3. **Document confidence**: Mark verses where translations agree vs. unclear
+4. **Learn from divergence**: When TBTA ≠ translations, investigate and document why
 
-### Step 1: Identify Marking Languages (from Stage 2/4)
-- Which languages grammatically require this feature?
-- Which language families share this requirement?
-- Example: Dual number → many Austronesian, Polynesian languages
-
-### Step 2: Find & Prioritize Bible Translations
-**Preference order for target language X:**
-1. **Same language family** (share grammatical patterns)
-2. **Same source lineage** (translated from same intermediate language)
-   - Example: Many minority languages translate from Indonesian, Swahili, French, German
-   - Shared source → similar translation decisions
-3. **Direct from source text** (Greek/Hebrew by local translators)
-
-**Build translation database:**
-- Translation name, version, year
-- Language family classification
-- Source lineage (from Greek/Hebrew? Or from Indonesian/Swahili/etc.?)
-- Access method (online, physical copy, API)
-
-### Step 3: Cross-Linguistic Analysis Per Test Verse
-For each verse in test/validate set:
-
-**a. Check what real translators did:**
-- Query all marking-language translations for this verse
-- Extract how each translation handled this feature
-- Document the translation decisions
-
-**b. When translations AGREE (90%+ consensus):**
-- **High confidence**: This is likely the correct answer
-- **Document**: List which translations agree + their language families
-- **Use as validation**: Does our algorithm match this consensus?
-
-**c. When translations DISAGREE (split decision):**
-- **Analyze WHY** using these factors:
-  - **Cultural context**: Different cultures may interpret differently
-  - **Linguistic structure**: Language family differences
-  - **Source lineage**: Did they translate from different sources?
-  - **Theological tradition**: Different Christian traditions
-  - **Genre understanding**: Different narrative vs. poetry interpretation
-- **Document divergence patterns**: Which families agree? Which disagree?
-- **Make informed decision**: Based on analysis, which translation is most likely correct for THIS context?
-
-**d. When translations are UNAVAILABLE or UNCLEAR:**
-- Flag for manual review
-- Document what languages/families are missing
-- Note limitations of validation for this verse
-
-### Step 4: Document Results in `experiments/CROSS-LINGUISTIC-VALIDATION.md`
-
+**Example (Clusivity)**:
 ```markdown
-# Cross-Linguistic Translation Validation: {Feature Name}
+# PROMPT1.md
 
-## Translation Database
-- Total translations analyzed: {count}
-- Language families represented: {list}
-- Source lineages: {Greek/Hebrew direct: X, Indonesian-derived: Y, etc.}
-
-## Test Verse Results (Sample)
-
-### High Agreement Verses (90%+ consensus)
-| Verse | Our Prediction | Translation Consensus | Agreement Rate | Validating Translations |
-|-------|----------------|---------------------|----------------|------------------------|
-| {REF} | {value} | {value} | 95% (19/20) | Fijian, Samoan, Tongan, Māori... |
-
-### Divergence Verses (split decision)
-| Verse | Our Prediction | Translation Split | Analysis | Decision |
-|-------|----------------|------------------|----------|----------|
-| {REF} | {value} | Austronesian: {valueA}, Mayan: {valueB} | Different cultural context for kinship terms | Prefer Austronesian (same family as target) |
-
-## Overall Validation Metrics
-- **Agreement rate**: {X}% (our predictions match translation consensus)
-- **High-confidence verses** (90%+ translation agreement): {Y}%
-- **Divergence verses** (requiring analysis): {Z}%
-- **Unavailable/unclear**: {W}%
-
-## Patterns Discovered
-- **Cultural factors**: {What cultural differences affected translations?}
-- **Language family patterns**: {Which families consistently agreed?}
-- **Source lineage effects**: {Did Indonesian-derived differ from Greek-derived?}
-
-## Thesis Application Success
-- **Answers discovered from translations**: {count of verses where translations revealed the answer}
-- **Algorithm improvements**: {How translation analysis improved our algorithm}
-- **Remaining uncertainties**: {Verses where even translations disagreed}
+## Rule 1: Divine Speech (Trinity)
+IF speaker includes God AND multiple persons referenced
+THEN: Check translations
+  - IF 80%+ use inclusive pronouns → INCLUSIVE
+  - IF split or unclear → Apply theological analysis
 ```
-
-### Step 5: Integrate Learnings into Algorithm
-- **When translations agree with TBTA**: Confirms our approach
-- **When translations disagree with TBTA**: Investigate carefully
-  - Is TBTA correct but translations got it wrong?
-  - Is this a valid perspective difference?
-  - Does this reveal an algorithm blind spot?
-- **When translations reveal patterns we missed**: Update algorithm to capture this
-
-### Success Criteria
-- **Translation agreement rate**: 90%+ (our predictions match real translator decisions)
-- **High-confidence coverage**: 80%+ of verses have clear translation consensus
-- **Divergence understanding**: All disagreements analyzed and documented
-- **Net benefit**: Translation analysis improved algorithm accuracy
-
-**Purpose**: Not just validation, but DISCOVERY - let the wisdom of 1000+ translations guide us to the correct answer.
 
 ## Documentation
 
@@ -355,11 +813,29 @@ Update `../learnings/README.md` with transferable patterns:
 Launch 4 subagents for independent critical review:
 
 **Subagent 3 (Theological Reviewer)**: Assume junior wrote this with theological blind spots
+
+**Enhanced for Arbitrarity**:
 - Review prompt for theological soundness
 - Check if prompt handles key doctrinal distinctions
 - Look for oversimplifications or category errors
 - Consider how translators might accidentally create theological issues
 - Test edge cases: Does prompt handle divine speech correctly? Prayer contexts? Prophetic literature?
+
+Additional checks for non-arbitrary features:
+- [ ] All non-arbitrary contexts identified correctly?
+- [ ] Preferred answer theologically sound?
+- [ ] Alternative answers fairly represented?
+- [ ] Theological problems with alternatives documented?
+- [ ] Denominational flexibility respected?
+- [ ] False teaching risks identified and prevented?
+- [ ] Cultural ramifications considered?
+- [ ] Translator warnings clear and actionable?
+- [ ] Multi-answer output format correct?
+
+**Test cases**: Apply prompt to known non-arbitrary verses:
+- Gen 1:26 (Trinity) - should output trial + alternatives
+- Matt 6:9 (prayer) - should flag cultural sensitivity
+- Deut 6:4 (monotheism) - should not introduce polytheism
 
 **Subagent 4 (Linguistic Reviewer)**: Assume junior missed linguistic nuances
 - Review prompt for linguistic accuracy
@@ -369,12 +845,37 @@ Launch 4 subagents for independent critical review:
 - Consider for what languages will this not work and why?
 - Test discourse complexity: Quoted speech? Multiple speakers? Narrative vs. direct address?
 
-**Subagent 5 (Methodological Reviewer)**: Assume junior cut corners
-- Check sample size adequacy (is n=100+ per value?)
-- Verify balanced sampling (OT/NT, genres)
-- Review error analysis rigor (6-step process followed?)
-- Check locked predictions discipline (git commits present?)
-- Verify external validation attempted (if applicable)
+**Subagent 5 (Methodological Reviewer)**: Assume junior cut corners and might have violated train/test separation
+
+**CRITICAL CHECKS** (These catch data leakage):
+- [ ] **Train/Test Separation Verified?**
+  - Are there PREDICTION files for test set? (e.g., `test_predictions_LOCKED.yaml`)
+  - Is there a git commit with predictions BEFORE any mention of test.yaml results?
+  - Can you prove predictions were made blindly (without seeing test answers)?
+  - ⚠️ **RED FLAG**: If you see accuracy numbers without locked prediction files = DATA LEAKAGE
+
+- [ ] **Locked Predictions Discipline?**
+  - For test set: `test_predictions_LOCKED.yaml` committed BEFORE test.yaml opened?
+  - For validate set: `validate_predictions_LOCKED.yaml` committed BEFORE validate.yaml opened?
+  - Git log shows: commit predictions → commit scoring (in that order)?
+  - ⚠️ **RED FLAG**: If scoring happens without locked prediction files = CHEATING
+
+**STANDARD CHECKS**:
+- [ ] Check sample size adequacy (is n=100+ per value?)
+- [ ] Verify balanced sampling (OT/NT, genres)
+- [ ] Review error analysis rigor (6-step process followed?)
+- [ ] Verify external validation attempted (if applicable)
+
+**HOW TO VERIFY**:
+```bash
+# Check git history for locked predictions
+git log --all --oneline --grep="lock.*predictions"
+
+# Look for prediction files
+ls experiments/*_predictions_LOCKED.yaml
+
+# If these don't exist but accuracy is reported → DATA LEAKAGE!
+```
 
 **Subagent 6 (Translation Practitioner)**: Assume role of Bible translator in target language
 - **Context**: "I'm translating the Bible into [language with this feature]. I have the TBTA data for this feature."
@@ -560,29 +1061,49 @@ When peer reviewers are satisfied (non-material feedback only):
 
 ## Production Readiness Checklist
 
-- Accuracy ≥ 100% on validate set for claims (≥100 verses)
-- Peer review complete (4 critical reviews passed)
+- ✅ **Accuracy**: ≥ 100% on validate set for claims (≥100 verses)
+
+- ✅ **Peer review complete** (4 critical reviews passed):
   - Theological reviewer approval
   - Linguistic reviewer approval
   - Methodological reviewer approval
   - Translation practitioner approval
-- Error analysis documented (6-step process for all failures)
-- Locked predictions throughout (git commits present)
-- **Cross-Linguistic Translation Validation complete (Thesis Approach)**
-  - Translation database built (language families, source lineages documented)
-  - Test verses analyzed against real translations
-  - Agreement rate ≥ 90% (our predictions match translator consensus)
-  - High-confidence coverage ≥ 80% (verses with clear translation consensus)
-  - Divergences analyzed (cultural, linguistic, source lineage factors documented)
-  - Learnings integrated into algorithm (translation patterns incorporated)
-  - Results documented in `experiments/CROSS-LINGUISTIC-VALIDATION.md`
-- Practical application testing complete (TRANSLATOR-IMPACT.md)
+
+- ✅ **Translation-Informed Development** (integrated throughout):
+  - Translation database built in Stage 4 (language families, source lineages documented in TRANSLATION-DATABASE.md)
+  - Question sheets generated (train_questions.yaml, test_questions.yaml, validate_questions.yaml)
+  - Training analysis used translations as primary evidence (TRANSLATION-PATTERNS.md)
+  - Algorithm incorporates translation consensus patterns
+  - Divergences analyzed and documented (DIVERGENCE-ANALYSIS.md if applicable)
+  - Agreement rate ≥ 90% (algorithm predictions match translator consensus)
+  - High-confidence coverage ≥ 80% (verses with clear 80%+ translation agreement)
+
+- ✅ **Arbitrarity handling** (if feature has non-arbitrary contexts):
+  - All non-arbitrary contexts identified (ARBITRARITY-CLASSIFICATION.md)
+  - Ramification analysis complete (THEOLOGICAL-ANALYSIS.md)
+  - Multi-answer output format implemented
+  - Preferred + alternatives documented
+  - Theological problems identified
+  - Cultural considerations addressed
+  - Translator guidance provided
+  - Denominational flexibility respected
+  - No false teaching enabled
+
+- ✅ **Methodological rigor**:
+  - Error analysis documented (6-step process for all failures)
+  - Locked predictions throughout (git commits present)
+  - Blind testing protocol maintained (subagent validation)
+  - Sample sizes adequate (≥100 verses per value)
+
+- ✅ **Practical application testing** (TRANSLATOR-IMPACT.md):
   - Tested with marking language(s)
   - Tested with non-marking language(s)
   - Net benefit is positive (more mistakes avoided than introduced)
   - Translation teams would recommend using this data
-- TBTA review feedback integrated (if applicable)
-- README.md updated with final status
-- Transferable insights added to `../learnings/README.md`
+
+- ✅ **Documentation complete**:
+  - TBTA review feedback integrated (if applicable)
+  - README.md updated with final status
+  - Transferable insights added to `../learnings/README.md`
 
 **Only when all above complete**: Mark feature as production ready

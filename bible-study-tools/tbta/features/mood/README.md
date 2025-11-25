@@ -1,53 +1,58 @@
-# TBTA Mood Prediction Method
+# Mood
 
-## Translation Impact
+## Overview
 
-**Impact Level: VERY HIGH ⭐⭐⭐⭐⭐ (5/5 stars)**
+This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
 
-Mood determines whether an action is presented as fact, possibility, necessity, or command—fundamentally shaping reader understanding. Misidentifying mood can transform commands into suggestions ("you should go" vs "you must go"), facts into possibilities ("he is here" vs "he might be here"), or permissions into obligations. Languages vary enormously in mood encoding: some mark it grammatically (Greek subjunctive, Turkish evidentials), others use modal verbs (English must/should/might), still others rely on context alone.
+## Purpose
 
-### Why This Matters for Translation
+Grammatical mood indicates the speaker's attitude toward the action or state, including categories like indicative (statement of fact), subjunctive (possibility/uncertainty), imperative (command), optative (wish), and conditional.
 
-- **94.6% of verbs are Indicative**: Most narrative is factual statement
-- **5.4% use modal meanings**: These carry crucial semantic distinctions (obligation, permission, possibility)
-- **11 distinct mood values**: TBTA captures semantic modality beyond traditional grammatical moods
-- **Even 2-mood languages benefit**: TBTA helps decide when to add modal verbs ("must," "should," "might")
+## Development Status
 
----
+🚧 **Stage 0**: Not yet started
 
-## Complete Value Enumeration
+See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
 
-| Mood Value | Description | Frequency | Typical Usage |
-|-----------|-------------|-----------|---------------|
-| **Indicative** | Factual statements, assertions of reality | 94.62% | General narrative, declarative statements |
-| **'might' Potential** | Possible but uncertain | 2.53% | Hypothetical futures, uncertain events |
-| **'must' Obligation** | Strong necessity | 1.58% | Requirements, mandates |
-| **Forbidden Obligation** | Strong prohibition | 0.63% | "Must not," prohibitions |
-| **'should' Obligation** | Moderate obligation/advice | 0.32% | Recommendations, weaker requirements |
-| **'should not' Obligation** | Negative advice | 0.32% | Advised against |
-| **'may' (permissive)** | Permission granted | <0.1% | Allowed actions |
-| **Probable Potential** | Likely outcome | <0.1% | Probable scenarios |
-| **Definite Potential** | Certain possibility | <0.1% | Definite capability |
-| **Subjunctive** | Hypothetical, conditional | Rare | Greek subjunctive constructions |
-| **Optative** | Wishes, prayers | Rare | Greek optative constructions |
+## Development Checklist
 
-**Total Values**: 11 distinct mood types
-**Test Data**: Matthew 24 (316 verbs, 51 verses)
-**Source Languages**: Greek (morphological mood) + Hebrew (modal semantics)
+### Stage 1: Research TBTA Documentation
+- [ ] Review official TBTA docs for this feature
+- [ ] Review existing feature analysis (check `../features-archive/mood/`)
+- [ ] Generate README.md with feature definition + stage checklist
 
----
+### Stage 2: Language Study
+- [ ] Identify which language families need this feature
+- [ ] Determine where feature is grammatically obligatory vs optional
+- [ ] Update README.md with language analysis + target scenarios
 
-## Quick Reference
+### Stage 3: Scholarly and Internet Research
+- [ ] Find scholarly articles on this subject
+- [ ] Research general web information
+- [ ] Update README.md with latest findings
 
-- **Complete documentation**: See `DETAILED-RULES.md` for comprehensive interpretation rules
-- **Validation**: See `VALIDATION.md` for language family mapping and testing priorities
-- **Experiments**: See `experiments/` for iteration history
+### Stage 4: Generate Test Set with Translation Data
+- [ ] Philosophy: Discover answers from what real translators did
+- [ ] Sample size: 100+ verses per value minimum
+- [ ] Create translation database (5-10 representative translations)
+- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
+- [ ] Split: train (40%), test (30%), validate (30%)
 
-**See mood-README.md** (original full documentation) for decision trees, gateway features, and worked examples.
+### Stage 5: Analyze Translations & Develop Algorithm
+- [ ] Translation discovery analysis (primary source)
+- [ ] Create ANALYSIS.md (up to 12 approaches)
+- [ ] Develop PROMPT1.md with locked predictions
+- [ ] Systematic error analysis (6-step process)
+- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
 
----
+### Stage 6: Test Against Validate Set & Peer Review
+- [ ] Blind subagent validation
+- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
+- [ ] Translation practitioner testing with 2-3 languages
+- [ ] Production readiness verification
 
-**Document Version**: 2.0
-**Last Updated**: 2025-11-07
-**Test Data**: Matthew 24 (316 verbs, 51 verses)
-**Methodology**: Morphology + Semantics + Discourse Context
+## Resources
+
+- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
+- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
+- **Previous Work**: [features-archive/mood/](../features-archive/mood/)

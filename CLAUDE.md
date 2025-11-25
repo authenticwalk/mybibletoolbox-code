@@ -1,12 +1,48 @@
 # CLAUDE.md
 
-@CLAUDE-FLOW.md
-
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
 
 This is the myBibleToolbox project - an initiative to create the largest AI-readable commentary on the entire Bible. The goal is to provide extensive context data for AI systems to ground their responses in truth when working with Biblical texts, especially for Bible translators, pastors, and students.
+
+### Theological Foundation: Conservative Protestant Christian
+
+**CRITICAL**: This is a CHRISTIAN project, grounded in conservative Protestant orthodoxy. All theological content follows this framework:
+
+**1. Primary Perspective: Historic Christian Orthodoxy**
+- Conservative Protestant Christian is the PRIMARY theological perspective
+- Grounded in Scripture as God's inerrant Word
+- Affirms historic Christian creeds (Nicene, Apostles', Athanasian)
+- Core doctrines: Trinity, deity of Christ, salvation by grace through faith, biblical authority
+
+**2. Christian Denominational Variations**
+- Show views of ALL Christian traditions for consideration:
+  - Protestant (various denominations)
+  - Catholic (Roman Catholic)
+  - Orthodox (Eastern Orthodox, Oriental Orthodox)
+  - Coptic
+  - Other historic Christian traditions
+- Present these as VALID CHRISTIAN perspectives worth considering
+- Note where they differ on non-essential matters while affirming shared orthodoxy
+
+**3. Non-Orthodox Views (Cults and Other Religions)**
+- May note alternate views from:
+  - Cults claiming to be Christian (Jehovah's Witnesses, Mormons, etc.)
+  - Non-Christian religions (Judaism, Islam, etc.)
+- MUST explain WHY these are rejected by Christian orthodoxy
+- Label clearly as "not recognized by Christian orthodoxy"
+- Purpose: Help translators avoid theological errors, understand why certain interpretations are problematic
+
+**Language to Use**:
+- ✅ "Christian orthodox position"
+- ✅ "Denominational considerations within Christianity"
+- ✅ "Rejected by Christian orthodoxy because..."
+- ✅ "Non-orthodox view from [group]"
+- ❌ "All interpretations equally valid"
+- ❌ Treating cults/other religions as valid Christian alternatives
+
+**Scope**: Applies to all theological content - TBTA features, commentary, translation guidance
 
 ## AGENT behaviour
  - NEVER write notes or summaries to the home directory, instead create a plan in ./plans/{your-plan}/README.md then update it with results.  Keep the home directory clean.
@@ -64,7 +100,7 @@ The following are key files you can load.  Don't load them automatically as it w
 All generated commentary data follows this strict directory structure: (See STANDARIZATION.md for examples, edge cases if unsure)
 
 ```
-$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml
+$DATA_DIR/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-{tool}.yaml
 $DATA_DIR/strongs/(H|G){strongs-number:04d}/(H|G){strongs-number:04d}-{tool}.strongs.yaml
 $DATA_DIR/topics/{lcc-code}/{slug}/{slug}[-{subsection}]-{tool}.yaml
 $DATA_DIR/languages/{ISO-639-3}/{ISO-639-3}-{tool}.yaml
@@ -75,16 +111,7 @@ $DATA_DIR/languages/{ISO-639-3}/words/{word}/{ISO-639-3}-{word}-{tool}.yaml
 Default $DATA_DIR should be .data
 If unset/not exists run `setup-minimal-data.sh`
 
-### Working with Sparse Checkout
 
-The data directory uses Git sparse-checkout to limit which files are downloaded. This is important to know:
-
-- **Adding files**: If you try to create/add files in directories not in the sparse-checkout scope, Git will filter them out on commit
-- **Solutions**:
-  - Add the directory to sparse-checkout: `cd $DATA_DIR && git sparse-checkout add commentary/ROM`
-  - Or disable sparse-checkout temporarily: `cd $DATA_DIR && git sparse-checkout disable`
-- **Check current scope**: `cd $DATA_DIR && git sparse-checkout list`
-- **Re-enable**: `cd $DATA_DIR && git sparse-checkout init --cone` then set patterns again
 
 ## Development Notes
 
@@ -100,6 +127,9 @@ The data directory uses Git sparse-checkout to limit which files are downloaded.
 - **NO summary files in root directory** - Do not create CHANGES-SUMMARY.md, COMPLETION-SUMMARY.md, PR-DESCRIPTION.md, or similar files in the project root
 - **Use `/plan` directory** - For planning and tracking work, create files in `/plan/{task-name}.md` and update them as you learn and progress
 - **Keep root clean** - Root should only contain permanent project documentation
+- **Organize your task directory** 
+  - When there will be more than one file or version put in subdirectories (ex. ./experiments/v1; ./data; ./research)
+  - Clean up all your thinking, analysis, temporary and other files.  Be concise, I brag about how few lines something took not how massive a project grew.
 
 ### Documentation Philosophy
 - **Prefer concise over comprehensive** - Simple instructions let AI figure things out; verbose explanations create confusion
@@ -108,11 +138,24 @@ The data directory uses Git sparse-checkout to limit which files are downloaded.
 - **Avoid redundancy** - Don't create "-quick" versions of docs; extract relevant parts directly into tool READMEs
 - **Use progressive disclosure for ALL .md files** - When creating/editing ANY markdown file, use `/progressive-disclosure` skill: README ≤200 lines (self-contained overview), topic files ≤400 lines, plan ahead to create directories if content will exceed limits, append to existing files before creating new ones
 
+### Fixing Bugs and Problems
+
+ - When something does not work (ex. can't import a file or call Quote Verse), fix it.  Never just add a placeholder and pretend your results worked.
+ - Debug what went wrong in your instructions; update that in a generic and very concise way so other sessions will not have the same problem.  Commit that change independently with git flow of "FIX: AI SYSTEM: {short summary}\n{diagnosis and solution}
+
 ### Tool Development Process
 - **Experiments optimize, researchers execute** - Tool experimentation phase should test sources and optimize lookups; researchers should use the optimized approach directly
 - **Document sources, not tools** - In tool READMEs, list helpful webpages, not the obvious fact that WebSearch/WebFetch exist
 - **Tailored standards** - Tools dealing with words need word standards; tools without words don't need them. Include only relevant standards.
 
-## Git Commit Guidelines
 
-When committing changes to this repository, follow these guidelines:
+### Working with Sparse Checkout
+
+The data directory uses Git sparse-checkout to limit which files are downloaded. This is important to know:
+
+- **Adding files**: If you try to create/add files in directories not in the sparse-checkout scope, Git will filter them out on commit
+- **Solutions**:
+  - Add the directory to sparse-checkout: `cd $DATA_DIR && git sparse-checkout add commentary/ROM`
+  - Or disable sparse-checkout temporarily: `cd $DATA_DIR && git sparse-checkout disable`
+- **Check current scope**: `cd $DATA_DIR && git sparse-checkout list`
+- **Re-enable**: `cd $DATA_DIR && git sparse-checkout init --cone` then set patterns again
