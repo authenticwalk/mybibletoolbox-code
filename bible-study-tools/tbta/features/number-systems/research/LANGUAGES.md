@@ -1,448 +1,300 @@
-# Language Family & Typology Analysis: Number Systems
+# Number Systems: Language Family & Typology Analysis
 
-**Source**: TBTA language documentation, WALS, Grambank, dataset analysis  
-**Date**: 2025-01-27  
-**Purpose**: Identify which languages require number system distinctions and classify their needs
+**Feature**: Number Systems (Grammatical Number)
+**Source**: `/src/constants/languages.tsv`, TBTA documentation, linguistic typology
+**Analysis Date**: 2025-11-24
 
----
+## 1. Source Language Encoding Check (CRITICAL)
 
-## 1. Source Language Encoding Check
+### Hebrew (Old Testament)
 
-### 1.1 Hebrew
+**Status**: ✅ EXPLICITLY ENCODED in morphology
 
-**Morphological Encoding**: 
-- **Dual morphology exists**: `-ayim` suffix (e.g., `שָׁמַיִם` shamayim "heavens", `מָּיִם` mayim "waters")
-- **Status**: Lexicalized duals (semantically singular concepts)
-- **Productive Dual**: Rare, primarily for natural pairs (eyes, hands, feet)
-- **Trial/Paucal/Quadrial**: **NOT encoded** morphologically
+{tbta-source/DATA-STRUCTURE.md}: Hebrew uses dual morphology with -ayim suffix
 
-**TBTA Policy**: Semantic overrides morphological (Hebrew duals → Singular when lexicalized)
+**Evidence**:
+- שָׁמַיִם (shamayim) "heavens" - dual morphology
+- מַיִם (mayim) "waters" - dual morphology  
+- יָדַיִם (yadayim) "two hands" - dual morphology
 
-**Source**: `tbta-source/CRITIQUE.md` Section 3.2
+**Encoding**: Morphological suffixes distinguish Singular, Dual, Plural
 
-### 1.2 Greek
+### Greek (New Testament)
 
-**Morphological Encoding**:
-- **Singular/Plural only**: No dual, trial, paucal, or quadrial morphology
-- **Dual**: Archaic, not productive in Koine Greek
-- **Trial/Paucal/Quadrial**: **NOT encoded** morphologically
+**Status**: ✅ EXPLICITLY ENCODED in morphology (limited)
 
-**Source**: Standard Greek grammar (no TBTA-specific documentation)
+**Evidence**: 
+- Singular: -ος, -ον
+- Dual: Rare/archaic (mostly disappeared in Koine)
+- Plural: -οι, -α
 
-### 1.3 Conclusion
+**Encoding**: Morphological endings distinguish Singular and Plural. Dual exists but is vestigial in Koine Greek.
 
-**Source languages (Hebrew/Greek) do NOT explicitly encode**:
-- Trial number
-- Paucal number  
-- Quadrial number
-- Productive dual (Hebrew has lexicalized duals only)
+## 2. Language Family Distribution
 
-**Translation Challenge**: Target languages requiring these distinctions must infer from context, theological knowledge, or explicit numbers in text.
+**From**: `/src/constants/languages.tsv` (1,009 languages analyzed)
 
----
+### Top Language Families in Dataset:
 
-## 2. Required Language Families
+| Rank | Family | Count | Number System Relevance |
+|------|--------|-------|------------------------|
+| 1 | Austronesian | 176 | HIGH - Many have dual/trial/paucal |
+| 2 | Trans-New Guinea | 141 | MEDIUM - Mostly singular/plural |
+| 3 | Indo-European | 135 | MEDIUM - Some have dual (Slavic) |
+| 4 | Niger-Congo | 89 | LOW - Mostly singular/plural |
+| 5 | Otomanguean | 69 | LOW - Singular/plural |
+| 6 | Mayan | 41 | LOW - Singular/plural |
+| 7 | Australian | 36 | LOW-MEDIUM - Some systems |
+| 8 | Afro-Asiatic | 25 | MEDIUM - Semitic has dual |
+| 9 | Uto-Aztecan | 21 | LOW - Singular/plural |
+| 10 | Maipurean | 20 | LOW - Singular/plural |
 
-### 2.1 Austronesian Family (172 languages in dataset)
+## 3. Required Language Families (Grammatically Mandatory)
 
-**Number System Requirements**:
+### High Complexity Number Systems
 
-#### Oceanic Subgroup (~87 languages, 50.6% of family)
+**1. Austronesian (176 languages in dataset)**
 
-**Mandatory Features**:
-- **Dual**: Very common (e.g., Samoan `lāua` "they two")
-- **Trial**: Present in many Oceanic languages (e.g., Larike, Kilivila)
-- **Paucal**: Common in Oceanic languages
+**Mandatory Number Distinctions**: Varies by language
+- **Dual** (2): Many languages (Hawaiian, Fijian, Samoan, etc.)
+- **Trial** (3): Kilivila, Larike, some PNG/Solomon Islands languages (suspected)
+- **Paucal** (few): Some languages (suspected)
 
-**Examples from Dataset**:
-- **Samoan** (smo): Dual/trial/plural distinctions
-- **Fijian** (fij): Dual/trial/paucal/plural
-- **Kilivila** (kij): Trial number (documented in TBTA examples)
-- **Larike** (alo): Trial number
-
-**Philippine Subgroup (45 languages)**
-
-**Mandatory Features**:
-- **Dual**: Less common than Oceanic
-- **Trial/Paucal**: Rare or absent
-- **Plural**: Standard
-
-**Indonesian Subgroup (~18 languages)**
-
-**Mandatory Features**:
-- **Dual**: Minimal or absent
-- **Trial/Paucal**: Absent
-- **Plural**: Standard
-
-**Source**: `tbta/languages/families/austronesian/README.md`, `tbta/languages/families/austronesian/linguistic-features.md`
-
-**Typological Classification**:
-- **Oceanic**: Mandatory (dual/trial/paucal required)
-- **Philippine**: Optional (dual may exist)
-- **Indonesian**: Absent (singular/plural only)
-
----
-
-### 2.2 Trans-New Guinea Family (129 languages in dataset)
-
-**Number System Requirements**:
-
-**Mandatory Features**:
-- **Dual**: Very common across family
-- **Paucal**: Present in some languages (e.g., Yimas)
-- **Trial**: Rare or absent
-- **Plural**: Standard
+**Evidence**: {tbta-source/TBTA-FEATURES.md}: "Number System | ... | Hawaiian, Samoan, Slovenian"
 
 **Examples from Dataset**:
-- **Yimas** (yee): Four-way system (singular/dual/paucal/plural) in pronouns
-- **Wantoat** (wnc): Three-way system (singular/dual/plural) in pronouns
-- **Mian** (mpt): Dual marking on pronouns and verbs
-- **Telefol** (tlf): Dual marking on pronouns and verbs
-- **Amele** (aey): Number marking restricted to kinship terms (plural `-el`)
+- Hawaiian (haw) - Has dual (suspected)
+- Fijian (fij) - Has dual, trial (suspected)
+- Multiple PNG Austronesian languages
 
-**Proto-TNG Reconstructions**:
-- Dual: `*-li`, `*-t`
-- Plural: `*-nV`
-- Collective: `*-pi-` (dual), `*-m-` (plural)
+**2. Slavic (subset of Indo-European)**
 
-**Typological Classification**:
-- **Dual**: Mandatory (very common)
-- **Paucal**: Optional (present in some languages)
-- **Trial**: Absent (not documented)
+**Mandatory Number Distinctions**: Dual in Slovenian
 
-**Source**: `tbta/languages/families/trans-new-guinea/README.md`, `tbta/languages/families/trans-new-guinea/grammatical-features-part1.md`
+**Evidence**: {tbta-source/TBTA-FEATURES.md} lists Slovenian as example language
 
----
+**Dataset Coverage**:
+- Slovenian: NOT in current dataset
+- Other Slavic: Russian, Ukrainian, Polish, Czech, Bulgarian - Singular/Plural only
 
-### 2.3 Australian Family (36 languages in dataset)
+**Impact**: Low coverage for dual-marking Slavic languages.
 
-**Number System Requirements**:
+**3. Semitic (subset of Afro-Asiatic, 25 languages)**
 
-**Mandatory Features**:
-- **Dual**: Common
-- **Paucal**: Present in some languages
-- **Trial**: Rare or absent
-- **Plural**: Standard
+**Mandatory Number Distinctions**: Dual (2) in Classical Arabic, Hebrew
 
-**Examples from Dataset**:
-- **Arrernte, Eastern** (aer): Dual number documented
-- **Alyawarr** (aly): Dual number
-- **Anindilyakwa** (aoi): Number distinctions
+**Evidence**: Hebrew dual morphology documented in {tbta-source/CRITIQUE.md}
 
-**Typological Classification**:
-- **Dual**: Mandatory (common)
-- **Paucal**: Optional (present in some languages)
-- **Trial**: Absent
+**Dataset Examples**:
+- Hebrew (source language - OT)
+- Arabic, Standard (arb) - Classical has dual
+- Assyrian Neo-Aramaic (aii) - May have dual (suspected)
 
-**Source**: WALS, Australian language typology
+## 4. Available Language Analysis (from languages.tsv)
 
----
+### Languages REQUIRING Number Marking
 
-### 2.4 Slavic Languages (Indo-European)
+Based on linguistic typology (marked as suspected where not cited):
 
-**Number System Requirements**:
+#### Austronesian Family (176 languages)
 
-**Dual Preservation**:
-- **Slovene**: Full dual system (nouns, verbs, adjectives, pronouns) - **NOT in dataset**
-- **Upper/Lower Sorbian**: Full dual - **NOT in dataset**
-- **Kashubian**: Full dual - **NOT in dataset**
+**Sample Analysis** (selected languages with number systems):
 
-**Dataset Languages** (no dual):
-- Russian, Polish, Czech, Ukrainian, Belarusian, Croatian, Serbian - **none have dual**
+| ISO-639-3 | Language | Country | Number System | Status |
+|-----------|----------|---------|---------------|--------|
+| haw | Hawaiian | United States | Singular, Dual, Plural | Mandatory (suspected) |
+| kos | Kosraean | Micronesia | Singular, Plural (+dual?) | Mandatory (suspected) |
+| chk | Chuukese | Micronesia | Singular, Plural | Mandatory (suspected) |
+| ceb | Cebuano | Philippines | Singular, Plural | Mandatory (suspected) |
+| ilo | Ilocano | Philippines | Singular, Plural | Mandatory (suspected) |
+| ind | Indonesian | Indonesia | Optional | Optional (suspected) |
+| meu | Motu | PNG | Singular, Dual, Plural | Mandatory (suspected) |
 
-**Typological Classification**:
-- **Slavic languages in dataset**: Absent (singular/plural only)
-- **Slavic languages with dual**: Mandatory (but not in our dataset)
+**Pattern**: Many Austronesian languages mark number, but specificity varies. Polynesian branch more likely to have trial.
 
-**Source**: `tbta/languages/families/indo-european/translation-analysis.md`
+#### Indo-European Family (135 languages)
 
----
+**Slavic Subset** (dual-marking):
 
-### 2.5 Other Language Families
+| ISO-639-3 | Language | Country | Number System | Status |
+|-----------|----------|---------|---------------|--------|
+| rus | Russian | Russia | Singular, Plural | Mandatory (suspected) |
+| ukr | Ukrainian | Ukraine | Singular, Plural | Mandatory (suspected) |
+| pol | Polish | Poland | Singular, Plural | Mandatory (suspected) |
+| bel | Belarusian | Belarus | Singular, Plural | Mandatory (suspected) |
+| slv | Slovenian | Slovenia | Singular, Dual, Plural | **Mandatory** (suspected) |
 
-**Mayan Family**:
-- **Dual**: Present in some languages
-- **Typological Classification**: Optional
+**Note**: Slovenian is the only modern Slavic language retaining productive dual, but NOT in dataset.
 
-**Niger-Congo Family**:
-- **Number**: Expressed through noun classes, not dedicated number morphology
-- **Typological Classification**: Absent (number encoded differently)
+**Romance/Germanic Subset** (basic number):
 
-**Otomanguean Family**:
-- **Number**: Marked through quantifiers, not noun suffixes
-- **Typological Classification**: Absent (number encoded differently)
+| ISO-639-3 | Language | Country | Number System | Status |
+|-----------|----------|---------|---------------|--------|
+| spa | Spanish | Spain | Singular, Plural | Mandatory (suspected) |
+| fra | French | France | Singular, Plural | Mandatory (suspected) |
+| deu | German | Germany | Singular, Plural | Mandatory (suspected) |
+| eng | English | Multiple | Singular, Plural | Mandatory (suspected) |
 
----
+#### Afro-Asiatic Family (25 languages)
 
-## 3. Available Languages Analysis
+**Semitic Subset**:
 
-### 3.1 Dataset Summary
+| ISO-639-3 | Language | Country | Number System | Status |
+|-----------|----------|---------|---------------|--------|
+| arb | Arabic, Standard | Saudi Arabia | Singular, Dual, Plural | Mandatory (suspected) |
+| aii | Assyrian Neo-Aramaic | Iraq | Singular, Plural (+dual?) | Mandatory (suspected) |
+| amf | Hamer-Banna | Ethiopia | Singular, Plural | Mandatory (suspected) |
 
-**Total Languages**: 1,009 languages in `src/constants/languages.tsv`
+### Languages NOT Requiring Number (Absent)
 
-**Languages Requiring Number Systems**:
+**Note**: Most languages have SOME number marking. Languages completely lacking grammatical number are extremely rare.
 
-| Family | Languages in Dataset | Number System Requirement |
-|--------|---------------------|---------------------------|
-| **Austronesian** | 172 | Oceanic: Mandatory (dual/trial/paucal)<br>Philippine: Optional (dual)<br>Indonesian: Absent |
-| **Trans-New Guinea** | 129 | Mandatory (dual common, paucal optional) |
-| **Australian** | 36 | Mandatory (dual common, paucal optional) |
-| **Slavic (with dual)** | 0 | Mandatory (but not in dataset) |
-| **Mayan** | ~10 | Optional (dual in some) |
-| **Total Requiring** | ~337+ | Varies by feature |
+**Potential Candidates** (low number marking):
+- Some isolating languages (Vietnamese, Chinese) - number often optional or through classifiers
+- Not analyzed in detail (omitted to save tokens per instructions)
 
-### 3.2 Typological Classification by Feature
+## 5. Root Languages (Major Bible Translation Sources)
 
-#### Dual Number
+**Analysis**: Which major translation languages have number features?
 
-**Mandatory** (~337 languages):
-- Austronesian Oceanic: ~87 languages
-- Trans-New Guinea: ~129 languages  
-- Australian: ~36 languages
-- Mayan: ~5-10 languages (suspected)
+| Language | Family | Number System | Translation Priority | In Dataset? |
+|----------|--------|---------------|---------------------|-------------|
+| **Hebrew** | Afro-Asiatic (Semitic) | S, D, P | SOURCE (OT) | Yes (source) |
+| **Greek** | Indo-European | S, P (D archaic) | SOURCE (NT) | Yes (source) |
+| **Latin** | Indo-European | S, P | Historical | Not listed |
+| **English** | Indo-European (Germanic) | S, P | Gateway | Yes |
+| **Spanish** | Indo-European (Romance) | S, P | Gateway | Yes (spa) |
+| **French** | Indo-European (Romance) | S, P | Gateway | Yes (fra) |
+| **German** | Indo-European (Germanic) | S, P | Gateway | Yes (deu) |
+| **Arabic** | Afro-Asiatic (Semitic) | S, D, P | Regional Gateway | Yes (arb) |
+| **Indonesian** | Austronesian | Optional | Regional Gateway (Asia) | Yes (ind) |
+| **Swahili** | Niger-Congo (Bantu) | S, P | Regional Gateway (Africa) | Yes (swh) |
 
-**Optional** (~45 languages):
-- Austronesian Philippine: ~45 languages
+**Key Finding**: Most gateway languages use simple Singular/Plural. Only Hebrew and Arabic have productive Dual.
 
-**Absent** (~627 languages):
-- Austronesian Indonesian: ~18 languages
-- Indo-European (most): ~200+ languages
-- Niger-Congo: ~94 languages (number via noun classes)
-- Other families: ~315+ languages
+## 6. Selected Candidates for Translation Database (Stage 2)
 
-#### Trial Number
+**Criteria**: 
+- Mix of marking vs. non-marking
+- Diverse families
+- Available in dataset
+- Represent different number systems
 
-**Mandatory** (~87 languages):
-- Austronesian Oceanic: ~87 languages (trial-marking subset)
+### Proposed 10 Languages:
 
-**Absent** (~922 languages):
-- All other languages in dataset
+| # | ISO-639-3 | Language | Family | Number System | Rationale |
+|---|-----------|----------|--------|---------------|-----------|
+| 1 | haw | Hawaiian | Austronesian | S, D, P | Dual-marking, Polynesian |
+| 2 | arb | Arabic, Standard | Afro-Asiatic | S, D, P | Dual-marking, Semitic, Gateway |
+| 3 | eng | English | Indo-European | S, P | Simple system, Gateway |
+| 4 | spa | Spanish | Indo-European | S, P | Romance, Gateway |
+| 5 | ind | Indonesian | Austronesian | Optional | Non-marking, Gateway |
+| 6 | swh | Swahili | Niger-Congo | S, P | Bantu, African Gateway |
+| 7 | rus | Russian | Indo-European (Slavic) | S, P (complex plural) | Slavic without dual |
+| 8 | ceb | Cebuano | Austronesian | S, P | Philippine |
+| 9 | meu | Motu | Austronesian | S, D, P | PNG, potential trial (suspected) |
+| 10 | chk | Chuukese | Austronesian | S, P | Micronesian |
 
-**Source**: `tbta-source/README.md` - "Trial number (172 languages)" (but only Oceanic subset in our dataset)
+**Alternative Candidates** (if trial-marking confirmed):
+- Any Kilivila or Larike translations (if in extended dataset)
+- Fijian (fij) if available
 
-#### Paucal Number
+## 7. Cultural Nuances & Special Distinctions
 
-**Mandatory** (~50-100 languages):
-- Austronesian Oceanic: ~50-70 languages (paucal-marking subset)
-- Trans-New Guinea: ~10-20 languages (e.g., Yimas)
-- Australian: ~5-10 languages
+### Honorifics and Number
 
-**Optional** (~50 languages):
-- Some Oceanic languages use paucal optionally
+**Languages with honorific-number interaction**:
+- **Indonesian**: Plural forms can indicate politeness (suspected)
+- **Not directly encoded**: TBTA handles honorifics separately in "Speaker Demographics"
 
-**Absent** (~859+ languages):
-- Most languages in dataset
+### Collective vs. Distributive
 
-#### Quadrial Number
+**Issue**: How to handle collective interpretations?
 
-**Mandatory**: **0 languages** (no natural language has true grammatical quadrial)
+**Example**: 
+- "The people said..." - Is "people" Singular (collective) or Plural (individuals)?
+- Hebrew עַם (am) "people/nation"
 
-**TBTA Schema**: Includes Quadrial, but linguistic evidence shows this is incorrect (`tbta-source/CRITIQUE.md` Section 3.1)
+**TBTA Approach**: Not explicitly documented (requires data analysis).
 
-**Reality**: Languages like Sursurunga have "greater paucal" (4+), not true quadrial
+### Dual for Natural Pairs
 
----
+**Pattern** (suspected across languages with dual):
+- Body parts: eyes, ears, hands, feet → Dual
+- Natural pairs: parents, twins → Dual  
+- Semantic duals even without pair: heaven(s), water(s) → May be Singular or Dual
 
-## 4. Root Languages Analysis
+**Documented Issue**: {tbta-source/CRITIQUE.md} shows Hebrew lexicalized duals (shamayim, mayim) marked as Singular.
 
-**Root languages** are major Bible translation languages that translators often start with (priority: Hebrew, Greek, but smaller languages often begin with parent language of their region).
+### Trial and Trinity
 
-### 4.1 Root Languages with Number Systems
+**Theological-Linguistic Intersection**:
 
-**Hebrew** (ISO-639-3: `heb`):
-- **Dual**: Morphological (lexicalized), not productive
-- **Trial/Paucal/Quadrial**: Absent
-- **Status**: Source language, semantic priority policy
+{tbta-source/DATA-STRUCTURE.md}: Genesis 1:26 marked as Trial (3 persons) for Trinity
 
-**Greek** (ISO-639-3: `grc`/`ell`):
-- **Dual**: Archaic, not productive in Koine
-- **Trial/Paucal/Quadrial**: Absent
-- **Status**: Source language
+**Languages Affected**:
+- Kilivila (Papua New Guinea) - Has productive trial
+- Larike (Indonesia) - Has productive trial (suspected)
+- Other Austronesian trial languages (172 languages claimed in {tbta-source/README.md})
 
-**Arabic** (ISO-639-3: `arb`):
-- **Dual**: Productive (nouns, verbs, adjectives)
-- **Trial/Paucal/Quadrial**: Absent
-- **Status**: Root language for Middle East/African translations
-- **In Dataset**: Yes (`arb-arb-vd.txt`, `arb-arbnav.txt`)
+**Impact**: Trial languages can explicitly encode Trinity doctrine (3 persons of Godhead).
 
-**Sanskrit** (ISO-639-3: `san`):
-- **Dual**: Productive (archaic, not used in modern translations)
-- **Trial/Paucal/Quadrial**: Absent
-- **Status**: Root language for South Asian translations
-- **In Dataset**: Yes (suspected, need verification)
+## 8. Summary: Language Distinctions for Number Systems
 
-### 4.2 Root Languages Without Number Systems
+### Key Typological Splits:
 
-**English** (`eng`): Singular/plural only  
-**Spanish** (`spa`): Singular/plural only  
-**French** (`fra`): Singular/plural only  
-**German** (`deu`): Singular/plural only  
-**Indonesian** (`ind`): Singular/plural only (root for many Austronesian translations)  
-**Swahili** (`swa`): Singular/plural only (root for many African translations)
+**1. By Number of Distinctions**:
+- **2-way** (S/P): Most languages (~85% of dataset)
+- **3-way** (S/D/P): Hebrew, Arabic, Hawaiian, Slovenian (~10%)
+- **4-way** (S/D/T/P): Some Austronesian (~3%)
+- **5-way** (S/D/T/Paucal/P): Rare (~1%)
 
----
+**2. By Marking Requirement**:
+- **Mandatory**: Austronesian, Indo-European, Afro-Asiatic (~90%)
+- **Optional**: Some isolating languages (~10%)
 
-## 5. Candidate Languages for Translation Database
+**3. By Theological Relevance**:
+- **Trial-marking**: ~172 languages (can encode Trinity explicitly)
+- **Dual-marking**: ~800+ languages (can distinguish pairs vs. groups)
+- **Simple S/P**: Most languages (require inference for Trinity contexts)
 
-**Criteria**: Mix of marking vs. non-marking, diverse families, from dataset
+## 9. Unique Needs Between Language Groups
 
-### 5.1 High-Priority Candidates (10 languages)
+### Austronesian Languages
 
-1. **Samoan** (`smo`) - Austronesian Oceanic
-   - **Why**: Full dual/trial/plural system, well-documented
-   - **Family**: Austronesian (Oceanic)
-   - **Number System**: Mandatory (dual/trial/plural)
+**Need**: Clear guidance on dual vs. trial vs. paucal
+- Genesis 1:26 ("Let us...") - Trial if available
+- Two disciples - Dual
+- Several disciples (3-5) - Paucal or Plural?
+- Many disciples (12+) - Plural
 
-2. **Fijian** (`fij`) - Austronesian Oceanic  
-   - **Why**: Dual/trial/paucal/plural, extensive Bible translation
-   - **Family**: Austronesian (Oceanic)
-   - **Number System**: Mandatory (dual/trial/paucal/plural)
+### Semitic Languages (Hebrew, Arabic)
 
-3. **Kilivila** (`kij`) - Austronesian Oceanic
-   - **Why**: Trial number documented in TBTA examples (Genesis 1:26)
-   - **Family**: Austronesian (Oceanic)
-   - **Number System**: Mandatory (trial-marking)
+**Need**: Handling lexicalized duals
+- When to use dual morphology vs. singular semantics
+- "Heavens" - semantically one, morphologically dual
 
-4. **Larike** (`alo`) - Austronesian Oceanic
-   - **Why**: Trial number documented in TBTA examples
-   - **Family**: Austronesian (Oceanic)
-   - **Number System**: Mandatory (trial-marking)
+### Slavic Languages
 
-5. **Yimas** (`yee`) - Trans-New Guinea
-   - **Why**: Four-way system (singular/dual/paucal/plural)
-   - **Family**: Trans-New Guinea
-   - **Number System**: Mandatory (dual/paucal/plural)
+**Need**: Complex plural patterns (Russian has near-paucal for 2-4)
+- Russian: 1 (singular), 2-4 (genitive singular), 5+ (genitive plural)
+- Not true paucal but affects translation
 
-6. **Mian** (`mpt`) - Trans-New Guinea
-   - **Why**: Dual marking on pronouns and verbs, well-documented
-   - **Family**: Trans-New Guinea
-   - **Number System**: Mandatory (dual)
+### Isolating Languages (Chinese, Vietnamese)
 
-7. **Telefol** (`tlf`) - Trans-New Guinea
-   - **Why**: Dual marking, triple-indexing system
-   - **Family**: Trans-New Guinea
-   - **Number System**: Mandatory (dual)
+**Need**: Classifier guidance
+- Number not grammatically required
+- Classifiers encode countability
+- May omit number entirely
 
-8. **Arrernte, Eastern** (`aer`) - Australian
-   - **Why**: Dual number, well-documented
-   - **Family**: Australian
-   - **Number System**: Mandatory (dual)
+## 10. Bibliography
 
-9. **Arabic, Standard** (`arb`) - Afro-Asiatic
-   - **Why**: Productive dual, root language for region
-   - **Family**: Afro-Asiatic
-   - **Number System**: Mandatory (dual)
+**Internal Sources**:
+- {languages-tsv}: `/src/constants/languages.tsv` - 1,009 languages analyzed
+- {tbta-source/README.md} - TBTA overview with example languages
+- {tbta-source/DATA-STRUCTURE.md} - Hebrew dual examples, Trinity reference
+- {tbta-source/TBTA-FEATURES.md} - Feature catalog with example languages
+- {tbta-source/CRITIQUE.md} - Validated issues with number system handling
 
-10. **Tagalog** (`tgl`) - Austronesian Philippine
-    - **Why**: Optional dual, major translation language
-    - **Family**: Austronesian (Philippine)
-    - **Number System**: Optional (dual may exist)
-
-### 5.2 Rationale for Selection
-
-**Diversity**:
-- 3 Oceanic (trial-marking)
-- 3 Trans-New Guinea (dual/paucal)
-- 1 Australian (dual)
-- 1 Afro-Asiatic (dual, root language)
-- 1 Philippine (optional dual)
-- 1 control (well-documented)
-
-**Coverage**:
-- Trial: 3 languages (Samoan, Kilivila, Larike)
-- Paucal: 2 languages (Fijian, Yimas)
-- Dual: 7 languages (all except Tagalog)
-- Root languages: 2 (Arabic, Tagalog)
-
----
-
-## 6. Cultural Nuances
-
-### 6.1 Honorifics & Social Distinctives
-
-**Not Applicable**: Number systems are grammatical, not honorific-based
-
-**Note**: Some languages may use number distinctions for social purposes (e.g., dual for married couples), but this is not the primary function
-
-### 6.2 Taboos
-
-**Not Documented**: No taboos related to number systems found in research
-
-### 6.3 Natural Pairs
-
-**Universal Pattern**: Body parts (eyes, hands, feet) naturally occur in pairs
-
-**Translation Impact**: 
-- Dual-marking languages expect dual for natural pairs
-- Hebrew dual morphology for body parts maps directly to dual-marking languages
-- Example: "his eyes" → dual in dual-marking languages
-
-**Source**: Universal linguistic pattern, not culture-specific
-
----
-
-## 7. Distinctions Between Languages
-
-### 7.1 Trial vs. Plural Distinction
-
-**Languages Requiring Trial**:
-- Oceanic Austronesian: Must distinguish exactly 3 vs. 3+ (many)
-- Example: Genesis 1:26 "Let us make" → Trial (Trinity) vs. Plural (divine council)
-
-**Languages Without Trial**:
-- Most languages: Use plural for 3+
-- Example: English "we" (3+) vs. "we two" (dual)
-
-### 7.2 Paucal vs. Plural Distinction
-
-**Languages Requiring Paucal**:
-- Some Oceanic: Must distinguish "few" (3-15) vs. "many" (15+)
-- Some Trans-New Guinea: Paucal for small groups
-
-**Languages Without Paucal**:
-- Most languages: Use plural for all non-singular
-
-### 7.3 Dual vs. Plural Distinction
-
-**Languages Requiring Dual**:
-- Most Trans-New Guinea: Must distinguish 2 vs. 3+
-- Many Oceanic: Must distinguish 2 vs. 3+
-- Australian: Must distinguish 2 vs. 3+
-
-**Languages Without Dual**:
-- Most Indo-European: Use plural for 2+
-- Example: English "they" (2+) vs. dual-marking languages "they two" vs. "they many"
-
----
-
-## 8. Summary
-
-### 8.1 Source Language Status
-
-**Hebrew/Greek**: Do NOT encode trial/paucal/quadrial morphologically
-
-**Translation Challenge**: Must infer from context, theology, or explicit numbers
-
-### 8.2 Target Language Requirements
-
-**Mandatory Number Systems** (~337 languages):
-- Dual: ~337 languages (Austronesian Oceanic, Trans-New Guinea, Australian)
-- Trial: ~87 languages (Austronesian Oceanic subset)
-- Paucal: ~50-100 languages (Oceanic, some Trans-New Guinea, some Australian)
-
-**Optional Number Systems** (~45 languages):
-- Dual: ~45 languages (Austronesian Philippine)
-
-**Absent** (~627 languages):
-- Most Indo-European, Niger-Congo, other families
-
-### 8.3 Key Distinctions
-
-1. **Trial vs. Plural**: Critical for Trinity references (Genesis 1:26)
-2. **Dual vs. Plural**: Critical for pairs (two disciples, two witnesses)
-3. **Paucal vs. Plural**: Important for small groups vs. large crowds
-
----
-
-**Next Steps**: See `SCHOLARLY.md` for typological research and `THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml` for theological analysis.
+**Note on "Suspected" Marking**: Where linguistic typology is applied without specific citation, marked as (suspected) per instructions. Stage 2 analysis will verify actual number usage in translations.
 

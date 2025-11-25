@@ -68,7 +68,7 @@ These rules are non-negotiable. Violation invalidates the work.
 ### 7. Progressive Disclosure
 - Keep your output files (READMEs, Reports) under 500 lines.
 - Inline essential code/data. Link to `experiments/` for raw dumps.
-- Keep to the rules of .claude/skills/progressive-disclosure/SKILL.md
+- Keep to the rules of `.claude/skills/progressive-disclosure/SKILL.md`
 
 ## Why Rebuild with LLMs?
 

@@ -13,7 +13,9 @@ NOTE: the TBTA-DIR is /bible-study-tools/tbta/
 
 ## Goal
 
-Do extensive research (50 sources) into this linguistic feature. Define the feature comprehensively. You are not just copying TBTA docs; you are synthesizing linguistic typology, theological doctrine, and translation theory to guide the algorithm. You are laying the foundation for the data scientists.
+Do extensive research (10+ scholarly sources, web sources as needed) into this linguistic feature. Define the feature comprehensively. You are not just copying TBTA docs; you are synthesizing linguistic typology, theological doctrine, and translation theory to guide the algorithm. You are laying the foundation for the data scientists.
+
+**Target Audience**: AI systems (Stage 2-3), Bible translators (Stage 4), academic reviewers. Balance scholarly rigor with practical usability—use tables for quick scanning, provide prose for depth.
 
 ## Out of Scope
 
@@ -29,14 +31,12 @@ Do extensive research (50 sources) into this linguistic feature. Define the feat
 
 ## Tasks
 
-
-
 ### 1. TBTA Documentation Review (The "What")
 
 IMPORTANT: Do not guess, cite every detail you extract to it's source document. Prefer "Not listed" as an answer over hallucinations/guesses or unconfident answers
 
-**Location**: `research/TBTA.md`
-**Source**: `TBTA-DIR/tbta-source/*` (review all files), `https://github.com/AllTheWord/tbta_db_export`, 
+**Location**: `research/TBTA.md` (Target: 200-350 lines with subsections)
+**Source**: `TBTA-DIR/tbta-source/*` (review all files), `https://github.com/AllTheWord/tbta_db_export`,
 **Action**:
 
 - **Define the Concept**: What is this feature conceptually? (e.g., Number = count of entities)
@@ -62,14 +62,14 @@ IMPORTANT: Do not guess, cite every detail you extract to it's source document. 
 
 - **CRITICAL: Source Language Encoding Check**: Is this feature EXPLICITLY encoded in Hebrew/Greek morphology? (e.g., Number is marked morphologically, Clusivity is NOT)
 - **Identify Required Families**: List specific families (e.g., "Austronesian", "Bantu") that _grammatically require_ this feature.
-- **Analyze Available Languages**: Do an analysis of which languages we have translations for (check `/src/constants/languages.tsv` and classify the feature's necessity in the target languages: is it Mandatory, Optional; (for Absent ignore those languages to save output tokens)  NOTE if a language is mentioned in your/our cited research use that; otherwise user your internal knowledge and mark it as (unverified) to bypass the no hullucination rule.(omit all languages that don't have this feature).
+- **Analyze Available Languages**: Do an analysis of which languages we have translations for (check `/src/constants/languages.tsv` and classify the feature's necessity in the target languages: is it Mandatory, Optional; (for Absent ignore those languages to save output tokens) NOTE if a language is mentioned in your/our cited research use that; otherwise user your internal knowledge and mark it as (suspected) to bypass the no hullucination rule.(omit all languages that don't have this feature).
   - **Typological Classification**: For your selected control languages, classify the feature's status:
     - **Mandatory**: The language MUST mark this feature (e.g., Gender in Spanish).
     - **Optional**: The language CAN mark it but it's not required.
     - **Absent**: The language does not use this feature.
 - **Determine Distinctions Between these Languages about this Feature**: Must determine which languages use this feature, unique needs between them (use (ISO-639-3) for language codes)
-- **Identify Root Languages**: Which major Bible translation languages (Greek, Hebrew, Latin, English, Spanish, German, French, Arabic, Indonesian, Swahili) have this feature?  A root language is a language translators often start with with priority to Hebrew, Greek but often smaller languages begin with the parent langauge of their greater region.
-- **Select Candidates**: Propose 5-10 languages for the Translation Database (Stage 2) based on this analysis and why you chose them. 
+- **Identify Root Languages**: Which major Bible translation languages (Greek, Hebrew, Latin, English, Spanish, German, French, Arabic, Indonesian, Swahili) have this feature? A root language is a language translators often start with with priority to Hebrew, Greek but often smaller languages begin with the parent langauge of their greater region.
+- **Select Candidates**: Propose 5-10 languages for the Translation Database (Stage 2) based on this analysis and why you chose them.
   - _Criteria_: Mix of marking vs. non-marking, diverse families, from list
 - **Cultural Nuances**: Note any honorifics, taboos, or social distinctives.
 
@@ -131,10 +131,9 @@ IMPORTANT: Do not guess, cite every detail you extract to it's source document. 
 You need to discover if this feature is arbitrary (any value could be picked) or non-arbitrary. More specifically you need to discover the different severities of arbitrary
 
 1a. Non-Arbitrary-Theological - If you get it wrong the translation may lead to heresy, ex. Trinity
-1b. Non-Arbitrary-Contextual - If you get it wrong it will confuse the reader (Paul and Silas where speaking. They (5 people) said... (that is wrong b/c in context we know it was 2 people)). This would have readers question the accuracy of the translation
-2. Arbitrary - It doesn't matter what you pick
+1b. Non-Arbitrary-Contextual - If you get it wrong it will confuse the reader (Paul and Silas where speaking. They (5 people) said... (that is wrong b/c in context we know it was 2 people)). This would have readers question the accuracy of the translation 2. Arbitrary - It doesn't matter what you pick
 
-We want to guess all the non-arbitrary reason codes. To do that use your internal memory of Scripture and infer (the rules about non-hallucination do not apply here) which verses would have this feature and group them together into similar types so that all the non-arbitrary reasons can be grouped together to exhaustively cover all edge cases.  In order to use your internal memory you must mark it as (unverified) as it may be hallucinated.
+We want to guess all the non-arbitrary reason codes. To do that use your internal memory of Scripture and infer (the rules about non-hallucination do not apply here) which verses would have this feature and group them together into similar types so that all the non-arbitrary reasons can be grouped together to exhaustively cover all edge cases. In order to use your internal memory you must mark it as (unverified) as it may be hallucinated.
 
 **TEMPLATE for THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml**:
 
@@ -160,11 +159,13 @@ non_arbitrary_contexts:
     # What is the Orthodox view?
     christian_orthodox_position:
       preferred_value: trial
+      acceptable_alternatives: [plural] # REQUIRED: List acceptable options
+      forbidden_values: [dual] # CRITICAL: Explicitly list forbidden/heretical values
       theological_basis: 'God is One Essence, Three Persons.'
       translator_guidance: |
-        - Use TRIAL if available.
-        - NEVER use Dual (implies only 2 persons).
-        - Footnote recommended for Plural.
+        - FIRST CHOICE: Use TRIAL if available.
+        - SECOND CHOICE: Use PLURAL if no trial.
+        - FORBIDDEN: Never use Dual (implies only 2 persons).
 
     # What are the alternatives/heresies?
     non_orthodox_alternatives_awareness:
@@ -198,8 +199,7 @@ arbitrary_contexts:
 
 ## Deliverables
 
-
-Summarize all the docs in a very concise form (Progressive Disclosure: ≤200 lines see /.claude/skills/progressive-disclosure/SKILL.md) so most AI systems only need to read the README.md and only need to load the details for the fuller explanation.  Don't reproduce all the sections just aggregate into an executive summary then key bullet points.
+Summarize all the docs in a very concise form (Progressive Disclosure: ≤200 lines see /.claude/skills/progressive-disclosure/SKILL.md) so most AI systems only need to read the README.md and only need to load the details for the fuller explanation. Don't reproduce all the sections just aggregate into an executive summary then key bullet points.
 
 ### 1. `{TBTA-DIR}/features/{feature}/research/README.md`
 
@@ -214,6 +214,9 @@ Max 200 lines
 Max 75 lines
 
 - **Feature Name & Description**: One sentence summary.
+- **Quick Facts**: Table with Values, Source Languages, Critical Languages, Theological Stakes, etc.
 - **Target Audience**: List of language families and most important distinctions between them. link to language research file.
-- **Examples**: Provide 3-5 examples of why this matters using actual verses and translations as case study (link to THEOLOGICALLY-SIGNIFICANT-GROUPS.md)
+- **Examples**: Provide 2-3 examples using tables/visual format (✅ ❌ ⚠️) showing translation choices. Use **FORBIDDEN**/**HERETICAL** bold warnings for high-stakes contexts.
 - **TBTA Encoding**: Technical details and link to TBTA file
+
+**Formatting**: Use tables for comparisons, checkmarks for quick scanning, bold warnings (**FORBIDDEN**, **CRITICAL**) for high-stakes items.
