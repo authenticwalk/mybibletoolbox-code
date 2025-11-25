@@ -21,9 +21,6 @@ RUN mkdir -p /etc/apt/keyrings && \
     apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
-# Install Claude Code globally
-RUN npm install -g @anthropic-ai/claude-code
-
 # Create a non-root user
 ARG USERNAME=devuser
 ARG USER_UID=1000
@@ -34,21 +31,26 @@ RUN groupadd --gid $USER_GID $USERNAME && \
     echo "$USERNAME ALL=(ALL) NOPASSWD:ALL" > /etc/sudoers.d/$USERNAME && \
     chmod 0440 /etc/sudoers.d/$USERNAME
 
+# Switch to non-root user to install tools in user space
+USER $USERNAME
+WORKDIR /home/$USERNAME
+
+# Configure NPM to use user directory to avoid permission issues with auto-updates
+ENV NPM_CONFIG_PREFIX=/home/$USERNAME/.npm-global
+ENV PATH=$PATH:/home/$USERNAME/.npm-global/bin
+
+# Install Claude Code globally (as user)
+RUN mkdir -p ~/.npm-global && \
+    npm install -g @anthropic-ai/claude-code
+
 # Set working directory
 WORKDIR /workspace
-
-# Give user ownership of workspace
-RUN chown -R $USERNAME:$USERNAME /workspace
-
-# Switch to non-root user
-USER $USERNAME
 
 # Verify installations
 RUN python --version && \
     node --version && \
     npm --version && \
-    npx @anthropic-ai/claude-code --version
+    claude --version
 
 # Default command
 CMD ["bash"]
-
