@@ -1,0 +1,597 @@
+feature: degree
+default_classification: arbitrary # Most degree choices are stylistic
+theological_significance: EXISTS # Degree matters in Christology, God's attributes, and ethical hierarchies
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # ========== 1A: NON-ARBITRARY-THEOLOGICAL (High Doctrinal Stakes) ==========
+
+  - verse_pattern: 'Hebrews 1:4 - Christ superior to angels (κρείττων) (unverified)'
+    affected_values: [comparative, positive, superlative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (deity of Christ)
+      - Superiority of Christ over angels
+      - New Covenant superiority
+
+    non_arbitrary_rationale: |
+      Greek comparative κρείττων ("better/superior") is foundational to Hebrews'
+      argument that Christ is superior to angels, establishing His deity. The
+      comparative degree is non-negotiable - Christ is not merely "good" (positive)
+      alongside angels, but categorically superior. Downgrading to positive would
+      suggest Christ is merely another created being. Upgrading to superlative
+      ("best of angels") would imply He is still within the category of angels.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: []
+      forbidden_values: [positive, superlative_within_angel_category]
+      theological_basis: 'Hebrews 1:4-14 - Christ is superior to angels, worshiped by angels, seated at God''s right hand'
+      translator_guidance: |
+        - REQUIRED: Use COMPARATIVE degree ("better than," "superior to")
+        - FORBIDDEN: Positive ("good like angels") implies equality with created beings
+        - FORBIDDEN: Superlative within angel category ("best angel") denies deity
+        - CRITICAL: Comparative establishes Christ is in different category (Creator vs created)
+        - Context: Hebrews repeatedly uses comparative (better covenant, better promises, better sacrifice)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Christ as highest created being'
+        used_by: [Jehovah's Witnesses, Arianism]
+        christian_assessment: HERETICAL (Denies Christ's deity - John 1:1-3, Colossians 1:16 "all things created through Him")
+        degree_implication: Would wrongly accept superlative "greatest angel" instead of comparative "superior to angels"
+      - interpretation: 'Christ as merely a good teacher'
+        used_by: [Liberal theology, Unitarianism]
+        christian_assessment: HERETICAL (Denies deity and unique role)
+        degree_implication: Would wrongly use positive "good" instead of comparative "better"
+
+  - verse_pattern: 'Matthew 22:36-38, Mark 12:28-31 - Greatest commandment (μεγάλη/μείζων) (unverified)'
+    affected_values: [superlative, comparative, positive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Ethical hierarchy
+      - Priority of love for God
+      - Summary of the Law
+
+    non_arbitrary_rationale: |
+      Jesus identifies "greatest" (μεγίστη/πρώτη πάντων) commandment as love for God,
+      establishing ethical hierarchy. Superlative degree is essential - this is not
+      merely "a great" (positive) commandment among equals, nor "greater than some"
+      (comparative), but the supreme command that organizes all others. Downgrading
+      would flatten ethical priorities and undermine the Great Commandment's primacy.
+
+    christian_orthodox_position:
+      preferred_value: superlative
+      acceptable_alternatives: []
+      forbidden_values: [positive, comparative]
+      theological_basis: 'Matthew 22:37-38 - "This is the great and first commandment"; Deuteronomy 6:5 - Shema establishes primacy of loving God'
+      translator_guidance: |
+        - REQUIRED: Use SUPERLATIVE ("greatest," "first," "supreme")
+        - FORBIDDEN: Positive ("great commandment") loses primacy, suggests multiple equal greats
+        - FORBIDDEN: Comparative ("greater commandment") suggests only relative superiority
+        - CRITICAL: Superlative establishes absolute hierarchy - love for God is foundational
+        - Note: Second commandment (love neighbor) is "like" the first but still secondary
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'All commandments equally important'
+        used_by: [Some egalitarian ethics, situational ethics]
+        christian_assessment: REJECTED (Jesus explicitly ranks commandments - Matthew 23:23 "weightier matters")
+        degree_implication: Would wrongly flatten superlative to positive "a great commandment"
+      - interpretation: 'Social justice as primary command'
+        used_by: [Liberation theology extremes, social gospel]
+        christian_assessment: INCOMPLETE (Love for neighbor flows from love for God, not vice versa)
+        degree_implication: Would reverse hierarchy, making second commandment primary
+
+  - verse_pattern: '1 Corinthians 13:13 - Love is greatest (μείζων) (unverified)'
+    affected_values: [superlative, comparative, positive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Nature of love
+      - Hierarchy of Christian virtues
+      - Eternal values
+
+    non_arbitrary_rationale: |
+      Paul establishes love as "greatest" (μείζων δὲ τούτων ἡ ἀγάπη) of faith, hope,
+      and love. The superlative/comparative degree is theologically critical - love
+      is not merely good (positive) alongside the others, but supreme. This establishes
+      theological hierarchy: love is the ultimate virtue that survives into eternity
+      while faith becomes sight and hope becomes reality.
+
+    christian_orthodox_position:
+      preferred_value: superlative_or_comparative
+      acceptable_alternatives: [comparative_with_superlative_force]
+      forbidden_values: [positive]
+      theological_basis: '1 Cor 13:8-13 - Love never ends; faith and hope will cease, but love continues eternally'
+      translator_guidance: |
+        - FIRST CHOICE: SUPERLATIVE ("greatest") if comparing three items
+        - ACCEPTABLE: COMPARATIVE ("greater") - Greek μείζων can function as superlative in context
+        - FORBIDDEN: POSITIVE ("great") - loses the hierarchical comparison
+        - CRITICAL: Must communicate love's supremacy over faith and hope
+        - Context: Love is eternal; faith/hope are temporal virtues that pass away
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Faith alone is primary virtue'
+        used_by: [Some Protestant extremes misunderstanding "sola fide"]
+        christian_assessment: INCOMPLETE (Faith without love is dead - James 2:17; 1 Cor 13:2 "without love I am nothing")
+        degree_implication: Would wrongly elevate faith over love, contradicting Paul's explicit ranking
+
+  - verse_pattern: '1 John 4:4 - Greater is He who is in you (μείζων) (unverified)'
+    affected_values: [comparative, positive, superlative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Sovereignty of God
+      - Power of the Holy Spirit
+      - Victory over evil
+      - Spiritual warfare
+
+    non_arbitrary_rationale: |
+      "Greater is He who is in you than he who is in the world" (μείζων γάρ ἐστιν
+      ὁ ἐν ὑμῖν ἢ ὁ ἐν τῷ κόσμῳ) establishes Holy Spirit's superiority over Satan.
+      Comparative degree is essential - this is direct comparison of power: God vs
+      Satan. Downgrading to positive ("God is great") loses the victory declaration.
+      Upgrading to superlative without comparison loses the antithetical contrast.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: []
+      forbidden_values: [positive]
+      theological_basis: '1 John 4:4 - Direct comparison between Holy Spirit and Satan; affirms God''s ultimate victory'
+      translator_guidance: |
+        - REQUIRED: COMPARATIVE ("greater than") with explicit comparison
+        - FORBIDDEN: POSITIVE ("God is great") loses the comparative victory over evil
+        - CRITICAL: Maintains explicit "than" comparison - Spirit vs Satan
+        - PASTORAL: Provides assurance in spiritual warfare - believers are on winning side
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Dualism (equal opposing forces)'
+        used_by: [Gnosticism, Manicheanism, Zoroastrianism influence]
+        christian_assessment: HERETICAL (Denies God's absolute sovereignty - Satan is created, limited being)
+        degree_implication: Would wrongly use positive "great" for both God and Satan, implying parity
+
+  - verse_pattern: 'Hebrews 3:3 - Christ worthy of more glory than Moses (πλείονος) (unverified)'
+    affected_values: [comparative, positive, superlative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology
+      - New Covenant superiority
+      - Revelation progressive nature
+
+    non_arbitrary_rationale: |
+      Comparative "more glory" (πλείονος δόξης) establishes Christ's superiority over
+      Moses. Moses is highly honored (greatest OT prophet), but Christ is in different
+      category (builder vs house, son vs servant). Comparative degree is non-negotiable
+      for Hebrews' argument structure. Positive would suggest equality; superlative
+      without comparative would lose the Moses-Christ progression.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: []
+      forbidden_values: [positive]
+      theological_basis: 'Hebrews 3:1-6 - Christ is builder of house, Moses is servant in house; Christ is Son, Moses is servant'
+      translator_guidance: |
+        - REQUIRED: COMPARATIVE ("more glory than," "greater honor than")
+        - FORBIDDEN: POSITIVE ("glorious") loses the explicit Moses comparison
+        - CRITICAL: Hebrews argues by comparison - Christ superior to all OT figures
+        - Context: Part of Hebrews' sustained argument (better than angels, Moses, Aaron, etc.)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Moses and Christ as equal revelatories'
+        used_by: [Some liberal theology]
+        christian_assessment: REJECTED (Denies Christ's unique status as Son - Hebrews 1:1-2)
+
+  - verse_pattern: 'Hebrews 7:22, 8:6, 9:23, 12:24 - Better covenant, better promises (κρείττων) (unverified)'
+    affected_values: [comparative, positive, superlative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - New Covenant superiority
+      - Finished work of Christ
+      - Sufficiency of Christ's sacrifice
+
+    non_arbitrary_rationale: |
+      Hebrews' sustained use of comparative "better" (κρείττων) for new covenant,
+      better promises, better sacrifice is theological architecture. The comparative
+      is essential to the argument: Old Covenant was good (given by God) but temporary;
+      New Covenant is superior and eternal. Flattening to positive loses the progressive
+      revelation argument and makes covenants appear contradictory rather than progressive.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: []
+      forbidden_values: [positive, superlative_without_comparison]
+      theological_basis: 'Hebrews 8:6 - Christ mediator of better covenant; Hebrews 10:1 - Law was shadow, Christ is reality'
+      translator_guidance: |
+        - REQUIRED: COMPARATIVE throughout Hebrews ("better than old covenant")
+        - FORBIDDEN: POSITIVE ("good covenant") loses the old-to-new progression
+        - CRITICAL: Comparative shows progressive revelation - God's plan unfolding
+        - AVOID: Language suggesting old covenant was bad (it was good but temporary)
+        - BALANCE: Honor OT while affirming NT fulfillment
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Old Covenant was evil/false'
+        used_by: [Marcionism, some anti-Semitic theology]
+        christian_assessment: HERETICAL (OT is God''s Word; Jesus said He came to fulfill, not abolish - Matt 5:17)
+        degree_implication: Would wrongly use too strong contrast (superlative "only good covenant")
+      - interpretation: 'Covenants are equal/interchangeable'
+        used_by: [Some Judaizing theology]
+        christian_assessment: REJECTED (Hebrews explicitly argues Christ''s superiority; old covenant obsolete - Heb 8:13)
+        degree_implication: Would wrongly flatten to positive "good covenant" (both equal)
+
+  - verse_pattern: 'John 10:29, 14:28 - Father is greater (μείζων) (unverified)'
+    affected_values: [comparative, positive, superlative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (economic vs ontological)
+      - Deity of Christ
+      - Incarnation
+
+    non_arbitrary_rationale: |
+      "My Father is greater than I" (ὁ πατήρ μείζων μού ἐστιν) requires careful
+      handling. Comparative is essential but needs proper interpretation: Father is
+      greater in role/economy (incarnate Christ submitted to Father) but NOT in nature
+      (ontologically equal). Mishandling degree can lead to Arianism (Christ lesser
+      being) or modalism (no real distinction). Must preserve comparative while
+      maintaining Trinitarian orthodoxy.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: []
+      forbidden_values: [superlative_implying_ontological_inferiority, positive_obscuring_distinction]
+      theological_basis: 'John 14:28 - Economic subordination during incarnation; Philippians 2:6-8 - Christ emptied Himself; John 10:30 - "I and Father are one"'
+      translator_guidance: |
+        - REQUIRED: COMPARATIVE ("greater than") - preserve Jesus' actual words
+        - CRITICAL: Add contextual notes if needed - "greater in role, equal in nature"
+        - BALANCE: Economic Trinity (roles) vs Ontological Trinity (essence)
+        - FORBIDDEN: Changing degree to obscure Jesus' words
+        - CONTEXT: Jesus is speaking as incarnate Son in submission to Father (Phil 2:6-8)
+        - SAFEGUARD: Cross-reference John 10:30 "I and Father are one"
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Father ontologically superior to Christ'
+        used_by: [Arianism, Jehovah's Witnesses]
+        christian_assessment: HERETICAL (Denies deity of Christ - John 1:1, Colossians 2:9)
+        degree_implication: Would wrongly interpret comparative as ontological inferiority
+      - interpretation: 'No real distinction between Father and Son'
+        used_by: [Modalism, Oneness Pentecostalism]
+        christian_assessment: HERETICAL (Denies three distinct persons - Matthew 3:16-17)
+        degree_implication: Would wrongly remove or obscure the comparative to avoid distinction
+
+  - verse_pattern: 'Matthew 23:11, Mark 9:35, Luke 9:48 - Greatest must be servant (μείζων) (unverified)'
+    affected_values: [superlative, comparative, positive]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Kingdom ethics
+      - Servant leadership
+      - Reversal of worldly values
+
+    non_arbitrary_rationale: |
+      Jesus' teaching "greatest among you must be servant" (ὁ δὲ μείζων ὑμῶν ἔσται
+      ὑμῶν διάκονος) establishes kingdom paradox. Superlative/comparative is essential
+      to the reversal - worldly "greatest" becomes kingdom "servant." Flattening to
+      positive ("great people should serve") loses the radical inversion that even
+      the highest must be lowest. This affects church leadership theology.
+
+    christian_orthodox_position:
+      preferred_value: superlative_or_comparative
+      acceptable_alternatives: [comparative_with_superlative_force]
+      forbidden_values: [positive]
+      theological_basis: 'Matthew 20:26-28 - Whoever wants to be great must be servant; Jesus came to serve; Mark 10:43-45'
+      translator_guidance: |
+        - REQUIRED: SUPERLATIVE/COMPARATIVE ("greatest," "whoever would be great")
+        - FORBIDDEN: POSITIVE ("great people") - loses the paradoxical reversal
+        - CRITICAL: Maintains tension - worldly greatness inverted in kingdom
+        - PASTORAL: Affects how church understands leadership (servant leaders)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Worldly hierarchy acceptable in church'
+        used_by: [Some prosperity gospel, authoritarian church models]
+        christian_assessment: REJECTED (Contradicts Jesus' explicit teaching - Matt 20:25-28)
+
+  # ========== 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ==========
+
+  - verse_pattern: 'Matthew 18:1-4, Mark 9:33-34 - Who is greatest in kingdom? (μείζων) (unverified)'
+    affected_values: [superlative, comparative, positive]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Kingdom entrance requirements
+      - Humility
+      - Childlike faith
+
+    non_arbitrary_rationale: |
+      Disciples ask "Who is greatest in kingdom?" (τίς ἄρα μείζων ἐστὶν ἐν τῇ
+      βασιλείᾳ). The superlative question sets up Jesus' paradoxical answer (children).
+      Downgrading to positive ("who is great?") changes the question's nature -
+      disciples were competing for top rank, not just asking about greatness generally.
+      Affects understanding of disciples' motives and Jesus' corrective.
+
+    christian_orthodox_position:
+      preferred_value: superlative
+      acceptable_alternatives: [comparative_implying_top_rank]
+      forbidden_values: [positive]
+      theological_basis: 'Context shows disciples arguing about rank (Mark 9:34); Jesus corrects competitive mindset'
+      translator_guidance: |
+        - FIRST CHOICE: SUPERLATIVE ("greatest," "first")
+        - CONTEXT: Disciples competing for top position, not asking generally
+        - Jesus' answer: True greatness is humility (reversal)
+        - AVOID: Positive degree obscures competitive context
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Romans 8:31-39 - Nothing can separate from love (hyperbolic list) (unverified)'
+    affected_values: [intensified, positive]
+    theological_stakes: MEDIUM
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Paul's climactic list uses intensified, absolute language ("neither death nor
+      life... nor any other created thing"). Intensifiers emphasize the comprehensive,
+      absolute nature of God's love. Downgrading intensifiers ("some things might not
+      separate") weakens assurance and pastoral comfort. Not heretical to use positive,
+      but loses rhetorical force and assurance.
+
+    christian_orthodox_position:
+      preferred_value: intensified_or_absolute
+      acceptable_alternatives: [positive_with_comprehensive_markers]
+      forbidden_values: []
+      theological_basis: 'Romans 8:38-39 - Nothing can separate believers from God''s love'
+      translator_guidance: |
+        - FIRST CHOICE: INTENSIFIED language ("absolutely nothing," "no created thing")
+        - PASTORAL: Provides assurance - God's love is unbreakable
+        - ACCEPTABLE: Positive with exhaustive lists
+        - AVOID: Weakening that suggests uncertainty
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Salvation can be lost'
+        used_by: [Arminian debate, Roman Catholic]
+        christian_assessment: DEBATED among Protestant denominations (not heretical, but not universal)
+
+  - verse_pattern: 'Philippians 2:9 - Name above every name (ὑπερύψωσεν) (unverified)'
+    affected_values: [superlative, comparative, positive, intensified]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Exaltation of Christ
+      - Lordship of Christ
+      - Universal submission
+
+    non_arbitrary_rationale: |
+      "God highly exalted Him and gave Him the name above every name" (ὑπερύψωσεν
+      αὐτὸν καὶ ἐχαρίσατο αὐτῷ τὸ ὄνομα τὸ ὑπὲρ πᾶν ὄνομα). Superlative + intensified
+      ("highly exalted," "above every") establishes Christ's supreme lordship.
+      Downgrading loses the absolute supremacy - Christ is not merely exalted but
+      supremely exalted above all. Critical for Christology and cosmic lordship.
+
+    christian_orthodox_position:
+      preferred_value: superlative_with_intensification
+      acceptable_alternatives: [superlative, intensified]
+      forbidden_values: [positive, comparative_suggesting_peers]
+      theological_basis: 'Philippians 2:9-11 - Every knee will bow; Christ is Lord over all'
+      translator_guidance: |
+        - FIRST CHOICE: INTENSIFIED SUPERLATIVE ("highly exalted," "name above all names")
+        - REQUIRED: Convey absolute supremacy, not relative superiority
+        - FORBIDDEN: Comparative suggesting peers ("higher than some")
+        - CONTEXT: Follows kenosis (emptying) - now ultimate exaltation
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Christ exalted but not supreme'
+        used_by: [Arianism, subordinationism]
+        christian_assessment: HERETICAL (Denies cosmic lordship - Colossians 1:15-20)
+
+  # ========== MEDIUM STAKES (Affects Clarity/Emphasis) ==========
+
+  - verse_pattern: 'Beatitudes - Intensified blessing language (Matthew 5:3-12) (unverified)'
+    affected_values: [intensified, positive]
+    theological_stakes: LOW-MEDIUM
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      "Blessed are..." (μακάριοι) statements can be intensified for emphasis. While
+      not doctrinally critical, intensification affects whether readers hear these
+      as strong pronouncements vs mild observations. Impacts pastoral force.
+
+    christian_orthodox_position:
+      preferred_value: intensified_or_positive
+      acceptable_alternatives: [either]
+      forbidden_values: []
+      theological_basis: 'Context of Sermon on Mount - authoritative kingdom declarations'
+      translator_guidance: |
+        - FLEXIBLE: Intensified "truly blessed" or positive "blessed" both acceptable
+        - CONSIDER: Target language conventions for pronouncements
+        - EMPHASIS: These are authoritative declarations, not suggestions
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Matthew 5:29-30 - Better to lose member than whole body (συμφέρει) (unverified)'
+    affected_values: [comparative, positive]
+    theological_stakes: MEDIUM
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      "It is better for you to lose one member than for your whole body to go into
+      hell." Comparative establishes the tragic necessity - sin is serious enough
+      that extreme measures are "better than" damnation. Positive ("it is good to
+      avoid sin") loses the stark comparison and urgency.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: []
+      forbidden_values: [positive]
+      theological_basis: 'Hyperbolic language emphasizes seriousness of sin and hell'
+      translator_guidance: |
+        - REQUIRED: COMPARATIVE ("better than") preserving the stark choice
+        - CONTEXT: Hyperbolic but serious - shows priority of avoiding hell
+        - AVOID: Softening to positive that loses urgency
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Intensified sin language (e.g., "utterly corrupt," "exceedingly sinful") (unverified)'
+    affected_values: [intensified, positive]
+    theological_stakes: MEDIUM
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      When Scripture intensifies sin language, it emphasizes severity and need for
+      redemption. Removing intensifiers can downplay human condition and grace's
+      necessity. Not heretical but affects theology of sin.
+
+    christian_orthodox_position:
+      preferred_value: preserve_intensification
+      acceptable_alternatives: [positive_if_context_clear]
+      forbidden_values: []
+      theological_basis: 'Romans 7:13 - "sin might become utterly sinful"; Psalm 14:1-3 - total depravity'
+      translator_guidance: |
+        - FIRST CHOICE: Preserve intensifiers where they appear
+        - PURPOSE: Shows depth of sin problem, magnifies grace
+        - BALANCE: Avoid adding intensifiers where source text lacks them
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Sin is not that serious'
+        used_by: [Pelagianism, liberal theology minimizing sin]
+        christian_assessment: REJECTED (Denies biblical teaching on sin's seriousness)
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Choice Doesn't Matter)
+
+arbitrary_contexts:
+
+  - pattern: "Travel narratives with comparative distance (e.g., 'further along the road')"
+    rationale: |
+      Comparative distance descriptions in travel narratives are typically stylistic.
+      Whether "further" or "along" doesn't affect doctrinal content or narrative understanding.
+    estimated_percentage: 15%
+    examples:
+      - 'Acts travelogues with comparative locations (unverified)'
+      - 'Gospel travel sequences (unverified)'
+
+  - pattern: "Descriptive comparisons of physical characteristics (e.g., 'taller,' 'stronger')"
+    rationale: |
+      Physical descriptions using comparative/superlative are usually narrative color.
+      "Saul was taller" vs "Saul was tall" - doesn't affect theology unless connected
+      to God's choice (1 Sam 16:7 - God looks at heart, not appearance).
+    estimated_percentage: 10%
+    examples:
+      - '1 Samuel 9:2 - Saul taller than others (unverified)'
+      - 'Descriptions of stature, strength (unverified)'
+
+  - pattern: "Crowd size intensifiers (e.g., 'very large crowd' vs 'large crowd')"
+    rationale: |
+      Whether crowds are described with intensifiers or not rarely affects meaning.
+      "A great crowd" vs "a very great crowd" - stylistic vividness, not doctrinal.
+    estimated_percentage: 20%
+    examples:
+      - 'Mark 4:1 - "Very large crowd gathered" (unverified)'
+      - 'Feeding narratives crowd descriptions (unverified)'
+
+  - pattern: "Weather intensifiers (e.g., 'great storm' vs 'very great storm')"
+    rationale: |
+      Storm descriptions with varying degrees are typically stylistic choices for
+      narrative drama. Doesn't affect miracle significance.
+    estimated_percentage: 5%
+    examples:
+      - 'Mark 4:37 - "Great storm of wind" (unverified)'
+      - 'Jonah storm descriptions (unverified)'
+
+  - pattern: "Emotional intensity descriptions (e.g., 'very afraid' vs 'afraid')"
+    rationale: |
+      Intensification of emotional states is usually stylistic. Whether disciples
+      were "afraid" or "very afraid" doesn't change theological content.
+    estimated_percentage: 15%
+    examples:
+      - 'Gospel fear reactions (unverified)'
+      - 'Joy/sorrow intensifiers (unverified)'
+
+  - pattern: "Temporal comparisons in narrative (e.g., 'earlier,' 'later')"
+    rationale: |
+      Comparative temporal markers are typically for sequencing clarity. Unless
+      theologically significant timing (e.g., Sabbath), these are stylistic.
+    estimated_percentage: 10%
+    examples:
+      - 'Sequential narrative markers (unverified)'
+      - 'Flashback temporal references (unverified)'
+
+  - pattern: "Intensifiers in praise/worship language (unless establishing supremacy)"
+    rationale: |
+      Worship intensifiers ("greatly rejoice," "abundantly praise") are often
+      stylistic unless establishing God's supremacy (which moves to non-arbitrary).
+    estimated_percentage: 10%
+    examples:
+      - 'Psalm intensifiers in descriptive praise (unverified)'
+      - 'Corporate worship responses (unverified)'
+
+  - pattern: "Comparative success/failure in narrative (e.g., 'more successful')"
+    rationale: |
+      Narrative comparisons of human success/failure are typically contextual color
+      unless tied to divine blessing/judgment themes.
+    estimated_percentage: 5%
+    examples:
+      - 'David vs Saul military success comparisons (unverified)'
+      - 'Wisdom literature success language (unverified)'
+
+# SUMMARY STATISTICS
+
+summary:
+  non_arbitrary_percentage: 20%
+  arbitrary_percentage: 80%
+  high_stakes_theological: 10
+  medium_stakes_contextual: 4
+  low_stakes: 1
+
+  critical_note: |
+    Degree is HIGHLY SIGNIFICANT in specific theological contexts:
+
+    1. CHRISTOLOGY: Christ's superiority (Hebrews' comparative "better than" structure)
+    2. GOD'S ATTRIBUTES: Superlatives establishing divine supremacy
+    3. ETHICAL HIERARCHIES: Greatest commandment, love as supreme virtue
+    4. COVENANT THEOLOGY: New covenant "better than" old covenant
+    5. KINGDOM ETHICS: Greatness inversions (greatest = servant)
+
+    Most contexts (80%) are stylistic (crowd sizes, travel descriptions, emotional
+    intensifiers). But the 20% non-arbitrary contexts include core doctrines:
+    - Trinity economics (Father greater in role, equal in nature)
+    - Christological superiority over angels, Moses, prophets
+    - Ethical and virtue hierarchies
+    - Salvation assurance (nothing can separate)
+
+    CRITICAL DISTINCTION: Degree errors in high-stakes contexts can lead to:
+    - Arianism (Christ as created being)
+    - Covenant theology errors (old/new covenant confusion)
+    - Ethical flattening (losing biblical priorities)
+    - Weakened assurance (pastoral harm)
+
+  source_language_dependency: |
+    This analysis focuses on Greek NT comparative/superlative system, which is
+    grammatically robust and theologically significant in Hebrews, Pauline epistles,
+    and Jesus' teaching.
+
+    Hebrew OT has less developed comparative/superlative morphology (often uses
+    construct phrases or מן comparisons). Key OT contexts:
+    - Superlatives describing God (Most High, etc.)
+    - Wisdom literature comparisons
+    - Prophetic hyperbole
+
+    Target languages without morphological degree marking must use lexical or
+    syntactic strategies (adverbs, comparative phrases) to preserve theological
+    distinctions in non-arbitrary contexts.
+
+  translation_impact: |
+    Languages with robust degree systems (English, Spanish, French, German):
+    - Can directly map source language degree
+    - Must preserve theological distinctions
+
+    Languages without degree morphology (Mandarin, many isolating languages):
+    - Use adverbs (更 gèng "more", 最 zuì "most" in Mandarin)
+    - Use comparative phrases
+    - Critical to preserve comparative force even without morphology
+
+    Languages with limited degree (many Austronesian, African languages):
+    - May use idiomatic comparisons
+    - Translator must ensure theological force preserved
+
+  citation: '{llm-cs45}'
+  verification_status: 'UNVERIFIED - Based on LLM internal knowledge of Scripture and systematic theology. Requires verification against actual Greek/Hebrew source texts and peer review by theologian, biblical scholar, and translation practitioner.'
+
+  peer_review_needed:
+    - Hebrews comparative structure verification (Christ "better than" passages)
+    - Trinity economics vs ontology (John 14:28 interpretation)
+    - Ethical hierarchy consensus (greatest commandment, love supremacy)
+    - Covenant theology comparative force (better covenant interpretation)
+    - Cross-denominational review (Catholic/Orthodox/Protestant perspectives)
