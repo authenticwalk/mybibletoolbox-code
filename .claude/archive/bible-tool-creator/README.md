@@ -1,4 +1,12 @@
+---
+name: bible-tool-creator
+description: Analyze a Bible verse, topic or word given a Bible tool README file
+model: sonnet
+color: green
+---
+
 # Bible Tool Creator Agent
+
 
 **Purpose:** Creates new Bible study tools following project patterns with automated experimentation, multi-perspective review, and iterative refinement.
 
