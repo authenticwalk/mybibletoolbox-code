@@ -1,0 +1,412 @@
+feature: mood
+default_classification: arbitrary  # Most mood choices are stylistic
+theological_significance: EXISTS  # Some contexts are theologically critical
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+non_arbitrary_contexts:
+  - verse_pattern: 'Divine Commands (Ten Commandments, Torah Law)'
+    example_verses: 'Exodus 20:1-17, Deuteronomy 5:6-21 (unverified)'
+    affected_values: [imperative, jussive, prohibition]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Divine authority
+      - Ethics and morality
+      - Law and grace
+      - Obedience to God
+
+    non_arbitrary_rationale: |
+      Hebrew imperatives and jussives in divine law express God's authoritative commands.
+      Reducing imperative "You shall not murder" to indicative "You will not murder"
+      changes a divine command into a mere prediction, undermining the binding nature
+      of God's moral law. The grammatical mood reflects theological reality: God commands,
+      not merely suggests or predicts.
+
+    christian_orthodox_position:
+      preferred_value: imperative
+      acceptable_alternatives: [jussive, prohibition-modal]
+      forbidden_values: [indicative, optative]  # Changes command to prediction/wish
+      theological_basis: 'God speaks with absolute authority; commands must retain imperatival force'
+      translator_guidance: |
+        FIRST CHOICE: Use strongest imperative/command form in target language
+        SECOND CHOICE: If no grammatical imperative, use obligation modal ("must")
+        FORBIDDEN: Indicative future tense (changes command to prediction)
+        FORBIDDEN: Optative/wish ("may you not...") - weakens divine authority
+
+  - verse_pattern: 'Greek Conditional Sentences (First Class - Assumed True)'
+    example_verses: 'Romans 8:31, 1 John 1:9, Matthew 12:27-28 (unverified)'
+    affected_values: [indicative-in-protasis, subjunctive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Soteriology (salvation assurance)
+      - Pneumatology (Spirit's work)
+      - Theodicy (God's faithfulness)
+
+    non_arbitrary_rationale: |
+      Greek first-class conditions (εἰ + indicative) assume the condition is true
+      for argument's sake. "If we confess our sins [assuming we do], He is faithful"
+      (1 John 1:9) has different force than third-class condition (subjunctive) which
+      expresses uncertainty. Translating first-class as uncertain weakens assurance
+      of salvation promises.
+
+    christian_orthodox_position:
+      preferred_value: indicative  # In protasis of first-class conditions
+      acceptable_alternatives: [assumptive-particle]
+      forbidden_values: [subjunctive]  # Changes assumed truth to uncertainty
+      theological_basis: 'First-class conditions assert theological certainty for rhetorical effect'
+      translator_guidance: |
+        FIRST CHOICE: "Since we confess..." or "When we confess..." (assumes reality)
+        SECOND CHOICE: "If we confess..." with strong assumptive particle
+        FORBIDDEN: Subjunctive mood suggesting doubt about confession occurring
+        NOTE: Distinguish from second-class (contrary to fact) and third-class (uncertain)
+
+  - verse_pattern: 'Greek Conditional Sentences (Second Class - Contrary to Fact)'
+    example_verses: 'John 15:22, John 15:24, Galatians 1:10 (unverified)'
+    affected_values: [indicative-imperfect-in-apodosis, contrary-to-fact]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (uniqueness of Christ)
+      - Sin and guilt
+      - Apostolic authority
+
+    non_arbitrary_rationale: |
+      Second-class conditions (εἰ + indicative, ἄν + indicative) assert the opposite
+      of reality. "If I were still pleasing men [but I'm not], I would not be a servant
+      of Christ" (Gal 1:10). Losing this contrary-to-fact force changes Paul's clear
+      denial into ambiguous statement.
+
+    christian_orthodox_position:
+      preferred_value: contrary-to-fact-indicative
+      acceptable_alternatives: [contrafactual-modal]
+      forbidden_values: [simple-conditional]  # Loses the "but it's not true" assertion
+      theological_basis: 'Contrary-to-fact conditions make theological assertions by negation'
+      translator_guidance: |
+        FIRST CHOICE: "If X were true (but it's not)..."
+        SECOND CHOICE: Use target language's contrafactual mood/particle
+        FORBIDDEN: Generic "if...then" (obscures the negation)
+
+  - verse_pattern: 'Sermon on the Mount Imperatives'
+    example_verses: 'Matthew 5:3-7:27, Luke 6:20-49 (unverified)'
+    affected_values: [imperative, prohibitive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christian ethics
+      - Discipleship
+      - Kingdom values
+      - Jesus as authoritative teacher
+
+    non_arbitrary_rationale: |
+      Jesus' imperatives in Sermon on Mount ("Love your enemies", "Do not judge",
+      "Seek first the kingdom") are authoritative kingdom commands, not suggestions.
+      Weakening imperative force undermines Jesus' authority as divine teacher and
+      makes kingdom ethics optional rather than binding.
+
+    christian_orthodox_position:
+      preferred_value: imperative
+      acceptable_alternatives: [strong-obligation-modal]
+      forbidden_values: [optative, hortatory-suggestion]
+      theological_basis: 'Jesus speaks with divine authority; His commands are binding on disciples'
+      translator_guidance: |
+        FIRST CHOICE: Direct imperative in target language
+        SECOND CHOICE: "You must..." if imperatives are too harsh culturally
+        FORBIDDEN: "You should..." or "It would be good to..." (makes commands optional)
+        NOTE: Distinguish direct imperatives from wisdom sayings (Beatitudes are indicative)
+
+  - verse_pattern: 'Pauline Optative Benedictions'
+    example_verses: 'Romans 15:5, 15:13, 15:33, 2 Thessalonians 3:16, Galatians 6:16 (unverified)'
+    affected_values: [optative, jussive, benedictive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prayer theology
+      - Divine blessing
+      - Apostolic authority
+      - God's sovereignty in sanctification
+
+    non_arbitrary_rationale: |
+      Greek optative mood in Paul's benedictions ("May the God of peace...") expresses
+      prayer-wish for God to act, not command. Changing to imperative ("God of peace,
+      do this!") wrongly makes prayer into command to God. Changing to simple future
+      ("God will give peace") loses the prayer dimension and makes it mere prediction.
+
+    christian_orthodox_position:
+      preferred_value: optative
+      acceptable_alternatives: [jussive, benedictive-formula]
+      forbidden_values: [imperative-to-God, simple-future-indicative]
+      theological_basis: 'Prayer expresses desire for God to act, not command; optative preserves prayer mood'
+      translator_guidance: |
+        FIRST CHOICE: "May God..." or "May the Lord..." (optative/jussive wish)
+        SECOND CHOICE: "Let God..." if optative not available
+        FORBIDDEN: Imperative addressed to God (theologically inappropriate)
+        FORBIDDEN: Simple future "God will..." (loses prayer dimension)
+
+  - verse_pattern: 'Genesis 1:26 Cohortative (Trinity Hint)'
+    example_verses: 'Genesis 1:26, Genesis 3:22, Genesis 11:7, Isaiah 6:8 (unverified)'
+    affected_values: [cohortative, jussive, hortatory-plural]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity (pre-incarnate Christology)
+      - Divine counsel
+      - Image of God
+
+    non_arbitrary_rationale: |
+      Hebrew cohortative "Let us make" (na'aseh) is plural first-person, suggesting
+      divine plurality. While not proof of Trinity alone, it's consistent with Trinitarian
+      understanding when combined with monotheism. Translating as singular "Let me make"
+      or as addressing angels removes this textual hint toward plurality in Godhead.
+
+    christian_orthodox_position:
+      preferred_value: cohortative-plural
+      acceptable_alternatives: [hortatory-we]
+      forbidden_values: [singular-cohortative, imperative-to-angels]
+      theological_basis: 'Plural cohortative preserves textual hint toward divine plurality (Trinity)'
+      translator_guidance: |
+        FIRST CHOICE: "Let us make..." (plural cohortative)
+        SECOND CHOICE: "We will make..." if cohortative not available
+        FORBIDDEN: "Let me make..." (removes plurality)
+        FORBIDDEN: "Let them make..." (changes subject from God)
+        NOTE: Include footnote explaining plural as intra-divine counsel
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Plural of majesty (purely stylistic)'
+        used_by: [some Jewish interpretations, Islamic scholars]
+        christian_assessment: POSSIBLE_BUT_INSUFFICIENT (plural is real, but better explained by Trinity)
+      - interpretation: 'God addressing angels'
+        used_by: [some rabbinic sources, Philo]
+        christian_assessment: REJECTED (angels don't co-create; humans made in God's image not angels')
+
+  - verse_pattern: 'Prophetic Certainty (Hebrew Perfects for Future)'
+    example_verses: 'Isaiah 9:6, Isaiah 53:4-12, Psalm 22 (unverified)'
+    affected_values: [perfect-prophetic, indicative, certainty-modal]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Messianic prophecy
+      - Divine foreknowledge
+      - Inerrancy of prophecy
+      - Christology
+
+    non_arbitrary_rationale: |
+      Hebrew prophetic perfect uses completed-action aspect for future events to express
+      absolute certainty: "A child is born" (Isaiah 9:6) for future Messiah. Translating
+      as tentative future ("might be born") or conditional undermines prophetic certainty
+      and divine foreknowledge. God speaks of future as accomplished fact.
+
+    christian_orthodox_position:
+      preferred_value: perfect-as-certain-future
+      acceptable_alternatives: [strong-future-indicative]
+      forbidden_values: [conditional, uncertain-modal]
+      theological_basis: 'God's foreknowledge is certain; prophetic perfect reflects divine perspective'
+      translator_guidance: |
+        FIRST CHOICE: Present tense "A child is born" (preserves prophetic certainty)
+        SECOND CHOICE: Definite future "will be born" with certainty marker
+        FORBIDDEN: "May be born" or "could be born" (introduces doubt)
+        NOTE: English present tense often best captures Hebrew prophetic perfect force
+
+  - verse_pattern: 'Purpose/Result Clauses (ἵνα/ὅπως + Subjunctive)'
+    example_verses: 'John 3:16, Romans 5:20, Ephesians 1:4-6 (unverified)'
+    affected_values: [subjunctive, purpose, result]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Soteriology (God's saving purpose)
+      - Divine election
+      - Eschatology
+
+    non_arbitrary_rationale: |
+      Greek purpose clauses with subjunctive express God's intent: "that whoever believes
+      in Him should not perish" (John 3:16). Losing subjunctive's purpose nuance can
+      obscure whether verse teaches result only or divine purpose. Critical for election,
+      predestination debates.
+
+    christian_orthodox_position:
+      preferred_value: subjunctive-purpose
+      acceptable_alternatives: [purpose-infinitive, "in-order-that"]
+      forbidden_values: [simple-result-indicative]
+      theological_basis: 'ἵνα + subjunctive expresses God\'s purposeful intent, not mere result'
+      translator_guidance: |
+        FIRST CHOICE: "so that" or "in order that" (explicit purpose)
+        SECOND CHOICE: Purpose infinitive "to save all who believe"
+        FORBIDDEN: Simple result "therefore he does not perish" (loses purpose)
+        NOTE: Distinguish telic (purpose) from ecbatic (result) uses
+
+  - verse_pattern: 'Prayer Language (Lord\'s Prayer)'
+    example_verses: 'Matthew 6:9-13, Luke 11:2-4 (unverified)'
+    affected_values: [imperative, jussive, petition-optative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prayer theology
+      - Kingdom eschatology
+      - Relation to God (Father)
+
+    non_arbitrary_rationale: |
+      Imperative petitions "hallowed be Your name" and "give us this day" express proper
+      prayer posture before God. Using indicative ("Your name is hallowed") makes it
+      statement of fact rather than petition. Using weak optative ("may it perhaps be")
+      undermines boldness Jesus encourages in prayer.
+
+    christian_orthodox_position:
+      preferred_value: imperative-petition
+      acceptable_alternatives: [jussive-wish]
+      forbidden_values: [indicative-statement, tentative-optative]
+      theological_basis: 'Jesus teaches bold, direct petitions to Father; imperatives reflect this'
+      translator_guidance: |
+        FIRST CHOICE: Imperative/jussive "hallowed be" (direct petition)
+        SECOND CHOICE: "May Your name be hallowed" (jussive wish)
+        FORBIDDEN: "Your name is hallowed" (removes petition)
+        FORBIDDEN: "Perhaps Your name could be hallowed" (too tentative)
+
+  - verse_pattern: 'Great Commission Commands'
+    example_verses: 'Matthew 28:18-20, Mark 16:15-16, Acts 1:8 (unverified)'
+    affected_values: [imperative, participial-imperative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Missiology (missions mandate)
+      - Ecclesiology (church purpose)
+      - Discipleship
+      - Christ's authority
+
+    non_arbitrary_rationale: |
+      Greek imperatives "Go" (πορευθέντες participle) and "make disciples" (μαθητεύσατε
+      imperative) constitute Christ's authoritative commission to church. Weakening to
+      suggestions ("You could make disciples") undermines missions mandate and Christ's
+      final command authority.
+
+    christian_orthodox_position:
+      preferred_value: imperative
+      acceptable_alternatives: [strong-command-form]
+      forbidden_values: [optative, suggestion, conditional-permission]
+      theological_basis: 'Christ\'s final command is binding on all Christians; imperative is non-negotiable'
+      translator_guidance: |
+        FIRST CHOICE: Direct imperative "Go and make disciples"
+        SECOND CHOICE: "You must go and make disciples"
+        FORBIDDEN: "You should consider making disciples" (makes it optional)
+        FORBIDDEN: "If you want, make disciples" (removes command force)
+        NOTE: Recognize πορευθέντες as attendant circumstance, not separate command
+
+  - verse_pattern: 'Gethsemane Prayer (Optative + Imperative Tension)'
+    example_verses: 'Matthew 26:39, Mark 14:36, Luke 22:42 (unverified)'
+    affected_values: [optative, imperative, conditional]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Christology (Jesus' humanity and deity)
+      - Atonement (Jesus' willing sacrifice)
+      - Prayer (submission to God's will)
+
+    non_arbitrary_rationale: |
+      Jesus' prayer shows tension: wish/desire ("if possible, let this cup pass") with
+      submission ("yet not my will but yours"). Getting mood wrong could suggest either
+      that Jesus commanded the Father, or that He was uncertain/reluctant about atonement.
+      Mood preserves both human reluctance and divine submission.
+
+    christian_orthodox_position:
+      preferred_value: optative-with-conditional
+      acceptable_alternatives: [polite-request-form]
+      forbidden_values: [direct-imperative-to-Father, indicative-statement]
+      theological_basis: 'Jesus\' prayer shows true humanity (desire to avoid suffering) and deity (submission to Father\'s will)'
+      translator_guidance: |
+        FIRST CHOICE: "If possible, let this cup pass" (conditional + optative/jussive)
+        SECOND CHOICE: "If possible, may this cup pass"
+        FORBIDDEN: "Remove this cup!" (direct imperative - theologically inappropriate)
+        FORBIDDEN: "This cup will pass" (indicative removes prayer/petition)
+
+  - verse_pattern: 'Apocalyptic Commands (Revelation)'
+    example_verses: 'Revelation 22:17, Revelation 22:20, Revelation 3:20 (unverified)'
+    affected_values: [imperative, jussive, invitation]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Eschatology (Christ's return)
+      - Soteriology (gospel invitation)
+      - Free will and response
+
+    non_arbitrary_rationale: |
+      Apocalyptic imperatives function as urgent invitations: "Come!" (Rev 22:17).
+      These are gracious invitations requiring response, not coercive commands.
+      Too weak (optative "you might come") loses urgency; too strong (military command)
+      loses gracious invitation character.
+
+    christian_orthodox_position:
+      preferred_value: imperative-invitation
+      acceptable_alternatives: [urgent-invitation-form]
+      forbidden_values: [weak-optative, coercive-command]
+      theological_basis: 'Gospel calls are urgent invitations requiring response, not coercive force'
+      translator_guidance: |
+        FIRST CHOICE: Imperative "Come!" (urgent invitation)
+        SECOND CHOICE: "Come now!" with urgency marker
+        FORBIDDEN: "You might want to come" (loses urgency)
+        FORBIDDEN: Coercive military command tone (loses gracious invitation)
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+arbitrary_contexts:
+  - pattern: "Narrative indicatives (historical storytelling)"
+    rationale: |
+      Most narrative verbs simply state facts: "Jesus went," "Peter said," "They arrived."
+      Mood choice is dictated by narrative genre conventions, not theology. Whether Greek
+      uses indicative, Hebrew uses waw-consecutive, or English uses simple past makes no
+      doctrinal difference.
+    estimated_percentage: 70%
+    examples: 'Most of Gospels, Acts, historical books (unverified)'
+
+  - pattern: "Descriptive statements about God's attributes"
+    rationale: |
+      Indicative mood for stating facts about God: "God is love," "He is faithful."
+      These are straightforward predications where mood is determined by grammar,
+      not theological importance.
+    estimated_percentage: 10%
+    examples: '1 John 4:8, Psalm 136, doctrinal statements (unverified)'
+
+  - pattern: "Questions seeking information"
+    rationale: |
+      Interrogative mood/syntax varies by language. "Where are you going?" vs
+      "Where might you be going?" is stylistic, not theological. Even rhetorical
+      questions' mood is largely stylistic.
+    estimated_percentage: 3%
+    examples: 'Most interrogatives in dialogue (unverified)'
+
+  - pattern: "Participial phrases (temporal, causal, manner)"
+    rationale: |
+      Most participles function as adjectives or adverbial modifiers: "walking by the sea,"
+      "having heard this." Their aspectual/modal force is contextual, not theologically
+      determined.
+    estimated_percentage: 8%
+    examples: 'Adverbial participles throughout NT (unverified)'
+
+  - pattern: "Subjunctive in generic conditional protases"
+    rationale: |
+      Third-class conditions expressing general uncertainty ("If anyone wants to follow")
+      use subjunctive by grammatical convention. Not theologically loaded unless specific
+      doctrine involved.
+    estimated_percentage: 4%
+    examples: 'Generic "if anyone" conditions (unverified)'
+
+  - pattern: "Wishes and blessings (non-authoritative)"
+    rationale: |
+      Personal wishes, greetings, farewells using optative or jussive mood are culturally
+      conventional: "May you prosper" (3 John 2). Not theologically critical unless
+      apostolic blessing.
+    estimated_percentage: 2%
+    examples: 'Letter greetings/closings, personal wishes (unverified)'
+
+  - pattern: "Infinitives in purpose clauses (non-soteriological)"
+    rationale: |
+      Purpose infinitives expressing mundane purposes: "He went to buy bread," "They came
+      to see Him." Purpose is clear, mood/form is stylistic.
+    estimated_percentage: 3%
+    examples: 'Everyday purpose statements (unverified)'
+
+summary_statistics:
+  estimated_arbitrary_percentage: 85-90%
+  estimated_non_arbitrary_percentage: 10-15%
+  high_stakes_percentage: 7-10%  # Divine commands, conditionals, prophecy
+  medium_stakes_percentage: 3-5%  # Optatives, cohortatives, prayers
+
+translator_priorities:
+  priority_1_critical: 'Divine commands, first/second-class conditionals, prophetic perfects'
+  priority_2_high: 'Sermon on Mount, Great Commission, purpose clauses (soteriological)'
+  priority_3_medium: 'Pauline benedictions, cohortatives, prayer language'
+  priority_4_low: 'Narrative indicatives, generic conditionals, participial phrases'
+
+notes: |
+  - All verse references marked (unverified) - based on internal knowledge requiring validation
+  - Greek conditional system (1st, 2nd, 3rd, 4th class) is particularly high-stakes
+  - Hebrew verbal system (perfect/imperfect) maps to mood/aspect differently than Greek
+  - Imperative mood in divine speech is almost always non-arbitrary
+  - Optative mood is rare in Koine Greek but theologically significant when present
+  - Distinguish grammatical mood from modal auxiliaries in target languages
+  - Consider both source language mood AND target language functional equivalents
