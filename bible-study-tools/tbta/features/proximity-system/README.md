@@ -1,58 +1,36 @@
 # Proximity System
 
-## Overview
+**Encodes spatial/temporal/discourse distance** (near/far) between referents and speakers — critical for 1000+ languages with multi-way demonstrative systems.
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Aspect | Details |
+|--------|---------|
+| **Values** | 10-way: N/S/L/R/r (spatial); T/t (temporal); C/c (discourse); n (not applicable) |
+| **Applies To** | Nouns only (position 6 or 8 in semantic string) |
+| **Implementation** | 11,649 verses marked across 34 books |
+| **Source Languages** | Greek ✅ explicit; Hebrew ⚠️ contextual inference required |
+| **Key Families** | Austronesian (visibility), Trans-New Guinea (elevation), Romance (person-oriented) |
 
-Proximity system captures spatial and temporal distance distinctions, including demonstrative systems (this/that/yonder), proximal vs distal markers, and other distance-based grammatical or semantic categories.
+## Critical Contexts (15% Non-Arbitrary)
 
-## Development Status
+| Context | Required Value | Forbidden | Doctrinal Stake |
+|---------|---|---|---|
+| **Last Supper** ("This is my body") | **PROXIMAL** | Distal | Eucharistic theology |
+| **Baptism/Transfiguration** ("This is my Son") | **PROXIMAL** | Distal | Incarnation |
+| **Resurrection** ("See these hands") | **PROXIMAL** | Distal | Bodily resurrection |
+| **Covenant** ("This covenant [new]") | **PROXIMAL** | — | Covenant theology |
+| **Eschatology** ("This generation" vs "that day") | Mixed | Reversed | Prophetic interpretation |
 
-🚧 **Stage 0**: Not yet started
+Distal or reversed proximity in these contexts may signal theological distance, weakening intended meaning.
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+## Language-Specific Challenges
 
-## Development Checklist
+- **Japanese/Spanish**: Person-oriented systems require speaker/hearer positioning (S vs. L)
+- **Austronesian**: Visibility (R visible vs. r invisible) essential for narrative clarity
+- **Trans-New Guinea**: Elevation overlays (uphill/downhill) not captured in TBTA codes
+- **Bantu**: Noun class agreement complicates demonstrative selection
 
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/proximity-system/`)
-- [ ] Generate README.md with feature definition + stage checklist
+## Next: Research Deep Dive
 
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
-
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
-
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
-
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
-
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
-
-## Resources
-
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/proximity-system/](../features-archive/proximity-system/)
+[→ Read full research findings](research/README.md)
