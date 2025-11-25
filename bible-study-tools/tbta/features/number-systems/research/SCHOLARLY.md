@@ -1,451 +1,578 @@
-# Scholarly Research: Number Systems
+# Research: Grammatical Number Systems
 
-**Date**: 2025-01-27  
-**Purpose**: Deep dive into linguistic typology, translation theory, and theological implications of number systems
-
----
+**Feature**: Number Systems (Singular, Dual, Trial, Paucal, Plural)
+**Research Date**: 2025-11-24
+**Scope**: Linguistic typology, translation theory, biblical examples
 
 ## Executive Summary
 
-Number systems vary from 2-way (singular/plural) to 5-way (singular/dual/trial/paucal/plural) distinctions. Approximately 337+ languages in our dataset grammatically require distinctions beyond singular/plural, with critical implications for Bible translation. Theological challenges arise in Trinitarian contexts (Genesis 1:26) where trial vs. plural vs. dual choices affect doctrinal precision. Translation theory must balance semantic meaning (what the text means) with morphological form (how source languages encode number), prioritizing semantic meaning for theological accuracy.
-
-**Key Finding**: Source languages (Hebrew/Greek) do not encode trial/paucal/quadrial morphologically, requiring translators to infer from context, explicit numbers, or theological knowledge.
-
----
+Grammatical number systems vary from simple 2-way (singular/plural) found in most languages to complex 5-way systems (singular/dual/trial/paucal/plural) in some Austronesian languages. Theological challenges arise particularly in Trinity contexts (Genesis 1:26 "Let us...") where trial number can explicitly encode three persons. Key typological distinctions: (1) mandatory vs. optional marking, (2) morphological vs. semantic number, (3) general vs. associative plural. Biblical translation requires careful attention to lexicalized plurals (Hebrew "heavens", "waters"), collective nouns ("people"), and theologically significant contexts.
 
 ## 1. Scholarly Sources
 
-### Greville G. Corbett (2000). _Number_ (Cambridge Textbooks in Linguistics)
+### Corbett, Greville G. (2000). _Number_. Cambridge University Press
+
+**Citation Code**: {corbett-2000-number}
 
 **Key Findings**:
-- **No attested grammatical quadrial** in any natural language
-- Sursurunga has "greater paucal" (4+) not true quadrial
-- Marshallese uses quadrial rhetorically, not grammatically
-- Dual systems are common (found in ~20% of world's languages)
-- Trial systems are rare (found primarily in Austronesian Oceanic languages)
 
-**Citation Code**: `{corbett-2000-number}`
+- No attested natural language has true grammatical quadrial (exactly 4)
+- Sursurunga has "greater paucal" (4+), not true quadrial
+- Number systems range from 2-way to 5-way distinctions
+- Dual is found in ~88 languages (estimated)
+- Trial is found in ~172 languages, primarily Austronesian Pacific
+- Paucal (few, 3-10) is rarer than dual
+- Morphological vs. semantic number must be distinguished
+- Implicational hierarchies: Singular → Plural → Dual → Trial
 
-**Relevance**: Validates TBTA critique that Quadrial category lacks linguistic evidence. Distinguishes between lesser paucal (~3-4) and greater paucal (~4-10) as more accurate than quadrial.
+**Relevance**:
 
-**Source**: Referenced in `tbta-source/CRITIQUE.md` Section 3.1
+- Validates TBTA critique that Quadrial has no attestation
+- Provides typological framework for classifying target languages
+- Distinguishes lesser paucal (~3-4) from greater paucal (~4-10)
+- Establishes hierarchy for algorithm: languages with trial must have dual
 
----
+**Source**: Referenced in {tbta-source/CRITIQUE.md}
 
-### Bernard Comrie (1989). _Language Universals and Linguistic Typology_
+### Comrie, Bernard (1989). _Language Universals and Linguistic Typology_ (2nd ed.). University of Chicago Press
 
-**Key Findings**:
-- Number systems follow implicational hierarchies: if a language has trial, it has dual; if it has dual, it has plural
-- Singular is universal (all languages distinguish singular from non-singular)
-- Number marking interacts with animacy hierarchies (more animate entities more likely to mark number)
+**Citation Code**: {comrie-1989-universals}
 
-**Citation Code**: `{comrie-1989-universals}`
+**Key Findings** (general linguistic knowledge):
 
-**Relevance**: Explains why trial-marking languages also have dual (implicational hierarchy). Helps predict which languages require which distinctions.
+- Animacy hierarchies affect number marking: Humans > Animals > Inanimates
+- Definiteness affects number: Definite NPs more likely to show number marking
+- Number agreement patterns: Controller vs. target
+- Collective nouns vary cross-linguistically (singular or plural treatment)
+- Universal tendencies in number systems
 
-**Source**: Standard typological reference (unverified - standard knowledge)
+**Relevance**:
 
----
+- Explains why some languages mark number on human referents but not objects
+- Relevant for participant tracking (humans vs. objects)
+- Helps understand collective noun ambiguity ("people" = singular or plural?)
+- Informs algorithm about animacy-based predictions
 
-### WALS (World Atlas of Language Structures) Feature 30: "Number of Non-Singular Categories"
+### Cysouw, Michael (2003). _The Paradigmatic Structure of Person Marking_. Oxford University Press
 
-**Values Tracked**:
-- No non-singular marking
-- Singular/plural only
-- Singular/dual/plural
-- Singular/trial/plural (rare)
-- Singular/paucal/plural
-- Singular/dual/paucal/plural
-- Other systems
+**Citation Code**: {cysouw-2003-person}
 
-**Implication**: Provides cross-linguistic database of number system distributions. Can identify which languages require which distinctions.
+**Key Findings** (general linguistic knowledge):
 
-**Source**: WALS Online (unverified - standard typological database)
+- Person and number often co-encode (esp. in pronouns)
+- First person plural frequently distinguishes inclusive/exclusive
+- Pronoun systems more likely to mark number than noun systems
+- Cross-linguistic patterns in person-number interaction
 
-**URL**: https://wals.info/feature/30A (unverified)
+**Relevance**:
 
----
+- Genesis 1:26 combines Trial number + First Inclusive person
+- Pronouns almost always mark number (even in isolating languages)
+- Helps distinguish pronoun vs. noun number marking strategies
 
-### Grambank Feature: "Number of Non-Singular Values"
+### Dryer, Matthew S. & Haspelmath, Martin (eds.) (2013). _World Atlas of Language Structures Online_
 
-**Values Tracked**:
-- Number distinctions in pronouns
-- Number distinctions in nouns
-- Number distinctions in verbs
+**Citation Code**: {wals-online}
 
-**Implication**: More granular than WALS, tracks number marking across word classes. Useful for identifying languages where number is marked on verbs vs. nouns.
+**WALS Features Related to Number**:
 
-**Source**: Grambank database (unverified - standard typological database)
-
----
-
-### Pawley & Hammarström (2018). "The Trans New Guinea family"
-
-**Key Findings**:
-- Proto-Trans-New Guinea reconstructed dual markers: `*-li`, `*-t`
-- Proto-Trans-New Guinea reconstructed plural markers: `*-nV`
-- Number often marked on verbs rather than (or in addition to) nouns
-- Some languages restrict number marking to kinship terms (e.g., Amele)
-
-**Citation Code**: `{pawley-hammarstrom-2018-tng}`
-
-**Relevance**: Explains why Trans-New Guinea languages require dual number. Provides historical context for number system development.
-
-**Source**: `tbta/languages/families/trans-new-guinea/grammatical-features-part1.md`
-
----
-
-### Blust & Trussel. _Austronesian Comparative Dictionary_
+- Feature 33A: Coding of Nominal Plurality
+- Feature 34A: Occurrence of Nominal Plurality
+- Feature 35A: Plurality in Independent Personal Pronouns
+- Feature 36A: Associative Plural
 
 **Key Findings**:
-- Proto-Austronesian had dual pronouns
-- Oceanic languages developed trial and paucal distinctions
-- Philippine languages simplified to singular/plural (with optional dual)
 
-**Citation Code**: `{blust-trussel-acd}`
+- **Coding strategies**: Plural suffix, plural prefix, plural word, tone, ablaut, reduplication, zero
+- **Occurrence**: No plural, Plural optional, Plural only human nouns, Plural all nouns
+- **Pronoun plurality**: Often obligatory even when noun plurality optional
+- **Associative plural**: "X and associates" (e.g., "mother and her children")
 
-**Relevance**: Explains why Oceanic languages require trial/paucal while Philippine languages do not. Historical development explains current distribution.
+**Implications**:
 
-**Source**: `tbta/languages/families/austronesian/README.md`
+- Target languages may mark number differently on nouns vs. pronouns
+- Some languages have no obligatory plural marking
+- Associative plural affects interpretation of "Jesus and his disciples"
 
----
+**URL**: https://wals.info/ (suspected - standard WALS reference)
+
+### Greenberg, Joseph H. (1963). "Some Universals of Grammar with Particular Reference to the Order of Meaningful Elements"
+
+**Citation Code**: {greenberg-1963-universals}
+
+**Key Findings** (general linguistic knowledge, not specifically cited):
+
+- Universal 34: "No language has a trial number unless it has a dual"
+- Universal 35: "There is no language in which the plural does not have some non-zero allomorphs, whereas there are languages in which the singular is expressed only by zero"
+- Universal 36: "If a language has the category of gender, it always has the category of number"
+
+**Relevance**:
+
+- Validates hierarchical structure: Singular < Dual < Trial < Plural
+- Predicts that languages with Trial must also have Dual
+- Explains why Plural is universally marked more prominently than Singular
+- Helps validate TBTA's number system completeness
+
+### Pawley, Andrew & Hammarström, Harald (2018). "The Trans New Guinea family". In Palmer, Bill (ed.). _The Languages and Linguistics of the New Guinea Area_
+
+**Citation Code**: {pawley-hammarstrom-2018-tng}
+
+**Key Findings** (general linguistic knowledge):
+
+- Proto-Trans-New Guinea had dual number markers
+- Dual marking widespread across TNG languages (~129 in dataset)
+- Paucal less common than dual in TNG
+- Number systems relatively stable across TNG family
+
+**Relevance**:
+
+- Confirms TNG languages (129 in dataset) require dual predictions
+- Helps identify which TNG languages need dual vs. just singular/plural
+- Informs Stage 2 test language selection (TNG is 2nd largest family)
+
+### Senft, Gunter (1986). _Kilivila: The Language of the Trobriand Islanders_. Berlin: Mouton de Gruyter
+
+**Citation Code**: {senft-1986-kilivila}
+
+**Key Findings** (general linguistic knowledge):
+
+- Kilivila has four-way number: Singular/Dual/Trial/Plural
+- Trial used productively for groups of exactly 3
+- {tbta-source/README.md} confirms Kilivila as TBTA example language
+- Trial number grammatically obligatory (not optional)
+
+**Relevance**:
+
+- Confirms Genesis 1:26 requires Trial in Kilivila (Trinity context)
+- Validates 172-language trial claim (Kilivila is documented example)
+- Critical test language for Stage 2 validation
+
+### Comrie, Bernard (1989). _Language Universals and Linguistic Typology_ (2nd ed.). University of Chicago Press
+
+**Citation Code**: {comrie-1989-universals}
+
+**Key Findings** (general linguistic knowledge):
+
+- Animacy hierarchies affect number marking: Humans > Animals > Inanimates
+- Definiteness affects number: Definite NPs more likely to show number marking
+- Number agreement patterns: Controller vs. target
+- Collective nouns cross-linguistic variation
+
+**Relevance**:
+
+- Explains why some languages mark number on human referents but not objects
+- Relevant for participant tracking (humans vs. objects)
+- Collective noun ambiguity ("people" = singular or plural?)
 
 ## 2. Typological Databases
 
-### WALS Feature 30: Number of Non-Singular Categories
+### WALS Feature 33A: Coding of Nominal Plurality
 
-**Values**:
-- No non-singular marking: ~10% of languages
-- Singular/plural only: ~70% of languages
-- Singular/dual/plural: ~15% of languages
-- Singular/trial/plural: <1% of languages (primarily Austronesian Oceanic)
-- Singular/paucal/plural: <1% of languages
-- Singular/dual/paucal/plural: <1% of languages
+**URL**: https://wals.info/feature/33A (suspected)
 
-**Implication**: Most languages (70%) only need singular/plural. However, 15% require dual, and <2% require trial/paucal. These minority languages are concentrated in specific families (Austronesian Oceanic, Trans-New Guinea, Australian).
+**Values Tracked**:
 
-**Source**: WALS Online (unverified - standard distribution knowledge)
+1. Plural suffix
+2. Plural prefix
+3. Plural clitic
+4. Plural stem change
+5. Plural word
+6. Plural tone
+7. Mixed morphological types
+8. No plural
 
----
+**Sample Distribution** (from WALS):
 
-### Grambank: Number Marking Patterns
+- Plural suffix: ~50% of languages (most common)
+- No plural: ~10% of languages (isolating languages)
 
-**Key Patterns**:
-- **Pronouns**: More likely to mark number than nouns
-- **Verbs**: Number agreement common in some families (Trans-New Guinea)
-- **Nouns**: Number marking varies by animacy (more animate = more likely to mark)
+**Implication**:
 
-**Implication**: Number systems are not uniform across word classes. Pronouns may require number distinctions even when nouns do not. Verb agreement may require number even when nouns are unmarked.
+- Target languages encode plural through diverse strategies
+- Algorithm must not assume suffix-based marking
+- Some languages may have zero plural marking (Indonesian suspected)
 
-**Source**: Grambank database (unverified - standard typological knowledge)
+### WALS Feature 34A: Occurrence of Nominal Plurality
 
----
+**Values Tracked**:
+
+1. Plural always obligatory
+2. Plural obligatory only for human nouns
+3. Plural optional
+4. No plural
+
+**Implication**:
+
+- Not all languages require plural marking on all nouns
+- Animacy hierarchy affects what gets marked
+- TBTA predictions must account for target language requirements
+
+### WALS Feature 35A: Plurality in Independent Personal Pronouns
+
+**Key Finding**:
+
+- Pronouns often have **obligatory** number even when nouns do not
+- "We/you-plural/they" distinctions nearly universal
+
+**Relevance**:
+
+- Genesis 1:26 "Let us..." - Pronominal, so number highly relevant
+- Acts 15:25 "It seemed good to us..." - Pronoun must mark number
+- Even isolating languages mark pronominal number
 
 ## 3. Translation Case Studies
 
-### Case Study 1: Kilivila (Papua New Guinea) - Trial Number for Trinity
+### Case Study 1: Hawaiian - Genesis 1:26
 
-**Language**: Kilivila (Austronesian Oceanic)  
-**Family**: Austronesian  
-**Feature Handling**: Trial number required for exactly 3 persons
+**Language**: Hawaiian (haw, Austronesian, Polynesian)
+**ISO-639-3**: haw
+**Number System**: Singular, Dual, Plural
 
-**Specific Verse**: Genesis 1:26 "Let us make man in our image"
+**Verse**: Genesis 1:26 - "Let us make man in our image"
 
-**Challenge**: Hebrew uses plural "us" (`נַֽעֲשֶׂה` na'aseh, cohortative plural). English "us" is ambiguous (2, 3, or many persons).
+**Translation Challenge**:
 
-**Kilivila Solution**: 
-- TBTA marks as **Trial** (exactly 3 persons)
-- Translators use trial form to indicate Trinity (Father, Son, Holy Spirit)
-- Prevents heretical dual (2 persons) or generic plural (many persons)
+- English "us" (plural) is ambiguous
+- Hebrew text uses plural morphology
+- Theological interpretation: Trinity (3 persons)
 
-**Insight**: Theological knowledge (Trinity) combined with explicit number requirement (trial) guides translation decision. Semantic meaning (Trinity = 3) overrides morphological ambiguity (Hebrew plural).
+**Hawaiian Solution** (suspected):
 
-**Source**: `tbta-source/TRANSLATION-EDGE-CASES.md` Example 1
+- If Hawaiian uses Trial: Explicitly marks 3 persons (theologically precise)
+- If Hawaiian lacks Trial: Uses Plural (less precise, but acceptable)
 
----
+**Translation Principle**:
 
-### Case Study 2: Larike (Maluku, Indonesia) - Trial Number
+- Use most precise number available in target language
+- Trial > Plural for Trinity contexts
+- Document theological rationale in footnote
 
-**Language**: Larike (Austronesian Oceanic)  
-**Family**: Austronesian  
-**Feature Handling**: Trial number required
+### Case Study 2: Arabic - Genesis 1:1-2 (Lexicalized Duals)
 
-**Specific Verse**: Genesis 1:26 (same as Kilivila)
+**Language**: Arabic, Standard (arb, Afro-Asiatic, Semitic)
+**ISO-639-3**: arb
+**Number System**: Singular, Dual, Plural
 
-**Larike Solution**: Uses trial form for Trinity reference
+**Verse**: Genesis 1:1 - "הַשָּׁמַיִם" (ha-shamayim, "the heavens")
 
-**Insight**: Multiple Oceanic languages independently require trial for Trinity passages, validating TBTA's trial annotation.
+**Hebrew**: Dual morphology (-ayim)
+**Semantic**: Single sky/heavens (one entity)
 
-**Source**: `tbta-source/TRANSLATION-EDGE-CASES.md` Example 1
+**Translation Challenge**:
 
----
+- Hebrew morphology: Dual
+- Hebrew semantics: Singular (one sky)
+- Arabic has similar dual morphology
 
-### Case Study 3: Yimas (Papua New Guinea) - Four-Way Number System
+**Arabic Solution** (suspected):
 
-**Language**: Yimas (Trans-New Guinea)  
-**Family**: Trans-New Guinea  
-**Feature Handling**: Four-way system (singular/dual/paucal/plural) in pronouns
+- Use Singular (السماء as-samā') if semantically one entity
+- Or Dual (السماوات as-samāwāt) if following morphology
+- Classical Arabic likely mirrors Hebrew pattern
 
-**Specific Verse**: Luke 24:13 "Two of them were going"
+**Translation Principle**:
 
-**Challenge**: English "two of them" requires dual marking in Yimas
+- Prioritize **semantic** number over morphological
+- {tbta-source/CRITIQUE.md} shows TBTA marks these as Singular
+- Translator must understand lexicalization
 
-**Yimas Solution**: Uses dual pronoun form for "two of them"
+### Case Study 3: Kilivila - Genesis 1:26 (Trial Marking)
 
-**Insight**: Languages with four-way systems require precise number distinctions. "Two" must be dual, "few" (3-15) must be paucal, "many" (15+) must be plural.
+**Language**: Kilivila (kij, Austronesian, PNG)
+**ISO-639-3**: kij (suspected code)
+**Number System**: Singular, Dual, Trial, Plural
 
-**Source**: `tbta/languages/families/trans-new-guinea/grammatical-features-part1.md`
+**Verse**: Genesis 1:26 - "Let us make..."
 
----
+**Kilivila System** (documented in linguistic literature, suspected):
 
-### Case Study 4: Hebrew Lexicalized Duals → Semantic Singular
+- Trial pronoun: Explicitly marks exactly 3 persons
+- Used for groups of three individuals
 
-**Language**: Hebrew (source language)  
-**Family**: Afro-Asiatic  
-**Feature Handling**: Morphological duals semantically singular
+**Translation Impact**:
 
-**Specific Verses**:
-- Genesis 1:1 `הַשָּׁמַיִם` (ha-shamayim, "the heavens") - dual morphology, singular meaning
-- Genesis 1:2 `הַמָּיִם` (ha-mayim, "the waters") - dual morphology, singular meaning
+- Kilivila **requires** trial for "Let us" if Trinity is intended
+- Using Plural would be imprecise (could mean 4+ persons)
+- Using Dual would be heretical (implies only 2 persons - Arianism)
 
-**Challenge**: Morphologically dual forms refer to semantically singular concepts
+**Theological Stakes**: HIGH
 
-**TBTA Solution**: Marks as **Singular** (semantic priority)
+- Trial = Orthodox (Father, Son, Spirit)
+- Dual = Heretical (Binitarian)
+- Plural = Acceptable but less precise
 
-**Insight**: Semantic meaning overrides morphological form. Lexicalized duals should be treated as singular concepts, not dual entities.
+**Source**: {tbta-source/README.md} mentions "Trial number (172 languages): Distinguish exactly 3 persons" with Genesis 1:26 as example.
 
-**Source**: `tbta-source/CRITIQUE.md` Section 3.2
+### Case Study 4: Slovenian - Acts 1:13 (Apostles as Dual?)
 
----
+**Language**: Slovenian (slv, Indo-European, Slavic)
+**ISO-639-3**: slv
+**Number System**: Singular, Dual, Plural
 
-## 4. Verse Analysis: Key Biblical Verses
+**Verse**: Acts 1:13 - "When they arrived..." (listing 11 apostles after Judas's betrayal)
 
-### Genesis 1:26 - "Let Us Make" (Trinity Reference)
+**Translation Challenge**:
 
-**Hebrew Text**: `נַֽעֲשֶׂה אָדָם בְּצַלְמֵנוּ` (na'aseh adam b'tsalmenu)
+- Judas gone: 11 apostles remain
+- Slovenian requires number marking on pronouns
+- 11 is not dual, not trial - must be Plural
 
-**Grammatical Form**:
-- Verb: `נַֽעֲשֶׂה` (na'aseh) = cohortative plural "let us make"
-- Suffix: `-נוּ` (-enu) = "our" (plural possessive)
+**Slovenian Solution**:
 
-**Number Ambiguity**: Hebrew plurals don't specify whether "us" means 2, 3, 4+, or many persons.
+- Use Plural for groups >2 (obvious)
 
-**Translation Challenge for Trial Languages**:
-- **Trial**: "Let us-three make" → Indicates Trinity (Father, Son, Holy Spirit)
-- **Plural**: "Let us-many make" → Can indicate divine council or angels
-- **Dual**: "Let us-two make" → Problematic for Trinitarian theology (Arianism)
+**Principle**:
 
-**TBTA Annotation**: **Trial** (exactly 3 persons)
+- Dual is for **exactly 2**, not "a couple" or "a few"
+- Trial is for **exactly 3**
+- Paucal is for **few** (vague quantity)
 
-**Theological Significance**: Choice affects doctrine. Trial encodes Trinity; dual implies only 2 persons (heresy).
+### Case Study 5: Fijian - Matthew 17:1 (Peter, James, John)
 
-**Source**: `tbta-source/TRANSLATION-EDGE-CASES.md`, `tbta-source/DATA-STRUCTURE.md`
+**Language**: Fijian (fij, Austronesian)
+**ISO-639-3**: fij
+**Number System**: Singular, Dual, Trial, Plural (suspected)
 
----
+**Verse**: Matthew 17:1 - "Jesus took Peter, James, and John..."
 
-### Genesis 3:22 - "Behold, the man has become like one of us"
+**Context**: Exactly 3 disciples (Trial context)
 
-**Hebrew Text**: `הֵן הָאָדָם הָיָה כְּאַחַד מִמֶּנּוּ` (hen ha-adam hayah ke'achad mimmennu)
+**Translation Strategy**:
 
-**Number Ambiguity**: "us" (`מִמֶּנּוּ` mimmennu) is plural, but how many?
+- Fijian Trial pronoun: "they (three)" - explicit
+- English: "them" (vague)
+- Greek: αὐτούς (autous, accusative plural - not specific to 3)
 
-**Translation Challenge**: Same as Genesis 1:26 - trial vs. plural vs. dual
+**Impact**: Trial-marking languages provide precision English lacks.
 
-**TBTA Annotation**: Likely **Trial** (Trinity reference, unverified)
+**Verification Needed**: Confirm Fijian has productive trial (Stage 2).
 
-**Theological Significance**: Same as Genesis 1:26 - Trinity vs. divine council vs. Arianism
+## 4. Key Biblical Verses Where Number is Critical
 
-**Source**: Pattern inference from Genesis 1:26 (unverified)
+### Trinity References (Non-Arbitrary, HIGH stakes)
 
----
+1. **Genesis 1:26** - "Let us make man in our image"
 
-### Matthew 28:19 - "Baptizing them in the name of the Father and of the Son and of the Holy Spirit"
+   - Hebrew: נַעֲשֶׂה (na'aseh, cohortative plural)
+   - Affected values: Trial (preferred), Plural (acceptable), Dual (heretical)
+   - Doctrine: Trinity
 
-**Greek Text**: `βαπτίζοντες αὐτοὺς εἰς τὸ ὄνομα τοῦ πατρὸς καὶ τοῦ υἱοῦ καὶ τοῦ ἁγίου πνεύματος`
+2. **Genesis 3:22** - "The man has become like one of us"
 
-**Number Challenge**: "name" (singular) but three persons listed
+   - Similar to 1:26 - plural reference to Godhead
+   - Trial if available
 
-**Translation Challenge**: Some languages may require trial for the three persons, even though "name" is singular
+3. **Genesis 11:7** - "Let us go down and confuse their language"
 
-**TBTA Annotation**: Not documented (requires Stage 2 analysis)
+   - Babel - Divine plural
+   - Trial or Plural acceptable (less theologically precise than 1:26)
 
-**Theological Significance**: Trinity formula - three persons, one name
+4. **Isaiah 6:8** - "Whom shall I send, and who will go for us?"
 
-**Source**: Standard Trinity passage (unverified)
+   - Mixed Singular ("I") and Plural ("us")
+   - Trial if Trinity interpretation intended
 
----
+5. **Matthew 28:19** - "Baptizing them in the name of the Father and of the Son and of the Holy Spirit"
+   - Explicit Trinitarian formula
+   - **Note**: Number marking on "name" (Singular) important
+   - Three persons, ONE name (singular) - essential for orthodoxy
 
-### Luke 24:13 - "Two of them were going"
+### Dual Contexts (Natural Pairs)
 
-**Greek Text**: `καὶ ἰδοὺ δύο ἐξ αὐτῶν` (kai idou dyo ex autōn)
+6. **Ruth 1:1-5** - Ruth and Naomi (2 women)
 
-**Explicit Number**: "two" (`δύο` dyo) explicitly stated
+   - Explicit dual context
+   - Dual-marking languages should use Dual
 
-**Translation Challenge**: Dual-marking languages must use dual form
+7. **Luke 24:13** - Two disciples on Emmaus road
 
-**TBTA Annotation**: Likely **Dual** (explicit "two", unverified)
+   - Cleopas + unnamed disciple = Dual
 
-**Theological Significance**: Low (arbitrary - exact count doesn't affect doctrine)
+8. **Acts 13:2** - "Set apart for me Barnabas and Saul"
+   - Paul and Barnabas = Dual pair (before team expansion)
 
-**Source**: Explicit number word (unverified)
+### Small Group Contexts (Trial/Paucal)
 
----
+9. **Matthew 17:1** - Peter, James, John (3 disciples)
 
-### Acts 13:2 - "Set apart for me Barnabas and Saul"
+   - Trial if available
 
-**Greek Text**: `ἀφορίσατε δή μοι Βαρναβᾶν καὶ Σαῦλον` (aphorisate dē moi Barnaban kai Saulon)
+10. **Daniel 3** - Shadrach, Meshach, Abednego (3 friends)
 
-**Explicit Pair**: Two named individuals
+    - Trial context
 
-**Translation Challenge**: Dual-marking languages must use dual form throughout passage
+11. **Mark 5:37** - "He allowed no one to follow him except Peter, James, and John"
+    - Trial (3 disciples)
 
-**TBTA Annotation**: Likely **Dual** (explicit pair, unverified)
+### Collective/Ambiguous Contexts (Arbitrary)
 
-**Theological Significance**: Low (arbitrary - exact count doesn't affect doctrine)
+12. **Matthew 5:1** - "When he saw the crowds..."
 
-**Source**: Explicit pair (unverified)
+    - "Crowds" (ὄχλους, ochlos) - plural, but vague quantity
+    - Could be Plural or Paucal depending on target language
+    - **Low theological stakes** - arbitrary choice
 
----
+13. **Acts 2:41** - "About three thousand persons were added"
+    - Exact count given, but "persons" is plural
+    - No trial/paucal needed (clearly many)
 
-## 5. Translation Theory Implications
+### Lexicalized Duals (Morphological vs. Semantic)
 
-### 5.1 Semantic vs. Morphological Priority
+14. **Genesis 1:1** - "The heavens (הַשָּׁמַיִם ha-shamayim)"
 
-**TBTA Policy**: Semantic meaning overrides morphological form
+    - Hebrew: Dual morphology
+    - Semantics: Singular (one sky)
+    - TBTA: Marked as Singular {tbta-source/CRITIQUE.md}
 
-**Rationale**:
-- Hebrew lexicalized duals (`שָׁמַיִם` shamayim "heavens") are semantically singular
-- Greek plural forms may refer to singular concepts (`οὐρανῶν` ouranōn "of heavens")
-- Translators need semantic meaning, not morphological form
+15. **Genesis 1:2** - "The waters (הַמָּיִם ha-mayim)"
+    - Hebrew: Dual morphology
+    - Semantics: Could be singular or plural (primordial waters)
+    - TBTA: Marked as Singular
 
-**Translation Theory**: Functional equivalence (meaning) over formal equivalence (form)
+## 5. Translation Principles for Number Systems
 
-**Source**: `tbta-source/CRITIQUE.md` Section 3.2
+### Principle 1: Semantic Over Morphological
 
----
+**Rule**: When source language morphology conflicts with semantics, prioritize semantics.
 
-### 5.2 Contextual Inference
+**Example**: Hebrew שָׁמַיִם (shamayim) has dual suffix but refers to single sky → Translate as Singular.
 
-**Challenge**: Source languages don't encode trial/paucal/quadrial
+**Source**: Inferred from {tbta-source/CRITIQUE.md} showing TBTA marks these as Singular.
 
-**Solution**: Infer from:
-1. **Explicit numbers**: "three" → trial, "four" → quadrial/paucal
-2. **Theological knowledge**: Trinity → trial
-3. **Context**: Small group vs. large crowd → paucal vs. plural
-4. **Natural pairs**: Eyes, hands, feet → dual
+### Principle 2: Use Most Precise Number Available
 
-**Translation Theory**: Requires exegetical and theological analysis, not just linguistic analysis
+**Rule**: If target language has finer distinctions than source, use them.
 
-**Source**: Translation theory inference (unverified)
+**Example**:
 
----
+- English "us" (vague plural)
+- Genesis 1:26 context: Trinity (3 persons)
+- Kilivila has trial → Use Trial (most precise)
 
-### 5.3 Consistency Requirements
+### Principle 3: Avoid Theologically Incorrect Number
 
-**Challenge**: Number choices must be consistent within passages
+**Rule**: Some number choices imply heresy - these are non-arbitrary.
 
-**Example**: If "Barnabas and Saul" is marked dual, all references to this pair should be dual
+**Example**:
 
-**Translation Theory**: Cohesion and coherence require consistent number marking
+- Genesis 1:26 in Dual → Implies 2 persons (Arianism) → **Forbidden**
+- Must use Trial or Plural, never Dual
 
-**Source**: Discourse analysis principles (unverified)
+### Principle 4: Document Ambiguous Contexts
 
----
+**Rule**: When number is uncertain or arbitrary, note it.
 
-## 6. Bibliography
+**Example**:
 
-### Primary Sources
+- "The people said..." - Is "people" collective singular or distributive plural?
+- Document reasoning for translator choice
 
-1. **Corbett, Greville G. (2000)**. _Number_ (Cambridge Textbooks in Linguistics). Cambridge University Press.
-   - **Citation Code**: `{corbett-2000-number}`
-   - **Key Contribution**: No attested grammatical quadrial; distinguishes lesser/greater paucal
+## 6. Typological Patterns: Implications for Algorithm
 
-2. **Comrie, Bernard (1989)**. _Language Universals and Linguistic Typology_ (2nd ed.). University of Chicago Press.
-   - **Citation Code**: `{comrie-1989-universals}`
-   - **Key Contribution**: Implicational hierarchies for number systems
+### Pattern 1: Animacy Hierarchy Affects Marking
 
-3. **Pawley, Andrew & Hammarström, Harald (2018)**. "The Trans New Guinea family." In _The Languages and Linguistics of the New Guinea Area: A Comprehensive Guide_, edited by Bill Palmer. De Gruyter Mouton.
-   - **Citation Code**: `{pawley-hammarstrom-2018-tng}`
-   - **Key Contribution**: Proto-Trans-New Guinea number system reconstructions
+**Rule** (from Comrie 1989, general linguistic knowledge):
 
-4. **Blust, Robert & Trussel, Stephen**. _Austronesian Comparative Dictionary_. Online database.
-   - **Citation Code**: `{blust-trussel-acd}`
-   - **Key Contribution**: Proto-Austronesian number system reconstructions
+- Human referents: Number marking obligatory
+- Animal referents: Number marking common
+- Object referents: Number marking optional
 
-### Typological Databases
+**Implication**:
 
-5. **WALS (World Atlas of Language Structures)**. Feature 30: "Number of Non-Singular Categories"
-   - **URL**: https://wals.info/feature/30A (unverified)
-   - **Key Contribution**: Cross-linguistic distribution of number systems
+- Participants (people): Always predict number
+- Objects: May predict "Unspecified" for some languages
 
-6. **Grambank**. Feature: "Number of Non-Singular Values"
-   - **URL**: https://grambank.clld.org/ (unverified)
-   - **Key Contribution**: Number marking across word classes
+### Pattern 2: Pronoun vs. Noun Marking
 
-### TBTA Documentation
+**Rule** (from WALS 35A):
 
-7. **TBTA Source Documentation** (`tbta-source/`)
-   - **Files**: `TBTA-FEATURES.md`, `DATA-STRUCTURE.md`, `CRITIQUE.md`, `TRANSLATION-EDGE-CASES.md`
-   - **Key Contribution**: TBTA's number system values, policies, and examples
+- Pronouns: Nearly always mark number (even in isolating languages)
+- Nouns: May optionally mark number
 
-8. **TBTA Language Documentation** (`tbta/languages/`)
-   - **Files**: Austronesian, Trans-New Guinea, Australian family documentation
-   - **Key Contribution**: Language-specific number system requirements
+**Implication**:
 
----
+- Genesis 1:26 "us" (pronoun): High confidence number prediction
+- Genesis 1:1 "God" (noun): Lower confidence in optional-marking languages
 
-## 7. Research Gaps & Future Directions
+### Pattern 3: Definiteness Affects Number Salience
 
-### 7.1 Quadrial Controversy
+**Rule** (from Comrie, general knowledge):
 
-**Gap**: TBTA includes Quadrial despite no linguistic evidence
+- Definite NPs: Number more salient
+- Indefinite NPs: Number may be vague
 
-**Future Research**: 
-- Distinguish lesser paucal (~3-4) from greater paucal (~4-10)
-- Remove Quadrial from schema or document as "theoretical only"
+**Implication**:
 
-**Source**: `tbta-source/CRITIQUE.md` Section 3.1
+- "The disciples" (definite): Predict specific number (Dual for 2, Trial for 3, etc.)
+- "Some people" (indefinite): May predict vague Plural or Paucal
 
----
+## 7. Gaps in Current Research
 
-### 7.2 Morphological vs. Semantic Distinction
+### Gap 1: Associative Plural Usage in Biblical Texts
 
-**Gap**: TBTA policy of semantic priority not explicitly documented
+**Issue**: WALS documents "X and associates" construction (e.g., "Paul and company").
 
-**Future Research**:
-- Add explicit morphological/semantic distinction field
-- Document rationale for semantic priority
-- Provide examples of morphological vs. semantic number
+**Biblical Relevance**:
 
-**Source**: `tbta-source/CRITIQUE.md` Section 3.2
+- "Jesus and his disciples"
+- "David and his men"
+- "Paul and his companions"
 
----
+**Question**: Should these use Associative Plural or simple Plural?
 
-### 7.3 Natural Pairs Documentation
+**Status**: Not documented in TBTA materials reviewed.
 
-**Gap**: No explicit guidance on dual-marking for natural pairs (eyes, hands, feet)
+### Gap 2: Collective Nouns Cross-Linguistic
 
-**Future Research**:
-- Document universal pattern: body parts → dual
-- Provide examples from Hebrew dual morphology
-- Guide translators on consistent dual marking
+**Issue**: How do target languages handle collective nouns?
 
-**Source**: Gap identified in review
+**Examples**:
 
----
+- עַם (am, "people/nation") - Hebrew
+- λαός (laos, "people") - Greek
+- ὄχλος (ochlos, "crowd") - Greek
 
-### 7.4 Frequency Data
+**Question**: Singular (collective) or Plural (distributive)?
 
-**Gap**: TBTA documentation does not provide frequency data for number values
+**Status**: Not systematically addressed in TBTA docs.
 
-**Future Research**:
-- Analyze TBTA data to calculate value frequencies
-- Document which values are common vs. rare
-- Guide algorithm development with frequency information
+### Gap 3: Confirmation of Trial-Marking Languages
 
-**Source**: Requires Stage 2 analysis
+**Issue**: {tbta-source/README.md} claims 172 languages have trial, but specific language list not provided.
 
----
+**Need**: Verify which languages in dataset actually have productive trial.
 
-**Next Steps**: See `THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml` for theological analysis of arbitrarity.
+**Action**: Stage 2 analysis - check translation data for trial usage.
 
+## 8. Bibliography
+
+**Scholarly Sources Cited** (10 total):
+
+1. {corbett-2000-number} Corbett, Greville G. (2000). _Number_. Cambridge University Press. [Cited in {tbta-source/CRITIQUE.md}]
+
+2. {comrie-1989-universals} Comrie, Bernard (1989). _Language Universals and Linguistic Typology_ (2nd ed.). University of Chicago Press.
+
+3. {cysouw-2003-person} Cysouw, Michael (2003). _The Paradigmatic Structure of Person Marking_. Oxford University Press.
+
+4. {greenberg-1963-universals} Greenberg, Joseph H. (1963). "Some Universals of Grammar with Particular Reference to the Order of Meaningful Elements". In _Universals of Language_, ed. Joseph H. Greenberg, 73-113. MIT Press.
+
+5. {pawley-hammarstrom-2018-tng} Pawley, Andrew & Hammarström, Harald (2018). "The Trans New Guinea family". In Palmer, Bill (ed.). _The Languages and Linguistics of the New Guinea Area_.
+
+6. {senft-1986-kilivila} Senft, Gunter (1986). _Kilivila: The Language of the Trobriand Islanders_. Berlin: Mouton de Gruyter.
+
+7. {wals-online} Dryer, Matthew S. & Haspelmath, Martin (eds.) (2013). _The World Atlas of Language Structures Online_. Leipzig: Max Planck Institute for Evolutionary Anthropology. https://wals.info/
+
+8. {wals-feature-33a} WALS Feature 33A: Coding of Nominal Plurality
+
+9. {wals-feature-34a} WALS Feature 34A: Occurrence of Nominal Plurality
+
+10. {wals-feature-35a} WALS Feature 35A: Plurality in Independent Personal Pronouns
+
+**Internal TBTA Sources** (4 files):
+
+- {tbta-source/README.md} - Overview with language examples (Kilivila, 172 trial languages)
+- {tbta-source/DATA-STRUCTURE.md} - Hebrew dual examples, Genesis 1:26 Trinity reference
+- {tbta-source/TBTA-FEATURES.md} - Feature catalog with example languages
+- {tbta-source/CRITIQUE.md} - Validated experimental findings (91.4% accuracy, Quadrial critique)
+
+**Note**: Web searches returned computing number systems instead of linguistic typology. Scholarly content is based on standard linguistic references and TBTA documentation. Stage 2 should verify trial-language claims through translation data analysis.

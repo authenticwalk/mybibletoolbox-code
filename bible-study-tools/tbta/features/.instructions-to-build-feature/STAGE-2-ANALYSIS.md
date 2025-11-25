@@ -2,46 +2,64 @@
 
 **Role**: Data Scientist / Polyglot / QA
 **Input**: Feature Definition (Stage 1)
-**Output**: `experiments/analysis/` (Data dumps, Scripts, Scorecards)
+**Output**: `analysis/` (Data dumps, scripts, Scorecards)
 
 ## Goal
 
 Quantitatively validate the feature against real-world translations _before_ writing prompts. We shift from "looking for patterns" to "testing hypotheses".
 
+## Context
+
+NOTE: the relative directory is /bible-study-tools/tbta/features/{feature}/
+NOTE: the TBTA-DIR is /bible-study-tools/tbta/
+
+## Execution Strategy
+
+**Use Subagents Proactively**:
+
+- Assign subagents to run in parallel for each section: ex (TBTA Review, Language Analysis, Theological Research, etc)
+- Then Synthesize findings into the final deliverables.
+- 
 ## Tasks
 
 ### 1. Extract TBTA Data (Output as JSONL)
 
-- **Script**: Write Python code to extract TBTA data. Use the canonical extractor (`python src/ingest-data/tbta/extract_feature.py --field {tbta_field}`) as a base, but output JSONL format.
-- **Output Format** (`analysis/tbta-extract.jsonl`): For each TBTA entry, output in JSONL format:
+**This step is done using code only.**
+
+- **Script**: Run the canonical extractor (`python src/ingest-data/tbta/extract_feature.py --field {tbta_field} --format jsonl > ${TBTA-DIR}/features/{feature}/analysis/tbta-extract.jsonl`) 
+- **Output Format** (`./analysis/tbta-extract.jsonl`): For each TBTA entry, output in JSONL format:
   ```jsonl
-  {"verse": "GEN-001-026", "label": "Trial", "word_indicator": "us", "tbta_field": "number"}
+  {"verse": "REV.001.010", "label": "Singular", "constituent": "sound", "part": "Noun", "path": "Clause[4]/Clause[0]/NP[0]"}
   ```
-  Fields: `verse`, `label`, `word_indicator` (some field that indicates what word it is), `tbta_field`
-- **Metadata**: Ensure the extractor output includes `feature`, `extracted` (UTC timestamp), `tbta_commit`, `max_per_value`, OT/NT totals, and per-book distributions as described in `plan/tbta/tbta-feature-extractor/PLAN.md`.
-- **Artifact**: Save the YAML payload to `analysis/{feature}-tbta-extract.yaml` (or equivalent) and commit it before any downstream processing so splits and analyses can trace back to the exact TBTA snapshot.
+  
 
 ### 2. Select Reference Dataset (100+ Verses Per Value)
 
-- **Goal**: Select 100+ values for each value using criteria: adversarial, non-arbitrary, arbitrary, balanced, covering all edge cases
-- **Output Format** (`analysis/reference-dataset.jsonl`): Output as JSONL with fields:
+** You need to do this as the LLM as this is an unstructured task**
+
+Sources:
+- ${TBTA-DIR}/features/{feature}/analysis/tbta-extract.jsonl
+- context: ${TBTA-DIR}/features/{feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.md
+- context: ${TBTA-DIR}/features/{feature}/research/README.md
+
+
+- **Goal**: Select 100+ values for each value ensuring a good balance of easy and adversarial; non-arbitrary and arbitrary (and balanced between the groupings within that); OT and NT; various literary types (history, poetry, prophecy, epistle, law, etc)
+
+- **Output Format** (`${TBTA-DIR}/features/{feature}/analysis/reference-dataset.jsonl`): Output as JSONL with fields:
   ```jsonl
   {"verse": "GEN-001-026", "tbta_value": "Trial", "tbta_word": "us", "strongs_number": "H430", "strongs_word": "אֱלֹהִים"}
   ```
   Fields: `verse`, `tbta_value`, `tbta_word` (TBTA word used), `strongs_number`, `strongs_word`
-- **Challenge**: Strong's number is not in the TBTA source - you will need to use a smart LLM agent for this
-- **Action**: Align TBTA verses with Macula/Strong's data (available in `.data/` or via `fetch_verse` skill) to get Strong's numbers and words
+- **Challenge**: Strong's number is not in the TBTA source but you can determine if from the Macula dataset in $DATA-DIR(default:./data)/commentary/{BOOK}/{chapter:03d}/{BOOK}.{chapter:03d}.{verse:03d}-{macula}.yaml 
 
-### 3. Discover Available Languages
-
-- **Action**: Using the `quote-bible` skill (or `fetch_verse` script), lookup one verse in the NT and one in the OT to discover which languages we have
-- **Script**: Query 1 OT verse (Gen 1:1) and 1 NT verse (John 1:1)
-- **Expected Results**: 
-  - You should get about 1000 languages back in NT, less in OT
-  - If not you did it wrong, debug and fix
-- **Output**: A list of _actually available_ language codes. Filter your target list to only these.
 
 ### 4. Generate Translation Hypotheses
+
+Created with LLM
+
+Sources: 
+ - `${TBTA-DIR}/features/{feature}/analysis/reference-dataset.jsonl`
+ - context: ${TBTA-DIR}/features/{feature}/research/LANGUAGES.md (languages that use this feature)
 
 - **Concept**: For each record in the reference dataset, consider which languages from Step 3 use or require this feature
 - **Action**: 
@@ -50,7 +68,7 @@ Quantitatively validate the feature against real-world translations _before_ wri
 - **Method**: Use an LLM to generate these hypotheses
 - **Output Format** (`analysis/translation-hypotheses.jsonl`):
   ```jsonl
-  {"verse": "GEN-001-026", "tbta_value": "Trial", "strongs_number": "H430", "language": "fij", "expected_words": ["kedatou", "tou"], "alternative_words": {"Plural": ["keda"], "Dual": ["kedaru"]}}
+  {"verse": "GEN-001-026", "tbta_value": "Trial", "strongs_number": "H430", "languages": ["fij", "expected_words": ["kedatou", "tou"], "alternative_words": {"Plural": ["keda",...], "Dual": ["kedaru"]},...]}
   ```
 
 ### 5. Validate Hypotheses Against Real Translations

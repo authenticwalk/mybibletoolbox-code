@@ -1,304 +1,342 @@
-# TBTA Documentation Review: Number Systems
+# Number Systems: TBTA Documentation Review
 
-**Source**: TBTA source documentation (`tbta-source/`), GitHub repository analysis  
-**Date**: 2025-01-27  
-**Purpose**: Extract TBTA's definition, values, constraints, and policies for the Number System feature
-
----
+**Feature**: Number System  
+**TBTA Classification**: Tier A - Essential (affects 1000+ languages)  
+**Source**: TBTA Source Documentation (`/bible-study-tools/tbta/tbta-source/*`)  
+**Review Date**: 2025-11-24
 
 ## 1. Feature Definition
 
-**Concept**: Number System identifies grammatical number distinctions beyond the basic singular/plural dichotomy found in English and Biblical source languages (Hebrew, Aramaic, Greek).
+### 1.1 Concept
 
-**TBTA Classification**: Tier A - Essential Feature (affects 1000+ languages, cannot be easily inferred)
+**What is Number System?**
 
-**Location in TBTA Schema**: 
-- Noun feature (Position 2 in character-based encoding)
-- Applies to nouns, pronouns, and noun phrases
+{tbta-source/DATA-STRUCTURE.md}: "Number System: Beyond singular/plural: Singular (S), Dual (D), Trial (T), Quadrial (Q), Paucal (p), Plural (P)"
 
-**Source Citations**:
-- `TBTA-FEATURES.md`: Listed as Feature #1 under Noun Features
-- `DATA-STRUCTURE.md`: Position 2 in noun encoding (S/D/T/P)
-- `tbta-source/README.md`: Listed as essential for 1,000+ languages
+Number System refers to grammatical marking of quantity/count of entities referenced by nouns and pronouns. Beyond the basic singular/plural dichotomy found in English and Biblical source languages (Hebrew, Aramaic, Greek), many target languages require finer distinctions.
 
----
+{tbta-source/README.md}: Listed as Tier A Essential feature - "Cannot be easily inferred from context" in 1,000+ languages.
+
+### 1.2 TBTA Schema Location
+
+**Where is it encoded?**
+
+- **Noun feature**: Position 2 in 10-character encoding scheme
+- **Applies to**: Nouns, pronouns, noun phrases
+- **Source**: {tbta-source/DATA-STRUCTURE.md} - Character-based encoding
+
+**Related to**: Person System (Feature #2), Participant Tracking (Feature #3)
 
 ## 2. Value Inventory
 
 ### 2.1 Complete Value List
 
+{tbta-source/TBTA-FEATURES.md}: "Number System | Singular (S), Dual (D), Trial (T), Quadrial (Q), Paucal (p), Plural (P) | Hawaiian, Samoan, Slovenian | ✅ Complete"
+
 TBTA supports **6 number values**:
 
-| Code | Value | Definition | Source |
-|------|-------|------------|--------|
-| **S** | Singular | One entity | `TBTA-FEATURES.md`, `DATA-STRUCTURE.md` |
-| **D** | Dual | Exactly two entities | `TBTA-FEATURES.md`, `DATA-STRUCTURE.md` |
-| **T** | Trial | Exactly three entities | `TBTA-FEATURES.md`, `TRANSLATION-EDGE-CASES.md` |
-| **Q** | Quadrial | Exactly four entities | `TBTA-FEATURES.md` |
-| **p** | Paucal | A few entities (small inexact group, typically 3-15) | `TBTA-FEATURES.md` |
-| **P** | Plural | Multiple entities (more than paucal or unspecified) | `TBTA-FEATURES.md`, `DATA-STRUCTURE.md` |
+| Code | Value    | Meaning             | Source                          | Example Languages                        |
+| ---- | -------- | ------------------- | ------------------------------- | ---------------------------------------- |
+| S    | Singular | Exactly 1 entity    | {tbta-source/TBTA-FEATURES.md}  | All languages                            |
+| D    | Dual     | Exactly 2 entities  | {tbta-source/DATA-STRUCTURE.md} | Hebrew, Arabic, Slovenian, Hawaiian      |
+| T    | Trial    | Exactly 3 entities  | {tbta-source/README.md}         | Kilivila, Larike, Fijian (172 languages) |
+| Q    | Quadrial | Exactly 4 entities  | {tbta-source/TBTA-FEATURES.md}  | **NONE** - see Section 5.1               |
+| p    | Paucal   | Few entities (3-10) | {tbta-source/TBTA-FEATURES.md}  | Some Austronesian/Oceanic                |
+| P    | Plural   | Many entities (>3)  | {tbta-source/DATA-STRUCTURE.md} | All languages                            |
+
+{tbta-source/DATA-STRUCTURE.md}: Character encoding position 2 for Nouns encodes Number with these single-character codes.
 
 ### 2.2 Value Documentation Status
 
-**Documented Values** (from TBTA source):
-- Singular: Fully documented
-- Dual: Documented, Hebrew dual morphology noted
-- Trial: Documented with theological significance (Genesis 1:26 Trinity reference)
-- Plural: Fully documented
-- Paucal: Listed but minimal documentation
-- Quadrial: Listed but **contested** (see Section 4.1)
+**Fully Documented** (with morphology/examples):
 
-**Theoretical vs. Productive**:
-- **Singular/Plural**: Productive (most common)
-- **Dual**: Productive in Hebrew morphology, semantic use in other languages
-- **Trial**: Productive in 172+ Austronesian languages (`tbta-source/README.md`)
-- **Paucal**: Productive in some Austronesian/Oceanic languages
-- **Quadrial**: **Theoretical only** - no attested grammatical quadrial in natural languages (`CRITIQUE.md`)
+- Singular (S): Universal
+- Dual (D): Hebrew dual morphology (-ayim suffix) documented
+- Trial (T): Genesis 1:26 Trinity reference documented
+- Plural (P): Universal
 
----
+**Minimally Documented**:
+
+- Paucal (p): Listed but minimal examples
+- Quadrial (Q): Listed but **contested** - no linguistic evidence
+
+### 2.3 Theoretical vs. Productive Values
+
+**From TBTA documentation and linguistic literature**:
+
+| Value    | Theoretical | Productive (Expected Data %) | Languages                                  |
+| -------- | ----------- | ---------------------------- | ------------------------------------------ |
+| Singular | Yes         | HIGH (40-50%)                | All languages                              |
+| Plural   | Yes         | HIGH (40-50%)                | All languages                              |
+| Dual     | Yes         | MEDIUM (5-10%)               | Hebrew, Greek (rare), Austronesian, Slavic |
+| Trial    | Yes         | LOW (1-3%)                   | 172 Austronesian/Oceanic languages         |
+| Paucal   | Yes         | LOW (1-5%)                   | Some Austronesian                          |
+| Quadrial | Listed      | **ZERO (0%)**                | **NONE** - no attested language            |
+
+**Source for Quadrial critique**: {tbta-source/CRITIQUE.md} Section 3.1 cites Corbett (2000)
+
+**Note**: Actual frequencies to be validated in Stage 2 data analysis.
 
 ## 3. Gateway Features & Constraints
 
-### 3.1 Part of Speech Constraint
+**Controlling Feature**: Part of Speech
 
-**Constraint**: Number System applies primarily to **nouns** and **pronouns**.
+{tbta-source/DATA-STRUCTURE.md}: Number applies to:
 
-**Source**: `DATA-STRUCTURE.md` - Position 2 in noun encoding schema
+- Nouns (position 2 in 10-position code)
+- Pronouns (same encoding, position 2)
+- Verbs (agreement - not directly encoded in TBTA verb positions)
 
-**Verbs**: Number agreement may exist but is not the primary feature location (verbs encode person/number through different features)
+**Dependency Rules**:
 
-### 3.2 Related Features
+- Number is **valid** when Part = Noun, Pronoun, or elements with nominal features
+- Number is **not applicable** for Verbs, Adjectives (except in agreement contexts not tracked by TBTA)
 
-**Person System** (Feature #2):
-- Interacts with number: First person plural can be inclusive/exclusive
-- Example: Genesis 1:26 combines Trial number + First Inclusive person (`DATA-STRUCTURE.md`)
+## 4. TBTA Labeling Policy
 
-**Participant Tracking** (Feature #3):
-- May affect number interpretation (collective vs. individual)
-- Not a gateway feature (number can exist independently)
+### 4.1 Semantic vs Morphological Priority
 
-**Surface Realization** (Feature #7):
-- Pronoun vs. noun may follow different number logic (see Section 5.2)
+{tbta-source/CRITIQUE.md}: "Issue: Morphologically plural forms marked as singular without documentation"
 
----
+**Evidence from CRITIQUE.md**:
 
-## 4. TBTA Policy & Labeling Rules
-
-### 4.1 Semantic vs. Morphological Priority
-
-**Policy**: TBTA prioritizes **semantic meaning** over morphological form.
-
-**Evidence**:
 ```yaml
 Genesis 1:1 - הַשָּׁמַיִם (ha-shamayim, "the heavens")
 Hebrew Form: Dual morphology (-ayim suffix)
 TBTA Number: Singular
-Rationale: Lexicalized dual (semantically singular concept)
-Source: CRITIQUE.md Section 3.2
+Note: Missing explanation of discrepancy
 
 Genesis 1:2 - הַמָּיִם (ha-mayim, "the waters")
-Hebrew Form: Dual morphology (-ayim suffix)  
+Hebrew Form: Dual morphology (-ayim suffix)
 TBTA Number: Singular
-Rationale: Lexicalized dual (semantically singular concept)
-Source: CRITIQUE.md Section 3.2
+Note: Missing explanation
 
 Matthew 5:3 - οὐρανῶν (ouranōn, "of heavens")
 Greek Form: Genitive Plural
 TBTA Number: Singular
-Rationale: Semantic singular concept despite plural morphology
-Source: CRITIQUE.md Section 3.2
+Note: Missing explanation
 ```
 
-**Impact**: 
-- Correct semantic choice but **undocumented** decision process
-- Translators may be confused by morphological plural marked as semantic singular
-- TBTA lacks explicit "morphological vs. semantic" distinction field
+**Policy (inferred but undocumented)**:
 
-### 4.2 Part-of-Speech Rules
+- **Priority**: Semantic meaning over morphological form
+- **Lexicalized plurals/duals**: Treated as Singular if referent is conceptually one entity
+- **Example**: "heavens" (single sky), "waters" (single body of water) → Singular despite morphology
 
-**Nouns**: Follow semantic meaning (see Section 4.1)
+### 4.2 Part-of-Speech Specific Rules
 
-**Pronouns**: 
-- Documentation unclear on pronoun-specific rules
-- May follow morphology more closely than nouns (not explicitly stated)
-- First person plural pronouns interact with Person System (inclusive/exclusive)
+**Not explicitly documented** in reviewed files. Based on examples:
 
-**Source**: `DATA-STRUCTURE.md` - Number applies to nouns; pronoun behavior not explicitly documented
+- **Nouns**: Follow semantic number (see above)
+- **Pronouns**: Likely follow morphological form (not explicitly stated)
+- **Personal pronouns**: Number tracks referent count
 
-### 4.3 Quadrial Controversy
+**Gap**: No explicit documentation distinguishing pronoun vs noun handling.
 
-**Issue**: TBTA schema includes Quadrial (Q) despite no natural language having true grammatical quadrial.
+## 5. Edge Cases & Special Patterns
 
-**TBTA Documentation**: Quadrial listed as valid value (`TBTA-FEATURES.md`)
+### 5.1 Quadrial Category - No Linguistic Evidence
 
-**Linguistic Reality** (from `CRITIQUE.md`):
-- **No attested grammatical quadrial** in any language (Corbett 2000)
-- Sursurunga: Has "greater paucal" (4+) not true quadrial
-- Marshallese: Rhetorical use only, not grammatical
+{tbta-source/CRITIQUE.md}: "3.1 Quadrial Category Without Linguistic Evidence"
 
-**TBTA Rationale**: Not documented - category included "just in case" without validation (`CRITIQUE.md` Section 3.1)
+**Issue**:
 
-**Impact**: 
-- Clutters schema with impossible value
-- Misrepresents languages with greater paucal systems
-- Should distinguish lesser paucal (~3-4) from greater paucal (~4-10)
+```yaml
+TBTA Schema: Q: Quadrial (exactly 4)
 
----
+Linguistic Reality (Corbett 2000):
+  - No attested grammatical quadrial in any language
+  - Sursurunga: Has "greater paucal" (4+) not true quadrial
+  - Marshallese: Rhetorical use only, not grammatical
+```
 
-## 5. Past Learnings & Policy Evolution
+**Assessment**:
 
-### 5.1 Genesis 1:26 - Trial Number for Trinity
+- {critique}: "Clutters schema with impossible value"
+- {critique}: "Should distinguish lesser paucal (~3-4) from greater paucal (~4-10)"
+- **Impact**: Value defined but likely has 0% usage in actual data
 
-**TBTA Annotation**: Trial (exactly 3 persons)
+### 5.2 Morphological vs Semantic Ambiguity
 
-**Rationale**: 
-- Divine first-person plural ("Let us make")
-- Theological significance: Trinity (Father, Son, Holy Spirit)
-- Prevents heretical dual (2 persons) or generic plural (many persons)
+{tbta-source/CRITIQUE.md}: "Morphological vs. semantic number undocumented"
 
-**Source**: `TRANSLATION-EDGE-CASES.md` Example 1, `DATA-STRUCTURE.md` example
+**Problem**:
 
-**Translation Impact**: 
-- 172+ Austronesian languages require trial number marking
-- Without TBTA, translators might use dual or plural, losing theological precision
-- Guides translators in Kilivila (Papua New Guinea), Larike (Maluku), and other trial-number languages
+- **Hebrew lexicalized duals**: -ayim suffix (שמים shamayim "heavens", מים mayim "waters")
+- **Greek pluralia tantum**: Words like οὐρανοί "heavens" - morphologically plural, semantically singular
+- **TBTA decision**: Mark as Singular (semantically correct)
+- **Documentation gap**: Rule not explicit, causes confusion
 
-### 5.2 Hebrew Dual Morphology Handling
+**Frequency**: {critique}: "Affects Hebrew lexicalized duals throughout OT (~50-100 instances)"
 
-**Pattern**: Hebrew lexicalized duals marked as semantic singular
+### 5.3 Natural Pairs - Dual Encoding
 
-**Examples**:
-- `שָׁמַיִם` (shamayim, "heavens") - dual morphology, singular meaning
-- `מָּיִם` (mayim, "waters") - dual morphology, singular meaning
+**Pattern**: Body parts naturally occurring in pairs use dual morphology in Hebrew.
 
-**Policy**: Semantic overrides morphological (consistent application)
+{tbta-source/DATA-STRUCTURE.md} Examples:
 
-**Documentation Gap**: Policy not explicitly stated in TBTA documentation (`CRITIQUE.md` Section 3.2)
+- עֵינַיִם (einayim) "eyes" - dual morphology
+- יָדַיִם (yadayim) "hands" - dual morphology
+- רַגְלַיִם (raglayim) "feet" - dual morphology
+- אָזְנַיִם (oznayim) "ears" - dual morphology
 
----
+**Translation Impact**:
 
-## 6. Edge Cases & Special Handling
+- Dual-marking target languages should use dual for body part pairs
+- Using plural sounds unnatural and may confuse readers
+- Theological significance: LOW (grammatical accuracy, not doctrine)
 
-### 6.1 Lexicalized Duals (Hebrew)
+**Status**: Pattern documented but not systematically analyzed.
 
-**Pattern**: Morphologically dual forms semantically singular
+### 5.4 Collective Nouns - Ambiguity
 
-**Handling**: Marked as Singular in TBTA
+**Not explicitly addressed** in reviewed documentation.
 
-**Frequency**: ~50-100 instances throughout OT (`CRITIQUE.md` Section 3.2)
+**Question**: How are collective nouns handled?
 
-**Examples**: See Section 4.1
+- "People" (collective) - Singular or Plural?
+- Hebrew "עַם" (am, "people/nation") - Singular or Plural?
+- Greek λαός (laos, "people"), ὄχλος (ochlos, "crowd")
+- Context-dependent agreement?
 
-### 6.2 Collective Nouns
+**Examples needing analysis**:
 
-**Pattern**: Morphologically plural forms referring to singular concepts
+- Exodus 19:8 "All the people answered" - collective or distributive?
+- Matthew 5:1 "When he saw the crowds" - how many? (arbitrary)
 
-**Handling**: Marked as Singular (semantic priority)
+**Status**: Not listed in TBTA documentation (requires data analysis in Stage 2).
 
-**Example**: "heavens" (Greek plural, semantic singular)
+## 6. Past Learnings & Policy Evolution
 
-### 6.3 Natural Pairs
+### 6.1 Genesis 1:26 - Trial for Trinity (Critical Finding)
 
-**Pattern**: Body parts, paired items (eyes, hands, feet)
+{tbta-source/DATA-STRUCTURE.md} Documents Trinity reference:
 
-**TBTA Handling**: Not explicitly documented
+```json
+{
+  "Constituent": "God",
+  "Number": "Trial",
+  "Person": "First Inclusive",
+  "Participant Tracking": "Routine"
+}
+```
 
-**Linguistic Expectation**: Should be Dual in dual-marking languages
+**Context**: Genesis 1:26 "Let us make man in our image"
 
-**Source**: Not found in TBTA documentation (gap identified)
+**TBTA Decision**: Marked as **Trial** (exactly 3 persons)
 
-### 6.4 Mixed Annotations
+- Theological interpretation: Trinity (Father, Son, Holy Spirit)
+- Critical for trial-marking languages (Kilivila, Larike, Fijian)
+- Using Dual would be heretical (Arianism - implies only 2 persons)
 
-**Question**: Can constituents receive multiple number values simultaneously?
+**Impact**:
 
-**TBTA Documentation**: Not explicitly addressed
+- Trial > Plural (preferred for precision)
+- Plural acceptable (orthodox but less precise)
+- Dual forbidden (heretical)
 
-**Linguistic Possibility**: Some languages may require multiple number markers (e.g., dual + paucal distinctions)
+**See**: Section 9 for full Trinity reference analysis.
 
-**Note**: Unlike Degree feature (which allows mixed annotations), Number System appears to be mutually exclusive
+### 6.2 Validated Experiment Results
 
----
+{tbta-source/CRITIQUE.md}: "6.3 Number Systems Experiment"
 
-## 7. Coverage & Frequency
+**Accuracy**: 91.4% reproduction
 
-### 7.1 Value Frequency (from TBTA data)
+**Issues Found**:
 
-**Not Documented**: TBTA source documentation does not provide frequency data
+1. {critique}: "Morphological vs. semantic number undocumented"
+2. {critique}: "Quadrial in schema without attestation"
+3. {critique}: "Hebrew dual handling inconsistent"
 
-**Expected Distribution** (based on linguistic typology):
-- Singular: ~70% (most common)
-- Plural: ~25% (second most common)
-- Dual: Rare (Hebrew morphology, semantic pairs)
-- Trial: ~1% (Trinity references, explicit "three")
-- Paucal: ~0.5% (small groups)
-- Quadrial: ~0.5% (if used, likely misclassified paucal)
+**Interpretation**:
 
-**Source**: Frequency estimates not from TBTA documentation (requires Stage 2 analysis)
+- Core algorithm is sound (91.4% accuracy)
+- Documentation gaps cause confusion
+- Schema includes theoretically impossible values
 
-### 7.2 Verse Coverage
+## 7. Value Inventory: Theoretical vs Productive
 
-**TBTA Coverage**: 11,649 verses across 34 books (~37% of Bible)
+**From Linguistic Literature (not frequency data)**:
 
-**Number System Coverage**: Not specified (assumed complete for covered verses)
+| Value    | Theoretical | Productive (Expected in Data) | Languages with Feature                            |
+| -------- | ----------- | ----------------------------- | ------------------------------------------------- |
+| Singular | Yes         | HIGH (100%)                   | All languages                                     |
+| Dual     | Yes         | MEDIUM (5-10%)                | Hebrew, Greek, Slovenian, Austronesian (88 langs) |
+| Trial    | Yes         | LOW (1-3%)                    | Kilivila, Larike, some Austronesian (172 langs)   |
+| Quadrial | Documented  | **NONE** (0%)                 | None attested {critique}                          |
+| Paucal   | Yes         | LOW (1-5%)                    | Some Austronesian, Arabic dialects                |
+| Plural   | Yes         | HIGH (40-50%)                 | All languages                                     |
 
-**Source**: `tbta-source/COVERAGE.md`, `tbta-source/README.md`
+**Note**: Actual frequencies require data analysis (Stage 2).
 
----
+## 8. Mixed Annotations
 
-## 8. Discrepancies & Gaps
+**Not mentioned** in TBTA documentation for Number System.
 
-### 8.1 Quadrial Without Evidence
+**Assessment**: Number is typically a **single value** feature - a noun/pronoun is either Singular, Dual, Trial, or Plural, not multiple simultaneously.
 
-**Discrepancy**: Schema includes Quadrial despite no linguistic attestation
+**Possible exception**: Ambiguous contexts where number is unspecified - but this would likely be encoded as "Unspecified", not as multiple values.
 
-**Source**: `CRITIQUE.md` Section 3.1
+**Status**: Does not appear to use mixed annotations (unlike Degree feature which allows "Intensified" + "'too'").
 
-**Recommendation**: Distinguish lesser paucal (~3-4) from greater paucal (~4-10) instead
+## 9. Trinity Reference (Genesis 1:26)
 
-### 8.2 Morphological vs. Semantic Undocumented
+{tbta-source/DATA-STRUCTURE.md}: "Trinity Reference (Genesis 1:26)"
 
-**Gap**: Policy of semantic priority not explicitly documented
+```json
+{
+  "Constituent": "God",
+  "Number": "Trial",
+  "Person": "First Inclusive",
+  "Participant Tracking": "Routine"
+}
+```
 
-**Impact**: Confusing for annotators and translators
+**Key Example**: Genesis 1:26 "Let us make man in our image"
 
-**Source**: `CRITIQUE.md` Section 3.2
+- TBTA marks as **Trial** (exactly 3 persons)
+- Theological interpretation: Trinity (Father, Son, Holy Spirit)
+- Critical for Christian orthodox translation
 
-**Recommendation**: Add explicit morphological/semantic distinction field
+**Impact**: Trial number has both **linguistic** (some Austronesian languages) and **theological** (Trinity) significance.
 
-### 8.3 Natural Pairs Not Documented
+## 10. Summary
 
-**Gap**: No explicit guidance on dual-marking for natural pairs (eyes, hands)
+**Feature**: Number System (grammatical count of entities)
 
-**Impact**: Inconsistent handling possible
+**Values**: S (Singular), D (Dual), T (Trial), Q (Quadrial - problematic), p (Paucal), P (Plural)
 
-**Source**: Gap identified in review (not in TBTA documentation)
+**Policy**:
 
----
+- Semantic priority over morphology (undocumented but evident)
+- Lexicalized duals/plurals → Singular if semantically one entity
+- Hebrew/Greek special cases handled case-by-case
 
-## 9. Summary
+**Issues**:
 
-### 9.1 TBTA Definition
+- Quadrial has no linguistic attestation
+- Morphological vs semantic rule undocumented
+- Collective noun handling not specified
+- Pronoun vs noun rules not distinguished
 
-**Concept**: Grammatical number distinctions beyond singular/plural
+**Status**: TBTA Tier A - Essential feature, marked as "Complete" (68% of Tier A complete overall)
 
-**Values**: S (Singular), D (Dual), T (Trial), Q (Quadrial), p (Paucal), P (Plural)
+**Accuracy**: 91.4% reproduction in experiments {critique}
 
-**Priority**: Semantic meaning over morphological form
+**Coverage**: 11,649 verses across 34 books (~37% of Bible) {tbta-source/README.md}
 
-### 9.2 Key Policies
+**Key Languages**: Hebrew (Dual in OT), Greek (Dual rare in NT), Target languages with Trial/Paucal systems
 
-1. **Semantic Priority**: Overrides morphological form (Hebrew duals → Singular)
-2. **Theological Significance**: Trial for Trinity references (Genesis 1:26)
-3. **Quadrial Controversy**: Listed but not linguistically attested
+## Bibliography
 
-### 9.3 Documentation Gaps
+All sources from `/bible-study-tools/tbta/tbta-source/`:
 
-1. Morphological vs. semantic distinction not explicit
-2. Natural pairs (dual) handling not documented
-3. Quadrial rationale not provided
-4. Frequency data not available in documentation
+- {tbta-source/README.md} - TBTA overview
+- {tbta-source/DATA-STRUCTURE.md} - Technical encoding details
+- {tbta-source/TBTA-FEATURES.md} - Feature catalog
+- {tbta-source/CRITIQUE.md} - Validated issues from experiments
 
----
+**External Source Cited in CRITIQUE.md**:
 
-**Next Steps**: See `LANGUAGES.md` for language family analysis and `SCHOLARLY.md` for typological research.
-
+- Corbett, Greville G. (2000). _Number_. Cambridge University Press. {corbett-2000-number}
