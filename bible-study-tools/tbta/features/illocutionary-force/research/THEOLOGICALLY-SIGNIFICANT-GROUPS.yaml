@@ -1,0 +1,691 @@
+feature: illocutionary-force
+default_classification: contextual # Usually clear from context
+theological_significance: CRITICAL # Misidentifying speech acts = major doctrinal/pastoral errors
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # === 1A: NON-ARBITRARY-THEOLOGICAL (Doctrinal Stakes) ===
+
+  - verse_pattern: 'Matthew 28:19-20 - Great Commission (unverified)'
+    affected_values: [command, request, suggestion, exhortation]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Great Commission authority
+      - Evangelism mandate
+      - Discipleship requirements
+      - Baptism theology
+      - Church mission
+
+    non_arbitrary_rationale: |
+      Jesus's final words to disciples are COMMANDS, not suggestions or requests.
+      "Go and make disciples" (imperative) is binding command with Christ's authority.
+      If treated as suggestion/request, undermines:
+      - Missionary imperative
+      - Authority of Christ's commands
+      - Church's mandate to evangelize
+      Wrong illocutionary force = optional evangelism, weakened discipleship.
+
+    christian_orthodox_position:
+      preferred_value: command
+      acceptable_alternatives: [authoritative_command, imperative]
+      forbidden_values: [suggestion, request, advice, optional_exhortation]
+      theological_basis: 'Matthew 28:18 - "All authority has been given to me" - commands flow from Christ''s authority. Imperative mood in Greek confirms command force.'
+      translator_guidance: |
+        - REQUIRED: Label as COMMAND or IMPERATIVE
+        - FORBIDDEN: Label as suggestion, advice, or optional request
+        - CRITICAL: This is Christ's authoritative command, not pastoral suggestion
+        - DOCTRINAL STAKES: Missionary mandate, evangelism priority
+        - CONTEXT: Flows from "all authority" (v.18) - commands carry divine authority
+        - IMPACT: If suggestion = optional evangelism (violates commission)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Suggestion or advice (not binding command)'
+        used_by: [Liberal Christianity, social gospel only approaches]
+        christian_assessment: REJECTED - Imperatives from risen Christ are binding commands
+        force_implication: Exhortation or advice, not command
+
+  - verse_pattern: 'Genesis 9:9, 17:7, Jeremiah 31:31-34 - Covenant promises (unverified)'
+    affected_values: [promise, declaration, conditional_statement, wish]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Covenant theology
+      - Faithfulness of God
+      - Unconditional vs conditional promises
+      - New Covenant in Christ
+      - Assurance of salvation
+
+    non_arbitrary_rationale: |
+      God's covenant language is PROMISSORY DECLARATION, not conditional possibility
+      or wishful thinking. "I will establish my covenant" is divine commitment.
+      If treated as conditional or wish:
+      - Undermines God's faithfulness
+      - Creates uncertainty about salvation
+      - Questions covenant reliability
+      Wrong force = conditional promises, uncertain salvation.
+
+    christian_orthodox_position:
+      preferred_value: promise
+      acceptable_alternatives: [divine_declaration, promissory_commitment]
+      forbidden_values: [conditional_statement, wish, possibility, hope]
+      theological_basis: 'Hebrews 6:17-18 - "impossible for God to lie" - His promises are certain. 2 Corinthians 1:20 - "all the promises of God find their Yes in Christ."'
+      translator_guidance: |
+        - REQUIRED: Label as PROMISE or DIVINE DECLARATION
+        - FORBIDDEN: Conditional statement ("if I decide..."), wish ("I hope...")
+        - CRITICAL: God's covenant promises are unconditional commitments
+        - DISTINGUISH: Covenant promises (unconditional) vs. blessings contingent on obedience
+        - EXAMPLES:
+          * Abrahamic covenant - unconditional promise
+          * Mosaic blessings - conditional on obedience
+        - DOCTRINAL STAKES: God's faithfulness, assurance, covenant theology
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Conditional possibilities (God might do this if...)'
+        used_by: [Open theism, process theology]
+        christian_assessment: REJECTED - Denies God's sovereign promises and immutability
+        force_implication: Conditional or uncertain, not promissory
+
+  - verse_pattern: 'Romans 6:1-2, Romans 3:8 - Rhetorical questions teaching doctrine (unverified)'
+    affected_values: [rhetorical_question, information_question, leading_question]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Sanctification
+      - Grace theology
+      - Antinomianism rejection
+      - Moral implications of gospel
+
+    non_arbitrary_rationale: |
+      Paul's "Shall we continue in sin that grace may abound?" is RHETORICAL
+      QUESTION with emphatic negative answer ("By no means!"), not actual question
+      seeking information or considering possibility. If treated as genuine question:
+      - Suggests antinomianism might be acceptable
+      - Undermines Paul's teaching method (diatribe style)
+      - Misses emphatic rejection of false conclusion
+      Wrong force = appears to entertain heresy rather than refute it.
+
+    christian_orthodox_position:
+      preferred_value: rhetorical_question
+      acceptable_alternatives: [pedagogical_question, diatribe_question]
+      forbidden_values: [genuine_information_question, open_question]
+      theological_basis: 'Greek diatribe style - rhetorical questions anticipate objections and refute them. Answer "By no means!" (μὴ γένοιτο) signals strongest possible negation.'
+      translator_guidance: |
+        - REQUIRED: Label as RHETORICAL QUESTION (not seeking information)
+        - CRITICAL: Paul uses diatribe style - raises objection to refute it
+        - PATTERN: Question + emphatic negation ("By no means!") signals rhetoric
+        - READER BENEFIT: Understanding force prevents misreading as genuine consideration
+        - SIMILAR CASES: Romans 3:5-8, 6:15, 7:7, 7:13, 9:14 - all rhetorical
+        - DOCTRINAL STAKES: Prevents appearing to entertain antinomianism or false teaching
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Paul genuinely considering antinomianism'
+        used_by: [Hyper-grace theology, some antinomian movements]
+        christian_assessment: REJECTED - Paul emphatically rejects this (μὴ γένοιτο)
+        force_implication: Information question or open consideration
+
+  - verse_pattern: 'Exodus 20:3-17 - Ten Commandments (unverified)'
+    affected_values: [command, advice, wisdom_principle, cultural_guideline]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Moral law of God
+      - Divine authority
+      - Sin and righteousness definitions
+      - Christian ethics
+      - Role of law in redemption
+
+    non_arbitrary_rationale: |
+      Ten Commandments are DIVINE COMMANDS, not suggestions or cultural guidelines.
+      "You shall not..." is imperative law from God, not wise advice or cultural
+      preference. If treated as advice/guidelines:
+      - Undermines divine authority
+      - Makes morality subjective
+      - Weakens definition of sin
+      Wrong force = relativistic ethics, optional obedience.
+
+    christian_orthodox_position:
+      preferred_value: command
+      acceptable_alternatives: [divine_command, imperative, law]
+      forbidden_values: [advice, suggestion, cultural_guideline, wisdom_principle_only]
+      theological_basis: 'Exodus 20:1 - "God spoke all these words" - divine origin. Romans 7:12 - "the law is holy, and the commandment is holy and righteous and good."'
+      translator_guidance: |
+        - REQUIRED: Label as COMMAND or DIVINE COMMAND
+        - FORBIDDEN: Advice, cultural guideline, or mere wisdom
+        - CRITICAL: These are God's authoritative moral law
+        - NOTE: Debates exist about application (ceremonial vs moral law)
+          but illocutionary force is clearly COMMAND
+        - DOCTRINAL STAKES: Objective morality, authority of God's law
+        - DISTINCTION: Force (command) vs. application (how Christians apply today)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Cultural guidelines from ancient Near East'
+        used_by: [Liberal theology, situational ethics]
+        christian_assessment: REJECTED - Commands rooted in God's character, not culture
+        force_implication: Advice or cultural suggestion, not divine command
+
+  - verse_pattern: 'Isaiah 7:14, 9:6, 53:4-6 - Messianic prophecies (unverified)'
+    affected_values: [declaration, prediction, hope, possibility, wish]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Messianic prophecy
+      - Virgin birth
+      - Atonement
+      - Deity of Christ
+      - Fulfillment of Scripture
+
+    non_arbitrary_rationale: |
+      Prophetic declarations are DIVINE DECLARATIONS about future events, not
+      human wishes or possibilities. "A virgin shall conceive" (Isaiah 7:14),
+      "A child is born" (9:6) are prophetic certainties, not hopeful predictions.
+      If treated as wishes/possibilities:
+      - Undermines prophetic authority
+      - Questions fulfillment in Christ
+      - Weakens apologetic value
+      Wrong force = uncertain prophecy, weakened Christology.
+
+    christian_orthodox_position:
+      preferred_value: declaration
+      acceptable_alternatives: [prophetic_declaration, divine_prediction]
+      forbidden_values: [wish, hope, possibility, speculation]
+      theological_basis: 'Isaiah speaks God''s word with certainty. Matthew 1:22-23 - "All this took place to fulfill what the Lord had spoken by the prophet."'
+      translator_guidance: |
+        - REQUIRED: Label as DECLARATION or PROPHETIC DECLARATION
+        - FORBIDDEN: Wish, hope, or mere possibility
+        - CRITICAL: Prophets speak God's certain word, not human speculation
+        - NOTE: Prophetic perfect tense (past tense for future events) shows certainty
+        - EXAMPLES:
+          * Isaiah 7:14 - "virgin shall conceive" (declaration, not wish)
+          * Isaiah 9:6 - "child is born" (prophetic certainty)
+          * Isaiah 53 - suffering servant (declaration of coming reality)
+        - DOCTRINAL STAKES: Prophetic authority, messianic fulfillment
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Human hopes or pious wishes'
+        used_by: [Liberal biblical criticism]
+        christian_assessment: REJECTED - Prophets speak God's authoritative word
+        force_implication: Wish or speculation, not declaration
+
+  - verse_pattern: 'Numbers 6:24-26 - Aaronic blessing (unverified)'
+    affected_values: [blessing, wish, prayer, request]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Priestly blessing
+      - God's favor
+      - Benediction theology
+      - Effectual blessing
+
+    non_arbitrary_rationale: |
+      Priestly blessing is PRONOUNCEMENT/DECLARATION, not merely wish or prayer.
+      "The LORD bless you and keep you" spoken by priest carries divine authority,
+      not personal wish. This is PERFORMATIVE speech act - blessing is conferred,
+      not just wished for. If treated as wish:
+      - Undermines priestly authority
+      - Reduces to personal sentiment
+      - Loses performative power
+      Wrong force = sentimental wish vs. authoritative pronouncement.
+
+    christian_orthodox_position:
+      preferred_value: blessing
+      acceptable_alternatives: [pronouncement, benediction, performative_blessing]
+      forbidden_values: [wish, prayer_request, personal_hope]
+      theological_basis: 'Numbers 6:27 - "So they shall put my name on the people of Israel, and I will bless them" - God acts through priestly blessing.'
+      translator_guidance: |
+        - REQUIRED: Label as BLESSING or PRONOUNCEMENT
+        - DISTINGUISH: Blessing (performative - confers blessing) vs. wish (expresses desire)
+        - CRITICAL: Priestly blessing is performative speech act
+        - CONTEXT: God authorizes priests to bless in His name (v.27)
+        - READER BENEFIT: Understanding force shows this is authoritative, not sentiment
+        - NOTE: Jussive mood in Hebrew ("may the LORD bless") is performative blessing,
+          not mere wish
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Matthew 5:3-12 - Beatitudes (unverified)'
+    affected_values: [declaration, promise, exhortation, observation]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Kingdom theology
+      - Blessing and favor
+      - Eschatological promises
+      - Sermon on the Mount interpretation
+
+    non_arbitrary_rationale: |
+      Beatitudes are DECLARATIONS of blessing, not exhortations to act or mere
+      observations. "Blessed are the poor in spirit" declares their blessed state,
+      not commands to be poor in spirit. If treated as commands:
+      - Misses indicative nature (declaring reality)
+      - Turns gospel into law
+      - Confuses description with prescription
+      Wrong force = moralism vs. declaration of grace.
+
+    christian_orthodox_position:
+      preferred_value: declaration
+      acceptable_alternatives: [pronouncement_of_blessing, indicative_statement]
+      forbidden_values: [command, exhortation_to_become]
+      theological_basis: 'Greek μακάριοι is indicative (state of being), not imperative. Declares who is blessed, not commands to become blessed.'
+      translator_guidance: |
+        - REQUIRED: Label as DECLARATION or PRONOUNCEMENT
+        - FORBIDDEN: Command or exhortation to become
+        - CRITICAL: Beatitudes declare reality, not prescribe actions
+        - STRUCTURE: "Blessed are [those who ARE X]" - indicative, not imperative
+        - DISTINCTION: Declares who receives kingdom blessing (indicative)
+          vs. commands to attain blessing (imperative)
+        - DOCTRINAL STAKES: Grace (blessing given) vs. works (blessing earned)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Commands to achieve blessing through behavior'
+        used_by: [Prosperity gospel, works-righteousness approaches]
+        christian_assessment: PROBLEMATIC - Beatitudes declare blessing, not prescribe earning it
+        force_implication: Command or exhortation, not declaration
+
+  # === 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ===
+
+  - verse_pattern: 'Ezekiel 33:7-9 - Prophetic warnings (unverified)'
+    affected_values: [warning, threat, prediction, information]
+    theological_stakes: MEDIUM-HIGH
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Prophetic role
+      - Divine judgment
+      - Repentance call
+      - Watchman theology
+
+    non_arbitrary_rationale: |
+      Prophetic warnings are WARNINGS from God (call to repent), not personal
+      threats or neutral predictions. "If you do not warn the wicked... I will
+      hold you accountable" is divine warning, not threat. If treated as threat:
+      - Mischaracterizes God's motivation (vindictive vs. redemptive)
+      - Misses call to repentance
+      - Confuses judgment warning with hostile threat
+      Wrong force = vindictive God vs. redemptive warning.
+
+    christian_orthodox_position:
+      preferred_value: warning
+      acceptable_alternatives: [divine_warning, redemptive_warning]
+      forbidden_values: [threat, hostile_intimidation]
+      theological_basis: 'Ezekiel 33:11 - "I have no pleasure in the death of the wicked, but that the wicked turn from his way and live" - warnings are redemptive.'
+      translator_guidance: |
+        - REQUIRED: Label as WARNING (not threat)
+        - DISTINGUISH: Warning (redemptive call to avoid danger) vs. threat (hostile intimidation)
+        - CRITICAL: God's warnings are motivated by desire for repentance, not vindictiveness
+        - CONTEXT: Watchman metaphor - warns to save, not threaten
+        - READER BENEFIT: Prevents mischaracterizing God as vindictive
+        - EXAMPLES: Jonah to Nineveh, prophets to Israel - warnings offer chance to repent
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Philemon 8-9 - Paul''s appeal (request vs. command) (unverified)'
+    affected_values: [request, command, appeal, suggestion]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Apostolic authority
+      - Christian persuasion vs. compulsion
+      - Slavery and freedom
+      - Love and authority
+
+    non_arbitrary_rationale: |
+      Paul explicitly chooses APPEAL/REQUEST over command despite having apostolic
+      authority. "Though I am bold enough in Christ to command you... yet for love's
+      sake I prefer to appeal" (v.8-9). If treated as command:
+      - Misses Paul's deliberate rhetorical choice
+      - Undermines appeal to love over authority
+      - Loses pastoral sensitivity
+      Wrong force = authoritarian vs. loving appeal.
+
+    christian_orthodox_position:
+      preferred_value: request
+      acceptable_alternatives: [appeal, entreaty]
+      forbidden_values: [command, demand]
+      theological_basis: 'Philemon 8-9 - Paul explicitly contrasts command (ἐπιτάσσειν) with appeal (παρακαλεῖν), choosing latter.'
+      translator_guidance: |
+        - REQUIRED: Label as REQUEST or APPEAL (not command)
+        - CRITICAL: Paul deliberately chooses appeal over command
+        - CONTEXT: Could command (apostolic authority) but appeals (love)
+        - READER BENEFIT: Models Christian persuasion - love over compulsion
+        - PASTORAL INSIGHT: Authority restrained by love and respect
+        - NOTE: Shows range of illocutionary forces available to apostle
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'John 1:1, Romans 1:4 - Christological assertions (unverified)'
+    affected_values: [assertion, opinion, speculation, testimony]
+    theological_stakes: CRITICAL
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Deity of Christ
+      - Incarnation
+      - Authority of Scripture
+      - Propositional revelation
+
+    non_arbitrary_rationale: |
+      "The Word was God" (John 1:1) is ASSERTION/DECLARATION of fact, not opinion
+      or speculation. If treated as opinion or personal belief:
+      - Undermines propositional revelation
+      - Reduces Christology to subjective belief
+      - Weakens apologetic force
+      Wrong force = subjective opinion vs. objective truth claim.
+
+    christian_orthodox_position:
+      preferred_value: assertion
+      acceptable_alternatives: [declaration, propositional_statement]
+      forbidden_values: [opinion, speculation, personal_belief]
+      theological_basis: 'John 1:1 - declarative statement of ontological reality. 1 John 1:1-3 - eyewitness testimony as factual assertion.'
+      translator_guidance: |
+        - REQUIRED: Label as ASSERTION or DECLARATION
+        - FORBIDDEN: Opinion or speculation
+        - CRITICAL: Scripture makes truth claims, not personal opinions
+        - DOCTRINAL STAKES: Propositional revelation, objective truth
+        - CONTEXT: John asserts Christ's deity as fact, not belief
+        - READER BENEFIT: Distinguishes biblical assertion from relativistic opinion
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Personal belief or spiritual opinion'
+        used_by: [Postmodern theology, religious pluralism]
+        christian_assessment: REJECTED - Scripture makes objective truth claims
+        force_implication: Opinion or belief, not assertion
+
+  - verse_pattern: 'Matthew 7:24-27 - Parable warnings (unverified)'
+    affected_values: [warning, illustration, suggestion, teaching]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Parables often carry WARNING force, not merely illustrative teaching.
+      "Everyone who hears these words of mine and does not do them will be like
+      a foolish man..." is WARNING through illustration, not neutral teaching.
+      If treated as mere illustration:
+      - Loses urgency of warning
+      - Reduces to intellectual exercise
+      - Misses call to action
+      Wrong force = abstract teaching vs. urgent warning.
+
+    christian_orthodox_position:
+      preferred_value: warning
+      acceptable_alternatives: [teaching_with_warning, exhortation]
+      forbidden_values: [neutral_illustration, abstract_teaching]
+      theological_basis: 'Context of Sermon on the Mount concludes with urgent call to obedience. "Not everyone who says to me Lord, Lord..." (Matt 7:21-23).'
+      translator_guidance: |
+        - REQUIRED: Label as WARNING (with illustrative method)
+        - CRITICAL: Parable serves warning function, not just illustration
+        - CONTEXT: Concludes Sermon on Mount - calls for obedient response
+        - READER BENEFIT: Recognizes urgency, not just abstract teaching
+        - PATTERN: Many parables have warning force (rich fool, virgins, talents)
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Ephesians 5:25, 1 Peter 3:7 - Marital commands (unverified)'
+    affected_values: [command, suggestion, advice, cultural_guideline]
+    theological_stakes: MEDIUM-HIGH
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Marriage theology
+      - Gender roles
+      - Headship and submission
+      - Christian ethics
+
+    non_arbitrary_rationale: |
+      Marital instructions are COMMANDS, not suggestions or cultural advice.
+      "Husbands, love your wives" is imperative, not optional advice. If treated
+      as suggestion or cultural guideline:
+      - Undermines biblical authority in marriage
+      - Makes marital ethics optional
+      - Weakens complementarian/egalitarian debate grounding
+      Wrong force = optional advice vs. binding instruction.
+
+    christian_orthodox_position:
+      preferred_value: command
+      acceptable_alternatives: [imperative, authoritative_instruction]
+      forbidden_values: [suggestion, advice, cultural_guideline_only]
+      theological_basis: 'Greek imperatives in Ephesians 5:22-33, 1 Peter 3:1-7 are commands, not suggestions. Grounded in creation order (Eph 5:31 - Gen 2:24) and Christ-Church relationship.'
+      translator_guidance: |
+        - REQUIRED: Label as COMMAND
+        - FORBIDDEN: Suggestion or mere cultural advice
+        - CRITICAL: Imperatives are commands, regardless of application debates
+        - NOTE: Complementarian/egalitarian debate concerns INTERPRETATION and
+          APPLICATION, not illocutionary force (both agree these are commands)
+        - DISTINCTION: Force (command) vs. cultural application (how apply today)
+        - READER BENEFIT: Clarifies these are apostolic commands, not cultural customs
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Cultural advice from 1st century (not binding)'
+        used_by: [Some egalitarian interpretations, liberal theology]
+        christian_assessment: DEBATED within orthodoxy (force vs. application distinguished)
+        force_implication: Cultural suggestion, not command
+
+  - verse_pattern: 'James 5:14 - Sickness and healing instructions (unverified)'
+    affected_values: [command, suggestion, option, conditional_advice]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Healing theology
+      - Prayer practices
+      - Role of elders
+      - Faith and healing
+
+    non_arbitrary_rationale: |
+      "Is anyone among you sick? Let him call for the elders" - is this COMMAND,
+      SUGGESTION, or OPTION? Illocutionary force affects whether this is prescribed
+      practice or available option. If treated as command:
+      - May create false expectations (always healed if faithful)
+      - Could induce guilt if not followed
+      If treated as mere suggestion:
+      - Undermines practice of anointing
+      Wrong force affects pastoral care and healing expectations.
+
+    christian_orthodox_position:
+      preferred_value: instruction
+      acceptable_alternatives: [directive, prescribed_option, exhortation]
+      forbidden_values: [absolute_command_guaranteeing_healing, mere_suggestion]
+      theological_basis: 'James 5:14-16 gives instruction for sick believers. "Prayer of faith will save the one who is sick" (v.15) - God heals, not guaranteed by practice. Imperative mood but not absolute guarantee.'
+      translator_guidance: |
+        - REQUIRED: Label as INSTRUCTION or DIRECTIVE
+        - CAUTION: Not absolute command (don't create guilt if not followed in every case)
+        - BALANCE: Not mere suggestion (this is prescribed practice)
+        - CRITICAL: Healing is God's sovereign work, not guaranteed by practice
+        - READER BENEFIT: Prevents both presumption (always healed) and neglect (ignore practice)
+        - NOTE: Force is instructional/directive, not commanding guaranteed outcome
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Command guaranteeing healing if faith sufficient'
+        used_by: [Word of Faith movement, some prosperity theology]
+        christian_assessment: REJECTED - God sovereignly heals, not mechanical guarantee
+        force_implication: Absolute command with guaranteed result
+
+# SECTION 2: ARBITRARY (Contextually Obvious - Choice Doesn't Cause Confusion)
+
+arbitrary_contexts:
+
+  - pattern: "Clear narrative statements (e.g., 'Jesus went to Capernaum')"
+    rationale: |
+      Simple declarative statements in narrative are unambiguous. Illocutionary
+      force is clearly ASSERTION/STATEMENT. No theological or contextual ambiguity.
+    estimated_percentage: 35%
+    examples:
+      - 'Acts 9:1 - Saul traveling to Damascus (unverified)'
+      - 'Luke 2:1 - Census decree narrative (unverified)'
+      - '1 Kings 17:1 - Elijah before Ahab (unverified)'
+    translator_guidance: |
+      Label as STATEMENT or ASSERTION. Force is contextually obvious.
+
+  - pattern: "Obvious questions seeking information (e.g., 'Where are you?')"
+    rationale: |
+      When questions clearly seek information (not rhetorical), illocutionary
+      force is unambiguous QUESTION. Context makes force clear.
+    estimated_percentage: 10%
+    examples:
+      - 'John 1:38 - "Where are you staying?" (unverified)'
+      - 'Genesis 3:9 - "Where are you?" (though theological implications exist)'
+      - 'Mark 8:27 - "Who do people say I am?" (unverified)'
+    translator_guidance: |
+      Label as QUESTION (information-seeking). Most questions are unambiguous.
+
+  - pattern: "Clear prayers/petitions (e.g., 'Give us this day our daily bread')"
+    rationale: |
+      Prayer language is clearly PETITION/REQUEST when addressed to God in prayer
+      context. Illocutionary force is unambiguous.
+    estimated_percentage: 8%
+    examples:
+      - 'Matthew 6:9-13 - Lord\'s Prayer (unverified)'
+      - 'Psalm 51 - David\'s prayer of repentance (unverified)'
+      - 'John 17 - Jesus\'s high priestly prayer (unverified)'
+    translator_guidance: |
+      Label as PETITION or REQUEST (in prayer context). Force is clear.
+
+  - pattern: "Straightforward commands in law/narrative (e.g., 'Go to Nineveh')"
+    rationale: |
+      When commands are clearly imperative and contextually unambiguous (not
+      debated whether command vs. suggestion), illocutionary force is clear.
+    estimated_percentage: 15%
+    examples:
+      - 'Jonah 1:2 - "Go to Nineveh" (unverified)'
+      - 'Genesis 12:1 - "Go from your country" (unverified)'
+      - 'Exodus 3:10 - "I will send you to Pharaoh" (unverified)'
+    translator_guidance: |
+      Label as COMMAND. Force is unambiguous in context.
+
+  - pattern: "Genealogical and historical records (factual statements)"
+    rationale: |
+      Lists, genealogies, historical records are clearly STATEMENTS/ASSERTIONS
+      of fact. No ambiguity in illocutionary force.
+    estimated_percentage: 5%
+    examples:
+      - 'Matthew 1:1-17 - Genealogy of Jesus (unverified)'
+      - '1 Chronicles 1-9 - Genealogies (unverified)'
+      - 'Nehemiah 7 - List of returnees (unverified)'
+    translator_guidance: |
+      Label as STATEMENT or ASSERTION. Clearly factual record.
+
+  - pattern: "Greetings and farewells (e.g., 'Grace and peace to you')"
+    rationale: |
+      Epistolary greetings and farewells have clear conventional illocutionary
+      force (GREETING/BLESSING). No theological ambiguity.
+    estimated_percentage: 3%
+    examples:
+      - 'Romans 1:7 - "Grace to you and peace" (unverified)'
+      - '2 John 1:3 - "Grace, mercy, and peace" (unverified)'
+      - 'Acts 15:29 - "Farewell" (unverified)'
+    translator_guidance: |
+      Label as GREETING or FAREWELL. Conventional speech acts.
+
+  - pattern: "Praise and worship declarations (e.g., 'Praise the Lord')"
+    rationale: |
+      Calls to worship and praise have clear illocutionary force (EXHORTATION
+      to praise). Contextually obvious in worship contexts.
+    estimated_percentage: 7%
+    examples:
+      - 'Psalm 150 - "Praise the Lord" (unverified)'
+      - 'Psalm 100:1 - "Make a joyful noise" (unverified)'
+      - 'Revelation 19:5 - "Praise our God" (unverified)'
+    translator_guidance: |
+      Label as EXHORTATION or CALL TO WORSHIP. Force is clear.
+
+  - pattern: "Descriptive background details (e.g., weather, time, place)"
+    rationale: |
+      Background descriptions in narrative are clearly STATEMENTS/DESCRIPTIONS.
+      No theological or contextual ambiguity.
+    estimated_percentage: 10%
+    examples:
+      - 'John 13:30 - "And it was night" (unverified)'
+      - 'Acts 27:14 - Storm description (unverified)'
+      - 'Genesis 2:10 - River description (unverified)'
+    translator_guidance: |
+      Label as STATEMENT or DESCRIPTION. Contextually clear.
+
+  - pattern: "Straightforward teaching statements (e.g., 'God is love')"
+    rationale: |
+      When didactic statements are clearly assertions (not debated as promises,
+      commands, etc.), illocutionary force is unambiguous.
+    estimated_percentage: 7%
+    examples:
+      - '1 John 4:8 - "God is love" (unverified)'
+      - 'John 3:16 - God loved the world (unverified)'
+      - 'Romans 3:23 - "All have sinned" (unverified)'
+    translator_guidance: |
+      Label as ASSERTION or TEACHING. Force is clear in didactic context.
+
+# SUMMARY STATISTICS
+
+total_non_arbitrary_percentage: 25
+breakdown:
+  theological_critical: 15  # Great Commission, Covenant promises, Ten Commandments, Prophecies, Christological assertions
+  contextual_essential: 10  # Rhetorical questions, warnings vs threats, appeals vs commands, parable warnings
+
+total_arbitrary_percentage: 75
+note: |
+  Illocutionary force is usually contextually obvious (75% of cases), but
+  misidentification in critical contexts (25%) leads to major doctrinal/pastoral errors:
+
+  CRITICAL THEOLOGICAL CONTEXTS (15%):
+  1. Commands vs. suggestions (Great Commission, Ten Commandments)
+     - Wrong force = undermines authority, creates optional obedience
+  2. Promises vs. conditional statements (Covenant promises)
+     - Wrong force = uncertain salvation, questions God's faithfulness
+  3. Declarations vs. opinions (Christological assertions, prophecies)
+     - Wrong force = relativizes truth, weakens apologetics
+  4. Blessings vs. wishes (Aaronic blessing, Beatitudes)
+     - Wrong force = sentimental vs. performative, law vs. grace
+
+  CONTEXTUAL ESSENTIAL (10%):
+  5. Rhetorical vs. information questions (Paul's diatribe)
+     - Wrong force = appears to entertain heresy
+  6. Warnings vs. threats (Prophetic warnings)
+     - Wrong force = vindictive God vs. redemptive
+  7. Requests vs. commands (Philemon appeal)
+     - Wrong force = misses pastoral sensitivity
+  8. Teaching vs. warning (Parable conclusions)
+     - Wrong force = loses urgency
+
+  PASTORAL IMPACT:
+  - Commands as suggestions = weakened discipleship, optional obedience
+  - Promises as conditionals = insecurity, fear, uncertainty
+  - Warnings as threats = wrong view of God (vindictive vs. loving)
+  - Assertions as opinions = relativism, weakened apologetics
+  - Rhetorical questions as genuine = appears to entertain heresy
+
+  TRANSLATION PRIORITY:
+  High-stakes contexts require 100% accuracy. Arbitrary contexts (75%) can
+  rely on natural target language conventions without special analysis.
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal knowledge of Scripture and conservative Protestant theology, not
+  cited sources. Stage 2 analysis should verify these patterns in actual TBTA
+  data and confirm theological assessments with peer review.
+
+source: '{llm-cs45}'
+requires_peer_review: true
+peer_review_focus:
+  - Great Commission as command vs. suggestion (missionary mandate)
+  - Covenant promises as declarations vs. conditionals (assurance)
+  - Rhetorical questions in Paul's diatribe (Romans 6:1-2, 3:8)
+  - Prophetic declarations vs. wishes (messianic prophecies)
+  - Beatitudes as declarations vs. commands (grace vs. works)
+  - Warnings vs. threats (prophetic literature)
+  - Marital commands (complementarian/egalitarian implications)
+  - Healing instructions in James 5 (word of faith concerns)
+
+theological_perspective: conservative_protestant_christian
+note_on_perspective: |
+  This analysis reflects conservative Protestant orthodoxy as specified in
+  CLAUDE.md. Key distinctives affecting illocutionary force analysis:
+
+  - Biblical authority: Commands in Scripture are binding (not mere suggestions)
+  - Propositional revelation: Scripture makes truth claims (not opinions)
+  - God's faithfulness: Covenant promises are certain (not conditional)
+  - Completed atonement: "It is finished" is declaration (not ongoing)
+
+  Other Christian traditions (Catholic, Orthodox) largely agree on illocutionary
+  force classifications for high-stakes texts (commands, promises, declarations),
+  with some differences in application hermeneutics.
+
+recommendations_for_algorithm:
+  - priority_1: Flag commands (Great Commission, Ten Commandments) as HIGH STAKES - must not be reduced to suggestions
+  - priority_2: Identify covenant promises as declarations (not conditionals) for assurance theology
+  - priority_3: Recognize rhetorical questions (especially Paul's diatribe style) to prevent misreading
+  - priority_4: Distinguish warnings from threats (prophetic literature) for proper view of God
+  - priority_5: Identify performative blessings (not wishes) for sacramental/liturgical contexts
+  - priority_6: Mark assertions vs. opinions (Christological statements) for apologetic clarity
+  - priority_7: Distinguish declarations from commands (Beatitudes) to prevent works-righteousness

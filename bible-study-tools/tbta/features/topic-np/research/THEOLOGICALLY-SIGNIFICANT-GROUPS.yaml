@@ -1,0 +1,367 @@
+feature: topic-np
+default_classification: arbitrary # Topic-marking is primarily stylistic/discourse-structural
+theological_significance: MINIMAL # Rarely affects doctrinal content directly
+
+# =============================================================================
+# CLASSIFICATION RATIONALE
+# =============================================================================
+#
+# Topic NP encodes DISCOURSE PRAGMATICS (information structure: given vs new,
+# what the clause is "about") rather than SEMANTIC/PROPOSITIONAL content (who,
+# what, when, relationships). The theological TRUTH CLAIMS remain unchanged
+# regardless of whether an entity is marked as topic (A/P) or subject (N).
+#
+# Example: "Jesus healed the man" vs "As for Jesus, he healed the man"
+#   → Same propositional content (Jesus performed healing on man)
+#   → Different information structure (Jesus as topic vs subject)
+#   → No change to doctrine
+#
+# However, topic-marking can have CONTEXTUAL significance for:
+#   1. Emphasis in theological declarations (pedagogical clarity)
+#   2. Contrastive focus in polemical passages (orthodoxy vs heresy)
+#   3. Information flow in creedal statements (given → new progression)
+#
+# =============================================================================
+
+# SECTION 1: NON-ARBITRARY CONTEXTS (CONTEXTUAL ONLY - Not Theological)
+# =============================================================================
+# These contexts involve clarity, emphasis, and pedagogical flow rather than
+# doctrinal truth. Incorrect topic-marking may cause CONFUSION but not HERESY.
+# =============================================================================
+
+non_arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # Context 1: Contrastive Polemic (Faith vs Works)
+  # ---------------------------------------------------------------------------
+  - verse_pattern: 'Romans 3:28, Galatians 2:16 (justification debates) (unverified)'
+    affected_values: [A-topic, N-subject]
+    theological_stakes: MEDIUM
+    non_arbitrary_type: CONTEXTUAL # Affects clarity/emphasis, not doctrine
+    affected_doctrines:
+      - Justification by Faith Alone (Sola Fide)
+      - Relationship between faith and works
+
+    non_arbitrary_rationale: |
+      In polemical passages contrasting faith vs works, topic-marking can
+      emphasize WHICH element is the grounds of justification. However, the
+      PROPOSITIONAL content ("justified by faith, not works") remains unchanged
+      regardless of topic-marking.
+
+      Example (Romans 3:28):
+      - "A person is justified by faith" (faith as topic → emphasizes faith)
+      - "By faith a person is justified" (person as topic → emphasizes universality)
+
+      Both convey the same doctrine. Topic-marking affects EMPHASIS, not TRUTH.
+
+    christian_orthodox_position:
+      preferred_value: contextual # Depends on target language's topic-prominence
+      acceptable_alternatives: [A-topic, N-subject]
+      forbidden_values: [] # No forbidden values - this is discourse-structural
+      theological_basis: |
+        Justification is by grace through faith alone, apart from works of law
+        (Ephesians 2:8-9, Romans 3:28). This PROPOSITIONAL truth is encoded in
+        SEMANTICS (the relationship between faith/works/justification), not in
+        DISCOURSE STRUCTURE (topic vs subject).
+      translator_guidance: |
+        - For TOPIC-PROMINENT languages (Japanese, Korean, Mandarin): Use
+          contrastive topic markers (wa/eun/的話) to emphasize "faith" vs "works"
+        - For SUBJECT-PROMINENT languages (English, French): Use word order or
+          intonation for emphasis
+        - PRIORITY: Maintain clear PROPOSITIONAL contrast (faith ≠ works as
+          grounds for justification)
+        - Topic-marking serves PEDAGOGICAL clarity, not doctrinal necessity
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Works-based justification (faith + works = justification)'
+        used_by: [Roman Catholic (traditional formulation), Mormons/LDS]
+        christian_assessment: |
+          REJECTED by Protestant orthodoxy (violates Sola Fide). However, this
+          is a SEMANTIC error (changing the relationship between faith and works),
+          not a TOPIC-MARKING error. Topic-np cannot cause or prevent this heresy.
+
+  # ---------------------------------------------------------------------------
+  # Context 2: Trinitarian Statements with Emphasis
+  # ---------------------------------------------------------------------------
+  - verse_pattern: 'John 1:1, John 10:30, Philippians 2:6 (deity of Christ) (unverified)'
+    affected_values: [A-topic, P-topic, N-subject]
+    theological_stakes: LOW
+    non_arbitrary_type: CONTEXTUAL # Affects emphasis/pedagogical flow only
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Deity of Christ
+      - Relationship between Father and Son
+
+    non_arbitrary_rationale: |
+      In Christological passages, topic-marking can affect WHICH aspect of
+      Christ's nature is emphasized (deity, pre-existence, relationship to Father).
+      However, the FACT of Christ's deity is PROPOSITIONAL (encoded in predicates
+      like "was God", "equal with God"), not discourse-structural.
+
+      Example (John 1:1):
+      - "The Word was God" → Word as topic, predicate nominative "God"
+      - "God the Word was" → Different emphasis, same propositional content
+
+      Topic-marking affects INFORMATION FLOW (what is presented as given vs new),
+      not the ONTOLOGICAL CLAIM (Word = God in essence).
+
+    christian_orthodox_position:
+      preferred_value: contextual # Depends on target language and context
+      acceptable_alternatives: [A-topic, P-topic, N-subject]
+      forbidden_values: [] # No forbidden topic-marking values
+      theological_basis: |
+        Jesus Christ is fully God and fully man, second person of the Trinity,
+        eternally begotten of the Father (Nicene Creed, John 1:1, Philippians 2:6).
+        This is a SEMANTIC/PROPOSITIONAL truth, not discourse-structural.
+      translator_guidance: |
+        - Topic-marking does NOT determine Christology
+        - The PREDICATE ("was God", "equal with God") carries the doctrinal
+          content, not the topic-comment structure
+        - For pedagogical clarity in topic-prominent languages:
+          * Use topic-marking (wa/eun) for continuous discourse about Christ
+          * Use subject-marking (ga/i) when introducing Christ as new information
+        - AVOID: Assuming topic-marking affects deity (it doesn't)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Arianism (Christ as created being, not eternal God)'
+        used_by: [Jehovah's Witnesses, ancient Arians]
+        christian_assessment: |
+          HERETICAL (violates Nicene orthodoxy). However, Arianism is a SEMANTIC
+          error (denying "was God" predicate), not a TOPIC-MARKING error.
+          Topic-np feature cannot cause or prevent Arianism.
+      - interpretation: 'Modalism (Father = Son = Spirit, no distinct persons)'
+        used_by: [Oneness Pentecostals, ancient Sabellians]
+        christian_assessment: |
+          HERETICAL (violates Trinitarian distinctions). This is a SEMANTIC error
+          about PERSONS, not a discourse-structural issue.
+
+  # ---------------------------------------------------------------------------
+  # Context 3: Universal Scope Declarations (All Have Sinned)
+  # ---------------------------------------------------------------------------
+  - verse_pattern: 'Romans 3:23, Romans 5:12 (universal sinfulness) (unverified)'
+    affected_values: [A-topic, N-subject]
+    theological_stakes: LOW
+    non_arbitrary_type: CONTEXTUAL # Affects emphasis on universality
+    affected_doctrines:
+      - Universal sinfulness of humanity
+      - Need for redemption
+
+    non_arbitrary_rationale: |
+      Topic-marking can emphasize WHICH aspect is foregrounded: the universality
+      ("all people") or the condition ("have sinned"). However, the SCOPE of
+      the claim (πάντες = all) is SEMANTIC (in the quantifier "all"), not
+      discourse-structural.
+
+      Example (Romans 3:23):
+      - "All have sinned" → "all" as topic (emphasizes universality)
+      - "Have all sinned?" → different illocutionary force (question vs statement)
+
+      Topic-marking may affect EMPHASIS but not the PROPOSITIONAL SCOPE.
+
+    christian_orthodox_position:
+      preferred_value: contextual # Depends on context
+      acceptable_alternatives: [A-topic, N-subject]
+      forbidden_values: []
+      theological_basis: |
+        All humans (except Christ) have sinned and fall short of God's glory
+        (Romans 3:23, 5:12). This universal scope is encoded in the quantifier
+        "all" (πάντες), not in topic-comment structure.
+      translator_guidance: |
+        - Ensure universal quantifier ("all", πάντες) is clear in translation
+        - Topic-marking is secondary to semantic scope
+        - For emphasis in topic-prominent languages, topic-mark "all people"
+          to foreground the universality of sin
+
+    non_orthodox_alternatives_awareness: []
+
+  # ---------------------------------------------------------------------------
+  # Context 4: Beatitudes and Predicate Statements
+  # ---------------------------------------------------------------------------
+  - verse_pattern: 'Matthew 5:3-11 (Beatitudes) (unverified)'
+    affected_values: [P-topic, N-subject]
+    theological_stakes: LOW
+    non_arbitrary_type: CONTEXTUAL # Affects information flow
+    affected_doctrines:
+      - Kingdom ethics
+      - Blessedness conditions
+
+    non_arbitrary_rationale: |
+      Beatitudes use predicative construction ("Blessed are X"). Topic-marking
+      can affect whether "blessed" or "the poor/meek/etc" is the topic, which
+      affects INFORMATION FLOW (what the clause is "about") but not the
+      PROPOSITIONAL content (who receives blessing).
+
+      Example (Matthew 5:3):
+      - "Blessed are the poor in spirit" → "poor" as patient-topic
+      - "The poor in spirit are blessed" → Subject-predicate reordering
+
+      Both convey the same truth. Topic-marking affects PACKAGING, not CONTENT.
+
+    christian_orthodox_position:
+      preferred_value: P-topic # "Poor/meek/etc" as topic is natural for beatitudes
+      acceptable_alternatives: [N-subject]
+      forbidden_values: []
+      theological_basis: |
+        The Beatitudes describe conditions of blessedness in God's kingdom
+        (Matthew 5:3-11). The RELATIONSHIP between the condition (poor in spirit)
+        and result (blessed) is PROPOSITIONAL, not topic-structural.
+      translator_guidance: |
+        - In topic-prominent languages, use topic-comment structure naturally:
+          * Japanese: "心の貧しい人々は幸いです" (kokoro-no mazushii hitobito-WA)
+          * Korean: "마음이 가난한 자는 복이 있다" (maeum-i gananhan ja-NEUN)
+        - Maintain the predicative pattern for rhythm/poetic effect across all
+          beatitudes (parallel structure)
+
+    non_orthodox_alternatives_awareness: []
+
+# =============================================================================
+# SECTION 2: ARBITRARY CONTEXTS (Stylistic Choice)
+# =============================================================================
+# The vast majority of topic-np contexts are ARBITRARY - the choice of
+# topic-marking is driven by discourse flow, target language typology, and
+# stylistic preference, NOT by theological necessity.
+# =============================================================================
+
+arbitrary_contexts:
+
+  - pattern: "Narrative discourse continuity (e.g., 'Jesus said... He went...')"
+    rationale: |
+      Topic continuity in narrative (Participant Tracking = Routine/Restaging)
+      is driven by DISCOURSE COHERENCE, not theology. Whether a protagonist is
+      marked as topic (A) or subject (N) depends on target language's topic-
+      prominence and information structure conventions.
+
+      Example: Gospel narratives with Jesus as continuing participant
+      - Topic-prominent languages (Japanese): Use topic marker wa for continuity
+      - Subject-prominent languages (English): Use subject position
+
+      Same theological content, different discourse packaging.
+    estimated_percentage: 60%
+
+  - pattern: "Generic/timeless statements (e.g., 'God is love', 'The LORD reigns')"
+    rationale: |
+      Generic statements about God's nature/actions can be encoded as:
+      - Topic-comment: "God (topic) - is love (comment)"
+      - Subject-predicate: "God (subject) is love (predicate)"
+
+      The PROPOSITIONAL content (God's essential nature as love) is SEMANTIC
+      (predicate nominative "love"), not topic-structural. Topic-marking affects
+      how information is PACKAGED, not WHAT is claimed.
+    estimated_percentage: 15%
+
+  - pattern: "Crowd/group references (e.g., 'The people said', 'The disciples followed')"
+    rationale: |
+      Group participants in narrative can be topic or subject based on:
+      - Whether previously mentioned (given → topic-likely)
+      - Target language's topic-prominence
+      - Discourse flow preferences
+
+      No theological significance to whether "the crowd" is marked A-topic vs N-subject.
+    estimated_percentage: 10%
+
+  - pattern: "Temporal/locative setting (e.g., 'In those days', 'At that place')"
+    rationale: |
+      Scene-setting elements (time, location) can function as topics in some
+      languages (especially topic-prominent ones), but this is purely STYLISTIC.
+
+      Example: "In those days, a decree went out"
+      - "Those days" as topic → Topic-comment structure
+      - "A decree" as subject → Subject-predicate structure
+
+      No theological content affected.
+    estimated_percentage: 5%
+
+  - pattern: "Imperative/hortatory constructions (e.g., 'Repent!', 'Let us go')"
+    rationale: |
+      Commands and exhortations typically have no overt topic (addressee is
+      implicit). Topic NP = N for most imperatives. This is GRAMMATICAL, not
+      theological.
+    estimated_percentage: 5%
+
+  - pattern: "Existential/presentational clauses (e.g., 'There was a man')"
+    rationale: |
+      Presentational constructions introduce NEW participants, which are typically
+      NOT topics (new information → focus, not topic). This is driven by
+      INFORMATION STRUCTURE universals, not theology.
+
+      Topic NP = N for presentational clauses (no topic).
+    estimated_percentage: 5%
+
+# =============================================================================
+# SUMMARY STATISTICS (Estimated)
+# =============================================================================
+
+summary:
+  arbitrary_percentage: 95 # The vast majority of topic-np choices are stylistic
+  non_arbitrary_contextual_percentage: 5 # Minimal contextual significance
+  non_arbitrary_theological_percentage: 0 # No direct doctrinal stakes
+
+  key_insight: |
+    Topic NP is a DISCOURSE-PRAGMATIC feature that encodes INFORMATION STRUCTURE
+    (given vs new, what the clause is "about") rather than PROPOSITIONAL CONTENT
+    (who, what, when, relationships).
+
+    Theological truth is encoded in SEMANTICS (predicates, quantifiers, semantic
+    roles, propositional relationships), not in TOPIC-COMMENT vs SUBJECT-PREDICATE
+    packaging.
+
+    The choice of topic-marking matters for:
+    1. Target language naturalness (topic-prominent vs subject-prominent)
+    2. Pedagogical clarity (emphasis and information flow)
+    3. Discourse coherence (topic continuity across clauses)
+
+    But NOT for doctrinal correctness.
+
+  translator_guidance_summary: |
+    **PRIORITY**: Follow your target language's topic-prominence typology
+
+    **For TOPIC-PROMINENT languages** (Japanese, Korean, Mandarin, Tagalog):
+    - Use TBTA Topic NP annotations to guide topic marker selection (wa/ga, eun/i)
+    - Mark continuing participants as topics (A/P) for discourse coherence
+    - Use subject-marking (ga/i) for new information introduction
+
+    **For SUBJECT-PROMINENT languages** (English, French, German, Spanish):
+    - Default to subject-predicate structure
+    - Use topic-fronting sparingly for emphasis ("As for X...")
+    - Topic NP annotations are less critical (informational only)
+
+    **DOCTRINAL SAFETY**: Topic-marking CANNOT cause heresy
+    - Arianism, modalism, works-righteousness, etc. are SEMANTIC errors
+    - Topic-np is DISCOURSE-STRUCTURAL, not propositional
+    - Focus on accurate PREDICATES, RELATIONSHIPS, and QUANTIFIERS for doctrine
+
+# =============================================================================
+# CITATION AND VERIFICATION STATUS
+# =============================================================================
+
+citation_status:
+  source: "{llm-cs45}" # From Claude Sonnet 4.5 internal knowledge
+  verification_status: UNVERIFIED # Verse patterns inferred, not verified in corpus
+  methodology: |
+    This analysis uses internal knowledge of Scripture to identify potential
+    contexts where topic-marking might have theological significance. All verse
+    references are marked (unverified) and should be validated against actual
+    TBTA data in Stage 2 (Language Study).
+
+    The classification framework (arbitrary vs non-arbitrary-contextual) is based
+    on linguistic theory of topic-comment vs subject-predicate distinctions
+    (Li & Thompson 1976, Lambrecht 1994) applied to theological translation contexts.
+
+# =============================================================================
+# REFERENCES
+# =============================================================================
+
+references:
+  linguistic_theory:
+    - "Li, C. N., & Thompson, S. A. (1976). Subject and Topic: A New Typology of Language"
+    - "Lambrecht, K. (1994). Information Structure and Sentence Form"
+    - "Chafe, W. L. (1976). Givenness, Contrastiveness, Definiteness, Subjects, Topics"
+
+  tbta_feature_documentation:
+    - "/bible-study-tools/tbta/features/topic-np/README.md"
+    - "/bible-study-tools/tbta/features/features-archive/topic-np/TOPIC-VS-SUBJECT.md"
+    - "/bible-study-tools/tbta/features/features-archive/topic-np/TOPIC-PROMINENT-LANGUAGES.md"
+
+  theological_framework:
+    - "CLAUDE.md (Conservative Protestant Christian orthodoxy)"
+    - "Historic Christian creeds (Nicene, Apostles', Athanasian)"
