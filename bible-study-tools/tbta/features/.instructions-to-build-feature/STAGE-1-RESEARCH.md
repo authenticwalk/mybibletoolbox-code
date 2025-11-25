@@ -24,8 +24,8 @@ Do extensive research (50 sources) into this linguistic feature. Define the feat
 
 **Use Subagents Proactively**:
 
-- Assign subagents to run in parallel: TBTA Review, Language Analysis, Theological Research.
-- Synthesize findings into the final deliverables.
+- Assign subagents to run in parallel for each section: ex (TBTA Review, Language Analysis, Theological Research, etc)
+- Then Synthesize findings into the final deliverables.
 
 ## Tasks
 
@@ -62,7 +62,7 @@ IMPORTANT: Do not guess, cite every detail you extract to it's source document. 
 
 - **CRITICAL: Source Language Encoding Check**: Is this feature EXPLICITLY encoded in Hebrew/Greek morphology? (e.g., Number is marked morphologically, Clusivity is NOT)
 - **Identify Required Families**: List specific families (e.g., "Austronesian", "Bantu") that _grammatically require_ this feature.
-- **Analyze Available Languages**: Do an analysis of which languages we have translations for (check `/src/constants/languages.tsv` and classify the feature's necessity in the target languages: is it Mandatory, Optional; (for Absent ignore those languages to save output tokens)  NOTE if a language is mentioned in your/our cited research use that; otherwise user your internal knowledge and mark it as (suspected) to bypass the no hullucination rule.(omit all languages that don't have this feature).
+- **Analyze Available Languages**: Do an analysis of which languages we have translations for (check `/src/constants/languages.tsv` and classify the feature's necessity in the target languages: is it Mandatory, Optional; (for Absent ignore those languages to save output tokens)  NOTE if a language is mentioned in your/our cited research use that; otherwise user your internal knowledge and mark it as (unverified) to bypass the no hullucination rule.(omit all languages that don't have this feature).
   - **Typological Classification**: For your selected control languages, classify the feature's status:
     - **Mandatory**: The language MUST mark this feature (e.g., Gender in Spanish).
     - **Optional**: The language CAN mark it but it's not required.
@@ -203,11 +203,15 @@ Summarize all the docs in a very concise form (Progressive Disclosure: ≤200 li
 
 ### 1. `{TBTA-DIR}/features/{feature}/research/README.md`
 
+Max 200 lines
+
 - Summarize what this feature is and it's key values
 - Foreach research section above summarize the most important points and link to the file
 - Note any discrepencies where sections disagree and note (ex. tbta and research disagree)
 
 ### 2. Create `{TBTA-DIR}/features/{feature}/README.md`
+
+Max 75 lines
 
 - **Feature Name & Description**: One sentence summary.
 - **Target Audience**: List of language families and most important distinctions between them. link to language research file.

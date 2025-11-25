@@ -1,0 +1,250 @@
+feature: number-systems
+default_classification: arbitrary  # Default: choice is stylistic/optional
+theological_significance: EXISTS  # Flag: Does this ever matter doctrinally?
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+
+non_arbitrary_contexts:
+  # GROUP 1: Trinity References (Trial Number Required)
+  - verse_pattern: 'Gen 1:26 (Trinity references) (unverified)'
+    affected_values: [trial, plural]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Creation theology
+      - Monotheism
+
+    # Why is this non-arbitrary?
+    non_arbitrary_rationale: |
+      Choice affects doctrine. Trial number (exactly 3) encodes Trinity (Father, Son, Holy Spirit).
+      Plural is acceptable but less precise (could indicate divine council or angels).
+      Dual is HERETICAL (Arianism - implies only 2 persons, denying Holy Spirit's deity).
+
+    # What is the Orthodox view?
+    christian_orthodox_position:
+      preferred_value: trial
+      theological_basis: 'God is One Essence, Three Persons. Genesis 1:26 uses plural "us" referring to the Trinity.'
+      translator_guidance: |
+        - Use TRIAL if available in target language.
+        - NEVER use Dual (implies only 2 persons, Arian heresy).
+        - Plural acceptable but less precise (may suggest divine council).
+        - Footnote recommended if using Plural to explain Trinity reference.
+
+    # What are the alternatives/heresies?
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Jewish non-Messianic]
+        christian_assessment: REJECTED (Angels do not create; creation is divine act)
+      - interpretation: 'Polytheism'
+        used_by: [Mormon/LDS]
+        christian_assessment: HERETICAL (Violates Monotheism - "Hear, O Israel: The LORD our God, the LORD is one" Deut 6:4)
+      - interpretation: 'Arianism (Dual - Father + Son only)'
+        used_by: [Arianism, some cults]
+        christian_assessment: HERETICAL (Denies Holy Spirit's deity and personhood)
+
+  # GROUP 2: Genesis 3:22 - "Like one of us"
+  - verse_pattern: 'Gen 3:22 (Trinity reference - "one of us") (unverified)'
+    affected_values: [trial, plural]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Image of God theology
+
+    non_arbitrary_rationale: |
+      Same pattern as Genesis 1:26. "Us" refers to Trinity. Trial number preserves Trinitarian reference.
+      Dual would be heretical (Arianism).
+
+    christian_orthodox_position:
+      preferred_value: trial
+      theological_basis: 'Same Trinity reference as Genesis 1:26. "Us" = Father, Son, Holy Spirit.'
+      translator_guidance: |
+        - Use TRIAL if available.
+        - NEVER use Dual (Arianism).
+        - Plural acceptable but less precise.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council'
+        used_by: [Jewish non-Messianic]
+        christian_assessment: REJECTED (Angels are not "us" in creation context)
+
+  # GROUP 3: Matthew 28:19 - Trinity Formula
+  - verse_pattern: 'Matt 28:19 (Trinity formula - Father, Son, Holy Spirit) (unverified)'
+    affected_values: [trial, plural]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Baptism theology
+
+    non_arbitrary_rationale: |
+      Explicit Trinity formula lists three persons. Some languages may require trial number for the three persons,
+      even though "name" (singular) is used. Choice affects Trinitarian understanding.
+
+    christian_orthodox_position:
+      preferred_value: trial
+      theological_basis: 'Three persons explicitly listed: Father, Son, Holy Spirit. One name (singular) but three persons.'
+      translator_guidance: |
+        - If language requires number marking for the three persons, use TRIAL.
+        - NEVER use Dual (implies only 2 persons).
+        - Plural acceptable but less precise.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Modalism (one person, three modes)'
+        used_by: [Oneness Pentecostalism]
+        christian_assessment: HERETICAL (Denies three distinct persons)
+      - interpretation: 'Arianism (Dual - Father + Son only)'
+        used_by: [Arianism]
+        christian_assessment: HERETICAL (Denies Holy Spirit's personhood)
+
+  # GROUP 4: Contextual Accuracy - Participant Tracking
+  - verse_pattern: 'Narrative passages with explicit participant counts (e.g., "two disciples", "three men") (unverified)'
+    affected_values: [dual, trial, plural]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Biblical accuracy
+      - Historical reliability
+
+    non_arbitrary_rationale: |
+      If verse explicitly states number (e.g., "two disciples", "three men"), using wrong number confuses readers
+      and questions translation accuracy. Context requires specific number.
+
+    christian_orthodox_position:
+      preferred_value: match_explicit_number
+      theological_basis: 'Scripture is historically accurate. Explicit numbers must be preserved.'
+      translator_guidance: |
+        - Match explicit number words: "two" → dual, "three" → trial, "four" → quadrial/paucal.
+        - Consistency: If "two disciples" marked dual, all references to this pair should be dual.
+        - Verify number from context and explicit words.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Ignore explicit numbers (use plural for all)'
+        used_by: [Lazy translation]
+        christian_assessment: REJECTED (Loses biblical accuracy and confuses readers)
+
+  # GROUP 5: Natural Pairs - Universal Pattern
+  - verse_pattern: 'Body parts in pairs (eyes, hands, feet, ears) (unverified)'
+    affected_values: [dual, plural]
+    theological_stakes: LOW
+    affected_doctrines:
+      - None (grammatical accuracy)
+
+    non_arbitrary_rationale: |
+      Body parts naturally occur in pairs. Dual-marking languages expect dual for natural pairs.
+      Using plural sounds unnatural and may confuse readers. Hebrew dual morphology for body parts
+      maps directly to dual-marking languages.
+
+    christian_orthodox_position:
+      preferred_value: dual
+      theological_basis: 'Natural pairs require dual in dual-marking languages. Universal linguistic pattern.'
+      translator_guidance: |
+        - Use DUAL for body parts in pairs (eyes, hands, feet, ears).
+        - Hebrew dual morphology (`-ayim` suffix) confirms dual for body parts.
+        - Consistency: All references to paired body parts should be dual.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Use plural for all body parts'
+        used_by: [Incorrect translation]
+        christian_assessment: REJECTED (Sounds unnatural, violates linguistic expectations)
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+
+arbitrary_contexts:
+  # GROUP 1: Crowd Sizes
+  - pattern: "Crowd sizes (e.g., 'multitude', 'crowd', 'many people')"
+    rationale: 'Exact count irrelevant to doctrine. "Many" vs "few" is stylistic.'
+    estimated_percentage: 25%
+    examples:
+      - "A great multitude followed him" (Mark 3:7, unverified)
+      - "Many people gathered" (various, unverified)
+    translator_guidance: |
+      - Use PAUCAL for small crowds (3-15 people) if language distinguishes.
+      - Use PLURAL for large crowds (15+ people).
+      - Choice is stylistic, not doctrinal.
+
+  # GROUP 2: Travel Companions
+  - pattern: "Travel companions (e.g., 'they went', 'disciples went')"
+    rationale: 'Exact count of travelers irrelevant unless explicitly stated.'
+    estimated_percentage: 15%
+    examples:
+      - "They went to the next town" (various, unverified)
+      - "The disciples went" (various, unverified)
+    translator_guidance: |
+      - Use PLURAL unless number explicitly stated.
+      - If "two" or "three" explicitly stated, use DUAL or TRIAL.
+
+  # GROUP 3: Abstract Nouns
+  - pattern: "Abstract nouns (e.g., 'faith', 'grace', 'love', 'sin')"
+    rationale: 'Abstract concepts are typically singular regardless of English plural forms.'
+    estimated_percentage: 10%
+    examples:
+      - "Faith, hope, and love" (1 Cor 13:13, unverified)
+      - "Sins" (various, unverified)
+    translator_guidance: |
+      - Abstract nouns typically SINGULAR in target languages.
+      - English plural "sins" may be singular concept in target language.
+      - Verify from context and target language grammar.
+
+  # GROUP 4: Generic Plurals
+  - pattern: "Generic plurals (e.g., 'people', 'nations', 'kings')"
+    rationale: 'Generic reference, exact count irrelevant.'
+    estimated_percentage: 20%
+    examples:
+      - "All nations" (various, unverified)
+      - "Kings of the earth" (various, unverified)
+    translator_guidance: |
+      - Use PLURAL for generic plurals.
+      - No specific count intended.
+
+  # GROUP 5: Collective Nouns
+  - pattern: "Collective nouns (e.g., 'Israel', 'church', 'people')"
+    rationale: 'Singular form refers to group, exact membership count irrelevant.'
+    estimated_percentage: 10%
+    examples:
+      - "Israel went up" (various, unverified)
+      - "The church gathered" (various, unverified)
+    translator_guidance: |
+      - Typically SINGULAR (group as unit).
+      - May be PLURAL if language treats collectives as plural.
+      - Verify from target language grammar.
+
+  # GROUP 6: Unspecified Groups
+  - pattern: "Unspecified groups (e.g., 'some', 'others', 'many')"
+    rationale: 'No specific count, choice is stylistic.'
+    estimated_percentage: 20%
+    examples:
+      - "Some said" (various, unverified)
+      - "Others went" (various, unverified)
+    translator_guidance: |
+      - Use PAUCAL for "some" (small group) if language distinguishes.
+      - Use PLURAL for "many" (large group).
+      - Choice is stylistic, not doctrinal.
+
+# SECTION 3: SUMMARY STATISTICS
+
+classification_summary:
+  non_arbitrary_percentage: ~15%  # Theologically critical contexts
+  arbitrary_percentage: ~85%  # Stylistic/contextual choices
+  
+  non_arbitrary_breakdown:
+    trinity_references: ~5%  # Gen 1:26, Gen 3:22, Matt 28:19
+    explicit_numbers: ~5%  # "Two disciples", "three men"
+    natural_pairs: ~5%  # Body parts (eyes, hands, feet)
+  
+  arbitrary_breakdown:
+    crowd_sizes: ~25%
+    travel_companions: ~15%
+    abstract_nouns: ~10%
+    generic_plurals: ~20%
+    collective_nouns: ~10%
+    unspecified_groups: ~20%
+
+# SECTION 4: VALIDATION NOTES
+
+validation_notes: |
+  Percentages are estimates based on biblical text analysis (unverified).
+  Actual frequencies require Stage 2 data analysis.
+  
+  Non-arbitrary contexts require 100% accuracy - theological precision critical.
+  Arbitrary contexts allow acceptable uncertainty - stylistic choices acceptable.
+  
+  Trinity references are highest priority - must never use Dual (Arianism).
+
