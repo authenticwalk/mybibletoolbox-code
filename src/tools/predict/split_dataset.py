@@ -2,6 +2,12 @@
 """
 Split enriched JSONL dataset into train/validate/test/leftovers files.
 
+Output files:
+  - train.jsonl: Training data with labels (for learning)
+  - validate.jsonl + validate.secret.jsonl: Validation without/with labels
+  - test.jsonl + test.secret.jsonl: Test without/with labels
+  - leftovers.jsonl: Remaining entries from original (with labels)
+
 Usage:
     python src/tools/predict/split_dataset.py \
         --input analysis/enriched.jsonl \
@@ -63,7 +69,7 @@ def main():
     parser.add_argument(
         "--original",
         required=True,
-        help="Original TBTA extract JSONL file (for computing leftovers)",
+        help="Original extract JSONL file (for computing leftovers)",
     )
     parser.add_argument(
         "--output",
@@ -128,27 +134,27 @@ def main():
     # Write split files
     for split_name, entries in splits.items():
         if entries:
-            # Secret file (all fields)
-            secret_path = output_dir / f"{split_name}.secret.jsonl"
-            save_jsonl(secret_path, entries)
-            print(f"Wrote {len(entries)} entries to {secret_path}")
+            if split_name == "train":
+                # Train: single file with all fields (labels visible for training)
+                train_path = output_dir / "train.jsonl"
+                save_jsonl(train_path, entries)
+                print(f"Wrote {len(entries)} entries to {train_path}")
+            else:
+                # Validate/Test: public file (no labels) + secret file (with labels)
+                secret_path = output_dir / f"{split_name}.secret.jsonl"
+                save_jsonl(secret_path, entries)
+                print(f"Wrote {len(entries)} entries to {secret_path}")
 
-            # Public file (without label and dataset)
-            public_path = output_dir / f"{split_name}.jsonl"
-            public_entries = [strip_secret_fields(e) for e in entries]
-            save_jsonl(public_path, public_entries)
-            print(f"Wrote {len(public_entries)} entries to {public_path}")
+                public_path = output_dir / f"{split_name}.jsonl"
+                public_entries = [strip_secret_fields(e) for e in entries]
+                save_jsonl(public_path, public_entries)
+                print(f"Wrote {len(public_entries)} entries to {public_path}")
 
-    # Write leftovers
+    # Write leftovers (single file with all fields)
     if leftovers:
-        secret_path = output_dir / "leftovers.secret.jsonl"
-        save_jsonl(secret_path, leftovers)
-        print(f"Wrote {len(leftovers)} entries to {secret_path}")
-
-        public_path = output_dir / "leftovers.jsonl"
-        public_entries = [strip_secret_fields(e) for e in leftovers]
-        save_jsonl(public_path, public_entries)
-        print(f"Wrote {len(public_entries)} entries to {public_path}")
+        leftovers_path = output_dir / "leftovers.jsonl"
+        save_jsonl(leftovers_path, leftovers)
+        print(f"Wrote {len(leftovers)} entries to {leftovers_path}")
     else:
         print("No leftovers found")
 
