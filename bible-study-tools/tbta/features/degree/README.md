@@ -9,8 +9,8 @@ Degree marks the level of comparison or intensity of adjectives, adverbs, and ve
 | **TBTA Values** | No Degree, Comparative, Superlative, Intensified |
 | **Applies To** | Adjectives, Adverbs, Verbs (via adjectival modification) |
 | **Source Languages** | Greek (morphological), Hebrew (periphrastic) |
-| **Critical Languages** | English, Spanish, Mandarin, Indonesian, Swahili |
-| **Degree-Neutral** | Fijian, Washo, Warlpiri (use conjoined comparison) |
+| **Critical Languages** | Greek, English, Spanish, Mandarin, Indonesian, Swahili |
+| **Degree-Neutral** | Motu, Warlpiri (use conjoined comparison) |
 | **Theological Stakes** | HIGH (20% non-arbitrary; core doctrines affected) |
 | **Algorithm Accuracy** | v2.0: ~71% (4 critical rules discovered) |
 
@@ -28,6 +28,6 @@ Degree marks the level of comparison or intensity of adjectives, adverbs, and ve
 ✅ **Semantic over morphological**: Context determines degree, not form
 ✅ **Gradability check**: Non-gradable words ("dead," "perfect") → always "No Degree"
 ✅ **Syntactic only**: Modifiers ("very big") get degree; compounds (ὑπερεκπερισσοῦ "abundantly") → "No Degree"
-**FORBIDDEN**: Degree-neutral languages (Fijian, Washo) cannot use C/S/I codes
+**FORBIDDEN**: Degree-neutral languages (Motu, Warlpiri) cannot use C/S/I codes
 
 [Read full research findings →](research/README.md)

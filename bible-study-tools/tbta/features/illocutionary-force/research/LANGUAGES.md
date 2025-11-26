@@ -80,7 +80,7 @@ Languages where illocutionary force **MUST** be explicitly marked through partic
 |----------|--------|-----------|----------|-------------|
 | **Japanese (jpn)** | Japonic | か (ka) question, よ (yo) assertion, ね (ne) confirmation, な (na) prohibition | 行きますか？(ikimasu ka, "Are you going?") | YES |
 | **Mandarin (cmn)** | Sino-Tibetan | 吗 (ma) yes/no Q, 呢 (ne) wh-Q/suggestion, 吧 (ba) imperative softener | 你去吗？(nǐ qù ma, "Are you going?") | YES |
-| **Korean** | Koreanic | -니 (-ni) question, speech level suffixes | (suspected - not in corpus) | YES |
+| **Korean (kor)** | Koreanic | -니 (-ni) question, speech level suffixes | (suspected - not in corpus) | YES |
 
 **Source**: [Wikipedia - Sentence-final particles](https://en.wikipedia.org/wiki/Sentence-final_particle), [Mandarin ma particle](https://mangolanguages.com/resources/learn/grammar/mandarin-chinese/how-to-use-modal-particles-ma), [Japanese particles](https://senseijapanese.com/japanese-grammar/introduction-to-japanese-sentence-ending-particles/)
 
@@ -90,7 +90,7 @@ Languages where illocutionary force **MUST** be explicitly marked through partic
 
 | Language | Family | Particles | Examples | Obligatory? |
 |----------|--------|-----------|----------|-------------|
-| **Thai (tha)** | Kra-Dai | Question particles (multiple types) | (suspected) | HIGHLY PREFERRED |
+| **Thai (tha)** | Kra-Dai | ไหม (máy), หรือ (rue) for polar questions, polite particles (khráp/khâ) | คุณไปไหม (khun pai máy, "Are you going?") | YES |
 | **Vietnamese (vie)** | Austro-Asiatic | không, à, á, hả, hử, chứ, chăng, nhỉ, cơ, nhé | Anh đi không? ("You go QUESTION?") | YES |
 
 **Source**: [Vietnamese particles](https://language-obsession.tumblr.com/post/121148041944/particles-in-vietnamese), [Thai question particles](https://www.researchgate.net/publication/260580631_Question_particles_Thai_Japanese_and_English)
@@ -537,6 +537,10 @@ This allows translators to make theologically appropriate register choices in ho
 - [Vietnamese particles - Obsessed with Languages](https://language-obsession.tumblr.com/post/121148041944/particles-in-vietnamese)
 - [ResearchGate - Vietnamese sentence-final particles](https://mitcho.com/students/nguyen2021.pdf)
 - [ResearchGate - Question particles: Thai, Japanese, English](https://www.researchgate.net/publication/260580631_Question_particles_Thai_Japanese_and_English)
+- [Thai Particles and Question Formation - ReadThai.Fun](https://readthai.fun/blog/post/thai-grammar/thai-particles-and-questions)
+- [5 Common Final Particles in Thai Language](https://www.byu99.com/post/5-common-final-particles-in-thai-language)
+- [Burmese Particles as Boundary Marking Units](https://inter.payap.ac.th/wp-content/uploads/linguistics_workingpapers/Burmese_Particles.pdf)
+- [Burmese grammar - Wikipedia](https://en.wikipedia.org/wiki/Burmese_grammar)
 
 ### Austronesian Languages:
 - [Harvard - Austronesian syntax overview](https://scholar.harvard.edu/files/mpolinsky/files/a_syntactic_overview_of_austronesian_languages.010213.pdf)
@@ -553,6 +557,9 @@ This allows translators to make theologically appropriate register choices in ho
 - [SIL - Honorifics and the Japanese Bible](https://www.sil.org/resources/publications/entry/93466)
 - [Wiley - Korean Honorifics and Politeness](https://onlinelibrary.wiley.com/doi/10.1002/9781118371008.ch17)
 - [LingoDeer - Korean Speech Levels](https://blog.lingodeer.com/korean-speech-levels/)
+- [Korean speech levels - Wikipedia](https://en.wikipedia.org/wiki/Korean_speech_levels)
+- [Korean honorifics - Wikipedia](https://en.wikipedia.org/wiki/Korean_honorifics)
+- [Habbi Habbi - Korean Honorifics & Speech Levels Ultimate Guide](https://www.habbihabbi.com/blogs/bilingual-resources/korean-honorifics-speech-levels)
 
 ### General Interrogatives & Imperatives:
 - [Wikipedia - Interrogative](https://en.wikipedia.org/wiki/Interrogative)

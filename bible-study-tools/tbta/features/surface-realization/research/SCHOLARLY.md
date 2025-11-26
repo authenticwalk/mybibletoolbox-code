@@ -627,8 +627,8 @@ Voice systems determine how languages map semantic roles (agent, patient) onto s
 **Voice System**: Active, Middle, Passive (plus medio-passive conflation)
 
 **Surface Realization Pattern**:
-- Partial pro-drop: ~35% zero subjects
-- Noun: ~35%, Pronoun: ~30%, Zero: ~35%
+- Full pro-drop: frequent null subjects when recoverable from context
+- Uses mix of nouns, pronouns, and zero subjects based on discourse status
 - Voice affects realization: passive promotes patient to subject position
 
 **Voice-Specific Patterns**:
@@ -935,7 +935,7 @@ Voice systems determine how languages map semantic roles (agent, patient) onto s
 
 ### 7. Pro-Drop Interacts with Voice to Determine Surface Realization
 
-**Finding**: Pro-drop languages (70% of world's languages) allow null subjects when recoverable from context. Voice determines which semantic role = syntactic subject, then pro-drop rules determine if that subject appears as noun, pronoun, or zero. Biblical Hebrew ~50% zero subjects, Greek ~35%, English ~5% (coordinated ellipsis only).
+**Finding**: Pro-drop languages (70% of world's languages) allow null subjects when recoverable from context. Voice determines which semantic role = syntactic subject, then pro-drop rules determine if that subject appears as noun, pronoun, or zero. Biblical Hebrew and Greek both allow frequent null subjects; English allows null subjects only in coordinated ellipsis contexts (very limited).
 
 **Implication**: Cannot predict surface realization from voice alone. Must combine voice (which role is subject) with pro-drop status (how subjects are realized).
 

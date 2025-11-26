@@ -158,16 +158,16 @@ Languages where topic-fronting is **marked/emphatic** rather than grammatically 
 
 Based on typological diversity, translation availability, and feature necessity, we propose **8 candidate languages** for the Translation Database (Stage 2):
 
-| # | Language | ISO 639-3 | Family | Typology | # Trans | Why Selected |
-|---|----------|-----------|--------|----------|---------|--------------|
-| 1 | **English** | eng | Indo-European | Subject-prominent | 50+ | Baseline; topic-fronting is marked; highest translation count |
-| 2 | **Mandarin Chinese** | cmn | Sino-Tibetan | Topic-prominent | 3 | Prototypical topic-prominent (Li & Thompson 1976); no topic particle; extensive pro-drop |
-| 3 | **Japanese** | jpn | Japonic | Topic-prominent | 1 | Grammaticalized topic marker (wa vs ga); critical for particle selection |
-| 4 | **Thai** | tha | Kra-Dai | Topic-prominent | 1 | Extreme pro-drop; positional topic-prominence; no overt marking |
-| 5 | **Tagalog** | tgl | Austronesian | Both | 1 | ang-focus system; voice alternation with topic; unique typology |
-| 6 | **Indonesian** | ind | Austronesian | Topic-prominent (moderate) | 2 | Voice system (meN-/di-) aligns with topic; widely used in Papua New Guinea |
-| 7 | **Spanish** | spa | Indo-European | Subject-prominent | 6 | Romance baseline; compare with English for Indo-European consistency |
-| 8 | **Vietnamese** | vie | Austroasiatic | Topic-prominent | 2 | Positional topic-prominence; contrastive topic markers (Còn...thì); tonal |
+| # | Language | ISO 639-3 | Family | Typology | # Trans | Feature Status | Why Selected |
+|---|----------|-----------|--------|----------|---------|----------------|--------------|
+| 1 | **English** | eng | Indo-European | Subject-prominent | 50+ | Optional | Baseline; topic-fronting is marked; highest translation count |
+| 2 | **Mandarin Chinese** | cmn | Sino-Tibetan | Topic-prominent | 3 | **Mandatory** | Prototypical topic-prominent (Li & Thompson 1976); no topic particle; extensive pro-drop |
+| 3 | **Japanese** | jpn | Japonic | Topic-prominent | 1 | **Mandatory** | Grammaticalized topic marker (wa vs ga); critical for particle selection |
+| 4 | **Thai** | tha | Kra-Dai | Topic-prominent | 1 | **Mandatory** | Extreme pro-drop; positional topic-prominence; no overt marking |
+| 5 | **Tagalog** | tgl | Austronesian | Both | 1 | **Mandatory** | ang-focus system; voice alternation with topic; unique typology |
+| 6 | **Indonesian** | ind | Austronesian | Topic-prominent (moderate) | 2 | **Mandatory** | Voice system (meN-/di-) aligns with topic; widely used in Papua New Guinea |
+| 7 | **Spanish** | spa | Indo-European | Subject-prominent | 6 | Optional | Romance baseline; compare with English for Indo-European consistency |
+| 8 | **Vietnamese** | vie | Austroasiatic | Topic-prominent | 2 | **Mandatory** | Positional topic-prominence; contrastive topic markers (Còn...thì); tonal |
 
 **Rationale**:
 - **Diverse families**: 6 families (Indo-European, Sino-Tibetan, Japonic, Kra-Dai, Austronesian, Austroasiatic)

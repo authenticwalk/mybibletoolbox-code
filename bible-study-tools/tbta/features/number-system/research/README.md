@@ -52,7 +52,7 @@ Grammatical number encodes the count of entities (singular, dual, trial, paucal,
 **Typological Classification**:
 - **Mandatory**: English, Spanish, German, Arabic (must mark number)
 - **Optional**: Indonesian, Mandarin (general number, optional marking)
-- **Dual**: Arabic, Hawaiian (suspected), Tongan (suspected), Slovenian (NOT in dataset)
+- **Dual**: Arabic, Hawaiian (confirmed), Tongan (confirmed), Slovenian (NOT in dataset)
 - **Trial**: NONE in dataset (gap) - documented languages: Larike, Tok Pisin, Marshallese, Lihir
 - **Paucal**: Arabic confirmed (3-10 range)
 
@@ -61,12 +61,12 @@ Grammatical number encodes the count of entities (singular, dual, trial, paucal,
 2. Spanish (Romance, mandatory)
 3. Arabic (dual/paucal, root language)
 4. Indonesian (general number, optional)
-5. Hawaiian (Polynesian, suspected dual)
+5. Hawaiian (Polynesian, dual confirmed in pronouns)
 6. Mandarin (classifier, no plural morphology)
 7. German (Germanic, mandatory)
 8. Swahili (Bantu noun classes)
 9. Russian (Slavic without dual)
-10. Tongan (Polynesian, suspected dual)
+10. Tongan (Polynesian, dual confirmed in pronouns)
 
 **Critical Gap**: No trial languages in dataset → Cannot test theologically precise Trinity encoding
 

@@ -62,14 +62,14 @@ Person systems encode relationships between discourse participants (speaker, add
 
 **Proposed Languages for Stage 2**:
 1. Tagalog (Austronesian - TBTA example, *tayo*/*kami*)
-2. Indonesian (Austronesian - major regional language)
+2. Indonesian (Austronesian - major regional language, *kita*/*kami*)
 3. Fijian (Oceanic - complex with 4 numbers)
 4. Hawaiian (Polynesian - 4-way system with dual clusivity)
-5. Vietnamese (Austroasiatic - TBTA example)
+5. Vietnamese (Austroasiatic - TBTA example, *chúng ta*/*chúng tôi*)
 6. English (Indo-European - baseline, no clusivity)
 7. Spanish (Indo-European - major translation language)
 8. Swahili (Niger-Congo - African representative)
-9. Arrernte, Eastern (Australian - representative)
+9. Alyawarr (Australian Arandic - has I/E distinction unlike related Arrernte)
 10. Mandarin Chinese (Sino-Tibetan - major language, *zánmen*/*wǒmen*)
 
 **See**: `research/LANGUAGES.md` for full typological analysis
