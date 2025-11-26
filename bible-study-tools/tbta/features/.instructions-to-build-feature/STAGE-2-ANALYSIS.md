@@ -13,6 +13,13 @@ Quantitatively validate the feature against real-world translations _before_ wri
 NOTE: the relative directory is `/bible-study-tools/tbta/features/{feature}/`
 NOTE: the TBTA-DIR is `/bible-study-tools/tbta/`
 
+## Prerequisites
+
+Before running scripts that use `src.config` (group_by_strongs.py, group_by_reasons.py, etc.):
+- Ensure `.data/` directory exists with `commentary/` and `strongs/` subdirectories
+- The config will auto-detect `.data/` in the project root
+- Alternative: `export MYBIBLE_DATA_DIR=/path/to/data`
+
 ## Execution Strategy
 
 **Use Subagents Proactively**:
@@ -40,7 +47,12 @@ These need to be run in sequence as they build on each other
   - Analyze which languages distinguish this feature well (based on ../research/LANGUAGES.md).
   - Select up to 21 languages that have diversity.
   - Create `tbta-extract-with-verses.jsonl` adding the text from these languages (key: ISO code, value: verse text) to the JSONL.
-    - **Script**: `python src/ingest_data/tbta/enrich_extract_with_verses.py --input ${TBTA-DIR}/features/{feature}/analysis/tbta-extract.jsonl --languages eng,spa,fra --output ${TBTA-DIR}/features/{feature}/analysis/tbta-extract-with-verses.jsonl`
+    - **Fast Option (cache only)**: `python src/ingest_data/tbta/enrich_from_cache.py --input ... --languages eng,spa,fra --output ...`
+      - Uses only locally cached translations (fast, ~10 sec for 2K entries)
+      - May have gaps if cache doesn't cover all verses
+    - **Full Option (network)**: `python src/ingest_data/tbta/enrich_extract_with_verses.py --input ... --languages eng,spa,fra --output ...`
+      - Fetches from BibleHub (slow, ~30 sec per 100 entries)
+      - Complete coverage but takes hours for large datasets
 
 
 ### Select Reference Dataset (100+ Verses Per Value)
@@ -84,7 +96,7 @@ Do the following sections in parallel using subagents
 
 #### Strong's Hints
 
-Run `src/injest_data/tbta/group_by_strongs.py  < ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl >  < ${TBTA-DIR}/features/{feature}/analysis/data/strongs.jsonl`
+Run `python src/ingest_data/tbta/group_by_strongs.py --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl --output ${TBTA-DIR}/features/{feature}/analysis/strongs-analysis.jsonl --no-strongs`
 
 You will do this as an LLM not a script as you need to find the common patterns
 
@@ -125,7 +137,9 @@ NOTE: you have memorized the entire bible and can mostly rely on your accuracy t
 NOTE: limit each reason to a maximum of 500 verses. 
 
 Steps:
- - [ ] Run `src/injest_data/tbta/group_by_reasons.py --feature $feature < ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl > ${TBTA-DIR}/features/{feature}/analysis/data/reason-groupings.jsonl
+ - [ ] Run `python src/ingest_data/tbta/group_by_reasons.py --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl --output ${TBTA-DIR}/features/{feature}/analysis/reason-groupings.jsonl`
+   - NOTE: The script uses default theological groups. Custom groups file must match expected schema: `{GROUP_NAME: {patterns: [...], keywords: [...]}}`
+   - The THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml from Stage 1 has different schema - use defaults or convert format
  - [ ] Load the file features/${feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml so you have our deeper research into these groupings
  - [ ] Consider which groupings are missing (especially consider the UNSET verse references), should be merged together;  update the jsonl file with a hint (max 250 words) for each group, the missing verses up to maximum (by missing verses I mean from UNSET and from your knowledge of the Bible and which verses should be in the list -remember TBTA has only done 40% of the Bible so which other verses will follow this pattern.) 
  - [ ] do you agree with TBTA's label of this field; why or why not

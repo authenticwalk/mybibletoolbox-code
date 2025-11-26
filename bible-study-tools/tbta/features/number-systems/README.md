@@ -2,9 +2,9 @@
 
 **Feature**: Grammatical Number
 **TBTA Tier**: A (Essential)
-**Stage**: 1 - Research Complete
-**Status**: ✅ Research complete, ready for Stage 2 (Analysis)
-**Last Updated**: 2025-11-24
+**Stage**: 2 - Analysis Complete
+**Status**: ✅ Analysis complete, ready for Stage 3 (Experimentation)
+**Last Updated**: 2025-11-26
 
 ## Overview
 
@@ -157,25 +157,40 @@ Grammatical number encodes the count of entities: singular (1), dual (2), trial 
 
 See [research/README.md](research/README.md) for full summary.
 
+## Stage 2 Analysis Results
+
+**Data extracted**: 171,876 annotations from TBTA. See [analysis/README.md](analysis/README.md) for details.
+
+**Distribution** (confirms Stage 1 predictions):
+- Singular: 66.2% (most common)
+- Plural: 32.4%
+- Dual: 1.0% (body parts, pairs)
+- Trial: 0.3% (rare)
+- **Quadrial: 0.1% - CONFIRMED SUSPICIOUS** (should be 0%)
+- Paucal: 0.03%
+
+**Classification Results**:
+| Approach | Accuracy | Notes |
+|----------|----------|-------|
+| Majority baseline | 66.2% | Always Singular |
+| Rule-based | 26% (balanced) | Body parts → Dual |
+| TF-IDF + ML | 36.5% (balanced) | Best simple approach |
+
+**Key Patterns Found**:
+- Dual: hand, foot, eye, ear (body parts) - 100% predictive
+- Singular: Jesus, Yahweh, David (proper names) - 93%+
+- Trial/Quadrial: No clear patterns (need context)
+
+**Data Quality Issue**: Quadrial entries (185) need review - no attested language has quadrial.
+
+**Files Created**:
+- `analysis/data/train.jsonl` - Training set (1,339 entries)
+- `analysis/data/validate.jsonl` - Validation set (446 entries)
+- `analysis/data/test.jsonl` - Test set (448 entries) - RESERVED
+- `analysis/logical.py` - Rule-based classifier
+- `analysis/ml_exploration.py` - ML baseline
+
 ## Next Steps
-
-### Stage 2: Analysis & Hypothesis Validation
-
-**Data Extraction**:
-- Extract all number annotations from TBTA (`/src/tools/predict/extract_data.py`)
-- Frequency analysis: S/D/T/P distribution
-- Verify 10 proposed test languages (Hawaiian, Arabic, English, Spanish, Indonesian, Swahili, Russian, Cebuano, Motu, Chuukese)
-
-**Hypothesis Testing**:
-1. Semantic-over-morphological: Do lexicalized duals → Singular consistently?
-2. Trinity-as-trial: Is Genesis 1:26 marked Trial?
-3. Collective patterns: How are "people", "crowd" handled?
-4. Frequency validation: Is Quadrial truly 0%? Is Trial <3%?
-
-**Data Splitting**:
-- Train (60%), Test (20%), Validate (20%)
-- Stratified sampling: Ensure Trinity contexts in all sets
-- Adversarial set: Edge cases (lexicalized plurals, collectives, ambiguous plurals)
 
 ### Stage 3: Experimentation
 
@@ -210,7 +225,6 @@ See:
 
 ---
 
-**Lines**: 199 (under 200-line progressive disclosure limit)
-**Status**: Stage 1 complete ✅
-**Ready for**: Stage 2 Analysis
+**Status**: Stage 2 complete ✅
+**Ready for**: Stage 3 Experimentation
 

@@ -43,10 +43,11 @@ def get_data_dir() -> Path:
             file=sys.stderr
         )
     
-    # 2-4. Check standard locations
+    # 2-5. Check standard locations
     project_root = Path(__file__).parent.parent
     candidates = [
         project_root / "data",                           # ./data/ (standard)
+        project_root / ".data",                          # ./.data/ (hidden data dir)
         project_root.parent / "mybibletoolbox-data",    # ../mybibletoolbox-data/ (sibling)
         Path.home() / "mybibletoolbox-data",            # ~/mybibletoolbox-data (home)
     ]
