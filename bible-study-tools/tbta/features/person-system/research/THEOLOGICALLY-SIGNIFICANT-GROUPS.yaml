@@ -1,0 +1,471 @@
+feature: person-system
+default_classification: arbitrary # Most person choices are contextual/stylistic
+theological_significance: EXISTS # Clusivity matters in Trinity contexts, prayer, apostolic authority
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # === 1A: NON-ARBITRARY-THEOLOGICAL (Doctrinal Stakes) ===
+
+  - verse_pattern: 'Genesis 1:26 - Let us make man in our image (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God - three persons)
+      - Creation theology
+      - Image of God
+
+    non_arbitrary_rationale: |
+      Hebrew "Let us" (na'aseh) + "our image" (bətsalmənu) uses first person
+      plural in divine speech. For clusivity-marking languages, must determine:
+      Is "us/our" INCLUSIVE (including addressee within Trinity) or EXCLUSIVE?
+
+      Interaction with NUMBER feature: Trial number (exactly 3) + clusivity
+      distinction creates complex theological encoding. If language has trial:
+      use Trial number to indicate Trinity (3 persons). Clusivity determines
+      whether "us" is intra-Trinitarian dialogue (inclusive of three persons)
+      or other interpretation.
+
+      Wrong clusivity choice could imply: (1) God speaking to humanity before
+      humanity created (problematic), (2) Divine council (God + angels -
+      rejected by Christian orthodoxy per Isaiah 44:24), or (3) Royal "we"
+      (possible but misses Trinitarian depth).
+
+    christian_orthodox_position:
+      preferred_value: first_inclusive
+      acceptable_alternatives: [first_exclusive_if_interpreted_differently]
+      theological_basis: |
+        Christian orthodox interpretation: Trinitarian reference. "Let us"
+        is dialogue within the Godhead (Father, Son, Holy Spirit). Inclusive
+        interpretation: "us" includes the persons of Trinity being addressed
+        (intra-Trinitarian communication). Alternative: Exclusive could work
+        if interpreted as one person of Trinity speaking to the others (but
+        still Trinitarian, not divine council).
+      translator_guidance: |
+        - CONTEXT: Combine with Number=Trial if language has it (exactly 3 persons)
+        - FIRST CHOICE: Use FIRST INCLUSIVE (intra-Trinitarian inclusive dialogue)
+        - ACCEPTABLE: FIRST EXCLUSIVE if theologically sound interpretation exists
+        - NEVER: Imply divine council (God + angels) interpretation
+        - CONSIDER: Footnote explaining Trinitarian interpretation
+        - Clusivity-marking languages affected: Tagalog, Malay, Fijian, 1000+ others
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels create)'
+        used_by: ['Jewish non-Messianic interpretations', 'Some Islamic commentary']
+        christian_assessment: REJECTED - Angels do not create (Isaiah 44:24 "I alone spread out the heavens")
+        clusivity_implication: Would use inclusive (God + angels addressed) but theology is wrong
+
+      - interpretation: 'Royal "We" (Plural of Majesty)'
+        used_by: ['Some Jewish rabbinical tradition']
+        christian_assessment: POSSIBLE but less preferred - misses Trinitarian depth
+        clusivity_implication: Not clusivity issue - singular king using plural for majesty
+
+      - interpretation: 'Polytheism (Multiple separate gods)'
+        used_by: ['Mormon/LDS (Father + Jehovah + Holy Ghost as separate gods)']
+        christian_assessment: HERETICAL - Violates monotheism (Deuteronomy 6:4)
+        clusivity_implication: Might use inclusive/exclusive but wrong underlying theology
+
+  - verse_pattern: 'Genesis 3:22 - Man has become like one of us (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Trinity (same context as 1:26)
+      - Knowledge of good and evil
+      - Fall of man
+
+    non_arbitrary_rationale: |
+      Similar Trinitarian context to Genesis 1:26. "One of us" (mimmennu)
+      implies plural Godhead. Clusivity question: Does "us" include the
+      addressee within Trinity (inclusive) or exclude someone (exclusive)?
+
+      Less doctrinally central than 1:26 (not about creation of humanity)
+      but still important for consistent Trinitarian interpretation.
+
+    christian_orthodox_position:
+      preferred_value: first_inclusive
+      acceptable_alternatives: [first_exclusive]
+      theological_basis: 'Consistent Trinitarian interpretation throughout Genesis. "Us" = Trinity.'
+      translator_guidance: |
+        - Follow same principles as Genesis 1:26
+        - Inclusive preferred (intra-Trinitarian), exclusive acceptable
+        - Less critical than 1:26 (not creation context, but post-Fall statement)
+
+  - verse_pattern: 'Genesis 11:7 - Let us go down and confuse their language (Babel) (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity (implied)
+      - Divine judgment
+      - Providence
+
+    non_arbitrary_rationale: |
+      "Let us" (naradah) in divine speech at Tower of Babel. Less explicitly
+      Trinitarian than Genesis 1:26 (some interpret as divine council in
+      judgment context), but Christian orthodoxy maintains consistent
+      Trinitarian reading.
+
+      Clusivity question: Inclusive (intra-Trinitarian) or exclusive (God +
+      angels)? Christian interpretation prefers Trinitarian (inclusive).
+
+    christian_orthodox_position:
+      preferred_value: first_inclusive
+      acceptable_alternatives: [first_exclusive]
+      theological_basis: 'Consistent Trinitarian interpretation, though judgment context differs from creation.'
+      translator_guidance: |
+        - Inclusive preferred (Trinitarian interpretation)
+        - Exclusive possible (if interpreted as God + heavenly court, though less preferred)
+        - Less critical than Genesis 1:26 (judgment context, not creation)
+
+  - verse_pattern: 'Isaiah 6:8 - Whom shall I send, and who will go for us? (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Trinity (Isaiah's vision of God's throne)
+      - Prophetic calling
+      - Seraphim's "Holy, holy, holy" (threefold)
+
+    non_arbitrary_rationale: |
+      Mixed singular ("I") and plural ("us") in same verse. Christian tradition
+      sees Trinitarian implication. Context: Isaiah's vision of God's throne
+      room (seraphim call "Holy, holy, holy" - threefold holiness = Trinity).
+
+      Clusivity: "For us" (lanu) - is "us" inclusive (intra-Trinitarian) or
+      exclusive (God + heavenly court)? Singular "I" (first) + plural "us"
+      (second) creates tension. Christian interpretation: One God, three persons.
+
+    christian_orthodox_position:
+      preferred_value: first_inclusive
+      acceptable_alternatives: [first_exclusive]
+      theological_basis: 'Trinitarian interpretation of Isaiah 6 vision. Threefold "Holy" reinforces three persons.'
+      translator_guidance: |
+        - Note contrast: "I" (singular) + "us" (plural) must be preserved
+        - Inclusive reinforces Trinitarian reading (threefold "Holy" of verse 3)
+        - Exclusive possible if interpreted as God + angelic court (less preferred)
+
+  - verse_pattern: 'Matthew 6:9-13 / Luke 11:2-4 - Our Father (Lord''s Prayer) (unverified)'
+    affected_values: [first_exclusive]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Prayer theology
+      - Relationship to God (Father)
+      - Forgiveness
+
+    non_arbitrary_rationale: |
+      Greek "Our Father" (Pater hemon) - is "our" inclusive or exclusive?
+
+      Context: Jesus teaching disciples to pray.
+
+      CRITICAL: "Our" must EXCLUDE God the Father (the addressee).
+      Using inclusive would mean "Our Father (yours and ours)" - implying
+      God is Father to himself, which is theologically absurd.
+
+      Historical mistake documented: Early missionaries used INCLUSIVE form,
+      creating "Forgive us (God and us) our trespasses" - had to be corrected.
+
+    christian_orthodox_position:
+      preferred_value: first_exclusive
+      forbidden_values: [first_inclusive]
+      theological_basis: 'God is the addressee, not part of the "our/we" praying. Inclusive would imply God prays to himself.'
+      translator_guidance: |
+        - ALWAYS use EXCLUSIVE form (excluding God the Father, the addressee)
+        - NEVER use INCLUSIVE (would include God in "our" = heretical)
+        - Historical warning: Early missionaries made this error - was corrected
+        - Source: {sil-1999-clusivity-nt}
+
+  - verse_pattern: 'Acts 15:25 - It seemed good to us (Jerusalem Council) (unverified)'
+    affected_values: [first_exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Apostolic authority
+      - Ecclesiology (church governance)
+      - Council decision-making
+
+    non_arbitrary_rationale: |
+      Greek "to us" (hemin) in letter from Jerusalem Council to Gentile
+      believers. Context: Apostles and elders writing to congregation.
+
+      Is "us" INCLUSIVE (including letter recipients) or EXCLUSIVE (excluding them)?
+
+      CRITICAL: Must be EXCLUSIVE. "Us" = apostles/elders in Jerusalem (decision-
+      makers), NOT including the Gentile believers in Antioch/Syria/Cilicia
+      (letter recipients).
+
+      Wrong choice implies congregation participated in apostolic decision-making
+      (incorrect - this was apostles' decision for the church).
+
+    christian_orthodox_position:
+      preferred_value: first_exclusive
+      theological_basis: 'Apostolic authority - apostles/elders made decision for church, not with congregation.'
+      translator_guidance: |
+        - ALWAYS use EXCLUSIVE form (apostles only, not including letter recipients)
+        - Decision-makers = Jerusalem council; Listeners = Antioch congregation
+        - Wrong form incorrectly implies congregational participation in apostolic decision
+        - Source: {tbta-source/TRANSLATION-EDGE-CASES.md}, {sil-1999-clusivity-nt}
+        - Documented TBTA example
+
+  - verse_pattern: 'Acts 15:28 - It seemed good to the Holy Spirit and to us (unverified)'
+    affected_values: [first_exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Pneumatology (work of Holy Spirit)
+      - Apostolic authority
+      - Conciliar authority
+
+    non_arbitrary_rationale: |
+      Similar to Acts 15:25, but adds "the Holy Spirit and us". Clusivity:
+      "Us" = apostles/elders (EXCLUSIVE of letter recipients).
+
+      Note: "Holy Spirit and us" separates Spirit from human "us" - Spirit
+      is guiding the apostles, not included in the "us" pronoun itself.
+
+    christian_orthodox_position:
+      preferred_value: first_exclusive
+      theological_basis: 'Apostles speaking with Holy Spirit guidance, addressing congregation (not including them in decision).'
+      translator_guidance: |
+        - Use EXCLUSIVE (apostles, not congregation)
+        - Same principle as Acts 15:25
+
+  # === 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ===
+
+  - verse_pattern: 'Epistolary "we" in letters with co-authors (1 Cor, 2 Cor, Phil, Col, 1-2 Thess, Philemon) (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM-HIGH
+
+    non_arbitrary_rationale: |
+      Paul's letters often list co-authors (Sosthenes, Timothy, Silvanus).
+      When Paul writes "we" in the letter body, does it mean:
+      (1) Paul alone (authorial "we")
+      (2) Paul + co-authors (EXCLUSIVE of readers)
+      (3) Paul + co-authors + readers (INCLUSIVE)
+
+      NO SINGLE ANSWER - varies by context within same letter.
+
+      Examples:
+      - 1 Cor 1:1 (co-author: Sosthenes): Debate - SIL says exclusive (Paul +
+        Sosthenes), Pickett/Cowan say inclusive (Paul + all Christians)
+      - 1 Cor 3:9 "We are God's fellow workers" - likely exclusive (Paul +
+        Apollos, not all Corinthians)
+      - 1 Cor 15:51 "We shall not all sleep, but we shall all be changed" -
+        likely inclusive (all believers)
+
+      Wrong choice creates confusion about who Paul means.
+
+    translator_guidance: |
+      - Analyze EACH INSTANCE separately - no blanket rule for entire epistle
+      - Consider: Is Paul making apostolic claim (exclusive) or shared
+        Christian experience (inclusive)?
+      - When in doubt, check commentaries for exegetical consensus
+      - Examples from {sil-1999-clusivity-nt} show translators disagree
+      - TBTA must provide verse-by-verse annotations
+
+  - verse_pattern: 'Hebrews "let us" exhortations (Heb 4:14-16, 10:22-24, etc.) (unverified)'
+    affected_values: [first_inclusive]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Hebrews uses frequent "let us" (Greek hortatory subjunctive) exhorting
+      readers. Context: Author + readers together encouraged to faithfulness.
+
+      These are clearly INCLUSIVE - author includes himself with readers in
+      exhortation ("Let us hold fast... let us draw near... let us consider").
+
+    translator_guidance: |
+      - Use INCLUSIVE form (author + readers together)
+      - Pattern: Exhortations to shared action = inclusive
+      - Contrast with Acts 15:25 (apostles deciding for church = exclusive)
+
+  - verse_pattern: 'Disciples addressing Jesus - "us/we/our" (Luke 9:33, Mark 9:38, John 6:68, etc.) (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      When disciples speak to Jesus using "we/us/our", does it include Jesus
+      or exclude him?
+
+      Documented debate (Luke 9:33 - "Lord, it is good for us to be here"):
+      - Yagua, Yakan, Western Bukidnon Manobo: EXCLUSIVE (excluding Jesus)
+      - Avaric, Tagbanwa, Jarai, Tok Pisin, Fijian, Adamawa Fulfulde: INCLUSIVE
+        (including Jesus)
+
+      Different translators made opposite choices for same verse. Both are
+      linguistically defensible - depends on interpretation.
+
+    translator_guidance: |
+      - Analyze each context: Is Jesus part of the "we" experientially?
+      - Luke 9:33 (Transfiguration): Debate - is Jesus experiencing the same
+        "good" as disciples, or is he the object they see?
+      - Mark 9:38 ("We saw someone..."): Likely exclusive (disciples reporting
+        to Jesus about their observation, not his)
+      - John 6:68 ("To whom shall we go?"): Likely exclusive (disciples'
+        dilemma, Jesus is the one they would go to, not part of the "we" going)
+      - Source: {sil-1999-clusivity-nt} documents translation variation
+
+  - verse_pattern: 'Paul''s "I" vs "we" alternation in same passage (2 Cor 10-13, Rom 1, etc.) (unverified)'
+    affected_values: [first_inclusive, first_exclusive]
+    theological_stakes: NONE
+    contextual_stakes: LOW-MEDIUM
+
+    non_arbitrary_rationale: |
+      Paul alternates between "I" (singular) and "we" (plural) within same
+      passage. Precision matters for understanding who Paul includes.
+
+      Example: 2 Cor 10-13 alternates "I Paul" and "we". Does "we" = Paul +
+      co-authors? Or Paul + all apostles? Or Paul + readers?
+
+    translator_guidance: |
+      - When Paul switches from "I" to "we", determine referent from context
+      - "I Paul" = emphasis on Paul alone
+      - "We" immediately after may include co-authors or broaden to all apostles/believers
+      - Context clues: verb plurality, shared experience described, etc.
+
+  - verse_pattern: '"Our Father" in contexts other than Lord''s Prayer (Rom 1:7, 1 Cor 1:3, etc.) (unverified)'
+    affected_values: [first_exclusive]
+    theological_stakes: NONE
+    contextual_stakes: LOW
+
+    non_arbitrary_rationale: |
+      Pauline greetings often say "Grace and peace from God our Father".
+      Same principle as Lord's Prayer: "our" excludes God (the source),
+      includes Paul + readers.
+
+    translator_guidance: |
+      - Use EXCLUSIVE (God not included in "our")
+      - Different from Acts 15:25 type: here "our" is inclusive of letter readers
+        (Paul + readers share God as Father), exclusive only of God himself
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Choice Doesn't Matter)
+
+arbitrary_contexts:
+
+  - pattern: "Third person references (narrative about others)"
+    rationale: |
+      Most of Bible is narrative in third person ("he/she/they said/did").
+      Standard third person - no clusivity distinction (3rd person doesn't
+      divide into inclusive/exclusive in any known language).
+
+      Third person choice (pronoun vs. name vs. title) is stylistic, handled
+      by Participant Tracking feature, not Person System clusivity.
+    estimated_percentage: 60%
+    examples:
+      - 'Genesis 12:1 - "The LORD said to Abram" (unverified)'
+      - 'Matthew 3:1 - "John the Baptist came preaching" (unverified)'
+    translator_guidance: |
+      Use natural third person forms. Participant tracking (first mention vs.
+      routine) handled separately.
+
+  - pattern: "Second person direct address (commands, dialogue)"
+    rationale: |
+      "You" in commands, dialogue, letters - straightforward second person.
+      No clusivity distinction in second person (extremely rare cross-linguistically).
+
+      Honorific "you" (T-V distinction, Japanese keigo) handled by Speaker
+      Demographics feature, not Person field.
+    estimated_percentage: 20%
+    examples:
+      - 'Exodus 20:3 - "You shall have no other gods before me" (unverified)'
+      - 'Matthew 5:44 - "Love your enemies" (unverified)'
+    translator_guidance: |
+      Use natural second person. Honorific level (formal/informal "you")
+      determined by Speaker Demographics feature, not Person System.
+
+  - pattern: "First person singular ('I/me/my')"
+    rationale: |
+      First person singular - no clusivity issue (clusivity only applies to
+      plural "we/us/our"). "I" is straightforward across all languages.
+
+      Could be God speaking, prophet speaking, Jesus speaking, Paul speaking,
+      psalmist speaking - but person marking is just "first singular".
+    estimated_percentage: 10%
+    examples:
+      - 'Exodus 3:14 - "I AM WHO I AM" (God speaking) (unverified)'
+      - 'Psalm 23:1 - "The LORD is my shepherd" (psalmist) (unverified)'
+      - 'John 8:58 - "Before Abraham was, I am" (Jesus) (unverified)'
+      - 'Galatians 2:20 - "I have been crucified with Christ" (Paul) (unverified)'
+    translator_guidance: |
+      Use natural first person singular. No clusivity distinction.
+      Divine "I" vs. human "I" not distinguished in Person field (same value).
+
+  - pattern: "Generic/universal statements ('whoever', 'anyone', 'everyone')"
+    rationale: |
+      Generic references override specific person. "Whoever believes" is
+      semantically universal, not specifically 3rd person individual.
+
+      Many languages use third person singular for generic (English "one does
+      this"), others use second person (German "man"), others use first plural.
+      Choice is stylistic.
+    estimated_percentage: 5%
+    examples:
+      - 'John 3:16 - "Whoever believes in him" (unverified)'
+      - 'Romans 3:23 - "All have sinned" (unverified)'
+      - 'Matthew 16:24 - "If anyone would come after me" (unverified)'
+    translator_guidance: |
+      Use natural generic form for target language. Person choice (1st/2nd/3rd)
+      is stylistic, not clusivity issue.
+
+  - pattern: "Monologue or internal speech ('I said to myself', etc.)"
+    rationale: |
+      When speaker addresses self, no clusivity issue. "I said to myself" -
+      both "I" (speaker) and "myself" (addressee) are same person.
+
+      Not a clusivity context (no multiple participants).
+    estimated_percentage: 2%
+    examples:
+      - 'Luke 12:17-19 - "He thought to himself... I will do this" (unverified)'
+      - 'Psalm 42:5 - "Why are you cast down, O my soul?" (unverified)'
+    translator_guidance: |
+      Use natural reflexive/internal speech forms. No clusivity distinction.
+
+  - pattern: "Royal or editorial 'we' (single person using plural)"
+    rationale: |
+      Rare in Bible, but possible (e.g., Persian king's decrees in Ezra,
+      Nehemiah, Esther). Single individual using "we" for majesty/authority.
+
+      Not true clusivity (grammatically plural but semantically singular).
+      Some languages cannot do this (require singular for one person).
+    estimated_percentage: <1%
+    examples:
+      - 'Ezra 4:18 - "The letter you sent us has been read" (king speaking) (unverified)'
+    translator_guidance: |
+      If target language allows royal "we" (plural for singular majesty), use it.
+      If not, use singular. No clusivity distinction (semantically one person).
+
+# SUMMARY STATISTICS
+
+total_non_arbitrary_percentage: 15
+breakdown:
+  theological_critical: 5  # Trinity contexts, prayer theology, apostolic authority
+  contextual_precision: 10  # Epistolary "we" disambiguation, disciple speech to Jesus
+
+total_arbitrary_percentage: 85
+note: |
+  Most person choices in Bible translation are straightforward. Key exceptions:
+  (1) Clusivity in 1st person plural contexts (Genesis 1:26 Trinity, "Our Father"
+      prayers, Acts 15 apostolic decisions, epistolary "we")
+  (2) Third person is always arbitrary (no clusivity)
+  (3) Second person is mostly arbitrary (honorifics handled separately)
+  (4) First person singular is always arbitrary (no clusivity)
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal knowledge of Scripture and scholarly sources, not exhaustive data
+  analysis. Stage 2 analysis should:
+  (1) Verify these patterns in actual TBTA data
+  (2) Confirm theological assessments with peer review (Theologian, Biblical
+      scholar, Linguist, Translator personas)
+  (3) Expand list of specific verses requiring clusivity annotation
+  (4) Create decision tree for inclusive vs. exclusive determination
+
+requires_peer_review: true
+peer_review_focus:
+  - Trinity interpretation consensus (Genesis 1:26, 3:22, 11:7, Isaiah 6:8)
+  - Prayer theology (Matthew 6:9 - must be exclusive)
+  - Apostolic authority contexts (Acts 15:25, 15:28)
+  - Epistolary "we" analysis (context-specific determination needed)
+  - Denominational variations (Catholic/Orthodox/Protestant on clusivity theology)
