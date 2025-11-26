@@ -39,7 +39,8 @@ non_arbitrary_contexts:
       theological_basis: 'Passover typology (Exodus 12:6, Leviticus 23:5); Jesus as Lamb of God; fulfillment of temple sacrifice schedule'
       translator_guidance: |
         - FIRST CHOICE: Use SPECIFIC HOUR markers if language has them
-          (e.g., Tagalog hodiernal subdivisions, Yagua precise time markers)
+          (e.g., Mandarin hour markers 点, Yagua precise time markers)
+        - ALTERNATIVE: Use temporal adverbs for time-of-day (e.g., Tagalog "kanina" for earlier today)
         - REQUIRED: Preserve "3rd/6th/9th hour" precision in some form
         - FORBIDDEN: Vague "one day" or "sometime" that loses liturgical connection
         - CRITICAL: These times connect to Passover lamb sacrifice timing
@@ -530,13 +531,11 @@ summary:
   translation_impact: |
     **Languages requiring temporal granularity marking:**
 
-    HIGH GRANULARITY LANGUAGES (10+ distinctions):
-    - Tagalog (Austronesian): 11 temporal distinctions including hodiernal subdivisions
-      → Critical for Sabbath timing, crucifixion hours, prayer hours
+    HIGH GRANULARITY LANGUAGES (5-9 distinctions):
     - Yagua (Peba-Yaguan): 5 past tense suffixes based on remoteness
       → Must use remote/historic past for Genesis, Gospels (not recent past)
 
-    MEDIUM GRANULARITY LANGUAGES (5-9 distinctions):
+    MEDIUM GRANULARITY LANGUAGES (aspect-based with temporal adverbs):
     - ChiBemba (Bantu): Hodiernal vs pre-hodiernal, remote past
       → Needs historic/remote past for biblical events, hodiernal for liturgical times
     - Most Bantu languages: Near past vs remote past minimum
