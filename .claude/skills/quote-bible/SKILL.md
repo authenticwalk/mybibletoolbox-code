@@ -13,10 +13,14 @@ Retrieve and display Bible verses from BibleHub and eBible corpus with optional 
 
 This skill fetches verses from two sources:
 
-1. **BibleHub** (https://biblehub.com): ~50 major translations
-2. **eBible corpus** (https://github.com/BibleNLP/ebible): 1000+ translations in various languages
+1. **BibleHub** (https://biblehub.com): ~67 major translations (fetched via web)
+2. **eBible corpus**: 1000+ translations pre-processed as YAML files in `.data/commentary`
 
-Data is automatically cached on first fetch. The eBible corpus will auto-clone to `/tmp/ebible` if not found locally.
+The eBible data is already processed and stored in the `.data` git repository. If a verse is not available in your sparse checkout, add the chapter using:
+```bash
+cd .data && git sparse-checkout add commentary/{BOOK}/{chapter:03d}
+# Example: cd .data && git sparse-checkout add commentary/NAM/001
+```
 
 ## When to Use
 
@@ -149,11 +153,14 @@ python3 src/tools/fetch_verse.py "MAT-005-003"
 
 ## Notes
 
-- **Caching**: Verses are cached on first fetch for faster subsequent retrieval
-- **Data sources**: Combines BibleHub (~50 translations) + eBible corpus (1000+ translations)
-- **Auto-setup**: eBible corpus auto-clones to `/tmp/ebible` if not found locally
-- **Sparse checkout**: Automatically adds chapter directories (commentary/{BOOK}/{chapter:03d}) to Git sparse checkout if data directory uses sparse checkout
-- **Performance**: Fetching all languages returns 1000+ translations; use `--lang` to reduce output size
+- **Data sources**: Combines BibleHub (~67 translations via web) + eBible corpus (1000+ translations from `.data/commentary`)
+- **eBible data**: Pre-processed as YAML files in `.data/commentary/{BOOK}/{chapter:03d}/{verse:03d}/{BOOK}-{chapter:03d}-{verse:03d}-translations-ebible.yaml`
+- **Sparse checkout**: If a verse is missing, add the chapter to sparse checkout:
+  ```bash
+  cd .data && git sparse-checkout add commentary/{BOOK}/{chapter:03d}
+  ```
+- **Performance**: Fast lookups - eBible data is read from pre-processed YAML, not raw corpus files
+- **Language filtering**: Use `--lang` to filter by ISO-639-3 codes (e.g., `--lang eng,spa,fra`)
 - **Format flexibility**: Script accepts multiple formats (MAT-005-003, "JHN 3:16", GEN.1.1)
 
 If the script returns an error, check:

@@ -124,17 +124,22 @@ def fetch_verses_from_ebible(book: str, chapter: int, verse: int,
 
 def get_ebible_dir() -> Optional[Path]:
     """
-    Get the eBible directory path from environment or default location.
-    
+    Get the eBible corpus directory for generating new YAML files.
+
+    NOTE: For normal verse lookups, use the pre-processed YAML files in .data/commentary.
+    This function is only needed when regenerating data from the raw eBible corpus.
+
     Search order:
     1. EBIBLE_DIR environment variable
     2. $DATA_DIR/ebible (if DATA_DIR is set)
     3. .data/ebible (project default)
-    4. /tmp/ebible (existing valid clone)
-    5. Clone to /tmp/ebible as last resort
+    4. /tmp/ebible (if exists)
 
     Returns:
-        Path to eBible directory, or None if not found
+        Path to eBible corpus directory
+
+    Raises:
+        EbibleFetchError: If corpus not found (with instructions for sparse checkout)
     """
     def is_valid_ebible_dir(path: Path) -> bool:
         """Check if a path contains a valid eBible corpus."""
@@ -166,31 +171,17 @@ def get_ebible_dir() -> Optional[Path]:
     if is_valid_ebible_dir(tmp_path):
         return tmp_path
 
-    # 5. Last resort: attempt to clone the repo to /tmp/ebible
-    import subprocess
-
-    repo_url = "https://github.com/BibleNLP/ebible.git"
-    try:
-        # Remove incomplete clone if necessary
-        if tmp_path.exists():
-            import shutil
-            shutil.rmtree(str(tmp_path))
-        
-        subprocess.check_call([
-            "git", "clone", "--depth", "1", repo_url, str(tmp_path)
-        ])
-        
-        # Check if clone was successful
-        if is_valid_ebible_dir(tmp_path):
-            return tmp_path
-    except Exception as e:
-        pass  # Let the code fall through to error message
-
+    # No valid eBible corpus found - this is only needed for generating new YAML files
+    # For normal verse lookups, use the pre-processed YAML files in .data/commentary
     raise EbibleFetchError(
-        "eBible directory not found. Options:\n"
-        "  1. Set EBIBLE_DIR environment variable\n"
-        "  2. Clone to .data/ebible: git clone --depth 1 https://github.com/BibleNLP/ebible .data/ebible\n"
-        "  3. Allow automatic clone to /tmp/ebible (requires network access)"
+        "eBible corpus not found. This is only needed for generating new data.\n"
+        "For verse lookups, the eBible data is pre-processed as YAML files in .data/commentary.\n"
+        "If a verse is missing, add the chapter to sparse checkout:\n"
+        "  cd .data && git sparse-checkout add commentary/{BOOK}/{chapter:03d}\n"
+        "\n"
+        "To regenerate data from raw corpus (developers only):\n"
+        "  1. Set EBIBLE_DIR environment variable, or\n"
+        "  2. Clone to .data/ebible: git clone --depth 1 https://github.com/BibleNLP/ebible .data/ebible"
     )
 
 
