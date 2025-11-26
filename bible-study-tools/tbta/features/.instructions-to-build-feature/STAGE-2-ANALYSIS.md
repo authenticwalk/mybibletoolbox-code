@@ -20,11 +20,11 @@ NOTE: the TBTA-DIR is `/bible-study-tools/tbta/`
 - Each of these tasks should be assigned to a subagent so you don't pollute your context
 - Determine which can be run in parallel as you are not blocked (ex. strongs and reason groupings are independent so can be run at the same time)
 
-## Tasks
+## Dataset creation
 
-### 1. Extract TBTA Data (Output as JSONL)
+These need to be run in sequence as they build on each other
 
-**This step is done using code only.**
+### Extract TBTA Data (Output as JSONL)
 
 - **Script**: Run the canonical extractor:
   `python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jsonl > ${TBTA-DIR}/features/{feature}/analysis/tbta-extract.jsonl`
@@ -32,53 +32,18 @@ NOTE: the TBTA-DIR is `/bible-study-tools/tbta/`
   ```jsonl
   {"verse": "REV.001.010", "label": "Singular", "constituent": "sound", "part": "Noun", "path": "Clause[4]/Clause[0]/NP[0]"}
   ```
-
-> **TODO**: We need a solution for when the label appears more than once in a verse; we will be working towards aligning the text with the source language (Greek/Hebrew) and the representative languages (the ones who use this feature).
-
-**TODOs for Analyst**:
 - Update `features/{feature}/README.md` with the distribution of each value found in the extraction.
 
-### 1b. Enrich with Multi-Language Verses
+### Language Selection
 
-**Script**: `src/ingest_data/tbta/enrich_extract_with_verses.py`
-
-- **Language Selection**:
   - Use `src/tools/fetch_verse.py` to get 2 verses (OT and NT).
-  - Analyze which languages distinguish this feature well (based on `research/LANGUAGES.md`).
+  - Analyze which languages distinguish this feature well (based on ../research/LANGUAGES.md).
   - Select up to 21 languages that have diversity.
-- **Execution**:
-  ```bash
-  python src/ingest_data/tbta/enrich_extract_with_verses.py \
-    --input analysis/tbta-extract.jsonl \
-    --languages eng,spa,fra,deu,por,rus,ara,zho,hin,jpn,kor,ind,tgl,vie,tha,swa,hau,yor,amh,heb,grc \
-    --output analysis/tbta-extract-with-verses.jsonl
-  ```
-- **Output Format**: Each entry gains language keys:
-  ```jsonl
-  {"verse": "...", "label": "...", "eng": {"NIV": "...", "ESV": "..."}, "spa": {"RV1960": "..."}, ...}
-  ```
+  - Create `tbta-extract-with-verses.jsonl` adding the text from these languages (key: ISO code, value: verse text) to the JSONL.
+    - **Script**: `python src/ingest_data/tbta/enrich_extract_with_verses.py --input ${TBTA-DIR}/features/{feature}/analysis/tbta-extract.jsonl --languages eng,spa,fra --output ${TBTA-DIR}/features/{feature}/analysis/tbta-extract-with-verses.jsonl`
 
-**Quick Solution Check**:
-- Is there an obvious logical solution? (e.g., "If language X uses word Y, then value is Z").
-- Write a simple Python script (`analysis/logical.py`) to test this. If it yields 100% accuracy, you are done.
 
-> **TODO**: QUICK SOLUTION CHECK - This must be really simple and written in under 100 lines of code. It must have at least 10 values that match for each IF condition so it is not overfitted. THIS is the only case where you can look at the whole data and create a plan.
->
-> Example:
-> ```python
-> if verses[KEY_LANGUAGE].contains('word1', 'word2', 'word3', ...) then return 'value1'
-> else if verses[KEY_LANGUAGE].contains...
-> ```
-> If so then we are done and simply write the prompt as "Call the script features/{feature}/analysis/logical.py"
-
-### 2. Select Reference Dataset
-
-**Role**: LLM Analyst
-
-**Sources**:
-- `${TBTA-DIR}/features/{feature}/analysis/tbta-extract.jsonl`
-- `${TBTA-DIR}/features/{feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.md`
-- `${TBTA-DIR}/features/{feature}/research/README.md`
+### Select Reference Dataset (100+ Verses Per Value)
 
 **Goal**: Select 100+ values for each feature value ensuring balance:
 - Easy vs. Adversarial
@@ -86,100 +51,158 @@ NOTE: the TBTA-DIR is `/bible-study-tools/tbta/`
 - OT vs. NT
 - Literary types (history, poetry, prophecy, etc.)
 
-**Data Storage**:
-- Store the dataset in a structured format. You may use SQLite or AgentDB (via `npx agentdb` commands or subprocess).
-- If using AgentDB, create a "lite sql db" pattern to store these entries for retrieval.
+** You need to do this as the LLM as this is an unstructured task**
 
-> **TODO**: Instead of creating files let's create a lite sql db using agentdb (go through the `.claude/skills/agentdb*` skills to see how to use it). Store in `features/{feature}/analysis.db`. Should be bulk inserts so we are not filling agents with 1000s of method calls.
+Sources:
+- ${TBTA-DIR}/features/{feature}/analysis/tbta-extract-with-verses.jsonl
+- context: ${TBTA-DIR}/features/{feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.md
+- context: ${TBTA-DIR}/features/{feature}/research/README.md
 
-> **TODO**: We should vectorize all the rows including all the languages with their verses; but *not* the answer we are trying to predict which is the feature's value.
+- **Output Format** (`${TBTA-DIR}/features/{feature}/analysis/data/{train|validate|test}.jsonl`): Output as JSONL with fields
 
-> **TODO**: This is missing the new fields we added like verses. Also want to add to each translation which is the word(s) that are very likely the translation of the word(s) this feature refers to as field `word`. However only do this if confident otherwise leave that field null/unset.
+(TODO: this is missing the new fields we added like verses)
+(TODO: we also want to add to each translation which is the word(s) that are very likely the translation of the word(s) this feature refers to as field `word`.  However only do this if you are confident otherwise leave that field null/unset)
 
-### 3. Strong's Number Analysis
-
-**Script**: `src/ingest_data/tbta/group_by_strongs.py`
-
-- **Goal**: Correlate TBTA values with underlying Greek/Hebrew words and find "magic words" that predict labels.
-- **Execution**:
-  ```bash
-  # Full analysis with Strong's grouping
-  python src/ingest_data/tbta/group_by_strongs.py \
-    --input analysis/tbta-extract-with-verses.jsonl \
-    --output analysis/strongs-analysis.jsonl
-
-  # Word-only analysis (no Strong's grouping)
-  python src/ingest_data/tbta/group_by_strongs.py \
-    --input analysis/tbta-extract-with-verses.jsonl \
-    --output analysis/word-analysis.jsonl \
-    --no-strongs
+  ```jsonl
+  {"verse": "GEN-001-026", "tbta_value": "Trial", "tbta_word": "us", "strongs_number": "H430", "strongs_word": "אֱלֹהִים", "languages": {"languageCode":{...}}, "dataset": {"dataset": "train", "section": "OT", "type": "poetry", "arbitraryCode": "Trinity", "difficulty": "adversarial"}...other_fields}
   ```
-- **Analyst Task**:
-  - Analyze `analysis/strongs-analysis.jsonl`.
-  - Look for patterns: "When Strong's H1234 is present, value is usually X."
-  - Note exceptions and edge cases.
-  - Review the `top_patterns` field for discriminative words (>90% confidence).
-  - If a strong hint exists, write to `$DATA_DIR/strongs/{strongs_number}/{strongs_number}.tbta-hints.yaml`
+  Fields: 
+    `verse`, 
+    `tbta_value`, 
+    `tbta_word` (TBTA word used; use constituent), 
+    `strongs_number` (you will need to figure this out; you have in your internal memory the original greek and the strongs for each word; infer which word this aligns with; tbta.path would be useful which is based on a simplified english version of the NIV), 
+    `strongs_word` the word in greek
+    `dataset` the details about why this was selected in the balanced set
+    `dataset.arbitraryCode` based on THEOLOGICALLY-SIGNIFICANT-GROUPS.md
+    `dataset.difficulty` easy|medium|adversarial (likely will mess up the answers due to rare edge cases; requires careful thought)
+    `languages.{langauge}.word` (if you are familiar enough with the language and can infer what word the tbta_word refers to in this translated verse populate this; if uncertain leave it blank)
 
-### 4. Logical Reason & Grouping Analysis
+## HINTS
 
-**Script**: `src/ingest_data/tbta/group_by_reasons.py`
+Do the following sections in parallel using subagents
 
-- **Goal**: Group verses by theological or logical reason (e.g., "Trinity", "Generic Plural").
-- **Execution**:
-  ```bash
-  python src/ingest_data/tbta/group_by_reasons.py \
-    --input analysis/tbta-extract.jsonl \
-    --output analysis/grouped-by-reason.jsonl
-  ```
-  Or with custom groupings:
-  ```bash
-  python src/ingest_data/tbta/group_by_reasons.py \
-    --input analysis/tbta-extract.jsonl \
-    --groups research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml \
-    --output analysis/grouped-by-reason.jsonl
-  ```
-- **Analyst Task**:
-  - Review `features/{feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml`.
-  - Analyze the grouped output.
-  - Identify missing groups (check UNSET verses).
-  - Update the JSONL with a `hint` field for each group (generic principle, not verse-specific).
-  - Run `src/tools/append_to_verses.py --input analysis/grouped-with-hints.jsonl --feature {feature}` to apply these hints.
-  - Use `--dry-run` first to preview changes.
 
-> **TODO**: Update the instructions that when we labelled the data with the reason code of why it is in a dataset we use a code ex. TRINITY. Each reason should be max 500 verses.
+#### Strong's Hints
 
-### 5. Language Family Analysis
+Run `src/injest_data/tbta/group_by_strongs.py  < ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl >  < ${TBTA-DIR}/features/{feature}/analysis/data/strongs.jsonl`
 
-- **Goal**: Determine if the feature correlates with linguistic families rather than theological meaning.
-- **Analysis**:
-  - Group results by language family (Romance, Germanic, Semitic, etc.).
-  - Does the feature behave consistently within families?
-  - Differentiate "theological necessity" from "linguistic convention."
+You will do this as an LLM not a script as you need to find the common patterns
 
-### 6. Co-occurrence Analysis
+GOAL: you are trying to find consistent patterns such as when these kinds of words in these languages are present then consider $feature.value unless ...
 
-- **Goal**: Identify if this feature triggers only when other features are present.
-- **Analysis**:
-  - Check for correlation with other TBTA fields in the same verse (e.g., "Passive Voice", "Plural").
-  - Use statistical counts to find high-probability co-occurrences.
+ - foreach strong's word analyze the word counts
+   - WARNING: keep in mind the feature distribution (if you forgot it then it will be in features/{feature}/README.md) b/c if one value is very dominant  then you will need to be very skeptical that this is overfitted and focus on the edge cases where it does not result in that value
+   - WARNING: ensure the count is high enough so you are not overfitting.  If the counts are small consider if the various words together form a pattern and have a high enough count
+   - is there a consistent pattern that makes a strong hint on how this feature should be implemented?
+   - are there distinctions between languages that are evident
+   - do you agree with TBTA's label of this field (see features/{feature}/research/README.md and potentially the files it points to for clarity)
+    - do some languages have exceptions to the label they gave?
+    - does research indicate they are labelling it wrong
+    - are there theological concerns about labelling it this way?
+    - does it appear the labeller made a mistake; maybe blurry eyes, going too fast?
+   - what caveats or edge cases are worth warning about; for instance if TBTA's value appears to be too rigid or doesn't match the research.
+   - IF the hint appears reliable upsert a file in {$DATA_DIR:default(.data)}/strongs/(G|H)${strongsNumber:fd4}/(G|H)${strongsNumber:fd4}.tbta-hints.yaml OTHERWISE continue to next word
 
-### 7. AgentDB Learning (Optional)
+TEMPLATE
 
-- Explore `npx agentdb` capabilities to train a model on the dataset if logical rules are insufficient.
-- See `.claude/skills/agentdb-learning/SKILL.md` for decision transformer or Q-learning approaches.
+```
+{featureName}:
+  hints:
+    - $hint
+      - caveat
+      - exceptions
+```
 
-### 8. Semantic Space (Embeddings)
+ - Create (or update if exists) a file analysis/TBTA-POTENTIAL-ISSUES.md with the concerns found above
+
+#### Logical Reason Analysis
+
+GOAL: you are going to figure out all the main reasons why something may be labelled one way or another and then add notes to edge cases.  
+
+RATIONAL: Writing a prompt with endless edge cases will be exhausting and confusing, instead when something only happens <10 times it would be easier to just add a note to that verse
+
+NOTE: you have memorized the entire bible and can mostly rely on your accuracy to recite every verse
+NOTE: limit each reason to a maximum of 500 verses. 
+
+Steps:
+ - [ ] Run `src/injest_data/tbta/group_by_reasons.py --feature $feature < ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl > ${TBTA-DIR}/features/{feature}/analysis/data/reason-groupings.jsonl
+ - [ ] Load the file features/${feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml so you have our deeper research into these groupings
+ - [ ] Consider which groupings are missing (especially consider the UNSET verse references), should be merged together;  update the jsonl file with a hint (max 250 words) for each group, the missing verses up to maximum (by missing verses I mean from UNSET and from your knowledge of the Bible and which verses should be in the list -remember TBTA has only done 40% of the Bible so which other verses will follow this pattern.) 
+ - [ ] do you agree with TBTA's label of this field; why or why not
+ - [ ] Audit and fix the list again and ensure you did not miss any verses up to the maximum or add verses that don't really belong there. (especially anything where the hint would likely confuse other systems as it doesn't necessarily apply)
+
+In the above hint it should be what will be put into the hints for each verse.  So it must be generic enough and not focused on just one verse but the general principle (ex. Trinitarian verses typically use number systems of three because ... however there are some edge cases to consider like ..., and ...  )  Don't be explicit with words like must, this is a hint only that will compliment the prompt to provide useful consideration that are unique to this verse
+
+Call src/tools/append_to_verses.py with ${TBTA-DIR}/features/{feature}/analysis/data/reason-groupings.jsonl
+
+TEMPLATE:
+
+```
+{featureName}:
+   hints:
+    - $reasonCode
+      description: $description
+```
+)
+
+ - Update (or create if not exists) a file analysis/TBTA-POTENTIAL-ISSUES.md with the concerns found above
+
+## Classifiers
+
+These can be run in parallel except for the Quick Solution Chech which should be done first as it might make the rest unnecessary
+
+### Quick Solution Check
+
+Inputs:
+ - ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl
+ - ${TBTA-DIR}/features/{feature}/analysis/data/reason-groupings.jsonl
+ - ${TBTA-DIR}/features/{feature}/analysis/data/strongs.jsonl
+
+- Is there an obvious logical solution? (e.g., "If language X uses word Y, then value is Z").
+- Write a simple Python script (`${TBTA-DIR}/features/{feature}/analysis/logical.py`) to test this. If it yields 100% accuracy on the test and validate dataset, you are done.
+
+
+ Example
+```
+  if verses[KEY_LANGUAGE].contains('word1', 'word2', 'word3', etc up to 27 words and only if we can make an exhaustive list that is always true) then return 'value1'
+  else if verses[KEY_LANGUAGE].contains...
+```
+If so then we are done and we simply write the prompt in features/{feature}/experiments/v1/prompt.md as 
+
+`Call the script features/{feature}/analysis/logical.py`
+
+
+### agentDB algorithms
+
+Explore the options in .claude/skills/agentdb-learning/SKILL.md on how you could use various learning methods to make predictions. 
+
+### Semantic Space (Embeddings)
 
 - **Goal**: Capture context that keyword matching misses.
-- **Script**: Train a lightweight classifier on text embeddings (using `agentdb` or standard ML libs).
-- **Output**: `analysis/embedding_report.md`
+- **Script**: Train a lightweight classifier on text embeddings.
+- **Logic**:
+  - Use embeddings for the full verse text (Source + English + Target Langs) 
+  - Train a classifier (e.g., Logistic Regression or XGBoost).
+- **Output**: `analysis/embedding_report.md` (Does semantic context improve accuracy over keyword matching?)
 
-### 9. Multi-Factor Convergence Analysis
+### Multi-Factor Convergence Analysis
 
-- **Goal**: Identify when multiple independent factors agree.
+- **Goal**: Identify when multiple independent factors agree, increasing prediction confidence.
+- **Script**: Analyze dataset for factor convergence patterns.
 - **Logic**:
   - Identify 3-5 independent factors (morphological, lexical, temporal, etc.).
   - Count agreement.
   - **Scoring**: 4-5 factors = 95% confidence.
 - **Output**: `analysis/convergence_report.md`
+
+# Final
+
+Now consolidate all the key insights into features/{feature}/analysis/README.md
+ - what is the distribution of the features
+ - are there any give away indicators/magic words/etc of when it should be a certain feature.
+ - is there anything inconsistent about the TBTA labelling or seems to be an error  (TODO: we need to write an analysis above for this)
+ - results of learning algorithms
+ - key results of other analysis
+
+Now update features/{feature}/README.md with the most significant insights, linking to features/{feature}/analysis/README.md for a more detailed analysis
+ - include how to access the data and the size of train, test, validate
