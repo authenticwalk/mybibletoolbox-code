@@ -1,0 +1,442 @@
+feature: polarity
+default_classification: arbitrary # Default: choice is stylistic/optional
+theological_significance: EXISTS # Flag: Does this ever matter doctrinally?
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+non_arbitrary_contexts:
+  # GROUP 1: Divine Commands - Ten Commandments (Absolute Prohibitions)
+  - verse_pattern: 'Exodus 20:13-17; Deuteronomy 5:17-21 (Ten Commandments) (unverified)'
+    affected_values: [negative, emphatic_negative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Divine law (moral absolutes)
+      - Ethics and holiness
+      - Covenant obligations
+
+    # Why is this non-arbitrary?
+    non_arbitrary_rationale: |
+      Hebrew לֹא (lo) + imperfective verb marks absolute, permanent, divine prohibition.
+      Using weaker negation (אַל al, temporal prohibition) would reduce Ten Commandments
+      to mere advice rather than binding law. Using affirmative would reverse meaning
+      (heretical: "You SHALL murder"). Choice affects theological authority of commands.
+
+      Source: {hebrew-negation-system}, {ten-commandments-lo}
+
+    # What is the Orthodox view?
+    christian_orthodox_position:
+      preferred_value: emphatic_negative # Strongest possible negation
+      acceptable_alternatives: [negative] # Standard negation acceptable if target language lacks emphatic
+      forbidden_values: [affirmative, weak_prohibition] # Would reverse or weaken divine command
+      theological_basis: 'Ten Commandments are absolute, non-negotiable moral law given by God (Exodus 19-20).'
+      translator_guidance: |
+        - FIRST CHOICE: Use STRONGEST NEGATION if target language distinguishes prohibition strength
+          (e.g., Tagalog "huwag" prohibitive, not "hindi" general negation).
+        - SECOND CHOICE: If no prohibition strength distinction, use standard negation with
+          imperative/jussive mood to convey command force.
+        - FORBIDDEN: Never use temporal/mitigated prohibition (like Hebrew אַל al).
+          Ten Commandments are permanent, not situational.
+        - Cultural note: Some cultures use indirect language for commands. Ten Commandments
+          must remain DIRECT prohibitions to preserve divine authority.
+
+    # What are the alternatives/heresies?
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Situational ethics - Ten Commandments are guidelines, not absolutes'
+        used_by: [Liberal theology, Postmodern ethics]
+        christian_assessment: REJECTED (Violates biblical inerrancy and moral law)
+      - interpretation: 'Cultural relativism - "You shall not murder" applied only to ancient Israel'
+        used_by: [Some critical scholarship]
+        christian_assessment: REJECTED (Moral law transcends culture, affirmed by NT - Romans 13:9)
+
+  # GROUP 2: Salvific Promises - Eternal Security (οὐ μή Emphatic Negations)
+  - verse_pattern: 'John 10:28; Hebrews 13:5; John 6:37 (οὐ μή emphatic negations) (unverified)'
+    affected_values: [emphatic_negative, double_negative_emphatic_positive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Eternal security (perseverance of the saints)
+      - Soteriology (salvation doctrine)
+      - Divine faithfulness
+
+    non_arbitrary_rationale: |
+      Greek οὐ μή (ou mē) + Aorist Subjunctive is the MOST EMPHATIC negation in Greek NT.
+      Means "Never, no never" or "not under any circumstance" (absolute future denial).
+      Found primarily in Jesus's sayings, especially soteriological promises.
+
+      Examples:
+      - John 10:28: "They will NEVER (οὐ μή) perish" (eternal security of believers)
+      - Hebrews 13:5: "I will NEVER (οὐ μή) leave you nor forsake you" (divine faithfulness)
+      - John 6:37: "I will NEVER (οὐ μή) cast out" (assurance of salvation)
+
+      Using simple negation ("will not") weakens promise. Using affirmative reverses meaning
+      (heretical: "I WILL forsake you"). Choice affects believer's assurance of salvation.
+
+      Source: {wallace-1996-greek}, {greek-negation-system}
+
+    christian_orthodox_position:
+      preferred_value: emphatic_negative # Preserve absolute force of promise
+      acceptable_alternatives: [double_negative_emphatic_positive, negative_with_intensive_adverb]
+      forbidden_values: [simple_negative, affirmative]
+      theological_basis: 'God''s promises are absolutely certain. Emphatic negation reflects divine unchangeability (Hebrews 6:17-18).'
+      translator_guidance: |
+        - FIRST CHOICE: Use STRONGEST NEGATIVE FORM in target language (e.g., "never, no never",
+          "absolutely not", "not under any circumstance").
+        - SECOND CHOICE: If target language uses double negative for emphasis (litotes), use that
+          strategy to preserve force (e.g., "no way not", "impossible not to").
+        - THIRD CHOICE: Add intensive adverb to simple negative (e.g., "will absolutely not",
+          "will certainly not").
+        - FORBIDDEN: Simple negative ("will not") loses emphatic force and weakens assurance.
+        - Theological implication: Eternal security vs. conditional salvation debate. Orthodox
+          position (Reformed, many Evangelicals): Believers cannot lose salvation. Arminian
+          position: Salvation can be lost. Translation affects which position seems supported.
+          Preserve Greek emphatic force; let theologians interpret implications.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Conditional salvation - Believers can lose salvation despite οὐ μή promises'
+        used_by: [Arminian theology, Wesleyan tradition]
+        christian_assessment: DEBATED WITHIN ORTHODOXY (Both Calvinist and Arminian are orthodox,
+          disagree on perseverance. Translation should preserve emphatic force regardless of position.)
+      - interpretation: 'Universalism - All people saved regardless of faith'
+        used_by: [Liberal theology, some Emergent church]
+        christian_assessment: REJECTED (Violates clear NT teaching on judgment and hell)
+
+  # GROUP 3: Christological Denials - False Teaching About Christ
+  - verse_pattern: '1 John 2:22-23; 2 John 7; 1 Corinthians 12:3 (denying Christ, Antichrist) (unverified)'
+    affected_values: [negative, emphatic_negative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (nature of Christ)
+      - Orthodoxy vs. heresy
+      - Antichrist identification
+
+    non_arbitrary_rationale: |
+      Denial of Christ's identity/nature is hallmark of false teaching and Antichrist.
+
+      Examples:
+      - 1 John 2:22: "Who is the liar? He who DENIES that Jesus is the Christ" (Antichrist)
+      - 2 John 7: "Those who do NOT confess Jesus Christ coming in flesh" (deceivers)
+      - 1 Corinthians 12:3: "No one speaking by Spirit says 'Jesus is accursed'" (negative confession)
+
+      Using affirmative instead of negative REVERSES orthodoxy (affirming becomes denying).
+      Negation marks boundary between orthodox faith and heresy.
+
+      Source: (unverified, based on Biblical theology knowledge)
+
+    christian_orthodox_position:
+      preferred_value: emphatic_negative # Clear marking of heretical denial
+      acceptable_alternatives: [negative]
+      forbidden_values: [affirmative, weakened_negative]
+      theological_basis: 'Confession of Christ is essential for salvation (Romans 10:9). Denial is apostasy.'
+      translator_guidance: |
+        - FIRST CHOICE: Preserve negative polarity exactly. Negation is theologically essential.
+        - SECOND CHOICE: If target language allows, add emphasis marker to highlight seriousness
+          of denial (e.g., "utterly denies", "categorically refuses to confess").
+        - FORBIDDEN: Weakening negation to indirect form (e.g., "fails to acknowledge" instead of
+          "denies"). Biblical language is stark and direct about heresy.
+        - Cultural note: Some honor/shame cultures avoid direct accusation. Scripture's directness
+          about false teaching must be preserved despite cultural preference for indirectness.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Pluralism - Denying Christ acceptable if sincere in other religion'
+        used_by: [Religious pluralism, interfaith movement]
+        christian_assessment: REJECTED (John 14:6 "no one comes to Father except through me";
+          Acts 4:12 "no other name under heaven")
+      - interpretation: 'Arianism - Denying full deity of Christ (Christ is created being)'
+        used_by: [Jehovah''s Witnesses, ancient Arianism]
+        christian_assessment: HERETICAL (Violates Nicene Creed, biblical testimony to Christ''s deity)
+
+  # GROUP 4: Ethical Prohibitions - New Testament Moral Commands
+  - verse_pattern: 'Romans 13:9; Matthew 5:21-48 (NT reaffirmation of moral law) (unverified)'
+    affected_values: [negative, prohibitive]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Christian ethics
+      - Sanctification (holiness)
+      - Continuity of moral law (OT → NT)
+
+    non_arbitrary_rationale: |
+      NT reaffirms OT moral prohibitions with authority of Christ and apostles.
+
+      Examples:
+      - Romans 13:9: "You shall NOT commit adultery, murder, steal, covet" (quotes Exodus 20)
+      - Matthew 5:21-48: Jesus intensifies prohibitions ("You have heard... but I say...")
+      - 1 Corinthians 6:9-10: "Do NOT be deceived" - lists excluded from kingdom
+
+      Using affirmative reverses moral teaching. Using weak prohibition reduces binding force.
+      Choice affects understanding of Christian ethical obligations.
+
+      Source: (unverified, based on NT ethics)
+
+    christian_orthodox_position:
+      preferred_value: prohibitive # Imperative negative, binding command
+      acceptable_alternatives: [negative] # Standard negation acceptable
+      forbidden_values: [affirmative, suggestion_rather_than_command]
+      theological_basis: 'Moral law transcends covenants. Jesus fulfills but does not abolish law (Matthew 5:17).'
+      translator_guidance: |
+        - FIRST CHOICE: Use prohibitive/imperative form if target language distinguishes.
+        - SECOND CHOICE: Standard negation with imperative mood.
+        - AVOID: Translating as suggestion ("it would be better not to...") rather than command.
+          NT prohibitions are authoritative, not advisory.
+        - Cultural note: Western cultures increasingly view morality as personal preference.
+          Translation must preserve NT's binding force of moral commands.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Antinomianism - Moral law no longer applies under grace'
+        used_by: [Some hyper-grace teachings]
+        christian_assessment: REJECTED (Romans 6:1-2 "Shall we go on sinning? By no means!";
+          James 2:17 "faith without works is dead")
+      - interpretation: 'Cultural relativism - NT prohibitions were culturally bound'
+        used_by: [Liberal theology, progressive Christianity]
+        christian_assessment: REJECTED (Some commands are cultural [head coverings debated],
+          but moral prohibitions are transcultural - murder, adultery, theft universally wrong)
+
+  # GROUP 5: Divine Attributes - God's Unchangeable Nature
+  - verse_pattern: 'Numbers 23:19; 1 Samuel 15:29; Malachi 3:6; James 1:17 (God does not change/lie) (unverified)'
+    affected_values: [emphatic_negative, negative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Divine attributes (immutability, faithfulness)
+      - Doctrine of God (theology proper)
+      - Trustworthiness of Scripture
+
+    non_arbitrary_rationale: |
+      Negations of human attributes when applied to God are theologically essential.
+
+      Examples:
+      - Numbers 23:19: "God is NOT a man that he should LIE" (divine truthfulness)
+      - Malachi 3:6: "I the LORD do NOT change" (divine immutability)
+      - James 1:17: "with whom there is NO variation or shadow of turning" (divine constancy)
+
+      Affirming what is negated would be heresy (e.g., "God DOES lie" = denial of inerrancy).
+      These negations define God's nature in contrast to human limitations.
+
+      Source: (unverified, based on doctrine of God)
+
+    christian_orthodox_position:
+      preferred_value: emphatic_negative # Strong assertion of divine perfection
+      acceptable_alternatives: [negative]
+      forbidden_values: [affirmative, qualified_negative]
+      theological_basis: 'God''s nature is unchangeable (Psalm 102:27; Hebrews 13:8). Divine attributes are absolute, not relative.'
+      translator_guidance: |
+        - FIRST CHOICE: Emphatic negation to stress absolute contrast between God and humans.
+        - SECOND CHOICE: Standard negation with amplification ("never", "in no way").
+        - FORBIDDEN: Qualified negation ("not usually", "rarely") would imply God sometimes
+          has human weaknesses. Divine attributes are absolute.
+        - Philosophical note: Process theology denies immutability (God changes with creation).
+          Translation must preserve biblical affirmation of unchangeability.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Process theology - God changes, learns, is affected by creation'
+        used_by: [Process theology, Open theism]
+        christian_assessment: REJECTED (Violates classical theism and biblical witness to
+          divine immutability; Malachi 3:6, James 1:17)
+      - interpretation: 'Mormon theology - God was once human, progressed to divinity'
+        used_by: [Latter-day Saints / Mormonism]
+        christian_assessment: HERETICAL (Denies eternal nature of God; Isaiah 43:10 "Before me
+          no god was formed, nor will there be one after me")
+
+  # GROUP 6: Prohibitions Against Idolatry and False Worship
+  - verse_pattern: 'Exodus 20:3-5; Deuteronomy 5:7-9; 1 Corinthians 10:14 (idolatry prohibitions) (unverified)'
+    affected_values: [emphatic_negative, prohibitive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Monotheism (worship of one God)
+      - Idolatry (rejection of false gods)
+      - First Commandment primacy
+
+    non_arbitrary_rationale: |
+      Prohibition against idolatry is First/Second Commandment, foundational to covenant.
+
+      Examples:
+      - Exodus 20:3: "You shall have NO other gods before me" (exclusive worship)
+      - Exodus 20:5: "You shall NOT bow down to them or worship them" (prohibition on idolatry)
+      - 1 Corinthians 10:14: "Flee from idolatry" (NT reaffirmation)
+
+      Using affirmative ("You SHALL worship idols") is heresy. Weakening negation compromises
+      exclusive worship of YHWH, central to biblical faith.
+
+      Source: (unverified, based on OT theology)
+
+    christian_orthodox_position:
+      preferred_value: emphatic_negative # Absolute prohibition, non-negotiable
+      acceptable_alternatives: [negative]
+      forbidden_values: [affirmative, qualified_negative]
+      theological_basis: 'Monotheism is foundation of biblical faith (Deuteronomy 6:4 "Hear O Israel, the LORD our God, the LORD is one").'
+      translator_guidance: |
+        - FIRST CHOICE: Strongest prohibition form in target language.
+        - CRITICAL: Cultures with spirit worship or ancestor veneration may resist this prohibition.
+          Translation must preserve absolute force despite cultural discomfort.
+        - AVOID: Softening to "prefer not to worship idols" or "better to worship one God."
+          Biblical language is absolute prohibition, not preference.
+        - Contextualization note: Explain what constitutes idolatry (not just physical statues,
+          but anything that replaces God as ultimate). But prohibition itself is non-negotiable.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Syncretism - Combining worship of YHWH with local deities'
+        used_by: [Folk religion syncretism, some animistic contexts]
+        christian_assessment: REJECTED (Elijah on Mount Carmel - 1 Kings 18:21 "How long will
+          you waver between two opinions?"; James 1:8 double-minded instability)
+      - interpretation: 'Interfaith equivalence - All gods are same God under different names'
+        used_by: [Religious pluralism, some New Age thought]
+        christian_assessment: REJECTED (Isaiah 45:5 "I am the LORD, there is no other; apart
+          from me there is no God")
+
+  # GROUP 7: Litotes - Rhetorical Double Negatives (Emphatic Affirmatives)
+  - verse_pattern: 'Romans 1:16; Acts 21:39; Psalm 51:17 (litotes "not ashamed" = "proud") (unverified)'
+    affected_values: [double_negative_emphatic_positive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Rhetorical force of Scripture
+      - Understanding of apostolic attitude
+
+    non_arbitrary_rationale: |
+      Litotes uses double negative to express emphatic positive (rhetorical understatement).
+
+      Examples:
+      - Romans 1:16: "I am NOT ashamed of the gospel" = "I am PROUD of the gospel"
+      - Acts 21:39: "citizen of NO ordinary city" = "citizen of a GREAT city"
+      - Psalm 51:17: "You will NOT despise" = "You will ACCEPT and BLESS"
+
+      Translating literally as simple negative loses emphatic force. Reader may think Paul is
+      merely neutral about gospel, not passionately devoted. Litotes is RHETORICAL DEVICE,
+      not simple negation.
+
+      Choice affects understanding of apostolic zeal and devotion.
+
+      Source: {litotes-rhetoric}
+
+    christian_orthodox_position:
+      preferred_value: double_negative_emphatic_positive # Preserve rhetorical force
+      acceptable_alternatives: [explicit_positive_with_intensive, literal_double_negative_if_target_language_uses_litotes]
+      forbidden_values: [simple_negative, neutral_statement]
+      theological_basis: 'Scripture uses rhetorical devices for emphasis. Inspiration extends to literary form, not just content (2 Timothy 3:16).'
+      translator_guidance: |
+        - FIRST CHOICE: If target language uses litotes rhetorically, preserve double negative
+          (e.g., "not un-proud" = very proud).
+        - SECOND CHOICE: If target language does not use litotes, translate as explicit emphatic
+          positive (e.g., "I am VERY proud of", "I boast in the gospel").
+        - THIRD CHOICE: Add explanatory note that original uses litotes for emphasis.
+        - AVOID: Literal translation as simple negative if target language does not use litotes.
+          Rhetorical force would be lost.
+        - Functional equivalence: Nida/Taber principle - replicate EFFECT (emphasis), not just
+          FORM (double negative).
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Hyper-literalism - Must translate word-for-word even if meaning lost'
+        used_by: [Some ultra-literal translation philosophies]
+        christian_assessment: PROBLEMATIC (Sacrifices meaning for form. Better to preserve
+          intended meaning even if surface form changes. Translation is meaning transfer,
+          not code-substitution.)
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+arbitrary_contexts:
+  - pattern: "General narrative statements (e.g., 'He did not go to the market')"
+    rationale: 'Factual statement with no doctrinal implication. Affirmative or negative is content-dependent, not theologically significant.'
+    estimated_percentage: 60%
+
+  - pattern: "Descriptive negations (e.g., 'The field was not plowed', 'No one was in the house')"
+    rationale: 'Describes situation. No theological stakes. Simple factual information.'
+    estimated_percentage: 15%
+
+  - pattern: "Questions with negative polarity (e.g., 'Did you not see?', 'Is there no one?')"
+    rationale: 'Rhetorical or informational questions. Polarity affects nuance but not doctrine. Exception: Rhetorical questions expecting specific answer may be non-arbitrary (see litotes).'
+    estimated_percentage: 5%
+
+  - pattern: "Conditional statements with negation (e.g., 'If you do not..., then...')"
+    rationale: 'Logical structure. Negation is part of conditional logic, not theologically loaded. Exception: Conditional promises/warnings about salvation may be non-arbitrary.'
+    estimated_percentage: 5%
+
+  - pattern: "Temporal or aspectual negations (e.g., 'not yet', 'no longer')"
+    rationale: 'Time-related negation. Factual, not doctrinal. Exception: Eschatological "not yet" (kingdom arrival) may be non-arbitrary.'
+    estimated_percentage: 3%
+
+  - pattern: "Comparative negations (e.g., 'not greater than', 'no less than')"
+    rationale: 'Comparison structure. Mathematical/logical, not theological.'
+    estimated_percentage: 2%
+
+  - pattern: "Existential statements (e.g., 'There is no bread', 'There was no king')"
+    rationale: 'States existence/non-existence. Factual information unless theologically loaded context.'
+    estimated_percentage: 5%
+
+  - pattern: "Indirect speech negations (e.g., 'He said he would not...', 'They claimed there was no...')"
+    rationale: 'Reports others'' speech. Polarity belongs to quoted content, not narrator''s assertion.'
+    estimated_percentage: 3%
+
+  - pattern: "Poetic parallelism negations (e.g., Psalm negative//positive parallel)"
+    rationale: 'Hebrew poetry uses negative//positive parallelism stylistically. Theological content may be non-arbitrary, but FORM of negation is often stylistic choice for meter/parallelism.'
+    estimated_percentage: 2%
+
+# SUMMARY STATISTICS (unverified estimates based on Scripture survey)
+summary:
+  total_verses_with_negation_estimated: 15% # Rough estimate: 15% of Bible verses contain negation
+  non_arbitrary_percentage_estimated: 15% # Of negated verses, ~15% are theologically non-arbitrary
+  arbitrary_percentage_estimated: 85% # Of negated verses, ~85% are stylistic/factual
+
+  highest_stakes_categories:
+    - 'Divine commands (Ten Commandments)'
+    - 'Salvific promises (eternal security)'
+    - 'Christological denials (orthodoxy vs. heresy)'
+    - 'Divine attributes (immutability, truthfulness)'
+    - 'Idolatry prohibitions (monotheism)'
+
+  medium_stakes_categories:
+    - 'NT ethical prohibitions'
+    - 'Litotes (rhetorical emphasis)'
+    - 'Eschatological negations (kingdom "not yet")'
+
+  common_errors_to_avoid:
+    - 'Weakening emphatic negation (οὐ μή) to simple negation'
+    - 'Reversing polarity (affirmative ↔ negative)'
+    - 'Using temporal prohibition (אַל al) for absolute commands (should be לֹא lo)'
+    - 'Translating litotes literally in languages without litotes (loses emphatic force)'
+    - 'Softening divine prohibitions to suggestions or cultural preferences'
+    - 'Failing to preserve negative concord in target languages that require it'
+    - 'Adding double negation in double-negation languages (reverses meaning)'
+
+# TRANSLATION PRINCIPLES FOR POLARITY
+translation_principles:
+  general_rule: 'Preserve source language polarity unless target language grammar requires different strategy (e.g., negative concord).'
+
+  hierarchy_of_priorities:
+    1: 'Theological accuracy - Non-arbitrary contexts require exact polarity preservation'
+    2: 'Grammaticality - Target language grammar may force changes (negative concord, asymmetric negation)'
+    3: 'Rhetorical force - Emphatic negations should feel emphatic in target language'
+    4: 'Naturalness - Arbitrary contexts can use target language''s preferred negative strategy'
+
+  when_to_deviate_from_literal:
+    - 'Litotes in non-litotes language: Use explicit emphatic positive'
+    - 'Negative concord language translating Greek: Add concord markers as needed'
+    - 'Double negation language: Avoid multiple negatives unless rhetorical (litotes)'
+    - 'Asymmetric negation language: Apply required structural changes (finiteness, mood, etc.)'
+
+  when_never_to_deviate:
+    - 'Divine commands (Ten Commandments) - Always strongest available prohibition'
+    - 'Salvific promises (οὐ μή) - Always strongest available negation/assurance'
+    - 'Christological affirmations/denials - Exact polarity essential for orthodoxy'
+    - 'Divine attributes - Negations define God''s nature; cannot be weakened or reversed'
+
+# METADATA
+metadata:
+  research_date: '2025-11-26'
+  researcher: 'Claude Code AI (Sonnet 4.5)'
+  methodology: 'Internal knowledge of Scripture + scholarly research on Hebrew/Greek negation + typological analysis'
+  confidence_level: 'MEDIUM-HIGH (theological analysis unverified by human scholar; linguistic analysis grounded in cited research)'
+  sources:
+    - '{hebrew-negation-system}'
+    - '{greek-negation-system}'
+    - '{wallace-1996-greek}'
+    - '{litotes-rhetoric}'
+    - '{ten-commandments-lo}'
+    - 'Internal knowledge of Biblical theology (marked as unverified)'
+
+  limitations:
+    - 'Verse examples not exhaustively verified in source texts'
+    - 'Percentage estimates are rough approximations, not corpus analysis'
+    - 'Theological positions reflect conservative Protestant orthodoxy; other traditions may classify differently'
+    - 'Does not cover all edge cases (poetic devices, discourse markers, etc.)'
+
+  recommended_next_steps:
+    - 'Stage 2: Corpus analysis of TBTA data to validate percentage estimates'
+    - 'Stage 2: Identify all οὐ μή instances in NT; classify by theological significance'
+    - 'Stage 2: Survey Hebrew לֹא vs. אַל distribution in Torah legal texts'
+    - 'Stage 3: Test translation of high-stakes verses in candidate languages'
+    - 'Stage 4: Theological review by conservative Protestant scholars'
+    - 'Stage 4: Denominational review (Catholic, Orthodox) for completeness'
