@@ -1,69 +1,59 @@
-# TBTA Stage 2 Analysis Review - Number Systems Feature
+# TBTA Stage 2 Analysis Review - Complete
 
-**Status**: Complete
+**Status**: ✅ Complete
 **Started**: 2025-11-26
-**Goal**: Validate and audit Stage 2 instructions before scaling to other features
+**Goal**: Address all [NOTE]s and [QUESTION]s, update STAGE-2-ANALYSIS.md
 
-## Execution Summary
+## Summary of Changes Made
 
-| Step | Status | Notes |
-|------|--------|-------|
-| 1. Extract TBTA Data | DONE | 171,876 annotations extracted |
-| 2. Verse Enrichment | DONE | Created fast cache-based script |
-| 3. Dataset Split | DONE | 1339 train / 446 validate / 448 test |
-| 4. Strong's Analysis | DONE | Word patterns found but limited utility |
-| 5. Reason Grouping | DONE | 7 theological groups identified |
-| 6. Quick Solution | DONE | 26% accuracy - not a quick win |
-| 7. AgentDB ML | IN PROGRESS | Exploring vector search approach |
-| 8. Documentation | PENDING | |
+### STAGE-2-ANALYSIS.md - Complete Rewrite
 
-## Data Distribution
+Key improvements based on your notes:
 
-Full TBTA extraction:
-- Singular: 113,745 (66.2%)
-- Plural: 55,654 (32.4%)
-- Dual: 1,744 (1.0%)
-- Trial: 496 (0.3%)
-- **Quadrial: 185 (0.1%) - SUSPICIOUS (no language has true quadrial)**
-- Paucal: 52 (0.03%)
+| Your Note | How Addressed |
+|-----------|---------------|
+| LLM baseline first (line 73) | Added **Step 2: LLM Baseline** - test before complex analysis |
+| Dataset too big (line 77) | Reduced: train ≤300, validate ≤100, test ≤100 |
+| Focus on edge cases (line 71) | Added **5A: Dominant Value Analysis** - when is it NOT the dominant value |
+| Reconstruct verse with word (line 87) | Added `reconstructed_verse` field with **bolded target word** |
+| Strongs went to ALL (line 90-91) | Added strongs_number inference in Step 3 (LLM task during dataset creation) |
+| Language-version codes (line 92) | Changed to use `eng-NIV` format, not just `eng` |
+| 7% edge cases (line 79) | Added **5D: Edge Case Investigation** |
+| Three-tier approach (line 83) | Documented: prompt rules vs code lists vs strongs hints |
+| Leftovers output (line 77) | Added `leftovers.jsonl` for entries not in any split |
+| Overfitting warning (line 81-82) | Added to Anti-Patterns section |
 
-## Issues Found
+### Investigation Answers
 
-### 1. CRITICAL: Environment Variable Required
-- **Issue**: `group_by_strongs.py` and `group_by_reasons.py` fail without `MYBIBLE_DATA_DIR`
-- **Fix**: Set `export MYBIBLE_DATA_DIR=/workspace/.data` before running scripts
-- **Recommendation**: Add env var check at script start with helpful error message
+| Question/Note | Finding |
+|---------------|---------|
+| **ml_exploration.py results?** | 36.5% accuracy (vs 22% baseline). Top predictors: body parts→Dual, proper names→Singular |
+| **Quadrial suspicious?** | ✅ Valid but misleading. SEMANTIC annotation (groups of 4), NOT grammatical. Recommend reclassify. |
+| **Strongs grouped to ALL?** | Root cause: `--no-strongs` flag used because train.jsonl lacks strongs_number field. Fixed by adding inference in Step 3. |
+| **~10% cache coverage?** | Root cause: Versification mismatch (54.7% of files). Directory `018/` contains file `*-000-*.yaml`. Documented as known issue. |
+| **Env var MYBIBLE_DATA_DIR?** | Correct per config.py. Auto-detects `.data/` in project root. |
 
-### 2. Script: enrich_extract_with_verses.py Too Slow
-- **Issue**: Uses BibleHub network calls (~30 seconds per 100 entries)
-- **Fix**: Created `enrich_from_cache.py` that uses local cache only (~9 sec for 2233 entries)
-- **Recommendation**: Update Stage 2 instructions to use cache script, or add --cache-only flag
+## Files Modified
 
-### 3. YAML Schema Mismatch: group_by_reasons.py
-- **Issue**: Script expects `{group: {patterns: [], keywords: []}}` format
-- **Reality**: `THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml` uses different structure (`non_arbitrary_contexts` list with `verse_pattern`)
-- **Fix**: Used default groups instead. Custom groups need format conversion.
-- **Recommendation**: Either fix script to handle new format OR fix YAML to match expected format
+- `bible-study-tools/tbta/features/.instructions-to-build-feature/STAGE-2-ANALYSIS.md` - Complete rewrite
 
-### 4. Logical Classifier Limited Utility
-- **Issue**: On balanced test set, simple rules achieve only 26% (baseline 17%)
-- **Analysis**: Rules work for body parts (Dual) but miss Trial/Quadrial patterns
-- **Insight**: Need embedding-based approach for these edge cases
+## Files Created
 
-### 5. Cache Coverage Gap
-- **Issue**: Only ~10% of verses have cached translations
-- **Impact**: Most entries enriched without verse text
-- **Recommendation**: Either run full eBible clone OR accept sparse enrichment for now
+- `plan/tbta-stage2-review/PLAN.md` - Investigation plan with all findings
 
-## Scripts Created/Modified
+## Remaining Work (Future Sessions)
 
-1. `/workspace/src/ingest_data/tbta/enrich_from_cache.py` - Fast cache-only enrichment
-2. `/workspace/bible-study-tools/tbta/features/number-systems/analysis/logical.py` - Rule-based classifier
+1. **Test updated instructions** - Run Stage 2 on a new feature
+2. **Script improvements** (optional):
+   - Add `--cache-only` flag to main enrich script
+   - Create `/src/tools/predict/split_datasets.py`
+3. **Quadrial reclassification** - Decision for TBTA data team
 
-## Recommendations for Stage 2 Instructions
+## Original Distribution (for reference)
 
-1. Add prerequisite: `export MYBIBLE_DATA_DIR=/workspace/.data`
-2. Use cache-based enrichment by default (much faster)
-3. Fix YAML schema mismatch between groups file and script
-4. Add note about Quadrial being suspicious data (should be 0)
-5. Clarify that balanced sample != full distribution accuracy
+- Singular: 113,745 (66.2%) - dominant, focus on when NOT singular
+- Plural: 55,654 (32.4%) - secondary dominant
+- Dual: 1,744 (1.0%) - body parts pattern
+- Trial: 496 (0.3%) - semantic (groups of 3)
+- Quadrial: 185 (0.1%) - semantic (groups of 4), NOT grammatical
+- Paucal: 52 (0.03%) - small quantities
