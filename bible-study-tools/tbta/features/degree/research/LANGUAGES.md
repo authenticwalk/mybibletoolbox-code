@@ -195,24 +195,28 @@ Languages that **lack degree semantics entirely** and use conjoined comparison:
    - Status: ABSENT
    - Mechanism: Implicit comparison via conjoined clauses
    - "Washo lacks degree morphology of the sort found in English, including comparatives, superlatives, equatives, measure phrases and degree adverbs"
+   - **Availability**: ❌ Not in corpus
 
 2. **Motu** (meu) - Austronesian, Papua New Guinea
    - Family: Austronesian (Malayo-Polynesian, Oceanic)
    - Status: ABSENT
    - Mechanism: Implicit comparison
    - "Beck, et al. (2009) argued that Motu lacks degrees"
+   - **Availability**: ✅ meu-meu.txt (31,094 verses, 66 books)
 
 3. **Fijian** (fij) - Austronesian, Fiji
    - Family: Austronesian (Malayo-Polynesian, Oceanic)
    - Status: ABSENT
    - Mechanism: Conjoined comparison
    - "Pearson (2009) argued that Fijian lacks degrees"
+   - **Availability**: ❌ Not in corpus
 
 4. **Warlpiri** (wbp) - Pama-Nyungan, Australia
    - Family: Australian (Pama-Nyungan)
    - Status: ABSENT
    - Mechanism: No superlatives, degree questions, measure phrases or differential comparatives
    - "Warlpiri gradable predicates do not combine with a degree argument"
+   - **Availability**: ✅ wbp-wbp.txt (11,098 verses, 36 books)
 
 **Implication for Translation**: These languages CANNOT receive C/S/I codes - use conjoined comparison instead
 
@@ -261,12 +265,11 @@ Based on linguistic typology (suspected, needs verification):
 
 #### Tier 1: Source + Major Root Languages (3)
 
-1. **Greek (Koine)** [grc] - *Not in modern translation list, use ell as proxy*
-   - **Modern Greek** (ell) - Hellenic, Greece
+1. **Greek, Ancient (Koine)** (grc) - Hellenic, Greece
    - **Why**: Source language with explicit synthetic morphology
    - **Status**: MANDATORY (synthetic -τερος/-τατος)
    - **Strategy**: Synthetic primary, analytic alternative
-   - **Available**: Not in languages.tsv (use Biblical Greek data from Macula)
+   - **Available**: ✅ Multiple translations (grc-grcbyz.txt, grc-grcmt.txt, etc. - 8 translations)
 
 2. **English** (eng) - Germanic, UK/USA
    - **Why**: Global lingua franca, mixed synthetic/analytic
@@ -302,19 +305,19 @@ Based on linguistic typology (suspected, needs verification):
 
 #### Tier 3: Degree-Neutral Languages (2)
 
-7. **Fijian** (fij) - Austronesian (Oceanic), Fiji
+7. **Motu** (meu) - Austronesian (Malayo-Polynesian, Oceanic), Papua New Guinea
    - **Why**: DEGREE-NEUTRAL, conjoined comparison, critical typological contrast
    - **Status**: ABSENT (no degree semantics)
-   - **Strategy**: Conjoined comparison (parallel clauses)
-   - **Available**: ❓ Not in languages.tsv - **NEEDS VERIFICATION**
-   - **Alternative if unavailable**: Use Motu or other degree-neutral language from corpus
+   - **Strategy**: Conjoined comparison (implicit comparison)
+   - **Available**: ✅ meu-meu.txt (31,094 verses, 66 books)
+   - **Note**: Replaces Fijian (fij) which is not available in corpus
 
 8. **Warlpiri** (wbp) - Pama-Nyungan, Australia
-   - **Why**: DEGREE-NEUTRAL, Australian Aboriginal, different family from Fijian
+   - **Why**: DEGREE-NEUTRAL, Australian Aboriginal, different family from Motu
    - **Status**: ABSENT (no degree arguments)
    - **Strategy**: No degree constructions at all
-   - **Available**: ❓ Not in languages.tsv - **NEEDS VERIFICATION**
-   - **Alternative if unavailable**: Use available Australian Aboriginal language from corpus (aer-aer.txt Arrernte Eastern, aly-aly.txt Alyawarr, etc.)
+   - **Available**: ✅ wbp-wbp.txt (11,098 verses, 36 books)
+   - **Alternative**: Arrernte, Eastern (aer) or Alyawarr (aly) also available if needed
 
 ### Alternative Candidates (if primary unavailable)
 
@@ -406,17 +409,15 @@ Based on linguistic typology (suspected, needs verification):
 
 ### Translation Database Recommendation
 
-**Final 8-language selection**:
-1. **Greek** (Biblical/ell as proxy) - synthetic mandatory
-2. **English** (eng) - synthetic + analytic mandatory
-3. **Spanish** (spa) - analytic mandatory
-4. **Mandarin** (cmn) - analytic mandatory
-5. **Indonesian** (ind) - analytic optional
-6. **Swahili** (swh) - analytic optional
-7. **Fijian** (fij) OR **Australian Aboriginal** (aer/aly/etc.) - degree-neutral
-8. **Warlpiri** (wbp) OR **alternate degree-neutral** - degree-neutral
-
-**If Fijian/Warlpiri unavailable**: Use available Australian Aboriginal languages (Arrernte, Alyawarr) or other Papua New Guinea languages and verify degree-neutral status through grammatical analysis.
+**Final 8-language selection** (all verified available):
+1. **Greek, Ancient** (grc) - synthetic mandatory - ✅ Available
+2. **English** (eng) - synthetic + analytic mandatory - ✅ Available
+3. **Spanish** (spa) - analytic mandatory - ✅ Available
+4. **Mandarin** (cmn) - analytic mandatory - ✅ Available
+5. **Indonesian** (ind) - analytic optional - ✅ Available
+6. **Swahili** (swh) - analytic optional - ✅ Available
+7. **Motu** (meu) - degree-neutral (Austronesian) - ✅ Available
+8. **Warlpiri** (wbp) - degree-neutral (Australian) - ✅ Available
 
 **Rationale**:
 - Covers all 3 major categories (mandatory/optional/absent)
@@ -474,12 +475,20 @@ Based on linguistic typology (suspected, needs verification):
 - Specific Niger-Congo and other minority language patterns
 - Exact distribution percentages (estimates based on typological literature)
 
-**Needs verification before Stage 4**:
-- Availability of Fijian and Warlpiri in eBible corpus or BibleHub
-- Degree-neutral status of available Australian Aboriginal languages (Arrernte, Alyawarr, etc.)
+**Verified for Translation Database** (2025-11-26):
+- ✅ All 8 candidate languages confirmed available in eBible corpus
+- ✅ Greek, Ancient (grc): 8 translations available
+- ✅ English (eng), Spanish (spa), Mandarin (cmn): Multiple translations available
+- ✅ Indonesian (ind), Swahili (swh): Available
+- ✅ Motu (meu): 31,094 verses, 66 books (replaces unavailable Fijian)
+- ✅ Warlpiri (wbp): 11,098 verses, 36 books
+- ✅ Additional degree-neutral alternatives available: Arrernte (aer), Alyawarr (aly)
+
+**Still needs verification before Stage 4**:
+- Degree-neutral status of Arrernte (aer) and Alyawarr (aly) through grammatical analysis
 - Specific translation versions and their encoding of degree constructions
 
 ---
 
-**Document Status**: Stage 1 Research Complete
-**Next Step**: Verify candidate language availability and select final 5-10 for Translation Database (Stage 4)
+**Document Status**: Stage 1 Research Complete - Languages Verified
+**Next Step**: Stage 2 (Analysis) - Frequency distributions across TBTA data

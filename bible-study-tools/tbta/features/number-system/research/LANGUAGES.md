@@ -13,7 +13,7 @@ Analysis of 1,008 Bible translation languages reveals **Austronesian** (176 lang
 - **Source Languages**: Hebrew has productive dual, Greek has singular/plural only
 - **Most Complex**: Austronesian family (trial, dual, paucal in some languages)
 - **Simplest**: Isolating languages (Chinese, Vietnamese) with optional/no marking
-- **Root Languages**: English, Spanish, French, German, Arabic support dual; Indonesian/Swahili have optional marking
+- **Root Languages**: English, Spanish, French, German have simple S/P; Arabic has dual/paucal; Hawaiian/Tongan have dual (pronouns)
 - **Trinity-capable**: ~20-30 languages with trial can explicitly encode "exactly 3 persons"
 
 ## 1. Source Language Encoding
@@ -97,15 +97,15 @@ Target without dual: Mark as PLURAL (follow Greek morphology)
 
 **Languages in Dataset** (selected examples):
 
-| ISO-639-3 | Language | Family | System | Notes |
-|-----------|----------|--------|--------|-------|
-| arb | Arabic (Standard) | Afro-Asiatic | S/D/P/Paucal | Dual for pairs, paucal for 3-10 {wals-34} |
-| haw | Hawaiian | Austronesian (Polynesian) | S/D/P (suspected) | Dual documented, trial disputed {polynesian-grammar} |
-| ton | Tongan | Austronesian (Polynesian) | S/D/P | Dual in pronouns {polynesian-grammar} |
-| deu | German | Indo-European (Germanic) | S/P | Mandatory singular/plural |
-| eng | English | Indo-European (Germanic) | S/P | Mandatory singular/plural |
-| spa | Spanish | Indo-European (Romance) | S/P | Mandatory singular/plural |
-| rus | Russian | Indo-European (Slavic) | S/P | Lost dual (except Slovenian) |
+| ISO-639-3 | Language | Family | System | Mandatory/Optional | Notes |
+|-----------|----------|--------|--------|-------------------|-------|
+| arb | Arabic (Standard) | Afro-Asiatic | S/D/P/Paucal | Mandatory | Dual for pairs, paucal for 3-10 {wals-34} |
+| haw | Hawaiian | Austronesian (Polynesian) | S/D/P | Mandatory | Dual confirmed in pronouns {hawaiian-dual-wiki} |
+| ton | Tongan | Austronesian (Polynesian) | S/D/P | Mandatory | Dual confirmed in pronouns {tongan-dual-wiki} |
+| deu | German | Indo-European (Germanic) | S/P | Mandatory | Mandatory singular/plural |
+| eng | English | Indo-European (Germanic) | S/P | Mandatory | Mandatory singular/plural |
+| spa | Spanish | Indo-European (Romance) | S/P | Mandatory | Mandatory singular/plural |
+| rus | Russian | Indo-European (Slavic) | S/P | Mandatory | Lost dual (except Slovenian) |
 
 **Note**: Slovenian (slv) has productive dual **but is NOT in our dataset** {slovenian-dual-gap}.
 
@@ -115,13 +115,13 @@ Target without dual: Mark as PLURAL (follow Greek morphology)
 
 **Languages in Dataset** (selected examples):
 
-| ISO-639-3 | Language | Family | System | Notes |
-|-----------|----------|--------|--------|-------|
-| ind | Indonesian | Austronesian (Malayo-Polynesian) | General Number | Plural via reduplication (optional) {indonesian-number} |
-| zlm | Malay | Austronesian (Malayo-Polynesian) | General Number | Classifiers optional {malay-classifiers} |
-| cmn | Mandarin Chinese | Sino-Tibetan | General Number | No plural morphology, classifiers required |
-| jpn | Japanese (suspected) | Japonic | General Number | Optional plural suffix -たち (-tachi) for animates |
-| vie | Vietnamese (if in dataset) | Austroasiatic | General Number | Classifiers, no plural morphology |
+| ISO-639-3 | Language | Family | System | Mandatory/Optional | Notes |
+|-----------|----------|--------|--------|-------------------|-------|
+| ind | Indonesian | Austronesian (Malayo-Polynesian) | General Number | Optional | Plural via reduplication (optional) {indonesian-number} |
+| zlm | Malay | Austronesian (Malayo-Polynesian) | General Number | Optional | Classifiers optional {malay-classifiers} |
+| cmn | Mandarin Chinese | Sino-Tibetan | General Number | Optional | No plural morphology, classifiers required |
+| jpn | Japanese | Japonic | General Number | Optional | Optional plural suffix -たち (-tachi) for animates |
+| vie | Vietnamese | Austroasiatic | General Number | Optional | Classifiers, no plural morphology |
 
 **From Indonesian Number Research** (https://www.researchgate.net/publication/239568420_Plural_Semantics_Reduplication_and_Numeral_Modification_in_Indonesian):
 > "In Indonesian, plural marking as both reduplication and classifiers in numeral modification constructions are optional, and bare (non-reduplicated) Indonesian nouns are best analyzed as exhibiting 'general number.'"
@@ -138,8 +138,8 @@ Target without dual: Mark as PLURAL (follow Greek morphology)
 
 **In Our Dataset**:
 - arb (Arabic, Standard) - **confirmed dual**
-- haw (Hawaiian) - **suspected dual** (needs verification)
-- ton (Tongan) - **suspected dual** (needs verification)
+- haw (Hawaiian) - **confirmed dual** (pronouns only) {hawaiian-dual-wiki}
+- ton (Tongan) - **confirmed dual** (pronouns only) {tongan-dual-wiki}
 
 #### Languages with Trial
 
@@ -268,18 +268,18 @@ Singular < Plural < Dual < Trial < Quadrial (not attested)
 
 ### Proposed 10 Test Languages
 
-| # | ISO-639-3 | Language | Family | System | Rationale |
-|---|-----------|----------|--------|--------|-----------|
-| 1 | **eng** | English | Indo-European | S/P | Root language, simple system, baseline |
-| 2 | **spa** | Spanish | Indo-European | S/P | Root language (Romance), mandatory marking |
-| 3 | **arb** | Arabic (Standard) | Afro-Asiatic | S/D/P/Paucal | Complex system, dual + paucal, root language |
-| 4 | **ind** | Indonesian | Austronesian | General Number | Optional marking, isolating tendencies |
-| 5 | **haw** | Hawaiian | Austronesian (Polynesian) | S/D/P (suspected) | Dual suspected, Polynesian representative |
-| 6 | **cmn** | Mandarin Chinese | Sino-Tibetan | General Number | Classifier language, no plural morphology |
-| 7 | **deu** | German | Indo-European (Germanic) | S/P | Root language, mandatory marking |
-| 8 | **swh** | Swahili (if in dataset) | Niger-Congo | Noun Classes | Bantu noun class system |
-| 9 | **rus** | Russian (if in dataset) | Indo-European (Slavic) | S/P | Slavic without dual (contrast with Slovenian) |
-| 10 | **ton** | Tongan | Austronesian (Polynesian) | S/D/P (suspected) | Polynesian dual, compare with Hawaiian |
+| # | ISO-639-3 | Language | Family | System | Mandatory/Optional | Rationale |
+|---|-----------|----------|--------|--------|-------------------|-----------|
+| 1 | **eng** | English | Indo-European | S/P | Mandatory | Root language, simple system, baseline |
+| 2 | **spa** | Spanish | Indo-European | S/P | Mandatory | Root language (Romance), mandatory marking |
+| 3 | **arb** | Arabic (Standard) | Afro-Asiatic | S/D/P/Paucal | Mandatory | Complex system, dual + paucal, root language |
+| 4 | **ind** | Indonesian | Austronesian | General Number | Optional | Optional marking, isolating tendencies |
+| 5 | **haw** | Hawaiian | Austronesian (Polynesian) | S/D/P | Mandatory | Dual confirmed (pronouns), Polynesian representative |
+| 6 | **cmn** | Mandarin Chinese | Sino-Tibetan | General Number | Optional | Classifier language, no plural morphology |
+| 7 | **deu** | German | Indo-European (Germanic) | S/P | Mandatory | Root language, mandatory marking |
+| 8 | **swh** | Swahili | Niger-Congo | Noun Classes | Mandatory | Bantu noun class system |
+| 9 | **rus** | Russian | Indo-European (Slavic) | S/P | Mandatory | Slavic without dual (contrast with Slovenian) |
+| 10 | **ton** | Tongan | Austronesian (Polynesian) | S/D/P | Mandatory | Dual confirmed (pronouns), compare with Hawaiian |
 
 **Backup Candidates** (if above not available):
 - **zlm** (Malay) - Austronesian, optional marking, classifier language
@@ -292,7 +292,7 @@ Singular < Plural < Dual < Trial < Quadrial (not attested)
 
 **Coverage of Systems**:
 - **Simple S/P**: English, Spanish, German, Russian
-- **Dual**: Arabic, Hawaiian (suspected), Tongan (suspected)
+- **Dual**: Arabic, Hawaiian (confirmed - pronouns), Tongan (confirmed - pronouns)
 - **Paucal**: Arabic
 - **Trial**: None in dataset (gap identified)
 - **Optional/General Number**: Indonesian, Mandarin Chinese
@@ -300,7 +300,7 @@ Singular < Plural < Dual < Trial < Quadrial (not attested)
 
 **Theological Significance**:
 - **Arabic**: Can explicitly mark dual for "two disciples," paucal for "a few people"
-- **Hawaiian/Tongan**: If dual confirmed, can distinguish pairs from groups
+- **Hawaiian/Tongan**: Can distinguish pairs from groups using dual pronouns
 - **None with trial**: Cannot explicitly mark Trinity as "exactly 3" (gap)
 
 ## 7. Cultural Nuances & Special Cases
@@ -370,17 +370,18 @@ Singular < Plural < Dual < Trial < Quadrial (not attested)
 
 | Family | Count | Simple (S/P) | Dual | Trial | Paucal | General Number | Notes |
 |--------|-------|--------------|------|-------|--------|----------------|-------|
-| **Austronesian** | 176 | ~130 | ~20 (suspected) | 0 (gap) | ~5 (suspected) | ~20 | Most complex family, but trial languages missing |
+| **Austronesian** | 176 | ~130 | 2+ confirmed (haw, ton) | 0 (gap) | ~5 (estimated) | ~20 | Most complex family, but trial languages missing |
 | **Indo-European** | 135 | ~134 | 0 (Slovenian gap) | 0 | 0 | ~1 | Mostly simple S/P; Slovenian dual not in dataset |
-| **Trans-New Guinea** | 141 | ~140 | ~1 (suspected) | 0 | 0 | 0 | Predominantly S/P |
+| **Trans-New Guinea** | 141 | ~140 | ~1 (estimated) | 0 | 0 | 0 | Predominantly S/P |
 | **Niger-Congo** | 89 | ~89 | 0 | 0 | 0 | 0 | Noun class systems, S/P within classes |
-| **Afro-Asiatic** | 25 | ~20 | ~3 (Arabic, Hebrew) | 0 | ~2 (Arabic) | 0 | Arabic most complex |
+| **Afro-Asiatic** | 25 | ~20 | 1 confirmed (arb) | 0 | 1 confirmed (arb) | 0 | Arabic most complex |
 | **Sino-Tibetan** | 18 | 0 | 0 | 0 | 0 | ~18 | Classifier languages, general number |
-| **Others** | ~424 | ~420 | ~4 (suspected) | 0 | 0 | 0 | Predominantly S/P |
+| **Others** | ~424 | ~420 | ~4 (estimated) | 0 | 0 | 0 | Predominantly S/P |
 
 **Legend**:
-- Numbers are estimates based on typological generalizations
-- "suspected" = not verified, inferred from literature
+- Numbers are estimates based on typological generalizations and dataset verification
+- "confirmed" = verified in dataset and/or scholarly literature
+- "estimated" = not verified, inferred from typological literature
 - "gap" = documented in literature but not in dataset
 
 ## 10. Recommendations for Stage 2
@@ -388,7 +389,7 @@ Singular < Plural < Dual < Trial < Quadrial (not attested)
 ### Priority Actions
 
 1. **Verify Trial Claim**: Cross-reference TBTA's "172 languages" claim with WALS Feature 33/34 and Grambank
-2. **Test Dual Languages**: Analyze how Arabic, Hawaiian (if dual), Tongan (if dual) handle Genesis 1:26, Ruth 1
+2. **Test Dual Languages**: Analyze how Arabic, Hawaiian, Tongan handle Genesis 1:26, Ruth 1 (dual confirmed for all three)
 3. **Test General Number Languages**: How do Indonesian, Mandarin handle number inference?
 4. **Test Animacy Effects**: Do languages restrict number marking by animacy hierarchy?
 
@@ -416,6 +417,8 @@ Singular < Plural < Dual < Trial < Quadrial (not attested)
 - {malay-classifiers} Malay Numeral Classifiers. https://wals.info/chapter/55
 - {sursurunga-trial} Sursurunga Trial Number. https://en.wikipedia.org/wiki/Sursurunga_language
 - {polynesian-grammar} Polynesian Languages. https://www.britannica.com/topic/Polynesian-languages
+- {hawaiian-dual-wiki} Hawaiian Grammar - Dual Number. https://en.wikipedia.org/wiki/Hawaiian_grammar
+- {tongan-dual-wiki} Tongan Language - Dual Number. https://en.wikipedia.org/wiki/Tongan_language
 
 **Dataset**:
 - {languages-tsv} /src/constants/languages.tsv - 1,008 Bible translation languages

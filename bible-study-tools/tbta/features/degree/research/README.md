@@ -32,7 +32,7 @@ TBTA confirms 5 values in actual Biblical texts: **No Degree**, **Comparative**,
 
 **Degree-neutral languages** (~20): Washo, Motu, Fijian, Warlpiri completely lack degree semantics. Use conjoined comparison instead ("X big, Y small"). **Critical for algorithm**: Cannot output C/S/I codes for these languages.
 
-**Recommended translation languages**: English (synthetic+analytic), Spanish (analytic), Mandarin (analytic), Indonesian (optional), Swahili (optional), plus one degree-neutral language (Fijian or Australian Aboriginal).
+**Recommended translation languages**: Greek (synthetic), English (synthetic+analytic), Spanish (analytic), Mandarin (analytic), Indonesian (optional), Swahili (optional), Motu (degree-neutral), Warlpiri (degree-neutral).
 
 [Read full typological analysis →](LANGUAGES.md)
 
