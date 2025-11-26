@@ -1,0 +1,411 @@
+feature: number-system
+default_classification: arbitrary
+theological_significance: EXISTS
+
+# =============================================================================
+# SECTION 1: NON-ARBITRARY CONTEXTS (Theologically or Contextually Critical)
+# =============================================================================
+
+non_arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # 1A. TRINITY REFERENCES (Theological-Critical: Heresy if Wrong)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 1:26 - "Let us make man in our image" (unverified)'
+    affected_values: [trial, plural, dual]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Creation theology
+      - Imago Dei
+
+    # Why is this non-arbitrary?
+    non_arbitrary_rationale: |
+      The Hebrew plural pronoun "us" (נַעֲשֶׂה na'aseh) is interpreted by Christian
+      orthodoxy as a reference to the Trinity (Father, Son, Holy Spirit). The choice
+      of number in target languages affects doctrinal precision:
+      - TRIAL (exactly 3): Explicitly encodes Trinity, most precise
+      - PLURAL (3+ or many): Orthodox but vague, acceptable
+      - DUAL (exactly 2): HERETICAL - implies only 2 divine persons (Arianism/Binarianism)
+
+      Hebrew itself lacks trial, so cannot be as precise as Austronesian languages
+      with trial pronouns (e.g., Larike, Tok Pisin, Marshallese).
+
+    # What is the Christian Orthodox view?
+    christian_orthodox_position:
+      preferred_value: trial
+      acceptable_alternatives: [plural]
+      forbidden_values: [dual, singular]
+      theological_basis: |
+        God is One Essence, Three Persons (Father, Son, Holy Spirit).
+        Trinitarian doctrine affirmed by Nicene Creed (325 AD), Athanasian Creed (5th c.).
+      translator_guidance: |
+        - FIRST CHOICE: Use TRIAL if language has it (e.g., Larike "we-three")
+        - SECOND CHOICE: Use PLURAL if no trial (e.g., English "us")
+        - FORBIDDEN: Never use DUAL (implies only 2 persons - Arian heresy)
+        - FORBIDDEN: Never use SINGULAR (implies one person - Modalism heresy)
+
+    # What are the non-orthodox alternatives?
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Jewish non-Messianic, some liberal Christian scholars]
+        christian_assessment: REJECTED (Angels do not create; Genesis 1:27 "God created" is singular verb)
+      - interpretation: 'Plural of Majesty'
+        used_by: [Jewish tradition, some Christian scholars]
+        christian_assessment: DEBATED (Hebrew lacks clear examples of plural of majesty for self-reference)
+      - interpretation: 'Polytheism (multiple gods)'
+        used_by: [Mormon/LDS, ancient polytheists]
+        christian_assessment: HERETICAL (Violates monotheism - Deuteronomy 6:4 "The LORD is one")
+      - interpretation: 'Binarianism (Father and Son only, no Holy Spirit)'
+        used_by: [Arianism, Jehovah's Witnesses (implicitly)]
+        christian_assessment: HERETICAL (Denies full deity of Holy Spirit)
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 3:22 - "Man has become like one of us" (unverified)'
+    affected_values: [trial, plural, dual]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Fall of Man
+
+    non_arbitrary_rationale: |
+      Same as Genesis 1:26. The plural "us" (מִמֶּנּוּ mimenu "from us") is interpreted
+      as Trinitarian. Choice of number affects doctrinal clarity.
+
+    christian_orthodox_position:
+      preferred_value: trial
+      acceptable_alternatives: [plural]
+      forbidden_values: [dual, singular]
+      theological_basis: 'Trinitarian interpretation consistent with Genesis 1:26.'
+      translator_guidance: 'Same as Genesis 1:26: Trial > Plural, never Dual or Singular.'
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Jewish non-Messianic]
+        christian_assessment: REJECTED (Context is divine judgment, not angelic consultation)
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 11:7 - "Let us go down and confuse their language" (unverified)'
+    affected_values: [trial, plural, dual]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Judgment of God
+
+    non_arbitrary_rationale: |
+      Plural pronoun "us" (נֵרְדָה neredah "let us go down") interpreted as Trinitarian.
+      Babel judgment carried out by Triune God.
+
+    christian_orthodox_position:
+      preferred_value: trial
+      acceptable_alternatives: [plural]
+      forbidden_values: [dual, singular]
+      theological_basis: 'Trinitarian interpretation.'
+      translator_guidance: 'Trial > Plural, never Dual.'
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council'
+        used_by: [Jewish non-Messianic]
+        christian_assessment: REJECTED (Angels do not judge with God's authority)
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Isaiah 6:8 - "Whom shall I send, and who will go for us?" (unverified)'
+    affected_values: [trial, plural, dual]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Divine mission
+      - Isaiah's call
+
+    non_arbitrary_rationale: |
+      Shift from singular "I" (אֶשְׁלַח eshla "I send") to plural "us" (לָנוּ lanu "for us")
+      is interpreted as Trinitarian. Isaiah sees the glory of Christ (John 12:41).
+
+    christian_orthodox_position:
+      preferred_value: trial
+      acceptable_alternatives: [plural]
+      forbidden_values: [dual]
+      theological_basis: 'Isaiah sees the Lord (Yahweh) and the seraphim worship. Christian interpretation: Isaiah saw Christ (John 12:41), reference to Trinity.'
+      translator_guidance: 'Trial preferred, Plural acceptable, Dual inappropriate.'
+
+  # ---------------------------------------------------------------------------
+  # 1B. PAIRS (Contextual-Precision: Reader Confusion if Imprecise)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Ruth 1 - Ruth and Naomi (two women traveling together) (unverified)'
+    affected_values: [dual, plural]
+    theological_stakes: LOW
+    contextual_stakes: MEDIUM
+    affected_doctrines: []
+
+    non_arbitrary_rationale: |
+      Context explicitly identifies two women (Ruth and Naomi). Languages with dual can
+      mark pronouns as "they-two" for narrative clarity. Helps readers track participants.
+      NOT theologically critical, but aids comprehension.
+
+    christian_orthodox_position:
+      preferred_value: dual
+      acceptable_alternatives: [plural]
+      forbidden_values: []
+      theological_basis: 'Not applicable (narrative detail, not doctrine).'
+      translator_guidance: |
+        - PREFERRED: Use DUAL if language has it (e.g., "they-two went")
+        - ACCEPTABLE: Use PLURAL if no dual (e.g., "they went")
+        - PURPOSE: Narrative precision, participant tracking
+        - NOTE: Does not affect doctrine, only reader clarity
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Luke 24:13 - Two disciples on Emmaus road (unverified)'
+    affected_values: [dual, plural]
+    theological_stakes: LOW
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Greek specifies δύο (duo "two") disciples. Dual pronouns in subsequent verses
+      ("they-two were talking") aid narrative flow and participant tracking.
+
+    christian_orthodox_position:
+      preferred_value: dual
+      acceptable_alternatives: [plural]
+      forbidden_values: []
+      translator_guidance: 'Dual enhances clarity; Plural is acceptable.'
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Acts 9:38 - Two men sent to Peter (unverified)'
+    affected_values: [dual, plural]
+    theological_stakes: LOW
+    contextual_stakes: LOW
+
+    non_arbitrary_rationale: 'Narrative specifies two men. Dual aids precision.'
+
+    christian_orthodox_position:
+      preferred_value: dual
+      acceptable_alternatives: [plural]
+      forbidden_values: []
+      translator_guidance: 'Dual preferred but Plural acceptable.'
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Natural pairs (eyes, hands, feet) throughout Scripture (unverified)'
+    affected_values: [dual, plural]
+    theological_stakes: LOW
+    contextual_stakes: LOW
+
+    non_arbitrary_rationale: |
+      Body parts naturally occurring in pairs. Hebrew marks with dual suffix (-ַיִם).
+      Target languages with dual should follow.
+
+    christian_orthodox_position:
+      preferred_value: dual
+      acceptable_alternatives: [plural]
+      forbidden_values: []
+      translator_guidance: |
+        - Hebrew: עֵינַיִם (enayim "two eyes"), יָדַיִם (yadayim "two hands")
+        - Target: Use dual if available
+        - NOT theologically critical, but natural
+
+  # ---------------------------------------------------------------------------
+  # 1C. TRIPLETS (Contextual-Precision: Trial Enhances Clarity)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Matthew 17:1 - Peter, James, and John (three disciples) (unverified)'
+    affected_values: [trial, plural]
+    theological_stakes: LOW
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Three named disciples. Languages with trial can mark "they-three" for narrative
+      precision, distinguishing from the Twelve or larger groups.
+
+    christian_orthodox_position:
+      preferred_value: trial
+      acceptable_alternatives: [plural]
+      forbidden_values: []
+      translator_guidance: 'Trial enhances clarity; Plural is standard.'
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Daniel 3 - Shadrach, Meshach, Abednego (three friends) (unverified)'
+    affected_values: [trial, plural]
+    theological_stakes: LOW
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Three named individuals who refuse to bow to Nebuchadnezzar's statue. Trial
+      pronouns ("they-three refused") enhance narrative cohesion.
+
+    christian_orthodox_position:
+      preferred_value: trial
+      acceptable_alternatives: [plural]
+      forbidden_values: []
+      translator_guidance: 'Trial preferred for clarity, Plural acceptable.'
+
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'John 21:2 - Seven disciples fishing (specific count) (unverified)'
+    affected_values: [plural]
+    theological_stakes: LOW
+    contextual_stakes: LOW
+
+    non_arbitrary_rationale: |
+      Seven named individuals. No language has septual number. Plural is only option.
+      Context provides exact count via numeral "seven."
+
+    christian_orthodox_position:
+      preferred_value: plural
+      acceptable_alternatives: []
+      forbidden_values: []
+      translator_guidance: 'Plural only option. Numeral "seven" provides precision.'
+
+  # ---------------------------------------------------------------------------
+  # 1D. UNIQUE COUNTS (Matthew 28:19 - "Name" MUST be Singular)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Matthew 28:19 - "Baptize in the NAME of the Father, Son, and Holy Spirit" (unverified)'
+    affected_values: [singular]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (Unity of God)
+      - Baptism
+
+    non_arbitrary_rationale: |
+      Greek ὄνομα (onoma "name") is SINGULAR, not plural. This is theologically critical:
+      - SINGULAR "name" = One God, three persons (Trinity)
+      - PLURAL "names" = Three gods (Polytheism/Tritheism - HERESY)
+
+      One name shared by three persons affirms unity of Godhead.
+
+    christian_orthodox_position:
+      preferred_value: singular
+      acceptable_alternatives: []
+      forbidden_values: [plural, dual, trial]
+      theological_basis: |
+        One God (Deuteronomy 6:4), Three Persons. Singular "name" affirms unity.
+        Plural "names" would imply three separate gods (Tritheism).
+      translator_guidance: |
+        - MANDATORY: Use SINGULAR "name" (not "names")
+        - FORBIDDEN: Never use PLURAL "names" (heretical)
+        - Greek ὄνομα is singular (τὸ ὄνομα, not τὰ ὀνόματα)
+        - Critical for Trinitarian orthodoxy
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Plural "names" (three gods)'
+        used_by: [Tritheism, some folk polytheism]
+        christian_assessment: HERETICAL (Violates monotheism)
+
+# =============================================================================
+# SECTION 2: ARBITRARY CONTEXTS (Stylistic/Optional)
+# =============================================================================
+
+arbitrary_contexts:
+
+  - pattern: 'Crowd sizes ("multitude," "many people," "crowd") (unverified)'
+    rationale: |
+      Exact count irrelevant to meaning. Whether translated as paucal ("a few people"),
+      plural ("many people"), or general number ("people") does not affect theology.
+    example_verses: |
+      Matthew 4:25, 14:21, Mark 5:24, Luke 5:1
+    estimated_percentage: 40%
+
+  # ---------------------------------------------------------------------------
+
+  - pattern: 'Generic plurals ("all have sinned," "people love darkness") (unverified)'
+    rationale: |
+      Universal quantifier contexts. Number is semantically irrelevant because "all"
+      already indicates plurality. Choice between plural, paucal, or general number
+      is stylistic.
+    example_verses: |
+      Romans 3:23 "all have sinned," John 3:19 "people loved darkness"
+    estimated_percentage: 20%
+
+  # ---------------------------------------------------------------------------
+
+  - pattern: 'Abstract plurals ("the heavens declare," "your sins are forgiven") (unverified)'
+    rationale: |
+      Abstract or lexicalized plurals. "Heavens" (Hebrew שָׁמַיִם shamayim, dual morphology)
+      refers to one sky, not two. "Sins" is abstract plural, not countable.
+    example_verses: |
+      Psalm 19:1 "the heavens declare," Matthew 9:2 "your sins are forgiven"
+    estimated_percentage: 10%
+
+  # ---------------------------------------------------------------------------
+
+  - pattern: 'Collective nouns ("the people said," "the nation") (unverified)'
+    rationale: |
+      Collective nouns can be singular or plural depending on language. Hebrew often
+      uses singular noun with plural verb (constructio ad sensum). Target language
+      choice is stylistic, not theological.
+    example_verses: |
+      Exodus 19:8 "the people answered," Numbers 14:1 "the congregation lifted up"
+    estimated_percentage: 5%
+
+  # ---------------------------------------------------------------------------
+
+  - pattern: 'Object plurals (stones, fish, loaves) unless narratively significant (unverified)'
+    rationale: |
+      Inanimate objects. Number choice is arbitrary unless count is theologically
+      significant (e.g., 12 loaves, 5 loaves and 2 fish). If specific count matters,
+      numeral provides precision, not number morphology.
+    example_verses: |
+      John 6:9 "five loaves and two fish" (count specified by numeral)
+    estimated_percentage: 8%
+
+  # ---------------------------------------------------------------------------
+
+  - pattern: 'Geographical plurals ("cities," "nations," "lands") (unverified)'
+    rationale: |
+      Plural geographical entities. Unless specific count is theologically relevant
+      (e.g., seven churches of Revelation), number is arbitrary.
+    example_verses: |
+      Matthew 10:15 "cities of Sodom and Gomorrah," Revelation 2-3 "seven churches"
+    estimated_percentage: 2%
+
+# =============================================================================
+# SUMMARY STATISTICS (Estimated)
+# =============================================================================
+
+summary_statistics:
+  theological_critical_percentage: 5%
+  contextual_precision_percentage: 10%
+  arbitrary_percentage: 85%
+
+  theological_critical_note: |
+    Includes Trinity contexts (Genesis 1:26, 3:22, 11:7, Isaiah 6:8) and Matthew 28:19
+    ("name" singular). Heresy risk if translated incorrectly.
+
+  contextual_precision_note: |
+    Includes pairs (Ruth/Naomi, two disciples), triplets (Peter/James/John,
+    Shadrach/Meshach/Abednego). Does not affect doctrine, but aids reader clarity
+    and participant tracking.
+
+  arbitrary_note: |
+    Vast majority of number choices are stylistic. Crowd sizes, generic plurals,
+    abstract concepts, collective nouns, inanimate objects—these do not affect
+    theology. Algorithm can use default rules (e.g., follow source language morphology)
+    without concern for doctrinal error.
+
+# =============================================================================
+# TRANSLATOR GUIDANCE SUMMARY
+# =============================================================================
+
+translator_guidance_summary: |
+  Focus translation accuracy on the 15% non-arbitrary contexts (5% theological, 10% contextual).
+  The 85% arbitrary contexts can follow default rules without risk.
+
+  HIGH-STAKES VERSES (Require 100% Accuracy):
+  - Genesis 1:26, 3:22, 11:7 - TRIAL > PLURAL, never DUAL (Trinity)
+  - Isaiah 6:8 - TRIAL > PLURAL (Trinity)
+  - Matthew 28:19 - SINGULAR "name," never PLURAL (Tritheism)
+
+  MEDIUM-STAKES VERSES (Accuracy Improves Clarity):
+  - Pairs (Ruth 1, Luke 24:13) - DUAL > PLURAL (narrative precision)
+  - Triplets (Matthew 17:1, Daniel 3) - TRIAL > PLURAL (narrative precision)
+
+  LOW-STAKES VERSES (Algorithm Default Acceptable):
+  - Crowds, generic plurals, abstract concepts, collectives, objects - follow source morphology
