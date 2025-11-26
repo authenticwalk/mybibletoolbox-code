@@ -45,25 +45,26 @@ See [TEMPLATE.md](TEMPLATE.md) for the feature development template and [STAGES.
 
 ## Development Status
 
-**Stage 1 Research Complete** (10 features):
-- ✅ [aspect](aspect/) - Grammatical viewpoint (perfective/imperfective)
-- ✅ [degree](degree/) - Comparison and intensity marking
-- ✅ [discourse-genre](discourse-genre/) - Narrative, poetry, prophecy, etc.
-- ✅ [honorifics-register](honorifics-register/) - Social register and politeness
-- ✅ [illocutionary-force](illocutionary-force/) - Speech act force
-- ✅ [participant-tracking](participant-tracking/) - Discourse reference tracking
-- ✅ [proximity-system](proximity-system/) - Spatial/temporal deixis
-- ✅ [surface-realization](surface-realization/) - Voice and realization patterns
-- ✅ [time-granularity](time-granularity/) - Temporal remoteness
-- ✅ [topic-np](topic-np/) - Information structure (topic-comment)
+All 14 features have completed **Stage 1: Research & Definition**.
 
-**Other Features**:
-- ⏸️ [number-system](number-system/) - Phase 1 started (external system)
-- ⏸️ [mood](mood/) - Phase 1 started (external system)
-- ⭕ [person-system](person-system/) - Not yet started
-- ⭕ [polarity](polarity/) - Not yet started
+| Feature | Category | Description | Stage |
+|---------|----------|-------------|-------|
+| [aspect](aspect/) | Grammatical | Perfective/imperfective viewpoint | ✅ Stage 1 |
+| [degree](degree/) | Grammatical | Comparison and intensity marking | ✅ Stage 1 |
+| [mood](mood/) | Grammatical | Indicative, subjunctive, imperative, etc. | ✅ Stage 1 |
+| [number-system](number-system/) | Grammatical | Singular, dual, trial, plural | ✅ Stage 1 |
+| [person-system](person-system/) | Grammatical | 1st/2nd/3rd person, clusivity | ✅ Stage 1 |
+| [polarity](polarity/) | Grammatical | Affirmation vs negation | ✅ Stage 1 |
+| [discourse-genre](discourse-genre/) | Discourse | Narrative, poetry, prophecy, etc. | ✅ Stage 1 |
+| [honorifics-register](honorifics-register/) | Discourse | Social register and politeness | ✅ Stage 1 |
+| [illocutionary-force](illocutionary-force/) | Discourse | Speech act force (command, question) | ✅ Stage 1 |
+| [participant-tracking](participant-tracking/) | Discourse | Reference tracking across discourse | ✅ Stage 1 |
+| [topic-np](topic-np/) | Discourse | Topic-prominent information structure | ✅ Stage 1 |
+| [proximity-system](proximity-system/) | Spatial/Temporal | Near/far deixis | ✅ Stage 1 |
+| [time-granularity](time-granularity/) | Spatial/Temporal | Temporal remoteness | ✅ Stage 1 |
+| [surface-realization](surface-realization/) | Surface | Voice and surface patterns | ✅ Stage 1 |
 
-Previous work has been archived in [features-archive/](features-archive/) for reference.
+**Next**: Stage 2 (Generate Test Set) for all features.
 
 ## Key Principles
 
@@ -98,10 +99,6 @@ Features are production-ready only when:
 - ✅ Real-world testing with both marking and non-marking languages
 - ✅ Translation teams would recommend using this data
 
-## Archive
-
-Previous feature implementations are available in [features-archive/](features-archive/) for reference. These contain valuable learnings but did not follow the complete 6-stage methodology.
-
 ## Cross-Feature Learnings
 
 Transferable patterns and insights from feature development are documented in [../learnings/README.md](../learnings/README.md). These learnings help accelerate development of new features by applying proven approaches.
@@ -111,7 +108,6 @@ Transferable patterns and insights from feature development are documented in [.
 - **[STAGES.md](STAGES.md)** - Complete 6-stage development methodology (authoritative)
 - **[TEMPLATE.md](TEMPLATE.md)** - Feature development template with checklists
 - **[../learnings/README.md](../learnings/README.md)** - Cross-feature learnings and patterns
-- **[features-archive/](features-archive/)** - Previous feature implementations for reference
 
 ## Getting Started
 
