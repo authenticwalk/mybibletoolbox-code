@@ -1,0 +1,482 @@
+feature: mood
+default_classification: arbitrary # Default: most verb moods are stylistic/contextual choices
+theological_significance: EXISTS # Flag: Mood DOES matter doctrinally in specific contexts
+
+# ==============================================================================
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+# ==============================================================================
+
+non_arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # 1. Divine Commands and Moral Law
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Ten Commandments (Exo 20:1-17; Deu 5:6-21) (unverified)'
+    affected_values: [Forbidden Obligation, 'must' Obligation]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Moral law and divine authority
+      - Basis for Christian ethics
+      - Distinction between absolute prohibition and advice
+
+    non_arbitrary_rationale: |
+      The Ten Commandments use STRONG prohibition (Hebrew לֹא + imperfect;
+      Greek LXX οὐ μή + future/subjunctive). Misidentifying as 'should not' (weak advice)
+      vs. Forbidden Obligation (absolute prohibition) undermines the authority of God's
+      moral law. "You shall not murder" is non-negotiable, not a suggestion.
+
+    christian_orthodox_position:
+      preferred_value: Forbidden Obligation
+      acceptable_alternatives: ['must not' Obligation] # Functionally equivalent
+      forbidden_values: ['should not' Obligation] # Weakens divine command
+      theological_basis: |
+        God's moral law is absolute and binding on all humanity. The imperatival force
+        of the Ten Commandments reflects divine authority, not human advice.
+      translator_guidance: |
+        - FIRST CHOICE: Use strongest prohibition form in target language.
+        - Forbidden Obligation (TBTA i) or 'must not' Obligation (f with negation).
+        - AVOID: Weak advisory forms ('should not', g).
+        - Example: "You must not steal" NOT "You shouldn't steal."
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Situational ethics - commands are contextual advice'
+        used_by: [Some liberal Protestant interpretations]
+        christian_assessment: REJECTED (Undermines divine authority and moral absolutism)
+
+  # ---------------------------------------------------------------------------
+  # 2. Great Commission Commands
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Great Commission (Mat 28:19-20) - "Go and make disciples" (unverified)'
+    affected_values: [Imperative, 'must' Obligation]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Missiology and evangelism
+      - Church's mandate
+      - Authority of Christ's commands
+
+    non_arbitrary_rationale: |
+      Greek aorist imperative πορευθέντες "go" + aorist imperative μαθητεύσατε "make disciples."
+      Interpreting as 'should' Obligation (suggestion) vs. Imperative/'must' Obligation
+      (command) affects whether evangelism is optional or mandatory for believers.
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: ['must' Obligation]
+      forbidden_values: ['should' Obligation, Indicative]
+      theological_basis: |
+        Christ's final command to His disciples carries full authority. The Great Commission
+        is not a suggestion but a divine mandate for the Church.
+      translator_guidance: |
+        - Use imperative form in target language.
+        - If no imperative, use strongest obligation marker ('must').
+        - AVOID: Weak obligation ('should') or indicative future ('you will').
+        - Example: "Go and make disciples" NOT "You should go..." or "You will go..."
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Evangelism as optional ministry, not universal command'
+        used_by: [Some universalist or pluralist theologies]
+        christian_assessment: REJECTED (Contradicts Christ's explicit command and Church tradition)
+
+  # ---------------------------------------------------------------------------
+  # 3. Conditional Salvation Verses
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'John 3:16 - "whoever believes MIGHT not perish" vs. "WILL not perish" (unverified)'
+    affected_values: ['might' Potential, Indicative]
+    theological_stakes: VERY HIGH
+    affected_doctrines:
+      - Assurance of salvation
+      - Efficacy of faith
+      - Eternal security
+
+    non_arbitrary_rationale: |
+      Greek uses subjunctive μὴ ἀπόληται "might not perish" (epistemic possibility) vs.
+      indicative ἔχῃ ζωὴν αἰώνιον "has eternal life" (certain fact). Translating subjunctive
+      as indicative ("will not perish" = certain) vs. potential ("might not perish" = uncertain)
+      affects assurance of salvation. Context suggests CERTAIN promise (Indicative force),
+      not hypothetical possibility.
+
+    christian_orthodox_position:
+      preferred_value: Indicative
+      acceptable_alternatives: [Subjunctive in Greek grammar, but translated as Indicative in English]
+      forbidden_values: ['might' Potential when translated as uncertain outcome]
+      theological_basis: |
+        Christian orthodoxy affirms that faith in Christ guarantees salvation (assurance).
+        While Greek uses subjunctive morphologically (grammar), the semantic force is certainty,
+        not mere possibility. "Shall not perish" reflects divine promise, not uncertainty.
+      translator_guidance: |
+        - Translate as CERTAIN outcome: "will not perish" or "shall not perish."
+        - Greek subjunctive morphology ≠ English uncertain "might."
+        - AVOID: "might not perish" (implies salvation is uncertain for believers).
+        - Contextual theology: God's promise is certain, not hypothetical.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Salvation is uncertain; faith may or may not result in eternal life'
+        used_by: [Some Arminian interpretations, Process theology]
+        christian_assessment: REJECTED (Contradicts assurance of salvation and divine promise)
+
+  # ---------------------------------------------------------------------------
+  # 4. Jesus's Predictions of His Death and Resurrection
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Passion predictions (Mat 16:21; Mark 8:31; Luke 9:22) - "The Son of Man MUST suffer" (unverified)'
+    affected_values: ['must' Obligation, Indicative]
+    theological_stakes: VERY HIGH
+    affected_doctrines:
+      - Atonement theology
+      - Divine necessity of the Cross
+      - Christology
+
+    non_arbitrary_rationale: |
+      Greek δεῖ "it is necessary" + infinitive παθεῖν "to suffer" → 'must' Obligation.
+      Translating as Indicative future ("will suffer") vs. 'must' Obligation ("must suffer")
+      affects whether the Cross was divinely NECESSARY (God's plan) or merely PREDICTED
+      (something Jesus foresaw). Orthodox theology: Cross is NECESSARY for atonement.
+
+    christian_orthodox_position:
+      preferred_value: 'must' Obligation
+      acceptable_alternatives: [Indicative future with strong necessity implied]
+      forbidden_values: ['might' Potential, 'should' Obligation]
+      theological_basis: |
+        The Cross was not optional or contingent. δεῖ (dei) expresses divine necessity—
+        the Father's will required Christ's suffering for atonement. "Must" reflects
+        theological necessity, not mere prediction.
+      translator_guidance: |
+        - Use 'must' or 'it is necessary' in target language.
+        - AVOID: 'will' (prediction) without necessity marker.
+        - Example: "The Son of Man must suffer" NOT "will probably suffer."
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Cross was contingent, not divinely necessary; Jesus could have chosen otherwise'
+        used_by: [Some process theology, open theism]
+        christian_assessment: REJECTED (Contradicts divine foreordination and atonement theology)
+
+  # ---------------------------------------------------------------------------
+  # 5. Eschatological Certainty vs. Possibility
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Second Coming certainty (Acts 1:11; Rev 22:20) - "He WILL come" vs. "He MIGHT come" (unverified)'
+    affected_values: [Indicative, 'might' Potential]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Eschatology (doctrine of last things)
+      - Reliability of divine prophecy
+      - Hope and expectation
+
+    non_arbitrary_rationale: |
+      Greek future indicative ἐλεύσεται "will come" → Indicative (certain). Translating as
+      'might' Potential ("might come") undermines certainty of Christ's return. Orthodox
+      eschatology affirms Second Coming is CERTAIN, not hypothetical.
+
+    christian_orthodox_position:
+      preferred_value: Indicative
+      acceptable_alternatives: [] # No alternatives; certainty required
+      forbidden_values: ['might' Potential, 'should' Obligation]
+      theological_basis: |
+        Christ's return is certain, promised by God. Future indicative in Greek affirms
+        factual future event, not mere possibility.
+      translator_guidance: |
+        - Use future indicative: "He will come" or "He shall come."
+        - AVOID: "He might come" or "He may come" (epistemic possibility).
+        - Example: "This same Jesus...will come back" (Acts 1:11).
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Second Coming is symbolic or uncertain'
+        used_by: [Some liberal theology, preterist extremes]
+        christian_assessment: REJECTED (Contradicts apostolic teaching and historic creeds)
+
+  # ---------------------------------------------------------------------------
+  # 6. Imperatives in Prayer (Lord's Prayer, etc.)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Lord''s Prayer petitions (Mat 6:9-13) - "Your kingdom COME" (imperative) vs. "may come" (optative) (unverified)'
+    affected_values: [Imperative, Optative, 'should' Obligation]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prayer theology
+      - Petitionary vs. declarative prayer
+      - God's sovereignty and human agency
+
+    non_arbitrary_rationale: |
+      Greek aorist imperative ἐλθέτω "let it come" (3rd person imperative/jussive). Some
+      translations use optative-like "may Your kingdom come" (wish) vs. imperative "let Your
+      kingdom come" (petition/command). Affects whether prayer is wish (optative) or petition
+      (imperative jussive).
+
+    christian_orthodox_position:
+      preferred_value: Imperative (Jussive)
+      acceptable_alternatives: [Optative (close to jussive in function)]
+      forbidden_values: [Indicative, 'might' Potential]
+      theological_basis: |
+        Lord's Prayer uses imperatives/jussives to express petitions to God. While some
+        translate as optative ("may..."), the force is imperatival petition, not mere wish.
+      translator_guidance: |
+        - Use jussive/imperative: "Let Your kingdom come" or "May Your kingdom come."
+        - Both acceptable (optative overlaps with 3rd person imperative in function).
+        - AVOID: Indicative ("Your kingdom will come") or potential ("might come").
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Prayer as declarative statement of future, not petition'
+        used_by: [Some prosperity gospel, word-of-faith teachings]
+        christian_assessment: CAUTION (May overemphasize human authority over divine sovereignty)
+
+  # ---------------------------------------------------------------------------
+  # 7. Prohibitions in Ethical Teaching (Epistles)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Sexual immorality prohibitions (1 Cor 6:18; Eph 5:3) - "Flee sexual immorality" (unverified)'
+    affected_values: [Imperative, Forbidden Obligation]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christian ethics
+      - Sanctification
+      - Authority of apostolic commands
+
+    non_arbitrary_rationale: |
+      Greek present imperative φεύγετε "flee" (continuous action, command). Translating as
+      'should' Obligation (advice) vs. Imperative/Forbidden Obligation (command) affects
+      whether sexual purity is mandatory or advisable.
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: [Forbidden Obligation (for negative commands), 'must' Obligation]
+      forbidden_values: ['should' Obligation]
+      theological_basis: |
+        Apostolic commands carry divine authority (inspired Scripture). Ethical imperatives
+        are not suggestions but binding commands for believers.
+      translator_guidance: |
+        - Use imperative: "Flee sexual immorality" or "You must flee..."
+        - AVOID: "You should flee..." (weakens command to advice).
+        - Context: Paul's imperatives are authoritative, not advisory.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Biblical ethics as cultural advice, not binding commands'
+        used_by: [Some progressive Christian interpretations]
+        christian_assessment: REJECTED (Undermines biblical authority and apostolic teaching)
+
+  # ---------------------------------------------------------------------------
+  # 8. Conditional Blessing and Curse (Deuteronomy 28-30)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Blessings and curses (Deu 28) - "IF you obey...THEN blessings WILL come" (unverified)'
+    affected_values: [Indicative, Subjunctive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Covenant theology
+      - Conditional vs. unconditional promises
+      - Divine sovereignty and human responsibility
+
+    non_arbitrary_rationale: |
+      Hebrew conditional structure: אִם (im) "if" + protasis, then apodosis. Mood in
+      apodosis (Indicative = certain IF condition met; Subjunctive = hypothetical outcome)
+      affects whether covenant blessings are CERTAIN upon obedience or merely POSSIBLE.
+      Orthodox reading: Certain (Indicative) given condition.
+
+    christian_orthodox_position:
+      preferred_value: Indicative (in apodosis, given protasis condition)
+      acceptable_alternatives: [Subjunctive in grammar, but Indicative force in translation]
+      forbidden_values: ['might' Potential in apodosis (undermines covenant certainty)]
+      theological_basis: |
+        Mosaic covenant blessings/curses are CERTAIN given obedience/disobedience. God's
+        promises are reliable, not hypothetical. Conditional certainty, not uncertain possibility.
+      translator_guidance: |
+        - Protasis: Conditional ("IF you obey...").
+        - Apodosis: Indicative certainty ("THEN blessings WILL come"), not potential ("might come").
+        - Example: "If you obey...all these blessings will come upon you" (Deu 28:2).
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Covenant promises are uncertain even when conditions are met'
+        used_by: [Not a common view]
+        christian_assessment: REJECTED (Contradicts covenant faithfulness of God)
+
+  # ---------------------------------------------------------------------------
+  # 9. Jesus's "I AM" Statements (Potential vs. Indicative)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Jesus''s "I AM" statements (John 8:58; Exo 3:14) - Indicative vs. Potential (unverified)'
+    affected_values: [Indicative, 'might' Potential]
+    theological_stakes: VERY HIGH
+    affected_doctrines:
+      - Christology (deity of Christ)
+      - Divine self-identification
+      - Trinity
+
+    non_arbitrary_rationale: |
+      Greek ἐγώ εἰμι "I AM" (present indicative) → Indicative (factual assertion). Any mood
+      suggesting uncertainty ('might be,' 'could be') is HERETICAL. Christ asserts His
+      eternal, divine nature, not hypothetical possibility.
+
+    christian_orthodox_position:
+      preferred_value: Indicative
+      acceptable_alternatives: [] # No alternatives; factual assertion required
+      forbidden_values: ['might' Potential, Subjunctive, Optative, 'should' Obligation]
+      theological_basis: |
+        Jesus claims divine identity using God's covenant name (Yahweh = "I AM"). Present
+        indicative asserts eternal existence and deity. Any weakening to possibility is heresy.
+      translator_guidance: |
+        - Translate as factual assertion: "I AM" or "I am He."
+        - FORBIDDEN: "I might be..." or "I could be..."
+        - Example: "Before Abraham was born, I AM" (John 8:58).
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Jesus claims messiah-ship but not deity'
+        used_by: [Jehovah's Witnesses, Arianism, Unitarianism]
+        christian_assessment: HERETICAL (Denies deity of Christ, rejected by Nicene Creed)
+
+  # ---------------------------------------------------------------------------
+  # 10. Apostolic Exhortations to Persevere
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Perseverance exhortations (Heb 10:23; Rev 2:10) - "Hold fast" imperative vs. "should hold" (unverified)'
+    affected_values: [Imperative, 'should' Obligation]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Perseverance of the saints
+      - Assurance vs. warning
+      - Apostolic authority
+
+    non_arbitrary_rationale: |
+      Greek present imperative κατέχωμεν "let us hold fast" (Heb 10:23). Translating as
+      'should' Obligation (weak) vs. Imperative (strong) affects urgency and seriousness
+      of perseverance warnings.
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: ['must' Obligation]
+      forbidden_values: ['should' Obligation (weakens urgency)]
+      theological_basis: |
+        Apostolic exhortations to persevere are serious commands, not casual advice. While
+        debated within orthodoxy (Calvinist vs. Arminian), both affirm imperative force.
+      translator_guidance: |
+        - Use imperative: "Hold fast" or "Let us hold fast."
+        - AVOID: "We should hold fast" (too weak for apostolic exhortation).
+        - Example: "Let us hold unswervingly to the hope we profess" (Heb 10:23).
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Perseverance optional; believers may apostatize without consequence'
+        used_by: [Some extreme free-grace theology]
+        christian_assessment: REJECTED (Contradicts NT warnings and apostolic teaching)
+
+
+# ==============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+# ==============================================================================
+
+arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # 1. Narrative Past Actions (Indicative)
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Historical narrative verbs (e.g., 'Jesus said,' 'They went,' 'He healed')"
+    rationale: |
+      94.62% of verbs in Biblical text are Indicative (factual narrative). Mood choice
+      in these contexts is not theologically significant—narrative flow, not doctrine.
+    estimated_percentage: 85%
+
+  # ---------------------------------------------------------------------------
+  # 2. Travel and Movement Descriptions
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Travel itineraries (e.g., 'Paul went to Corinth,' 'They sailed to Cyprus')"
+    rationale: |
+      Geographical details are factual narrative. Mood (Indicative) is automatic, not
+      theologically significant.
+    estimated_percentage: 5%
+
+  # ---------------------------------------------------------------------------
+  # 3. Crowd Sizes and Numerical Descriptions
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Crowd sizes (e.g., 'a great multitude gathered,' '5000 men were fed')"
+    rationale: |
+      Numerical descriptions are factual. No theological implication to mood choice
+      (Indicative default).
+    estimated_percentage: 2%
+
+  # ---------------------------------------------------------------------------
+  # 4. Routine Daily Actions
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Daily activities (e.g., 'They ate,' 'He slept,' 'She drew water')"
+    rationale: |
+      Mundane actions described factually (Indicative). No doctrinal significance to mood.
+    estimated_percentage: 3%
+
+  # ---------------------------------------------------------------------------
+  # 5. Stylistic Variation in Questions
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Interrogative Indicative (e.g., 'Do you see these things?')"
+    rationale: |
+      Questions about observable facts use Indicative mood. Mood choice is grammatical,
+      not theologically significant. (Rhetorical questions may be exception—see non-arbitrary.)
+    estimated_percentage: 2%
+
+  # ---------------------------------------------------------------------------
+  # 6. Subjunctive in Purpose Clauses (Non-Theological)
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Purpose clauses with no theological content (e.g., 'so that he might arrive on time')"
+    rationale: |
+      Greek ἵνα + subjunctive in mundane purpose clauses is grammatical, not theological.
+      Mood determined by syntax, not doctrine.
+    estimated_percentage: 1%
+
+  # ---------------------------------------------------------------------------
+  # 7. Hypothetical Scenarios (Non-Doctrinal)
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Non-theological hypotheticals (e.g., 'If someone lends you money...')"
+    rationale: |
+      Conditional structures in wisdom literature or practical teaching where outcome is
+      not doctrinally significant. Subjunctive/conditional mood is grammatical.
+    estimated_percentage: 1%
+
+  # ---------------------------------------------------------------------------
+  # 8. Epistemic Potential in Speculation
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Human speculation about non-doctrinal matters (e.g., 'They might have thought...')"
+    rationale: |
+      Epistemic potential ('might') used for human uncertainty in narrative. Not
+      theologically significant—describes human perspective, not divine truth.
+    estimated_percentage: 1%
+
+
+# ==============================================================================
+# SUMMARY
+# ==============================================================================
+
+summary:
+  total_non_arbitrary_groups: 10
+  total_arbitrary_groups: 8
+  estimated_arbitrary_percentage: 85%
+  estimated_non_arbitrary_percentage: 15%
+
+  key_takeaway: |
+    Mood is ARBITRARY in the vast majority of Biblical text (85%+)—narrative Indicative
+    dominates. However, the 15% of non-arbitrary contexts carry VERY HIGH theological
+    stakes (commands, salvation promises, Christological claims, covenant conditions).
+    Accurate mood annotation is ESSENTIAL in these high-stakes contexts to preserve
+    Christian orthodoxy.
+
+  translator_guidance_summary: |
+    - **Default to Indicative** (94.62% of verbs)—safe baseline.
+    - **High vigilance** for: divine commands, prohibitions, salvation promises,
+      Christological assertions, covenant conditions, eschatological certainty.
+    - **Consult TBTA annotation** in all imperative, obligation, and potential contexts.
+    - **When in doubt**: Prefer stronger mood (Imperative > 'must' > 'should'; Indicative > Potential).
+    - **Theological review**: Non-arbitrary contexts require exegetical and theological
+      validation, not just linguistic analysis.
+
+---
+
+# Document Metadata
+document_status: Complete
+methodology: |
+  Biblical knowledge (unverified) + theological analysis + TBTA mood value system.
+  All verse patterns are inferred from internal knowledge (LLM), not verified from text.
+last_updated: 2025-11-26
