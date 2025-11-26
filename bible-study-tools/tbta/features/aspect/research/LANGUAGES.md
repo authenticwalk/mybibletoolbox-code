@@ -130,7 +130,7 @@ Analysis of which major Bible translation languages have grammatical aspect:
 | **Hebrew** | heb | Afro-Asiatic | **MANDATORY** | Morphological | Source language; perfective/imperfective opposition |
 | **Latin** | lat | Indo-European | **MANDATORY** | Morphological | Vulgate; perfect/imperfect distinction (merged PIE aorist+perfect) {latin-aspect} |
 | **Arabic** | arb | Afro-Asiatic | **MANDATORY** | Morphological | Perfective/imperfective stems; major translation language |
-| **Russian** | rus | Indo-European (Slavic) | **MANDATORY** | Morphological | Perfective/imperfective verb pairs (suspected) |
+| **Russian** | rus | Indo-European (Slavic) | **MANDATORY** | Morphological | Perfective/imperfective verb pairs |
 | **Spanish** | spa | Indo-European (Romance) | **OPTIONAL** | Periphrastic | Preterite/imperfect contrast; estar + gerund for progressive {spanish-aspect} |
 | **French** | fra | Indo-European (Romance) | **OPTIONAL** | Periphrastic | Passé composé/imparfait; être en train de for progressive (suspected) |
 | **German** | deu | Indo-European (Germanic) | **OPTIONAL** | Periphrastic | Perfekt/Präteritum; limited progressive marking (suspected) |
@@ -357,7 +357,7 @@ Based on Bible translation history and linguistic dominance:
 | **9** | **German** | deu | OPTIONAL periphrastic | European influence; limited aspect |
 | **10** | **Swahili** | swa | MANDATORY morphological | East African lingua franca; Bantu TAM system |
 | **11** | **Indonesian** | ind | OPTIONAL particles | Indonesia/Malaysia; optional contextual markers |
-| **12** | **Russian** | rus | MANDATORY morphological | Eastern Europe/Central Asia; perfective/imperfective pairs (suspected) |
+| **12** | **Russian** | rus | MANDATORY morphological | Eastern Europe/Central Asia; perfective/imperfective pairs |
 
 **Regional root language patterns**:
 - **Americas**: Spanish, Portuguese, English, French (mostly OPTIONAL aspect)
@@ -395,7 +395,7 @@ Based on Bible translation history and linguistic dominance:
 | **3** | **English** | eng | Indo-European (Germanic) | OPTIONAL | Periphrastic (be + -ing, have + -en) | Major root language; common intermediate; progressive/perfect |
 | **4** | **Spanish** | spa | Indo-European (Romance) | OPTIONAL | Periphrastic/Morphological | Root language (Americas); preterite/imperfect contrast; estar + gerund |
 | **5** | **Arabic** | arb | Afro-Asiatic | MANDATORY | Morphological (perfective/imperfective stems) | Root language (Middle East); distinct stem system; 31K+ verses |
-| **6** | **Russian** | rus | Indo-European (Slavic) | MANDATORY | Morphological (paired verbs) | Slavic representative; perfective/imperfective obligatory; Eastern Europe root language (suspected) |
+| **6** | **Russian** | rus | Indo-European (Slavic) | MANDATORY | Morphological (paired verbs) | Slavic representative; perfective/imperfective obligatory; Eastern Europe root language |
 | **7** | **Swahili** | swa | Niger-Congo (Bantu) | MANDATORY | Morphological (TAM prefixes) | African root language; agglutinative TAM template; SC-TAM-OC-Root-EXT-FV |
 | **8** | **Indonesian** | ind | Austronesian | OPTIONAL | Particles (sudah/sedang/telah) | SE Asian root language; contextual aspect; contrast with obligatory systems |
 | **9** | **Kaqchikel** | cak | Mayan | MANDATORY | Morphological (complex) | Mayan representative; aspect-prominent (over tense); 7 aspects in proto-Mayan; Guatemala |
