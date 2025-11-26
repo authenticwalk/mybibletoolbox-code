@@ -1,58 +1,38 @@
 # Participant Tracking
 
-## Overview
+**Definition**: Marks how discourse entities (characters, objects) are introduced, maintained, and reactivated across narrative. Universally necessary but grammatically encoded through switch-reference, topic particles, pro-drop systems, or articles.
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Aspect | Details |
+|--------|---------|
+| **Values** | 9 defined: Routine (73%), Generic (14%), Frame Inferable (7.5%), First Mention (5.4%), others (<1%) |
+| **Gateway** | Part = Noun or Pronoun only |
+| **Coverage** | 11,649 verses (37% Bible, prioritizing narrative) |
+| **Theological Risk** | **CRITICAL**: Trinity ambiguity (Gen 1:26), Christology (John 1:1), resurrection witnesses (1 Cor 15) |
+| **Contextual Risk** | **HIGH**: Participant enumeration (John 21:2), pronoun ambiguity (Acts 9/22/26) |
 
-Participant tracking analyzes how participants (characters, entities) are introduced, referenced, and tracked throughout a discourse - including pronoun use, zero anaphora, switch reference, and other participant management strategies.
+## Critical Languages
 
-## Development Status
+| Strategy | Examples | Impact |
+|----------|----------|--------|
+| **Switch-Reference** (Mandatory) | Huli, Iatmul, Tucanoan | Requires grammatical SS/DS marking at every clause boundary |
+| **Topic-Prominent** (Mandatory) | Japanese (は/が), Korean (은/는), Mandarin | Particle choice directly encodes participant tracking |
+| **Pro-Drop** (Optional pronouns) | Spanish, Greek, Hebrew, Russian | Zero anaphora allowed for routine; explicit for emphasis/clarity |
+| **Non-Pro-Drop** (Required pronouns) | English, German, French | Articles signal definiteness; pronouns required for clarity |
 
-🚧 **Stage 0**: Not yet started
+## Theological Examples
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+❌ **WRONG**: John 1:1 conflates Word and God (modalism—same person) → **FORBIDDEN**
 
-## Development Checklist
+✅ **RIGHT**: John 1:1 distinguishes Word from God (relational) while affirming both divine (essential)
 
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/participant-tracking/`)
-- [ ] Generate README.md with feature definition + stage checklist
+⚠️ **CAUTION**: Gen 1:26 "us"—Trinity (orthodox) vs. divine council (rejected) vs. polytheism (heretical)
 
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
+## TBTA Encoding
 
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
+Position 5 or 6 in noun semantic string (9-character code). **Note**: Discrepancy between source documents; requires verification. See [research/TBTA.md](./research/TBTA.md) for full details.
 
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
+---
 
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
-
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
-
-## Resources
-
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/participant-tracking/](../features-archive/participant-tracking/)
+**Stage 1 Status**: ✅ Complete | **Next**: Stage 2 Analysis | **Learn More**: [research/README.md](./research/README.md)

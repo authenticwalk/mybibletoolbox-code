@@ -1,0 +1,650 @@
+feature: discourse-genre
+default_classification: contextual # Genre usually clear from context
+theological_significance: CRITICAL # Genre misidentification = heresy/confusion
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # === 1A: NON-ARBITRARY-THEOLOGICAL (Doctrinal Stakes) ===
+
+  - verse_pattern: 'Genesis 1-2 - Creation account (unverified)'
+    affected_values: [narrative, poetry, allegory, myth]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Creation ex nihilo
+      - Historicity of Adam and Eve
+      - Original sin doctrine
+      - Biblical inerrancy
+      - Age of earth debates
+
+    non_arbitrary_rationale: |
+      Genre identification of Genesis 1-2 has massive theological implications.
+      Conservative Protestant orthodoxy holds this as HISTORICAL NARRATIVE
+      (though literary framework view exists within orthodoxy). Treating as
+      poetry/myth/allegory undermines:
+      - Paul's theology in Romans 5 (historical Adam)
+      - 1 Corinthians 15:22 (Adam-Christ parallel)
+      - Original sin doctrine
+      - Marriage theology (Matthew 19:4-6 - Jesus treats as historical)
+      Wrong genre = foundational doctrinal errors.
+
+    christian_orthodox_position:
+      preferred_value: narrative
+      acceptable_alternatives: [narrative_with_literary_structure]
+      forbidden_values: [myth, allegory_only, non_historical_poetry]
+      theological_basis: 'Jesus and Paul treat Adam as historical person (Romans 5:12-21, 1 Cor 15:22, Matthew 19:4-6). Historical narrative with elevated literary style.'
+      translator_guidance: |
+        - FIRST CHOICE: Label as NARRATIVE (historical)
+        - ACCEPTABLE: Note literary features (chiasm, parallelism) BUT maintain historicity
+        - FORBIDDEN: Label as myth, allegory, or non-historical poetry
+        - CRITICAL: Genre affects how readers understand:
+          * Literal 6 days vs figurative
+          * Historical Adam vs symbolic representation
+          * Fall as historical event vs allegory
+        - NOTE: Some evangelical scholars hold "literary framework" view
+          (historical events, non-chronological presentation) - debated but not heretical
+        - DOCTRINAL STAKES: Original sin, federal headship, Christ as "second Adam"
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Mythological account (ANE creation myth)'
+        used_by: [Liberal theology, Neo-orthodoxy, some mainline denominations]
+        christian_assessment: REJECTED - Undermines biblical authority and historicity
+        genre_implication: Myth or allegory, not historical narrative
+
+      - interpretation: 'Poetic/Allegorical only (no historical content)'
+        used_by: [Theistic evolution (some versions), progressive Christianity]
+        christian_assessment: PROBLEMATIC - Paul treats Adam as historical (Romans 5)
+        genre_implication: Poetry or allegory, denies historicity
+
+      - interpretation: 'Literary framework (historical events, non-chronological)'
+        used_by: [Some evangelical scholars - Meredith Kline, et al.]
+        christian_assessment: DEBATED within orthodoxy (not heretical, but controversial)
+        genre_implication: Narrative with literary structuring device
+
+  - verse_pattern: 'Jonah (entire book) - Prophet and great fish (unverified)'
+    affected_values: [narrative, parable, allegory, didactic_fiction]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Biblical authority
+      - Jesus's use of OT
+      - Miracle accounts
+      - Prophetic historicity
+
+    non_arbitrary_rationale: |
+      Jesus references Jonah as historical precedent in Matthew 12:39-41
+      ("For as Jonah was three days and three nights in the belly of the great fish,
+      so will the Son of Man be three days and three nights in the heart of the earth").
+      If Jonah is parable/fiction, then Jesus either:
+      (a) was mistaken about OT history, OR
+      (b) used fictional story as if historical (undermines His authority)
+      Genre choice affects Christology and biblical inerrancy.
+
+    christian_orthodox_position:
+      preferred_value: narrative
+      acceptable_alternatives: []
+      forbidden_values: [parable, allegory, didactic_fiction]
+      theological_basis: 'Jesus treats Jonah as historical (Matthew 12:39-41, Luke 11:29-32). 2 Kings 14:25 identifies Jonah as historical prophet.'
+      translator_guidance: |
+        - REQUIRED: Label as NARRATIVE (historical account)
+        - FORBIDDEN: Label as parable or fiction
+        - REASON: Jesus's reference assumes historicity
+        - IF labeled as fiction: Undermines Jesus's use of OT and His authority
+        - MIRACLE: The sign is not literary device but historical miracle
+          (like resurrection - both supernatural acts)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Didactic parable or wisdom tale'
+        used_by: [Liberal scholarship, some Jewish interpretations]
+        christian_assessment: REJECTED - Contradicts Jesus's use in Matthew 12
+        genre_implication: Parable or allegory, not historical
+
+  - verse_pattern: 'Gospel accounts of Jesus - Birth, ministry, death, resurrection (unverified)'
+    affected_values: [narrative, theological_narrative, legend, myth]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Resurrection of Christ
+      - Deity of Christ
+      - Miracles
+      - Atonement
+      - Gospel reliability
+
+    non_arbitrary_rationale: |
+      Genre of Gospels determines whether resurrection, miracles, and Christ's
+      claims are historical facts or theological symbols. Liberal scholarship
+      treats Gospels as "theological narrative" (meaning not historically accurate).
+      Conservative orthodoxy: Gospels are historical biography with theological
+      purpose - BOTH historical AND theological. Wrong genre = denial of
+      resurrection, miracles, deity of Christ.
+
+    christian_orthodox_position:
+      preferred_value: narrative
+      acceptable_alternatives: [biographical_narrative, historical_theological_narrative]
+      forbidden_values: [legend, myth, non_historical_theological_story]
+      theological_basis: 'Luke 1:1-4 - "carefully investigated everything from the beginning." John 20:30-31 - signs are historically true AND recorded for belief. 1 Cor 15:14 - if Christ not raised (historical fact), faith is futile.'
+      translator_guidance: |
+        - REQUIRED: Label as NARRATIVE or HISTORICAL NARRATIVE
+        - ACCEPTABLE: Note "biographical" or "historical-theological" (both historical and theological)
+        - FORBIDDEN: Label as legend, myth, or non-historical theological story
+        - CRITICAL: If not historical, Christianity collapses (1 Cor 15:14-19)
+        - MIRACLES: Must be understood as historical events, not symbolic stories
+        - NOTE: Genre affects apologetics - if Gospels are legends, no evidence for resurrection
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Theological narratives (not historically accurate)'
+        used_by: [Liberal theology, form criticism, some biblical criticism]
+        christian_assessment: HERETICAL - Denies historicity of resurrection and miracles
+        genre_implication: Theological story, legend, or myth
+
+      - interpretation: 'Midrash or Jewish haggadah'
+        used_by: [Some liberal scholars]
+        christian_assessment: REJECTED - Gospels claim eyewitness testimony (Luke 1:2, John 21:24)
+        genre_implication: Creative theological fiction based on historical kernel
+
+  - verse_pattern: 'Revelation (entire book) - End times prophecy (unverified)'
+    affected_values: [apocalyptic, prophecy, symbolic_prophecy, literal_prophecy]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Eschatology
+      - Second Coming
+      - Final judgment
+      - Interpretation of symbols
+
+    non_arbitrary_rationale: |
+      Revelation's genre affects how we interpret the entire book. If treated
+      as LITERAL prophecy, leads to extreme date-setting, misinterpretation of
+      symbols (666, beasts, etc.). If treated as APOCALYPTIC literature
+      (established Jewish genre with symbolic conventions), properly understood.
+      Genre choice affects eschatological positions (premil, amil, postmil).
+
+    christian_orthodox_position:
+      preferred_value: apocalyptic
+      acceptable_alternatives: [apocalyptic_prophecy, symbolic_prophecy]
+      forbidden_values: [purely_literal_prophecy, non_prophetic_historical_only]
+      theological_basis: 'Revelation 1:1 - "signified" (communicated through signs/symbols). Uses established apocalyptic conventions from Daniel, Ezekiel, Zechariah.'
+      translator_guidance: |
+        - FIRST CHOICE: APOCALYPTIC (genre with symbolic conventions)
+        - ACCEPTABLE: "Apocalyptic prophecy" or "Symbolic prophecy"
+        - CAUTION: Purely literal interpretation misses symbolic genre conventions
+        - BALANCE: Real future events (Second Coming, judgment) communicated
+          through symbolic apocalyptic imagery
+        - AVOID: Treating all details as literal (leads to absurdities and
+          false date-setting - "blood to the horses' bridles" is hyperbole)
+        - NOTE: This allows for different eschatological positions (premil,
+          amil, postmil) within orthodoxy
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Purely historical (already fulfilled in 70 AD)'
+        used_by: [Full preterism]
+        christian_assessment: HERETICAL - Denies future Second Coming and resurrection
+        genre_implication: Historical narrative about past events only
+
+      - interpretation: 'Purely symbolic (no future fulfillment)'
+        used_by: [Some amillennial extreme views]
+        christian_assessment: PROBLEMATIC - Revelation promises Christ's return
+        genre_implication: Allegory with no prophetic content
+
+  - verse_pattern: 'Luke 16:19-31 - Rich Man and Lazarus (unverified)'
+    affected_values: [parable, narrative, teaching_illustration]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Afterlife
+      - Hell
+      - Intermediate state
+      - Consciousness after death
+
+    non_arbitrary_rationale: |
+      Debate exists: Is this a PARABLE (illustrative story) or HISTORICAL
+      ACCOUNT (actual events)? Unique among Jesus's stories - names a character
+      ("Lazarus"), doesn't start with typical parable formula ("A certain man...").
+      Genre affects whether we derive doctrine from details (Abraham's bosom,
+      great chasm, etc.). Most evangelicals: parable using common Jewish
+      imagery, but teaches real doctrine about afterlife.
+
+    christian_orthodox_position:
+      preferred_value: parable
+      acceptable_alternatives: [historical_account, teaching_narrative]
+      forbidden_values: []
+      theological_basis: 'Whether parable or history, teaches conscious afterlife, judgment, irreversibility. Conservative scholars divided on genre; both views orthodox.'
+      translator_guidance: |
+        - ACCEPTABLE: Label as PARABLE (most common view) or NARRATIVE
+        - NOTE: Unlike other parables, names character ("Lazarus")
+        - DOCTRINAL CONTENT: Regardless of genre, teaches:
+          * Conscious existence after death
+          * Judgment and consequences
+          * Irreversible separation
+        - CAUTION: Don't build elaborate afterlife theology from every detail
+          if parable (e.g., Abraham's "bosom" may be imagery, not doctrine)
+        - BOTH VIEWS ORTHODOX: Debate exists within conservative Christianity
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Pure allegory (no afterlife implications)'
+        used_by: [Jehovah's Witnesses (deny conscious afterlife), some liberals]
+        christian_assessment: REJECTED - Jesus teaches conscious afterlife here and elsewhere
+        genre_implication: Allegory with no doctrinal content
+
+  # === 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ===
+
+  - verse_pattern: 'Job (entire book) - Suffering and dialogue (unverified)'
+    affected_values: [narrative_with_poetry, wisdom_literature, drama, pure_allegory]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Theodicy
+      - Suffering
+      - Satan's role
+
+    non_arbitrary_rationale: |
+      Job's genre affects interpretation. Most scholars: historical core
+      (Job was real person - Ezekiel 14:14,20; James 5:11) with poetic
+      dialogues (chs 3-41) in wisdom literature genre. If treated as pure
+      allegory or drama, readers may dismiss theodicy discussions as
+      non-applicable to real suffering. Genre recognition helps readers
+      understand poetic speeches aren't endorsing all views expressed
+      (e.g., Job's friends are rebuked by God).
+
+    christian_orthodox_position:
+      preferred_value: narrative_with_poetry
+      acceptable_alternatives: [wisdom_literature, historical_narrative_with_poetic_dialogue]
+      forbidden_values: [pure_fiction, pure_allegory]
+      theological_basis: 'Job treated as historical person by Ezekiel (14:14,20) and James (5:11). Book uses wisdom literature conventions with poetic dialogues.'
+      translator_guidance: |
+        - PREFERRED: Label as "Narrative with poetry" or "Wisdom literature"
+        - HISTORICAL CORE: Job was real person (Ezekiel, James references)
+        - POETIC DIALOGUES: Chapters 3-41 are elevated poetry, not word-for-word
+          transcription of conversations
+        - READER BENEFIT: Genre recognition helps understand:
+          * Not all dialogue is endorsed by God (friends are wrong)
+          * Poetic hyperbole vs literal statements
+          * Wisdom literature explores questions, not always gives pat answers
+        - AVOID: Pure allegory (dismisses historical reality of suffering)
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Proverbs (entire book) - Wisdom sayings (unverified)'
+    affected_values: [wisdom_literature, poetry, legal_text, promises]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Genre recognition is CRITICAL for application. Proverbs are WISDOM
+      SAYINGS (general principles), not PROMISES or LEGAL COMMANDS. Misreading
+      genre leads to:
+      - "Train up a child in the way he should go, and when he is old he will
+        not depart from it" (22:6) - treated as promise leads to false guilt
+        when godly parents have prodigal children
+      - Prosperity proverbs - misread as guarantees of wealth for righteous
+      Wrong genre = prosperity gospel, false expectations, disillusionment.
+
+    christian_orthodox_position:
+      preferred_value: wisdom_literature
+      acceptable_alternatives: [poetry, proverbial_sayings]
+      forbidden_values: [legal_text, promises, prophecy]
+      theological_basis: 'Proverbs teach general principles of wisdom, not absolute promises. Ecclesiastes 8:14 acknowledges exceptions to retribution principle.'
+      translator_guidance: |
+        - REQUIRED: Label as WISDOM LITERATURE or PROVERBIAL SAYINGS
+        - FORBIDDEN: Label as promises or legal commands
+        - CRITICAL FOR APPLICATION: Proverbs are:
+          * General principles, not universal guarantees
+          * Descriptive of how life usually works, not prescriptive promises
+          * Require wisdom in application (Proverbs 26:4-5 - contradictory?)
+        - READER IMPACT: Wrong genre creates:
+          * False guilt (godly parents with prodigal kids think they failed)
+          * Prosperity theology (righteous guaranteed wealth)
+          * Disillusionment with God (when principles don't "work")
+        - EXAMPLE: Prov 22:6 is principle, not promise; Prov 10:4 describes
+          general pattern, not ironclad rule
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Absolute promises from God'
+        used_by: [Prosperity gospel, "name it and claim it" theology]
+        christian_assessment: REJECTED - Misreads genre, contradicts Ecclesiastes and Job
+        genre_implication: Prophecy or legal promises, not wisdom
+
+  - verse_pattern: 'Psalms (entire book) - Poetry and worship (unverified)'
+    affected_values: [poetry, hymns, prophecy, historical_narrative]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Psalms are HEBREW POETRY with:
+      - Parallelism (meaning repeated/contrasted, not new info each line)
+      - Metaphor and imagery ("Under his wings" - not literal feathers)
+      - Hyperbole ("All night I make my bed swim with tears")
+      - Imprecatory elements (curses on enemies - requires genre understanding)
+      Wrong genre leads to:
+      - Literal interpretation of poetic imagery (God has feathers - Ps 91:4)
+      - Scientific claims (flat earth from "four corners" - Ps 104)
+      - Misunderstanding imprecatory psalms (permission to curse enemies)
+
+    christian_orthodox_position:
+      preferred_value: poetry
+      acceptable_alternatives: [hymns, worship_poetry, mixed_with_prophecy]
+      forbidden_values: [historical_narrative, scientific_text]
+      theological_basis: 'Psalms use Hebrew poetry conventions - parallelism, metaphor, hyperbole. Some Psalms prophetic (Ps 22, 110), but primarily worship poetry.'
+      translator_guidance: |
+        - REQUIRED: Label as POETRY or HYMNS
+        - RECOGNIZE FEATURES:
+          * Parallelism - second line restates/contrasts first (not new info)
+          * Metaphor - "wings" (Ps 91:4), "rock" (Ps 18:2) are images, not literal
+          * Hyperbole - "all night I flood my bed with tears" (Ps 6:6) is emotional intensity
+          * Acrostic structures (Ps 119)
+        - READER BENEFIT: Genre recognition prevents:
+          * Wooden literalism ("God has feathers")
+          * False cosmology claims ("four corners of earth" is poetry, not flat earth)
+          * Misuse of imprecatory psalms (curses - understood in covenant context)
+        - NOTE: Some Psalms clearly prophetic (22 - crucifixion, 110 - Messiah)
+          - these are poetry AND prophecy (mixed genre)
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Song of Solomon (entire book) - Love poetry (unverified)'
+    affected_values: [poetry, allegory, love_poetry, wisdom_literature]
+    theological_stakes: LOW-MEDIUM
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Historical debate: Pure ALLEGORY (Christ and Church) vs LOVE POETRY
+      (celebrating marital love). Traditional interpretation: allegory.
+      Modern evangelical consensus: love poetry celebrating marriage (with
+      possible typological connections to Christ and Church). Genre affects
+      whether book teaches about marriage or is purely symbolic. Both views
+      within orthodoxy.
+
+    christian_orthodox_position:
+      preferred_value: love_poetry
+      acceptable_alternatives: [allegory, typological_poetry]
+      forbidden_values: [erotic_literature_only]
+      theological_basis: 'Modern evangelical consensus: love poetry celebrating marital intimacy (part of biblical sex-positive view). Traditional view: allegory of Christ and Church. Both orthodox.'
+      translator_guidance: |
+        - EVANGELICAL CONSENSUS: LOVE POETRY (celebrating marital love)
+        - TRADITIONAL VIEW: ALLEGORY (Christ and Church) - still held by some
+        - BOTH ORTHODOX: No doctrinal test on this
+        - BENEFIT OF LOVE POETRY VIEW:
+          * Affirms marital intimacy as God's design
+          * Celebrates romantic love in Scripture
+          * Provides biblical model for marriage
+        - BENEFIT OF ALLEGORICAL VIEW:
+          * Connects to Ephesians 5 (Christ and Church as marriage)
+          * Part of salvation history theme
+        - CAUTION: Don't force allegory on every verse (can become absurd)
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Daniel 1-6 vs 7-12 - Narrative vs Apocalyptic (unverified)'
+    affected_values: [narrative, apocalyptic, prophecy, mixed_genre]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Daniel has clear genre shift: Chapters 1-6 are HISTORICAL NARRATIVE
+      (stories of Daniel, lions' den, fiery furnace). Chapters 7-12 are
+      APOCALYPTIC PROPHECY (visions with symbolic beasts, numbers). Wrong
+      genre identification causes:
+      - Treating ch 1-6 as allegory (denies historical miracles)
+      - Treating ch 7-12 as purely literal (misses symbolic conventions)
+
+    christian_orthodox_position:
+      preferred_value: mixed_genre
+      acceptable_alternatives: [narrative_and_apocalyptic]
+      forbidden_values: [all_allegory, all_literal_prophecy]
+      theological_basis: 'Genre shift at chapter 7. First half narrative (historical events), second half apocalyptic (prophetic visions with symbolic imagery).'
+      translator_guidance: |
+        - CHAPTERS 1-6: NARRATIVE (historical accounts)
+          * Lions' den, fiery furnace - historical miracles
+          * Court stories - actual events in Babylon
+        - CHAPTERS 7-12: APOCALYPTIC PROPHECY (symbolic visions)
+          * Beasts represent kingdoms (symbolic)
+          * Numbers often symbolic (70 weeks, time/times/half-a-time)
+          * Follows apocalyptic genre conventions
+        - READER BENEFIT: Genre recognition prevents:
+          * Denying miracles in ch 1-6 (treating as allegory)
+          * Hyper-literal interpretation of ch 7-12 (missing symbols)
+        - BOTH SECTIONS: Authoritative Scripture, different genres
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'All allegory (including ch 1-6)'
+        used_by: [Liberal scholarship]
+        christian_assessment: REJECTED - Treats historical narratives as fiction
+        genre_implication: Allegory or legend, not historical
+
+  - verse_pattern: '1 Corinthians 11, 14 - Commands vs Cultural Application (unverified)'
+    affected_values: [epistle, legal_text, pastoral_letter, cultural_instruction]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Genre affects hermeneutics: Are Paul's commands UNIVERSAL LAW or
+      PASTORAL LETTERS addressing specific situations? Examples:
+      - Head coverings (11:2-16) - universal or cultural?
+      - Women in ministry (14:34-35) - universal or specific to Corinth?
+      - Greet with holy kiss (16:20) - command or cultural expression?
+      Genre identification (epistle as situated pastoral letter vs timeless
+      legal code) affects application. Requires careful contextual reading,
+      not just genre label.
+
+    christian_orthodox_position:
+      preferred_value: epistle
+      acceptable_alternatives: [pastoral_letter, apostolic_letter]
+      forbidden_values: [legal_code, timeless_law_only]
+      theological_basis: 'Epistles are occasional letters addressing specific situations, containing both timeless truth and cultural application. Requires contextual interpretation.'
+      translator_guidance: |
+        - LABEL: EPISTLE or PASTORAL LETTER (not legal code)
+        - HERMENEUTICAL PRINCIPLE: Distinction between timeless truth and
+          cultural application requires contextual study, not just genre
+        - EXAMPLES OF DEBATE:
+          * Head coverings (1 Cor 11) - most: cultural; some: universal
+          * Women in ministry (1 Cor 14, 1 Tim 2) - debated in orthodoxy
+          * Greet with kiss (multiple epistles) - clearly cultural expression
+        - NOTE: Genre recognition doesn't solve interpretive debates but
+          frames them properly (occasional letter, not legal code)
+        - ALL EPISTLES: Authoritative Scripture, requiring faithful interpretation
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Ecclesiastes - Wisdom Literature vs Pessimistic Philosophy (unverified)'
+    affected_values: [wisdom_literature, philosophy, skeptical_text, inspired_scripture]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Ecclesiastes genre is critical. Contains skeptical statements ("vanity
+      of vanities, all is vanity"), questions about afterlife, etc. If read
+      as straightforward doctrine, seems to teach pessimism, maybe no afterlife.
+      Genre: WISDOM LITERATURE exploring questions, presenting "under the sun"
+      (human perspective) vs God's perspective. Conclusion (12:13-14) provides
+      theological resolution. Wrong genre = misunderstanding book's message.
+
+    christian_orthodox_position:
+      preferred_value: wisdom_literature
+      acceptable_alternatives: [philosophical_wisdom, reflective_wisdom]
+      forbidden_values: [skeptical_philosophy, uninspired_pessimism]
+      theological_basis: 'Wisdom literature exploring meaning of life "under the sun" (human perspective). Conclusion (12:13-14) provides divine perspective: fear God, keep commands, judgment coming.'
+      translator_guidance: |
+        - REQUIRED: Label as WISDOM LITERATURE
+        - RECOGNIZE: Book explores human perspective ("under the sun" = without
+          God's revelation) vs divine perspective
+        - STRUCTURE: Questions and explorations lead to theological conclusion
+          (12:13-14 - "Fear God and keep his commandments")
+        - READER BENEFIT: Genre prevents misreading skeptical statements as
+          final theology (they're questions being explored)
+        - NOT: Pessimistic philosophy or skeptical text (that's the problem
+          being addressed, not the solution)
+        - INSPIRED SCRIPTURE: Canonical, but requires genre-sensitive reading
+
+    non_orthodox_alternatives_awareness: []
+
+# SECTION 2: ARBITRARY (Contextually Obvious - Choice Doesn't Cause Confusion)
+
+arbitrary_contexts:
+
+  - pattern: "Clear narrative sections (e.g., Acts, 1-2 Samuel, Kings)"
+    rationale: |
+      When narrative genre is contextually obvious (clear historical account
+      with sequential events, named people, places, dates), genre identification
+      is straightforward and doesn't require special analysis. These sections
+      are unambiguous historical narrative.
+    estimated_percentage: 30%
+    examples:
+      - 'Acts 13-28 - Paul\'s missionary journeys (unverified)'
+      - '1 Samuel 17 - David and Goliath (unverified)'
+      - '2 Kings 2 - Elijah taken to heaven (unverified)'
+    translator_guidance: |
+      Label as NARRATIVE. No controversy or confusion about genre.
+
+  - pattern: "Clear legal sections (e.g., Leviticus, Deuteronomy law codes)"
+    rationale: |
+      Legal material in Pentateuch is clearly identifiable - commands, laws,
+      regulations, case law. No ambiguity about genre. Interpretation questions
+      exist (which laws apply to Christians?) but genre identification is clear.
+    estimated_percentage: 15%
+    examples:
+      - 'Leviticus 11 - Clean and unclean animals (unverified)'
+      - 'Deuteronomy 22 - Various laws (unverified)'
+      - 'Exodus 21-23 - Book of the Covenant (unverified)'
+    translator_guidance: |
+      Label as LEGAL or LAW. Genre is obvious from form (commands, case law).
+
+  - pattern: "Obvious poetry with no doctrinal ambiguity (e.g., many Psalms)"
+    rationale: |
+      Most Psalms are clearly poetry (parallel structure, metaphor evident).
+      Genre recognition doesn't create doctrinal issues - readers naturally
+      understand poetic imagery. A few Psalms have specific theological debates
+      (imprecatory psalms, messianic psalms), but most are straightforward
+      worship poetry.
+    estimated_percentage: 20%
+    examples:
+      - 'Psalm 23 - The Lord is my shepherd (unverified)'
+      - 'Psalm 100 - Make a joyful noise (unverified)'
+      - 'Psalm 150 - Praise the Lord (unverified)'
+    translator_guidance: |
+      Label as POETRY or HYMN. Metaphors and imagery are contextually clear.
+
+  - pattern: "Genealogies (e.g., Genesis 5, 10, Matthew 1, Luke 3)"
+    rationale: |
+      Genealogies are clearly identifiable by form (lists of names, lineages).
+      No genre ambiguity. Interpretation questions exist (gaps in genealogies?),
+      but genre itself is obvious.
+    estimated_percentage: 3%
+    examples:
+      - 'Genesis 5 - Adam to Noah genealogy (unverified)'
+      - 'Matthew 1:1-17 - Genealogy of Jesus (unverified)'
+      - '1 Chronicles 1-9 - Genealogies (unverified)'
+    translator_guidance: |
+      Label as GENEALOGY. Form is self-evident.
+
+  - pattern: "Clear prophetic oracles with standard formula (e.g., 'Thus says the LORD')"
+    rationale: |
+      Prophetic material with standard prophetic formulas ("Thus says the LORD",
+      "The word of the LORD came to me", oracle structure) is clearly identifiable.
+      Within prophecy, may have poetry, narrative elements, but main genre is clear.
+    estimated_percentage: 15%
+    examples:
+      - 'Jeremiah 1:4-10 - Call of Jeremiah (unverified)'
+      - 'Amos 1:3 - Oracle against Damascus (unverified)'
+      - 'Isaiah 1:1 - Vision concerning Judah (unverified)'
+    translator_guidance: |
+      Label as PROPHECY or PROPHETIC ORACLE. Standard formulas identify genre.
+
+  - pattern: "Parables of Jesus with clear introductions (e.g., 'The kingdom of heaven is like...')"
+    rationale: |
+      Most parables are clearly introduced ("A man had two sons...", "The kingdom
+      is like...") and readers naturally understand them as illustrative stories.
+      Genre is contextually obvious. A few debated cases (Rich Man and Lazarus)
+      are exceptions, not the rule.
+    estimated_percentage: 5%
+    examples:
+      - 'Matthew 13:31-32 - Parable of the mustard seed (unverified)'
+      - 'Luke 15:11-32 - Parable of the prodigal son (unverified)'
+      - 'Matthew 25:1-13 - Parable of ten virgins (unverified)'
+    translator_guidance: |
+      Label as PARABLE. Standard introduction and context make genre clear.
+
+  - pattern: "Epistolary greetings and closings (e.g., Paul's letters)"
+    rationale: |
+      Opening greetings ("Paul, an apostle... to the church at...") and closings
+      ("Grace and peace", final greetings) are clearly identifiable epistolary
+      form. No genre ambiguity.
+    estimated_percentage: 2%
+    examples:
+      - 'Romans 1:1-7 - Greeting (unverified)'
+      - 'Ephesians 6:21-24 - Final greetings (unverified)'
+      - '1 Corinthians 16:19-24 - Closing (unverified)'
+    translator_guidance: |
+      Label as EPISTLE or LETTER. Form is self-evident.
+
+  - pattern: "Historical narrative with no theological controversy (e.g., travel accounts)"
+    rationale: |
+      Many narrative sections have no theological debate about historicity or
+      interpretation. Genre is obvious, content is straightforward. These are
+      simply historical accounts of events.
+    estimated_percentage: 10%
+    examples:
+      - 'Acts 16:11-15 - Paul\'s journey to Philippi (unverified)'
+      - 'Nehemiah 2 - Nehemiah\'s journey to Jerusalem (unverified)'
+      - '2 Kings 5 - Naaman healed (unverified)'
+    translator_guidance: |
+      Label as NARRATIVE. No controversy about genre or historicity.
+
+# SUMMARY STATISTICS
+
+total_non_arbitrary_percentage: 35
+breakdown:
+  theological_critical: 20  # Creation, Gospels, Jonah, Revelation, Rich Man/Lazarus
+  contextual_essential: 15  # Job, Proverbs, Psalms, Daniel, Epistles, Ecclesiastes
+
+total_arbitrary_percentage: 65
+note: |
+  Genre identification is contextually obvious in majority of Scripture.
+  Critical exceptions occur at theological flashpoints:
+  1. Creation account historicity (Genesis 1-2)
+  2. Gospel historicity (resurrection, miracles)
+  3. OT narrative historicity (Jonah, Job)
+  4. Apocalyptic vs literal prophecy (Revelation, Daniel)
+  5. Poetry vs literal (Psalms, Song of Solomon)
+  6. Wisdom literature proper application (Proverbs, Ecclesiastes)
+
+  Wrong genre identification at these points leads to:
+  - Doctrinal error (denying resurrection, original sin, etc.)
+  - Misapplication (treating proverbs as promises)
+  - False expectations (prosperity gospel from proverbs)
+  - Interpretive confusion (literal apocalyptic symbols)
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal knowledge of Scripture and conservative Protestant theology, not
+  cited sources. Stage 2 analysis should verify these patterns in actual TBTA
+  data and confirm theological assessments with peer review.
+
+source: '{llm-cs45}'
+requires_peer_review: true
+peer_review_focus:
+  - Genesis 1-2 genre consensus (narrative vs literary framework vs allegory)
+  - Gospel genre (response to liberal "theological narrative" challenge)
+  - Jonah historicity (Jesus's use in Matthew 12)
+  - Proverbs as wisdom vs promises (pastoral implications)
+  - Apocalyptic genre conventions (Revelation, Daniel)
+  - Denominational variations on hermeneutics
+
+theological_perspective: conservative_protestant_christian
+note_on_perspective: |
+  This analysis reflects conservative Protestant orthodoxy as specified in
+  CLAUDE.md. Key distinctives:
+  - Biblical inerrancy (affects genre of Genesis 1-2, Gospels, Jonah)
+  - Salvation by grace alone (affects interpretation of James as epistle,
+    not works-righteousness legal code)
+  - Scripture as final authority (affects genre of prophets, epistles)
+
+  Other Christian traditions (Catholic, Orthodox) largely agree on genre
+  identifications for high-stakes texts (Genesis, Gospels, etc.), with some
+  differences in hermeneutical approach to applying epistles.
+
+recommendations_for_algorithm:
+  - priority_1: Flag Genesis 1-2, Gospels, Jonah as HIGH STAKES for genre verification
+  - priority_2: Recognize poetry features (parallelism, metaphor) to prevent wooden literalism
+  - priority_3: Distinguish wisdom literature from promises/commands for proper application
+  - priority_4: Identify apocalyptic genre to enable symbolic interpretation
+  - priority_5: Mark epistles as occasional letters, not timeless legal code (affects hermeneutics)

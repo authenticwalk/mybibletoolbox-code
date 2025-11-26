@@ -45,7 +45,25 @@ See [TEMPLATE.md](TEMPLATE.md) for the feature development template and [STAGES.
 
 ## Development Status
 
-All features are currently at **Stage 0: Not yet started**. Previous work has been archived in [features-archive/](features-archive/) for reference.
+**Stage 1 Research Complete** (10 features):
+- ✅ [aspect](aspect/) - Grammatical viewpoint (perfective/imperfective)
+- ✅ [degree](degree/) - Comparison and intensity marking
+- ✅ [discourse-genre](discourse-genre/) - Narrative, poetry, prophecy, etc.
+- ✅ [honorifics-register](honorifics-register/) - Social register and politeness
+- ✅ [illocutionary-force](illocutionary-force/) - Speech act force
+- ✅ [participant-tracking](participant-tracking/) - Discourse reference tracking
+- ✅ [proximity-system](proximity-system/) - Spatial/temporal deixis
+- ✅ [surface-realization](surface-realization/) - Voice and realization patterns
+- ✅ [time-granularity](time-granularity/) - Temporal remoteness
+- ✅ [topic-np](topic-np/) - Information structure (topic-comment)
+
+**Other Features**:
+- ⏸️ [number-system](number-system/) - Phase 1 started (external system)
+- ⏸️ [mood](mood/) - Phase 1 started (external system)
+- ⭕ [person-system](person-system/) - Not yet started
+- ⭕ [polarity](polarity/) - Not yet started
+
+Previous work has been archived in [features-archive/](features-archive/) for reference.
 
 ## Key Principles
 

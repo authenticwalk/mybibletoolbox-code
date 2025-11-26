@@ -1,0 +1,422 @@
+feature: proximity-system
+default_classification: arbitrary # Most demonstrative choices are contextually clear
+theological_significance: EXISTS # Proximity matters in sacramental and incarnational contexts
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # === 1A: NON-ARBITRARY-THEOLOGICAL (Doctrinal Stakes) ===
+
+  - verse_pattern: 'Matthew 26:26; Mark 14:22; Luke 22:19; 1 Corinthians 11:24 - "This is my body" (Last Supper/Eucharist) (unverified)'
+    affected_values: [proximal, medial, distal]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Real Presence (Eucharist theology)
+      - Sacramental theology
+      - Incarnation (body of Christ)
+
+    non_arbitrary_rationale: |
+      Jesus uses PROXIMAL demonstrative ("this") pointing to bread physically
+      present before disciples. Proximity encodes sacramental immediacy:
+      - PROXIMAL ("this bread here") = Christ present IN elements (Real Presence)
+      - MEDIAL ("that bread there") = Weakens immediacy, distances Christ from elements
+      - DISTAL ("that bread over there") = HERETICAL - removes sacramental presence entirely
+
+      Denominational spectrum:
+      - Catholic/Orthodox: Transubstantiation/Mystical Union (requires PROXIMAL)
+      - Lutheran: Consubstantiation (requires PROXIMAL)
+      - Reformed: Spiritual Presence (prefers PROXIMAL)
+      - Memorial view: Less sensitive, but PROXIMAL still preferred
+
+    christian_orthodox_position:
+      preferred_value: proximal
+      acceptable_alternatives: [] # No alternatives for this context
+      forbidden_values: [distal]
+      theological_basis: |
+        "This [near] is my body" establishes sacramental connection between
+        physical elements and Christ's sacrifice. Proximal = presence/immediacy.
+        All Christian traditions (even memorialist) maintain proximal reference.
+
+      translator_guidance: |
+        - REQUIRED: Use PROXIMAL demonstrative (near/here/this)
+        - FORBIDDEN: Never use DISTAL (far/there/that) - severs sacramental connection
+        - If language has 3-way system (this/that/yonder), use PROXIMAL tier
+        - Critical for all denominational traditions
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Purely symbolic memorial (bread = mere symbol)'
+        used_by: ['Some Baptist/Evangelical memorialists']
+        christian_assessment: ACCEPTABLE within orthodoxy but theologically minimal
+        proximity_implication: Still prefer proximal, but less doctrinally critical
+
+      - interpretation: 'Metaphorical only (no sacramental reality)'
+        used_by: ['Liberal Protestant reinterpretations']
+        christian_assessment: REJECTED - Denies sacramental instituted by Christ
+        proximity_implication: Distal would signal this heretical view
+
+  - verse_pattern: 'Matthew 3:17; 17:5; Mark 1:11; 9:7; Luke 3:22; 9:35; 2 Peter 1:17 - "This is my beloved Son" (Theophany/Divine Voice) (unverified)'
+    affected_values: [proximal, medial, distal]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Deity of Christ (Christology)
+      - Trinity (Father-Son relationship)
+      - Incarnation (divine Son in human flesh)
+
+    non_arbitrary_rationale: |
+      Father's voice uses PROXIMAL demonstrative pointing to Jesus physically
+      present at baptism/transfiguration. Proximity encodes incarnational reality:
+      - PROXIMAL ("this [one here]") = Son is PRESENT in flesh (Incarnation)
+      - MEDIAL/DISTAL = Theological distance, could imply adoption or lesser deity
+
+      Critical for Incarnation: God pointing to PHYSICAL HUMAN and saying "my Son"
+      requires proximity marker showing Jesus' real human presence.
+
+    christian_orthodox_position:
+      preferred_value: proximal
+      forbidden_values: [distal]
+      theological_basis: |
+        Father identifies Son who is physically present (Incarnation reality).
+        Proximal = "This man here is my Son" (deity + humanity united).
+        Distal would create theological distance, weaken incarnational claim.
+
+      translator_guidance: |
+        - REQUIRED: Use PROXIMAL (near reference)
+        - Context: Divine voice from heaven pointing to Jesus standing in/near water
+        - Proximal emphasizes: "This human person here = my divine Son"
+        - Critical for Chalcedonian Christology (fully God, fully man, united)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Adoptionism (Jesus became Son at baptism)'
+        used_by: ['Early heresy, some liberal scholars']
+        christian_assessment: HERETICAL - Jesus eternally Son, not adopted
+        proximity_implication: Distal might signal "that person (distinct from me)"
+
+      - interpretation: 'Arianism (Son is created being)'
+        used_by: ['Jehovah Witnesses, ancient Arianism']
+        christian_assessment: HERETICAL - Son is eternally begotten, not created
+        proximity_implication: Would prefer distal to show Son's subordination
+
+  - verse_pattern: 'John 20:27; Luke 24:39 - "See my hands, touch my side" (Resurrection appearances) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Bodily Resurrection (physical, not spiritual only)
+      - Defeat of death
+      - Future resurrection of believers
+
+    non_arbitrary_rationale: |
+      Jesus uses PROXIMAL references to his body parts ("these hands", "this side")
+      to prove physical resurrection against Gnostic spiritual-only views:
+      - PROXIMAL = Physical body HERE (touchable, real, not phantom)
+      - DISTAL = Distant/abstract reference, weakens physicality claim
+
+      Thomas: "My Lord and my God" (John 20:28) - proximal "my" with physically
+      present Jesus. Distal would undermine resurrection apologetic.
+
+    christian_orthodox_position:
+      preferred_value: proximal
+      forbidden_values: [distal]
+      theological_basis: |
+        "See THESE hands, touch THIS side" = bodily resurrection proof.
+        Proximal demonstrates physical presence against Gnostic heresies.
+        Orthodox position: Same body crucified = same body raised (continuous identity).
+
+      translator_guidance: |
+        - REQUIRED: Use PROXIMAL for body part references
+        - Context: Jesus inviting physical touch/examination
+        - Apologetic purpose: Prove corporeality (not ghost/spirit)
+        - Distal would undermine resurrection proof
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Spiritual resurrection only (no physical body)'
+        used_by: ['Gnosticism, some liberal theology']
+        christian_assessment: HERETICAL - Denies bodily resurrection (1 Cor 15)
+        proximity_implication: Would use distal or avoid demonstratives
+
+      - interpretation: 'Phantom body (appearance, not real flesh)'
+        used_by: ['Docetism (early heresy)']
+        christian_assessment: HERETICAL - Jesus has real human body post-resurrection
+        proximity_implication: Distal signals phantom/unreal nature
+
+  - verse_pattern: 'Genesis 17:10; Exodus 24:8; Jeremiah 31:33; Hebrews 8:10 - "This is my covenant" (Covenant establishment) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Covenant theology
+      - Old vs New Covenant distinction
+      - Salvation history
+
+    non_arbitrary_rationale: |
+      PROXIMAL "this covenant" = Active, present, in-force covenant (not past/historical).
+      Especially critical in Jeremiah 31:33 / Hebrews 8:10 (New Covenant):
+      - PROXIMAL = New Covenant NOW active, superseding Old
+      - DISTAL = Could imply New Covenant is future/distant, not yet in effect
+
+      Proximity distinguishes covenants:
+      - "This covenant [new]" (proximal) vs "that covenant [old]" (distal)
+
+    christian_orthodox_position:
+      preferred_value: proximal
+      theological_basis: |
+        Proximal = covenant presently binding/active. In New Covenant contexts,
+        proximal emphasizes fulfillment NOW in Christ (not still future).
+
+      translator_guidance: |
+        - Use PROXIMAL for covenant being established
+        - In New Covenant passages (Jeremiah 31, Hebrews 8): PROXIMAL = "now active"
+        - Distinguish: "This covenant [new/near]" vs "that covenant [old/past]"
+        - Timing matters: Proximal = present reality, Distal = past/historical reference
+
+  - verse_pattern: 'Luke 4:21 - "Today this Scripture is fulfilled in your hearing" (Messianic fulfillment) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Messianic identity (Jesus = Messiah)
+      - Prophetic fulfillment
+      - Christology
+
+    non_arbitrary_rationale: |
+      Jesus reads Isaiah 61:1-2 then declares PROXIMAL "this Scripture" fulfilled.
+      Proximity + temporal "today" = Immediate Messianic claim:
+      - PROXIMAL "this" = Isaiah's prophecy fulfilled NOW (Jesus = Messiah)
+      - DISTAL "that" = Would distance Jesus from fulfillment, weaken claim
+
+      Critical Christological moment: Jesus identifies himself as Messiah.
+
+    christian_orthodox_position:
+      preferred_value: proximal
+      forbidden_values: [distal]
+      theological_basis: |
+        Proximal demonstrative + "today" = Jesus claiming to BE the Messiah NOW.
+        Distal would create distance between prophecy and fulfillment.
+
+      translator_guidance: |
+        - REQUIRED: Use PROXIMAL (immediate/near reference)
+        - Pairs with temporal "today" (immediate fulfillment)
+        - Messianic claim depends on immediacy: "this word = fulfilled now = I am Messiah"
+        - Distal would undermine Christological assertion
+
+  # === 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ===
+
+  - verse_pattern: 'Matthew 24; Mark 13; Luke 21 - "This generation" vs "That day" (Eschatological discourse) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: MEDIUM (interpretive, not doctrinal core)
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Eschatology (timing of Second Coming)
+      - Prophetic interpretation
+
+    non_arbitrary_rationale: |
+      Jesus distinguishes:
+      - PROXIMAL "this generation" (near/present) = Events within current lifetime
+      - DISTAL "that day" (far/future) = Distant eschatological fulfillment
+
+      Proximity encodes TIMING distinction. Mixing proximal/distal confuses:
+      - Which prophecies fulfilled in 70 AD? (proximal "this generation")
+      - Which prophecies still future? (distal "that day/time")
+
+      Not heresy to get wrong, but creates eschatological confusion.
+
+    translator_guidance: |
+      - Preserve PROXIMAL/DISTAL distinction for timing clarity
+      - PROXIMAL "this generation" = near-term (reader's era)
+      - DISTAL "that day/hour" = distant future (unknown timing)
+      - Consistency matters: Don't swap proximal/distal markers
+
+  - verse_pattern: 'John 18:15-27; Matthew 26:61-62 - "This man" (Legal/forensic contexts - identifying accused) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM-HIGH
+
+    non_arbitrary_rationale: |
+      Courtroom/trial contexts use demonstratives to identify specific individuals:
+      - "This man [near witness/accused]" vs "That man [distant/other]"
+      - Proximity = Legal identification (which person is being accused?)
+
+      Wrong proximity = Reader confusion about WHO is being referenced.
+      Not theological, but narrative clarity critical.
+
+    translator_guidance: |
+      - Use language's forensic identification system
+      - PROXIMAL typically = accused/primary referent
+      - DISTAL = secondary/contrasting referent
+      - Maintain consistency within trial narrative
+
+  - verse_pattern: 'Matthew 9:3; Mark 2:7; Luke 5:21 - "This man blasphemes" (Identifying Jesus in healing contexts) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Scribes/Pharisees use demonstrative to identify WHICH person they're accusing.
+      Context: Crowd scene, multiple people present, need clear referent.
+      - PROXIMAL "this man" = Jesus (nearby, performing healing)
+      - Wrong proximity = Reader unsure who is accused
+
+    translator_guidance: |
+      - Use proximity to clarify referent in crowd scenes
+      - Match source language proximity where possible
+      - Reader should immediately know: accusation targets Jesus (not someone else)
+
+  - verse_pattern: 'John 21:21 - "Lord, what about this man?" (Peter pointing to John) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Peter uses demonstrative to identify specific person (John) in context:
+      - PROXIMAL = John (nearby, following)
+      - Clear referent identification matters for narrative clarity
+
+    translator_guidance: |
+      - Proximity should match physical distance in narrative
+      - "This man" [near] vs "that man" [farther away]
+      - Helps reader track multiple characters in scene
+
+  - verse_pattern: 'Matthew 12:24; Mark 3:22 - "This man casts out demons by Beelzebul" (Pharisees accusing Jesus) (unverified)'
+    affected_values: [proximal, distal]
+    theological_stakes: NONE (who is accused is clear from context)
+    contextual_stakes: LOW-MEDIUM
+
+    non_arbitrary_rationale: |
+      Demonstrative identifies Jesus as accused. Context makes clear WHO,
+      but proximity adds immediacy/hostility tone.
+
+    translator_guidance: |
+      - Proximal can convey dismissive/hostile tone ("this fellow")
+      - Not critical for meaning, but affects register/tone
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Choice Doesn't Matter)
+
+arbitrary_contexts:
+
+  - pattern: "General references with clear context (e.g., 'this is the way', 'this is good')"
+    rationale: |
+      When referent is clear from context, proximity choice is stylistic.
+      "This is the way" (proximal) vs "That is the way" (distal) - both convey
+      same meaning if context identifies which way. Proximity adds subtle
+      emphasis (near = more immediate/relevant) but not semantically critical.
+    estimated_percentage: 60%
+    examples:
+      - 'John 14:6 - "I am the way" (metaphorical, no physical referent) (unverified)'
+      - 'Matthew 7:13-14 - "This is the gate" (abstract reference) (unverified)'
+      - 'Romans 12:1 - "This is your spiritual worship" (abstract concept) (unverified)'
+    translator_guidance: |
+      Use natural proximity for target language. Proximal most common for
+      present/immediate truths, but not doctrinally critical.
+
+  - pattern: "Anaphoric references to previous discourse (this/that referring to prior statement)"
+    rationale: |
+      When "this/that" refers back to something already stated, proximity
+      choice is stylistic (recency/salience preference varies by language).
+      "Having heard this..." vs "having heard that..." - both acceptable.
+    estimated_percentage: 20%
+    examples:
+      - 'John 6:60 - "This is a hard teaching" (referring to prior discourse) (unverified)'
+      - 'Acts 2:12 - "What does this mean?" (referring to Pentecost events) (unverified)'
+    translator_guidance: |
+      Follow target language anaphora conventions. Some languages prefer
+      proximal for recent topics (near in discourse), others neutral.
+
+  - pattern: "Temporal demonstratives without prophetic significance (this day, that time)"
+    rationale: |
+      Unless prophetically significant (like "this generation" in Matt 24),
+      temporal proximity is often stylistic. "This day" vs "that day" - both
+      may refer to same event with different discourse emphasis.
+    estimated_percentage: 10%
+    examples:
+      - 'Acts 2:41 - "Those who accepted his message that day" (unverified)'
+      - 'John 1:39 - "It was about the tenth hour of that day" (unverified)'
+    translator_guidance: |
+      Use natural temporal expressions. Proximal = more immediate/relevant,
+      Distal = more narrative distance, but not semantically critical.
+
+  - pattern: "Object identification with no ritual/symbolic significance"
+    rationale: |
+      "Take this cup" (drinking vessel, not Eucharist) - proximity choice
+      stylistic unless object has theological meaning. Most objects arbitrary.
+    estimated_percentage: 5%
+    examples:
+      - 'Mark 9:41 - "Whoever gives you a cup of water" (ordinary cup) (unverified)'
+      - 'John 4:15 - "Give me this water" (well water, not symbolic yet) (unverified)'
+    translator_guidance: |
+      Use natural proximity. Only matters when object is theologically
+      loaded (Eucharistic bread/wine, covenant signs, etc.).
+
+  - pattern: "Expletive/dummy demonstratives (this happened, this is how, etc.)"
+    rationale: |
+      Many languages use demonstratives as discourse markers or expletives
+      without true deictic force. "This is how..." = generic formula.
+    estimated_percentage: 5%
+    examples:
+      - 'Matthew 1:18 - "This is how the birth of Jesus came about" (unverified)'
+      - 'John 3:19 - "This is the verdict: Light has come" (unverified)'
+    translator_guidance: |
+      Follow target language discourse formulas. Proximity often fixed by idiom.
+
+# SUMMARY STATISTICS
+
+total_non_arbitrary_percentage: 15
+breakdown:
+  theological_critical: 8  # Sacramental, Christological, Resurrection, Covenant contexts
+  contextual_precision: 7  # Legal/forensic identification, eschatological timing
+
+total_arbitrary_percentage: 85
+note: |
+  Most proximity choices are stylistically flexible. Key exceptions:
+  (1) Sacramental contexts (Eucharist "this is my body" must be proximal)
+  (2) Christological theophany ("This is my Son" must be proximal)
+  (3) Resurrection apologetic (proximal body references prove physicality)
+  (4) Covenant establishment (proximal = active/present covenant)
+  (5) Messianic fulfillment claims (proximal + "today" = immediate claim)
+  (6) Eschatological timing distinctions (proximal "this" vs distal "that day")
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal knowledge of Scripture, not cited sources. Stage 2 analysis
+  should verify these patterns in actual Greek/Hebrew source texts and
+  confirm theological assessments with peer review.
+
+requires_peer_review: true
+peer_review_focus:
+  - Eucharistic theology consensus (Real Presence sensitivity across denominations)
+  - Resurrection apologetic (how proximal demonstrates physicality)
+  - Covenant theology (Old/New Covenant proximity distinctions)
+  - Eschatological interpretation (preterist vs futurist impact on proximity)
+  - Source language verification (Greek οὗτος/ἐκεῖνος patterns, Hebrew זֶה/הוּא)
+
+# LINGUISTIC NOTES
+
+source_language_encoding:
+  greek:
+    proximal: οὗτος (houtos) - "this" (near speaker)
+    distal: ἐκεῖνος (ekeinos) - "that" (far from speaker)
+    note: Greek has 2-way system (near/far), no medial
+
+  hebrew:
+    proximal: זֶה (zeh) - "this" (near)
+    distal: הוּא (hu) - "that" (demonstrative use of 3rd person pronoun)
+    note: Hebrew proximity system less grammaticalized than Greek
+
+target_language_variation:
+  note: |
+    Languages vary in proximity distinctions:
+    - 2-way: this/that (English, Spanish este/ese, Greek)
+    - 3-way: this/that/yonder (Japanese ko/so/a, Korean i/geu/jeo)
+    - Distance + elevation: up/down/across (some Amerindian)
+
+    For 3-way systems:
+    - Map PROXIMAL to nearest tier (ko-, i-, este)
+    - Map DISTAL to farthest tier (a-, jeo-, aquel)
+    - MEDIAL tier (so-, geu-, ese) = context-dependent
+
+translation_priority: |
+  When source language proximity is theologically significant:
+  1. Match source proximity if target language has equivalent tier
+  2. If target has fewer tiers, prioritize proximal (near) vs distal (far) distinction
+  3. Never reverse proximity (proximal→distal or vice versa) in critical contexts
+  4. Footnote if target language lacks distinction and context is theologically loaded

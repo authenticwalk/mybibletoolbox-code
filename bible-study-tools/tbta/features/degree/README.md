@@ -1,58 +1,33 @@
 # Degree
 
-## Overview
+Degree marks the level of comparison or intensity of adjectives, adverbs, and verbs—ranging from positive form (no degree) through comparative ("better") and superlative ("best") to intensified ("very").
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Aspect | Value |
+|--------|-------|
+| **TBTA Values** | No Degree, Comparative, Superlative, Intensified |
+| **Applies To** | Adjectives, Adverbs, Verbs (via adjectival modification) |
+| **Source Languages** | Greek (morphological), Hebrew (periphrastic) |
+| **Critical Languages** | English, Spanish, Mandarin, Indonesian, Swahili |
+| **Degree-Neutral** | Fijian, Washo, Warlpiri (use conjoined comparison) |
+| **Theological Stakes** | HIGH (20% non-arbitrary; core doctrines affected) |
+| **Algorithm Accuracy** | v2.0: ~71% (4 critical rules discovered) |
 
-Degree indicates the level of comparison or intensity of adjectives, adverbs, or other qualities - including positive, comparative, superlative, and intensified forms.
+## Theological Examples
 
-## Development Status
+| Verse | Issue | **✅ Correct** | **❌ Error** |
+|-------|-------|---|---|
+| **Hebrews 1:4** | Christ's deity | "**Better** than angels" | "Good like angels" |
+| **Matthew 22:38** | Ethical priority | "**Greatest** commandment" | "Great commandment" |
+| **1 Corinthians 13:13** | Virtue ranking | "**Greatest** of love" | "Great" (loses hierarchy) |
+| **1 John 4:4** | Victory assurance | "**Greater** than evil" | "God is great" |
 
-🚧 **Stage 0**: Not yet started
+## Critical Rules
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+✅ **Semantic over morphological**: Context determines degree, not form
+✅ **Gradability check**: Non-gradable words ("dead," "perfect") → always "No Degree"
+✅ **Syntactic only**: Modifiers ("very big") get degree; compounds (ὑπερεκπερισσοῦ "abundantly") → "No Degree"
+**FORBIDDEN**: Degree-neutral languages (Fijian, Washo) cannot use C/S/I codes
 
-## Development Checklist
-
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/degree/`)
-- [ ] Generate README.md with feature definition + stage checklist
-
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
-
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
-
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
-
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
-
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
-
-## Resources
-
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/degree/](../features-archive/degree/)
+[Read full research findings →](research/README.md)

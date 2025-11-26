@@ -1,0 +1,772 @@
+feature: participant-tracking
+default_classification: arbitrary # Most participant references are contextually clear
+theological_significance: EXISTS # Ambiguity in Trinity, resurrection, divine speech contexts
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # === 1A: NON-ARBITRARY-THEOLOGICAL (Doctrinal Stakes) ===
+
+  - verse_pattern: 'Genesis 1:26 - Let us make man in our image (Trinity participant ambiguity) (unverified)'
+    affected_values: [first_person_plural_speaker_identity, divine_participants, participant_referent]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Creation theology
+      - Divine council theology
+      - Image of God
+
+    non_arbitrary_rationale: |
+      "Let us" raises critical question: WHO are the participants in divine speech?
+      Participant tracking affects doctrine:
+      - Trinity (Father, Son, Holy Spirit in creative dialogue) = Christian orthodox
+      - Divine council (God + angels) = Rejected by Christian orthodoxy (Isa 44:24 "I alone")
+      - Royal "we" (singular God, plural majesty) = Possible but less preferred
+      - Polytheism (multiple gods) = Heretical
+
+      Participant identification directly impacts:
+      - Number of divine persons involved (trial vs plural)
+      - Who participates in creation (God alone vs. God + creatures)
+      - Theological precision in translation
+
+    christian_orthodox_position:
+      preferred_value: trinity_participants
+      preferred_interpretation: 'Father, Son, and Holy Spirit in divine dialogue'
+      acceptable_alternatives:
+        - 'Plurality within Godhead (less specific but orthodox)'
+        - 'Divine self-deliberation (preserves divine plurality)'
+      forbidden_values:
+        - 'God + angels creating together'
+        - 'Multiple gods (polytheism)'
+      theological_basis: 'NT Trinitarian revelation (Matt 28:19, John 1:1-3, 2 Cor 13:14), Nicene Creed, Isaiah 44:24 "I alone stretched out the heavens"'
+      translator_guidance: |
+        CRITICAL: Participant identification affects Trinity doctrine
+
+        PARTICIPANT TRACKING REQUIREMENTS:
+        - Mark "us" and "our" as DIVINE PARTICIPANTS (not angels, not creatures)
+        - Indicate PLURAL within Godhead (not external participants)
+        - Track speaker as GOD/LORD/YHWH (not created beings)
+        - Flag as TRINITARIAN REFERENCE (if translation tradition supports)
+
+        FORBIDDEN TRACKING:
+        - Do NOT mark angels as co-creators or participants in "us"
+        - Do NOT track as multiple separate gods (polytheism)
+        - Do NOT obscure divine plurality by reducing to singular
+
+        DENOMINATIONAL UNITY:
+        - Protestant/Catholic/Orthodox/Coptic: Unified on Trinity
+        - All affirm divine participants are Father, Son, Spirit
+        - Minor variations in terminology, substance identical
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + angels participate in creation)'
+        used_by: ['Some Jewish non-Messianic interpretations']
+        christian_assessment: REJECTED - Angels do not create (Isaiah 44:24 "I alone")
+        participant_tracking_implication: Would mark angels as co-participants (theologically incorrect)
+
+      - interpretation: 'Polytheism (council of gods)'
+        used_by: ['Mormon/LDS']
+        christian_assessment: HERETICAL - Violates monotheism (Deut 6:4)
+        participant_tracking_implication: Multiple divine beings as separate participants
+
+      - interpretation: 'Royal We (God speaking majestically to self)'
+        used_by: ['Some Jewish rabbinical tradition', 'Islamic interpretation']
+        christian_assessment: POSSIBLE but less preferred - Misses Trinitarian depth
+        participant_tracking_implication: Single participant speaking in plural (acceptable but imprecise)
+
+  - verse_pattern: 'Genesis 11:7 - Let us go down and confuse their language (Babel) (unverified)'
+    affected_values: [divine_participants, first_person_plural_speaker]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Trinity (implied)
+      - Divine judgment
+      - Divine council theology
+
+    non_arbitrary_rationale: |
+      "Let us go down" - similar participant ambiguity to Gen 1:26 but in judgment
+      context. Christian orthodoxy maintains consistent Trinitarian interpretation,
+      though some traditions allow divine council interpretation (God addressing
+      angels who do NOT participate in judgment, only witness).
+
+      Participant tracking affects:
+      - Who descends to judge? (Trinity vs. God + angels)
+      - Who confuses languages? (God alone per context)
+
+    christian_orthodox_position:
+      preferred_value: trinity_participants
+      acceptable_alternatives: ['Plurality within Godhead']
+      theological_basis: 'Consistent Trinitarian interpretation of divine plural throughout Genesis'
+      translator_guidance: |
+        - Track "us" as DIVINE PARTICIPANTS (Trinity preferred)
+        - Mark speaker as GOD/LORD
+        - Less critical than Gen 1:26 (judgment context, not creation)
+        - If divine council view taken, angels are addressed but do NOT participate
+
+  - verse_pattern: 'Genesis 3:22 - Man has become like one of us (unverified)'
+    affected_values: [divine_participants, referent_of_us]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Trinity
+      - Knowledge of good and evil
+      - Divine attributes
+
+    non_arbitrary_rationale: |
+      "One of us" - who are the participants referenced? Same Trinitarian context
+      as Gen 1:26. Participant tracking critical for theological precision.
+
+    christian_orthodox_position:
+      preferred_value: trinity_participants
+      acceptable_alternatives: ['Divine plurality']
+      forbidden_values: ['God + angels as equals']
+      theological_basis: 'Consistent Trinitarian reading throughout Genesis'
+      translator_guidance: |
+        - Track "us" as divine participants (Trinity)
+        - Follow same principles as Gen 1:26
+        - Man becomes like God in knowing good/evil (not like angels)
+
+  - verse_pattern: 'Isaiah 6:8 - Whom shall I send, and who will go for us? (unverified)'
+    affected_values: [speaker_shift, singular_to_plural_participant, divine_participants]
+    theological_stakes: MEDIUM-HIGH
+    affected_doctrines:
+      - Trinity (Isaiah's vision of God)
+      - Prophet's calling
+      - Divine deliberation
+
+    non_arbitrary_rationale: |
+      CRITICAL PARTICIPANT SHIFT: "Whom shall I send" (singular) vs. "who will
+      go for us" (plural) IN SAME VERSE. Participant tracking must preserve:
+      - Singular "I" = One God
+      - Plural "us" = Plurality within Godhead
+
+      Christian tradition sees Trinitarian implication. Context: Isaiah's vision
+      of God's throne, seraphim calling "Holy, holy, holy" (threefold - Trinity hint).
+
+      Participant tracking affects:
+      - Recognition of singular/plural shift (theologically significant)
+      - Understanding divine deliberation (within Godhead, not external)
+
+    christian_orthodox_position:
+      preferred_value: trinity_participants_with_singular_plural_contrast
+      theological_basis: 'Trinitarian interpretation of Isaiah 6 vision. Singular "I" (unity) + plural "us" (Trinity) preserved.'
+      translator_guidance: |
+        CRITICAL: Track BOTH singular and plural in same verse
+        - "I" = singular speaker (God's unity)
+        - "us" = plural participants (Trinity)
+        - Do NOT flatten to all singular or all plural
+        - Preserve contrast: essential for Trinitarian theology
+        - Note: Threefold "Holy" (v.3) reinforces Trinity reading
+
+  - verse_pattern: 'John 1:1 - In the beginning was the Word, and the Word was with God, and the Word was God (unverified)'
+    affected_values: [participant_distinction, referent_tracking, participant_identity]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Trinity (deity of Christ)
+      - Christology
+      - Distinction of persons
+      - Unity of essence
+
+    non_arbitrary_rationale: |
+      CRITICAL PARTICIPANT TRACKING: Two referents of "God" - must distinguish:
+      - "Word was with God" (πρὸς τὸν θεόν) = Word distinct FROM the Father
+      - "Word was God" (θεὸς ἦν ὁ λόγος) = Word shares divine essence
+
+      Participant tracking affects:
+      - Distinguishing persons (Word vs. God the Father)
+      - Maintaining unity of essence (both are God)
+      - Preventing modalism (Word and Father are same person)
+      - Preventing Arianism (Word is lesser god)
+
+      Wrong participant tracking = theological heresy
+
+    christian_orthodox_position:
+      preferred_value: distinct_persons_same_essence
+      theological_basis: 'Nicene Creed - "God from God, Light from Light, true God from true God". John 1:1 establishes both distinction (with God) and unity (was God).'
+      translator_guidance: |
+        CRITICAL PARTICIPANT TRACKING:
+        - Track "the Word" as DISTINCT participant from "God" (the Father)
+        - Track both "Word" and "God" as DIVINE (same essence)
+        - Do NOT conflate participants (modalism - Word = Father)
+        - Do NOT separate essence (Arianism - Word is lesser god)
+
+        THEOLOGICAL PRECISION:
+        - "with God" = relational distinction (two persons)
+        - "was God" = essential unity (one divine essence)
+        - Participant tracking preserves both distinction and unity
+
+        HERESY WARNINGS:
+        - Modalism: Tracks Word and Father as same participant (REJECTED)
+        - Arianism: Tracks Word as non-divine participant (HERETICAL)
+        - Jehovah's Witnesses: "a god" (polytheism) - REJECTED
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Word was "a god" (indefinite - lesser divine being)'
+        used_by: ['Jehovah\'s Witnesses']
+        christian_assessment: HERETICAL - Denies deity of Christ, introduces polytheism
+        participant_tracking_implication: Word tracked as separate, lesser divine participant
+
+      - interpretation: 'Word and God are same participant (modalism)'
+        used_by: ['Oneness Pentecostalism']
+        christian_assessment: HERETICAL - Denies distinction of persons
+        participant_tracking_implication: Collapses Word and Father into single participant
+
+  - verse_pattern: 'Matthew 28:19 - Baptizing in the name of the Father and of the Son and of the Holy Spirit (unverified)'
+    affected_values: [participant_enumeration, three_distinct_participants, unified_name]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Trinity (explicit formula)
+      - Baptism theology
+      - Three persons, one essence
+
+    non_arbitrary_rationale: |
+      CRITICAL PARTICIPANT ENUMERATION: Three distinct participants listed
+      (Father, Son, Holy Spirit) sharing ONE name (singular). Participant tracking
+      must preserve:
+      - THREE distinct participants (not one, not four)
+      - ONE name (unity of essence, not three separate gods)
+      - Equal listing (Father AND Son AND Spirit - no hierarchy of essence)
+
+      Participant tracking affects:
+      - Counting persons (exactly three)
+      - Understanding unity (one name, not three names)
+      - Preventing tritheism (three gods) or modalism (one person)
+
+    christian_orthodox_position:
+      preferred_value: three_persons_one_name
+      theological_basis: 'Explicit Trinitarian formula. "Name" (singular) + three persons = one God, three persons. Athanasian Creed: "we worship one God in Trinity and Trinity in Unity"'
+      translator_guidance: |
+        CRITICAL PARTICIPANT TRACKING:
+        - Track THREE distinct participants: Father, Son, Holy Spirit
+        - All three are EQUAL participants (coordinate conjunction "and")
+        - Unified under ONE name (singular - track name as singular)
+        - Do NOT track as three separate gods (tritheism)
+        - Do NOT collapse into one participant (modalism)
+
+        THEOLOGICAL PRECISION:
+        - Exactly three participants (trial number if language has it)
+        - One divine name shared by three persons
+        - Co-equal participants (no hierarchy in baptismal formula)
+
+  - verse_pattern: 'John 20:11-18 - Mary Magdalene sees Jesus at tomb (resurrection appearance) (unverified)'
+    affected_values: [participant_witness, resurrection_appearance_recipient, speaker_hearer_tracking]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Resurrection of Christ
+      - Witness testimony
+      - Women as witnesses
+      - Post-resurrection Christology
+
+    non_arbitrary_rationale: |
+      CRITICAL PARTICIPANT TRACKING: First witness of resurrected Christ. Participant
+      tracking affects:
+      - Who saw resurrected Jesus first? (Mary Magdalene - individual woman)
+      - Speaker/hearer tracking: Jesus speaks to Mary, Mary speaks to disciples
+      - Witness credibility (women's testimony in 1st century context)
+
+      Theological significance:
+      - Validates women as credible witnesses (counter-cultural)
+      - Establishes resurrection appearance sequence
+      - Historical accuracy of Gospel accounts
+
+      Wrong participant tracking = obscures historical witness, undermines apologetic value
+
+    christian_orthodox_position:
+      preferred_value: mary_magdalene_individual_witness
+      theological_basis: 'John 20:14-16 - Jesus appears to Mary individually. She is first witness of resurrection. Mark 16:9 confirms.'
+      translator_guidance: |
+        PARTICIPANT TRACKING REQUIREMENTS:
+        - Track Mary Magdalene as FIRST individual witness of resurrection
+        - Track Jesus as SPEAKER ("Mary" - uses her name)
+        - Track Mary as HEARER and MESSENGER ("I have seen the Lord")
+        - Mark participants: Mary (individual woman), Jesus (resurrected), disciples (recipients of testimony)
+
+        CONTEXTUAL IMPORTANCE:
+        - First witness is a woman (counter-cultural, validates historicity)
+        - Individual encounter (not group appearance)
+        - Sequencing: Mary first, then disciples (track appearance order)
+
+        APOLOGETIC VALUE:
+        - Women as first witnesses = historically authentic (would not invent)
+        - Participant tracking preserves apologetic force
+
+  - verse_pattern: '1 Corinthians 15:3-8 - Resurrection appearance list (500 brothers, apostles, Paul) (unverified)'
+    affected_values: [participant_enumeration, witness_list, appearance_sequence, participant_groups]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Resurrection of Christ
+      - Witness testimony
+      - Apostolic authority
+      - Historicity of resurrection
+
+    non_arbitrary_rationale: |
+      CRITICAL PARTICIPANT ENUMERATION: Paul lists resurrection witnesses in sequence.
+      Participant tracking affects:
+      - Who saw resurrected Jesus? (Cephas, the Twelve, 500 brothers, James, all apostles, Paul)
+      - Order of appearances (chronological sequence)
+      - Group vs. individual appearances (distinguish participants)
+      - Number of witnesses (500+ = mass verification)
+
+      Theological significance:
+      - Historical verification (multiple independent witnesses)
+      - Apostolic authority (Paul seen as legitimate apostle - saw risen Christ)
+      - Mass witness (500 brothers - extraordinary claim, extraordinary evidence)
+
+      Wrong participant tracking = undermines historical apologetic
+
+    christian_orthodox_position:
+      preferred_value: sequential_witness_enumeration
+      theological_basis: '1 Cor 15:3-8 lists witnesses: Cephas (individual), Twelve (group), 500+ brothers (mass), James (individual), all apostles (group), Paul (individual). Historical verification of resurrection.'
+      translator_guidance: |
+        PARTICIPANT TRACKING REQUIREMENTS:
+        - Track SEQUENCE of appearances (order matters for chronology)
+        - Distinguish INDIVIDUAL vs. GROUP appearances:
+          * Cephas (individual)
+          * The Twelve (group - 12 participants)
+          * 500+ brothers (mass group)
+          * James (individual)
+          * All apostles (group)
+          * Paul (individual)
+        - Track PARTICIPANT COUNTS (500+ brothers = large verification group)
+        - Mark Paul as LAST apostolic witness (establishes his authority)
+
+        APOLOGETIC VALUE:
+        - 500+ witnesses (many still alive when Paul wrote - verifiable)
+        - Multiple independent appearances (not group hallucination)
+        - Participant tracking preserves historical verification
+
+  - verse_pattern: 'Revelation 1:10-20 - John hears voice, sees Son of Man, receives commands (unverified)'
+    affected_values: [speaker_identification, vision_participants, divine_voice_tracking, pronoun_referent]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Deity of Christ
+      - Prophetic authority
+      - Vision interpretation
+      - Divine speech
+
+    non_arbitrary_rationale: |
+      CRITICAL PARTICIPANT TRACKING IN VISION: Multiple participants in prophetic
+      vision require careful tracking:
+      - Voice like trumpet (v.10) - WHO is speaking?
+      - "One like a son of man" (v.13) - WHO is this? (Christ)
+      - First and Last, Living One (v.17-18) - divine titles
+      - Commands to write (v.19) - WHO commands? (Christ with divine authority)
+
+      Participant tracking affects:
+      - Identifying Christ as divine speaker (not angel, not merely human)
+      - Tracking pronoun referents ("I am" statements - Christ speaking)
+      - Distinguishing vision participants (Christ, John, angels, churches)
+
+      Wrong participant tracking = obscures deity of Christ, confuses vision interpretation
+
+    christian_orthodox_position:
+      preferred_value: christ_as_divine_speaker_and_vision_participant
+      theological_basis: 'Rev 1:17-18 - "I am the First and the Last, and the Living One" (divine titles from Isa 44:6). Christ identified as divine speaker in vision.'
+      translator_guidance: |
+        PARTICIPANT TRACKING REQUIREMENTS:
+        - Track voice/speaker as CHRIST (Son of Man)
+        - Mark "I am" statements as DIVINE SPEECH (Christ speaking with divine authority)
+        - Track pronoun referents carefully (who is "I" in each statement?)
+        - Distinguish participants: Christ (divine speaker), John (human recipient), angels (messengers)
+
+        THEOLOGICAL PRECISION:
+        - Christ is divine speaker (not mere angel or prophet)
+        - Divine titles ("First and Last") track to Christ
+        - Participant tracking prevents reducing Christ to created being
+
+  # === 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ===
+
+  - verse_pattern: 'Acts 9:3-7 vs. Acts 22:6-9 vs. Acts 26:12-18 - Saul\'s conversion (who heard/saw what?) (unverified)'
+    affected_values: [participant_experience, who_heard_voice, who_saw_light, participant_perception]
+    theological_stakes: NONE
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      PARTICIPANT TRACKING DISCREPANCY: Three accounts of Paul's conversion have
+      apparent participant tracking differences:
+      - Acts 9:7 - "men traveling with him stood speechless, hearing voice but seeing no one"
+      - Acts 22:9 - "those with me saw light but did not hear voice"
+      - Acts 26:13-14 - "we all fell to ground, I heard voice"
+
+      Participant tracking affects:
+      - Who experienced what? (Saul vs. companions)
+      - What did each participant perceive? (voice, light, falling)
+      - Harmonization of accounts (resolving apparent discrepancies)
+
+      Reader confusion if wrong:
+      - Contradictions in Scripture (apologetic problem)
+      - Unclear who witnessed what
+      - Unreliable testimony concerns
+
+      Participant tracking precision helps harmonize accounts (heard sound vs. understood voice)
+
+    translator_guidance: |
+      PARTICIPANT TRACKING REQUIREMENTS:
+      - Track Saul as PRIMARY participant (heard AND understood voice)
+      - Track companions as SECONDARY participants (experienced phenomena differently)
+      - Distinguish participant perceptions:
+        * Saul: Saw light, fell, heard voice, understood speech
+        * Companions: Saw light, heard sound, did NOT understand voice
+      - Mark participant experiences distinctly to enable harmonization
+
+      CONTEXTUAL IMPORTANCE:
+      - Precision prevents appearance of contradiction
+      - Tracks what EACH participant experienced
+      - Enables proper harmonization (sound vs. intelligible voice)
+
+  - verse_pattern: 'John 21:2 - Seven disciples at Sea of Tiberias (who was present?) (unverified)'
+    affected_values: [participant_enumeration, group_composition, named_vs_unnamed_participants]
+    theological_stakes: NONE
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      PARTICIPANT ENUMERATION: Text lists seven disciples but only names five:
+      - Simon Peter (named)
+      - Thomas (named)
+      - Nathanael (named)
+      - Sons of Zebedee (James and John - 2 named)
+      - Two other disciples (unnamed)
+      Total: 7 participants
+
+      Participant tracking affects:
+      - Accurate count (seven, not five)
+      - Named vs. unnamed participants
+      - Narrative clarity (who witnessed resurrection appearance?)
+
+      Reader confusion if wrong:
+      - Unclear how many disciples present
+      - Unnamed participants overlooked
+      - Narrative participant tracking imprecise
+
+    translator_guidance: |
+      PARTICIPANT TRACKING:
+      - Track SEVEN total participants (not just named ones)
+      - Enumerate named participants: Peter, Thomas, Nathanael, James, John
+      - Mark two unnamed participants
+      - Total group = 7 (contextual precision for narrative)
+
+  - verse_pattern: 'Matthew 17:1-8 - Transfiguration (who saw? who spoke?) (unverified)'
+    affected_values: [participant_selection, vision_witnesses, speaker_identification, divine_voice]
+    theological_stakes: MEDIUM (Christological)
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      PARTICIPANT TRACKING IN VISION: Multiple participants with distinct roles:
+      - Jesus (transfigured)
+      - Peter, James, John (three witnesses selected from Twelve)
+      - Moses and Elijah (vision participants, not physically present)
+      - Voice from cloud (God the Father speaking)
+
+      Participant tracking affects:
+      - Who witnessed transfiguration? (three disciples, not all twelve)
+      - Who appeared in vision? (Moses and Elijah)
+      - Who spoke from cloud? (God the Father - divine voice)
+      - Distinguishing physical vs. vision participants
+
+      Reader confusion if wrong:
+      - Unclear who witnessed event (apologetic/historical concern)
+      - Confusion about Moses/Elijah (resurrected? vision? ghosts?)
+      - Misidentifying divine voice
+
+    christian_orthodox_position:
+      preferred_value: three_disciples_witness_vision_of_moses_elijah_divine_voice
+      theological_basis: 'Matt 17:5 - "This is my beloved Son" (Father affirming Son). Moses and Elijah appear in vision (represent Law and Prophets). Three disciples selected as witnesses.'
+      translator_guidance: |
+        PARTICIPANT TRACKING:
+        - Track THREE disciples as witnesses: Peter, James, John (not all twelve)
+        - Track Moses and Elijah as VISION participants (not physically resurrected)
+        - Track voice from cloud as GOD THE FATHER (divine speaker)
+        - Distinguish:
+          * Physical participants (Jesus, three disciples)
+          * Vision participants (Moses, Elijah)
+          * Divine voice (Father)
+
+        THEOLOGICAL IMPORTANCE:
+        - Father's voice affirms Son's identity (Trinitarian moment)
+        - Three disciples = select witnesses (not public event)
+        - Moses and Elijah = Law and Prophets testify to Christ
+
+  - verse_pattern: 'Genesis 18:1-33 - Three visitors to Abraham, LORD speaks (who are the participants?) (unverified)'
+    affected_values: [participant_identification, divine_vs_angelic_participants, pronoun_referent_shifts]
+    theological_stakes: MEDIUM-HIGH (Christophany/Trinity implications)
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      PARTICIPANT TRACKING COMPLEXITY: Three visitors appear, but text shifts between
+      singular and plural references:
+      - "The LORD appeared to him" (v.1 - singular)
+      - "Three men stood in front of him" (v.2 - plural)
+      - "My Lord, if I have found favor" (v.3 - singular, Abraham addresses one)
+      - "They said" (v.9 - plural)
+      - "The LORD said" (v.13 - singular)
+      - "The men turned away... but Abraham remained standing before the LORD" (v.22-23)
+
+      Participant tracking affects:
+      - Who are the three visitors? (LORD + two angels? Three angels with one as LORD?)
+      - Pronoun referent shifts (singular LORD vs. plural visitors)
+      - Christophany interpretation (pre-incarnate Christ as one of three?)
+
+      Reader confusion if wrong:
+      - Unclear participant identification
+      - Confusing singular/plural shifts
+      - Missed Trinitarian/Christophany implications
+
+    christian_orthodox_position:
+      preferred_value: lord_plus_two_angels_with_christophany_interpretation
+      acceptable_alternatives: ['Three angels with one speaking for LORD']
+      theological_basis: 'Christian tradition sees Christophany (pre-incarnate Christ + 2 angels). Gen 19:1 - two angels go to Sodom while LORD remains with Abraham. Augustine, Church Fathers see Trinity hint.'
+      translator_guidance: |
+        PARTICIPANT TRACKING REQUIREMENTS:
+        - Track THREE initial visitors (v.2)
+        - Track singular "LORD" as distinct participant or primary speaker
+        - Track two angels (identified in Gen 19:1)
+        - Mark pronoun referent SHIFTS (singular LORD vs. plural visitors)
+        - Track dialogue: who speaks when? (singular vs. plural)
+
+        THEOLOGICAL OPTION:
+        - Christophany view: One visitor is pre-incarnate Christ (LORD)
+        - Track accordingly if translation tradition supports
+
+        CONTEXTUAL PRECISION:
+        - Participant tracking clarifies confusing singular/plural shifts
+        - Prevents reader confusion about who is speaking
+
+  - verse_pattern: 'Judges 6:11-24 - Angel of the LORD vs. the LORD (participant identification) (unverified)'
+    affected_values: [angel_vs_divine_participant, pronoun_referent, speaker_identification]
+    theological_stakes: MEDIUM (Christophany)
+    contextual_stakes: MEDIUM-HIGH
+
+    non_arbitrary_rationale: |
+      PARTICIPANT TRACKING AMBIGUITY: Text shifts between "Angel of the LORD" and
+      "the LORD" apparently referring to same participant:
+      - "Angel of the LORD appeared" (v.12)
+      - "The LORD turned to him and said" (v.14)
+      - "Angel of the LORD" (v.21)
+      - Gideon: "I have seen the angel of the LORD face to face" (v.22)
+
+      Participant tracking affects:
+      - Is "Angel of the LORD" same participant as "the LORD"? (Christophany view: yes)
+      - Pronoun referent (who speaks - angel or LORD?)
+      - Divine appearance theology
+
+      Reader confusion if wrong:
+      - Unclear participant (two beings or one?)
+      - Confusing title shifts
+
+    christian_orthodox_position:
+      preferred_value: angel_of_lord_as_divine_christophany
+      acceptable_alternatives: ['Angel speaking for LORD (representational)']
+      theological_basis: 'Christian tradition: "Angel of the LORD" in OT often = pre-incarnate Christ (Christophany). Text uses divine titles, accepts worship, speaks as God.'
+      translator_guidance: |
+        PARTICIPANT TRACKING:
+        - Track "Angel of the LORD" and "the LORD" as SAME participant (or closely identified)
+        - Mark pronoun referents carefully (shifts between titles)
+        - Option: Note Christophany interpretation (pre-incarnate Christ)
+
+        CONTEXTUAL CLARITY:
+        - Prevents reader confusion about one vs. two participants
+        - Tracks title shifts (Angel of LORD / the LORD)
+
+# SECTION 2: ARBITRARY (Contextually Clear - Choice Doesn't Cause Confusion)
+
+arbitrary_contexts:
+
+  - pattern: "Clear narrative participants with names (e.g., 'Peter and John went to temple')"
+    rationale: |
+      When participants are explicitly named and roles are clear, participant
+      tracking is straightforward. No theological or contextual ambiguity.
+    estimated_percentage: 45%
+    examples:
+      - 'Acts 3:1 - Peter and John going to temple (unverified)'
+      - 'Ruth 1:1-2 - Elimelech, Naomi, two sons named (unverified)'
+      - 'Genesis 4:8 - Cain spoke to Abel (unverified)'
+    translator_guidance: |
+      Track named participants straightforwardly. No special theological analysis needed.
+
+  - pattern: "Pronouns with clear antecedents in context (e.g., 'Jesus said... he went')"
+    rationale: |
+      When pronoun referents are contextually obvious (single participant active,
+      recent mention), participant tracking is automatic. No ambiguity.
+    estimated_percentage: 30%
+    examples:
+      - 'Luke 5:27 - Jesus saw Levi... he said to him (unverified)'
+      - 'John 11:43 - He cried... "Lazarus, come out" (unverified)'
+    translator_guidance: |
+      Track pronouns to clear antecedents. Context makes participant obvious.
+
+  - pattern: "Generic participants (e.g., 'whoever believes', 'anyone who hears')"
+    rationale: |
+      Universal or generic participants have no specific identity to track. Participant
+      is intentionally non-specific.
+    estimated_percentage: 8%
+    examples:
+      - 'John 3:16 - "Whoever believes" (unverified)'
+      - 'Matthew 7:24 - "Everyone who hears these words" (unverified)'
+      - 'Romans 10:13 - "Everyone who calls on name of Lord" (unverified)'
+    translator_guidance: |
+      Mark as generic/universal participant. No specific identity tracking needed.
+
+  - pattern: "Crowd/multitude references (e.g., 'the people said', 'crowds followed')"
+    rationale: |
+      Mass participants tracked as collective group. Specific identities irrelevant
+      to narrative. Participant tracking is simple (group).
+    estimated_percentage: 7%
+    examples:
+      - 'Matthew 21:8 - "Most of the crowd" (unverified)'
+      - 'Acts 2:41 - "Those who received his word" (unverified)'
+      - 'Luke 9:11 - "The crowds" (unverified)'
+    translator_guidance: |
+      Track as collective group participant. No individual tracking needed.
+
+  - pattern: "Single active participant in narrative segment (e.g., 'Moses went up the mountain. He received tablets.')"
+    rationale: |
+      When only one participant is active in narrative segment, pronoun tracking
+      is unambiguous. Clear discourse continuity.
+    estimated_percentage: 5%
+    examples:
+      - 'Exodus 19:3 - Moses went up to God (unverified)'
+      - 'Daniel 6:10 - Daniel went to his house (unverified)'
+    translator_guidance: |
+      Track single participant through pronouns. No ambiguity when only one active.
+
+  - pattern: "Vocatives and direct address (e.g., 'Jesus said to him, "Peter, feed my sheep"')"
+    rationale: |
+      Direct address with names or vocatives makes participant tracking explicit.
+      No ambiguity about who is addressed.
+    estimated_percentage: 3%
+    examples:
+      - 'John 21:15 - "Simon, son of John, do you love me?" (unverified)'
+      - 'Luke 10:41 - "Martha, Martha, you are anxious" (unverified)'
+      - 'Acts 9:4 - "Saul, Saul, why do you persecute me?" (unverified)'
+    translator_guidance: |
+      Track addressee by vocative. Explicit participant identification.
+
+  - pattern: "Dialogue with clear speaker tags (e.g., 'Jesus said... Peter replied')"
+    rationale: |
+      When dialogue includes explicit speaker identifications ("Jesus said",
+      "Peter answered"), participant tracking is straightforward.
+    estimated_percentage: 2%
+    examples:
+      - 'Matthew 16:13-20 - Jesus asked... Peter answered... Jesus replied (unverified)'
+      - 'John 4:7-26 - Jesus said... woman said (unverified)'
+    translator_guidance: |
+      Follow explicit speaker tags. Participant tracking is clear.
+
+# SUMMARY STATISTICS
+
+total_non_arbitrary_percentage: 20
+breakdown:
+  theological_critical: 12  # Trinity participants, resurrection witnesses, divine speech, Christophanies
+  contextual_precision: 8   # Participant enumeration, vision witnesses, pronoun ambiguity resolution
+
+total_arbitrary_percentage: 80
+note: |
+  Most participant tracking is contextually clear (80% of cases). Critical exceptions:
+
+  THEOLOGICAL CRITICAL (12%):
+  1. Trinity participant ambiguity (Gen 1:26, 3:22, 11:7, Isa 6:8)
+     - Wrong tracking = heresy (divine council, polytheism)
+  2. Christology participants (John 1:1 - Word vs. God distinction)
+     - Wrong tracking = modalism or Arianism
+  3. Trinitarian formula (Matt 28:19 - three participants, one name)
+     - Wrong tracking = tritheism or modalism
+  4. Resurrection witnesses (Mary, 500, apostles)
+     - Wrong tracking = undermines historical apologetic
+  5. Divine voice in visions (Rev 1, Matt 17)
+     - Wrong tracking = obscures deity of Christ
+  6. Christophanies (Gen 18, Judg 6 - Angel of LORD)
+     - Wrong tracking = misses pre-incarnate Christ
+
+  CONTEXTUAL PRECISION (8%):
+  7. Participant enumeration (seven disciples, three witnesses)
+     - Wrong tracking = narrative confusion
+  8. Pronoun referent shifts (singular/plural in Gen 18)
+     - Wrong tracking = reader confusion
+  9. Speaker identification in dialogue (who heard/saw what in Acts 9/22/26)
+     - Wrong tracking = apparent contradictions
+
+  PASTORAL IMPACT:
+  - Trinity contexts: Wrong tracking enables heresy
+  - Resurrection: Wrong tracking undermines apologetics
+  - Visions: Wrong tracking obscures Christology
+  - Narrative: Wrong tracking confuses readers
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal knowledge of Scripture, not cited sources. Stage 2 analysis
+  should verify these patterns in actual TBTA data and confirm theological
+  assessments with peer review.
+
+source: '{llm-cs45}'
+requires_peer_review: true
+peer_review_focus:
+  - Trinity participant interpretation (Gen 1:26, Isa 6:8)
+  - Christophany identification (Gen 18, Judg 6 - Angel of LORD)
+  - Trinitarian formula participants (Matt 28:19)
+  - Word vs. God distinction (John 1:1 - modalism/Arianism risks)
+  - Resurrection witness enumeration (1 Cor 15, John 20)
+  - Divine voice in visions (Rev 1, Matt 17)
+  - Harmonization of participant accounts (Acts 9/22/26)
+
+theological_perspective: conservative_protestant_christian
+note_on_perspective: |
+  This analysis reflects conservative Protestant orthodoxy as specified in
+  CLAUDE.md. Key distinctives affecting participant tracking:
+
+  - Trinitarian theology: "Let us" = Father, Son, Spirit (not angels)
+  - Christophanies: Angel of LORD = pre-incarnate Christ (common view)
+  - Biblical inerrancy: Apparent participant discrepancies harmonizable
+  - Deity of Christ: Participant tracking distinguishes persons, preserves unity
+
+  Denominational variations:
+  - Protestant/Catholic/Orthodox: Unified on Trinity participant interpretation
+  - Some debate on Christophany specifics (all affirm divine appearances)
+  - Harmonization strategies may vary (all affirm Scripture is consistent)
+
+recommendations_for_algorithm:
+  - priority_1: Flag Trinity contexts (Gen 1:26, 3:22, 11:7, Isa 6:8) as CRITICAL - participant tracking affects doctrine
+  - priority_2: Track resurrection witnesses carefully (apologetic importance)
+  - priority_3: Distinguish persons in Christological texts (John 1:1 - prevent modalism/Arianism)
+  - priority_4: Identify divine voice in visions (Rev 1, Matt 17 - Christ as divine speaker)
+  - priority_5: Track Christophanies (Angel of LORD contexts - pre-incarnate Christ)
+  - priority_6: Enumerate participants precisely when listed (1 Cor 15, John 21 - historical accuracy)
+  - priority_7: Mark pronoun referent shifts (Gen 18 singular/plural - prevent confusion)
+  - priority_8: Track speaker/hearer in dialogue (prevent apparent contradictions)
+
+top_5_theologically_significant_contexts:
+  1:
+    context: 'Genesis 1:26 - Trinity participant ambiguity'
+    stakes: CRITICAL
+    issue: 'Who are "us"? Trinity vs. divine council vs. royal we'
+    orthodox_position: 'Father, Son, Holy Spirit in creative dialogue'
+    impact: 'Wrong tracking enables heresy (divine council = angels create, polytheism)'
+
+  2:
+    context: 'John 1:1 - Word and God participant distinction'
+    stakes: CRITICAL
+    issue: 'Distinguish Word FROM God (persons) while affirming Word IS God (essence)'
+    orthodox_position: 'Two persons (Word, Father), one essence (both divine)'
+    impact: 'Wrong tracking = modalism (same person) or Arianism (Word lesser god)'
+
+  3:
+    context: 'Matthew 28:19 - Trinitarian baptismal formula'
+    stakes: CRITICAL
+    issue: 'Three participants (Father, Son, Spirit), one name (singular)'
+    orthodox_position: 'Three persons, one God - coordinate equality'
+    impact: 'Wrong tracking = tritheism (three gods) or modalism (one person)'
+
+  4:
+    context: '1 Corinthians 15:3-8 - Resurrection witness enumeration'
+    stakes: HIGH
+    issue: 'Who saw resurrected Jesus? Order? Individual vs. group? 500+ witnesses'
+    orthodox_position: 'Sequential appearances to multiple witnesses (historical verification)'
+    impact: 'Wrong tracking undermines historical apologetic, witness credibility'
+
+  5:
+    context: 'Isaiah 6:8 - Singular to plural shift in same verse'
+    stakes: MEDIUM-HIGH
+    issue: '"Whom shall I send" (singular) vs. "who will go for us" (plural)'
+    orthodox_position: 'Unity ("I") and Trinity ("us") both preserved in one verse'
+    impact: 'Flattening to all singular/plural obscures Trinitarian theology'

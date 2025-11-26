@@ -1,0 +1,413 @@
+feature: honorifics-register
+default_classification: arbitrary
+theological_significance: EXISTS
+
+# ==============================================================================
+# SECTION 1: NON-ARBITRARY-THEOLOGICAL
+# Choice affects core Christian doctrine; error could lead to heresy
+# ==============================================================================
+
+non_arbitrary_theological:
+
+  - group_id: divine-address-reverence
+    verse_pattern: 'Prayer to God/Father (Matt 6:9-13 Lord''s Prayer, John 17, Psalms) (unverified)'
+    affected_registers: [formal, informal, liturgical, intimate]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Nature of God (Transcendence vs. Immanence)
+      - Covenant relationship (Reverence vs. Intimacy)
+      - Prayer theology
+
+    non_arbitrary_rationale: |
+      The register chosen for addressing God affects how readers understand their
+      relationship with God. Overly familiar forms risk losing reverence for God's
+      holiness; overly formal forms risk losing the intimacy of adoption as sons.
+      Both transcendence (God as Holy Other) and immanence (God as Abba Father)
+      are orthodox Christian positions that must be balanced.
+
+    christian_orthodox_position:
+      preferred_approach: BALANCED_REVERENCE_AND_INTIMACY
+      acceptable_alternatives:
+        - formal_reverent: 'Emphasizes God''s holiness, transcendence (traditional Catholic, Orthodox, high-church Protestant)'
+        - intimate_familiar: 'Emphasizes adoption, relationship with Abba Father (evangelical, charismatic)'
+
+      forbidden_values:
+        - casual_irreverent: 'Treats God as mere peer, loses awe and holiness'
+        - mocking_contemptuous: 'Blasphemous disrespect'
+
+      theological_basis: |
+        God is both transcendent (Isa 6:3 "Holy, holy, holy") and immanent
+        (Rom 8:15 "Abba, Father"). Both aspects must be honored. The choice between
+        formal/informal pronouns (T/V distinction) reflects this tension.
+
+        Historical precedent: Luther used "du" (familiar) to emphasize intimate
+        relationship with Father. Traditional liturgy used "vous/Sie/вы" (formal)
+        to emphasize reverence. Both are orthodox; choice reflects theological
+        emphasis and target culture's honorific system.
+
+      translator_guidance: |
+        - FIRST CHOICE: If target language allows, use highest respectful forms
+          that still permit intimacy (e.g., Japanese keigo but not distance-creating forms).
+        - ACCEPTABLE: Languages with T/V distinction may use either formal (reverence)
+          or informal (intimacy) based on theological tradition and target audience,
+          but must be consistent with theological intent of the passage.
+        - CONTEXTUAL: Jesus teaching "Our Father" (Matt 6:9) emphasizes intimacy;
+          Isaiah seeing God's throne (Isa 6) emphasizes transcendence.
+        - FORBIDDEN: Never use contemptuous, mocking, or overly casual forms that
+          eliminate reverence entirely.
+
+    denominational_considerations:
+      - tradition: Catholic/Orthodox/Anglican
+        typical_register: formal_reverent
+        rationale: 'Emphasis on liturgy, mystery, transcendence'
+      - tradition: Evangelical/Reformed
+        typical_register: balanced_or_intimate
+        rationale: 'Emphasis on personal relationship, covenant intimacy'
+      - tradition: Charismatic/Pentecostal
+        typical_register: intimate_familiar
+        rationale: 'Emphasis on Holy Spirit intimacy, "Abba Father" relationship'
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Hyper-familiarity (God as "buddy")'
+        used_by: [prosperity_gospel, some_seeker_sensitive]
+        christian_assessment: PROBLEMATIC - Loses biblical awe and fear of the Lord (Prov 9:10)
+
+      - interpretation: 'Extreme distance (God unreachable)'
+        used_by: [deism, some_liberal_theology]
+        christian_assessment: PROBLEMATIC - Denies incarnation and God's personal involvement
+
+  - group_id: christological-self-reference
+    verse_pattern: 'Jesus referring to himself as "Son of Man" vs "I" (Gospels throughout, e.g., Matt 16:13, John 8:58) (unverified)'
+    affected_registers: [humble, authoritative, prophetic, formal]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (deity and humanity of Christ)
+      - Messianic claims
+      - Authority of Jesus
+
+    non_arbitrary_rationale: |
+      Jesus's self-designation and register affects how readers understand his
+      claims. "Son of Man" (humble, prophetic) vs "I AM" (divine authority).
+      The register must preserve both humility and divine authority.
+
+    christian_orthodox_position:
+      preferred_approach: CONTEXT_SENSITIVE
+      theological_basis: |
+        Jesus is fully God and fully man (Chalcedonian Definition). His speech
+        reflects both humility (Phil 2:5-8) and divine authority (John 8:58).
+
+      acceptable_alternatives:
+        - humble_servant: 'When emphasizing humanity, service (John 13 foot washing)'
+        - divine_authority: 'When claiming deity, authority (John 8:58 "Before Abraham was, I AM")'
+
+      forbidden_values:
+        - merely_human: 'Register that denies divine nature (Arianism, Jehovah''s Witnesses)'
+        - merely_divine: 'Register that denies true humanity (Docetism)'
+
+      translator_guidance: |
+        - Preserve the humility of "Son of Man" references (Dan 7:13 connection)
+        - Preserve the authority of "I AM" statements (Ex 3:14 connection)
+        - Jesus's teaching register to disciples: authoritative but intimate
+        - Jesus's register to opponents: authoritative, sometimes confrontational
+
+  - group_id: jesus-address-to-father
+    verse_pattern: 'Jesus praying to the Father (John 17, Matt 26:39 Gethsemane, Luke 23:34, 46) (unverified)'
+    affected_registers: [intimate, reverential, filial, liturgical]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (relationship between Father and Son)
+      - Incarnation (Jesus'' humanity in prayer)
+      - Prayer theology
+
+    non_arbitrary_rationale: |
+      Jesus's address to the Father reveals the eternal relationship within the
+      Trinity and models prayer for believers. The register must show both:
+      (1) Unique filial relationship of eternal Son to eternal Father
+      (2) Intimate access believers have through adoption
+
+    christian_orthodox_position:
+      preferred_approach: INTIMATE_FILIAL_REVERENCE
+
+      theological_basis: |
+        Jesus addresses Father as "Abba" (Mark 14:36) - intimate Aramaic family term,
+        yet with profound reverence. This models both the eternal Son's relationship
+        to the Father and the believer's adopted relationship (Rom 8:15, Gal 4:6).
+
+      acceptable_alternatives:
+        - intimate_filial: 'Emphasizes "Abba, Father" - family intimacy'
+        - reverential_filial: 'Balances intimacy with reverence for Father''s will'
+
+      forbidden_values:
+        - subordinationist: 'Register suggesting Son is inferior being (Arianism)'
+        - casual_peer: 'Register suggesting Father and Son are mere equals without distinction'
+
+      translator_guidance: |
+        - Preserve intimacy of "Abba" (Mark 14:36) while maintaining reverence
+        - Show submission to Father's will (Matt 26:39 "not my will but yours")
+        - High Priestly Prayer (John 17): intimate yet majestic
+        - Cross prayers (Luke 23:34, 46): vulnerable yet authoritative
+
+  - group_id: blasphemy-irreverence
+    verse_pattern: 'Mocking of Jesus (Matt 27:27-31, 39-44), blasphemous speech (Matt 26:65), taking God''s name in vain (unverified)'
+    affected_registers: [mocking, contemptuous, blasphemous, irreverent]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Holiness of God
+      - Sin and rebellion
+      - Third Commandment (Ex 20:7)
+
+    non_arbitrary_rationale: |
+      Blasphemous and mocking speech must be clearly identified as SIN, not
+      normalized. The register must show this is wrong while still being
+      translatable for understanding the narrative.
+
+    christian_orthodox_position:
+      preferred_approach: CLEARLY_MARKED_AS_SIN
+
+      theological_basis: |
+        Blasphemy is serious sin (Matt 12:31, Lev 24:16). When Scripture records
+        blasphemous speech (soldiers mocking Jesus, false witnesses), it must be
+        clear this is sinful speech being condemned, not modeled.
+
+      translator_guidance: |
+        - Use clearly mocking/contemptuous register when translating mockery of Jesus
+        - Context must show this is condemned behavior
+        - Do not sanitize the cruelty, but ensure it's not normalized
+        - In languages with extreme profanity systems, may need cultural equivalent
+          that conveys "this is the worst kind of speech"
+
+# ==============================================================================
+# SECTION 2: NON-ARBITRARY-CONTEXTUAL
+# Choice affects reader understanding; error causes confusion
+# ==============================================================================
+
+non_arbitrary_contextual:
+
+  - group_id: social-hierarchy-parables
+    verse_pattern: 'Master-servant parables (Matt 18:23-35, Luke 16:1-13, Matt 20:1-16) (unverified)'
+    affected_registers: [superior-to-inferior, inferior-to-superior, formal, humble]
+    theological_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Parables teach through social relationships. Getting the register wrong
+      obscures the teaching. Masters speak down (familiar/commanding), servants
+      speak up (formal/humble). This power dynamic is essential to the parable's
+      meaning.
+
+    contextual_requirements:
+      - Master → Servant: Use superior-to-inferior register (familiar, commanding)
+      - Servant → Master: Use inferior-to-superior register (formal, humble, polite)
+      - Peer interactions: Neutral or situationally appropriate
+
+    translator_guidance: |
+      - In languages with grammatical honorifics (Japanese, Korean, Thai, etc.),
+        MUST encode the power relationship correctly
+      - Master uses familiar forms downward (unless showing unusual grace)
+      - Servant always uses respectful forms upward
+      - Violation of expected register can teach grace (prodigal son's father
+        running to son - culturally unexpected, shows grace)
+
+  - group_id: paul-confrontation-vs-affection
+    verse_pattern: 'Paul''s varying tone: confrontational (Gal 1:6-9, 3:1-3) vs. affectionate (1 Thess 2:7-8, Phil 1:3-8) (unverified)'
+    affected_registers: [confrontational, pastoral, affectionate, formal, familiar]
+    theological_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Paul's register shift is deliberate and teaches about pastoral care.
+      Galatians is harsh (false gospel); Philippians is warm (faithful church).
+      Getting this wrong obscures Paul's pastoral approach.
+
+    contextual_requirements:
+      - Galatians: Confrontational, formal-rebuking register ("You foolish Galatians!")
+      - Philippians: Affectionate, intimate register ("my brothers, whom I love and long for")
+      - 1 Corinthians: Mix - correction (ch 1-6) then instruction (ch 7+)
+
+    translator_guidance: |
+      - Preserve Paul's tone shifts between epistles
+      - Confrontational passages should feel stern, not casual
+      - Affectionate passages should feel warm, not distant
+      - Cultural adaptation: use target culture's confrontation/affection registers
+
+  - group_id: prophetic-authority-to-kings
+    verse_pattern: 'Prophets confronting kings: Nathan to David (2 Sam 12), Elijah to Ahab (1 Kings 21), Isaiah to Hezekiah (2 Kings 20) (unverified)'
+    affected_registers: [prophetic-authoritative, confrontational, respectful-but-firm]
+    theological_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Prophets speak with divine authority even to kings. Register must show:
+      (1) They respect the king's office
+      (2) They speak God's word with authority above the king
+      This tension is essential to understanding prophetic ministry.
+
+    contextual_requirements:
+      - Prophet → King: Respectful-but-firm, divine authority supersedes royal authority
+      - Not subservient (prophet speaks for God)
+      - Not contemptuous (office of king deserves respect)
+
+    translator_guidance: |
+      - Use register that shows prophet is not intimidated by king
+      - Nathan's "You are the man!" (2 Sam 12:7) - direct confrontation
+      - Balance: "O King" (respect) + "Thus says the LORD" (divine authority)
+
+  - group_id: age-based-relationships
+    verse_pattern: 'Elder-younger relationships: Timothy/Paul (1 Tim 1:2 "my true child"), Ruth/Naomi, David/Jonathan (unverified)'
+    affected_registers: [elder-to-younger, younger-to-elder, peer]
+    theological_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      In languages with obligatory age-based honorifics (Bantu, Japanese, Korean,
+      etc.), the age relationship must be correctly encoded or the text becomes
+      confusing or even misleading.
+
+    contextual_requirements:
+      - Younger → Elder: Respectful, humble register (Timothy to Paul)
+      - Elder → Younger: Affectionate, teaching register (Paul to Timothy)
+      - Peers: Neutral or mutually respectful
+
+    translator_guidance: |
+      - CRITICAL for: Japanese, Korean, Thai, Vietnamese, Swahili, Bantu languages
+      - Determine relative age from context (Paul is elder, Timothy is younger)
+      - Use target language's age-honorific system appropriately
+      - NOTE: Some relationships unclear from text - may need cultural research
+        or translator notes about ambiguity
+
+  - group_id: jesus-disciples-vs-opponents
+    verse_pattern: 'Jesus to disciples (Matt 5-7, John 13-17) vs. Jesus to Pharisees (Matt 23, John 8) (unverified)'
+    affected_registers: [intimate-teaching, confrontational-rebuking, formal, familiar]
+    theological_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Jesus's register shift reveals relationship dynamics and pastoral vs.
+      prophetic ministry. Disciples receive intimate teaching; opponents receive
+      authoritative rebuke.
+
+    contextual_requirements:
+      - Jesus → Disciples: Intimate-authoritative (teacher to students, master to followers)
+      - Jesus → Pharisees: Confrontational-authoritative ("You hypocrites!", "Brood of vipers!")
+      - Jesus → Crowds: Public-teaching (accessible but authoritative)
+      - Jesus → Seekers: Gentle-invitational ("Come to me...")
+
+    translator_guidance: |
+      - Preserve intimacy of Upper Room discourse (John 13-17)
+      - Preserve harshness of Pharisee confrontations (Matt 23)
+      - Register shift shows Jesus's wisdom in varied pastoral situations
+
+  - group_id: gender-marked-speech
+    verse_pattern: 'Women speakers in context: Mary''s Magnificat (Luke 1:46-55), Hannah''s prayer (1 Sam 2), Deborah''s authority (Judges 4-5) (unverified)'
+    affected_registers: [female-speech-patterns, male-speech-patterns, gender-neutral]
+    theological_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      In languages with gender-marked speech (Japanese, Thai, Korean, etc.),
+      the speaker's gender affects verb forms, particles, and register.
+      Getting this wrong is grammatically incorrect and culturally jarring.
+
+    contextual_requirements:
+      - Female speakers: Use target language's female speech patterns
+      - Male speakers: Use target language's male speech patterns
+      - Narrative voice: May be gender-neutral depending on language
+
+    translator_guidance: |
+      - CRITICAL for: Japanese (onna-rashii kotoba), Thai (particle differences),
+        Korean (particle differences)
+      - Identify speaker gender from context
+      - Apply target language's gender-speech rules appropriately
+      - Modern languages may be shifting away from strict gender-speech - follow
+        target culture's current norms
+
+  - group_id: public-vs-private-speech
+    verse_pattern: 'Public teaching (Sermon on Mount) vs. private instruction (Nicodemus at night John 3) (unverified)'
+    affected_registers: [public-formal, private-informal, liturgical, didactic]
+    theological_stakes: LOW-MEDIUM
+
+    non_arbitrary_rationale: |
+      Public vs. private contexts affect register in many cultures. Large crowd
+      speeches are more formal; intimate conversations are more personal.
+
+    contextual_requirements:
+      - Public teaching: Formal-didactic register
+      - Private conversation: Intimate-personal register
+      - Synagogue/Temple: Liturgical-formal register
+
+    translator_guidance: |
+      - Sermon on Mount: Public teaching register
+      - Nicodemus conversation: Private, intimate discussion
+      - Upper Room: Semi-private, intimate teaching to close disciples
+
+# ==============================================================================
+# SECTION 3: ARBITRARY CONTEXTS
+# Choice is stylistic; multiple registers acceptable
+# ==============================================================================
+
+arbitrary_contexts:
+
+  - pattern: 'Peer conversations (disciples talking to each other, friends conversing)'
+    rationale: |
+      When peers of similar age and status converse, most languages allow
+      flexibility in register based on relationship closeness, setting, and
+      personal preference. Choice is stylistic.
+    estimated_percentage: 30%
+    translator_freedom: HIGH
+
+  - pattern: 'Narrative description (narrator voice describing events)'
+    rationale: |
+      Narrative voice is typically neutral or follows target language conventions.
+      Unless addressing reader directly, register is stylistic choice.
+    estimated_percentage: 25%
+    translator_freedom: HIGH
+
+  - pattern: 'Generic crowds speaking (undifferentiated crowd reactions)'
+    rationale: |
+      When crowd speaks without specific individuals identified, register can
+      vary based on context (reverent, questioning, mocking) but specific choice
+      within that category is flexible.
+    estimated_percentage: 10%
+    translator_freedom: MEDIUM
+
+  - pattern: 'Routine interactions (greetings, transactions, travel conversations)'
+    rationale: |
+      Daily life interactions where register conveys general politeness level
+      but specific choice doesn't affect meaning.
+    estimated_percentage: 20%
+    translator_freedom: HIGH
+
+# ==============================================================================
+# SUMMARY STATISTICS (Estimates)
+# ==============================================================================
+
+estimated_distribution:
+  non_arbitrary_theological: 5%    # High stakes - doctrine affected
+  non_arbitrary_contextual: 10%    # Medium stakes - clarity affected
+  arbitrary: 85%                   # Stylistic freedom
+
+# ==============================================================================
+# NOTES FOR ALGORITHM DEVELOPMENT
+# ==============================================================================
+
+implementation_notes: |
+  1. PRIORITY CLASSIFICATION:
+     - First identify theologically critical contexts (Trinity, Christology, blasphemy)
+     - Second identify contextual clarity needs (master/servant, age, gender)
+     - Default to arbitrary for routine speech
+
+  2. CULTURAL ADAPTATION:
+     - Languages without honorific systems: Focus on tone (harsh, gentle, formal, casual)
+     - Languages with T/V only: Focus on theological reverence/intimacy balance
+     - Languages with complex systems (Japanese, Korean, Thai): Full hierarchy encoding
+
+  3. VALIDATION CHECKPOINTS:
+     - Does divine address maintain both reverence and intimacy?
+     - Are social hierarchies in parables clear?
+     - Is Paul's confrontational tone in Galatians preserved?
+     - Are prophetic confrontations authoritative but respectful?
+
+  4. AMBIGUOUS CASES:
+     - When unclear, prefer reverent/formal over casual (cultural safety)
+     - Provide translator notes for verses where register choice is theologically debated
+     - Allow denominational variation for non-essential choices (T/V to God)
+
+  5. MACHINE LEARNING IMPLICATIONS:
+     - Train on multiple denominational traditions (Catholic, Orthodox, Evangelical)
+     - Weight theologically critical contexts higher in accuracy metrics
+     - Allow regional variation for arbitrary contexts
+     - Flag doctrinal violations (e.g., irreverent address to God) as critical errors

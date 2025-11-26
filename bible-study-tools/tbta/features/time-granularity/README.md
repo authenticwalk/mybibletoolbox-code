@@ -1,58 +1,69 @@
 # Time Granularity
 
-## Overview
+**Definition**: Temporal remoteness—how distant an event is from discourse moment (present/reference point). Distinct from tense (past/present/future) and aspect (perfective/imperfective).
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Aspect | Value |
+|--------|-------|
+| **TBTA Status** | Tier A (Essential); 11,649 verses annotated |
+| **Feature Values** | 23-24 codes: P (present), D-i (past distances), E-p (future distances), r/T (atemporal) |
+| **Gateway** | Verbs only (9-position code, position 1) |
+| **Non-Arbitrary** | 15% (theological contexts: crucifixion hours, resurrection "third day", creation origins) |
+| **Arbitrary** | 85% (stylistic: general narrative, wisdom literature, travel sequences) |
 
-Time granularity captures the level of temporal precision and specificity in references to time - ranging from general (e.g., "in ancient times") to very specific (e.g., "at 3 PM on Tuesday, March 15th").
+## Mandatory Languages
 
-## Development Status
+**High Granularity** (4-8+ distinctions):
+- **Bantu**: ChiBemba, Swahili, Gĩkũyũ (hodiernal/hesternal/remote system)
+- **Trans-New Guinea**: Amele, Mian, Kobon
+- **Austronesian**: **Tagalog** (11 distinctions—critical language)
+- **Quechuan**: Fused temporal-evidential system
 
-🚧 **Stage 0**: Not yet started
+**Low Granularity** (optional/context-dependent):
+- **Indo-European**: English, Spanish, German (adverbials, not obligatory morphology)
+- **Mayan**: Aspect-based (completive/incompletive)
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+## Critical Contexts (Non-Arbitrary—FORBIDDEN/CRITICAL Warnings)
 
-## Development Checklist
+| Context | Required Value | ❌ Forbidden | ⚠️ Stakes |
+|---------|---|---|---|
+| **Genesis 1:1** "In beginning" | Historic/primordial past | Recent past ❌ | Creation historicity, Sabbath theology |
+| **Mark 15:25,33-34** Crucifixion "3rd/6th/9th hour" | Specific hour marking | Vague "during day" ❌ | **Passover typology**, supernatural darkness |
+| **1 Cor 15:4** Resurrection "third day" | Specific day-count | Approximate "later" ❌ | **Prophetic fulfillment** (Jonah), creedal language |
+| **Matthew 24:36** Second Coming "day/hour unknown" | Eschatological future + unknown | Calculable specific date ❌ | **HERETICAL: Date-setting forbidden** |
 
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/time-granularity/`)
-- [ ] Generate README.md with feature definition + stage checklist
+## Language Examples
 
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
+**Tagalog Speaker** (high granularity, 11 time distinctions):
+- ✅ "Kahapon" (yesterday) for Gospel events
+- ✅ Hodiernal subdivisions for Sabbath timing
+- ❌ DO NOT use recent past for Genesis (theologically incorrect)
 
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
+**English Speaker** (low granularity, adverbs required):
+- ✅ "At the third hour" (adverbial precision)
+- ✅ "On the third day" (adverbial specification)
+- ✅ Temporal distance via context + adverbs
 
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
+**Swahili Speaker** (Bantu, mandatory remote past):
+- ✅ Use remote past for biblical narratives (events beyond living memory)
+- ✅ Hodiernal distinctions for Sabbath commands
+- ❌ CRITICAL: Recent past for Genesis creates theological error
 
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
+## Source Language Behavior
 
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
+**Hebrew & Greek**: ❌ NO explicit temporal remoteness morphology. Both aspect-prominent; context determines remoteness. Translators **must infer from context** (genealogies, narrative framing, cultural knowledge) then encode for target language requirements.
 
-## Resources
+## TBTA Encoding
 
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/time-granularity/](../features-archive/time-granularity/)
+**Position 1 of 9-position verb code**. Single character:
+- **P**: Present
+- **D-i, q**: Past spectrum (immediate → unknown)
+- **E-p**: Future spectrum (immediate → unknown)
+- **r, T**: Atemporal (discourse, timeless)
+
+**Case Sensitivity Meaningful**: Uppercase (P, D, A, E, F, T) for present/immediate; lowercase for specific distances and margins.
+
+---
+
+**Full Research**: See `research/README.md` for complete analysis of 28+ scholarly sources, language typology of 1,009 languages, and detailed theological classification.

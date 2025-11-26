@@ -1,58 +1,63 @@
 # Surface Realization
 
-## Overview
+**How semantic participants appear on the language surface: noun, pronoun, zero, or clitic.**
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Aspect | Details |
+|--------|---------|
+| **TBTA Feature** | #7 - Tier A (Essential) |
+| **Values** | N (Noun), P (Personal Pronoun), p (Pronoun), A (Always Noun), Zero, Clitic |
+| **Applies To** | Nouns, Pronouns only |
+| **Source Languages** | Hebrew (moderate pro-drop), Greek (full pro-drop, ~35% null subjects) |
+| **Target Scope** | 1008 languages; ~70% allow pro-drop |
+| **Theological Stakes** | **CRITICAL** in 15% of contexts (divine passive, Holy Spirit, Trinity) |
 
-Surface realization analyzes how underlying semantic or syntactic content is expressed on the surface level of language, including word order, morphological marking, null elements, and other surface-level encoding strategies.
+## Examples: Translation Choices
 
-## Development Status
+### ✅ Correct: Divine Passive (Resurrection)
+| Greek Source | English (Non-Pro-Drop) | Spanish (Pro-Drop) |
+|---|---|---|
+| "ἐγήγερται" (he has been raised) | "He has been raised [by God]" | "Ha sido resucitado" (Passive preserves divine agency) |
+| Theological: **God is agent** | Explicit agent if needed | Zero agent acceptable (implies God reverently) |
 
-🚧 **Stage 0**: Not yet started
+### ❌ FORBIDDEN: Holy Spirit as "It"
+| Greek Source | ✅ Correct | ❌ HERETICAL |
+|---|---|---|
+| "ἐκεῖνος" (masculine "he" for Spirit) | "He will guide you" (personal pronoun) | "It will guide you" (Jehovah's Witnesses error) |
+| Theological: Spirit is **person, not force** | John 16:13 (personal) | Denies personhood & deity |
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+### ⚠️ High Stakes: Authority Claim (Matt 5:21-22)
+| Element | Form | Purpose |
+|---------|------|---------|
+| "It was said" (OT law) | Divine passive (zero agent) | Reverent reference to God |
+| "But **I** say" (Jesus) | Emphatic personal pronoun | Jesus claims authority = God's |
+| **Translation Impact** | Preserve contrast | Lose contrast = weaken Christology |
 
-## Development Checklist
+## Target Audiences
 
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/surface-realization/`)
-- [ ] Generate README.md with feature definition + stage checklist
+- **Pro-Drop Languages** (Spanish, Japanese, Mandarin, Arabic): Surface Realization natural; **risk**: obscure divine agency if passive not preserved
+- **Non-Pro-Drop** (English, Swahili): Must add pronouns where source uses zero; **risk**: add pronouns that create ambiguity
+- **Symmetrical Voice** (Tagalog, Cebuano): Voice choice affects which argument surfaces; **risk**: wrong voice = wrong participant prominent
+- **Inverse Systems** (Mapudungun): Person hierarchy drives subject marking; understand language-specific rules
 
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
+## Theological Priorities
 
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
+**🚨 CRITICAL (must be precise)**:
+1. Divine passive (resurrection, theological passive) → preserve or make God explicit
+2. Holy Spirit pronouns → **REQUIRE personal pronouns** (never neuter "it")
+3. Crucifixion agency → preserve both human agents AND divine plan
+4. Jesus's emphatic pronouns → maintain contrast with divine passive
 
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
+**📘 Context-Dependent** (follow natural discourse):
+- Routine narrative participant tracking (85% of occurrences)
+- Dialogue attribution, settings, generic references
 
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
+## TBTA Encoding
 
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
+**Position**: Character 9 (or 11—discrepancy exists)
+**Applies When**: Part of Speech = Noun or Pronoun
 
-## Resources
+⚠️ **Known Issues**: Value set ambiguity (Zero/Clitic codes undocumented); position discrepancy in documentation; no validation data available.
 
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/surface-realization/](../features-archive/surface-realization/)
+**For Details**: See [research/README.md](./research/README.md)

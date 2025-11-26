@@ -1,0 +1,657 @@
+feature: time-granularity
+default_classification: arbitrary # Most temporal references are stylistic/contextual
+theological_significance: EXISTS # Temporal precision critical in specific doctrinal contexts
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # ========== 1A: NON-ARBITRARY-THEOLOGICAL (High Doctrinal Stakes) ==========
+
+  - verse_pattern: 'Mark 15:25, 33-34 - Crucifixion hours: 3rd, 6th, 9th hour (unverified)'
+    affected_values: [specific_hour, general_day, historic_past]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Atonement theology (darkness at 6th hour)
+      - Fulfillment of Passover timing
+      - Gospel harmony (Synoptic vs John timing)
+      - Liturgical hours (Christian prayer tradition)
+
+    non_arbitrary_rationale: |
+      Specific hours of crucifixion day carry theological weight:
+      - 3rd hour (9 AM): Crucifixion begins (Mark 15:25)
+      - 6th hour (12 PM): Darkness covers land (Mark 15:33)
+      - 9th hour (3 PM): Jesus dies, "My God, my God..." (Mark 15:34)
+
+      These times align with:
+      - Temple sacrifice schedule (morning and evening sacrifices)
+      - Passover lamb timing (lamb slain at twilight/3 PM)
+      - Divine judgment symbolism (supernatural darkness)
+
+      Temporal precision establishes Jesus as fulfillment of Passover typology.
+      Vague temporal reference ("during the day") loses theological connection
+      to temple liturgy and prophetic fulfillment.
+
+    christian_orthodox_position:
+      preferred_value: specific_hour_marking
+      acceptable_alternatives: [general_day_with_hour_specification]
+      forbidden_values: [vague_past, recent_past]
+      theological_basis: 'Passover typology (Exodus 12:6, Leviticus 23:5); Jesus as Lamb of God; fulfillment of temple sacrifice schedule'
+      translator_guidance: |
+        - FIRST CHOICE: Use SPECIFIC HOUR markers if language has them
+          (e.g., Tagalog hodiernal subdivisions, Yagua precise time markers)
+        - REQUIRED: Preserve "3rd/6th/9th hour" precision in some form
+        - FORBIDDEN: Vague "one day" or "sometime" that loses liturgical connection
+        - CRITICAL: These times connect to Passover lamb sacrifice timing
+        - CONTEXT: Darkness at 6th hour is supernatural sign (not arbitrary)
+        - NOTE: Overall event is historic past (2000 years ago), but within
+          that narrative, hour-level precision is theologically significant
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Gospel timing contradictions (Mark vs John on crucifixion hour)'
+        used_by: ['Liberal scholarship', 'Skeptics']
+        christian_assessment: RECONCILABLE - Different time reckoning systems (Jewish vs Roman hours) or theological emphasis
+        time_implication: Orthodox position maintains both accounts are accurate with different reference frames
+
+      - interpretation: 'Crucifixion timing is arbitrary narrative detail'
+        used_by: ['Some historical-critical approaches']
+        christian_assessment: REJECTED - Undermines typological fulfillment and theological symbolism
+        time_implication: Would wrongly treat precise hours as arbitrary stylistic choice
+
+  - verse_pattern: '1 Corinthians 15:4, Matthew 28:1, Luke 24:7,21 - Resurrection "on the third day" (unverified)'
+    affected_values: [specific_day_count, general_future, historic_past]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Resurrection historicity
+      - Prophetic fulfillment (Jonah sign)
+      - Creedal confession ("third day" in Apostles' Creed)
+      - Sign of Jonah (Matthew 12:40)
+
+    non_arbitrary_rationale: |
+      "Third day" is theologically precise, not approximate:
+      - Fulfills Jesus' prediction (Matthew 16:21, 17:23, 20:19)
+      - Fulfills Jonah typology (3 days/nights in fish)
+      - Creedal formula: "rose again on the third day" (1 Cor 15:4)
+      - Jewish idiom: "after three days" = "on third day" (inclusive counting)
+
+      Temporal precision critical for:
+      - Historical verification (specific timeframe for witnesses)
+      - Prophetic fulfillment claims (Jesus predicted "third day")
+      - Theological meaning (not immediate, showing death was real; not delayed, showing power)
+
+      Vague temporal reference ("later", "after some time") undermines:
+      - Prophetic precision
+      - Creedal specificity
+      - Historical verifiability
+
+    christian_orthodox_position:
+      preferred_value: specific_day_count_third
+      acceptable_alternatives: []
+      forbidden_values: [vague_future, general_later, approximate_time]
+      theological_basis: '1 Cor 15:4 - "raised on third day according to Scriptures"; Jonah 1:17; Hosea 6:2'
+      translator_guidance: |
+        - REQUIRED: "Third day" precision (not "a few days" or "later")
+        - CRITICAL: This is creedal language - appears in Apostles' Creed
+        - FORBIDDEN: Vague approximations lose prophetic fulfillment force
+        - CONTEXT: Within historic past narrative (2000 years ago), but "third day"
+          counting is essential for theological claims
+        - NOTE: Some languages may need to specify "inclusive counting" (Friday = day 1,
+          Saturday = day 2, Sunday = day 3) to avoid confusion with exclusive counting
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Resurrection is metaphorical/spiritual, not literal'
+        used_by: ['Liberal theology', 'Some modern reinterpretations']
+        christian_assessment: HERETICAL - Denies bodily resurrection (1 Cor 15:14-19)
+        time_implication: Would treat "third day" as symbolic rather than historical timeline
+
+      - interpretation: 'Friday-Sunday is not "three days and three nights"'
+        used_by: ['Some fundamentalist literalists requiring 72-hour period']
+        christian_assessment: OVERCORRECTION - Ignores Jewish inclusive day-reckoning idiom
+        time_implication: Creates false contradiction; "third day" and "after three days" are equivalent in Jewish usage
+
+  - verse_pattern: 'Genesis 1:1-2:3 - Seven-day creation structure; "In the beginning" (unverified)'
+    affected_values: [historic_past, primordial_time, specific_day_sequence]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Creation ex nihilo
+      - Sabbath theology (seventh day rest)
+      - Creation ordinances
+      - Age of earth debates (YEC vs OEC vs framework)
+
+    non_arbitrary_rationale: |
+      "In the beginning" requires HISTORIC PAST (remote/primordial), not recent past:
+      - Event beyond living memory (6000+ years on conservative timeline)
+      - Foundational event (before human history)
+      - Using recent past ("yesterday", "last week") would be theologically absurd
+      - Using vague timeless would lose historical grounding
+
+      Seven-day structure has theological weight:
+      - Establishes Sabbath pattern (Exodus 20:11)
+      - Ordered sequence (light before life, etc.)
+      - "Day" terminology debated but sequence is essential
+
+      Temporal granularity precision needed:
+      - NOT timeless/mythological (historic event)
+      - NOT recent past (primordial event)
+      - HISTORIC PAST or PRIMORDIAL PAST marking
+
+    christian_orthodox_position:
+      preferred_value: historic_past_or_primordial
+      acceptable_alternatives: [remote_past]
+      forbidden_values: [recent_past, immediate_past, timeless_mythological, present]
+      theological_basis: 'Genesis 1:1 - "In beginning God created"; Exodus 20:11 - "in six days the LORD made"; John 1:1-3 - "In beginning was Word"'
+      translator_guidance: |
+        - REQUIRED: HISTORIC/PRIMORDIAL/REMOTE PAST (not recent past)
+        - FORBIDDEN: Recent past markers (today, yesterday, last week) - theologically incorrect
+        - FORBIDDEN: Timeless/mythological markers - Genesis presents as historical narrative
+        - ACCEPTABLE: Languages may differ on whether this is "remote past" (within cultural
+          memory traditions) or "primordial past" (before cultural memory)
+        - NOTE: Young Earth vs Old Earth debate affects absolute timeline, but ALL positions
+          agree this is REMOTE/HISTORIC past relative to present, not recent events
+        - CONTEXT: Seven-day sequence establishes Sabbath theology (whether literal
+          24-hour days or framework, sequence matters)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Creation is timeless myth, not history'
+        used_by: ['Liberal theology', 'Neo-orthodox reinterpretations']
+        christian_assessment: REJECTED - Undermines historical-grammatical reading and NT references to Genesis as history
+        time_implication: Would use timeless/gnomic instead of historic past
+
+      - interpretation: 'Creation happened recently (6000-10000 years ago within human cultural memory)'
+        used_by: ['Young Earth Creationism']
+        christian_assessment: ORTHODOX BUT CONTESTED - Within conservative Protestant spectrum
+        time_implication: Still requires historic/remote past (not immediate/recent), even if shorter absolute timeline
+
+  - verse_pattern: 'John 2:4, 7:6,8,30, 8:20, 12:23,27, 13:1, 17:1 - Jesus\' "hour" has come / not yet come (unverified)'
+    affected_values: [appointed_time, eschatological_future, present_moment]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Divine sovereignty (appointed times)
+      - Passion chronology (Jesus' control of timing)
+      - Eschatological fulfillment
+      - Johannine theology of "the hour"
+
+    non_arbitrary_rationale: |
+      Johannine "hour" (ὥρα) is theologically loaded term, not casual time reference:
+      - Refers to Jesus' appointed time of crucifixion/glorification
+      - Progression: "not yet" (John 2:4, 7:6) → "now" (John 12:23, 17:1)
+      - Demonstrates Jesus' sovereignty over timing (John 7:30, 8:20 - "no one seized Him, hour not yet come")
+
+      Temporal precision distinguishes:
+      - "Hour has NOT YET come" = Future appointed time (eschatological)
+      - "Hour HAS come" = Present fulfillment moment
+      - Generic "time" vs. specific eschatological "hour"
+
+      Languages with temporal granularity must capture:
+      - NOT generic future ("someday")
+      - NOT immediate future ("in a moment")
+      - APPOINTED/ESCHATOLOGICAL future → specific divinely determined time
+
+    christian_orthodox_position:
+      preferred_value: appointed_eschatological_time
+      acceptable_alternatives: [specific_future_with_destiny_marking]
+      forbidden_values: [casual_future, vague_someday, immediate_future]
+      theological_basis: 'John 12:23-27 - "hour has come for Son of Man to be glorified"; John 17:1 - "hour has come"'
+      translator_guidance: |
+        - FIRST CHOICE: Use appointed/determined future time markers if available
+        - REQUIRED: Distinguish from casual future references ("I will go tomorrow")
+        - CRITICAL: "Hour" is technical term for Passion/glorification event
+        - CONTEXT: Progression in John from "not yet" to "now" shows sovereignty
+        - NOTE: This is NOT clock-hour, but appointed eschatological moment
+        - CONSIDER: May need marginal note explaining theological sense of "hour"
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Galatians 4:4, Ephesians 1:10, Mark 1:15 - "Fullness of time" for Christ\'s coming (unverified)'
+    affected_values: [appointed_time, historic_past, eschatological_fulfillment]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Incarnation timing (divine sovereignty)
+      - Prophetic fulfillment (Daniel's 70 weeks, etc.)
+      - Providence (God's timing in history)
+      - Eschatological plan
+
+    non_arbitrary_rationale: |
+      "Fullness of time" (πλήρωμα τοῦ χρόνου) is theological time reference:
+      - Not arbitrary moment but divinely appointed fulfillment
+      - Historic event (incarnation 2000 years ago)
+      - Within God's eschatological plan
+
+      Temporal granularity must convey:
+      - Historic past (actual historical event)
+      - Appointed/determined time (not random)
+      - Fulfillment language (prophetic timeline completed)
+
+      Vague temporal marking loses theological force of divine timing.
+
+    christian_orthodox_position:
+      preferred_value: historic_past_with_fulfillment_marking
+      acceptable_alternatives: [appointed_past_time]
+      forbidden_values: [random_past, vague_past, timeless]
+      theological_basis: 'Galatians 4:4 - "when fullness of time came, God sent His Son"; Daniel 9:24-27 (70 weeks prophecy)'
+      translator_guidance: |
+        - REQUIRED: Historic past + fulfillment/appointed time sense
+        - CRITICAL: Conveys divine sovereignty over timing (not random)
+        - CONTEXT: Incarnation was at specific historical moment chosen by God
+        - NOTE: "Fullness" implies completion of prophetic timeline
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Matthew 24:36, Mark 13:32, Acts 1:7 - Day/hour of Second Coming unknown (unverified)'
+    affected_values: [eschatological_future, unknown_time, appointed_future]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Parousia/Second Coming
+      - Eschatological timeline
+      - Divine sovereignty vs human knowledge
+      - Watchfulness theology
+
+    non_arbitrary_rationale: |
+      "That day and hour no one knows" - temporal precision combined with epistemic limit:
+      - ESCHATOLOGICAL FUTURE (not near/remote calculable future)
+      - UNKNOWN timing (not predictable)
+      - Yet APPOINTED by Father (Matthew 24:36 - "only the Father knows")
+
+      Languages with temporal granularity must distinguish:
+      - NOT "soon" (false expectation of nearness)
+      - NOT "far future" (false security)
+      - ESCHATOLOGICAL future (end-times category, not calendar future)
+      - UNKNOWN timing (to maintain watchfulness)
+
+    christian_orthodox_position:
+      preferred_value: eschatological_future_unknown
+      acceptable_alternatives: [appointed_future_with_unknown_marking]
+      forbidden_values: [near_future, calculable_future, specific_date]
+      theological_basis: 'Matthew 24:36 - "day and hour no one knows, not angels, not Son, only Father"; Acts 1:7 - "not for you to know times Father set"'
+      translator_guidance: |
+        - REQUIRED: ESCHATOLOGICAL future (end-times category)
+        - REQUIRED: Unknown/unpredictable marking (prevents date-setting)
+        - FORBIDDEN: Specific near/remote future (implies calculability)
+        - CRITICAL: Maintains both certainty (will happen) and uncertainty (when)
+        - PASTORAL: Encourages watchfulness, prevents false predictions
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Second Coming already happened (AD 70 preterism)'
+        used_by: ['Full preterism/hyper-preterism']
+        christian_assessment: HERETICAL - Denies bodily return, resurrection, final judgment
+        time_implication: Would wrongly use historic past instead of eschatological future
+
+      - interpretation: 'Date-setting for Second Coming'
+        used_by: ['Various sectarian movements, failed predictions']
+        christian_assessment: REJECTED - Contradicts Jesus' explicit teaching (Matt 24:36)
+        time_implication: Would wrongly use specific future date instead of unknown eschatological future
+
+  # ========== 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ==========
+
+  - verse_pattern: 'Exodus 12:6, 16:12-13, 29:39 - Sabbath and holy day timing: "at twilight," "between the evenings" (unverified)'
+    affected_values: [hodiernal_subdivisions, specific_hour, general_day]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Sabbath observance
+      - Festival calendar
+      - Liturgical precision
+
+    non_arbitrary_rationale: |
+      Hebrew "בֵּין הָעַרְבָּיִם" (between the evenings/twilight) requires precise daily timing:
+      - Passover lamb slain "at twilight" (Exodus 12:6)
+      - Evening sacrifice timing (Exodus 29:39)
+      - Manna gathering before heat of day (Exodus 16:12-13)
+
+      Languages with hodiernal (today) subdivisions need precision:
+      - Morning vs afternoon vs evening vs twilight
+      - "Today" is too vague; "this evening" is specific
+
+      Contextual stakes: Practical obedience requires knowing WHEN within day.
+
+    translator_guidance: |
+      - FIRST CHOICE: Use hodiernal subdivision markers (morning/afternoon/evening)
+      - REQUIRED: Distinguish within-day timing (not just "today")
+      - CONTEXT: Liturgical calendar requires practical precision
+      - PASTORAL: Readers need to know when to observe commands
+      - NOTE: "Between evenings" Hebrew idiom = twilight/late afternoon
+
+  - verse_pattern: 'Acts 2:15, 3:1, 10:9,30 - Prayer hours: 3rd hour (9 AM), 6th hour (noon), 9th hour (3 PM) (unverified)'
+    affected_values: [specific_hour, hodiernal_subdivision]
+    theological_stakes: LOW
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Early church prayer hours based on Jewish temple times:
+      - 3rd hour (9 AM): Morning prayer
+      - 6th hour (noon): Midday prayer (Peter's vision Acts 10:9)
+      - 9th hour (3 PM): Afternoon prayer (Acts 3:1)
+
+      Not doctrinally essential, but contextually helpful:
+      - Understanding narrative timing (Peter's vision at noon explains hunger context)
+      - Connecting to Jewish liturgical practice
+      - Explaining why disciples at temple at specific times
+
+    translator_guidance: |
+      - FIRST CHOICE: Preserve hour specificity if language allows
+      - ACCEPTABLE: General time of day ("morning," "noon," "afternoon")
+      - CONTEXT: Helps readers understand daily rhythm of early church
+      - NOTE: Not commanded for all believers, but explains narrative context
+
+  - verse_pattern: 'Luke 23:44-45 - Darkness from 6th to 9th hour (3 hours duration) (unverified)'
+    affected_values: [specific_hour_range, duration]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Duration of supernatural darkness is specified:
+      - From 6th hour (noon) to 9th hour (3 PM)
+      - Three-hour duration
+      - Supernatural sign (not eclipse - Passover at full moon)
+
+      Temporal precision establishes:
+      - Verifiability (specific timeframe)
+      - Supernatural nature (3 hours too long for eclipse)
+      - Connection to Jesus' death (darkness until He dies at 9th hour)
+
+    translator_guidance: |
+      - REQUIRED: Preserve hour specificity and duration
+      - CRITICAL: 3-hour duration rules out natural eclipse
+      - CONTEXT: Supernatural sign accompanying crucifixion
+
+  - verse_pattern: 'Genesis 7:11-12, 8:3-4 - Flood chronology: specific months, days, year of Noah\'s life (unverified)'
+    affected_values: [specific_calendar_date, historic_past, duration]
+    theological_stakes: LOW-MEDIUM
+    contextual_stakes: MEDIUM
+
+    non_arbitrary_rationale: |
+      Genesis provides precise flood chronology:
+      - "600th year of Noah's life, 2nd month, 17th day" (Gen 7:11)
+      - Rain 40 days/nights (Gen 7:12)
+      - Waters prevailed 150 days (Gen 7:24)
+      - Ark rested "7th month, 17th day" (Gen 8:4)
+
+      Precision suggests:
+      - Historical narrative genre (not mythological)
+      - Verifiable timeline structure
+      - Detailed chronology characteristic of biblical narrative
+
+      Not doctrinally critical (unlike "third day" resurrection), but narratively significant.
+
+    translator_guidance: |
+      - FIRST CHOICE: Preserve calendar precision if given
+      - CONTEXT: Detailed chronology marks historical narrative genre
+      - NOTE: Precision level serves genre recognition, not doctrine
+
+  - verse_pattern: 'Daniel 9:24-27 - Seventy weeks prophecy timeline (unverified)'
+    affected_values: [prophetic_future, specific_duration, eschatological_timeline]
+    theological_stakes: MEDIUM-HIGH
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Daniel's seventy weeks (70 x 7 = 490 years/periods) is complex prophetic timeline:
+      - "Seventy weeks decreed for your people" (Dan 9:24)
+      - Subdivided: 7 weeks, 62 weeks, 1 week (Dan 9:25-27)
+      - Debated interpretation (fulfilled in Christ vs future tribulation)
+
+      Temporal precision essential for:
+      - Prophetic interpretation debates
+      - Messianic fulfillment claims
+      - Eschatological timeline proposals
+
+      Whether "weeks" = years or literal weeks affects interpretation, but
+      numerical precision must be preserved.
+
+    translator_guidance: |
+      - REQUIRED: Preserve numerical precision (70, 7, 62, 1)
+      - NOTE: "Weeks" (Hebrew שָׁבֻעִים) may need footnote (weeks of years?)
+      - CRITICAL: Don't round or approximate prophetic numbers
+      - CONTEXT: Foundational text for Messianic chronology debates
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Choice Doesn't Matter)
+
+arbitrary_contexts:
+
+  - pattern: "General past narratives without theological timing significance"
+    rationale: |
+      Most narrative events use historic past (OT/Gospel events 2000+ years ago)
+      without needing finer temporal distinctions. Whether translator uses
+      "remote past" vs "historic past" is stylistic if both convey antiquity.
+    estimated_percentage: 60%
+    examples:
+      - 'Abraham narratives - historic past, but specific granularity (remote vs historic) arbitrary (unverified)'
+      - 'David's reign - historic past, but subdivision arbitrary (unverified)'
+      - 'Paul's travels - historic past for modern readers, but specific marking arbitrary (unverified)'
+    translator_guidance: |
+      Use target language's natural historic past for ancient events.
+      Distinction between "remote past" vs "historic past" is usually stylistic.
+
+  - pattern: "Vague temporal references in wisdom literature ('in time,' 'one day,' 'someday')"
+    rationale: |
+      Proverbs and wisdom sayings often use vague temporal language intentionally
+      for timeless principles. Temporal granularity is deliberately imprecise.
+    estimated_percentage: 10%
+    examples:
+      - 'Proverbs - "A righteous man falls seven times" (Prov 24:16) - temporal frame arbitrary (unverified)'
+      - 'Ecclesiastes - "A time for everything" (Eccl 3:1-8) - generic time reference (unverified)'
+    translator_guidance: |
+      Preserve vagueness when source text is vague. Don't over-specify.
+
+  - pattern: "Travel narratives without theological timing ('after this,' 'then,' 'later')"
+    rationale: |
+      Sequential markers in travel narratives usually establish order, not
+      precise temporal distance. "After this" vs "shortly after" vs "later"
+      often stylistic unless narrative emphasizes duration.
+    estimated_percentage: 15%
+    examples:
+      - 'Acts travel sequences - "after some days" (Acts 15:36) - vague sequential marker (unverified)'
+      - 'Jesus' ministry travels - "then" (καὶ) - simple sequence, not temporal precision (unverified)'
+    translator_guidance: |
+      Follow target language narrative conventions for sequential marking.
+      Precise temporal distance usually not critical unless emphasized.
+
+  - pattern: "Prophetic distant future without specific eschatological loading"
+    rationale: |
+      Some prophetic future references are general ("in latter days") without
+      specific eschatological weight. Distinction between "remote future" and
+      "eschatological future" may be arbitrary unless context specifies end times.
+    estimated_percentage: 5%
+    examples:
+      - 'OT prophecies - "in latter days" may be general distant future or eschatological (unverified)'
+      - 'General blessing/curse future consequences - temporal distance arbitrary (unverified)'
+    translator_guidance: |
+      Context determines if "distant future" is eschatological or general.
+      When ambiguous, follow target language conventions.
+
+  - pattern: "Lifetime/generational references without precise boundaries"
+    rationale: |
+      "In your lifetime," "this generation," "in days of" - these are
+      approximate temporal frames where precise granularity is not specified.
+    estimated_percentage: 5%
+    examples:
+      - '"This generation will not pass away" (Matt 24:34) - generation span not precisely defined (unverified)'
+      - '"In days of Herod" (Matt 2:1) - general reign timeframe (unverified)'
+    translator_guidance: |
+      Use natural generational/lifetime temporal markers.
+      Precision not required unless theologically loaded.
+
+  - pattern: "Timeless/gnomic present statements (universal truths)"
+    rationale: |
+      "God is love" (1 John 4:8), "Jesus Christ is the same yesterday, today,
+      forever" (Heb 13:8) - timeless statements where temporal granularity
+      is irrelevant (no temporal change).
+    estimated_percentage: 5%
+    examples:
+      - '1 John 4:8 - "God is love" - timeless present (unverified)'
+      - 'Hebrews 13:8 - "Jesus Christ same yesterday, today, forever" - explicitly atemporal (unverified)'
+      - 'John 3:16 - "God so loved" - gnomic aorist (timeless principle, not past event) (unverified)'
+    translator_guidance: |
+      Use timeless/gnomic present markers when source text conveys eternal truth.
+      Temporal granularity doesn't apply to timeless statements.
+
+# SUMMARY STATISTICS
+
+summary:
+  non_arbitrary_percentage: 15%
+  arbitrary_percentage: 85%
+
+  breakdown:
+    theological_critical: 8  # Crucifixion hours, resurrection "third day", creation days, Jesus' hour, fullness of time, Second Coming timing, Sabbath/festival timing, prophetic timelines
+    contextual_precision: 3  # Narrative chronologies, prayer hours, flood dates
+
+  total_non_arbitrary_percentage: 15
+  total_arbitrary_percentage: 85
+
+  critical_note: |
+    Time granularity is HIGHLY SIGNIFICANT in specific theological contexts:
+
+    1. PASSION CHRONOLOGY: Crucifixion hours (3rd, 6th, 9th) connect to temple sacrifice, Passover typology
+    2. RESURRECTION: "Third day" is creedal formula, prophetic fulfillment (Jonah)
+    3. CREATION: "In beginning" requires historic/primordial past, not recent; seven-day structure
+    4. ESCHATOLOGY: Jesus' "hour," "fullness of time," Second Coming timing
+    5. LITURGICAL: Sabbath timing, festival calendar, prayer hours
+    6. PROPHETIC: Seventy weeks, specific prophetic durations
+
+    Most contexts (85%) are stylistically flexible:
+    - General past narratives (historic past vs remote past distinction arbitrary)
+    - Sequential travel narratives ("after this" = simple order, not precise duration)
+    - Vague wisdom literature ("in time," "one day")
+    - Timeless/gnomic statements (eternal truths, no temporal change)
+
+    Key 15% non-arbitrary contexts include core doctrines:
+    - Atonement theology (crucifixion hours)
+    - Resurrection apologetics (third day precision)
+    - Creation historicity (remote/primordial past, not timeless myth)
+    - Divine sovereignty (appointed times, "fullness of time")
+    - Eschatological timing (Second Coming unknown but certain)
+
+    CRITICAL DISTINCTION: Temporal errors in high-stakes contexts can lead to:
+    - Undermining Passover typology (vague crucifixion timing)
+    - Weakening resurrection apologetics (approximate instead of specific "third day")
+    - Genre confusion (treating Genesis as myth instead of historical narrative)
+    - False eschatological expectations (date-setting for Second Coming)
+    - Liturgical confusion (inability to obey time-specific commands)
+
+  translation_impact: |
+    **Languages requiring temporal granularity marking:**
+
+    HIGH GRANULARITY LANGUAGES (10+ distinctions):
+    - Tagalog (Austronesian): 11 temporal distinctions including hodiernal subdivisions
+      → Critical for Sabbath timing, crucifixion hours, prayer hours
+    - Yagua (Peba-Yaguan): 5 past tense suffixes based on remoteness
+      → Must use remote/historic past for Genesis, Gospels (not recent past)
+
+    MEDIUM GRANULARITY LANGUAGES (5-9 distinctions):
+    - ChiBemba (Bantu): Hodiernal vs pre-hodiernal, remote past
+      → Needs historic/remote past for biblical events, hodiernal for liturgical times
+    - Most Bantu languages: Near past vs remote past minimum
+      → Biblical narratives = remote past (beyond living memory)
+
+    LOW GRANULARITY LANGUAGES (2-4 distinctions):
+    - English: Past/present/future + adverbials (not grammatically obligatory)
+      → Adverbs carry precision ("on third day," "at 3 PM," "in the beginning")
+    - Greek (Koine): Aspect-dominant, temporal distance from context
+      → TBTA provides target language guidance for aspect-weak languages
+    - Hebrew: Perfective/imperfective, context determines remoteness
+      → TBTA extracts contextual temporal meaning for target languages
+
+    **CRITICAL GUIDANCE FOR TARGET LANGUAGES:**
+
+    1. HISTORIC PAST (Genesis, Gospels):
+       - High-granularity languages: Use historic/remote past, NOT recent past
+       - Context: Events 2000-6000+ years ago, beyond living memory
+       - Error: Using recent past (week/month ago) is theologically absurd
+
+    2. HODIERNAL PRECISION (Sabbath, crucifixion, prayer hours):
+       - Languages with today-subdivisions: Preserve hour/time-of-day precision
+       - Context: Liturgical calendar, Passover typology, supernatural signs
+       - Error: Vague "during the day" loses theological connections
+
+    3. ESCHATOLOGICAL FUTURE (Second Coming, appointed times):
+       - Distinguish from calculable near/remote future
+       - Use eschatological/appointed time markers if available
+       - Error: Specific near/remote future implies calculability (forbidden Matt 24:36)
+
+    4. SPECIFIC DURATIONS (third day, seventy weeks, 40 days):
+       - Preserve numerical precision even if temporal marker is generic
+       - Context: Prophetic fulfillment claims require specific counts
+       - Error: Approximate ("a few days") loses prophetic force
+
+    5. TIMELESS/GNOMIC (theological principles):
+       - Use timeless present, not historic past
+       - Context: Eternal truths, not time-bound events
+       - Error: Past tense for "God is love" implies God WAS love (no longer)
+
+  source_language_dependency: |
+    Hebrew OT:
+    - Aspect-dominant (perfective/imperfective), not tense-dominant
+    - Temporal remoteness inferred from context, not morphology
+    - Wayyiqtol (narrative preterite) = sequential past, but doesn't specify how far past
+    - TBTA extracts contextual temporal meaning for target languages needing it
+    - Key contexts: Creation ("In beginning" = primordial), patriarchs (remote past)
+
+    Greek NT:
+    - Rich aspect system (aorist, present, perfect, imperfect)
+    - Temporal remoteness less morphologically marked than temporal perspective
+    - Adverbs and context provide temporal precision
+    - TBTA extracts temporal granularity for languages requiring grammatical marking
+    - Key contexts: Crucifixion hours (ὥρα with numerals), resurrection "third day" (τῇ τρίτῃ ἡμέρᾳ)
+
+    Target languages needing temporal granularity must rely on:
+    - Contextual analysis (genealogies → remote past)
+    - Narrative genre (historical narrative → historic past, not timeless)
+    - Numerical specificity (3rd hour, 3rd day → preserve precision)
+    - Theological loading (Jesus' "hour" → appointed time, not casual future)
+
+  conservative_protestant_perspective: |
+    Conservative Protestant Christian framework affects temporal granularity in:
+
+    1. CREATION HISTORICITY:
+       - Genesis 1-11 treated as historical narrative, not myth/allegory
+       - "In beginning" = historic/primordial past (real event in time)
+       - Seven-day structure has theological weight (Sabbath pattern)
+       - YEC vs OEC debate affects absolute timeline, but BOTH affirm:
+         * Creation is historic event (not timeless myth)
+         * Requires remote/historic past marking (not recent/timeless)
+
+    2. RESURRECTION APOLOGETICS:
+       - "Third day" precision essential for historical verification
+       - Creedal language (Apostles' Creed) requires specificity
+       - Prophetic fulfillment (Jonah sign) demands exact count
+       - Approximate time ("later", "after a while") undermines apologetic force
+
+    3. BIBLICAL INERRANCY:
+       - Gospel chronologies harmonizable (different time reckoning systems)
+       - Apparent contradictions (Mark vs John crucifixion hour) = different reference frames
+       - Temporal precision in Scripture is intentional, not arbitrary
+
+    4. ESCHATOLOGICAL POSITIONS:
+       - Premillennial, amillennial, postmillennial ALL affirm Second Coming certainty
+       - All reject date-setting (Matthew 24:36 explicit)
+       - Eschatological future category distinct from calculable future
+       - "Fullness of time" emphasizes divine sovereignty over history
+
+    5. SABBATH/LITURGICAL THEOLOGY:
+       - Creation Sabbath establishes pattern (Exodus 20:11)
+       - Hodiernal precision needed for liturgical calendar
+       - Festival timing connects to theological meaning (Passover at twilight)
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+citation: '{llm-cs45}'
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal LLM knowledge of Scripture and systematic theology, not cited sources.
+
+  Stage 2 analysis should:
+  1. Verify verse patterns in actual TBTA data
+  2. Confirm temporal granularity values assigned to these contexts
+  3. Test theological assessments with peer review
+  4. Validate translation impact claims with field translators
+  5. Check conservative Protestant theological framework consistency
+
+requires_peer_review: true
+peer_review_focus:
+  - Crucifixion chronology consensus (Synoptic vs John timing harmonization)
+  - Resurrection "third day" creedal significance verification
+  - Creation temporal framework (YEC vs OEC vs Framework vs Day-Age positions)
+  - Eschatological timing theology (preterism vs futurism spectrum)
+  - Sabbath/liturgical calendar precision requirements
+  - Cross-denominational review (Catholic/Orthodox/Protestant liturgical hour traditions)
+  - Field translator validation (languages with high temporal granularity)

@@ -1,58 +1,44 @@
 # Illocutionary Force
 
-## Overview
+**What**: The communicative function of a clause—whether it performs as a **command, question, declaration, promise, warning, or blessing**.
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Aspect | Details |
+|--------|---------|
+| **TBTA Tier** | A (Essential) - Feature #12 |
+| **Values** | 7 core codes: D (Declarative), I (Imperative), C/Y (Interrogative), S (Suggestive), L (Jussive), i (Agent-focused) |
+| **Constraint** | Part = "Clause" (clause-level only) |
+| **Critical Contexts** | 25% non-arbitrary: Great Commission, covenant promises, rhetorical questions, Ten Commandments, prophecies, blessings |
+| **Source Languages** | ✅ Hebrew (imperative, jussive, cohortative), ✅ Greek (mood + particles) |
 
-Illocutionary force identifies the speech act force of an utterance - whether it functions as a command, question, statement, request, promise, warning, or other communicative intention.
+## Key Distinctions by Language Family
 
-## Development Status
+| Family | Marking | Examples | Notes |
+|--------|---------|----------|-------|
+| **East Asian** | Mandatory particles | Japanese (ka, yo, ne), Mandarin (ma, ba, ne) | Omitting particles = ungrammatical |
+| **Indo-European** | Inflection + word order | Spanish, English, German | Optional; relies on context/intonation |
+| **Austronesian** | Verbal mood, often passive | Tagalog (4 voices), Indonesian | Unique: passive imperatives common |
+| **Bantu** | Inflection + tone | Swahili | Optional marking |
 
-🚧 **Stage 0**: Not yet started
+## Critical Examples
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+### ✅ Correct
 
-## Development Checklist
+- **Matthew 28:19** (Great Commission): "Go and make disciples" = **COMMAND** (Christ's authority, not suggestion)
+- **Genesis 9:9** (Covenant): "I will establish my covenant" = **DECLARATION** (God's certain promise, not conditional)
 
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/illocutionary-force/`)
-- [ ] Generate README.md with feature definition + stage checklist
+### 🔴 FORBIDDEN
 
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
+- **Matthew 28:19** as **SUGGESTION** → Undermines missionary mandate
+- **Genesis 9:9** as **CONDITIONAL** → Creates doubt about God's faithfulness
+- **Romans 6:1** as genuine **QUESTION** → Appears to entertain antinomianism (should be **RHETORICAL**)
+- **Exodus 20** (Ten Commandments) as **ADVICE** → Relativizes objective moral law
 
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
+## Research & Technical Details
 
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
-
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
-
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
-
-## Resources
-
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/illocutionary-force/](../features-archive/illocutionary-force/)
+See **[research/README.md](./research/README.md)** for:
+- Detailed TBTA encoding ([TBTA.md](./research/TBTA.md))
+- Language typology analysis ([LANGUAGES.md](./research/LANGUAGES.md))
+- 40+ scholarly sources & translation case studies ([SCHOLARLY.md](./research/SCHOLARLY.md))
+- Theological significance & arbitrarity classification ([THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml](./research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml))

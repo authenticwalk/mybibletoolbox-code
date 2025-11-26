@@ -1,0 +1,730 @@
+feature: surface-realization
+default_classification: arbitrary # Most participant references follow natural discourse flow
+theological_significance: EXISTS # Critical for divine agency, Holy Spirit personhood, Trinity clarity
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Essential)
+
+non_arbitrary_contexts:
+
+  # === 1A: NON-ARBITRARY-THEOLOGICAL (Doctrinal Stakes) ===
+
+  - verse_pattern: 'Mark 16:6, Matthew 28:6, Luke 24:6 - Passive "He has been raised" with divine agency (unverified)'
+    affected_values: [noun, pronoun, zero, passive_with_zero_agent]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Resurrection of Christ
+      - Divine agency in resurrection
+      - God's power and sovereignty
+      - Passive voice theology
+
+    non_arbitrary_rationale: |
+      Greek passive "ἐγήγερται" (he has been raised) uses ZERO surface realization
+      for the agent (God), a "divine passive" or "theological passive." Surface
+      realization affects whether readers understand:
+      - WHO raised Jesus? (Divine agent implied but not stated)
+      - God's active role vs. Jesus self-resurrecting
+      - Theological passive = reverent way to refer to God's action
+
+      If translators fail to preserve divine passive:
+      - May obscure God as agent (in pro-drop: natural zero maintains ambiguity)
+      - May over-specify agent where original leaves unstated
+      - May lose reverent passive construction
+
+      Surface realization choice: explicit "God raised him" vs. passive "was raised"
+      affects theological emphasis on divine agency.
+
+    christian_orthodox_position:
+      preferred_value: passive_with_zero_agent_implying_God
+      acceptable_alternatives:
+        - passive_voice_preserving_divine_agency_implication
+        - explicit_noun_God_as_agent_if_target_language_requires
+      forbidden_values:
+        - zero_agent_suggesting_self_resurrection_only
+        - active_voice_with_Jesus_as_subject_raising_himself
+      theological_basis: 'Acts 2:24, 32 - "God raised him from the dead" (explicit). Rom 6:4 - "raised from the dead by the glory of the Father." Divine passive in Greek reverently implies God as agent without naming.'
+      translator_guidance: |
+        - CRITICAL: Divine/theological passive implies GOD as agent
+        - FIRST CHOICE: Preserve passive voice if target language allows
+        - ACCEPTABLE: Make God explicit as agent if required ("God raised him")
+        - FORBIDDEN: Active "he raised himself" without clarifying divine power
+        - PRO-DROP LANGUAGES: Zero agent acceptable if divine agency clear from context
+        - NON-PRO-DROP: May require explicit "by God" or "God raised him"
+        - THEOLOGICAL POINT: Resurrection is God's act, not merely Jesus's self-revival
+        - NOTE: John 2:19 shows Jesus's authority ("I will raise it"), but resurrection
+          accounts emphasize Father's act (Acts 2:24, Rom 8:11)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Jesus self-resurrected without Father involvement'
+        used_by: [Some modalist interpretations]
+        christian_assessment: INCOMPLETE - Scripture emphasizes Father raised Son (Acts 2:24, Rom 6:4)
+        surface_implication: Active voice with Jesus as sole subject obscures divine agency
+
+  - verse_pattern: 'John 14:26, 16:13-14 - Holy Spirit references with pronoun vs. zero (unverified)'
+    affected_values: [pronoun, zero, noun]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Personhood of Holy Spirit
+      - Trinity (Holy Spirit as person vs. force)
+      - Deity of Holy Spirit
+      - Holy Spirit's distinct personhood
+
+    non_arbitrary_rationale: |
+      Greek uses masculine pronoun "ἐκεῖνος" (he/that one) for Holy Spirit despite
+      neuter noun "πνεῦμα" (spirit), indicating PERSONAL pronoun. Surface realization
+      affects whether Holy Spirit is understood as:
+      - PERSON (he/him pronouns)
+      - IMPERSONAL FORCE (it/that, or zero in pro-drop)
+
+      Critical for pneumatology:
+      - Personal pronouns = Holy Spirit is person (orthodox)
+      - Neuter/zero = Holy Spirit might be impersonal force (heretical)
+      - "He will guide" vs. "It will guide" = person vs. force
+
+      Pro-drop languages using zero can obscure personhood if context unclear.
+      Non-pro-drop must choose pronoun gender.
+
+    christian_orthodox_position:
+      preferred_value: personal_pronoun_masculine_he
+      acceptable_alternatives:
+        - personal_pronoun_if_language_lacks_gender
+        - noun_Holy_Spirit_with_personal_attributes
+      forbidden_values:
+        - neuter_pronoun_it_suggesting_impersonal
+        - zero_without_personal_indicators_in_non_pro_drop
+      theological_basis: 'John 14:26, 16:13-14 - Greek uses masculine ἐκεῖνος (he) despite neuter πνεῦμα, indicating personhood. Acts 5:3-4 - Spirit equated with God (personal). 2 Cor 3:17 - "the Lord is the Spirit."'
+      translator_guidance: |
+        - CRITICAL: Holy Spirit is PERSON, not impersonal force
+        - REQUIRED: Use PERSONAL pronoun (he/him, or personal equivalent)
+        - FORBIDDEN: Neuter "it" (suggests force, not person) in languages with gender
+        - PRO-DROP LANGUAGES: Zero acceptable IF context clearly personal
+        - NON-PRO-DROP: Must use personal pronoun (he/him)
+        - CAUTION: English "it" is HERETICAL (Jehovah's Witnesses use "it")
+        - EXAMPLES: "He will guide you" (John 16:13), "He will teach you" (14:26)
+        - THEOLOGICAL STAKES: Spirit's personhood = Trinity doctrine
+        - GENDERLESS LANGUAGES: Use personal forms, avoid impersonal markers
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Holy Spirit as impersonal force or energy'
+        used_by: [Jehovah's Witnesses, Oneness Pentecostalism (different error)]
+        christian_assessment: HERETICAL - Denies personhood and deity of Holy Spirit
+        surface_implication: Neuter pronoun "it" or impersonal markers
+
+  - verse_pattern: 'Matthew 27:35, Mark 15:24, Luke 23:33 - Crucifixion agents ("they crucified") vs. passive (unverified)'
+    affected_values: [noun, pronoun, zero, passive_with_zero_agent]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Human guilt in crucifixion
+      - Divine sovereignty in atonement
+      - Human agency vs. divine plan
+      - Balance of responsibility
+
+    non_arbitrary_rationale: |
+      Crucifixion accounts vary surface realization:
+      - Active: "They crucified him" (human agents explicit - soldiers, Jews, Romans)
+      - Passive: "He was crucified" (human agents backgrounded, divine plan foregrounded)
+
+      Surface realization affects theological emphasis:
+      - ACTIVE with explicit agents = human responsibility/guilt emphasized
+      - PASSIVE with zero agents = divine plan/sovereignty emphasized
+      - Balance needed: humans acted (responsible) AND God ordained (sovereign)
+
+      If only active with human agents: May obscure divine plan (Acts 2:23)
+      If only passive with zero: May obscure human responsibility (Acts 2:23 - "lawless men")
+
+    christian_orthodox_position:
+      preferred_value: balance_active_and_passive_preserving_both_human_and_divine_agency
+      acceptable_alternatives:
+        - active_voice_with_human_agents_when_emphasizing_responsibility
+        - passive_voice_when_emphasizing_divine_plan
+      forbidden_values:
+        - active_only_obscuring_divine_sovereignty
+        - passive_only_eliminating_human_responsibility
+      theological_basis: 'Acts 2:23 - "delivered up according to the definite plan and foreknowledge of God, you crucified and killed by the hands of lawless men." Both divine plan AND human agency affirmed.'
+      translator_guidance: |
+        - BALANCE: Preserve both human agents (active) and divine plan (passive)
+        - ACTIVE: "They crucified him" emphasizes human responsibility
+        - PASSIVE: "He was crucified" emphasizes fulfillment of divine plan
+        - CRITICAL: Don't eliminate either emphasis
+        - Acts 2:23 MODEL: Human agents named AND divine sovereignty affirmed
+        - CAUTION: Overemphasis on human guilt alone = misses divine purpose
+        - CAUTION: Overemphasis on divine plan alone = obscures human sin
+        - THEOLOGICAL BALANCE: Humans responsible for sin, God sovereign over plan
+        - PRO-DROP: Zero agents in passive acceptable (implies divine/general agent)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Only human agents, no divine plan'
+        used_by: [Some liberal theology]
+        christian_assessment: INCOMPLETE - Misses divine sovereignty (Acts 2:23, Isa 53:10)
+        surface_implication: Active voice only, explicit human agents
+
+      - interpretation: 'Only divine plan, humans mere instruments without guilt'
+        used_by: [Hyper-Calvinist extremes]
+        christian_assessment: INCOMPLETE - Humans still responsible (Acts 2:23 "lawless men")
+        surface_implication: Passive voice only, zero human agents
+
+  - verse_pattern: 'Matthew 5:21-22, 27-28 - "It was said... but I say" (divine passive vs. Jesus authority) (unverified)'
+    affected_values: [passive_with_zero_agent, noun, pronoun]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Authority of Christ
+      - Old vs. New Covenant
+      - Divine revelation
+      - Jesus's deity
+
+    non_arbitrary_rationale: |
+      Jesus contrasts "ἐρρέθη" (it was said - divine passive, zero agent = God said)
+      with "ἐγὼ δὲ λέγω" (but I say - explicit pronoun ἐγὼ emphasizing Jesus).
+
+      Surface realization affects:
+      - Divine passive "it was said" = reverent reference to God's OT commands
+      - Explicit "I" (emphatic pronoun in Greek) = Jesus placing himself on par with God
+      - Contrast: God said (passive zero) vs. I say (explicit emphatic) = Jesus's authority
+
+      If translators obscure divine passive:
+      - Readers miss that Jesus contrasts himself with God's prior revelation
+      - Jesus's audacious claim to equal/greater authority is weakened
+
+      Surface realization: passive zero (reverent, divine agent) vs. explicit pronoun
+      (emphatic, claiming authority) creates theological contrast.
+
+    christian_orthodox_position:
+      preferred_value: divine_passive_zero_contrasted_with_explicit_emphatic_pronoun_I
+      acceptable_alternatives:
+        - passive_it_was_said_vs_active_but_I_say
+        - explicit_by_God_vs_explicit_I_say_if_needed
+      forbidden_values:
+        - flattening_contrast_to_same_surface_form
+        - obscuring_Jesus_emphatic_self_reference
+      theological_basis: 'Matthew 5:21-48 - Jesus contrasts Mosaic Law (divine passive) with his own teaching (emphatic "I"). Claims authority equal to God. Matt 7:28-29 - "taught as one having authority."'
+      translator_guidance: |
+        - CRITICAL: Preserve CONTRAST between divine passive and Jesus's emphatic "I"
+        - FIRST FORM: "It was said" (passive, zero agent = God implied)
+        - SECOND FORM: "But I say" (explicit, emphatic "I" = Jesus claiming authority)
+        - THEOLOGICAL POINT: Jesus places his word on par with God's OT revelation
+        - PRO-DROP: Use EXPLICIT pronoun for Jesus (emphatic even in pro-drop)
+        - NON-PRO-DROP: Ensure "I" is emphasized (italics, word order, or "I myself")
+        - CONTEXT: Sermon on Mount - Jesus's audacious authority claims
+        - DOCTRINAL STAKES: Jesus's deity shown by claiming equal authority with God
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Isaiah 53:4-10 - Suffering Servant identity (noun vs. pronoun clarity) (unverified)'
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Messianic prophecy
+      - Identification of suffering servant
+      - Atonement theology
+      - Christological fulfillment
+
+    non_arbitrary_rationale: |
+      Isaiah 53 servant identity is debated:
+      - Christian orthodoxy: Servant = Messiah (Jesus Christ)
+      - Jewish interpretation: Servant = Israel collectively
+
+      Surface realization affects identification clarity:
+      - PRONOUNS: "he/him" can be ambiguous about referent
+      - NOUNS: "the servant" or restaging with "the righteous one" helps clarity
+      - ZERO (pro-drop): Maximum ambiguity about referent
+
+      If translators overuse pronouns/zero without noun restaging:
+      - Readers may lose track that servant = individual Messiah
+      - Collective interpretation (Israel) becomes more plausible
+      - Messianic identification obscured
+
+      Strategic noun use (not excessive, but at key points) aids messianic reading.
+
+    christian_orthodox_position:
+      preferred_value: strategic_noun_use_aiding_messianic_individual_identification
+      acceptable_alternatives:
+        - pronouns_where_contextually_clear_individual_referent
+        - noun_restaging_at_key_transitions
+      forbidden_values:
+        - excessive_zero_obscuring_individual_identity
+        - surface_forms_favoring_collective_interpretation
+      theological_basis: 'Acts 8:32-35 - Philip identifies Isaiah 53 servant as Jesus (individual, not collective). Matt 8:17, 1 Pet 2:24-25 quote Isa 53 of Christ.'
+      translator_guidance: |
+        - THEOLOGICAL GOAL: Aid messianic (individual) identification of servant
+        - STRATEGY: Use nouns at key transitions to maintain individual referent
+        - PRONOUNS: Acceptable when referent is clear (individual servant)
+        - CAUTION: Excessive zero/pronouns can blur individual vs. collective
+        - CHRISTIAN READING: Servant = Messiah (individual), fulfilled in Jesus
+        - CONTEXT: Isaiah 52:13-53:12 as unit about individual suffering servant
+        - DOCTRINAL STAKES: Messianic prophecy, atonement theology
+        - NOTE: Not forcing Christian interpretation, but aiding clarity that
+          original text describes individual (not collective Israel)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Servant = Israel collectively, not individual Messiah'
+        used_by: [Jewish non-Messianic interpretation]
+        christian_assessment: REJECTED - NT identifies servant as Jesus (Acts 8:35, Matt 8:17)
+        surface_implication: Pronouns/zero suggesting collective referent acceptable
+
+  - verse_pattern: 'John 1:1, 14 - "The Word" (noun) vs. pronouns for Logos (unverified)'
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Deity of Christ (Logos theology)
+      - Incarnation
+      - Pre-existence of Christ
+      - Trinity (Word as distinct person)
+
+    non_arbitrary_rationale: |
+      John's Logos theology requires careful surface realization:
+      - "ὁ λόγος" (the Word) = NOUN emphasizing Christ's identity/role
+      - Pronouns refer back to the Word once established
+      - Premature zero/pronoun use can obscure Logos identification
+
+      Surface realization affects:
+      - NOUN: Establishes "the Word" as key christological title
+      - PRONOUN: Maintains reference once identity established
+      - ZERO: Can obscure that "Word" = distinct person (Trinity)
+
+      If translators don't maintain strategic noun use:
+      - "Word" as christological title may be lost (reduced to mere communication)
+      - Readers may not grasp Word = Jesus (incarnation connection)
+
+    christian_orthodox_position:
+      preferred_value: noun_the_Word_at_introduction_and_key_transitions
+      acceptable_alternatives:
+        - pronouns_once_Word_identity_established
+        - noun_restaging_at_incarnation_statement_v14
+      forbidden_values:
+        - excessive_zero_obscuring_Word_as_distinct_person
+        - replacing_Word_with_generic_pronouns_losing_title
+      theological_basis: 'John 1:1 - "Word was with God and was God" (distinct person, divine essence). John 1:14 - "Word became flesh" (incarnation). Rev 19:13 - "name is called The Word of God."'
+      translator_guidance: |
+        - CRITICAL: "The Word" is key christological title (Logos)
+        - FIRST MENTION: Establish "the Word" as noun (v.1)
+        - INCARNATION: Restage "the Word became flesh" (v.14) with noun
+        - PRONOUNS: Use for continued reference after noun established
+        - CAUTION: Don't prematurely reduce to pronouns/zero losing title
+        - THEOLOGICAL POINT: Logos = distinct person (Trinity), divine, incarnate
+        - PRO-DROP: Avoid excessive zero obscuring "Word" as person
+        - DOCTRINAL STAKES: Christology, Trinity, incarnation
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Word = impersonal divine utterance or principle (not person)'
+        used_by: [Some Gnostic interpretations, liberal theology]
+        christian_assessment: HERETICAL - Word is person (became flesh, John 1:14)
+        surface_implication: Reducing noun to impersonal markers or neuter forms
+
+  # === 1B: NON-ARBITRARY-CONTEXTUAL (Reader Confusion if Wrong) ===
+
+  - verse_pattern: 'Genesis 18:1-22, 19:1 - LORD and two angels (participant tracking with surface forms) (unverified)'
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: MEDIUM (Christophany implications)
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Christophany (pre-incarnate Christ)
+      - Angel of the LORD
+      - Trinity hints
+
+    non_arbitrary_rationale: |
+      Genesis 18 shifts between singular (the LORD) and plural (three men/two angels).
+      Surface realization affects participant tracking:
+      - NOUNS: Clear who is who (LORD vs. two angels)
+      - PRONOUNS: Ambiguity about which participant (singular vs. plural)
+      - ZERO: Maximum confusion about participant identity
+
+      If surface realization doesn't track participants clearly:
+      - Readers confused: Are there three visitors or one LORD + two angels?
+      - Singular/plural shifts become incomprehensible
+      - Christophany interpretation obscured (LORD = pre-incarnate Christ)
+
+      Strategic noun use clarifies participant tracking across singular/plural shifts.
+
+    christian_orthodox_position:
+      preferred_value: strategic_nouns_tracking_LORD_separately_from_two_angels
+      acceptable_alternatives:
+        - pronouns_when_participant_contextually_clear
+        - noun_restaging_at_participant_shifts
+      forbidden_values:
+        - excessive_zero_causing_participant_confusion
+        - surface_forms_obscuring_singular_plural_contrast
+      theological_basis: 'Gen 18:1 - LORD appears (singular). 18:2 - three men (plural). 18:22 - men leave, Abraham stands before LORD (singular). Gen 19:1 - two angels arrive Sodom (clarifies participants). Christian tradition: LORD = Christophany.'
+      translator_guidance: |
+        - GOAL: Clear participant tracking (LORD vs. two angels/men)
+        - NOUN USE: Restage nouns at participant shifts (singular/plural)
+        - PRONOUNS: Use when participant is clear from context
+        - CRITICAL: Don't let zero/pronouns obscure who is who
+        - CONTEXT: Shifts between singular LORD and plural visitors
+        - READER BENEFIT: Prevents confusion about participant count/identity
+        - CHRISTOPHANY NOTE: Christian tradition sees LORD as pre-incarnate Christ
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Acts 9:4, 22:7, 26:14 - "I am Jesus" (emphatic noun self-identification) (unverified)'
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: MEDIUM-HIGH
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Identity of Jesus
+      - Post-resurrection Christology
+      - Divine voice recognition
+
+    non_arbitrary_rationale: |
+      Jesus identifies himself to Saul with explicit NOUN: "ἐγώ εἰμι Ἰησοῦς"
+      (I am Jesus). Surface realization affects:
+      - NOUN "Jesus": Clear identification (not ambiguous pronoun)
+      - Emphatic pronoun ἐγώ (I): Emphasis on speaker identity
+      - Context: Saul doesn't know who is speaking until name given
+
+      If translators use zero/pronoun instead of noun:
+      - Readers lose dramatic revelation moment (WHO is speaking?)
+      - Identity disclosure is weakened
+      - Emphatic self-identification becomes routine reference
+
+      Surface realization: explicit noun "Jesus" maintains dramatic identification.
+
+    christian_orthodox_position:
+      preferred_value: explicit_noun_Jesus_in_self_identification
+      acceptable_alternatives:
+        - emphatic_pronoun_I_plus_noun_name_Jesus
+      forbidden_values:
+        - zero_or_routine_pronoun_obscuring_identification_moment
+      theological_basis: 'Acts 9:5, 22:8, 26:15 - "I am Jesus" (explicit self-identification). Context: Saul asks "Who are you, Lord?" requiring noun answer.'
+      translator_guidance: |
+        - REQUIRED: Use NOUN "Jesus" in self-identification
+        - CONTEXT: Saul doesn't know speaker until name revealed
+        - DRAMATIC MOMENT: "I am Jesus whom you are persecuting"
+        - EMPHATIC: "I" + noun "Jesus" (not pronoun alone)
+        - AVOID: Zero or routine pronoun (loses identity revelation)
+        - READER BENEFIT: Preserves dramatic disclosure of speaker's identity
+        - PRO-DROP: Still use explicit noun even in pro-drop context
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Matthew 3:17, 17:5 - "This is my beloved Son" (noun vs. pronoun in divine voice) (unverified)'
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: HIGH
+    contextual_stakes: HIGH
+    affected_doctrines:
+      - Deity of Christ
+      - Father's testimony to Son
+      - Trinity (Father and Son distinct)
+      - Divine approval
+
+    non_arbitrary_rationale: |
+      Father's voice from heaven uses NOUN "my beloved Son" rather than pronoun.
+      Surface realization affects:
+      - NOUN: Formal, solemn declaration of Son's identity and relationship
+      - PRONOUN: Would reduce to routine reference (less weighty)
+      - Context: Divine testimony before witnesses (baptism, transfiguration)
+
+      If translators use pronoun instead of noun:
+      - Loses solemnity of divine declaration
+      - Weakens formal identification of Son
+      - Reduces weighty testimony to casual reference
+
+      Surface realization: noun maintains formal divine testimony.
+
+    christian_orthodox_position:
+      preferred_value: noun_my_beloved_Son_in_divine_testimony
+      acceptable_alternatives:
+        - noun_with_possessive_my_Son
+      forbidden_values:
+        - pronoun_he_reducing_solemn_declaration
+        - zero_obscuring_formal_testimony
+      theological_basis: 'Matt 3:17, 17:5 - "This is my beloved Son, with whom I am well pleased." Mark 1:11, Luke 3:22 parallel. Formal divine declaration of Christ\'s identity and approval.'
+      translator_guidance: |
+        - REQUIRED: Use NOUN "my beloved Son" (not pronoun)
+        - CONTEXT: Divine voice from heaven = solemn formal declaration
+        - AVOID: Pronoun "he" (reduces solemnity and formality)
+        - THEOLOGICAL WEIGHT: Father testifies to Son's identity before witnesses
+        - BAPTISM & TRANSFIGURATION: Key Christological moments
+        - READER BENEFIT: Maintains formal weight of divine testimony
+        - NOTE: Even in pro-drop, explicit noun appropriate for formal declaration
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Romans 10:9 - "God raised [him/Jesus]" (zero object in Greek, clarity in target) (unverified)'
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: MEDIUM
+    contextual_stakes: HIGH
+
+    non_arbitrary_rationale: |
+      Greek: "ὁ θεὸς αὐτὸν ἤγειρεν" - God raised him. Object is pronoun αὐτὸν (him).
+      Surface realization in target affects clarity:
+      - PRONOUN: "God raised him" (clear if context establishes Jesus as referent)
+      - NOUN: "God raised Jesus" (explicit, no ambiguity)
+      - ZERO (pro-drop): Could be ambiguous about object
+
+      If translators use zero in pro-drop without clear context:
+      - Readers may be uncertain WHO God raised
+      - Object identification ambiguous
+
+      Contextual clarity required for zero/pronoun; noun if ambiguous.
+
+    christian_orthodox_position:
+      preferred_value: pronoun_or_noun_ensuring_clarity_that_Jesus_is_object
+      acceptable_alternatives:
+        - noun_Jesus_if_context_unclear
+        - pronoun_him_if_Jesus_clearly_established_in_context
+      forbidden_values:
+        - zero_object_if_ambiguous_about_referent
+      theological_basis: 'Romans 10:9 - "if you confess with your mouth that Jesus is Lord and believe in your heart that God raised him from the dead, you will be saved." Context establishes Jesus as object.'
+      translator_guidance: |
+        - GOAL: Clarity that JESUS is who God raised
+        - CONTEXTUAL CHECK: Is Jesus clearly established as referent?
+        - IF CLEAR: Pronoun "him" acceptable
+        - IF UNCLEAR: Use noun "Jesus" for clarity
+        - PRO-DROP: Zero object acceptable only if context very clear
+        - AVOID: Ambiguity about who God raised
+        - READER BENEFIT: Clear understanding of resurrection object
+
+    non_orthodox_alternatives_awareness: []
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Natural Discourse Flow)
+
+arbitrary_contexts:
+
+  - pattern: "Routine narrative participant tracking (e.g., 'Jesus went... He taught... ∅ healed')"
+    rationale: |
+      Most narrative flow follows natural discourse conventions: noun for introduction/
+      restaging, pronouns for continued reference, zero in pro-drop languages for
+      topic continuity. These are stylistic choices following language-specific norms,
+      not theological decisions. Context makes participant clear.
+    estimated_percentage: 60%
+    examples:
+      - 'Luke 4:14-15 - Jesus returns, teaches in synagogues (narrative flow) (unverified)'
+      - 'Acts 8:26-40 - Philip and Ethiopian (routine participant tracking) (unverified)'
+      - 'Genesis 12 - Abram travels (narrative progression) (unverified)'
+    translator_guidance: |
+      Follow target language natural discourse conventions. Participant tracking
+      follows information structure (noun = new/restaged, pronoun = continued,
+      zero = topic in pro-drop). No theological implications.
+
+  - pattern: "Dialogue attribution (e.g., 'Jesus said' vs. 'he said' vs. '∅ said')"
+    rationale: |
+      When speaker is clear from context, choice of noun/pronoun/zero for dialogue
+      attribution is stylistic. Languages vary in preference (English "he said",
+      Spanish often zero). No doctrinal implications when speaker is contextually clear.
+    estimated_percentage: 10%
+    examples:
+      - 'John 4:7-26 - Jesus and Samaritan woman dialogue (unverified)'
+      - 'Matthew 16:13-20 - Jesus and Peter dialogue (unverified)'
+    translator_guidance: |
+      Follow target language dialogue attribution conventions. When speaker is
+      contextually clear, noun/pronoun/zero is stylistic choice. No theological stakes.
+
+  - pattern: "Descriptive background and setting (e.g., locations, times, incidental details)"
+    rationale: |
+      Background descriptions of locations, times, weather, incidental participants
+      follow natural reference patterns. Surface realization is determined by
+      discourse flow and language-specific preferences, not theology.
+    estimated_percentage: 8%
+    examples:
+      - 'John 2:1 - Wedding at Cana setting (unverified)'
+      - 'Acts 27 - Storm and shipwreck description (unverified)'
+      - 'Ruth 1:1-2 - Famine setting (unverified)'
+    translator_guidance: |
+      Follow natural language patterns for setting and background description.
+      Surface realization based on discourse prominence, not theological content.
+
+  - pattern: "Generic and universal references (e.g., 'whoever believes', 'anyone who')"
+    rationale: |
+      Generic participants are intentionally non-specific. Surface realization
+      follows language conventions for generic reference (pronouns, nouns, or
+      zero depending on language). No specific identity to track.
+    estimated_percentage: 5%
+    examples:
+      - 'John 3:16 - Whoever believes (generic participant) (unverified)'
+      - 'Matthew 7:24 - Everyone who hears (universal reference) (unverified)'
+      - 'Romans 10:13 - Everyone who calls (generic) (unverified)'
+    translator_guidance: |
+      Use target language conventions for generic/universal reference. No specific
+      participant identity, so surface form is language-specific stylistic choice.
+
+  - pattern: "Crowds and groups (collective participants)"
+    rationale: |
+      Mass participants ("the crowd", "the people", "they") tracked as groups.
+      Whether referred to by noun/pronoun/zero follows discourse conventions for
+      collective reference. Specific identities not at stake.
+    estimated_percentage: 7%
+    examples:
+      - 'Matthew 21:8-9 - Crowds at triumphal entry (unverified)'
+      - 'Acts 2:41 - Those who received word (collective) (unverified)'
+      - 'Mark 6:34 - Large crowd following Jesus (unverified)'
+    translator_guidance: |
+      Follow target language patterns for collective/group reference. Noun/pronoun/
+      zero determined by discourse flow and language norms, not theological stakes.
+
+  - pattern: "Parenthetical explanations and asides"
+    rationale: |
+      Explanatory material, parenthetical comments, and narrative asides use
+      surface realization appropriate to their function (often nouns for clarity
+      in parenthetical context). These are stylistic, not theological.
+    estimated_percentage: 3%
+    examples:
+      - 'Mark 7:3-4 - Explanation of Pharisaic washing traditions (unverified)'
+      - 'John 1:41-42 - Translation of Messiah, explanation of Peter (unverified)'
+      - 'Matthew 1:23 - "which means, God with us" (unverified)'
+    translator_guidance: |
+      Use target language conventions for explanatory material. Surface forms
+      chosen for clarity in parenthetical context, not doctrinal reasons.
+
+  - pattern: "Lists and enumerations (genealogies, inventories, itineraries)"
+    rationale: |
+      Lists follow language-specific conventions for enumeration. Surface realization
+      in lists (nouns for each item, pronouns for groups, etc.) is stylistic.
+    estimated_percentage: 2%
+    examples:
+      - 'Matthew 1:1-17 - Genealogy of Jesus (unverified)'
+      - 'Acts 2:9-11 - List of nations at Pentecost (unverified)'
+      - 'Nehemiah 7 - List of returnees (unverified)'
+    translator_guidance: |
+      Follow target language list/enumeration conventions. Surface realization
+      follows list formatting norms, not theological considerations.
+
+  - pattern: "Routine actions and movements in narrative"
+    rationale: |
+      Incidental actions (travel, eating, sitting, etc.) use surface realization
+      following discourse flow. When actions are routine background, surface form
+      is stylistic preference based on participant accessibility.
+    estimated_percentage: 5%
+    examples:
+      - 'Luke 10:38 - Martha welcomes Jesus (routine action) (unverified)'
+      - 'Acts 9:1 - Saul traveling to Damascus (unverified)'
+      - 'Matthew 26:20 - Jesus reclining with twelve (unverified)'
+    translator_guidance: |
+      Use natural discourse patterns for routine actions. Surface realization
+      determined by participant accessibility and language-specific flow, not theology.
+
+# SUMMARY STATISTICS
+
+total_non_arbitrary_percentage: 15
+breakdown:
+  theological_critical: 10  # Divine passive, Holy Spirit personhood, crucifixion agency, Logos, messianic ID
+  contextual_essential: 5   # Participant clarity, divine voice, formal declarations
+
+total_arbitrary_percentage: 85
+note: |
+  Surface realization is MOSTLY stylistic (85% of cases), following natural
+  discourse flow and language-specific conventions (pro-drop vs. non-pro-drop).
+
+  CRITICAL exceptions (15%) involve:
+
+  THEOLOGICAL CRITICAL (10%):
+  1. Divine passive (resurrection, theological passive)
+     - Wrong realization = obscures divine agency or over-specifies
+  2. Holy Spirit personhood (personal pronouns vs. neuter/zero)
+     - Wrong realization = suggests impersonal force (heretical)
+  3. Crucifixion agency (active vs. passive, human vs. divine)
+     - Wrong realization = imbalanced theology (guilt only or sovereignty only)
+  4. Jesus's authority claims (emphatic pronouns vs. divine passive contrast)
+     - Wrong realization = weakens christological weight
+  5. Logos theology (noun "the Word" vs. pronouns)
+     - Wrong realization = obscures christological title
+  6. Messianic prophecy clarity (noun restaging aids identification)
+     - Wrong realization = blurs messianic reading
+
+  CONTEXTUAL ESSENTIAL (5%):
+  7. Participant tracking in complex contexts (Gen 18 - LORD + angels)
+     - Wrong realization = reader confusion about participants
+  8. Divine testimony (formal nouns vs. casual pronouns)
+     - Wrong realization = loses solemnity
+  9. Identity revelations (explicit nouns vs. pronouns)
+     - Wrong realization = weakens dramatic disclosure
+
+  PASTORAL IMPACT:
+  - Divine passive as active = obscures God's agency in resurrection
+  - Holy Spirit as "it" = heretical impersonal force (Jehovah's Witnesses)
+  - Excessive zero = obscures participant identity (Trinity, messianic prophecy)
+  - Imbalanced crucifixion agency = either eliminates human guilt or divine plan
+
+  PRO-DROP SENSITIVITY:
+  - Pro-drop languages (70% of world) routinely use zero subjects
+  - This is NATURAL and GRAMMATICAL, not theologically problematic
+  - Exceptions: Holy Spirit must maintain personhood markers even in pro-drop
+  - Divine passive maintains reverent zero agent (implies God) in pro-drop
+
+  TRANSLATION PRIORITY:
+  High-stakes contexts (15%) require careful attention to surface realization
+  for theological clarity. Arbitrary contexts (85%) follow natural language
+  discourse flow without special theological analysis.
+
+# VALIDATION NOTES
+
+validation_status: UNVERIFIED
+note: |
+  All verse patterns marked as (unverified) per instructions - based on
+  internal knowledge of Scripture, Greek/Hebrew grammar, and conservative
+  Protestant theology. Stage 2 analysis should verify these patterns in
+  actual TBTA data and confirm with peer review.
+
+source: '{llm-cs45}'
+requires_peer_review: true
+peer_review_focus:
+  - Divine passive theology (resurrection, theological passive for God)
+  - Holy Spirit personhood markers (pronouns vs. neuter/impersonal)
+  - Crucifixion agency balance (human guilt + divine sovereignty)
+  - Jesus's emphatic pronouns vs. divine passive (authority claims)
+  - Logos theology (noun use maintaining christological title)
+  - Messianic prophecy clarity (surface realization aiding identification)
+  - Pro-drop naturalness vs. theological clarity tensions
+
+theological_perspective: conservative_protestant_christian
+note_on_perspective: |
+  This analysis reflects conservative Protestant orthodoxy as specified in
+  CLAUDE.md. Key distinctives affecting surface-realization analysis:
+
+  - Divine passive: Reverent way to imply God as agent without naming
+  - Holy Spirit personhood: MUST use personal markers (not "it" - heretical)
+  - Resurrection: God raised Jesus (divine passive or explicit)
+  - Crucifixion: Both human agents (guilt) and divine plan (sovereignty)
+  - Logos: "The Word" as christological title (not generic reference)
+  - Trinity: Clear participant tracking (Father/Son/Spirit distinct)
+
+  Denominational variations:
+  - Protestant/Catholic/Orthodox: Unified on Holy Spirit personhood
+  - All affirm divine agency in resurrection (passive or explicit)
+  - All affirm both human guilt and divine plan in crucifixion
+  - Minor variations in pneumatology terminology, substance identical
+
+recommendations_for_algorithm:
+  - priority_1: Flag Holy Spirit references - REQUIRE personal pronouns/markers (never neuter "it")
+  - priority_2: Identify divine passive contexts (resurrection, theological passive) - preserve or make explicit
+  - priority_3: Balance crucifixion agency (preserve both active human agents and passive divine plan)
+  - priority_4: Track Logos references - maintain noun "the Word" at key points (not just pronouns)
+  - priority_5: Mark emphatic pronouns (Greek/Hebrew) - preserve emphasis even in pro-drop targets
+  - priority_6: Aid messianic prophecy clarity (strategic noun use for individual servant identification)
+  - priority_7: Maintain participant clarity in complex contexts (Gen 18 - distinguish LORD from angels)
+  - priority_8: Preserve formal declarations (divine voice, testimony) with nouns not casual pronouns
+  - priority_9: Respect pro-drop naturalness in arbitrary contexts (70% of languages, 85% of occurrences)
+
+top_5_theologically_significant_contexts:
+  1:
+    context: 'Holy Spirit personhood (John 14:26, 16:13-14)'
+    stakes: CRITICAL
+    issue: 'Personal pronoun "he" vs. neuter "it" or zero without personal markers'
+    orthodox_position: 'Personal pronouns (he/him) - Spirit is person, not impersonal force'
+    impact: 'Neuter "it" = heretical (Jehovah''s Witnesses), denies Spirit''s personhood and deity'
+
+  2:
+    context: 'Divine passive - resurrection (Mark 16:6, Matt 28:6, Luke 24:6)'
+    stakes: CRITICAL
+    issue: 'Passive "was raised" (zero agent = God implied) vs. active or explicit agent'
+    orthodox_position: 'Preserve passive with divine agency implied, or make God explicit if needed'
+    impact: 'Obscuring divine agency = missing God''s active role in resurrection'
+
+  3:
+    context: 'Crucifixion agency (Matt 27:35, Mark 15:24, Luke 23:33)'
+    stakes: HIGH
+    issue: 'Active "they crucified" (human agents) vs. passive "was crucified" (divine plan)'
+    orthodox_position: 'Balance both - human responsibility AND divine sovereignty (Acts 2:23)'
+    impact: 'Imbalance = either eliminates human guilt or obscures divine plan'
+
+  4:
+    context: 'Jesus''s authority claims (Matt 5:21-48 - "it was said... but I say")'
+    stakes: HIGH
+    issue: 'Divine passive (zero agent) vs. emphatic pronoun "I" contrast'
+    orthodox_position: 'Preserve contrast - divine passive vs. emphatic "I" shows Jesus''s authority'
+    impact: 'Flattening contrast = weakens Jesus''s audacious claim to equal divine authority'
+
+  5:
+    context: 'Logos theology (John 1:1, 14 - "the Word" noun vs. pronouns)'
+    stakes: CRITICAL
+    issue: 'Noun "the Word" maintaining christological title vs. generic pronouns'
+    orthodox_position: 'Strategic noun use - establish and restage "the Word" as title'
+    impact: 'Excessive pronouns/zero = losing "Word" as christological title, obscuring Logos theology'
