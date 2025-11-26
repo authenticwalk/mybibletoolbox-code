@@ -159,7 +159,7 @@ See [research/README.md](research/README.md) for full summary.
 
 ## Stage 2 Analysis Results
 
-**Data extracted**: 171,876 annotations from TBTA. See [analysis/README.md](analysis/README.md) for details.
+**Data extracted**: 171,876 annotations from TBTA. See [analysis/README.md](analysis/README.md) for full details.
 
 **Distribution** (confirms Stage 1 predictions):
 - Singular: 66.2% (most common)
@@ -169,26 +169,32 @@ See [research/README.md](research/README.md) for full summary.
 - **Quadrial: 0.1% - CONFIRMED SUSPICIOUS** (should be 0%)
 - Paucal: 0.03%
 
-**Classification Results**:
-| Approach | Accuracy | Notes |
-|----------|----------|-------|
-| Majority baseline | 66.2% | Always Singular |
-| Rule-based | 26% (balanced) | Body parts → Dual |
-| TF-IDF + ML | 36.5% (balanced) | Best simple approach |
+**LLM Baseline**: 76% accuracy on 100 diverse samples
 
-**Key Patterns Found**:
-- Dual: hand, foot, eye, ear (body parts) - 100% predictive
-- Singular: Jesus, Yahweh, David (proper names) - 93%+
-- Trial/Quadrial: No clear patterns (need context)
+**Key Error Patterns**:
+| Error Type | Frequency | Root Cause |
+|-----------|-----------|------------|
+| Paucal → Plural | 41.7% | Unclear criteria for "few" |
+| Quadrial → Plural | 12.5% | No linguistic basis for quadrial |
+| Trinity inconsistency | 8.3% | TBTA labels vary (some Trial, some Plural) |
 
-**Data Quality Issue**: Quadrial entries (185) need review - no attested language has quadrial.
+**TBTA Data Quality Issues Identified**:
+1. **Trinity passages inconsistent**: GEN.1.26 → Trial, but GEN.11.7 → Plural
+2. **Quadrial category**: 185 uses but no attested language has grammatical quadrial
+3. **Paucal boundary unclear**: Only 52 natural occurrences (0.03%)
+4. **Lexicalized dual exceptions**: PSA.19.1 "heavens" marked Plural (should be Singular)
 
 **Files Created**:
-- `analysis/data/train.jsonl` - Training set (1,339 entries)
-- `analysis/data/validate.jsonl` - Validation set (446 entries)
-- `analysis/data/test.jsonl` - Test set (448 entries) - RESERVED
-- `analysis/logical.py` - Rule-based classifier
-- `analysis/ml_exploration.py` - ML baseline
+- `analysis/data/train.jsonl` - Training set (331 entries, stratified)
+- `analysis/data/validate.jsonl` - Validation set (100 entries) - Labels hidden
+- `analysis/data/test.jsonl` - Test set (96 entries) - RESERVED
+- `analysis/data/leftovers.jsonl` - Remaining TBTA data (171,260 entries)
+- `analysis/HIGH-LEVEL-REVIEW.md` - LLM baseline analysis
+- `analysis/EDGE-CASES.md` - When NOT Singular/Plural
+- `analysis/TBTA-QUALITY.md` - Data quality issues, questions for TBTA team
+- `analysis/STRONGS.md` - Strong's word pattern analysis
+- `analysis/WORD-ANALYSIS.md` - Translation word patterns
+- `analysis/reason-groupings-with-hints.jsonl` - Theological hints for verses
 
 ## Next Steps
 

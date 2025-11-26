@@ -50,7 +50,7 @@ python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jso
 
 **This is an LLM task** - requires judgment about theological/literary diversity.
 
-**Output File** - bible-study-tools/tbta/features/{feature}/analysis/datasets.jsonl
+**Output File** - bible-study-tools/tbta/features/{feature}/analysis/datasets.jsonl (created using the edit file, write to file or other write tools by the LLM; Do **not** write a script to do this as you need to add fields that require your custom logic to each line)
 
 **Target sizes** (keep manageable):
 - train: max 300 entries
