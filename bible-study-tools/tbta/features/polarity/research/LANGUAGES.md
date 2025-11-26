@@ -177,7 +177,7 @@ Languages that **grammatically require** explicit polarity marking:
 
 #### 4.1.1 Uralic Family (Negative Auxiliary Verbs)
 
-**Finnish** (fin) - Indo-European family in dataset {languages.tsv}
+**Finnish** (fin) - Uralic family in dataset {languages.tsv}
 - **Negative verb**: *ei* conjugates for person/number (*en, et, ei, emme, ette, eivät*)
 - Main verb uses connegative stem (no person marking on main verb)
 - **Polarity status**: MANDATORY (morphologically required)
