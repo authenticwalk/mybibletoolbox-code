@@ -26,8 +26,7 @@ Output format (one line per reason group):
         "reason": "TRINITY",
         "description": "Verses involving Trinitarian theology...",
         "count": 45,
-        "verses": ["GEN.001.026", "GEN.003.022", ...],
-        "entries": [{"verse": "...", "label": "...", ...}, ...]
+        "verses": ["GEN.001.026", "GEN.003.022", ...]
     }
 """
 
@@ -306,8 +305,7 @@ Examples:
                 "reason": reason,
                 "description": description,
                 "count": len(entries),
-                "verses": verses[:100],  # Limit verse list for readability
-                "entries": entries
+                "verses": verses  # All unique verses in this group
             }
             f.write(json.dumps(group_obj, ensure_ascii=False) + '\n')
 

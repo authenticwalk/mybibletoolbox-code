@@ -14,16 +14,12 @@ The script:
 
 Usage:
     # Full analysis with Strong's grouping
-    python group_by_strongs.py --input analysis/tbta-extract-with-verses.jsonl \\
+    python group_by_strongs.py --input analysis/enriched.jsonl \\
         --output analysis/strongs-analysis.jsonl
 
     # Word-only analysis (no Strong's grouping)
-    python group_by_strongs.py --input analysis/tbta-extract-with-verses.jsonl \\
+    python group_by_strongs.py --input analysis/enriched.jsonl \\
         --output analysis/word-analysis.jsonl --no-strongs
-
-    # Filter to specific Strong's number
-    python group_by_strongs.py --input analysis/tbta-extract-with-verses.jsonl \\
-        --output analysis/H430-analysis.jsonl --strongs H0430
 
 Output format (one line per Strong's number or "ALL" if --no-strongs):
     {
@@ -42,19 +38,10 @@ Output format (one line per Strong's number or "ALL" if --no-strongs):
 import argparse
 import json
 import logging
-import re
 import sys
 from collections import Counter, defaultdict
 from pathlib import Path
-from typing import Dict, List, Optional, Any
-
-# Add project root to path for imports
-project_root = Path(__file__).resolve().parent.parent.parent.parent
-if str(project_root) not in sys.path:
-    sys.path.insert(0, str(project_root))
-
-from src.config import get_verse_path
-from src.constants.bible import parse_verse_ref
+from typing import Dict, List
 
 # Configure logging
 logging.basicConfig(
@@ -65,92 +52,99 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
+def is_cjk_char(char: str) -> bool:
+    """Check if a character is CJK (Chinese, Japanese, Korean)."""
+    if not char:
+        return False
+    # Get Unicode category/block
+    cp = ord(char)
+    # CJK Unified Ideographs and extensions
+    if 0x4E00 <= cp <= 0x9FFF:  # CJK Unified Ideographs
+        return True
+    if 0x3400 <= cp <= 0x4DBF:  # CJK Extension A
+        return True
+    if 0x20000 <= cp <= 0x2A6DF:  # CJK Extension B
+        return True
+    # Japanese Hiragana and Katakana
+    if 0x3040 <= cp <= 0x309F:  # Hiragana
+        return True
+    if 0x30A0 <= cp <= 0x30FF:  # Katakana
+        return True
+    # Korean Hangul
+    if 0xAC00 <= cp <= 0xD7AF:  # Hangul Syllables
+        return True
+    if 0x1100 <= cp <= 0x11FF:  # Hangul Jamo
+        return True
+    return False
+
+
 def tokenize(text: str) -> List[str]:
-    """Simple word tokenization - splits on whitespace and punctuation."""
+    """
+    Tokenize text for word frequency analysis.
+    
+    Handles both space-separated languages (English, Spanish, etc.)
+    and character-based languages (Chinese, Japanese, Korean).
+    """
     if not text:
         return []
-    # Convert to lowercase and split on non-word characters
-    words = re.findall(r'\b\w+\b', text.lower())
-    return words
+    
+    tokens = []
+    current_word = []
+    
+    for char in text:
+        if is_cjk_char(char):
+            # CJK character: flush current word, add char as token
+            if current_word:
+                word = ''.join(current_word).lower()
+                if word.isalnum():
+                    tokens.append(word)
+                current_word = []
+            tokens.append(char)  # Each CJK char is its own token
+        elif char.isalnum():
+            current_word.append(char)
+        else:
+            # Whitespace or punctuation: flush current word
+            if current_word:
+                word = ''.join(current_word).lower()
+                tokens.append(word)
+                current_word = []
+    
+    # Flush final word
+    if current_word:
+        word = ''.join(current_word).lower()
+        tokens.append(word)
+    
+    return tokens
 
 
-def load_macula_data(book: str, chapter: int, verse: int) -> Optional[Dict]:
-    """Load Macula YAML data for a verse to get Strong's numbers."""
-    try:
-        import yaml
-    except ImportError:
-        logger.warning("PyYAML not installed - cannot load Macula data")
-        return None
-
-    verse_dir = get_verse_path(book, chapter, verse)
-    filename = f"{book}-{chapter:03d}-{verse:03d}-macula.yaml"
-    filepath = verse_dir / filename
-
-    if not filepath.exists():
-        return None
-
-    try:
-        with open(filepath, 'r', encoding='utf-8') as f:
-            return yaml.safe_load(f)
-    except Exception as e:
-        logger.debug(f"Error reading {filepath}: {e}")
-        return None
-
-
-def extract_strongs_from_macula(macula_data: Dict, constituent: str) -> Optional[str]:
+def analyze_word_frequencies(entries: List[Dict], translation_codes: List[str]) -> Dict[str, Dict[str, Counter]]:
     """
-    Try to find Strong's number for a constituent word from Macula data.
+    Analyze word frequencies per translation code per feature label.
 
     Args:
-        macula_data: Loaded Macula YAML data
-        constituent: The word/constituent from TBTA (e.g., "us", "God")
+        entries: List of enriched TBTA entries
+        translation_codes: List of translation codes (e.g., ['eng-NIV', 'spa-RV1960'])
 
-    Returns:
-        Strong's number (e.g., "H0430") or None if not found
+    Returns: {label: {translation_code: Counter({word: count})}}
     """
-    if not macula_data or 'words' not in macula_data:
-        return None
-
-    constituent_lower = constituent.lower()
-
-    for word in macula_data.get('words', []):
-        # Check gloss/translation matches constituent
-        gloss = word.get('translation', {}).get('gloss', '').lower()
-        if constituent_lower in gloss or gloss in constituent_lower:
-            # Found a match - get Strong's number
-            strong = word.get('lexical', {}).get('strong')
-            if not strong:
-                strong = word.get('lexical', {}).get('stronglemma')
-            if strong:
-                return strong
-
-    return None
-
-
-def analyze_word_frequencies(entries: List[Dict], languages: List[str]) -> Dict[str, Dict[str, Counter]]:
-    """
-    Analyze word frequencies per language per feature label.
-
-    Returns: {label: {lang: Counter({word: count})}}
-    """
-    # Structure: {label: {lang: Counter}}
+    # Structure: {label: {translation_code: Counter}}
     freq = defaultdict(lambda: defaultdict(Counter))
 
     for entry in entries:
         label = entry.get('label', 'UNKNOWN')
 
-        # Process each language
-        for lang in languages:
-            lang_data = entry.get(lang, {})
-            if isinstance(lang_data, dict):
-                # Nested format: {version: text}
-                for version, text in lang_data.items():
-                    words = tokenize(text)
-                    freq[label][lang].update(words)
-            elif isinstance(lang_data, str):
-                # Flat format: just text
-                words = tokenize(lang_data)
-                freq[label][lang].update(words)
+        # Process each translation code
+        for code in translation_codes:
+            text = entry.get(code)
+            if isinstance(text, str):
+                # Flat format: translation code maps directly to text
+                words = tokenize(text)
+                freq[label][code].update(words)
+            elif isinstance(text, dict):
+                # Legacy nested format: {version: text}
+                for version, verse_text in text.items():
+                    words = tokenize(verse_text)
+                    freq[label][code].update(words)
 
     return freq
 
@@ -167,22 +161,22 @@ def find_patterns(freq_by_label: Dict[str, Dict[str, Counter]], min_support: int
     """
     patterns = []
 
-    # Get all labels and languages
+    # Get all labels and translation codes
     all_labels = list(freq_by_label.keys())
     if not all_labels:
         return patterns
 
-    all_languages = set()
+    all_codes = set()
     for label_data in freq_by_label.values():
-        all_languages.update(label_data.keys())
+        all_codes.update(label_data.keys())
 
-    # For each language, find discriminative words
-    for lang in all_languages:
+    # For each translation code, find discriminative words
+    for code in all_codes:
         # Collect word counts across all labels
         word_by_label = defaultdict(dict)  # {word: {label: count}}
 
-        for label, lang_counters in freq_by_label.items():
-            counter = lang_counters.get(lang, Counter())
+        for label, code_counters in freq_by_label.items():
+            counter = code_counters.get(code, Counter())
             for word, count in counter.items():
                 word_by_label[word][label] = count
 
@@ -198,8 +192,8 @@ def find_patterns(freq_by_label: Dict[str, Dict[str, Counter]], min_support: int
                     confidence = count / total
                     if confidence >= 0.7:  # At least 70% of occurrences are this label
                         patterns.append({
-                            'pattern': f"{lang} contains '{word}'",
-                            'language': lang,
+                            'pattern': f"{code} contains '{word}'",
+                            'translation': code,
                             'word': word,
                             'label': label,
                             'confidence': round(confidence, 3),
@@ -219,21 +213,16 @@ def main():
         epilog="""
 Examples:
     # Full analysis grouped by Strong's
-    python group_by_strongs.py --input tbta-extract-with-verses.jsonl \\
-        --output strongs-analysis.jsonl
+    python group_by_strongs.py --input analysis/enriched.jsonl \\
+        --output analysis/strongs-analysis.jsonl
 
     # Word-only analysis (all entries together)
-    python group_by_strongs.py --input tbta-extract-with-verses.jsonl \\
-        --output word-analysis.jsonl --no-strongs
-
-    # Analyze specific Strong's number
-    python group_by_strongs.py --input tbta-extract-with-verses.jsonl \\
-        --output H0430-analysis.jsonl --strongs H0430
+    python group_by_strongs.py --input analysis/enriched.jsonl \\
+        --output analysis/word-analysis.jsonl --no-strongs
         """
     )
     parser.add_argument("--input", required=True, help="Input JSONL file (enriched with verses)")
     parser.add_argument("--output", required=True, help="Output JSONL file")
-    parser.add_argument("--strongs", help="Filter to specific Strong's number (e.g., H0430)")
     parser.add_argument("--no-strongs", action="store_true",
                         help="Skip Strong's grouping - analyze all entries together")
     parser.add_argument("--min-support", type=int, default=10,
@@ -270,9 +259,16 @@ Examples:
 
                 entries.append(entry)
 
-                # Track languages present in data
+                # Track translation codes present in data (e.g., eng-NIV, spa-RV1960)
+                # Also support legacy 3-letter language codes (e.g., eng, spa)
+                reserved_keys = {'verse', 'label', 'path', 'part', 'constituent', 
+                                'strongs_number', 'strongs_word', 'dataset', 
+                                'reconstructed_verse', 'theological_group'}
                 for key in entry.keys():
-                    if len(key) == 3 and key.islower() and key not in ['verse', 'label', 'path', 'part']:
+                    if key in reserved_keys:
+                        continue
+                    # Match translation codes like "eng-NIV" or legacy "eng"
+                    if '-' in key or (len(key) == 3 and key.islower()):
                         languages_found.add(key)
 
             except json.JSONDecodeError:
@@ -280,10 +276,10 @@ Examples:
                 continue
 
     logger.info(f"Loaded {len(entries)} entries")
-    logger.info(f"Languages found: {sorted(languages_found)}")
+    logger.info(f"Translation codes found: {sorted(languages_found)}")
 
-    # Get list of languages to analyze
-    languages = sorted(languages_found)
+    # Get list of translation codes to analyze
+    translation_codes = sorted(languages_found)
 
     # Group entries by Strong's number (or all together)
     if args.no_strongs:
@@ -291,34 +287,21 @@ Examples:
     else:
         groups = defaultdict(list)
         entries_with_strongs = 0
+        entries_without_strongs = 0
 
         for entry in entries:
             strongs = entry.get('strongs_number')
-
-            # Try to get Strong's from Macula if not present
-            if not strongs and entry.get('verse') and entry.get('constituent'):
-                try:
-                    verse_ref = entry['verse']
-                    book, chapter, verse = parse_verse_ref(verse_ref)
-                    macula = load_macula_data(book, chapter, verse)
-                    if macula:
-                        strongs = extract_strongs_from_macula(macula, entry['constituent'])
-                        if strongs:
-                            entry['strongs_number'] = strongs
-                except:
-                    pass
-
             if strongs:
-                # Filter by specific Strong's if requested
-                if args.strongs and strongs != args.strongs:
-                    continue
                 groups[strongs].append(entry)
                 entries_with_strongs += 1
             else:
-                groups['UNKNOWN'].append(entry)
+                # No strongs_number - add to ALL group
+                groups['ALL'].append(entry)
+                entries_without_strongs += 1
 
         logger.info(f"Entries with Strong's numbers: {entries_with_strongs}")
-        logger.info(f"Unique Strong's numbers: {len(groups)}")
+        logger.info(f"Entries without Strong's (in ALL): {entries_without_strongs}")
+        logger.info(f"Unique Strong's numbers: {len(groups) - (1 if 'ALL' in groups else 0)}")
 
     # Analyze each group
     results = []
@@ -333,7 +316,7 @@ Examples:
         label_counts = Counter(e.get('label', 'UNKNOWN') for e in group_entries)
 
         # Analyze word frequencies per label
-        freq_by_label = analyze_word_frequencies(group_entries, languages)
+        freq_by_label = analyze_word_frequencies(group_entries, translation_codes)
 
         # Find discriminative patterns
         patterns = find_patterns(freq_by_label, args.min_support)

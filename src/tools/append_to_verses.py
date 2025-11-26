@@ -1,23 +1,23 @@
 #!/usr/bin/env python3
 """
-TBTA Append Hints Script
-========================
+Append Hints to Verse Files
+============================
 
-Appends generated hints to verse commentary files in the data directory.
-Used after group_by_reasons.py to persist theological hints for specific verses.
+Appends hints to verse YAML files in the data directory.
+Generic tool that works with any tool file (not just tbta-hints).
 
-The hints are stored in: $DATA_DIR/commentary/{BOOK}/{CCC}/{VVV}/{BOOK}-{CCC}-{VVV}-tbta-hints.yaml
+The hints are stored in: $DATA_DIR/commentary/{BOOK}/{CCC}/{VVV}/{BOOK}-{CCC}-{VVV}-{tool}.yaml
 
 Usage:
-    # Append hints from grouped reasons (after LLM added hint field)
-    python append_to_verses.py --input analysis/grouped-with-hints.jsonl --feature Number
+    # Append hints to tbta-hints files
+    python append_to_verses.py --input analysis/grouped-with-hints.jsonl --feature Number --tool tbta-hints
 
     # Dry run to see what would be updated
-    python append_to_verses.py --input analysis/grouped-with-hints.jsonl --feature Number --dry-run
+    python append_to_verses.py --input analysis/grouped-with-hints.jsonl --feature Number --tool tbta-hints --dry-run
 
 Input formats supported:
     1. Group format (from group_by_reasons.py with added 'hint' field):
-       {"reason": "TRINITY", "hint": "Trinitarian context...", "entries": [...]}
+       {"reason": "TRINITY", "hint": "Trinitarian context...", "verses": ["GEN.001.026", ...]}
 
     2. Single verse format:
        {"verse": "GEN.001.026", "hint": "This verse..."}
@@ -35,19 +35,14 @@ import logging
 import sys
 from pathlib import Path
 
-try:
-    import yaml
-except ImportError:
-    print("ERROR: PyYAML required. Install with: pip install pyyaml")
-    sys.exit(1)
-
 # Add project root to path for imports
 project_root = Path(__file__).resolve().parent.parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-from src.config import get_verse_path
+from src.config import COMMENTARY_DIR
 from src.constants.bible import parse_verse_ref
+from src.util.cache import get_cached_verse, save_verse_to_cache
 
 # Configure logging
 logging.basicConfig(
@@ -58,13 +53,14 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 
-def update_verse_file(verse_ref: str, feature_name: str, reason_code: str,
+def update_verse_file(verse_ref: str, tool: str, feature_name: str, reason_code: str,
                       description: str, dry_run: bool = False) -> bool:
     """
-    Update the tbta-hints.yaml file for a specific verse.
+    Update the tool YAML file for a specific verse.
 
     Args:
         verse_ref: Verse reference (e.g., "GEN.001.026")
+        tool: Tool name (e.g., "tbta-hints")
         feature_name: Feature name (e.g., "Number", "Clusivity")
         reason_code: Reason code (e.g., "TRINITY", "DIVINE_SPEECH")
         description: Hint description text
@@ -79,18 +75,8 @@ def update_verse_file(verse_ref: str, feature_name: str, reason_code: str,
         logger.warning(f"Invalid verse ref: {verse_ref}")
         return False
 
-    verse_dir = get_verse_path(book, chapter, verse)
-    filename = f"{book}-{chapter:03d}-{verse:03d}-tbta-hints.yaml"
-    file_path = verse_dir / filename
-
-    # Load existing data
-    data = {}
-    if file_path.exists():
-        try:
-            with open(file_path, 'r', encoding='utf-8') as f:
-                data = yaml.safe_load(f) or {}
-        except Exception as e:
-            logger.warning(f"Failed to load {file_path}, will create new: {e}")
+    # Load existing data using cache helper
+    data = get_cached_verse(book, chapter, verse, suffix=tool, cache_root=COMMENTARY_DIR) or {}
 
     # Initialize structure
     if feature_name not in data:
@@ -120,32 +106,29 @@ def update_verse_file(verse_ref: str, feature_name: str, reason_code: str,
 
     data[feature_name]['hints'].append(new_hint)
 
-    # Write file
+    # Save file using cache helper
     if not dry_run:
-        # Ensure directory exists
-        verse_dir.mkdir(parents=True, exist_ok=True)
-
-        with open(file_path, 'w', encoding='utf-8') as f:
-            yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+        save_verse_to_cache(book, chapter, verse, data, suffix=tool, cache_root=COMMENTARY_DIR)
 
     return True
 
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Append TBTA hints to verse commentary files",
+        description="Append hints to verse YAML files",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
-    # Append hints after LLM added hint text to groups
-    python append_to_verses.py --input grouped-with-hints.jsonl --feature Number
+    # Append hints to tbta-hints files
+    python append_to_verses.py --input grouped-with-hints.jsonl --feature Number --tool tbta-hints
 
     # Dry run to preview changes
-    python append_to_verses.py --input grouped-with-hints.jsonl --feature Number --dry-run
+    python append_to_verses.py --input grouped-with-hints.jsonl --feature Number --tool tbta-hints --dry-run
         """
     )
     parser.add_argument("--input", required=True, help="Input JSONL file with hints")
     parser.add_argument("--feature", required=True, help="Feature name (e.g., Number, Clusivity)")
+    parser.add_argument("--tool", required=True, help="Tool name for output file (e.g., tbta-hints)")
     parser.add_argument("--dry-run", action="store_true",
                         help="Preview what would be updated without writing files")
 
@@ -158,6 +141,7 @@ Examples:
         sys.exit(1)
 
     logger.info(f"Reading hints from {args.input}...")
+    logger.info(f"Tool: {args.tool}, Feature: {args.feature}")
     if args.dry_run:
         logger.info("DRY RUN MODE - no files will be written")
 
@@ -174,16 +158,15 @@ Examples:
                 obj = json.loads(line)
 
                 # Handle "Group" format (from group_by_reasons.py with added hint)
-                if 'reason' in obj and 'entries' in obj and 'hint' in obj:
+                if 'reason' in obj and 'verses' in obj and 'hint' in obj:
                     hint_text = obj['hint']
                     reason_code = obj['reason']
 
-                    for entry in obj['entries']:
-                        verse_ref = entry.get('verse')
+                    for verse_ref in obj['verses']:
                         if not verse_ref:
                             continue
 
-                        if update_verse_file(verse_ref, args.feature, reason_code,
+                        if update_verse_file(verse_ref, args.tool, args.feature, reason_code,
                                            hint_text, dry_run=args.dry_run):
                             updates_count += 1
                         else:
@@ -192,16 +175,16 @@ Examples:
                 # Handle "Single Verse" format
                 elif 'verse' in obj and 'hint' in obj:
                     reason = obj.get('reason', 'HINT')
-                    if update_verse_file(obj['verse'], args.feature, reason,
+                    if update_verse_file(obj['verse'], args.tool, args.feature, reason,
                                        obj['hint'], dry_run=args.dry_run):
                         updates_count += 1
                     else:
                         skipped_count += 1
 
                 # Handle group format without hint (skip)
-                elif 'reason' in obj and 'entries' in obj:
+                elif 'reason' in obj and 'verses' in obj:
                     logger.debug(f"Line {line_num}: Group '{obj['reason']}' has no 'hint' field, skipping")
-                    skipped_count += len(obj.get('entries', []))
+                    skipped_count += len(obj.get('verses', []))
 
             except json.JSONDecodeError as e:
                 logger.warning(f"Invalid JSON at line {line_num}: {e}")

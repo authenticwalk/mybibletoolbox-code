@@ -30,43 +30,33 @@ analysis/
 
 ---
 
-## Step 1: Extract TBTA Data
+## Step 1: Create Dataset
+
+### Extract Data
 
 ```bash
-python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jsonl \
+python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jsonl --with-text \
   > bible-study-tools/tbta/features/{feature}/analysis/tbta-extract.jsonl
 ```
 
 **Output**: One line per TBTA annotation with verse, label, constituent, part, path.
 
-**Immediately**: Check distribution in `features/{feature}/README.md`. Note:
-- Is one value dominant (>80%)? Focus on edge cases when it's NOT that value
-- Any suspicious values? (e.g., Quadrial has no linguistic basis - it's semantic, not grammatical)
+- Update `features/{feature}/README.md` with the distribution of each value found in the extraction.
 
 ---
 
-## Step 2: LLM Baseline (CRITICAL - Do This First!)
 
-**Before complex analysis**, test if the LLM can already solve this with a simple prompt.
-
-1. Write a 1-3 sentence prompt describing the feature (from Stage 1 research)
-2. Include max 5 key considerations as sub-bullets
-3. Test on 20 samples from the extraction (diverse labels)
-4. If accuracy ≥90%, you may be done - skip to Step 7
-
-**Why**: Avoid overbuilding. The LLM may already have sufficient knowledge for common features.
-
----
-
-## Step 3: Create Balanced Dataset
+### Create Balanced Dataset
 
 **This is an LLM task** - requires judgment about theological/literary diversity.
+
+**Output File** - bible-study-tools/tbta/features/{feature}/analysis/datasets.jsonl
 
 **Target sizes** (keep manageable):
 - train: max 300 entries
 - validate: max 100 entries
 - test: max 100 entries (RESERVE - don't look at until final eval)
-- leftovers: everything else
+
 
 **Selection criteria** for each split:
 - Balance across feature values
@@ -76,14 +66,16 @@ python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jso
 - Same verse = same split (don't leak)
 
 **Required fields in output**:
+
+The following is showing too many newlines to make this file easier for me to read, in your output it will proper jsonl
+
 ```jsonl
 {
   "verse": "GEN-001-026",
   "label": "Trial",
   "constituent": "us",
   "part": "Noun",
-  "path": "...",
-  "reconstructed_verse": "God said, let **us** make mankind in **our** image",
+  "reconstructed_verse": "God said, let **us** make mankind in our image",
   "strongs_number": "H430",
   "strongs_word": "אֱלֹהִים",
   "dataset": {
@@ -93,109 +85,219 @@ python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jso
     "difficulty": "adversarial",
     "theological_group": "TRINITY"
   }
+}\n
+{ 
+  "verse": "GEN-001-026",
+  "label": "Trial",
+  "constituent": "us",
+  "part": "Noun", (TODO: fix this example, I want to show that the same verse goes into the same dataset)
+  "reconstructed_verse": "God said, let us make mankind in **our** image",
+  "strongs_number": "H430", (FIX this)
+  "strongs_word": "אֱלֹהִים", (fix this)
+  "dataset": {
+    "split": "train",  // IMPORTANT: notice that this is the same dataset as above b/c it is the same verse but the next word to solve
+    "section": "OT",
+    "literary_type": "history",
+    "difficulty": "adversarial",
+    "theological_group": "TRINITY"
+  }
 }
 ```
 
 **Key additions**:
-- `reconstructed_verse`: Rebuild verse with **bolded target word(s)** - the word this annotation applies to
 - `strongs_number`: Infer from constituent + verse (LLM can do this from memory)
-- `theological_group`: From Stage 1 THEOLOGICALLY-SIGNIFICANT-GROUPS research
+- `theological_group`: From Stage 1 THEOLOGICALLY-SIGNIFICANT-GROUPS research: You will need to read that file first and create a list of your codes for consistency
 
 **Script**: Create `/src/tools/predict/split_datasets.py` to output entries not in any set to leftovers.jsonl
 
 ---
+### Enrich with Translations
 
-## Step 4: Enrich with Translations
-
+  - Use `src/tools/fetch_verse.py` to get 2 verses (OT and NT).
+  - Analyze which languages distinguish this feature well (based on ../research/LANGUAGES.md).
+  - Select up to 21 translations that have diversity storing their codes in the same format as came back from fetch_verse
+    - By diversity we mean accounting for the various language families and distinct language rules
+      - ex. for the feature number systems some langauges have singular/plural only while some have singular/dual/plural and others more, we want those variations
+      - ex. some languages require the feature and others are more loose about it; we would want that representation as well
+    - You should pick langauges your internal memory is pretty confident in translating so if we say what number system is the word "us" in God said let us make you know which word is the translation of "us" in that language and you know the linguistical rules about this feature for that word for that language.
+      - 
 ```bash
 python src/ingest_data/tbta/enrich_extract_with_verses.py \
-  --input analysis/data/train.jsonl \
-  --languages eng-NIV,eng-ESV,spa-RV1960,fra-LSG \
-  --output analysis/data/train-enriched.jsonl
+  --input analysis/datasets.jsonl \
+  --languages eng-NIV,eng-ESV,spa-RV1960,fra-LSG} \  // NOTE: use the translation version codes you made above here
+  --output analysis/enriched.jsonl
 ```
 
 **Important notes**:
 - Use `{lang}-{version}` codes (e.g., `eng-NIV`), not just language codes
 - These match the keys returned by `fetch_verse.py`
-- Select 5-10 versions that distinguish this feature well (from Stage 1 LANGUAGES.md)
+- Select 5-10 versions that distinguish this feature well (from Stage 1 features/{feature}/research/LANGUAGES.md)
 
 **Known issue**: Versification mismatch can cause ~50% cache misses. The enrichment script handles this gracefully.
 
 ---
 
-## Step 5: Analyze Patterns (Parallel Tasks)
+### Split the datasets up
+
+Call `src/tools/predict/split_dataset.py --input analysis/enriched.jsonl --original analysis/tbta-extract.jsonl --output analysis/data`
+
+
+## Step 2: Baseline Analysis
+
+### LLM Baseline
+
+**process**
+In your main agent call a subagent to do the labelling then back in the main agent do the analysis
+
+**Before complex analysis**, test if the LLM can already solve this with a simple prompt.
+
+1. Write a 1-3 sentence prompt describing the feature with a focus on how to label data (from Stage 1 features/{feature}/research/README.md)
+2. Include each value as a bullet point with the most important reasons to label it as up to 5 subbullet points as concise as possible
+3. Start a subagent (so it has no memory of what the answers where) giving it your prompt and 100 divese verses from the training dataset. features/{feature}/analysis/data/train.jsonl   Have it return in the format `$verse\t$label` ex "GEN-001-001 Trial\n"
+4. Review the answers critically creating the file `analysis/HIGH-LEVEL-REVIEW.md` including your prompt
+   1. Did it get them all correct.  If so we don't need to do any further work but can mark this feature as done
+   2. Debug why is it getting it wrong?  Is there a pattern to it?  
+   3. Do the TBTA answers seem correct and consistent?  You want them to be right but be critical and think deeply about if there may be a data labelling issue that will block our results.  
+   4. How should we go about solving it (consider the options listed in this stage 2 doc and propose which are most likely, suggest alternatives)
+   5.  Is one value dominant (>80%)? Focus on edge cases when it's NOT that value
+   6.  Any suspicious values? (e.g., Quadrial has no linguistic basis - it's semantic, not grammatical)
+       1.  ex. In number systems it is almost always Singular or Plural. Less than 2% of the cases are the other values; therefore the task is finding out when it is not plural and why the Greek/Hebrew Singular would not be singular.
+
+**Why**: Avoid overbuilding. The LLM may already have sufficient knowledge for common features.
+
+---
+
+## Step 3: Analyze Patterns (Parallel Tasks)
 
 Run these analyses in parallel using subagents:
 
-### 5A: Dominant Value Analysis
+### 3A: Dominant Value Analysis
+
+**Datasource** analysis/data/train.secret.jsonl and analysis/data/leftovers.secret.jsonl
+
+**Output** analysis/EDGE-CASES.md
 
 When one value dominates (e.g., Singular 66%):
 1. Focus on: "When is it NOT the dominant value?"
-2. List all conditions where the minority value applies
-3. Goal: Perfect prediction of minority cases
+2. List all conditions where the minority value applies; trying to group them into most common to least common with examples for each
 
-### 5B: Strong's Word Patterns
+### 3B: TBTA label quality
 
-Analyze `strongs_number` field from train.jsonl:
+**Datasource** 
+ - analysis/data/train.secret.jsonl
+ - analysis/data/leftovers.secret.jsonl
+ - analysis/HIGH-LEVEL-REVIEW.md
+ - research/README.md (and potentially the subfiles)
+
+**Output** analysis/TBTA-QUALITY.md
+
+Do a critical review of the TBTA labels.  Verify your work don't just theorize they are wrong.  
+
+Be careful of broad assumptions like in research there is no FOUR person number system but TBTA has it; consider instead why they may have done it such as for translating the remaining 4000 langauges that are not yet documented they may encounter a langauge that does require it, labelling it as four is harmless in that langauges with only 3 will just call it plural.
+
+Be sure to include qualifying questions asked very respectfully for the TBTA team to clear up confusion; providing examples for each.
+
+### 3C: Strong's Word Patterns
+
+Analyze `strongs_number`
+
+Run `python src/ingest_data/tbta/group_by_strongs.py --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl --output ${TBTA-DIR}/features/{feature}/analysis/strongs-analysis.jsonl`
+
 
 1. Group entries by Strong's number
 2. For each word with count ≥10:
    - Is there a consistent pattern? (e.g., "יָד (hand)" → always Dual)
    - Any exceptions? Document in `analysis/TBTA-POTENTIAL-ISSUES.md`
-3. If pattern is reliable (≥95% consistent), add hint to `.data/strongs/{strongs}/...tbta-hints.yaml`
+3. If pattern is reliable (≥95% consistent), upsert a file in {$DATA_DIR:default(.data)}/strongs/(G|H)${strongsNumber:fd4}/(G|H)${strongsNumber:fd4}.tbta-hints.yaml OTHERWISE continue to next word
+
+Output your top findings and work to `analysis/STRONGS.md`
 
 **Warning**: Low counts are overfitting. Only trust patterns with 10+ occurrences.
 
-### 5C: Theological Grouping
+### 3D: Word Patterns
 
-Using THEOLOGICALLY-SIGNIFICANT-GROUPS.md from Stage 1:
-1. Verify groupings match actual data
-2. Write a brief hint (max 50 words) for each group
-3. Flag any entries that don't fit their group
+Analyze `word usage` to find common words across translations.  
 
-### 5D: Edge Case Investigation
+Run `python src/ingest_data/tbta/group_by_strongs.py --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl --output ${TBTA-DIR}/features/{feature}/analysis/word-analysis.jsonl --no-strongs`
 
-When any pattern is <100% predictive:
-- Investigate the exceptions
-- Document WHY they differ
-- These are valuable hints for the prompt
+1. Group all entries together (no Strong's grouping)
+2. Analyze word frequencies per translation code per label
+3. For each word with count ≥10:
+   - Is there a consistent pattern? (e.g., English "hands" → always Dual)
+   - Any exceptions? Document in `analysis/TBTA-POTENTIAL-ISSUES.md`
+4. Document discriminative words that reliably predict specific labels
 
-Example: "Singular proper names are 93% predictive" → What's the 7%? Pluralized divine names? Titles?
+Output your top findings and work to `analysis/WORD-ANALYSIS.md`
 
----
+**Warning**: Low counts are overfitting. Only trust patterns with 10+ occurrences.
 
-## Step 6: Quick Solution Check
+### Logical Reason Analysis
 
-Can simple rules achieve high accuracy?
+**Goal**: Identify theological/grammatical reasons why verses get specific labels, then add hints to edge cases.
 
-```python
-# analysis/logical.py
-def predict(entry):
-    if entry['constituent'] in BODY_PARTS:
-        return 'Dual'
-    if entry['constituent'] in PROPER_NAMES:
-        return 'Singular'
-    # ...
-    return None  # Unknown - leave for LLM
+**Rationale**: Writing prompts with endless edge cases is confusing. Instead, add verse-specific hints for rare patterns (<500 occurrences).
+
+**Notes**:
+- You have memorized the entire Bible and can mostly rely on your accuracy
+- Limit each reason group to maximum 500 verses
+
+**Phase 1: Group verses by reason**
+
+```bash
+python src/ingest_data/tbta/group_by_reasons.py \
+  --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl \
+  --output ${TBTA-DIR}/features/{feature}/analysis/reason-groupings.jsonl
 ```
 
-**Three-tier approach**:
-1. **Prompt rules**: General patterns (e.g., "body parts in Hebrew are typically dual")
-2. **Code lists**: Exhaustive word lists when always true (e.g., 50 words that are ALWAYS dual)
-3. **Strongs hints**: Per-word notes for edge cases (stored in data files)
+The script outputs groups WITHOUT hints:
+```json
+{"reason": "TRINITY", "description": "...", "count": 45, "verses": ["GEN.001.026", "GEN.003.022", ...]}
+{"reason": "UNSET", "description": "Needs manual review", "count": 120, "verses": [...]}
+```
 
-**Key insight**: Return "Unknown" when confidence is low - let LLM handle ambiguity.
+**Phase 2: Add hints (LLM task)**
 
-Test on validate set:
-- If rules cover 100% with 100% accuracy → done, use rules
-- If rules cover 80% with 100% accuracy → use rules + LLM fallback
-- If rules cover <50% or accuracy <90% → skip rules, use LLM with hints
+- [ ] Read `features/${feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml` for context
+- [ ] Review each group in `reason-groupings.jsonl`
+- [ ] For UNSET verses: determine which reason group they belong to, or create new groups
+- [ ] Add a `"hint"` field to each group (max 250 words)
+- [ ] Save as `analysis/reason-groupings-with-hints.jsonl`
 
----
+**Required transformation** - add `hint` field to each group:
+```json
+{"reason": "TRINITY", "hint": "Trinitarian context often uses plural forms...", "description": "...", "count": 45, "verses": [...]}
+{"reason": "DIVINE_SPEECH", "hint": "Direct divine speech typically uses...", "description": "...", "count": 30, "verses": [...]}
+```
+
+**Hint guidelines**:
+- Generic enough to apply to all verses in the group (not verse-specific)
+- Explains the theological/grammatical principle (e.g., "Trinitarian verses often use plural because...")
+- Avoid absolute language like "must" - these are hints, not rules
+- Include edge case considerations where relevant
+
+**Phase 3: Persist hints to verse files**
+
+```bash
+python src/tools/append_to_verses.py \
+  --input ${TBTA-DIR}/features/{feature}/analysis/reason-groupings-with-hints.jsonl \
+  --feature {FeatureName} \
+  --tool tbta-hints
+```
+
+This creates/updates `$DATA_DIR/commentary/{BOOK}/{CCC}/{VVV}/{BOOK}-{CCC}-{VVV}-tbta-hints.yaml` files.
+
+**Validation checklist**:
+- [ ] Do you agree with TBTA's labels? Note disagreements in `analysis/TBTA-QUALITY.md`
+- [ ] Are there verses missing from groups that should be included?
+- [ ] Are there verses in groups where the hint doesn't apply?
+
 
 ## Step 7: Document Results
 
-Create `analysis/README.md`:
+**Input**:
+ - review all the markdown files in the analysis director
+  
+Create `analysis/README.md` linking to the subfiles for more details:
 
 ```markdown
 # {Feature} Analysis
@@ -238,5 +340,5 @@ Update `features/{feature}/README.md` with summary linking to analysis.
 ## Execution Strategy
 
 1. **Subagents**: Each major step should use a subagent to avoid context pollution
-2. **Parallelism**: Steps 5A-5D can run in parallel
-3. **Early exit**: If Step 2 (LLM baseline) succeeds, skip to Step 7
+2. **Parallelism**: Run substeps in parallel if they don't reply on each other
+3. **Early exit**: If(LLM baseline) succeeds, skip to Step 7

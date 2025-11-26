@@ -15,6 +15,9 @@ Usage:
     python extract_feature.py --field Number --format jsonl --output data.jsonl
     python extract_feature.py --source-dir /path/to/tbta --field Person --format jsonl
 
+    # Extract with reconstructed text (shows clause with highlighted word)
+    python extract_feature.py --field Number --format jsonl --with-text --output data.jsonl
+
 Features:
 - Downloads fresh TBTA data from GitHub (or use custom --source-dir)
 - Extracts all verses for a given feature field
@@ -31,19 +34,22 @@ Output Formats:
 2. JSONL: Detailed format for ML pipelines
    - One annotation per line
    - Fields: verse, label, constituent, part, path
+   - With --with-text: adds 'text' field with reconstructed clause
+     Example: "then **God** say now God create person"
+     (word with extracted feature wrapped in **)
    - All occurrences included (no LRU limit)
 """
 
-import os
-import sys
-import json
-import subprocess
-from pathlib import Path
-from datetime import datetime
-from collections import OrderedDict, Counter, defaultdict
-from typing import Dict, List, Any, Optional
 import argparse
+import json
 import logging
+import os
+import subprocess
+import sys
+from collections import Counter, OrderedDict, defaultdict
+from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
 try:
     import yaml
@@ -254,9 +260,10 @@ def extract_field_from_clause(clause_data, field_name, results=None, path=""):
             'path': path
         })
 
-    # Recurse into Children
-    if "Children" in clause_data and isinstance(clause_data["Children"], list):
-        for i, child in enumerate(clause_data["Children"]):
+    # Recurse into Children (handle both "Children" and "children" keys)
+    children = clause_data.get("Children") or clause_data.get("children") or []
+    if isinstance(children, list):
+        for i, child in enumerate(children):
             # Build hierarchical path
             child_path = f"{path}/{part}[{i}]" if path else f"{part}[{i}]"
             extract_field_from_clause(child, field_name, results, child_path)
@@ -264,7 +271,69 @@ def extract_field_from_clause(clause_data, field_name, results=None, path=""):
     return results
 
 
-def process_json_file(json_file, field_name, output_format='yaml'):
+def extract_tokens_with_paths(clause_data, tokens=None, path=""):
+    """
+    Extract all word tokens from a clause with their paths.
+
+    Walks the clause tree in document order, collecting Constituent values
+    (the semantic words) along with their paths for later highlighting.
+
+    Args:
+        clause_data: TBTA clause dictionary
+        tokens: Accumulator list (internal)
+        path: Current path in tree (matching extract_field_from_clause format)
+
+    Returns:
+        List of (token, path) tuples in document order
+    """
+    if tokens is None:
+        tokens = []
+
+    if not isinstance(clause_data, dict):
+        return tokens
+
+    constituent = clause_data.get('Constituent', '')
+    part = clause_data.get('Part', '')
+
+    # Add token if it's a real word:
+    # - Has a Constituent value
+    # - Not a marker (like -QuoteBegin, -QuoteEnd)
+    # - Not a Space or Period
+    skip_parts = {'Space', 'Period'}
+    if constituent and not constituent.startswith('-') and part not in skip_parts:
+        tokens.append((constituent, path))
+
+    # Recurse into Children (using same path-building logic as extract_field_from_clause)
+    children = clause_data.get("Children") or clause_data.get("children") or []
+    if isinstance(children, list):
+        for i, child in enumerate(children):
+            child_path = f"{path}/{part}[{i}]" if path else f"{part}[{i}]"
+            extract_tokens_with_paths(child, tokens, child_path)
+
+    return tokens
+
+
+def build_highlighted_text(tokens_with_paths, highlight_path):
+    """
+    Build readable text from tokens, highlighting the one at highlight_path.
+
+    Args:
+        tokens_with_paths: List of (token, path) tuples from extract_tokens_with_paths
+        highlight_path: Path of the token to wrap in **
+
+    Returns:
+        String with reconstructed clause text, target word wrapped in **
+    """
+    result = []
+    for token, path in tokens_with_paths:
+        if path == highlight_path:
+            result.append(f"**{token}**")
+        else:
+            result.append(token)
+    return " ".join(result)
+
+
+def process_json_file(json_file, field_name, output_format='yaml', with_text=False):
     """
     Process a single TBTA JSON file.
 
@@ -272,6 +341,7 @@ def process_json_file(json_file, field_name, output_format='yaml'):
         json_file: Path to JSON file
         field_name: TBTA field to extract
         output_format: 'yaml' or 'jsonl'
+        with_text: Include reconstructed clause text with highlighting (JSONL only)
 
     Returns:
         For 'yaml': list of (book_code, chapter, verse, value) tuples
@@ -301,6 +371,11 @@ def process_json_file(json_file, field_name, output_format='yaml'):
             # Build path prefix for this clause
             clause_path = f"Clause[{clause_idx}]"
 
+            # Extract tokens for text reconstruction (JSONL with text only)
+            tokens_with_paths = None
+            if output_format == 'jsonl' and with_text:
+                tokens_with_paths = extract_tokens_with_paths(clause, path=clause_path)
+
             # Extract features from this clause
             annotations = extract_field_from_clause(clause, field_name, path=clause_path)
 
@@ -309,13 +384,17 @@ def process_json_file(json_file, field_name, output_format='yaml'):
                 # JSONL format: detailed annotations with verse reference
                 verse_ref = f"{book_code}.{chapter:03d}.{verse:03d}"
                 for ann in annotations:
-                    results.append({
+                    result = {
                         'verse': verse_ref,
                         'label': ann['value'],
                         'constituent': ann['constituent'],
                         'part': ann['part'],
                         'path': ann['path']
-                    })
+                    }
+                    # Add reconstructed text with highlighted word
+                    if with_text and tokens_with_paths:
+                        result['text'] = build_highlighted_text(tokens_with_paths, ann['path'])
+                    results.append(result)
             else:
                 # YAML format: simple tuples for aggregation
                 for ann in annotations:
@@ -328,7 +407,7 @@ def process_json_file(json_file, field_name, output_format='yaml'):
     return results
 
 
-def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False):
+def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False, with_text=False):
     """
     Extract all verses for a given feature field from TBTA data.
 
@@ -338,6 +417,7 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         max_per_value: LRU cache size (YAML format only)
         output_format: 'yaml' or 'jsonl'
         dry_run: Show stats without writing output
+        with_text: Include reconstructed clause text with highlighting (JSONL only)
 
     Returns:
         For 'yaml': dict with feature metadata and aggregated data
@@ -348,6 +428,8 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
     logger.info(f"Output format: {output_format}")
     if output_format == 'yaml':
         logger.info(f"Max verses per value: {max_per_value}")
+    if output_format == 'jsonl' and with_text:
+        logger.info("Including reconstructed text with highlighting")
     if dry_run:
         logger.info("DRY RUN MODE - No output file will be written")
     logger.info("=" * 60)
@@ -468,7 +550,7 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
                 logger.info(f"Processing: {idx}/{total_files} files ({idx*100//total_files}%)")
 
             try:
-                results = process_json_file(json_file, field_name, output_format='jsonl')
+                results = process_json_file(json_file, field_name, output_format='jsonl', with_text=with_text)
                 all_annotations.extend(results)
                 file_count += 1
             except Exception as e:
@@ -552,6 +634,11 @@ Examples:
         help="Show statistics without writing output"
     )
     parser.add_argument(
+        "--with-text",
+        action="store_true",
+        help="Include reconstructed clause text with highlighted word (JSONL only)"
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="Enable verbose logging"
@@ -574,7 +661,8 @@ Examples:
         source_dir=args.source_dir,
         max_per_value=args.max_per_value,
         output_format=args.format,
-        dry_run=args.dry_run
+        dry_run=args.dry_run,
+        with_text=args.with_text
     )
 
     # Output
