@@ -494,6 +494,25 @@ Based on typological diversity, documentation quality, speaker population, and r
 - Middle East: Arabic
 - Africa: Swahili
 
+### Candidate Summary Table
+
+| # | Language | Code | Family | Pronoun Status | Voice System | Priority | Rationale |
+|---|----------|------|--------|----------------|--------------|----------|-----------|
+| **1** | **Spanish** | spa | Indo-European | **Optional** (pro-drop) | Active/passive | **Mandatory** | Major bridge language; obligatory clitics |
+| **2** | **English** | eng | Indo-European | **Mandatory** (non-pro-drop) | Active/passive | **Mandatory** | Baseline; most common bridge language |
+| **3** | **Mandarin** | zho | Sino-Tibetan | **Optional** (pro-drop) | Active | **Mandatory** | Topic-prominent; fixed SVO + pro-drop |
+| **4** | **Japanese** | jpn | Japonic | **Optional** (pro-drop) | Active/passive | **Mandatory** | Extreme pro-drop; topic-comment; SOV |
+| **5** | **Tagalog** | tgl | Austronesian | **Variable** (focus-driven) | Symmetrical (6 voices) | **Mandatory** | Only symmetrical voice candidate |
+| **6** | **Quechua** | que | Quechuan | **Optional** (pro-drop) | Active/passive | **Optional** | Agglutinative; South American indigenous |
+| **7** | **Russian** | rus | Indo-European | **Partial** (limited pro-drop) | Active/passive | **Optional** | Asymmetric pro-drop; rich case system |
+| **8** | **Arabic** | arb | Afro-Asiatic | **Optional** (pro-drop) | Active/passive | **Optional** | VSO; related to Hebrew; Middle East bridge |
+| **9** | **Swahili** | swh | Niger-Congo | **Mandatory** (non-pro-drop) | Active/passive | **Optional** | Noun classes; African bridge; Bantu |
+| **10** | **Mapudungun** | arn | Mapudungu | **Variable** (suspected) | Inverse | **Optional** | Only inverse system candidate |
+
+**Priority Levels**:
+- **Mandatory** (Tier 1): Essential for Stage 2; represent core typological distinctions
+- **Optional** (Tier 2): High value but can be deferred if resources limited
+
 ---
 
 ## 7. Cultural Nuances and Social Distinctives

@@ -297,13 +297,13 @@ Languages translators often use as intermediate sources when translating into mi
    - **Demonstrative System**: 2-way (ini/itu) {williams-2010-ini-itu}
    - **Status**: MANDATORY
    - **Strength**: Major lingua franca for Austronesian region (176 languages in dataset)
-   - **ISO-639-3**: ind (not in dataset list shown, but widely used)
+   - **ISO-639-3**: ind (in dataset, 2 translations available)
 
 9. **Swahili** - Niger-Congo (Bantu)
    - **Demonstrative System**: 3-way (proximal/medial/distal) with noun class agreement {swahili-demonstratives}
    - **Status**: MANDATORY with 15+ noun class distinctions
    - **Strength**: Major lingua franca for East Africa (Niger-Congo = 89 languages in dataset)
-   - **ISO-639-3**: swh (not verified in dataset)
+   - **ISO-639-3**: swh (in dataset, 3 translations available)
 
 ### Summary: Root Language Proximity Systems
 
@@ -344,19 +344,19 @@ Languages translators often use as intermediate sources when translating into mi
    - **System**: 2-way (ini/itu)
    - **Rationale**: Austronesian baseline (before visibility features), major lingua franca
    - **Validation**: Published translations available
-   - **In Dataset**: ⚠️ Not verified (but likely present)
+   - **In Dataset**: ✅ Yes (2 translations, 11,224 and 7,940 verses)
 
 3. **Tagalog (tgl)** - Austronesian, Philippines
    - **System**: 3-way + visibility (suspected)
    - **Rationale**: Visibility-based system representative, major Austronesian language
    - **Validation**: Published Philippines Bible translations
-   - **In Dataset**: ⚠️ Not in sample shown, but Philippines languages present (agn, abx, etc.)
+   - **In Dataset**: ✅ Yes (full Bible, 31,099 verses, 66 books)
 
 4. **Swahili (swh)** - Niger-Congo, Bantu
    - **System**: 3-way + noun class agreement
    - **Rationale**: Bantu noun class integration, major African lingua franca
    - **Validation**: Published Swahili Bible (Union Version)
-   - **In Dataset**: ⚠️ Not verified
+   - **In Dataset**: ✅ Yes (3 translations, up to 31,098 verses, 66 books)
 
 5. **Akan (aka)** - Niger-Congo, Ghana
    - **System**: Suspected 2-3 way
@@ -386,7 +386,7 @@ Languages translators often use as intermediate sources when translating into mi
 9. **Russian (rus)** - Indo-European, Slavic
    - **System**: 2-way (этот/тот) (suspected)
    - **Rationale**: Slavic baseline, major translation language
-   - **In Dataset**: ⚠️ Not verified
+   - **In Dataset**: ✅ Yes (full Bible, 31,160 verses, 66 books)
 
 10. **Quechua (quy or variants)** - Quechuan, Peru
     - **System**: Suspected 2-way
@@ -414,7 +414,7 @@ Languages translators often use as intermediate sources when translating into mi
 9. Quechua (quy)
 10. Arabic (arb)
 
-**Note**: Final selection depends on availability in dataset and quality of translation data.
+**Note**: All recommended languages are confirmed available in the dataset with complete or substantial translation coverage.
 
 ---
 

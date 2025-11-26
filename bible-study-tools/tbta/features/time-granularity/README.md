@@ -17,11 +17,11 @@
 **High Granularity** (4-8+ distinctions):
 - **Bantu**: ChiBemba, Swahili, Gĩkũyũ (hodiernal/hesternal/remote system)
 - **Trans-New Guinea**: Amele, Mian, Kobon
-- **Austronesian**: **Tagalog** (11 distinctions—critical language)
 - **Quechuan**: Fused temporal-evidential system
 
 **Low Granularity** (optional/context-dependent):
 - **Indo-European**: English, Spanish, German (adverbials, not obligatory morphology)
+- **Austronesian**: Tagalog (aspect-based with temporal adverbs for remoteness)
 - **Mayan**: Aspect-based (completive/incompletive)
 
 ## Critical Contexts (Non-Arbitrary—FORBIDDEN/CRITICAL Warnings)
@@ -35,10 +35,10 @@
 
 ## Language Examples
 
-**Tagalog Speaker** (high granularity, 11 time distinctions):
-- ✅ "Kahapon" (yesterday) for Gospel events
-- ✅ Hodiernal subdivisions for Sabbath timing
-- ❌ DO NOT use recent past for Genesis (theologically incorrect)
+**Tagalog Speaker** (aspect-based with temporal adverbs):
+- ✅ Use temporal adverbs: "Kahapon" (yesterday), "Noong unang panahon" (ancient times)
+- ✅ Combine with aspect marking (perfektibo/imperfektibo/kontemplatibo)
+- ❌ DO NOT use recent past adverbs for Genesis creation (theologically incorrect)
 
 **English Speaker** (low granularity, adverbs required):
 - ✅ "At the third hour" (adverbial precision)

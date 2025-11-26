@@ -41,7 +41,7 @@ Surface Realization applies only when:
 ### Source Language Constraints
 
 - **Hebrew**: Non-pro-drop or limited pro-drop. Full subjects required in most clauses. Independent pronouns signal emphasis/contrast.
-- **Greek**: Full pro-drop language. ~35% null subjects based on verb agreement.
+- **Greek**: Full pro-drop language. Frequently uses null subjects based on verb agreement.
 
 ---
 
@@ -54,7 +54,7 @@ Surface Realization applies only when:
 | Language | Pro-Drop | Word Order | Relevant for SR |
 |----------|----------|------------|-----------------|
 | **Hebrew** | Moderate | VSO flexible | Rare zero; emphasis signals |
-| **Koine Greek** | Full | VSO flexible | ~35% null subjects; discourse-driven |
+| **Koine Greek** | Full | VSO flexible | Frequent null subjects; discourse-driven |
 
 ### Target Language Distribution
 

@@ -52,7 +52,7 @@
 2. **Swahili** (Bantu, mandatory, bridge language)
 3. Mandarin (aspect + adverbs, bridge)
 4. Quechua, Cusco (temporal-evidential fusion)
-5. **Tagalog** (high granularity, 11 distinctions)
+5. **Tagalog** (Austronesian, aspect-based with temporal adverbs)
 6. Amele (Trans-New Guinea, hodiernal)
 7. K'iche' (Mayan, aspect-based)
 8. Amuzgo (Otomanguean, 100% obligatory)
@@ -120,13 +120,15 @@
 
 ## Implications for Algorithm
 
-1. **For high-granularity languages** (Bantu, Trans-New Guinea, Tagalog, Quechuan): Map biblical contexts to appropriate remoteness markers. Critical in 15% theological contexts; flexible in 85%.
+1. **For high-granularity languages** (Bantu, Trans-New Guinea, Quechuan): Map biblical contexts to appropriate remoteness markers. Critical in 15% theological contexts; flexible in 85%.
 
-2. **For low-granularity languages** (English, Indo-European): Adverbials carry precision ("at the third hour," "on the third day," "in the beginning"). TBTA provides classification, translators add explicit temporal markers.
+2. **For aspect-based languages with temporal adverbs** (Tagalog, Mandarin): Obligatory aspect marking (completed/ongoing/contemplated) combined with optional temporal adverbs. TBTA guides adverb selection; non-arbitrary contexts require explicit temporal adverbs.
 
-3. **For languages without obligatory temporal marking**: Temporal choice is optional; translator decides based on theological/contextual priority. Non-arbitrary contexts require precision; arbitrary contexts allow flexibility.
+3. **For low-granularity languages** (English, Indo-European): Adverbials carry precision ("at the third hour," "on the third day," "in the beginning"). TBTA provides classification, translators add explicit temporal markers.
 
-4. **For event-based languages** (Amazonian): May require conceptual shift from metric time to natural/social event cycles. Hybrid solutions blend indigenous and introduced temporal frameworks.
+4. **For languages without obligatory temporal marking**: Temporal choice is optional; translator decides based on theological/contextual priority. Non-arbitrary contexts require precision; arbitrary contexts allow flexibility.
+
+5. **For event-based languages** (Amazonian): May require conceptual shift from metric time to natural/social event cycles. Hybrid solutions blend indigenous and introduced temporal frameworks.
 
 ---
 

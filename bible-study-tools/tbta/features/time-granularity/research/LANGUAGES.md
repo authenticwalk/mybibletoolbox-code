@@ -148,15 +148,17 @@ Languages analyzed from `/src/constants/languages.tsv` (1,009 total entries, 836
 - **Some languages**: Obligatory preverbal particles/affixes
 - **Interaction**: Focus systems affect temporal interpretation
 
-**High-Granularity Examples**:
+**Aspect-Based Examples**:
 
-**Tagalog (Philippines)** - 11 temporal distinctions {time-granularity-archive}:
-- **Immediate past**: *Kagagawa lang* (just now)
-- **Earlier today**: *Kanina* (hours ago)
-- **Yesterday**: *Kahapon*
-- **Recent past**: *Kamakailan* (days/weeks)
-- **Historic past**: *Noong unang panahon* (ancient times)
-- **Status**: Aspect-based with temporal particles (suspected)
+**Tagalog (Philippines)** - Aspect-based with temporal adverbs {talkpal-tagalog-tense}:
+- **Obligatory aspect marking**: Perfektibo (completed), Imperfektibo (ongoing), Kontemplatibo (contemplated)
+- **Optional temporal adverbs** for remoteness specification:
+  - *Kagagawa lang* (just now)
+  - *Kanina* (earlier today)
+  - *Kahapon* (yesterday)
+  - *Kamakailan* (recently, days/weeks)
+  - *Noong unang panahon* (ancient times)
+- **Status**: Temporal remoteness via adverbs, NOT obligatory verb morphology {filipinopod101-tenses}
 
 **Indonesian (Austronesian)** - Optional temporal marking:
 - **Sudah**: Already/perfective - completed action
@@ -422,7 +424,7 @@ Languages analyzed from `/src/constants/languages.tsv` (1,009 total entries, 836
 | 2 | **Swahili** | swh | Niger-Congo (Bantu) | **Mandatory** | Medium-High (5-8 distinctions) | Bridge language + obligatory marking |
 | 3 | **Mandarin** | cmn | Sino-Tibetan | Adverbs mandatory | Medium (aspect + adverbs) | Major bridge language; aspect-based system |
 | 4 | **Quechua, Cusco** | quz | Quechuan | **Mandatory** | Medium (fused evidential) | Temporal-evidential fusion |
-| 5 | **Tagalog** | tgl | Austronesian | **Mandatory** | High (11 distinctions) | High-granularity Austronesian example |
+| 5 | **Tagalog** | tgl | Austronesian | Optional (adverbs) | Medium (aspect + adverbs) | Aspect-based Austronesian; temporal adverbs |
 | 6 | **Amele** | aey | Trans-New Guinea | **Mandatory** | Medium (hodiernal system) | Trans-New Guinea representative |
 | 7 | **K'iche'** | quc | Mayan | Optional | Low (aspect-based) | Aspect-based, minimal temporal remoteness |
 | 8 | **Amuzgo, Guerrero** | amu | Otomanguean | **Mandatory** | Medium | 100% obligatory TAM family |
@@ -630,6 +632,9 @@ Languages analyzed from `/src/constants/languages.tsv` (1,009 total entries, 836
 
 **Austronesian & Other Families**:
 - {tense-aspect-mood-family-size} - Tense–aspect–mood marking, language-family size - Royal Society Publishing - https://royalsocietypublishing.org/doi/10.1098/rstb.2020.0194
+- {talkpal-tagalog-tense} - Tagalog Verb Tenses in Tagalog Grammar - Talkpal - https://talkpal.ai/grammar/tagalog-verb-tenses-in-tagalog-grammar/
+- {filipinopod101-tenses} - Filipino Tenses: Expressing the Past, Present, and Future - FilipinoPod101 - https://www.filipinopod101.com/blog/2021/07/08/filipino-tenses/
+- {tagalog-conjugation-ling} - Tagalog Conjugation: Beginner's Guide To Verbs And Aspects - Ling App - https://ling-app.com/blog/tagalog-conjugation/
 
 **Quechuan Sources**:
 - {hintz-quechua-past} - Hintz, Diane. *Past tense forms and their functions in South Conchucos Quechua*

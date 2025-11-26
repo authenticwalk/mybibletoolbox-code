@@ -9,7 +9,7 @@
 | **TBTA Feature** | #7 - Tier A (Essential) |
 | **Values** | N (Noun), P (Personal Pronoun), p (Pronoun), A (Always Noun), Zero, Clitic |
 | **Applies To** | Nouns, Pronouns only |
-| **Source Languages** | Hebrew (moderate pro-drop), Greek (full pro-drop, ~35% null subjects) |
+| **Source Languages** | Hebrew (moderate pro-drop), Greek (full pro-drop, frequent null subjects) |
 | **Target Scope** | 1008 languages; ~70% allow pro-drop |
 | **Theological Stakes** | **CRITICAL** in 15% of contexts (divine passive, Holy Spirit, Trinity) |
 

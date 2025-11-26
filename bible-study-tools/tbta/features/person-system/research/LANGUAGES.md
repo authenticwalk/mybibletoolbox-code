@@ -229,12 +229,14 @@ Based on family classification and linguistic typology:
 
 | ISO-639-3 | Language | Subgroup | Clusivity | Certainty |
 |-----------|----------|----------|-----------|-----------|
-| aer | Arrernte, Eastern | Pama-Nyungan | Mandatory | Suspected |
-| aly | Alyawarr | Pama-Nyungan | Mandatory | Suspected |
+| aer | Arrernte, Eastern | Pama-Nyungan (Arandic) | Kinship-based (not traditional clusivity) | Confirmed {arrernte-pronouns} |
+| aly | Alyawarr | Pama-Nyungan (Arandic) | Mandatory | Suspected (has I/E per dialectal reports) {arrernte-pronouns} |
 | aoi | Anindilyakwa | Gunwinyguan | Mandatory | Suspected |
 | gup | Gunwinggu | Gunwinyguan | Mandatory | Suspected |
 
-**Note**: Need to distinguish Pama-Nyungan (variable) from non-Pama-Nyungan (nearly universal) {wals-39a-chapter}.
+{arrernte-pronouns}: Based on linguistic research, Central/Eastern Arrernte encodes kinship-based distinctions (agnatic, harmonious, disharmonious) in non-singular pronouns rather than traditional inclusive/exclusive clusivity. Alyawarr (related Arandic language) shows dialectal inclusive/exclusive distinctions.
+
+**Note**: Need to distinguish Pama-Nyungan (variable) from non-Pama-Nyungan (nearly universal) {wals-39a-chapter}. Arandic languages show complex pronominal systems with kinship-based distinctions.
 
 ### Languages NOT Requiring Clusivity (Absent)
 
@@ -316,12 +318,12 @@ Based on family classification and linguistic typology:
 | 2 | **ind** | Indonesian | Austronesian | ✅ Mandatory | Major regional language {medium-clusivity} |
 | 3 | **fij** | Fijian | Austronesian (Oceanic) | ✅ Mandatory | TBTA example, Oceanic representative {tbta-source} |
 | 4 | **haw** | Hawaiian | Austronesian (Polynesian) | ✅ Mandatory + 4-way | Complex system {apics-clusivity} |
-| 5 | **vie** | Vietnamese | Austroasiatic | ✅ Mandatory | TBTA example {tbta-source} |
+| 5 | **vie** | Vietnamese | Austroasiatic | ✅ Mandatory | TBTA example, confirmed chúng ta/chúng tôi {vie-pronouns} |
 | 6 | **eng** | English | Indo-European | ❌ Absent | Source language, baseline |
 | 7 | **spa** | Spanish | Indo-European | ❌ Absent | Major translation language |
 | 8 | **swa** | Swahili | Niger-Congo (Bantu) | ❌ Absent | African representative {apics-clusivity} |
-| 9 | **aer** | Arrernte, Eastern | Australian | ✅ Mandatory (suspected) | Australian representative |
-| 10 | **cmn** | Mandarin Chinese | Sino-Tibetan | ✅ Mandatory | Major language {wals-39a-chapter} |
+| 9 | **aly** | Alyawarr | Australian (Arandic) | ✅ Mandatory (suspected) | Australian representative with I/E distinction {arrernte-pronouns} |
+| 10 | **cmn** | Mandarin Chinese | Sino-Tibetan | ✅ Mandatory | Major language, zánmen/wǒmen {wals-39a-chapter} |
 
 **Note**: Mandarin (cmn) may not be in dataset - substitute with available Sino-Tibetan language if needed.
 
@@ -477,3 +479,7 @@ Based on family classification and linguistic typology:
 {tbta-source/DATA-STRUCTURE.md}: Internal TBTA documentation - `/bible-study-tools/tbta/tbta-source/DATA-STRUCTURE.md`
 
 {tbta-source/TBTA.md}: Internal research - `/bible-study-tools/tbta/features/person-system/research/TBTA.md`
+
+{vie-pronouns}: Vietnamese pronouns - inclusive (chúng ta, chúng mình) vs. exclusive (chúng tôi, chúng tao). Wikipedia. https://en.wikipedia.org/wiki/Vietnamese_pronouns
+
+{arrernte-pronouns}: Arrernte/Arandic pronominal systems - kinship-based distinctions in Central/Eastern Arrernte, dialectal I/E distinctions in Alyawarr. Based on linguistic research including Breen's Grammar of Arandic Kinship Terminology and related sources.
