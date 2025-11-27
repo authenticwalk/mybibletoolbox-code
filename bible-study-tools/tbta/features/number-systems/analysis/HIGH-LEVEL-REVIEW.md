@@ -2,9 +2,25 @@
 
 **Date**: 2025-11-27
 **Dataset**: 100 samples from train.jsonl (stratified by label)
-**Accuracy**: 84/100 (84.0%)
 
-## Baseline Prompt Used
+## Dual Baseline Comparison
+
+| Test | Accuracy | Notes |
+|------|----------|-------|
+| Zero-Shot | 69/100 (69%) | No definitions, just value names |
+| Guided | 79/100 (79%) | Full definitions per value |
+| **Improvement** | **+10%** | Guidance helps significantly |
+
+## Zero-Shot Prompt
+
+```
+Label each highlighted word (**word**) with one of these Number values:
+Singular, Dual, Trial, Quadrial, Paucal, Plural
+
+Return format: $verse\t$label (e.g., "GEN.001.001\tSingular")
+```
+
+## Guided Prompt
 
 ```
 Grammatical number encodes the count of entities referenced by a noun or pronoun.
@@ -14,15 +30,14 @@ many entities it refers to in context.
 - Singular:
   - Refers to exactly 1 entity
   - Proper names (Jesus, David, Yahweh, God)
-  - Lexicalized plurals with singular meaning ("heavens" = one sky, "waters" = one body of water)
-  - Collective nouns treated as a unit ("the people" as one group)
+  - Lexicalized plurals with singular meaning ("heavens" = one sky)
+  - Collective nouns treated as a unit
   - Abstract concepts (faith, love, grace)
 
 - Dual:
   - Refers to exactly 2 entities
   - Explicit "two" or "2" in context
   - Natural body part pairs (hands, feet, eyes, ears)
-  - Named pairs (Ruth and Naomi, two disciples, two witnesses)
   - Hebrew dual morphology (-ayim suffix)
 
 - Trial:
@@ -30,131 +45,143 @@ many entities it refers to in context.
   - Explicit "three" or "3" in context
   - Trinity contexts where God says "us/our" (Gen 1:26, 3:22, 11:7, Isa 6:8)
   - Named triplets (Peter/James/John, Shadrach/Meshach/Abednego)
-  - Three days, three men, etc.
 
 - Quadrial:
   - Refers to exactly 4 entities
   - Explicit "four" or "4" in context
   - Four living creatures, four corners, four rivers
-  - Groups of exactly 4 people (Daniel and 3 friends = 4)
 
 - Paucal:
   - Refers to a few entities (typically 3-10, not precisely specified)
   - Words like "few", "some", "several", "a little"
   - Small indefinite groups where exact count is unknown
-  - Numbers 5-10 when not emphasizing the exact count
 
 - Plural:
   - Refers to many entities (general plural, large or unspecified)
   - Large groups: nations, peoples, crowds, multitudes
-  - Unspecified quantities greater than paucal
   - Generic statements ("all have sinned")
 ```
 
-## Results Summary
+## Distribution Bias Analysis
 
-| Metric | Value |
-|--------|-------|
-| Accuracy | 84/100 (84.0%) |
-| Errors | 16 |
-| Previous (wrong format) | 76/100 (76.0%) |
-| Improvement | +8% |
+| Label | TBTA | Zero-Shot | Guided |
+|-------|------|-----------|--------|
+| Singular | 18 | 26 (+8) | 23 (+5) |
+| Dual | 24 | 24 (=) | 24 (=) |
+| Trial | 13 | **0** (-13) | 13 (=) |
+| Quadrial | 14 | 10 (-4) | 12 (-2) |
+| Paucal | 13 | 7 (-6) | 10 (-3) |
+| Plural | 18 | 33 (+15) | 18 (=) |
 
-## Key Findings
+**Key Insight**: Without guidance, the LLM:
+- **NEVER uses Trial** (0 predictions) - defaults to Plural or Singular
+- Over-predicts Plural (+15) and Singular (+8)
+- Under-predicts Paucal and Quadrial
 
-### 1. Major Error Pattern: Paucal → Plural (4 errors, 25% of all errors)
+**With guidance**, the LLM distribution matches TBTA almost exactly.
 
-The LLM still struggles with Paucal - defaulting to Plural for unspecified small groups.
+## Where Guidance Helped (14 cases, +10%)
 
-**Examples**:
-- LUK.005.019: "**man** could not enter house" → TBTA: Paucal, LLM: Plural
-- LUK.005.018: "**man** carry paralyzed man" → TBTA: Paucal, LLM: Plural
-- 1SA.004.004: "leader send **man** Shiloh" → TBTA: Paucal, LLM: Plural
+| Verse | TBTA | Zero-Shot | Guided | Pattern |
+|-------|------|-----------|--------|---------|
+| DAN.003.025 | Quadrial | Plural | Quadrial | "4 **man** walking" |
+| EXO.019.015 | Trial | Plural | Trial | "3 **day**" |
+| DAN.003.024 | Trial | Plural | Trial | "3 **man**" |
+| MAT.026.034 | Trial | Plural | Trial | "deny 3 **time**" |
+| 1SA.004.004 | Paucal | Plural | Paucal | "send **man** Shiloh" |
+| 1SA.025.039 | Paucal | Plural | Paucal | "send **servant**" |
+| GEN.001.026 | Trial | Singular | Trial | "**God**" (Trinity context) |
+| JDG.019.014 | Trial | Plural | Trial | "3 **person** travel" |
+| DAN.003.019 | Trial | Plural | Trial | "**friend**" (Shadrach/Meshach/Abednego) |
+| EXO.025.027 | Quadrial | Plural | Quadrial | "**ring** near top table" (4 rings) |
+| DAN.006.002 | Trial | Plural | Trial | "3 **leader**" |
+| GEN.018.005 | Trial | Plural | Trial | "3 **man** say ok" |
+| LUK.010.002 | Paucal | Plural | Paucal | "**worker** are few" |
 
-**Analysis**: TBTA uses Paucal for small groups even without explicit "few" markers. The LLM needs more context or stricter criteria.
+**Analysis**: Guidance primarily helps with:
+1. **Trial detection** (10/14 cases) - LLM has NO internal concept of Trial without guidance
+2. **Paucal vs Plural** (3/14 cases) - clearer criteria help distinguish "few" from "many"
+3. **Quadrial** (1/14 cases) - explicit "4" triggers correct label
 
-### 2. Trinity Passages: LLM Correct, TBTA Inconsistent
+## Where Guidance Hurt (4 cases)
 
-**LLM correctly applies Trial to Trinity contexts, but TBTA labels them as Plural:**
-- GEN.011.007 "let **us** go down" → LLM: Trial, TBTA: Plural
-- ISA.006.008 "who will go for **us**" → LLM: Trial, TBTA: Plural
+| Verse | TBTA | Zero-Shot | Guided | Analysis |
+|-------|------|-----------|--------|----------|
+| GEN.011.007 | Plural | Plural | Trial | Prompt says Trinity→Trial, but TBTA uses Plural |
+| GEN.001.026 | Singular | Singular | Trial | "**God**" - TBTA marks Singular, prompt says Trinity→Trial |
+| ISA.006.008 | Plural | Plural | Trial | "**us**" - Trinity context, but TBTA uses Plural |
+| PSA.019.001 | Plural | Plural | Singular | "**heavens**" - prompt's lexicalized rule triggered |
 
-**Issue**: This is a TBTA data quality issue, not an LLM error. The LLM correctly followed the prompt's Trinity guidance, but TBTA inconsistently labels these passages.
+**Analysis**: These are **TBTA inconsistencies**, not LLM errors:
+- **Trinity passages**: GEN.011.007 and ISA.006.008 are Trinity contexts that TBTA labels Plural instead of Trial
+- **GEN.001.026 "God"**: Appears 5x in dataset with inconsistent TBTA labels (Trial x3, Singular x2)
+- **Lexicalized duals**: PSA.019.001 "heavens" - should be Singular by TBTA's semantic-priority policy
 
-### 3. Lexicalized Duals
+## Persistent Errors (17 cases - Both Wrong)
 
-**PSA.019.001 "heavens"**:
-- LLM: Singular (correctly following prompt - lexicalized plural with singular meaning)
-- TBTA: Plural
+| Verse | TBTA | ZS | Guided | Pattern |
+|-------|------|----|--------|---------|
+| MAT.18.020 | Dual | Paucal | Paucal | "2 or 3 **person**" - ambiguous |
+| GEN.001.026 | Plural | Singular | Singular | "create **person**" - mankind |
+| LUK.005.019 | Paucal | Plural | Plural | "**man** could not enter" - no "few" marker |
+| MAT.26.037 | Trial | Dual | Dual | Peter + 2 sons = 3, but labeled as 2 |
+| LUK.005.018 | Paucal | Plural | Plural | "**man** carry paralyzed" - no marker |
+| HEB.010.025 | Plural | Paucal | Paucal | "habit of **some**" - LLM reads "some" as few |
+| MAT.018.020 | Plural | Dual | Dual | "**two** or three" - LLM picks explicit number |
+| PSA.034.007 | Plural | Singular | Singular | "**him**" - pronoun unclear |
+| MAT.025.021 | Paucal | Plural | Plural | "entrust **thing**" - no "few" marker |
+| GEN.001.026 | Trial | Singular | Singular | "**God**" - TBTA inconsistent |
+| JDG.019.019 | Trial | Singular | Singular | "**person** have dry grass" - unclear 3 |
+| EXO.28.21 | Dual | Plural | Plural | "12 **stone**" - 12 ≠ 2 (TBTA error?) |
+| 1SA.016.010 | Quadrial | Singular | Singular | Samuel choosing - context unclear |
+| EXO.016.018 | Paucal | Singular | Plural | "gather **flake**" - no quantity marker |
 
-**Analysis**: The LLM followed the prompt correctly. This may be a TBTA inconsistency - Hebrew שָׁמַיִם has dual morphology but is often semantically singular.
+**Root Causes**:
+1. **Paucal without markers** (5 cases): TBTA uses Paucal for small groups even without "few/some"
+2. **TBTA labeling errors** (3 cases): EXO.28.21 (12≠2), inconsistent GEN.001.026
+3. **Context-dependent** (5 cases): Requires narrative knowledge LLM doesn't have
+4. **Ambiguous expressions** (4 cases): "two or three", pronouns with unclear referents
 
-### 4. Remaining Errors
+## LLM Internal Biases (from Zero-Shot)
 
-| Error Type | Count | Analysis |
-|-----------|-------|----------|
-| Paucal → Plural | 4 | LLM defaults to Plural for small groups |
-| Plural → Singular | 2 | Collective/lexicalized confusion |
-| Plural → Trial | 2 | LLM over-applies Trinity rule (but may be correct) |
-| Other edge cases | 8 | Various context-dependent errors |
-
-## Do TBTA Labels Seem Correct?
-
-**Potentially Incorrect TBTA Labels**:
-
-| Verse | TBTA | LLM | Analysis |
-|-------|------|-----|----------|
-| GEN.011.007 | Plural | Trial | Trinity context - should be Trial |
-| ISA.006.008 | Plural | Trial | Trinity context - should be Trial |
-| PSA.019.001 | Plural | Singular | Lexicalized dual - should be Singular per TBTA policy |
-| EXO.28.21 | Dual | Plural | 12 stones = definitely not Dual |
-| MAT.018.020 | Plural | Dual | "two or three" - LLM picked minimum, TBTA picked ambiguous |
-
-**Questions for TBTA Team**:
-1. Why are GEN.011.007 and ISA.006.008 labeled Plural instead of Trial? These are Trinity contexts.
-2. Why is EXO.28.21 ("12 stones") labeled Dual? 12 is not 2.
-3. Should PSA.019.001 "heavens" be Singular (lexicalized) or Plural (morphological)?
-
-## Confusion Matrix
-
-| Actual → Predicted | Count |
-|--------------------|-------|
-| Paucal → Plural | 4 |
-| Plural → Singular | 2 |
-| Plural → Trial | 2 |
-| Dual → Paucal | 1 |
-| Dual → Plural | 1 |
-| Trial → Dual | 1 |
-| Trial → Plural | 1 |
-| Quadrial → Singular | 1 |
-| Quadrial → Trial | 1 |
-| Plural → Paucal | 1 |
-| Plural → Dual | 1 |
+1. **No Trial concept**: Zero predictions without explicit guidance
+2. **Plural over-use**: Defaults to Plural for any group (+15 over-prediction)
+3. **Singular over-use**: Defaults to Singular for proper nouns, even in Trinity contexts
+4. **Dual is accurate**: Matches TBTA exactly (24/24 distribution)
+5. **Paucal under-use**: Only 7 vs TBTA's 13 - needs explicit "few" markers
 
 ## Recommendations
 
-### 1. LLM Baseline is Reasonably Good
+### 1. Guidance Is Essential (+10% improvement)
 
-84% accuracy is a solid baseline. The remaining errors are:
-- 25% Paucal confusion (needs clearer TBTA criteria)
-- 25% TBTA data quality issues (not LLM errors)
-- 50% genuine edge cases requiring context
+The LLM has **no internal concept of Trial** - it must be taught. Keep the guided prompt format.
 
-### 2. Before Optimizing Prompts, Fix TBTA Data
+### 2. TBTA Data Quality Issues to Resolve
 
-Several "errors" are actually the LLM being more consistent than TBTA:
-- Trinity passages should consistently use Trial
-- Lexicalized duals should consistently use Singular
-- EXO.28.21 needs correction (12 ≠ 2)
+Before final evaluation, flag these for TBTA team review:
+- GEN.011.007, ISA.006.008: Trinity→Plural (should be Trial?)
+- GEN.001.026 "God": Inconsistent (Trial x3, Singular x2)
+- EXO.28.21 "12 stones": Labeled Dual (should be Plural)
+- PSA.019.001 "heavens": Plural vs Singular policy unclear
 
-### 3. Recommended Approach
+### 3. Paucal Criteria Need Clarification
 
-- [ ] **Hybrid system**: Rules for explicit counts + LLM for semantic cases
-- [ ] **Clarify Paucal**: Document when TBTA uses Paucal vs Plural
+Both baselines struggle with Paucal. TBTA uses it for:
+- Unmarked small groups (no "few")
+- Context-dependent inference
+
+**Question for TBTA**: What triggers Paucal when no quantity word is present?
+
+### 4. Recommended Approach
+
+- [x] **Guided prompt is baseline** - 79% accuracy
+- [ ] **Rules for explicit counts**: 2→Dual, 3→Trial, 4→Quadrial
+- [ ] **Clarify Paucal criteria** with TBTA team
 - [ ] **Fix TBTA inconsistencies** before final evaluation
 
 ## Files Generated
 
 - `baseline_test_input.jsonl` - 100 test samples (without labels)
 - `baseline_test_answers.secret.jsonl` - TBTA labels for comparison
-- `baseline_predictions_v2.tsv` - LLM predictions (correct prompt format)
+- `baseline_zero_shot.tsv` - Zero-shot predictions
+- `baseline_guided.tsv` - Guided predictions (79% accuracy)

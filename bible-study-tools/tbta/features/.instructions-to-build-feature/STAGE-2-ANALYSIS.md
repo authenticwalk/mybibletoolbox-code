@@ -113,31 +113,47 @@ The following is showing too many newlines to make this file easier for me to re
 ---
 ### Enrich with Translations
 
-  - Use `src/tools/fetch_verse.py` to get 2 verses (OT and NT).
-  - Read `../research/LANGUAGES.md` to identify which languages **encode this feature grammatically**.
-  - Select translations from languages identified in LANGUAGES.md that have morphological marking for this feature.
+#### Step 1: Fetch sample verses to validate language selection
+
+Use `src/tools/fetch_verse.py` to get 2 verses (1 OT, 1 NT) that clearly demonstrate this feature:
+
+```bash
+python src/tools/fetch_verse.py GEN.001.026  # Example OT verse with feature
+python src/tools/fetch_verse.py MAT.004.019  # Example NT verse with feature
+```
+
+#### Step 2: Validate language choices against actual translations
+
+Read `../research/LANGUAGES.md` to get the list of languages that encode this feature.
+
+With the sample verses in front of you, validate each language:
+1. Can you identify which word is the target constituent in that language?
+2. Does the translation show the morphological marking LANGUAGES.md claims?
+3. Do you know the grammatical rules for this feature in that language well enough to use it as a hint?
+
+**Example validation** (for number systems with GEN.001.026 "let **us** make"):
+- Arabic: نَحْنُ (naḥnu) - yes, I can identify "us" and know Arabic dual/plural rules ✓
+- Hawaiian: If I can't identify which word is "us" or don't know Hawaiian number morphology → skip
+
+#### Step 3: Select translations
 
 **Selection criteria**:
-- **MUST INCLUDE**: Languages listed in LANGUAGES.md as encoding this feature morphologically
-  - These are the languages where word forms change based on the feature value
-  - Example: For number systems, LANGUAGES.md identifies Arabic (dual -ān), Slovenian (productive dual), etc.
+- **MUST INCLUDE**: Languages from LANGUAGES.md where you validated you can identify the word and know the rules
 - **LIMIT**: English/gateway languages to 2-3 max (they typically don't encode the feature)
-- **VERIFY**: You can identify the target word in each language and know its grammatical rules
 
 **Anti-pattern**: Including many English translations when English doesn't mark this feature. If LANGUAGES.md says Arabic has dual morphology, include Arabic - not 10 English versions.
 
 ```bash
 python src/ingest_data/tbta/enrich_extract_with_verses.py \
   --input analysis/datasets.jsonl \
-  --languages {codes-from-LANGUAGES.md} \  # Use languages that ENCODE this feature
+  --languages {validated-codes} \  # Only languages you validated above
   --output analysis/enriched.jsonl
 ```
 
 **Important notes**:
 - Use `{lang}-{version}` codes (e.g., `eng-NIV`), not just language codes
 - These match the keys returned by `fetch_verse.py`
-- Languages come from Stage 1 `features/{feature}/research/LANGUAGES.md` - use the ones that encode this feature
-- **Validate after enrichment**: Confirm the languages from LANGUAGES.md actually appear in the output
+- **Validate after enrichment**: Confirm the languages you selected actually appear in the output
 
 **Known issue**: Versification mismatch can cause ~50% cache misses. The enrichment script handles this gracefully.
 
