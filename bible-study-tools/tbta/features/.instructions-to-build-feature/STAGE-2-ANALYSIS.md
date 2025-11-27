@@ -186,6 +186,10 @@ In your main agent call a subagent to do the labelling then back in the main age
    6.  Any suspicious values? (e.g., Quadrial has no linguistic basis - it's semantic, not grammatical)
        1.  ex. In number systems it is almost always Singular or Plural. Less than 2% of the cases are the other values; therefore the task is finding out when it is not plural and why the Greek/Hebrew Singular would not be singular.
 
+   **Formatting**: When citing examples, always **bold** the target word being classified so readers know which word is in question:
+   - ✅ `LUK.005.019: "**man** could not enter house" → TBTA: Paucal`
+   - ❌ `LUK.005.019: "man could not enter house" → TBTA: Paucal`
+
 **Why**: Avoid overbuilding. The LLM may already have sufficient knowledge for common features.
 
 ---

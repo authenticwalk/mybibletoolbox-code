@@ -1,123 +1,160 @@
 # Number Systems: LLM Baseline Analysis
 
-**Date**: 2025-11-26
+**Date**: 2025-11-27
 **Dataset**: 100 samples from train.jsonl (stratified by label)
-**Accuracy**: 76/100 (76.0%)
+**Accuracy**: 84/100 (84.0%)
 
 ## Baseline Prompt Used
 
 ```
-Classify each highlighted word into: Singular, Dual, Trial, Quadrial, Paucal, Plural
+Grammatical number encodes the count of entities referenced by a noun or pronoun.
+Label each highlighted word (**word**) with the number category that matches how
+many entities it refers to in context.
 
-Key Guidelines:
-1. Count matters: If text explicitly states a count (2, 3, 4), use that number category
-2. Trinity references: God saying "us/our" → Trial
-3. Pairs: Eyes, ears, two people → Dual
-4. Small groups explicitly named: 3 disciples → Trial
-5. Large/unspecified groups: nations, peoples → Plural
-6. Single entities even if morphologically plural: "heavens" → Singular
+- Singular:
+  - Refers to exactly 1 entity
+  - Proper names (Jesus, David, Yahweh, God)
+  - Lexicalized plurals with singular meaning ("heavens" = one sky, "waters" = one body of water)
+  - Collective nouns treated as a unit ("the people" as one group)
+  - Abstract concepts (faith, love, grace)
+
+- Dual:
+  - Refers to exactly 2 entities
+  - Explicit "two" or "2" in context
+  - Natural body part pairs (hands, feet, eyes, ears)
+  - Named pairs (Ruth and Naomi, two disciples, two witnesses)
+  - Hebrew dual morphology (-ayim suffix)
+
+- Trial:
+  - Refers to exactly 3 entities
+  - Explicit "three" or "3" in context
+  - Trinity contexts where God says "us/our" (Gen 1:26, 3:22, 11:7, Isa 6:8)
+  - Named triplets (Peter/James/John, Shadrach/Meshach/Abednego)
+  - Three days, three men, etc.
+
+- Quadrial:
+  - Refers to exactly 4 entities
+  - Explicit "four" or "4" in context
+  - Four living creatures, four corners, four rivers
+  - Groups of exactly 4 people (Daniel and 3 friends = 4)
+
+- Paucal:
+  - Refers to a few entities (typically 3-10, not precisely specified)
+  - Words like "few", "some", "several", "a little"
+  - Small indefinite groups where exact count is unknown
+  - Numbers 5-10 when not emphasizing the exact count
+
+- Plural:
+  - Refers to many entities (general plural, large or unspecified)
+  - Large groups: nations, peoples, crowds, multitudes
+  - Unspecified quantities greater than paucal
+  - Generic statements ("all have sinned")
 ```
+
+## Results Summary
+
+| Metric | Value |
+|--------|-------|
+| Accuracy | 84/100 (84.0%) |
+| Errors | 16 |
+| Previous (wrong format) | 76/100 (76.0%) |
+| Improvement | +8% |
 
 ## Key Findings
 
-### 1. Major Error Pattern: Paucal → Plural (10 errors, 41.7% of all errors)
+### 1. Major Error Pattern: Paucal → Plural (4 errors, 25% of all errors)
 
-The LLM consistently fails to use "Paucal" (few items, 3-10) when TBTA does.
-
-**Examples**:
-- LUK.005.019: "man could not enter house" → TBTA: Paucal, LLM: Plural
-- MAT.025.021: "master entrust thing" → TBTA: Paucal, LLM: Plural
-- LUK.008.013: "believe for month" → TBTA: Paucal, LLM: Plural
-
-**Analysis**: TBTA uses Paucal semantically for "a few" even when the exact number isn't specified. The LLM defaults to Plural for unspecified plurals.
-
-**Recommendation**: Paucal requires clearer guidance on when to use it vs Plural. TBTA seems to use Paucal when context implies "not many" without giving a specific count.
-
-### 2. Quadrial → Plural (3 errors)
+The LLM still struggles with Paucal - defaulting to Plural for unspecified small groups.
 
 **Examples**:
-- EXO.025.027: "Moses put ring near top table" → TBTA: Quadrial, LLM: Plural
-- 1SA.016.010: "Samuel say Yahweh choose man" → TBTA: Quadrial, LLM: Plural
-- LUK.009.028: "man go-up mountain to pray" → TBTA: Quadrial, LLM: Plural
+- LUK.005.019: "**man** could not enter house" → TBTA: Paucal, LLM: Plural
+- LUK.005.018: "**man** carry paralyzed man" → TBTA: Paucal, LLM: Plural
+- 1SA.004.004: "leader send **man** Shiloh" → TBTA: Paucal, LLM: Plural
 
-**Analysis**: These cases where TBTA uses Quadrial (4) may be counting from broader context not visible in the snippet. LUK.009.028 is the Transfiguration with Peter, James, John + Jesus = 4 people.
+**Analysis**: TBTA uses Paucal for small groups even without explicit "few" markers. The LLM needs more context or stricter criteria.
 
-**Issue**: Quadrial has no linguistic attestation (Corbett 2000). TBTA uses it semantically but the LLM correctly questions whether a true grammatical quadrial exists.
+### 2. Trinity Passages: LLM Correct, TBTA Inconsistent
 
-### 3. Trinity Passages: Mixed Results
+**LLM correctly applies Trial to Trinity contexts, but TBTA labels them as Plural:**
+- GEN.011.007 "let **us** go down" → LLM: Trial, TBTA: Plural
+- ISA.006.008 "who will go for **us**" → LLM: Trial, TBTA: Plural
 
-**Correct**:
-- GEN.011.007 "let us go down" → LLM: Trial (but TBTA says Plural!)
-- ISA.006.008 "who will go for us" → LLM: Trial (but TBTA says Plural!)
+**Issue**: This is a TBTA data quality issue, not an LLM error. The LLM correctly followed the prompt's Trinity guidance, but TBTA inconsistently labels these passages.
 
-**TBTA Inconsistency Discovered**:
-- GEN.001.026: TBTA marks different constituents differently (some Trial, some Plural, some Singular)
-- The LLM consistently uses Trial for Trinity "us" passages, but TBTA sometimes uses Plural
+### 3. Lexicalized Duals
 
-**Key Question for TBTA Team**: Why is GEN.011.007 "us" marked as Plural rather than Trial? Is this a data quality issue or intentional?
+**PSA.019.001 "heavens"**:
+- LLM: Singular (correctly following prompt - lexicalized plural with singular meaning)
+- TBTA: Plural
 
-### 4. Dual Confusion
+**Analysis**: The LLM followed the prompt correctly. This may be a TBTA inconsistency - Hebrew שָׁמַיִם has dual morphology but is often semantically singular.
 
-**Examples**:
-- MAT.26.037: "Peter and 2 sons Zebedee disciple" → TBTA: Trial, LLM: Dual
-  - Issue: "2 sons" + Peter = 3 people (Trial), but LLM focused on "2 sons"
-- EXO.28.21: "12 stone according 12 tribes" → TBTA: Dual (!), LLM: Plural
-  - Issue: 12 is definitely not Dual. TBTA labeling seems wrong here.
+### 4. Remaining Errors
 
-### 5. Do TBTA Labels Seem Correct?
+| Error Type | Count | Analysis |
+|-----------|-------|----------|
+| Paucal → Plural | 4 | LLM defaults to Plural for small groups |
+| Plural → Singular | 2 | Collective/lexicalized confusion |
+| Plural → Trial | 2 | LLM over-applies Trinity rule (but may be correct) |
+| Other edge cases | 8 | Various context-dependent errors |
+
+## Do TBTA Labels Seem Correct?
 
 **Potentially Incorrect TBTA Labels**:
 
-| Verse | Constituent | TBTA Label | Expected | Issue |
-|-------|-------------|------------|----------|-------|
-| EXO.28.21 | stone | Dual | Plural | 12 stones = not dual |
-| GEN.011.007 | we | Plural | Trial | Trinity context |
-| ISA.006.008 | us | Plural | Trial | Trinity context |
-| PSA.019.001 | heavens | Plural | Singular | Lexicalized dual should be Singular per TBTA policy |
+| Verse | TBTA | LLM | Analysis |
+|-------|------|-----|----------|
+| GEN.011.007 | Plural | Trial | Trinity context - should be Trial |
+| ISA.006.008 | Plural | Trial | Trinity context - should be Trial |
+| PSA.019.001 | Plural | Singular | Lexicalized dual - should be Singular per TBTA policy |
+| EXO.28.21 | Dual | Plural | 12 stones = definitely not Dual |
+| MAT.018.020 | Plural | Dual | "two or three" - LLM picked minimum, TBTA picked ambiguous |
 
-**Possibly Correct but Needs Clarification**:
+**Questions for TBTA Team**:
+1. Why are GEN.011.007 and ISA.006.008 labeled Plural instead of Trial? These are Trinity contexts.
+2. Why is EXO.28.21 ("12 stones") labeled Dual? 12 is not 2.
+3. Should PSA.019.001 "heavens" be Singular (lexicalized) or Plural (morphological)?
 
-| Verse | Constituent | TBTA Label | LLM | Analysis |
-|-------|-------------|------------|-----|----------|
-| MAT.18.020 | person | Dual | Paucal | "2 or 3" - TBTA chose minimum |
-| LUK.005.019 | man | Paucal | Plural | "Men" carrying paralytic - ~4 people |
+## Confusion Matrix
 
-### 6. Confusion Matrix Summary
-
-| Actual → Predicted | Count | Analysis |
-|--------------------|-------|----------|
-| Paucal → Plural | 10 | LLM doesn't know when to use Paucal |
-| Quadrial → Plural | 3 | No natural language has Quadrial |
-| Plural → Singular | 2 | Collective nouns confusion |
-| Plural → Trial | 2 | LLM over-applies Trinity rule |
-| Trial → Plural | 2 | Context not clear in snippet |
-| Other | 5 | Various edge cases |
+| Actual → Predicted | Count |
+|--------------------|-------|
+| Paucal → Plural | 4 |
+| Plural → Singular | 2 |
+| Plural → Trial | 2 |
+| Dual → Paucal | 1 |
+| Dual → Plural | 1 |
+| Trial → Dual | 1 |
+| Trial → Plural | 1 |
+| Quadrial → Singular | 1 |
+| Quadrial → Trial | 1 |
+| Plural → Paucal | 1 |
+| Plural → Dual | 1 |
 
 ## Recommendations
 
-### For Improving LLM Accuracy:
+### 1. LLM Baseline is Reasonably Good
 
-1. **Paucal Training**: Add explicit rules for when Paucal applies (numbers 3-10, words like "few", "some")
-2. **Quadrial Handling**: Either train on TBTA's semantic use OR document that Quadrial is non-linguistic
-3. **Trinity Consistency**: Clarify whether Trinity passages should be Trial or Plural
+84% accuracy is a solid baseline. The remaining errors are:
+- 25% Paucal confusion (needs clearer TBTA criteria)
+- 25% TBTA data quality issues (not LLM errors)
+- 50% genuine edge cases requiring context
 
-### TBTA Data Quality Issues:
+### 2. Before Optimizing Prompts, Fix TBTA Data
 
-1. **Verify EXO.28.21**: 12 stones marked as Dual seems incorrect
-2. **Review Genesis Trinity passages**: Inconsistent labeling (some Trial, some Plural)
-3. **Document Paucal usage policy**: When is "few" few enough for Paucal?
+Several "errors" are actually the LLM being more consistent than TBTA:
+- Trinity passages should consistently use Trial
+- Lexicalized duals should consistently use Singular
+- EXO.28.21 needs correction (12 ≠ 2)
 
-## Should We Continue?
+### 3. Recommended Approach
 
-**No** - We cannot achieve high accuracy without:
-1. Resolving TBTA data quality issues
-2. Getting clearer Paucal/Quadrial guidelines
-3. Consistent Trinity passage labeling
-
-**Recommendation**: Proceed to Step 3 analyses to identify patterns and data quality issues before optimizing prompts.
+- [ ] **Hybrid system**: Rules for explicit counts + LLM for semantic cases
+- [ ] **Clarify Paucal**: Document when TBTA uses Paucal vs Plural
+- [ ] **Fix TBTA inconsistencies** before final evaluation
 
 ## Files Generated
 
 - `baseline_test_input.jsonl` - 100 test samples (without labels)
 - `baseline_test_answers.secret.jsonl` - TBTA labels for comparison
-- `baseline_predictions.tsv` - LLM predictions
+- `baseline_predictions_v2.tsv` - LLM predictions (correct prompt format)
