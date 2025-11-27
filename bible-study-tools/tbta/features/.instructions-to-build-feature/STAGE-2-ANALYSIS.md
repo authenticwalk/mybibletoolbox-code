@@ -293,19 +293,55 @@ Be sure to include qualifying questions asked very respectfully for the TBTA tea
 
 ### 3C: Strong's Word Patterns
 
-Analyze `strongs_number`
+#### Phase 1: Script Analysis (frequency patterns)
 
 Run `python src/ingest_data/tbta/group_by_strongs.py --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl --output ${TBTA-DIR}/features/{feature}/analysis/strongs-analysis.jsonl`
-
 
 1. Group entries by Strong's number
 2. For each word with count ≥5:
    - Is there a consistent pattern? (e.g., "יָד (hand)" → always Dual)
-   - If variable, is there a **contextual pattern**? (e.g., H376 "man" varies but is predictable from the preceding numeral: "two men" → Dual, "three men" → Trial)
-   - Any exceptions? Document in `analysis/TBTA-POTENTIAL-ISSUES.md`
-3. If pattern is reliable (≥95% consistent), upsert a file in {$DATA_DIR:default(.data)}/strongs/(G|H)${strongsNumber:fd4}/(G|H)${strongsNumber:fd4}.tbta-hints.yaml OTHERWISE continue to next word
+   - If variable, note it for LLM analysis in Phase 2
 
-Output your top findings and work to `analysis/STRONGS.md`
+#### Phase 2: LLM Analysis (contextual patterns)
+
+Start a subagent to analyze the **leftovers** for contextual Strong's patterns that the script can't detect.
+
+**Datasource**: `analysis/data/leftovers.secret.jsonl` (has the full dataset)
+
+**Prompt for subagent**:
+```
+Analyze these TBTA annotations grouped by Strong's number. For each Hebrew/Greek word that appears 10+ times with VARIABLE labels, determine:
+
+1. Is there a CONTEXTUAL pattern that explains the variation?
+   - Preceding word: "two **men**" → Dual, "three **men**" → Trial
+   - Named entities in context: "**sons** of Zebedee" (we know there are 2) → Dual
+   - Verse context you know from memory
+
+2. What hint would help an LLM predict the correct label?
+   - NOT: "H376 is always Dual" (wrong - it varies)
+   - YES: "For H376 (man), look at the preceding numeral to determine number"
+
+Return only words where you found a useful contextual pattern.
+```
+
+**Output**: Create `analysis/strongs-hints.jsonl` with format:
+```jsonl
+{"strongs": "H376", "word": "אִישׁ", "gloss": "man", "hint": "Look at the preceding numeral: 'two men' → Dual, 'three men' → Trial, etc.", "pattern_type": "contextual"}
+{"strongs": "H3027", "word": "יָד", "gloss": "hand", "hint": "Always Dual (body part that comes in pairs)", "pattern_type": "consistent", "label": "Dual"}
+```
+
+Document findings in `analysis/STRONGS.md`
+
+#### Phase 3: Persist hints to Strong's files
+
+```bash
+python src/tools/append_to_strongs.py \
+  --input ${TBTA-DIR}/features/{feature}/analysis/strongs-hints.jsonl \
+  --feature {FeatureName} \
+  --tool tbta-hints
+```
+
+This creates/updates `$DATA_DIR/strongs/{strongs}/{strongs}-tbta-hints.yaml` files.
 
 **Key insight**: Variable patterns often become predictable with context. Look for:
 - Preceding words (numerals, quantifiers): "two **men**" → Dual
