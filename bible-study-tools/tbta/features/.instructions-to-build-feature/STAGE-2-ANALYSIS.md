@@ -114,24 +114,30 @@ The following is showing too many newlines to make this file easier for me to re
 ### Enrich with Translations
 
   - Use `src/tools/fetch_verse.py` to get 2 verses (OT and NT).
-  - Analyze which languages distinguish this feature well (based on ../research/LANGUAGES.md).
-  - Select up to 21 translations that have diversity storing their codes in the same format as came back from fetch_verse
-    - By diversity we mean accounting for the various language families and distinct language rules
-      - ex. for the feature number systems some langauges have singular/plural only while some have singular/dual/plural and others more, we want those variations
-      - ex. some languages require the feature and others are more loose about it; we would want that representation as well
-    - You should pick langauges your internal memory is pretty confident in translating so if we say what number system is the word "us" in God said let us make you know which word is the translation of "us" in that language and you know the linguistical rules about this feature for that word for that language.
-      - 
+  - Read `../research/LANGUAGES.md` to identify which languages **encode this feature grammatically**.
+  - Select translations from languages identified in LANGUAGES.md that have morphological marking for this feature.
+
+**Selection criteria**:
+- **MUST INCLUDE**: Languages listed in LANGUAGES.md as encoding this feature morphologically
+  - These are the languages where word forms change based on the feature value
+  - Example: For number systems, LANGUAGES.md identifies Arabic (dual -ān), Slovenian (productive dual), etc.
+- **LIMIT**: English/gateway languages to 2-3 max (they typically don't encode the feature)
+- **VERIFY**: You can identify the target word in each language and know its grammatical rules
+
+**Anti-pattern**: Including many English translations when English doesn't mark this feature. If LANGUAGES.md says Arabic has dual morphology, include Arabic - not 10 English versions.
+
 ```bash
 python src/ingest_data/tbta/enrich_extract_with_verses.py \
   --input analysis/datasets.jsonl \
-  --languages eng-NIV,eng-ESV,spa-RV1960,fra-LSG} \  // NOTE: use the translation version codes you made above here
+  --languages {codes-from-LANGUAGES.md} \  # Use languages that ENCODE this feature
   --output analysis/enriched.jsonl
 ```
 
 **Important notes**:
 - Use `{lang}-{version}` codes (e.g., `eng-NIV`), not just language codes
 - These match the keys returned by `fetch_verse.py`
-- Select 5-10 versions that distinguish this feature well (from Stage 1 features/{feature}/research/LANGUAGES.md)
+- Languages come from Stage 1 `features/{feature}/research/LANGUAGES.md` - use the ones that encode this feature
+- **Validate after enrichment**: Confirm the languages from LANGUAGES.md actually appear in the output
 
 **Known issue**: Versification mismatch can cause ~50% cache misses. The enrichment script handles this gracefully.
 
@@ -146,38 +152,83 @@ Call `src/tools/predict/split_dataset.py --input analysis/enriched.jsonl --origi
 
 ### LLM Baseline
 
-**process**
-In your main agent call a subagent to do the labelling then back in the main agent do the analysis
+**Process**: Run TWO baseline tests in parallel using subagents, then analyze the difference.
 
-**Before complex analysis**, test if the LLM can already solve this with a simple prompt.
+**Goal**: Understand (1) what the LLM already knows about this feature, and (2) how much guidance helps.
 
-1. **Create the baseline prompt** (this is ONE prompt with two parts):
+#### Test A: Zero-Shot Baseline (no definitions)
 
-   **Part A**: Write 1-3 sentences describing what the feature is and how to decide which label applies. Source this from Stage 1 `features/{feature}/research/README.md`.
+Start a subagent with a minimal prompt that only lists the possible values without explaining them:
 
-   **Part B**: List each possible value as a bullet point, with up to 5 sub-bullets explaining when to use that value.
+```
+Label each highlighted word (**word**) with one of these {FeatureName} values:
+{Value1}, {Value2}, {Value3}, ...
 
-   **Example structure** (for a hypothetical "Tense" feature):
-   ```
-   Tense indicates when an action occurs relative to the time of speaking.
-   Label each highlighted verb with the tense that matches when the action happens.
+Return format: $verse\t$label (e.g., "GEN.001.001\tValue1")
+```
 
-   - Past:
-     - Action completed before speaking time
-     - Hebrew perfect aspect (qatal)
-     - Narrative past events
-   - Present:
-     - Action happening at speaking time
-     - Gnomic/timeless truths
-   - Future:
-     - Action not yet completed
-     - Prophecies and predictions
-     - Hebrew imperfect with future context
-   ```
+Give it 100 diverse verses from `features/{feature}/analysis/data/train.jsonl`.
 
-2. Start a subagent (so it has no memory of the answers) giving it your prompt and 100 diverse verses from `features/{feature}/analysis/data/train.jsonl`. Have it return in the format `$verse\t$label` (e.g., "GEN.001.001\tTrial").
+Save predictions to `analysis/data/baseline_zero_shot.tsv`.
 
-3. Review the answers critically creating the file `analysis/HIGH-LEVEL-REVIEW.md` including your prompt
+#### Test B: Guided Baseline (with definitions)
+
+Start a second subagent (in parallel) with a structured prompt:
+
+**Part A**: Write 1-3 sentences describing what the feature is and how to decide which label applies. Source this from Stage 1 `features/{feature}/research/README.md`.
+
+**Part B**: List each possible value as a bullet point, with up to 5 sub-bullets explaining when to use that value.
+
+**Example structure** (for a hypothetical "Tense" feature):
+```
+Tense indicates when an action occurs relative to the time of speaking.
+Label each highlighted verb with the tense that matches when the action happens.
+
+- Past:
+  - Action completed before speaking time
+  - Hebrew perfect aspect (qatal)
+  - Narrative past events
+- Present:
+  - Action happening at speaking time
+  - Gnomic/timeless truths
+- Future:
+  - Action not yet completed
+  - Prophecies and predictions
+  - Hebrew imperfect with future context
+```
+
+Give it the SAME 100 verses. Save predictions to `analysis/data/baseline_guided.tsv`.
+
+#### Analysis: Compare the Two Baselines
+
+Create `analysis/HIGH-LEVEL-REVIEW.md` with:
+
+1. **Accuracy comparison**:
+   | Test | Accuracy |
+   |------|----------|
+   | Zero-shot | X% |
+   | Guided | Y% |
+   | Improvement | +Z% |
+
+2. **Where guidance helped**: Cases where zero-shot was wrong but guided was correct
+   - What patterns does the LLM not know by default?
+   - Which values needed the most guidance?
+
+3. **Where guidance hurt**: Cases where zero-shot was correct but guided was wrong
+   - Did the prompt introduce bias or confusion?
+   - Are there values where the LLM's intuition is better than our definitions?
+
+4. **Persistent errors**: Cases where BOTH got it wrong
+   - These are the hard cases that need special handling
+   - May indicate TBTA data quality issues
+
+5. **LLM internal biases**: What does the zero-shot distribution tell us?
+   - Does it over-use certain values?
+   - Does it under-use rare values?
+
+Include both prompts in the review file.
+
+#### Review Checklist
    1. Did it get them all correct.  If so we don't need to do any further work but can mark this feature as done
    2. Debug why is it getting it wrong?  Is there a pattern to it?  
    3. Do the TBTA answers seem correct and consistent?  You want them to be right but be critical and think deeply about if there may be a data labelling issue that will block our results.  
@@ -232,31 +283,45 @@ Run `python src/ingest_data/tbta/group_by_strongs.py --input ${TBTA-DIR}/feature
 
 
 1. Group entries by Strong's number
-2. For each word with count ≥10:
+2. For each word with count ≥5:
    - Is there a consistent pattern? (e.g., "יָד (hand)" → always Dual)
+   - If variable, is there a **contextual pattern**? (e.g., H376 "man" varies but is predictable from the preceding numeral: "two men" → Dual, "three men" → Trial)
    - Any exceptions? Document in `analysis/TBTA-POTENTIAL-ISSUES.md`
 3. If pattern is reliable (≥95% consistent), upsert a file in {$DATA_DIR:default(.data)}/strongs/(G|H)${strongsNumber:fd4}/(G|H)${strongsNumber:fd4}.tbta-hints.yaml OTHERWISE continue to next word
 
 Output your top findings and work to `analysis/STRONGS.md`
 
-**Warning**: Low counts are overfitting. Only trust patterns with 10+ occurrences.
+**Key insight**: Variable patterns often become predictable with context. Look for:
+- Preceding words (numerals, quantifiers): "two **men**" → Dual
+- Following modifiers: "**sons** of Zebedee" (2 sons → Dual)
+- Translation morphology in other languages (see 3D)
 
-### 3D: Word Patterns
+**Warning**: Low counts are overfitting. Only trust patterns with 5+ occurrences.
 
-Analyze `word usage` to find common words across translations.  
+### 3D: Translation Morphology Patterns
+
+Analyze word forms across translations to find morphological hints.
 
 Run `python src/ingest_data/tbta/group_by_strongs.py --input ${TBTA-DIR}/features/{feature}/analysis/data/train.jsonl --output ${TBTA-DIR}/features/{feature}/analysis/word-analysis.jsonl --no-strongs`
 
+**CRITICAL**: Verify your data includes the languages from `research/LANGUAGES.md` that encode this feature.
+
+If data only has English (or other languages that don't encode this feature), **STOP** and re-enrich with the languages from `research/LANGUAGES.md`.
+
 1. Group all entries together (no Strong's grouping)
-2. Analyze word frequencies per translation code per label
-3. For each word with count ≥10:
-   - Is there a consistent pattern? (e.g., English "hands" → always Dual)
-   - Any exceptions? Document in `analysis/TBTA-POTENTIAL-ISSUES.md`
-4. Document discriminative words that reliably predict specific labels
+2. For languages that encode this feature, look for form-based patterns:
+   - Example: Arabic dual suffix (-ān) → if present, classify as Dual
+   - Example: Hebrew -ayim suffix → Dual
+3. For each discriminative form with count ≥5:
+   - Is there a consistent pattern?
+   - Document in `analysis/WORD-ANALYSIS.md`
 
-Output your top findings and work to `analysis/WORD-ANALYSIS.md`
+**Example hint format**:
+```
+If {language} translation uses {form}, classify as {label}
+```
 
-**Warning**: Low counts are overfitting. Only trust patterns with 10+ occurrences.
+**Warning**: Low counts are overfitting. Only trust patterns with 5+ occurrences.
 
 ### Logical Reason Analysis
 
