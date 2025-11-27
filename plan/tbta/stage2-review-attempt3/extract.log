@@ -1,0 +1,147 @@
+[00:59:49] INFO: ============================================================
+[00:59:49] INFO: Extracting feature: Mood
+[00:59:49] INFO: Output format: jsonl
+[00:59:49] INFO: Including reconstructed text with highlighting
+[00:59:49] INFO: ============================================================
+[00:59:49] INFO: TBTA repo already exists at /tmp/tbta_db_export
+[00:59:49] INFO: Updating TBTA repo with git pull...
+[00:59:49] INFO: ✓ TBTA repo updated
+[00:59:49] INFO: Using TBTA data from: /tmp/tbta_db_export/json
+[00:59:49] INFO: Found 11649 TBTA verse files
+[00:59:49] INFO: Processing: 100/11649 files (0%)
+[00:59:49] INFO: Processing: 200/11649 files (1%)
+[00:59:49] INFO: Processing: 300/11649 files (2%)
+[00:59:49] INFO: Processing: 400/11649 files (3%)
+[00:59:49] INFO: Processing: 500/11649 files (4%)
+[00:59:49] INFO: Processing: 600/11649 files (5%)
+[00:59:49] INFO: Processing: 700/11649 files (6%)
+[00:59:49] INFO: Processing: 800/11649 files (6%)
+[00:59:49] INFO: Processing: 900/11649 files (7%)
+[00:59:49] INFO: Processing: 1000/11649 files (8%)
+[00:59:49] INFO: Processing: 1100/11649 files (9%)
+[00:59:49] INFO: Processing: 1200/11649 files (10%)
+[00:59:49] INFO: Processing: 1300/11649 files (11%)
+[00:59:49] INFO: Processing: 1400/11649 files (12%)
+[00:59:49] INFO: Processing: 1500/11649 files (12%)
+[00:59:49] INFO: Processing: 1600/11649 files (13%)
+[00:59:49] INFO: Processing: 1700/11649 files (14%)
+[00:59:49] INFO: Processing: 1800/11649 files (15%)
+[00:59:49] INFO: Processing: 1900/11649 files (16%)
+[00:59:49] INFO: Processing: 2000/11649 files (17%)
+[00:59:49] INFO: Processing: 2100/11649 files (18%)
+[00:59:49] INFO: Processing: 2200/11649 files (18%)
+[00:59:49] INFO: Processing: 2300/11649 files (19%)
+[00:59:49] INFO: Processing: 2400/11649 files (20%)
+[00:59:50] INFO: Processing: 2500/11649 files (21%)
+[00:59:50] INFO: Processing: 2600/11649 files (22%)
+[00:59:50] INFO: Processing: 2700/11649 files (23%)
+[00:59:50] INFO: Processing: 2800/11649 files (24%)
+[00:59:50] INFO: Processing: 2900/11649 files (24%)
+[00:59:50] INFO: Processing: 3000/11649 files (25%)
+[00:59:50] INFO: Processing: 3100/11649 files (26%)
+[00:59:50] INFO: Processing: 3200/11649 files (27%)
+[00:59:50] INFO: Processing: 3300/11649 files (28%)
+[00:59:50] INFO: Processing: 3400/11649 files (29%)
+[00:59:50] INFO: Processing: 3500/11649 files (30%)
+[00:59:50] INFO: Processing: 3600/11649 files (30%)
+[00:59:50] INFO: Processing: 3700/11649 files (31%)
+[00:59:50] INFO: Processing: 3800/11649 files (32%)
+[00:59:50] INFO: Processing: 3900/11649 files (33%)
+[00:59:50] INFO: Processing: 4000/11649 files (34%)
+[00:59:50] INFO: Processing: 4100/11649 files (35%)
+[00:59:50] INFO: Processing: 4200/11649 files (36%)
+[00:59:50] INFO: Processing: 4300/11649 files (36%)
+[00:59:50] INFO: Processing: 4400/11649 files (37%)
+[00:59:50] INFO: Processing: 4500/11649 files (38%)
+[00:59:50] INFO: Processing: 4600/11649 files (39%)
+[00:59:50] INFO: Processing: 4700/11649 files (40%)
+[00:59:50] INFO: Processing: 4800/11649 files (41%)
+[00:59:50] INFO: Processing: 4900/11649 files (42%)
+[00:59:50] INFO: Processing: 5000/11649 files (42%)
+[00:59:50] INFO: Processing: 5100/11649 files (43%)
+[00:59:50] INFO: Processing: 5200/11649 files (44%)
+[00:59:50] INFO: Processing: 5300/11649 files (45%)
+[00:59:50] INFO: Processing: 5400/11649 files (46%)
+[00:59:50] INFO: Processing: 5500/11649 files (47%)
+[00:59:50] INFO: Processing: 5600/11649 files (48%)
+[00:59:50] INFO: Processing: 5700/11649 files (48%)
+[00:59:50] INFO: Processing: 5800/11649 files (49%)
+[00:59:50] INFO: Processing: 5900/11649 files (50%)
+[00:59:50] INFO: Processing: 6000/11649 files (51%)
+[00:59:50] INFO: Processing: 6100/11649 files (52%)
+[00:59:50] INFO: Processing: 6200/11649 files (53%)
+[00:59:50] INFO: Processing: 6300/11649 files (54%)
+[00:59:50] INFO: Processing: 6400/11649 files (54%)
+[00:59:50] INFO: Processing: 6500/11649 files (55%)
+[00:59:50] INFO: Processing: 6600/11649 files (56%)
+[00:59:50] INFO: Processing: 6700/11649 files (57%)
+[00:59:50] INFO: Processing: 6800/11649 files (58%)
+[00:59:50] INFO: Processing: 6900/11649 files (59%)
+[00:59:50] INFO: Processing: 7000/11649 files (60%)
+[00:59:50] INFO: Processing: 7100/11649 files (60%)
+[00:59:51] INFO: Processing: 7200/11649 files (61%)
+[00:59:51] INFO: Processing: 7300/11649 files (62%)
+[00:59:51] INFO: Processing: 7400/11649 files (63%)
+[00:59:51] INFO: Processing: 7500/11649 files (64%)
+[00:59:51] INFO: Processing: 7600/11649 files (65%)
+[00:59:51] INFO: Processing: 7700/11649 files (66%)
+[00:59:51] INFO: Processing: 7800/11649 files (66%)
+[00:59:51] INFO: Processing: 7900/11649 files (67%)
+[00:59:51] INFO: Processing: 8000/11649 files (68%)
+[00:59:51] INFO: Processing: 8100/11649 files (69%)
+[00:59:51] INFO: Processing: 8200/11649 files (70%)
+[00:59:51] INFO: Processing: 8300/11649 files (71%)
+[00:59:51] INFO: Processing: 8400/11649 files (72%)
+[00:59:51] INFO: Processing: 8500/11649 files (72%)
+[00:59:51] INFO: Processing: 8600/11649 files (73%)
+[00:59:51] INFO: Processing: 8700/11649 files (74%)
+[00:59:51] INFO: Processing: 8800/11649 files (75%)
+[00:59:51] INFO: Processing: 8900/11649 files (76%)
+[00:59:51] INFO: Processing: 9000/11649 files (77%)
+[00:59:51] INFO: Processing: 9100/11649 files (78%)
+[00:59:51] INFO: Processing: 9200/11649 files (78%)
+[00:59:51] INFO: Processing: 9300/11649 files (79%)
+[00:59:51] INFO: Processing: 9400/11649 files (80%)
+[00:59:51] INFO: Processing: 9500/11649 files (81%)
+[00:59:51] INFO: Processing: 9600/11649 files (82%)
+[00:59:51] INFO: Processing: 9700/11649 files (83%)
+[00:59:51] INFO: Processing: 9800/11649 files (84%)
+[00:59:51] INFO: Processing: 9900/11649 files (84%)
+[00:59:51] INFO: Processing: 10000/11649 files (85%)
+[00:59:51] INFO: Processing: 10100/11649 files (86%)
+[00:59:51] INFO: Processing: 10200/11649 files (87%)
+[00:59:51] INFO: Processing: 10300/11649 files (88%)
+[00:59:51] INFO: Processing: 10400/11649 files (89%)
+[00:59:51] INFO: Processing: 10500/11649 files (90%)
+[00:59:51] INFO: Processing: 10600/11649 files (90%)
+[00:59:51] INFO: Processing: 10700/11649 files (91%)
+[00:59:51] INFO: Processing: 10800/11649 files (92%)
+[00:59:51] INFO: Processing: 10900/11649 files (93%)
+[00:59:51] INFO: Processing: 11000/11649 files (94%)
+[00:59:51] INFO: Processing: 11100/11649 files (95%)
+[00:59:51] INFO: Processing: 11200/11649 files (96%)
+[00:59:51] INFO: Processing: 11300/11649 files (97%)
+[00:59:51] INFO: Processing: 11400/11649 files (97%)
+[00:59:51] INFO: Processing: 11500/11649 files (98%)
+[00:59:51] INFO: Processing: 11600/11649 files (99%)
+[00:59:51] INFO: Processing: 11649/11649 files (100%)
+[00:59:51] INFO: ============================================================
+[00:59:51] INFO: EXTRACTION COMPLETE
+[00:59:51] INFO: ============================================================
+[00:59:51] INFO: Files processed successfully: 11649/11649
+[00:59:51] INFO: Files with errors: 0
+[00:59:51] INFO: Total annotations extracted: 72089
+[00:59:51] INFO: 
+Label distribution:
+[00:59:51] INFO:   Indicative: 70079
+[00:59:51] INFO:   'must' Obligation: 633
+[00:59:51] INFO:   'should' Obligation: 567
+[00:59:51] INFO:   'might' Potential: 367
+[00:59:51] INFO:   'should not' Obligation: 158
+[00:59:51] INFO:   'may' (permissive): 150
+[00:59:51] INFO:   Forbidden Obligation: 121
+[00:59:51] INFO:   Definite Potential: 8
+[00:59:51] INFO:   Probable Potential: 5
+[00:59:51] INFO:   Unlikely Potential: 1
+[00:59:51] INFO: ============================================================
+[00:59:52] INFO: ✓ Output written to: bible-study-tools/tbta/features/mood/analysis/tbta-extract.jsonl

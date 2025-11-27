@@ -2,9 +2,9 @@
 
 **Feature**: Grammatical Mood (Modality)
 **TBTA Tier**: A (Essential)
-**Stage**: 1 - Research Complete
-**Status**: ✅ Research complete, ready for Stage 2 (Analysis)
-**Last Updated**: 2025-11-25
+**Stage**: 2 - Analysis Complete
+**Status**: ✅ Analysis complete, ready for Stage 3 (Experimentation)
+**Last Updated**: 2025-11-27
 
 ## Overview
 
@@ -98,8 +98,54 @@ See [research/LANGUAGES.md](research/LANGUAGES.md) for 10 proposed test language
 
 See [research/README.md](research/README.md) for full summary.
 
+## Stage 2 Analysis Results
+
+**Data extracted**: 72,089 annotations from TBTA. See [analysis/README.md](analysis/README.md) for full details.
+
+**Distribution** (confirms Stage 1 predictions):
+- Indicative: 97.21% (dominant as expected)
+- Obligation types: 2.05% (must/should/forbidden)
+- Potential types: 0.74% (might/may/definite/probable/unlikely)
+
+**LLM Baseline**: 55% accuracy on 100 diverse samples (zero-shot)
+
+**Key Error Patterns**:
+| Error Type | Frequency | Root Cause |
+|-----------|-----------|------------|
+| Obligation confusion | 40% | must/should/forbidden overlap |
+| Indicative ↔ Potential | 25% | Factual vs speculative unclear |
+| Definitions don't help | -4% | Guided baseline performed WORSE |
+
+**TBTA Data Quality Issues Identified**:
+1. **Extreme imbalance**: 97% Indicative makes evaluation misleading
+2. **Rare categories**: Only 14 Definite/Probable/Unlikely Potential total
+3. **Obligation spectrum unclear**: must/should/forbidden criteria undocumented
+4. **Missing Strong's numbers**: Can't do lexeme-based analysis
+
+**Files Created**:
+- `analysis/data/train.jsonl` - Training set (283 entries, stratified)
+- `analysis/data/validate.jsonl` - Validation set (101 entries) - Labels hidden
+- `analysis/data/test.jsonl` - Test set (96 entries) - RESERVED
+- `analysis/data/leftovers.jsonl` - Remaining TBTA data (71,283 entries)
+- `analysis/HIGH-LEVEL-REVIEW.md` - LLM baseline analysis
+- `analysis/EDGE-CASES.md` - When NOT Indicative
+- `analysis/TBTA-QUALITY.md` - Data quality issues, questions for TBTA team
+- `analysis/WORD-ANALYSIS.md` - Translation word patterns
+
+## Next Steps
+
+### Stage 3: Experimentation
+
+**Algorithm Development**:
+- Two-stage approach: Indicative vs Non-Indicative → Subtype classification
+- Context-based: Law codes, conditionals, speech types
+- Source morphology: Hebrew/Greek mood forms
+- Don't rely on definitions - learn TBTA patterns empirically
+
+**Target Accuracy**: >60% (beat baseline), but F1-macro due to class imbalance
+
 ---
 
-**Lines**: 75 (at 75-line progressive disclosure limit)
-**Status**: Stage 1 complete ✅
-**Ready for**: Stage 2 Analysis
+**Lines**: 108
+**Status**: Stage 2 complete ✅
+**Ready for**: Stage 3 Experimentation
