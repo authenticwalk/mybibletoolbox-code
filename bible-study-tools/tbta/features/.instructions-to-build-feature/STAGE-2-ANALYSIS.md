@@ -151,10 +151,33 @@ In your main agent call a subagent to do the labelling then back in the main age
 
 **Before complex analysis**, test if the LLM can already solve this with a simple prompt.
 
-1. Write a 1-3 sentence prompt describing the feature with a focus on how to label data (from Stage 1 features/{feature}/research/README.md)
-2. Include each value as a bullet point with the most important reasons to label it as up to 5 subbullet points as concise as possible
-3. Start a subagent (so it has no memory of what the answers where) giving it your prompt and 100 divese verses from the training dataset. features/{feature}/analysis/data/train.jsonl   Have it return in the format `$verse\t$label` ex "GEN-001-001 Trial\n"
-4. Review the answers critically creating the file `analysis/HIGH-LEVEL-REVIEW.md` including your prompt
+1. **Create the baseline prompt** (this is ONE prompt with two parts):
+
+   **Part A**: Write 1-3 sentences describing what the feature is and how to decide which label applies. Source this from Stage 1 `features/{feature}/research/README.md`.
+
+   **Part B**: List each possible value as a bullet point, with up to 5 sub-bullets explaining when to use that value.
+
+   **Example structure** (for a hypothetical "Tense" feature):
+   ```
+   Tense indicates when an action occurs relative to the time of speaking.
+   Label each highlighted verb with the tense that matches when the action happens.
+
+   - Past:
+     - Action completed before speaking time
+     - Hebrew perfect aspect (qatal)
+     - Narrative past events
+   - Present:
+     - Action happening at speaking time
+     - Gnomic/timeless truths
+   - Future:
+     - Action not yet completed
+     - Prophecies and predictions
+     - Hebrew imperfect with future context
+   ```
+
+2. Start a subagent (so it has no memory of the answers) giving it your prompt and 100 diverse verses from `features/{feature}/analysis/data/train.jsonl`. Have it return in the format `$verse\t$label` (e.g., "GEN.001.001\tTrial").
+
+3. Review the answers critically creating the file `analysis/HIGH-LEVEL-REVIEW.md` including your prompt
    1. Did it get them all correct.  If so we don't need to do any further work but can mark this feature as done
    2. Debug why is it getting it wrong?  Is there a pattern to it?  
    3. Do the TBTA answers seem correct and consistent?  You want them to be right but be critical and think deeply about if there may be a data labelling issue that will block our results.  
