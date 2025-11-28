@@ -64,19 +64,32 @@ Run as: Subagent
 Parallel: No
 Model: Opus
 
+
+**Build Draft Dataset** The following command will create a draft dataset for you to choose from
+
+```bash
+python src/tools/predict/draft_dataset.py \
+  --input $ANALYSIS-DIR/tbta-extract.jsonl \
+  --output-dir $ANALYSIS-DIR/temp_data \
+  --balance-by-genre --one-per-verse \
+  --sample-by-field constituent
+```
+
 **This is an LLM task** - requires judgment about theological/literary diversity.
 
 **Output File** - $ANALYSIS-DIR/datasets.jsonl (created using the edit file, write to file or other write tools by the LLM; Do **not** write a script to do this as you need to add fields that require your custom logic to each line)
 
 **Target sizes** (keep manageable):
-- train: max 300 entries
+- train: max 800 entries
 - validate: max 100 entries
 - test: max 100 entries (RESERVE - don't look at until final eval)
 
 **Suggested Flow**
-- given feature distribution in `README.md` starting with smallest feature grep for label $feature | random | limit 10000 lines then choose from there  
-- If you know certain verses that will be hard you can do a regex search for all of them in one line
-- Try to be highly efficient and don't use too many tool calls; essentially read many lines; write many lines in updated format
+1. **Bootstrap**: Run the script above to get a balanced starting set in `$ANALYSIS-DIR/temp_data`.
+2. **Enrich**: Read the generated jsonl files. Add `strongs_number` (inferred) and `reason_group` (logical/theological grouping) to each entry.
+3. **Gap Analysis**: Check `tbta-extract.jsonl` for missed edge cases or rare forms. Add them if missing.
+4. **Doc check**: Ensure ALL verses cited in feature docs/README are in the `train` split (move from val/test if needed).
+5. **Finalize**: Write all entries to `$ANALYSIS-DIR/datasets.jsonl` 
 
 **Selection criteria** for each split:
 - Balance across feature values
@@ -97,8 +110,7 @@ The following is showing too many newlines to make this file easier for me to re
   "part": "Noun",
   "reconstructed_verse": "God said, let **us** make mankind in our image",
   "strongs": "{copy the string of strongs codes that represent the whole verse}",
-  "strongs_number": "H430",
-  "strongs_word": "אֱלֹהִים",
+  "strongs_number": "H0430",
   "dataset": {
     "split": "train",
     "section": "OT",
@@ -111,11 +123,11 @@ The following is showing too many newlines to make this file easier for me to re
 
 **Key additions**:
 - `strongs_number`: Infer from constituent + verse. You must choose from the strong's numbers in data.strongs which is a list of available strongs numbers.  reconstructed_verse is a simplified NIV but shows you which word we are targetting which you can deduce from the strongs numbers.
-- `reason_group`: From Stage 1 THEOLOGICALLY-SIGNIFICANT-GROUPS research: You will need to read that file first and create a list of your codes for consistency.  This is more than just theological reasons but what are the logical reasons we could create a rule about this feature (example: person (singular), trinity, etc)
+- `reason_group`: From Stage 1 THEOLOGICALLY-SIGNIFICANT-GROUPS research: You will need to read that file first and create a list of your codes for consistency.  This is more than just theological reasons but what are the logical reasons we could create a rule about this feature (example: person (singular), trinity, etc).  Example: Proper-Name, LARGE-GROUP, BODY-PART, RESPECT
+- `difficulty`: (optional: leave blank for arbitrary/easy cases)  How hard will this be to figure out where adversarial is the hardest and tricky due to non obvious factors that a dumb AI system would likely get wrong (label: hard) or even a smart AI system following basic instructions (label: advesarial).  reason_group would group similar difficult items together into common issues like TRINITY
 
 **Audit and fix the work**
- - Strongs_number and strongs_word must be added and correct
- - The same verse should only be in one dataset
+ - Strongs_number must be added and correct
  - reason_group must be set
 
 
@@ -149,10 +161,10 @@ With the sample verses in front of you, validate each language:
 **Selection criteria**:
 - **MUST INCLUDE**: Languages from LANGUAGES.md where you validated you can identify the word and know the rules
 - **MUST INCLUDE**: grc-BYZ, lat-VUC, eng-YLT, heb-heb, arb-NAV, rus-SYN, jpn-1965
-- **LIMIT**: you cannot reuse any languages I've already covered above
-- **LIMIT**: must use same translation code as ou got from fetch_verse
+- **LIMIT**: Do not duplicate - if arb-NAV is listed, don't also add ara
+- **LIMIT**: Use full `{lang}-{version}` codes from fetch_verse output (e.g., `ind-ind` not `ind`)
+- **ADD**: After validating LANGUAGES.md, add 3-5 additional languages that mark this feature (e.g., for number systems: haw, meu-meu, slv if available)
 
-**Anti-pattern**: Including many English translations when English doesn't mark this feature. If LANGUAGES.md says Arabic has dual morphology, include Arabic - not 10 English versions.
 
 ```bash
 python src/ingest_data/tbta/enrich_extract_with_verses.py \
@@ -173,8 +185,9 @@ Sample datasets.jsonl
 
  - [ ] A list of strongs numbers in the field strongs
  - [ ] the langauges grc-BYZ, lat-VUC, eng-YLT, heb-heb, arb-NAV, rus-SYN, jpn-1965
- - [ ] additional languages that are helpful for finding this feature but no repeats of the languages above (so only one english)
- - [ ] strongs_word should have the strongs code with up to 4 leading zeros
+ - [ ] at least 3 additional languages that are helpful for finding this feature but no repeats of the languages above (so only one english)
+ - [ ] strongs_number should have the strongs code it in for all entries
+ - [ ] strongs should have a list of strongs codes for the verse
  - [ ] dataset should have the field reason_group and it should be well balanced
 
 If there are mistakes go back and redo the steps with better instructions.  
@@ -193,4 +206,5 @@ Now you can delete
  - datasets.jsonl
  - enriched.secret.jsonl
  - tbta-extract.secret.jsonl
+ - 
   

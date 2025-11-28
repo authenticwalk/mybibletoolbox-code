@@ -1,0 +1,53 @@
+# Mood Label Distribution in TBTA Dataset
+# Total annotations: 72,089
+# Generated: 2025-11-28
+
+distribution:
+  Indicative:
+    count: 70079
+    percentage: 97.21
+
+  "'must' Obligation":
+    count: 633
+    percentage: 0.88
+
+  "'should' Obligation":
+    count: 567
+    percentage: 0.79
+
+  "'might' Potential":
+    count: 367
+    percentage: 0.51
+
+  "'should not' Obligation":
+    count: 158
+    percentage: 0.22
+
+  "'may' (permissive)":
+    count: 150
+    percentage: 0.21
+
+  "Forbidden Obligation":
+    count: 121
+    percentage: 0.17
+
+  "Definite Potential":
+    count: 8
+    percentage: 0.01
+
+  "Probable Potential":
+    count: 5
+    percentage: 0.01
+
+  "Unlikely Potential":
+    count: 1
+    percentage: 0.00
+
+total_annotations: 72089
+
+notes:
+  - Strong class imbalance with Indicative at 97.21%
+  - All other mood categories combined represent only 2.79%
+  - Obligation moods (must, should, should not, forbidden) represent 1.48%
+  - Potential moods (might, may, definite, probable, unlikely) represent 0.74%
+  - Some rare categories have very few examples (< 10)

@@ -39,3 +39,6 @@ claude-flow
 hive-mind-prompt-*.txt
 core
 .dev-persistence/
+
+mcp_servers/
+node_modules/
