@@ -143,13 +143,21 @@ def get_strongs_from_macula(book_code: str, chapter: int, verse: int) -> str:
     
     try:
         # Get macula data from cache
+        cache_root = Path(DATA_DIR) / "commentary"
+        logger.debug(f"Fetching macula for {book_code} {chapter}:{verse} from {cache_root}")
+        
         macula_data = get_cached_verse(
             book_code, chapter, verse,
             suffix="macula",
-            cache_root=Path(DATA_DIR) / "commentary"
+            cache_root=cache_root
         )
         
-        if not macula_data or 'words' not in macula_data:
+        if not macula_data:
+            logger.warning(f"No macula data found for {book_code} {chapter}:{verse}")
+            return ""
+            
+        if 'words' not in macula_data:
+            logger.warning(f"No 'words' key in macula data for {book_code} {chapter}:{verse}")
             return ""
         
         # Determine prefix based on testament (H for Hebrew/OT, G for Greek/NT)
@@ -451,6 +459,9 @@ def process_json_file(json_file, field_name, output_format='yaml', with_text=Fal
     strongs_codes = ""
     if output_format == 'jsonl' and with_strongs:
         strongs_codes = get_strongs_from_macula(book_code, chapter, verse)
+        if not strongs_codes:
+            logger.warning(f"Empty strongs codes for {book_code} {chapter}:{verse}")
+
 
     for clause_idx, clause in enumerate(clauses):
         try:
@@ -496,7 +507,7 @@ def process_json_file(json_file, field_name, output_format='yaml', with_text=Fal
     return results
 
 
-def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False, with_text=False, with_strongs=False):
+def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False, with_text=False, with_strongs=False, limit=None):
     """
     Extract all verses for a given feature field from TBTA data.
 
@@ -508,6 +519,7 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         dry_run: Show stats without writing output
         with_text: Include reconstructed clause text with highlighting (JSONL only)
         with_strongs: Include Strong's codes from macula dataset (JSONL only)
+        limit: Maximum number of files to process (for testing)
 
     Returns:
         For 'yaml': dict with feature metadata and aggregated data
@@ -522,6 +534,8 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         logger.info("Including reconstructed text with highlighting")
     if output_format == 'jsonl' and with_strongs:
         logger.info("Including Strong's codes from macula dataset")
+    if limit:
+        logger.info(f"Limiting processing to {limit} files")
     if dry_run:
         logger.info("DRY RUN MODE - No output file will be written")
     logger.info("=" * 60)
@@ -557,6 +571,9 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         # Process files
         processed = 0
         for json_file in json_files:
+            if limit and processed >= limit:
+                break
+
             results = process_json_file(json_file, field_name, output_format='yaml')
 
             for book_code, chapter, verse, value in results:
@@ -637,6 +654,9 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         total_files = len(json_files)
 
         for idx, json_file in enumerate(json_files, 1):
+            if limit and (idx - 1) >= limit:
+                break
+
             # Progress indicator
             if idx % 100 == 0 or idx == total_files:
                 logger.info(f"Processing: {idx}/{total_files} files ({idx*100//total_files}%)")
@@ -687,6 +707,7 @@ Examples:
   # Extract to JSONL (for ML pipelines)
   python extract_feature.py --field Number --format jsonl --output number.jsonl
   python extract_feature.py --field Person --format jsonl --source-dir /path/to/tbta
+  python extract_feature.py --field Number --format jsonl --limit 100 --output sample.jsonl
 
   # Dry run to see statistics
   python extract_feature.py --field Gender --dry-run
@@ -736,6 +757,11 @@ Examples:
         help="Include Strong's codes from macula dataset (JSONL only, requires .data/commentary)"
     )
     parser.add_argument(
+        "--limit",
+        type=int,
+        help="Maximum number of files to process (for testing)"
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="Enable verbose logging"
@@ -765,7 +791,8 @@ Examples:
         output_format=args.format,
         dry_run=args.dry_run,
         with_text=args.with_text,
-        with_strongs=args.with_strongs
+        with_strongs=args.with_strongs,
+        limit=args.limit
     )
 
     # Output

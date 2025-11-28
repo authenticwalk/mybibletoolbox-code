@@ -3,7 +3,7 @@
 TBTA Reason Grouping Script
 ===========================
 
-Groups TBTA verses by their theological_group field (set during dataset creation).
+Groups TBTA verses by their reason_group field (set during dataset creation).
 
 Usage:
     python group_by_reasons.py --input analysis/train.jsonl
@@ -35,7 +35,7 @@ logger = logging.getLogger(__name__)
 
 def main():
     parser = argparse.ArgumentParser(
-        description="Group TBTA verses by theological_group field",
+        description="Group TBTA verses by reason_group field",
         formatter_class=argparse.RawDescriptionHelpFormatter,
         epilog="""
 Examples:
@@ -57,7 +57,7 @@ Examples:
 
     logger.info(f"Reading from {args.input}...")
 
-    # Group entries by theological_group
+    # Group entries by reason_group
     grouped_data: Dict[str, List[Dict]] = defaultdict(list)
     total_count = 0
 
@@ -72,9 +72,9 @@ Examples:
 
             total_count += 1
             
-            # Get theological_group from entry (or UNSET if not present)
+            # Get reason_group from entry (or UNSET if not present)
             dataset = entry.get('dataset', {})
-            reason = dataset.get('theological_group') or 'UNSET'
+            reason = dataset.get('reason_group') or 'UNSET'
             
             if len(grouped_data[reason]) < args.max_per_group:
                 grouped_data[reason].append(entry)

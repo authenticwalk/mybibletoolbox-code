@@ -12,9 +12,9 @@ Usage:
     from config import DATA_DIR, STRONGS_DIR, COMMENTARY_DIR
 """
 
-from pathlib import Path
 import os
 import sys
+from pathlib import Path
 
 
 def get_data_dir() -> Path:
@@ -34,12 +34,12 @@ def get_data_dir() -> Path:
         SystemExit: If no valid data directory found (with helpful message)
     """
     # 1. Check environment variable (highest priority)
-    if env_path := os.environ.get('MYBIBLE_DATA_DIR'):
+    if env_path := os.environ.get('DATA_DIR'):
         data_dir = Path(env_path).expanduser()
         if data_dir.exists() and _is_valid_data_dir(data_dir):
             return data_dir.resolve()
         print(
-            f"⚠️  Warning: MYBIBLE_DATA_DIR set to '{env_path}' but path is invalid.",
+            f"⚠️  Warning: DATA_DIR set to '{env_path}' but path is invalid.",
             file=sys.stderr
         )
     

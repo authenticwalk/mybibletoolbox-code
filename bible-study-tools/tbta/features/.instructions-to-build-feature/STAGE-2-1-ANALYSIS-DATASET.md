@@ -28,6 +28,14 @@ analysis/
 └── logical.py           # optional rules script
 ```
 
+## Process
+
+You will work through these steps calling subagents as defined in each step to keep your context clear
+Be very clear with the subagent what their role is and provide necessary files for them to read
+When they are done you need to audit their work and redo it up to 3 times after giving better instructions
+to ensure they do as they are told
+
+If you have to redo a step debug the instructions and add your analysis and fix to `$ANALYSIS-DIR/_LEARNINGS`.md
 ---
 
 ## Step 1: Create Dataset
@@ -67,6 +75,8 @@ Model: Opus
 
 **Suggested Flow**
 - given feature distribution in `README.md` starting with smallest feature grep for label $feature | random | limit 10000 lines then choose from there  
+- If you know certain verses that will be hard you can do a regex search for all of them in one line
+- Try to be highly efficient and don't use too many tool calls; essentially read many lines; write many lines in updated format
 
 **Selection criteria** for each split:
 - Balance across feature values
@@ -86,6 +96,7 @@ The following is showing too many newlines to make this file easier for me to re
   "constituent": "us",
   "part": "Noun",
   "reconstructed_verse": "God said, let **us** make mankind in our image",
+  "strongs": "{copy the string of strongs codes that represent the whole verse}",
   "strongs_number": "H430",
   "strongs_word": "אֱלֹהִים",
   "dataset": {
@@ -93,19 +104,19 @@ The following is showing too many newlines to make this file easier for me to re
     "section": "OT",
     "literary_type": "history",
     "difficulty": "adversarial",
-    "theological_group": "TRINITY"
+    "reason_group": "TRINITY"
   }
 }
 ```
 
 **Key additions**:
 - `strongs_number`: Infer from constituent + verse. You must choose from the strong's numbers in data.strongs which is a list of available strongs numbers.  reconstructed_verse is a simplified NIV but shows you which word we are targetting which you can deduce from the strongs numbers.
-- `theological_group`: From Stage 1 THEOLOGICALLY-SIGNIFICANT-GROUPS research: You will need to read that file first and create a list of your codes for consistency
+- `reason_group`: From Stage 1 THEOLOGICALLY-SIGNIFICANT-GROUPS research: You will need to read that file first and create a list of your codes for consistency.  This is more than just theological reasons but what are the logical reasons we could create a rule about this feature (example: person (singular), trinity, etc)
 
 **Audit and fix the work**
  - Strongs_number and strongs_word must be added and correct
  - The same verse should only be in one dataset
- - theological_group must be set
+ - reason_group must be set
 
 
 ---
@@ -156,9 +167,19 @@ python src/ingest_data/tbta/enrich_extract_with_verses.py \
 - **Validate after enrichment**: Confirm the languages you selected actually appear in the output
 
 
----
+### 1D Audit the data
 
-### 1D Split the datasets up
+Sample datasets.jsonl
+
+ - [ ] A list of strongs numbers in the field strongs
+ - [ ] the langauges grc-BYZ, lat-VUC, eng-YLT, heb-heb, arb-NAV, rus-SYN, jpn-1965
+ - [ ] additional languages that are helpful for finding this feature but no repeats of the languages above (so only one english)
+ - [ ] strongs_word should have the strongs code with up to 4 leading zeros
+ - [ ] dataset should have the field reason_group and it should be well balanced
+
+If there are mistakes go back and redo the steps with better instructions.  
+
+### 1E Split the datasets up
 
 Run as: Subagent
 Parallel: No
@@ -166,3 +187,10 @@ Model: Haiku
 
 Call `src/tools/predict/split_dataset.py --input $ANALYSIS-DIR/enriched.jsonl --original $ANALYSIS-DIR/tbta-extract.jsonl --output $ANALYSIS-DIR/data`
 
+### 1F Delete artifacts
+
+Now you can delete
+ - datasets.jsonl
+ - enriched.secret.jsonl
+ - tbta-extract.secret.jsonl
+  
