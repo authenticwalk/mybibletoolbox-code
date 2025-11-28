@@ -3,12 +3,12 @@
 Enrich TBTA Extract with Verse Text
 ===================================
 
-Reads the tbta-extract.jsonl file and appends verse text for specified languages.
-Each language's text is stored as a top-level key (ISO code) for easy access.
+Reads the tbta-extract.jsonl file and appends verse text from cached ebible translations.
+Uses src/util/cache.py to fetch from translations-ebible cache files.
 
 Usage:
     python enrich_extract_with_verses.py --input analysis/tbta-extract.jsonl \
-        --languages eng,spa,fra --output analysis/tbta-extract-with-verses.jsonl
+        --translations eng-NIV,eng-ESV,spa-RV1960 --output analysis/tbta-extract-with-verses.jsonl
 
 Output format:
     {
@@ -17,9 +17,7 @@ Output format:
         "constituent": "sound",
         "part": "Noun",
         "path": "Clause[4]/Clause[0]/NP[0]",
-        "eng": {"NIV": "...", "ESV": "..."},
-        "spa": {"RV1960": "..."},
-        "fra": {"LSG": "..."}
+        "translations": {"eng-NIV": "...", "eng-ESV": "...", "spa-RV1960": "..."}
     }
 """
 
@@ -27,17 +25,16 @@ import argparse
 import json
 import logging
 import sys
-import time
 from pathlib import Path
-from typing import Dict, List, Optional
+from typing import Dict
 
 # Add project root to path for imports
 project_root = Path(__file__).resolve().parent.parent.parent.parent
 if str(project_root) not in sys.path:
     sys.path.insert(0, str(project_root))
 
-from src.tools.fetch_verse import (ensure_sparse_checkout_chapter, fetch_verse,
-                                   filter_by_languages)
+from src.config import DATA_DIR
+from src.util.cache import get_cached_verse
 
 # Configure logging
 logging.basicConfig(
@@ -67,24 +64,18 @@ def parse_verse_ref(ref: str):
     return None, None, None
 
 
-def organize_by_language(translations: Dict[str, str]) -> Dict[str, Dict[str, str]]:
+def filter_translations_by_codes(translations: Dict[str, str], codes: list) -> Dict[str, str]:
     """
-    Reorganize translations from flat dict to nested by language.
-
-    Input:  {"eng-NIV": "...", "eng-ESV": "...", "spa-RV1960": "..."}
-    Output: {"eng": {"NIV": "...", "ESV": "..."}, "spa": {"RV1960": "..."}}
+    Filter translations dict to only include specified translation codes.
+    
+    Args:
+        translations: Dict like {"eng-NIV": "...", "spa-RV1960": "..."}
+        codes: List of translation codes like ["eng-NIV", "spa-RV1960"]
+    
+    Returns:
+        Filtered dict with only matching translations
     """
-    result = {}
-    for trans_id, text in translations.items():
-        parts = trans_id.split('-', 1)
-        lang = parts[0].lower()
-        version = parts[1] if len(parts) > 1 else "default"
-
-        if lang not in result:
-            result[lang] = {}
-        result[lang][version] = text
-
-    return result
+    return {k: v for k, v in translations.items() if k in codes}
 
 
 def main():
@@ -94,35 +85,23 @@ def main():
         epilog="""
 Examples:
     python enrich_extract_with_verses.py --input tbta-extract.jsonl \\
-        --languages eng,spa,fra,deu --output tbta-extract-with-verses.jsonl
-
-    # With more languages for diversity analysis
-    python enrich_extract_with_verses.py --input tbta-extract.jsonl \\
-        --languages eng,spa,fra,deu,por,ita,nld,swe,dan,nor,fin,rus,pol,ces,hun,ron,ell,tur,ara,heb,zho \\
-        --output tbta-extract-with-verses.jsonl
+        --translations eng-NIV,eng-ESV,spa-RV1960 --output tbta-extract-with-verses.jsonl
         """
     )
     parser.add_argument("--input", required=True, help="Input JSONL file (tbta-extract.jsonl)")
-    parser.add_argument("--languages", required=True,
-                        help="Comma-separated list of ISO-639-3 codes (e.g., eng,spa,fra)")
+    parser.add_argument("--translations", required=True,
+                        help="Comma-separated list of translation codes (e.g., eng-NIV,spa-RV1960)")
     parser.add_argument("--output", required=True, help="Output JSONL file")
-    parser.add_argument("--delay", type=float, default=0.1,
-                        help="Delay between fetches in seconds (default: 0.1)")
-    parser.add_argument("--skip-errors", action="store_true",
-                        help="Skip verses that fail to fetch instead of stopping")
+    parser.add_argument("--limit", required=False, type=int, help="Limit the number of entries to process")
 
     args = parser.parse_args()
 
-    languages = [lang.strip().lower() for lang in args.languages.split(',')]
-    logger.info(f"Enriching with {len(languages)} languages: {', '.join(languages)}")
-
-    # Cache for fetched verses to avoid refetching same verse
-    # Key: "BOOK.CCC.VVV", Value: {lang: {version: text}}
-    verse_cache: Dict[str, Dict[str, Dict[str, str]]] = {}
+    translations = [t.strip() for t in args.translations.split(',')]
+    logger.info(f"Enriching with {len(translations)} translations: {', '.join(translations)}")
 
     processed_count = 0
-    error_count = 0
     cache_hits = 0
+    cache_misses = 0
 
     # Read input
     input_path = Path(args.input)
@@ -155,44 +134,25 @@ Examples:
                     f_out.write(line)
                     continue
 
-                # Check cache first
-                if verse_ref in verse_cache:
-                    # Merge cached translations into entry
-                    for lang, versions in verse_cache[verse_ref].items():
-                        entry[lang] = versions
+                # Parse verse reference
+                book, chapter, verse = parse_verse_ref(verse_ref)
+                if not book:
+                    logger.warning(f"Invalid verse format: {verse_ref}")
+                    f_out.write(line)
+                    continue
+
+                # Fetch from cache using translations-ebible suffix
+                cached_data = get_cached_verse(book, chapter, verse, suffix="translations-ebible", cache_root=DATA_DIR / "commentary")
+                
+                if cached_data and 'translations' in cached_data:
+                    # Filter by requested translation codes
+                    filtered = filter_translations_by_codes(cached_data['translations'], translations)
+                    if filtered:
+                        entry['translations'] = filtered
                     cache_hits += 1
                 else:
-                    # Fetch new verse
-                    book, chapter, verse = parse_verse_ref(verse_ref)
-                    if book:
-                        try:
-                            # Ensure sparse checkout has this chapter
-                            ensure_sparse_checkout_chapter(book, chapter)
-
-                            # Fetch all translations
-                            translations = fetch_verse(book, chapter, verse, use_cache=True)
-
-                            # Filter by requested languages
-                            filtered = filter_by_languages(translations, languages)
-
-                            # Organize by language
-                            organized = organize_by_language(filtered)
-
-                            # Store in entry and cache
-                            for lang, versions in organized.items():
-                                entry[lang] = versions
-                            verse_cache[verse_ref] = organized
-
-                            time.sleep(args.delay)
-
-                        except Exception as e:
-                            logger.warning(f"Failed to fetch {verse_ref}: {e}")
-                            error_count += 1
-                            if not args.skip_errors:
-                                raise
-                    else:
-                        logger.warning(f"Invalid verse format: {verse_ref}")
-                        error_count += 1
+                    cache_misses += 1
+                    print(f"Cache miss: {verse_ref} - add to sparse checkout: cd .data && git sparse-checkout add commentary/{book}/{chapter:03d}", file=sys.stderr)
 
                 # Write enriched entry
                 f_out.write(json.dumps(entry, ensure_ascii=False) + '\n')
@@ -201,7 +161,9 @@ Examples:
                 # Progress indicator
                 if processed_count % 100 == 0:
                     pct = (line_num / total_lines) * 100
-                    logger.info(f"Progress: {processed_count}/{total_lines} ({pct:.1f}%) - Cache hits: {cache_hits}")
+                    logger.info(f"Progress: {processed_count}/{total_lines} ({pct:.1f}%) - Hits: {cache_hits}, Misses: {cache_misses}")
+                if args.limit and processed_count >= args.limit:
+                    break
 
             except json.JSONDecodeError:
                 logger.warning(f"Invalid JSON at line {line_num}")
@@ -212,8 +174,8 @@ Examples:
     logger.info("ENRICHMENT COMPLETE")
     logger.info("=" * 50)
     logger.info(f"Processed: {processed_count} entries")
-    logger.info(f"Cache hits: {cache_hits} (verses appearing multiple times)")
-    logger.info(f"Fetch errors: {error_count}")
+    logger.info(f"Cache hits: {cache_hits}")
+    logger.info(f"Cache misses: {cache_misses}")
     logger.info(f"Output: {args.output}")
 
 

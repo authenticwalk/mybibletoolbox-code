@@ -141,7 +141,7 @@ Note: `task_name` should always equal `tool_name_kebab` to maintain consistency.
 Execute the Python script to generate all files:
 
 ```bash
-python3 /Users/chrispriebe/projects/context-grounded-bible/.claude/skills/bible-study-tool-creator/init-tool.py /tmp/tool-definition.yaml
+python3 .claude/skills/bible-study-tool-creator/init-tool.py /tmp/tool-definition.yaml
 ```
 
 The script creates this structure in `/bible-study-tools/{tool-name}/`:
