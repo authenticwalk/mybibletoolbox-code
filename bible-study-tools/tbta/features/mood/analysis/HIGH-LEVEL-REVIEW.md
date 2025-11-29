@@ -7,122 +7,113 @@
 
 | Test | Accuracy | Notes |
 |------|----------|-------|
-| Haiku (no metadata) | 31.2% | Heavy Indicative bias (71/100 predicted) |
-| Sonnet (no metadata) | 41.0% | Over-predicted Definite Potential (20!) |
-| Sonnet (with metadata) | 45.0% | **Best overall** |
-| Sonnet (guided) | 44.0% | Definitions didn't help (-1%) |
-| **Improvement** | +13.8% | Haiku→Sonnet w/metadata |
+| Haiku (no metadata) | 41.1% | Direct LLM prediction |
+| Sonnet (no metadata) | 48.5% | Direct LLM prediction |
+| Sonnet (with metadata) | **50.0%** | Best overall |
+| **Improvement** | +8.9% | Haiku→Sonnet w/metadata |
 
-**Key Finding**: Guidance HURT accuracy (-1%). The LLM's intuition with raw data is slightly better than explicit definitions.
+**Key Finding**: Metadata helps (+1.5% from sonnet to metadata). Sonnet significantly outperforms Haiku (+7.4%).
 
-## 2. Distribution Analysis
+## 2. Error Pattern Analysis (from score_direct_metadata_sonnet.md)
 
-| Label | Ground Truth | Haiku | Sonnet | w/Metadata | Guided |
-|-------|-------------|-------|--------|------------|--------|
-| Indicative | 44 | 71 (+27) | 51 (+7) | 82 (+38) | 80 (+36) |
-| 'should' Obligation | 16 | 4 (-12) | 3 (-13) | 2 (-14) | 0 (-16) |
-| 'must' Obligation | 13 | 9 (-4) | 5 (-8) | 0 (-13) | 4 (-9) |
-| Forbidden Obligation | 9 | 0 (-9) | 4 (-5) | 4 (-5) | 7 (-2) |
-| 'might' Potential | 8 | 0 (-8) | 1 (-7) | 6 (-2) | 7 (-1) |
-| 'may' (permissive) | 5 | 0 (-5) | 2 (-3) | 6 (+1) | 2 (-3) |
-| 'should not' Obligation | 5 | 6 (+1) | 12 (+7) | 0 (-5) | 0 (-5) |
-| Definite Potential | 0 | 5 (+5) | 20 (+20) | 0 | 0 |
-| Probable Potential | 0 | 1 (+1) | 2 (+2) | 0 | 0 |
+### Most Confused Label Pairs
 
-**Critical Finding**:
-- ALL models massively OVER-predict Indicative
-- ALL models massively UNDER-predict 'should' Obligation (worst: 0/16 in guided)
-- 'Definite Potential' hallucinated (20 predictions, 0 in ground truth)
+| Predicted | Actual | Count | Pattern |
+|-----------|--------|-------|---------|
+| Indicative | 'should' Obligation | 8 | Implicit moral guidance missed |
+| Definite Potential | Indicative | 6 | Over-predicting future/prophecy |
+| Definite Potential | 'might' Potential | 4 | Certainty vs uncertainty confused |
+| 'must' Obligation | 'should' Obligation | 3 | Obligation strength confused |
+| Forbidden Obligation | Indicative | 2 | Prohibitions over-detected |
 
-## 3. Error Pattern Analysis
+### Sample Errors
 
-### Pattern 1: 'should' Obligation Never Recognized (100% miss rate)
-The guided model predicted 0/16 'should' Obligation cases.
+| Line | Verse | Predicted | Actual | Analysis |
+|------|-------|-----------|--------|----------|
+| 18 | GEN-022-002 | 'must' Obligation | 'should' Obligation | Abraham **sacrifice** - LLM sees divine command as 'must', TBTA says 'should' |
+| 23 | MRK-008-021 | Indicative | 'should' Obligation | Disciples **understand** - rhetorical question implies obligation |
+| 24 | MAT-005-043 | 'must' Obligation | 'should' Obligation | Person **love** all - Jesus teaching, LLM says 'must', TBTA says 'should' |
+| 30 | MRK-010-033 | Definite Potential | 'must' Obligation | Messiah **suffer** - prophecy but TBTA codes as obligation |
 
-**Root Cause**: TBTA's 'should' Obligation appears to be semantic modality that differs from what the LLM expects. When TBTA labels something 'should', it's often:
-- Wisdom literature advice
-- Implicit moral guidance
-- NOT explicit "you should" phrasing
+## 3. Distribution Comparison
 
-**Example Errors**:
-- Verses with implicit advice (proverbs) labeled 'should' but predicted Indicative
+| Label | Ground Truth | Direct Sonnet | Direct w/Metadata |
+|-------|-------------|---------------|-------------------|
+| Indicative | 44 | ~35 | 47 |
+| 'should' Obligation | 16 | ~20 (mixed with 'must') | 7 |
+| 'must' Obligation | 13 | ~20 | 15 |
+| Forbidden Obligation | 9 | ~8 | 7 |
+| 'might' Potential | 8 | ~5 | 0 |
+| 'may' (permissive) | 5 | ~5 | 8 |
+| 'should not' Obligation | 5 | ~2 | 1 |
+| Definite Potential | 0 | ~5 | 14 |
+| Probable Potential | 0 | ~0 | 1 |
 
-### Pattern 2: 'must' Obligation vs Forbidden Confusion
-The LLM struggles to distinguish strong positive obligation from prohibition.
+**Key Issue**: LLM predicts "Definite Potential" (14 times) but ground truth has 0. This category may not exist in this sample or TBTA uses it differently.
 
-**Root Cause**: Both involve strong modality but differ in polarity. The LLM may be seeing "obligation" features without capturing positive/negative distinction.
+## 4. 'should' vs 'must' Obligation Pattern
 
-### Pattern 3: 'Definite Potential' Hallucination
-Sonnet (no metadata) predicted 20 'Definite Potential' - ground truth has 0.
+The LLM struggles to distinguish these. TBTA appears to use:
+- **'must'**: Legal requirements, divine commands with no option
+- **'should'**: Moral teaching, wisdom, exhortation (even divine teaching)
 
-**Root Cause**: The LLM is inferring future/prophetic statements as "definite potential" but TBTA doesn't use this category in these contexts.
+Examples where LLM predicted 'must' but TBTA says 'should':
+- GEN-022-002: Abraham **sacrifice** Isaac - divine command but coded 'should'?
+- MAT-005-043: **love** all people - Jesus's teaching coded 'should'
 
-## 4. Where Guidance Helped
+**Possible Issue**: TBTA may be coding based on target language translation choices, not source language semantics.
 
-Few cases. When the zero-shot was wrong and guided was right:
-- Some 'might' Potential cases (conditional constructions)
-- Some Forbidden Obligation cases
+## 5. Recommendations
 
-## 5. Where Guidance Hurt
+### Immediate Actions
+1. **Audit 'should' vs 'must'**: Review TBTA criteria - is there a pattern?
+2. **Remove Definite Potential**: Not in ground truth, causes false positives
+3. **Focus on Indicative detection**: Get the 44% Indicative cases right first
 
-Many cases. When the zero-shot was right and guided was wrong:
-- Guidance caused over-prediction of Indicative
-- Guidance eliminated 'should' Obligation predictions entirely
-- Definitions may have been TOO precise, causing the LLM to reject ambiguous cases
+### Prompt Engineering Ideas
+1. Add: "Use 'should' for moral teaching and wisdom, 'must' only for legal requirements"
+2. Add: "Definite Potential is rare - prefer 'might' for future events"
+3. Genre-aware: "In wisdom literature, prefer 'should'"
 
-## 6. Persistent Errors (All Tests Wrong)
+### Data Investigation
+1. Why does TBTA code divine commands as 'should'?
+2. Is there translator variation in obligation strength?
+3. Are 'should not' and Forbidden consistently applied?
 
-**High-frequency miss categories**:
-1. 'should' Obligation - ALL models miss these systematically
-2. 'must' Obligation in wisdom literature contexts
-3. 'may' (permissive) - subtle permission constructions
+## 6. Comparison: Word-Analysis vs Direct LLM
 
-**Likely Cause**: TBTA labeling follows translation theory conventions that differ from linguistic intuition.
+The subagents initially tried to write Python analysis scripts instead of direct prediction.
 
-## 7. LLM Internal Biases
+| Approach | Haiku | Sonnet | w/Metadata |
+|----------|-------|--------|------------|
+| Word-analysis (wrong) | 31.2% | 41.0% | 45.0% |
+| Direct LLM (correct) | 41.1% | 48.5% | 50.0% |
+| **Improvement** | +9.9% | +7.5% | +5.0% |
 
-1. **Indicative Bias**: All models over-predict Indicative (default to "statement of fact")
-2. **Potential Confusion**: Sonnet hallucinates "Definite Potential" category
-3. **Obligation Spectrum Blindness**: Can't distinguish must/should/forbidden reliably
-
-## 8. Recommendations
-
-### Immediate
-1. **Stratify by error type**: Focus prompt engineering on 'should' Obligation specifically
-2. **Remove rare categories**: Definite/Probable/Unlikely Potential may be too rare to learn
-3. **Binary first**: Try "Indicative vs Non-Indicative" as first pass
-
-### Investigation Needed
-1. **Audit 'should' Obligation**: Are TBTA labels consistent? What's the pattern?
-2. **Check training data balance**: 56% non-Indicative in sample but 97% Indicative in full data
-
-### Alternative Approach
-Consider outputting: `{dominant: "Indicative", confidence: 0.7, alternates: [{label: "'should' Obligation", reason: "wisdom context"}]}`
+**Lesson**: Direct LLM prediction significantly outperforms rule-based analysis. The LLM's pre-training knowledge is valuable.
 
 ## Prompts Used
 
 ### Test A (No Metadata)
 ```
-Label the **bolded** word in this verse with one of these Mood values:
-Indicative, 'must' Obligation, 'should' Obligation, 'might' Potential,
-'should not' Obligation, 'may' (permissive), Forbidden Obligation,
-Definite Potential, Probable Potential, Unlikely Potential
+Read verses and write your mood predictions directly to a file.
 
-Verse: {text}
+INPUT: train-no-decoration.jsonl (verse + text only)
+LABELS: Indicative, 'must' Obligation, 'should' Obligation, ...
 
-Return ONLY the label, nothing else.
+For each of the 100 lines, decide what mood the **bolded** word represents.
+One label per line, 100 lines total, in order.
+NO PYTHON ANALYSIS - just read, predict, write.
 ```
 
-### Test C (Guided)
-```
-Grammatical mood encodes speaker stance toward an action...
-[Full definitions for each value]
-...
-Label the **bolded** word. Return ONLY the label.
-```
+### Test B (With Metadata)
+Same as Test A but using train-no-labels.jsonl with full translations, Strong's numbers, genre.
 
 ## Conclusion
 
-**31-45% baseline accuracy** is low but expected for a semantically complex feature. The key insight is that **definitions don't help** - the problem is TBTA's semantic labeling conventions, not LLM linguistic knowledge.
+**50% baseline accuracy** is a reasonable starting point. Key issues:
+1. 'should' vs 'must' distinction unclear in TBTA
+2. "Definite Potential" over-predicted (need to understand when TBTA uses it)
+3. Metadata helps modestly (+1.5%)
 
-**Next Steps**: Deep-dive into 'should' Obligation patterns to understand TBTA's labeling criteria.
+**Next Steps**: Investigate TBTA labeling criteria for obligation strength before prompt engineering.

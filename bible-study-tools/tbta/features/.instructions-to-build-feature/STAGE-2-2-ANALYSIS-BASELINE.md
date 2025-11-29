@@ -26,10 +26,11 @@ analysis/
 │   ├── test.jsonl                  # Final eval (DO NOT TOUCH)
 │   └── leftovers.jsonl             # Remaining entries not in splits
 ├── baseline-test/                  # All baseline test outputs
-│   ├── baseline_no_metadata_*.txt  # Test A outputs (one label per line)
-│   ├── baseline_zero_shot_*.txt    # Test B outputs
-│   ├── baseline_guided.txt         # Test C output
-│   └── prompt_engineered.txt       # Test D output
+│   ├── direct_haiku.txt            # Test A - Haiku predictions
+│   ├── direct_sonnet.txt           # Test A - Sonnet predictions
+│   ├── direct_metadata_sonnet.txt  # Test B - Sonnet with metadata
+│   ├── direct_guided.txt           # Test C - Sonnet with definitions
+│   └── score_*.md                  # Scoring reports
 ├── COMMON-MISTAKES.md              # Error analysis
 ├── HIGH-LEVEL-REVIEW.md            # Final summary
 └── _LEARNINGS.md                   # Debug notes (if issues)
@@ -58,28 +59,23 @@ Ensure you have the file `$ANALYSIS-DIR/data/train.jsonl` from Stage 2.1. If not
 
 **NOTE**: train.jsonl should be a **balanced** dataset from Stage 2.1. If >10,000 entries, Stage 2.1 may have put leftovers in train.jsonl by mistake.
 
-Create stripped versions for baseline testing (limit to first 100 for quick iteration):
+Create stripped versions for baseline testing:
 
 ```bash
 # Create directory for baseline outputs
 mkdir -p $ANALYSIS-DIR/baseline-test
 
-# Create train-no-decoration.jsonl (only verse + text fields, for Test A)
-head -100 $ANALYSIS-DIR/data/train.jsonl | python3 -c "
-import json, sys
-for line in sys.stdin:
-    obj = json.loads(line)
-    print(json.dumps({'verse': obj['verse'], 'text': obj['text']}))
-" > $ANALYSIS-DIR/data/train-no-decoration.jsonl
+# Use the strip_labels.py tool to create test inputs
+python3 /workspace/src/tools/predict/strip_labels.py \
+  --input $ANALYSIS-DIR/data/train.jsonl \
+  --output $ANALYSIS-DIR/data/train-no-decoration.jsonl \
+  --fields verse,text \
+  --limit 100
 
-# Create train-no-labels.jsonl (all fields except label, for Test B/C/D)
-head -100 $ANALYSIS-DIR/data/train.jsonl | python3 -c "
-import json, sys
-for line in sys.stdin:
-    obj = json.loads(line)
-    del obj['label']
-    print(json.dumps(obj))
-" > $ANALYSIS-DIR/data/train-no-labels.jsonl
+python3 /workspace/src/tools/predict/strip_labels.py \
+  --input $ANALYSIS-DIR/data/train.jsonl \
+  --output $ANALYSIS-DIR/data/train-no-labels.jsonl \
+  --limit 100
 ```
 
 ---
@@ -92,154 +88,103 @@ for line in sys.stdin:
 
 **Goal**: Understand (1) what the LLM already knows about this feature, and (2) how much guidance helps.
 
+**CRITICAL - How subagents make predictions**:
+The subagent reads each entry and uses its **own internal knowledge** to predict the label. It does NOT run Python scripts or word analysis - it simply reads, thinks, and writes the prediction. This tests what the LLM knows from pre-training.
+
 #### Test A: Zero-Shot Baseline (no metadata)
 
 Run as: 2 Subagents (haiku, sonnet) in parallel
 
-**Sample Size**: 100 entries for quick iteration.
+**Sample Size**: 100 entries.
 
-**Task for each subagent**:
-1. Read `$ANALYSIS-DIR/data/train-no-decoration.jsonl`
-2. For EACH line, classify the **bolded** word using ONLY the values from `$CURRENT-FEATURE-DIR/README.md`
-3. Use ONLY internal knowledge (no web tools) - think about grammar, modality, linguistic context
-4. Write one label per line to the output file
-
-**Prompt Template** (apply to each verse):
+**Subagent Task**:
 ```
-Label the **bolded** word in this verse with one of these {FeatureName} values:
-{Value1}, {Value2}, {Value3}, ...
+Read the file {$ANALYSIS-DIR}/data/train-no-decoration.jsonl
 
-Verse: {text}
+For each of the 100 lines:
+1. Parse the JSON to get the `text` field
+2. The **bolded** word is what you're classifying
+3. Using your internal knowledge, decide which label applies
+4. Write that label to the output file
 
-Return ONLY the label, nothing else.
-```
+Labels: {list from README}
 
-**Output**: `$ANALYSIS-DIR/baseline-test/baseline_no_metadata_{model}.txt` (one label per line, 100 lines)
+Output: {$ANALYSIS-DIR}/baseline-test/direct_{model}.txt
+One label per line, 100 lines total, in order.
 
-**How to launch** (orchestrator runs these in parallel):
-```
-Task(model="haiku", prompt="...Execute Test A for {feature}...")
-Task(model="sonnet", prompt="...Execute Test A for {feature}...")
+NO PYTHON ANALYSIS - just read each verse, make your prediction, write it.
 ```
 
-#### Test B: Zero-Shot Baseline (with metadata, no definitions)
+**Output**: `$ANALYSIS-DIR/baseline-test/direct_haiku.txt`, `direct_sonnet.txt`
+
+#### Test B: Zero-Shot Baseline (with metadata)
 
 Run as: 1 Subagent (sonnet)
 Parallel: Yes (with Test A)
 
-Same as Test A, but provide the full JSON context (translations, Strong's numbers, genre, etc).
+Same task, but the input file has full metadata (translations, Strong's, genre).
 
-**Task**:
-1. Read `$ANALYSIS-DIR/data/train-no-labels.jsonl`
-2. For EACH line, classify using the metadata to inform your decision
+**Input**: `$ANALYSIS-DIR/data/train-no-labels.jsonl`
+**Output**: `$ANALYSIS-DIR/baseline-test/direct_metadata_sonnet.txt`
 
-**Prompt Template**:
-```
-Label the **bolded** word in this verse with one of these {FeatureName} values:
-{Value1}, {Value2}, {Value3}, ...
-
-Data:
-{full json entry}
-
-Return ONLY the label, nothing else.
-```
-
-**Output**: `$ANALYSIS-DIR/baseline-test/baseline_zero_shot_sonnet.txt`
+The subagent can use the translations and Strong's numbers to inform its prediction.
 
 #### Test C: Guided Baseline (with definitions)
 
 Run as: 1 Subagent (sonnet)
 Parallel: Yes (with above)
 
-**Build a structured prompt**:
+Same as Test B, but provide explicit definitions in the prompt:
 
-**Part A**: Write 1-3 sentences describing what the feature is and how to decide which label applies. Source from `$CURRENT-FEATURE-DIR/research/README.md`.
-
-**Part B**: List each possible value as a bullet point, with up to 5 sub-bullets explaining when to use that value.
-
-**Prompt Template**:
+**Subagent Task**:
 ```
-{Part A}
+FEATURE DEFINITION:
+{1-3 sentences from research/README.md}
 
-{Part B}
+VALUE DEFINITIONS:
+- {Value1}: {when to use it}
+- {Value2}: {when to use it}
+...
 
-Data:
-{full json entry}
-
-Label the **bolded** word. Return ONLY the label.
+Read {$ANALYSIS-DIR}/data/train-no-labels.jsonl
+For each entry, classify the **bolded** word using the definitions above.
+Write to {$ANALYSIS-DIR}/baseline-test/direct_guided.txt
 ```
-
-**Output**: `$ANALYSIS-DIR/baseline-test/baseline_guided.txt`
 
 #### Test D: Prompt Engineering (Optional)
 
-Add psychological framing to Test C prompt:
+Add psychological framing to Test C:
 
 ```
-[PERSONA]
-You are a senior Bible Translator fluent in languages that use ${FEATURE-NAME}
-[STAKES]
-This is critical. If we get this wrong, we'll hit $5K/month in new expenses as all the work will have to be redone
-[METHODOLOGY]
-Take a deep breath and work through this step by step:
-1. Analyze what the feature is
-2. Consider the differences between languages that use it
-3. Figure out all the edge cases you need to account for
-4. Predict with high confidence
-[TASK]
-{Test C prompt here}
+[PERSONA] You are a senior Bible Translator fluent in languages that use {feature}
+[STAKES] This is critical for accurate Bible translation
+[METHODOLOGY] Think step by step about each verse
+[TASK] {Test C instructions}
 ```
-
-**Output**: `$ANALYSIS-DIR/baseline-test/prompt_engineered.txt`
 
 ---
 
-## Scoring (Orchestrator runs this)
+## Scoring
 
-Score predictions using inline Python (no external scripts required):
+Use the scoring script:
 
 ```bash
-cd $ANALYSIS-DIR && python3 << 'EOF'
-import json
-from collections import Counter
+python3 /workspace/src/tools/predict/score_baseline.py \
+  --predictions $ANALYSIS-DIR/baseline-test/direct_haiku.txt \
+  --ground-truth $ANALYSIS-DIR/data/train.jsonl \
+  --output $ANALYSIS-DIR/baseline-test/score_direct_haiku.md
 
-# Load ground truth (first 100 entries)
-with open('data/train.jsonl', 'r') as f:
-    ground_truth = [json.loads(line)['label'] for i, line in enumerate(f) if i < 100]
+python3 /workspace/src/tools/predict/score_baseline.py \
+  --predictions $ANALYSIS-DIR/baseline-test/direct_sonnet.txt \
+  --ground-truth $ANALYSIS-DIR/data/train.jsonl \
+  --output $ANALYSIS-DIR/baseline-test/score_direct_sonnet.md
 
-def score_predictions(pred_file, gt):
-    with open(pred_file, 'r') as f:
-        preds = [line.strip() for line in f if line.strip()]
-    min_len = min(len(preds), len(gt))
-    correct = sum(1 for i in range(min_len) if preds[i] == gt[i])
-    errors = [(i+1, gt[i], preds[i]) for i in range(min_len) if preds[i] != gt[i]]
-    return {'accuracy': correct/min_len*100, 'correct': correct, 'total': min_len, 'errors': errors}
+python3 /workspace/src/tools/predict/score_baseline.py \
+  --predictions $ANALYSIS-DIR/baseline-test/direct_metadata_sonnet.txt \
+  --ground-truth $ANALYSIS-DIR/data/train.jsonl \
+  --output $ANALYSIS-DIR/baseline-test/score_direct_metadata_sonnet.md
 
-# Score all baseline files
-files = [
-    ('baseline-test/baseline_no_metadata_haiku.txt', 'Haiku (no metadata)'),
-    ('baseline-test/baseline_no_metadata_sonnet.txt', 'Sonnet (no metadata)'),
-    ('baseline-test/baseline_zero_shot_sonnet.txt', 'Sonnet (with metadata)'),
-    ('baseline-test/baseline_guided.txt', 'Sonnet (guided)'),
-]
-
-print("=" * 60)
-print("BASELINE SCORING RESULTS")
-print("=" * 60)
-for fname, label in files:
-    try:
-        result = score_predictions(fname, ground_truth)
-        print(f"\n{label}: {result['accuracy']:.1f}% ({result['correct']}/{result['total']})")
-        print("  First 5 errors:")
-        for idx, gt_l, pred_l in result['errors'][:5]:
-            print(f"    Line {idx}: Expected '{gt_l}' got '{pred_l}'")
-    except FileNotFoundError:
-        print(f"\n{label}: NOT FOUND")
-
-print(f"\n\nGround Truth Distribution:")
-for label, count in Counter(ground_truth).most_common():
-    print(f"  {label}: {count}")
-EOF
+# Repeat for guided, prompt_engineered...
 ```
 
 ---
