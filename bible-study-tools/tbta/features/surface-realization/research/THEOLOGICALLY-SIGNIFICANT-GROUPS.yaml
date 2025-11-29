@@ -1,0 +1,316 @@
+feature: surface-realization
+default_classification: arbitrary  # Default: Surface realization choice is stylistic/optional
+theological_significance: LOW       # Surface form (NP/pronoun/zero/clitic) rarely affects doctrine
+
+# CRITICAL CONTEXT:
+# Surface Realization (Noun vs Pronoun vs Zero vs Clitic) is about HOW a participant
+# is expressed, not WHO the participant is or WHAT they are doing. In most cases,
+# the choice between "God said" vs "He said" vs "[zero] said" does NOT change meaning.
+#
+# HOWEVER: Ambiguous reference (unclear "he"/"they") CAN create confusion that
+# affects interpretation. This is a NARRATIVE CLARITY issue, not a DOCTRINAL issue.
+
+# =============================================================================
+# SECTION 1: NON-ARBITRARY (High Clarity Stakes)
+# =============================================================================
+
+non_arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # 1.1 AMBIGUOUS REFERENCE - Multiple Potential Referents
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: "Genesis 4:8 - Cain and Abel narrative (unverified)"
+    affected_values: [zero, pronoun, noun]
+    theological_stakes: MEDIUM  # Narrative clarity, not core doctrine
+    affected_doctrines:
+      - Biblical narrative accuracy
+      - Faithful representation of events
+
+    non_arbitrary_rationale: |
+      When MULTIPLE participants of the same gender/number are active,
+      using ZERO or PRONOUN can create ambiguity about WHO did WHAT.
+
+      Example: "Cain rose up against Abel, and [he] killed [him]."
+      - Question: Who killed whom? (Cain killed Abel, but pronoun could confuse)
+
+      In Hebrew, TBTA marks this with:
+      - Cain = Noun List Index 1
+      - Abel = Noun List Index 2
+      - Both can be ZERO (pro-drop), but target language may require explicitness
+
+      This is NOT a theological issue (we know from context that Cain killed Abel),
+      but it IS a narrative clarity issue. Poor surface realization choices can
+      create confusion that makes readers doubt the translation's accuracy.
+
+    christian_orthodox_position:
+      preferred_value: noun  # Use full NP when ambiguity possible
+      acceptable_alternatives: [pronoun]  # Pronoun OK if context absolutely clear
+      forbidden_values: []  # No forbidden values; zero is risky but not heretical
+      theological_basis: "Biblical narrative must be clear and accurate."
+      translator_guidance: |
+        - FIRST CHOICE: Use NOUN (full NP) when multiple same-gender participants active
+        - SECOND CHOICE: Use PRONOUN if target language allows and context is clear
+        - RISKY: ZERO (pro-drop) may confuse readers in ambiguous contexts
+        - NEVER: Do not create ambiguity that makes readers question accuracy
+
+    non_orthodox_alternatives_awareness: []  # No heretical interpretations from surface form
+
+  # ---------------------------------------------------------------------------
+  # 1.2 PARTICIPANT INTRODUCTION - First Mention vs Continuation
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: "Narrative first mentions (e.g., Gen 1:1 'God created') (unverified)"
+    affected_values: [noun, pronoun, zero]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Narrative coherence
+
+    non_arbitrary_rationale: |
+      FIRST MENTION of a participant typically requires NOUN (full NP), not pronoun/zero.
+
+      Example: Genesis 1:1 "In the beginning, GOD created..."
+      - Cannot start with "He created" (pronoun) - who is "he"?
+      - Cannot start with "[zero] created" - reference unclear
+
+      This is a UNIVERSAL discourse principle (Givón 1983, Lambrecht 1994):
+      - NEW referents → NOUN (full NP)
+      - GIVEN referents → PRONOUN or ZERO
+
+      However, this is NOT a theological issue. It's a discourse convention.
+      All languages follow this pattern (though some allow inference from world knowledge).
+
+    christian_orthodox_position:
+      preferred_value: noun  # Always use full NP for first mentions
+      acceptable_alternatives: []  # No alternatives for first mentions
+      forbidden_values: []  # Not forbidden theologically, just pragmatically odd
+      theological_basis: "Clarity of reference honors the biblical text."
+      translator_guidance: |
+        - REQUIRED: Use NOUN (full NP) when introducing a participant
+        - After introduction, PRONOUN or ZERO may be appropriate (depending on language)
+        - This is DISCOURSE CONVENTION, not THEOLOGICAL REQUIREMENT
+
+    non_orthodox_alternatives_awareness: []
+
+  # ---------------------------------------------------------------------------
+  # 1.3 SUBJECT-OBJECT TRACKING - Avoiding Confusion
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: "Complex narratives with many participants (e.g., Acts, Gospel passion narratives) (unverified)"
+    affected_values: [zero, pronoun, noun]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Historical accuracy of biblical events
+      - Trustworthiness of Scripture
+
+    non_arbitrary_rationale: |
+      In narratives with MANY participants (Acts, Gospels), excessive use of ZERO
+      or PRONOUN can create confusion about WHO is acting.
+
+      Example: Acts 16:16-40 (Paul, Silas, jailer, magistrates, crowd)
+      - Multiple "he"s and "they"s
+      - Hebrew/Greek can use ZERO (pro-drop) when continuity is high
+      - Target language may REQUIRE explicit NOUNS to track participants
+
+      This affects:
+      - NARRATIVE CLARITY (primary concern)
+      - READER TRUST (readers may question translation if confused)
+      - NOT CORE DOCTRINE (events are not disputed, only clarity of reference)
+
+    christian_orthodox_position:
+      preferred_value: noun  # Use NOUN when participant tracking is complex
+      acceptable_alternatives: [pronoun]  # Pronoun OK if language has clear agreement
+      forbidden_values: []
+      theological_basis: "Scripture is trustworthy and should be clear to readers."
+      translator_guidance: |
+        - Use NOUN (full NP) when reintroducing participants after absence
+        - Use NOUN when multiple participants of same gender/number are active
+        - PRONOUN acceptable if agreement morphology makes reference clear
+        - ZERO acceptable in pro-drop languages if discourse context is unambiguous
+        - PRIORITY: Prevent reader confusion over excessive pronouns
+
+    non_orthodox_alternatives_awareness: []
+
+  # ---------------------------------------------------------------------------
+  # 1.4 DEITY REFERENCE - Respect and Clarity (Cultural, Not Theological)
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: "References to God, Jesus, Holy Spirit (all contexts) (unverified)"
+    affected_values: [pronoun, zero]
+    theological_stakes: LOW  # Cultural/stylistic, not doctrinal
+    affected_doctrines:
+      - Reverence for God (cultural expression, not doctrine)
+
+    non_arbitrary_rationale: |
+      Some translation traditions prefer to use NOUN (full NP) for deity references
+      rather than PRONOUN or ZERO, even when discourse continuity is high.
+
+      Example: "God said... God created... God saw..."
+      vs. "God said... He created... He saw..."
+
+      This is a STYLISTIC CHOICE, not a theological requirement:
+      - Using "He" for God is NOT disrespectful in most cultures
+      - Some cultures prefer explicit divine names for reverence
+      - This varies by target culture, not by orthodox theology
+
+      IMPORTANT: This is NOT about:
+      - Trinity (that's handled by Number System: Trial vs Plural)
+      - Person of Christ (that's handled by semantic content, not surface form)
+      - Deity of Christ (that's handled by predicate, not subject form)
+
+      Surface Realization (Noun vs Pronoun) does NOT affect these doctrines.
+
+    christian_orthodox_position:
+      preferred_value: noun  # CULTURAL preference, not theological requirement
+      acceptable_alternatives: [pronoun, zero]  # Equally orthodox
+      forbidden_values: []
+      theological_basis: "Reverence for God varies by culture; no biblical mandate for surface form."
+      translator_guidance: |
+        - CULTURAL CHOICE: Some traditions prefer "God" over "He" for reverence
+        - EQUALLY VALID: Using pronouns for deity is orthodox and common
+        - SOURCE TEXT: Hebrew/Greek frequently use pronouns/zeros for God
+        - TARGET CULTURE: Decide based on local norms, not theology
+        - NOT A DOCTRINAL ISSUE: Pronoun vs Noun does not affect God's nature
+
+    non_orthodox_alternatives_awareness: []
+
+# =============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Optional Choices)
+# =============================================================================
+
+arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # 2.1 HIGH TOPIC CONTINUITY - Same Subject, Multiple Clauses
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Discourse continuity (same subject in consecutive clauses)"
+    rationale: |
+      When the same participant continues as subject across multiple clauses,
+      the choice of NOUN vs PRONOUN vs ZERO is STYLISTIC, not meaningful.
+
+      Example: "Paul went to the synagogue. [He] preached. [He] left."
+
+      All of these are EQUALLY VALID:
+      1. "Paul went... Paul preached... Paul left." (repeated NOUN)
+      2. "Paul went... He preached... He left." (PRONOUN continuation)
+      3. "Paul went... [zero] preached... [zero] left." (ZERO in pro-drop languages)
+
+      The choice depends on:
+      - Target language typology (pro-drop vs non-pro-drop)
+      - Discourse style (formal vs colloquial)
+      - Translation tradition (more/less explicit)
+
+      This is ARBITRARY because the meaning is identical in all cases.
+
+    estimated_percentage: 70%
+    affected_languages:
+      - Pro-drop languages (Spanish, Italian, Japanese, etc.): Use ZERO or PRONOUN
+      - Non-pro-drop languages (English, French, German): Use PRONOUN
+      - Style varies by translator preference
+
+  # ---------------------------------------------------------------------------
+  # 2.2 OBJECT PRONOUNS AND CLITICS
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Object realization (direct/indirect objects)"
+    rationale: |
+      When expressing objects (not subjects), the choice between NOUN, PRONOUN,
+      CLITIC, or ZERO is almost always ARBITRARY.
+
+      Example: "I saw John" vs "I saw him"
+
+      Both are equally valid; choice depends on:
+      - Is the object discourse-new (→ NOUN) or discourse-given (→ PRONOUN)?
+      - Does the target language have clitics (Romance) or only full pronouns (English)?
+
+      This is STYLISTIC and follows discourse conventions, not theology.
+
+    estimated_percentage: 80%
+
+  # ---------------------------------------------------------------------------
+  # 2.3 POSSESSIVE CONSTRUCTIONS
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Possessor realization (his house, the man's house)"
+    rationale: |
+      Whether to use PRONOUN ("his house") vs NOUN ("the man's house") is
+      typically determined by discourse context (is possessor given or new?).
+
+      This is ARBITRARY from a theological perspective.
+
+    estimated_percentage: 90%
+
+  # ---------------------------------------------------------------------------
+  # 2.4 GENERIC AND IMPERSONAL CONSTRUCTIONS
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Generic/impersonal subjects (one, people, they)"
+    rationale: |
+      Generic subjects ("one must...", "people say...", "they claim...") vary
+      widely across languages in surface realization:
+      - Some use PRONOUN ("they", "one")
+      - Some use ZERO (no overt subject)
+      - Some use impersonal verb forms
+
+      This is ENTIRELY ARBITRARY - all express the same generic meaning.
+
+    estimated_percentage: 95%
+
+  # ---------------------------------------------------------------------------
+  # 2.5 REPORTED SPEECH ATTRIBUTION
+  # ---------------------------------------------------------------------------
+
+  - pattern: "Speech attribution (he said, Jesus said)"
+    rationale: |
+      In reported speech, whether to repeat the speaker's name (NOUN) or use
+      a pronoun/zero is STYLISTIC:
+
+      Example:
+      - "Jesus said, '...' He continued, '...' He concluded, '...'" (PRONOUN)
+      - "Jesus said, '...' Jesus continued, '...' Jesus concluded, '...'" (NOUN)
+
+      Both are equally clear and equally orthodox. Choice depends on style.
+
+    estimated_percentage: 75%
+
+# =============================================================================
+# OVERALL SUMMARY
+# =============================================================================
+
+overall_assessment:
+  theological_impact: MINIMAL
+  narrative_clarity_impact: MODERATE
+  translation_difficulty: HIGH  # Because typologies vary widely
+
+  key_insight: |
+    Surface Realization is PRIMARILY a TYPOLOGICAL feature, not a THEOLOGICAL one.
+
+    The challenge is NOT "What does God's Word say?" (that's clear from context)
+    but rather "How does the target language EXPRESS participants?"
+
+    Languages differ dramatically:
+    - English REQUIRES explicit pronouns
+    - Spanish ALLOWS pro-drop (zero subjects)
+    - Japanese PREFERS pro-drop (overt pronouns sound unnatural)
+    - Swahili USES subject prefixes (no independent pronouns)
+
+    Translators must:
+    1. Understand SOURCE language surface realization (Hebrew/Greek both pro-drop)
+    2. Understand TARGET language requirements (obligatory vs optional pronouns)
+    3. Balance FIDELITY (preserve source patterns) vs CLARITY (target language norms)
+
+    This is a LINGUISTIC challenge, not a THEOLOGICAL one.
+
+  recommended_approach: |
+    TBTA should provide:
+    1. SOURCE language annotation (what Hebrew/Greek actually used)
+    2. DISCOURSE context (Participant Tracking, Noun List Index, Referential Distance)
+    3. PREDICTED target needs (does target language require explicit marking?)
+
+    Translators then make INFORMED STYLISTIC CHOICES based on:
+    - Target language typology (pro-drop vs non-pro-drop)
+    - Target culture norms (honorifics, formality)
+    - Translation tradition (more/less explicit)
+
+    Goal: ACCURATE and NATURAL translation, not wooden literalism.

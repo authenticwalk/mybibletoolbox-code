@@ -1,0 +1,416 @@
+feature: Illocutionary Force
+default_classification: arbitrary
+theological_significance: EXISTS
+note: |
+  Illocutionary force matters theologically primarily in specific contexts where the TYPE of speech act
+  (command vs. permission, assertion vs. question, blessing vs. curse) affects doctrinal interpretation
+  or ethical application. The VAST MAJORITY of utterances are arbitrary (narrative statements, historical
+  questions, routine commands), but key passages require precision.
+
+# ==============================================================================
+# SECTION 1: NON-ARBITRARY (Theologically Critical Contexts)
+# ==============================================================================
+
+non_arbitrary_contexts:
+
+  # ----------------------------------------------------------------------------
+  # 1.1 DIVINE FIATS (Creation by Command)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 1:3-27 (unverified) - Divine creative commands "Let there be..."'
+    affected_values: [Jussive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Creation ex nihilo (God speaks world into existence)
+      - Divine sovereignty (God's word is performative, not merely descriptive)
+      - Authority of Scripture (if God's commands create, Scripture's authority is absolute)
+
+    non_arbitrary_rationale: |
+      JUSSIVE force (not declarative, not interrogative) is critical.
+      "Let there be light" (Gen 1:3) is a PERFORMATIVE COMMAND, not a prediction ("there will be light")
+      or question ("should there be light?"). The illocutionary force is constitutive of the doctrine
+      of creation by divine fiat.
+
+    christian_orthodox_position:
+      preferred_value: Jussive
+      acceptable_alternatives: []
+      forbidden_values: [Declarative, Interrogative]
+      theological_basis: |
+        Hebrew יְהִי (yehi) is 3rd person JUSSIVE ("let there be"), not indicative future.
+        God COMMANDS light into existence; He does not predict or question it.
+      translator_guidance: |
+        - REQUIRED: Use target language's JUSSIVE/IMPERATIVE construction for 3rd person commands
+        - Examples: English "let there be", Spanish subjunctive "haya", Japanese imperative あれ (are)
+        - FORBIDDEN: Declarative ("there will be"), interrogative ("should there be?")
+        - Stakes: Mistranslation to declarative = deism (God predicts, doesn't create by speaking)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Declarative prediction ("Light will exist")'
+        used_by: [Deistic interpretations]
+        christian_assessment: REJECTED - Undermines divine performative speech, reduces God to observer
+
+  # ----------------------------------------------------------------------------
+  # 1.2 TRINITARIAN COHORTATIVE (Genesis 1:26)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 1:26 (unverified) - "Let us make man in our image"'
+    affected_values: [Jussive]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Trinity (Trinitarian dialogue vs. divine council vs. plural of majesty)
+      - Christology (Is Christ included in "us"?)
+      - Creation theology (Who participates in human creation?)
+
+    non_arbitrary_rationale: |
+      JUSSIVE/HORTATIVE force (1st person plural "let us") is essential.
+      NOT imperative (2nd person - God is not commanding humanity to create themselves).
+      The COHORTATIVE form (Hebrew נַעֲשֶׂה na'aseh) indicates divine deliberation/collaboration.
+      Changing to imperative or declarative loses Trinitarian implication.
+
+    christian_orthodox_position:
+      preferred_value: Jussive
+      acceptable_alternatives: []
+      forbidden_values: [Imperative, Declarative, Interrogative]
+      theological_basis: |
+        Hebrew cohortative (1st person plural volitional) = "Let us make".
+        Orthodox interpretation: Trinitarian dialogue (Father, Son, Holy Spirit consulting).
+        Imperative would imply God commanding someone external (angels? humanity?).
+        Declarative would remove volitional/deliberative aspect.
+      translator_guidance: |
+        - REQUIRED: 1st person PLURAL hortative ("Let us...", "We shall...")
+        - CLUSIVITY: If target language has inclusive/exclusive distinction:
+          - Use INCLUSIVE (speaker + addressee) for Trinity (all persons participate)
+          - NOT exclusive (would exclude Son or Spirit)
+        - NUMBER: If target language has trial number (exactly 3), USE IT for Trinity encoding
+        - FORBIDDEN: 2nd person imperative ("You make..."), declarative ("We will make...")
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council ("Let us" = God + angels)'
+        used_by: [Jewish non-Messianic interpretation, some liberal Christians]
+        christian_assessment: REJECTED - Angels do not create (Col 1:16 - Christ created all things)
+
+      - interpretation: 'Plural of Majesty (royal "we", God alone)'
+        used_by: [Some Jewish commentators, Rashi]
+        christian_assessment: INSUFFICIENT - Possible but misses Trinitarian depth; NT reveals Trinity
+
+      - interpretation: 'Polytheism (multiple gods consulting)'
+        used_by: [Mormon/LDS theology]
+        christian_assessment: HERETICAL - Violates monotheism (Deut 6:4, Isa 44:6)
+
+  # ----------------------------------------------------------------------------
+  # 1.3 DIVINE COMMANDS vs. PERMISSIONS (Genesis 2:16-17)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 2:16-17 (unverified) - "You may eat... but you must not eat..."'
+    affected_values: [Imperative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Human freedom (permission vs. command)
+      - The Fall (Was eating fruit disobedience of command or abuse of permission?)
+      - Divine law (negative vs. positive commands)
+
+    non_arbitrary_rationale: |
+      DISTINGUISHING directive subtypes matters:
+      - Gen 2:16: "You MAY freely eat" = PERMISSION (not command to eat)
+      - Gen 2:17: "You must NOT eat" = PROHIBITION (command not to eat)
+      Conflating permission ("you may") with command ("you must") distorts theology of freedom.
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: []
+      forbidden_values: [Declarative, Interrogative]
+      theological_basis: |
+        Both permission and prohibition use imperative forms in Hebrew, but with different nuances:
+        - אָכֹל תֹּאכַל (akhol tokhel) - infinitive absolute + imperfect = emphatic permission
+        - לֹא תֹאכַל (lo tokhel) - negative + imperfect = prohibition
+        Both are DIRECTIVE force (imperatives), but different directive types.
+      translator_guidance: |
+        - Gen 2:16: Use PERMISSIVE imperative ("you may eat", "feel free to eat")
+        - Gen 2:17: Use PROHIBITIVE imperative ("do not eat", "you must not eat")
+        - Maintain distinction: Permission allows freedom; prohibition restricts it
+        - Some languages grammaticalize permission (modal verbs "may", "can")
+
+    non_orthodox_alternatives_awareness: []
+
+  # ----------------------------------------------------------------------------
+  # 1.4 BLESSINGS vs. COMMANDS (Genesis 1:28)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 1:28 (unverified) - "Be fruitful and multiply"'
+    affected_values: [Imperative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Marriage and sexuality (Command or blessing?)
+      - Birth control ethics (Is procreation obligatory or optional?)
+      - Cultural mandate (Subduing earth - command or gift?)
+
+    non_arbitrary_rationale: |
+      IMPERATIVE force is clear (Hebrew imperatives פְּרוּ וּרְבוּ pəru urvu "be fruitful, multiply").
+      However, INTERPRETATION varies:
+      - As COMMAND: Procreation is moral obligation
+      - As BLESSING: Procreation is gift/enablement, not obligation
+      Illocutionary force is imperative, but pragmatic function debated.
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: []
+      forbidden_values: [Declarative, Interrogative, Jussive]
+      theological_basis: |
+        Hebrew uses 2nd person plural IMPERATIVES (פְּרוּ וּרְבוּ).
+        Christian orthodox views differ on interpretation:
+        - Catholic/traditional: Command (procreation is purpose of marriage)
+        - Protestant/moderate: Blessing-command (God enables and authorizes procreation)
+        - Liberal Protestant: Primarily blessing (procreation optional)
+      translator_guidance: |
+        - USE imperative form (maintains Biblical text's illocutionary force)
+        - Allow interpretive flexibility (notes can explain command vs. blessing debate)
+        - Do NOT soften to declarative ("you will be fruitful") - loses directive force
+        - Context: Follows blessing (1:27), so imperative may function as BLESSING-COMMAND
+
+    non_orthodox_alternatives_awareness: []
+
+  # ----------------------------------------------------------------------------
+  # 1.5 RHETORICAL QUESTIONS (Teaching/Rebuke)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 4:9 (unverified) - "Am I my brother''s keeper?" (Cain''s evasion)'
+    affected_values: [Interrogative]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Human responsibility (Brother's keeper obligation)
+      - Sin and evasion (Cain's guilt)
+
+    non_arbitrary_rationale: |
+      INTERROGATIVE form (question syntax) but RHETORICAL function (implied assertion).
+      Cain's question = deflection/denial, not genuine inquiry.
+      Illocutionary force: Interrogative (form) but Declarative (function: "I'm not responsible").
+      Not critical to doctrine, but affects interpretation of Cain's attitude.
+
+    christian_orthodox_position:
+      preferred_value: Interrogative
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: |
+        Hebrew interrogative (prefix הֲ ha- implied or intonation).
+        Rhetorical question expressing DENIAL/EVASION.
+        Translation should preserve interrogative form (allows readers to discern evasion).
+      translator_guidance: |
+        - KEEP interrogative form ("Am I my brother's keeper?")
+        - Do NOT convert to declarative ("I am not my brother's keeper")
+        - Footnote may clarify: "Rhetorical question implying denial"
+        - Some languages have rhetorical question particles (Korean -리요, Mandarin 呢)
+
+    non_orthodox_alternatives_awareness: []
+
+  # ----------------------------------------------------------------------------
+  # 1.6 TEN COMMANDMENTS (Apodictic Law)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Exodus 20:1-17 (unverified) - Ten Commandments "You shall not..."'
+    affected_values: [Imperative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Divine law (Absolute moral commands from God)
+      - Ethics (Obligatory vs. advisory)
+      - Authority of Scripture
+
+    non_arbitrary_rationale: |
+      IMPERATIVE force (prohibitions and commands) is ESSENTIAL.
+      Weakening to declarative ("you will not...") or interrogative ("should you not...?")
+      undermines absolute authority of divine law.
+      These are APODICTIC commands (absolute, not conditional).
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: []
+      forbidden_values: [Declarative, Interrogative, Jussive]
+      theological_basis: |
+        Hebrew לֹא (lo') + imperfect functions as PROHIBITION (negative imperative).
+        "You shall not murder" (לֹא תִּרְצָח) is absolute command, not prediction.
+        Imperative force = moral obligation, unchanging law.
+      translator_guidance: |
+        - REQUIRED: Imperative/prohibitive forms ("You shall not...", "Do not...")
+        - Maintain AUTHORITY and ABSOLUTENESS
+        - Some languages use future tense with imperative force (Spanish "No matarás")
+        - FORBIDDEN: Declarative future ("You won't murder"), interrogative ("Will you not murder?")
+        - FORBIDDEN: Softening to suggestion ("It would be better not to...")
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Declarative predictions ("You will not murder" as consequence of faith)'
+        used_by: [Some antinomian interpretations]
+        christian_assessment: REJECTED - Reduces law to description, loses moral imperative
+
+  # ----------------------------------------------------------------------------
+  # 1.7 JESUS' COMMANDS (Great Commission, etc.)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Matthew 28:19-20 (unverified) - "Go and make disciples..."'
+    affected_values: [Imperative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Mission and evangelism (Command or option?)
+      - Discipleship (Obligatory or voluntary?)
+      - Church authority
+
+    non_arbitrary_rationale: |
+      IMPERATIVE force (Greek aorist imperative πορευθέντες poreuthentes "go",
+      present imperative μαθητεύσατε mathēteusate "make disciples") is essential.
+      This is the GREAT COMMISSION - authoritative command from resurrected Christ.
+      Softening to suggestion ("Perhaps you could make disciples...") undermines missionary mandate.
+
+    christian_orthodox_position:
+      preferred_value: Imperative
+      acceptable_alternatives: []
+      forbidden_values: [Declarative, Interrogative, Jussive]
+      theological_basis: |
+        Greek imperatives (aorist participle πορευθέντες + aorist imperative μαθητεύσατε).
+        Aorist = decisive action; present imperative = ongoing action.
+        Christian orthodoxy: This is COMMAND from Lord, not optional suggestion.
+      translator_guidance: |
+        - REQUIRED: Imperative forms ("Go... make disciples... baptize... teach...")
+        - Maintain AUTHORITY (Christ's command to church)
+        - Some languages require politeness marking even for divine commands (Japanese -nasai, Korean -seyo)
+        - BALANCE: Authoritative yet respectful register (not harsh, but not weak)
+
+    non_orthodox_alternatives_awareness: []
+
+  # ----------------------------------------------------------------------------
+  # 1.8 PROMISES vs. PREDICTIONS (God's Covenants)
+  # ----------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 12:2-3 (unverified) - "I will make you a great nation..."'
+    affected_values: [Declarative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Covenant theology (Promise vs. prediction)
+      - God's faithfulness (Commitment vs. forecast)
+
+    non_arbitrary_rationale: |
+      DECLARATIVE illocutionary force, but FUNCTION varies:
+      - PROMISE (commissive): God commits to future action
+      - PREDICTION (assertive): God forecasts future event
+      Promises create obligations; predictions merely inform.
+      Theologically: God's "I will..." = PROMISE (covenant commitment), not mere prediction.
+
+    christian_orthodox_position:
+      preferred_value: Declarative
+      acceptable_alternatives: []
+      forbidden_values: [Interrogative, Imperative, Jussive]
+      theological_basis: |
+        Hebrew imperfect 1st person (אֶעֶשְׂךָ e'eskha "I will make you").
+        Context: Covenantal promise (Gen 12:1-3 is Abrahamic covenant).
+        Illocutionary force: Declarative (syntactic), but COMMISSIVE (Searle's taxonomy - promise).
+        God's "I will" = performative promise, not prediction.
+      translator_guidance: |
+        - USE declarative form ("I will make you...")
+        - PRESERVE promissory sense in target language:
+          - Some languages distinguish promise from prediction (modal verbs, particles)
+          - Japanese: します (shimasu) "will do" vs. 約束します (yakusoku shimasu) "promise to do"
+        - CONTEXT MATTERS: Covenantal declarations = promises, not predictions
+
+    non_orthodox_alternatives_awareness: []
+
+# ==============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Contextual - No Theological Stakes)
+# ==============================================================================
+
+arbitrary_contexts:
+
+  - pattern: "Narrative declaratives (historical statements)"
+    rationale: |
+      The vast majority of Biblical text is NARRATIVE DECLARATIVE: "Abraham went...", "David said...",
+      "Jesus healed...". These statements convey historical fact; illocutionary force (declarative)
+      is obvious and non-negotiable. No doctrinal implications from force choice.
+    estimated_percentage: 70%
+    examples:
+      - "Abraham journeyed to Egypt" (Gen 12:10)
+      - "David played the lyre" (1 Sam 16:23)
+      - "Jesus wept" (John 11:35)
+
+  - pattern: "Routine questions (information-seeking interrogatives)"
+    rationale: |
+      Most questions in dialogue are GENUINE INTERROGATIVES (not rhetorical): "Where are you going?",
+      "Who is this?", "What do you want?". Illocutionary force (interrogative) is clear from context.
+      No theological stakes in marking these as interrogative vs. something else.
+    estimated_percentage: 8%
+    examples:
+      - "Where is your brother?" (Gen 4:9 - God's question, not Cain's rhetorical response)
+      - "What do you seek?" (John 1:38)
+      - "Who do you say that I am?" (Matt 16:15)
+
+  - pattern: "Routine commands (non-theological imperatives)"
+    rationale: |
+      Many imperatives in narrative have no theological weight: "Sit down", "Bring me water",
+      "Go to the city". These are mundane directives. Illocutionary force (imperative) is clear;
+      no doctrinal implications from how forcefully they're translated.
+    estimated_percentage: 10%
+    examples:
+      - "Bring me some game" (Gen 27:3)
+      - "Fill the jars with water" (John 2:7)
+      - "Go into the village" (Matt 21:2)
+
+  - pattern: "Dialogue questions and responses (conversational interrogatives)"
+    rationale: |
+      Ordinary conversational questions between humans: "How are you?", "Where is he?", "When did
+      this happen?". These are pragmatically straightforward; no theological nuance to illocutionary
+      force choice.
+    estimated_percentage: 5%
+
+  - pattern: "Descriptive speech (reported speech, quotations)"
+    rationale: |
+      Quotations of what people said: "He said, 'I am hungry'". The illocutionary force of the
+      embedded quote is typically clear from context. No theological stakes.
+    estimated_percentage: 5%
+
+  - pattern: "Poetic/Wisdom literature non-theological assertions"
+    rationale: |
+      Much of Proverbs, Psalms (non-Messianic), Ecclesiastes consists of declarative assertions
+      about life: "A gentle answer turns away wrath", "The sun rises and sets". These are declarative
+      in force; no theological implication from force choice (though CONTENT may be theological).
+    estimated_percentage: 2%
+
+# ==============================================================================
+# SUMMARY STATISTICS (Estimated)
+# ==============================================================================
+
+estimated_distribution:
+  arbitrary: 85%
+  non_arbitrary_low: 10%
+  non_arbitrary_medium: 3%
+  non_arbitrary_high: 1.5%
+  non_arbitrary_critical: 0.5%
+
+note_on_estimates: |
+  These percentages are ESTIMATED based on genre distribution in Scripture and internal knowledge
+  of Biblical content. Actual frequencies will be calculated in Stage 2 (Analysis) using real data.
+  The estimates are marked as (unverified) per instructions.
+
+# ==============================================================================
+# KEY TAKEAWAYS FOR TRANSLATORS
+# ==============================================================================
+
+translator_guidance_summary: |
+  1. DEFAULT ASSUMPTION: Most illocutionary force choices are ARBITRARY (narrative flow, routine dialogue).
+     Translators can use natural target language forms without theological concern.
+
+  2. HIGH-STAKES CONTEXTS: Watch for:
+     - Divine creative commands (Gen 1) - JUSSIVE force essential
+     - Trinitarian references (Gen 1:26) - HORTATIVE/COHORTATIVE essential
+     - Ten Commandments and divine law - IMPERATIVE force essential
+     - Great Commission and Jesus' commands - IMPERATIVE force essential
+     - Blessings vs. commands - context determines interpretation
+     - Rhetorical questions - preserve interrogative form, note rhetorical function
+
+  3. COMMANDS vs. PERMISSIONS: Distinguish carefully (Gen 2:16-17).
+
+  4. PROMISES vs. PREDICTIONS: Context (covenantal vs. prophetic) affects interpretation,
+     but illocutionary force remains declarative.
+
+  5. INDIRECT SPEECH ACTS: Preserve surface form (interrogative) even if primary function is directive.
+
+  6. TARGET LANGUAGE REQUIREMENTS: Some languages MUST mark illocutionary force (Japanese, Korean,
+     Mandarin particles). Don't assume English intonation-only approach is universal.
+
+# ==============================================================================
+# END OF THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml
+# ==============================================================================

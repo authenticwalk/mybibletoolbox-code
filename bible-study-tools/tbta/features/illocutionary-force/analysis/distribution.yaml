@@ -1,0 +1,23 @@
+# Distribution of Illocutionary Force values from TBTA extraction
+# Total entries: 72,505
+# Source: tbta-extract.jsonl
+
+distribution:
+  Declarative: 67037                        # 92.46%
+  Imperative: 3955                          # 5.45%
+  Content Interrogative: 838                # 1.16%
+  Yes-No Interrogative: 552                 # 0.76%
+  Suggestive 'let's': 71                    # 0.10%
+  Jussive: 34                               # 0.05%
+  Imperative with emphasized Agent: 18      # 0.02%
+
+total_entries: 72505
+
+notes: |
+  - Highly imbalanced dataset with Declarative dominating (92.46%)
+  - Imperative is the second most common at 5.45%
+  - Rare values (< 100 entries each):
+    - Suggestive 'let's': 71 entries
+    - Jussive: 34 entries
+    - Imperative with emphasized Agent: 18 entries
+  - These rare values will need special attention during dataset balancing

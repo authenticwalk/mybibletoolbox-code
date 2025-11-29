@@ -1,0 +1,479 @@
+feature: Polarity
+default_classification: arbitrary # Most polarity choices are stylistic/contextual
+theological_significance: EXISTS # Polarity affects critical doctrines in specific contexts
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+
+non_arbitrary_contexts:
+
+  # ============================================================================
+  # 1. DIVINE COMMANDS (Ten Commandments and Prohibitions)
+  # ============================================================================
+
+  - verse_pattern: 'Exodus 20:1-17 (Ten Commandments) (unverified)'
+    affected_values: [Negative]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Divine Law (moral commands)
+      - Covenant obligations
+      - Sin definition (transgression of commands)
+
+    non_arbitrary_rationale: |
+      The Ten Commandments are PROHIBITIONS (negative imperatives). Polarity
+      is theologically essential:
+      - "You shall NOT..." defines what is forbidden
+      - Wrong polarity = reversed command (heretical)
+      - Example: "You shall have other gods" vs. "You shall NOT have other gods"
+
+      Polarity determines the CONTENT of divine law. This is non-arbitrary.
+
+    christian_orthodox_position:
+      preferred_value: Negative (prohibitive)
+      acceptable_alternatives: [] # No alternatives; must be negative
+      forbidden_values: [Affirmative] # Affirmative reverses the command
+      theological_basis: 'God commands what is forbidden (negative) and what is required (positive).'
+      translator_guidance: |
+        - CRITICAL: Preserve negative polarity in all Ten Commandments
+        - Use target language PROHIBITIVE form (not just declarative negative)
+        - Ensure emphatic force (Hebrew lo + imperfect = strong prohibition)
+        - Examples:
+          - Exodus 20:3: "You shall NOT have other gods"
+          - Exodus 20:13: "You shall NOT murder"
+        - FORBIDDEN: Weakening to suggestions ("Please don't...") or reversing polarity
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Antinomianism (law abolished, commands optional)'
+        used_by: [Some hyper-grace movements]
+        christian_assessment: REJECTED (Jesus fulfilled law, did not abolish; Matt 5:17)
+      - interpretation: 'Legalism (salvation by law-keeping)'
+        used_by: [Some Judaizers, legalistic sects]
+        christian_assessment: REJECTED (Salvation by grace through faith, not works; Eph 2:8-9)
+
+  # ============================================================================
+  # 2. DIVINE PROMISES (God's Faithfulness)
+  # ============================================================================
+
+  - verse_pattern: 'Hebrews 13:5, Joshua 1:5 (God will never leave/forsake) (unverified)'
+    affected_values: [Emphatic Negative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Providence (God's care)
+      - Assurance of salvation
+      - Perseverance of the saints
+
+    non_arbitrary_rationale: |
+      Greek uses FIVE NEGATIVES (ou mē...oud' ou mē) = strongest possible negation.
+      English "I will never leave you" UNDERSTATES the emphatic force.
+
+      Theological significance:
+      - God's faithfulness is ABSOLUTE (not probabilistic)
+      - Assurance depends on EMPHATIC promise
+      - Weak translation = weakened assurance
+
+      This is non-arbitrary: emphatic negation strengthens the promise.
+
+    christian_orthodox_position:
+      preferred_value: Emphatic Negative
+      acceptable_alternatives: [Negative] # Standard negative acceptable but less precise
+      forbidden_values: [Affirmative, weakened negative like "probably won't"]
+      theological_basis: 'God is utterly faithful; His promises are unbreakable (Num 23:19).'
+      translator_guidance: |
+        - FIRST CHOICE: Use STRONGEST negative in target language
+        - SECOND CHOICE: Multiple negatives (if target allows negative concord)
+        - THIRD CHOICE: Lexical intensifiers ("never, ever," "under no circumstances")
+        - FORBIDDEN: Weak translation ("I won't leave you" without emphasis)
+        - Note: Greek has 5 negatives; preserve emphatic force
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Conditional security (God may abandon believers)'
+        used_by: [Arminian extreme interpretations]
+        christian_assessment: DEBATED (Calvinism affirms eternal security; Arminianism allows apostasy)
+      - interpretation: 'Universalism (God saves all regardless)'
+        used_by: [Universalists]
+        christian_assessment: REJECTED (Salvation requires faith; not all are saved; Matt 7:13-14)
+
+  # ============================================================================
+  # 3. CHRISTOLOGICAL EXCLUSIVITY (Jesus as Only Savior)
+  # ============================================================================
+
+  - verse_pattern: 'John 14:6 (No one comes to Father except through me) (unverified)'
+    affected_values: [Negative quantifier]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Christology (uniqueness of Christ)
+      - Soteriology (salvation through Christ alone)
+      - Exclusivism vs. inclusivism/pluralism
+
+    non_arbitrary_rationale: |
+      "No one" (oudeis) = universal negative quantifier.
+      "Except through me" = exclusive condition.
+
+      Logical structure: ∀x (x comes to Father → x comes through Jesus)
+
+      Wrong polarity or weakened quantifier = heresy:
+      - "Some can come without Jesus" is pluralism
+      - "Many ways to God" denies Christ's uniqueness
+
+      This is non-arbitrary: affects core doctrine of salvation.
+
+    christian_orthodox_position:
+      preferred_value: Negative (universal quantifier)
+      acceptable_alternatives: [] # No alternatives
+      forbidden_values: [Affirmative, weakened to "few" or "most"]
+      theological_basis: 'Jesus is the ONLY mediator between God and humanity (1 Tim 2:5); salvation in no other name (Acts 4:12).'
+      translator_guidance: |
+        - CRITICAL: Preserve universal negative "NO ONE"
+        - Ensure exception clause "EXCEPT through me" is clear
+        - Logical structure: Universal negative + exclusive condition
+        - FORBIDDEN:
+          - "Few come to Father except through me" (weakens universal claim)
+          - "Most people need Jesus" (implies some don't)
+          - Any translation allowing multiple paths to God
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Religious pluralism (all religions lead to God)'
+        used_by: [Liberal theology, interfaith movements]
+        christian_assessment: HERETICAL (Denies Christ's uniqueness; Acts 4:12)
+      - interpretation: 'Inclusivism (Christ saves without explicit faith)'
+        used_by: [Some Catholic/evangelical inclusivists]
+        christian_assessment: DEBATED (Orthodoxy affirms explicit faith; inclusivism allows salvation through general revelation)
+      - interpretation: 'Universalism (all saved through Christ)'
+        used_by: [Universalists]
+        christian_assessment: REJECTED (Faith is required; Matt 7:13-14)
+
+  # ============================================================================
+  # 4. SIN AND RIGHTEOUSNESS (Moral Absolutes)
+  # ============================================================================
+
+  - verse_pattern: '1 John 1:8 (If we say we have no sin, we deceive ourselves) (unverified)'
+    affected_values: [Negative in conditional]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Hamartiology (doctrine of sin)
+      - Anthropology (human nature post-Fall)
+      - Justification (need for Christ's atonement)
+
+    non_arbitrary_rationale: |
+      "If we say we have NO sin" = denying sinfulness
+      Result: "we deceive ourselves" and "truth is not in us"
+
+      Polarity determines theological claim:
+      - Negative ("no sin") = FALSE claim (self-deception)
+      - Affirmative ("we have sin") = TRUE claim
+
+      Wrong polarity reverses the theology of sin.
+
+    christian_orthodox_position:
+      preferred_value: Negative (in false claim context)
+      acceptable_alternatives: [] # No alternatives
+      forbidden_values: [Affirmative in wrong context]
+      theological_basis: 'All have sinned (Rom 3:23); human nature is fallen (Gen 3; Eph 2:1-3).'
+      translator_guidance: |
+        - CRITICAL: Preserve negative in "no sin" claim
+        - Context: This is a FALSE claim (self-deception)
+        - True claim (v. 9): "If we confess our sins" (affirmative)
+        - Polarity distinguishes true from false claims
+        - FORBIDDEN: Reversing polarity confuses the theology
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Sinless perfection (believers can be sinless)'
+        used_by: [Some Wesleyan holiness movements, perfectionist sects]
+        christian_assessment: REJECTED (1 John 1:8 explicitly denies this; all sin even after salvation)
+      - interpretation: 'Denial of original sin (humans born neutral/good)'
+        used_by: [Pelagianism]
+        christian_assessment: HERETICAL (Rom 5:12; Psalm 51:5; all inherit sin nature)
+
+  # ============================================================================
+  # 5. RESURRECTION AND ETERNAL LIFE
+  # ============================================================================
+
+  - verse_pattern: 'John 11:25-26 (Whoever believes in me will never die) (unverified)'
+    affected_values: [Emphatic Negative]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Resurrection
+      - Eternal life
+      - Eschatology (final state of believers)
+
+    non_arbitrary_rationale: |
+      Greek: ou mē apothanē (emphatic negative: "will absolutely not die")
+
+      Theological claim: Believers have ETERNAL life (spiritual death negated)
+
+      Polarity significance:
+      - Emphatic negative = absolute promise
+      - Standard negative = weakened promise
+      - Affirmative = reverses promise (heretical)
+
+      This is non-arbitrary: affects doctrine of eternal life.
+
+    christian_orthodox_position:
+      preferred_value: Emphatic Negative
+      acceptable_alternatives: [Negative] # Standard negative acceptable
+      forbidden_values: [Affirmative]
+      theological_basis: 'Believers have eternal life; will never perish (John 10:28); resurrection assured (1 Cor 15).'
+      translator_guidance: |
+        - FIRST CHOICE: Emphatic negative ("will NEVER die")
+        - SECOND CHOICE: Standard negative with intensifier ("will not die forever")
+        - Context: "die" = spiritual/eternal death (not physical death)
+        - FORBIDDEN: Weak negation implying uncertainty
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Soul sleep (no conscious existence after death)'
+        used_by: [Seventh-day Adventists, Jehovah's Witnesses]
+        christian_assessment: REJECTED (Luke 23:43; Phil 1:23; conscious intermediate state)
+      - interpretation: 'Annihilation (unbelievers cease to exist)'
+        used_by: [Some evangelicals, Jehovah's Witnesses]
+        christian_assessment: DEBATED (Orthodox affirms eternal conscious punishment; Matt 25:46)
+
+  # ============================================================================
+  # 6. CREATION EX NIHILO
+  # ============================================================================
+
+  - verse_pattern: 'Genesis 1:1-2 (Before creation, nothing existed except God) (unverified)'
+    affected_values: [Negative in theological inference]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Creation ex nihilo (out of nothing)
+      - God's sovereignty and eternality
+      - Distinction Creator-creature
+
+    non_arbitrary_rationale: |
+      While Genesis 1:1 is affirmative ("In beginning, God created..."),
+      theological inference is negative: "There was NOTHING before creation."
+
+      Creation ex nihilo (from nothing) vs. ex materia (from pre-existing matter):
+      - Ex nihilo: God created from nothing (orthodox)
+      - Ex materia: God shaped pre-existing chaos (Gnosticism, some ancient views)
+
+      Polarity in related verses (e.g., "darkness over deep" Gen 1:2) affects interpretation.
+
+    christian_orthodox_position:
+      preferred_value: Negative (theological inference of "no pre-existing matter")
+      acceptable_alternatives: [] # Inference is fixed
+      forbidden_values: [Affirmative implying pre-existing matter]
+      theological_basis: 'God created all things from nothing (Heb 11:3; Rom 4:17); nothing pre-exists God.'
+      translator_guidance: |
+        - Genesis 1:1 is affirmative, but implies negative (no pre-existing creation)
+        - Be cautious with Gen 1:2 "formless and empty" (tohu wa-bohu)
+          - NOT "chaotic matter that pre-existed"
+          - IS "initial state before ordering"
+        - Related negatives: "There was no..." (e.g., no light before Day 1)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Gnosticism (God shaped pre-existing chaotic matter)'
+        used_by: [Gnostics, some Platonic influences]
+        christian_assessment: HERETICAL (God created all; nothing pre-exists Him)
+      - interpretation: 'Dualism (eternal matter co-exists with God)'
+        used_by: [Zoroastrianism influence, some heresies]
+        christian_assessment: HERETICAL (God alone is eternal; created matter is contingent)
+
+  # ============================================================================
+  # 7. LAW VS. GRACE (Not Under Law)
+  # ============================================================================
+
+  - verse_pattern: 'Romans 6:14, Galatians 3:23-25 (Not under law but under grace) (unverified)'
+    affected_values: [Negative]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Justification (law vs. grace)
+      - Covenant theology (Old vs. New Covenant)
+      - Sanctification (role of law)
+
+    non_arbitrary_rationale: |
+      "You are NOT under law but under grace" (Rom 6:14)
+
+      Polarity determines soteriological framework:
+      - Negative ("not under law") = freedom from law as means of justification
+      - Affirmative ("under law") = legalism (salvation by works)
+
+      Wrong polarity = wrong gospel.
+
+    christian_orthodox_position:
+      preferred_value: Negative ("not under law")
+      acceptable_alternatives: [] # No alternatives
+      forbidden_values: [Affirmative ("under law")]
+      theological_basis: 'Justification by faith, not works of law (Rom 3:28; Gal 2:16); law reveals sin, grace saves (Rom 7:7; Eph 2:8-9).'
+      translator_guidance: |
+        - CRITICAL: Preserve negative "NOT under law"
+        - Context: "Under law" = law as means of justification (rejected)
+        - Does NOT mean law is abolished (Matt 5:17)
+        - Means: law does not save; grace saves
+        - FORBIDDEN: Weakening negative (implies law-keeping saves)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Legalism (salvation by law-keeping)'
+        used_by: [Judaizers in early church, some legalistic groups]
+        christian_assessment: HERETICAL (Gal 2:16; salvation by grace, not law)
+      - interpretation: 'Antinomianism (law abolished, no moral obligations)'
+        used_by: [Some hyper-grace groups]
+        christian_assessment: REJECTED (Law still reveals God's will; we uphold law through faith; Rom 3:31)
+
+  # ============================================================================
+  # 8. UNFORGIVABLE SIN (Blasphemy Against Holy Spirit)
+  # ============================================================================
+
+  - verse_pattern: 'Matthew 12:31-32, Mark 3:28-29 (Blasphemy against Spirit will not be forgiven) (unverified)'
+    affected_values: [Negative (emphatic)]
+    theological_stakes: CRITICAL
+    affected_doctrines:
+      - Pneumatology (Holy Spirit)
+      - Hamartiology (unforgivable sin)
+      - Soteriology (limits of forgiveness)
+
+    non_arbitrary_rationale: |
+      "Will NOT be forgiven" (ou mē aphethēsetai) = emphatic future negative
+
+      Polarity determines severity:
+      - Emphatic negative = absolute unforgiveness
+      - Standard negative = serious but not absolute
+      - Affirmative = reverses doctrine (heretical)
+
+      This is non-arbitrary: defines the ONE unforgivable sin.
+
+    christian_orthodox_position:
+      preferred_value: Emphatic Negative
+      acceptable_alternatives: [Negative] # Standard negative acceptable
+      forbidden_values: [Affirmative]
+      theological_basis: 'Blasphemy against Holy Spirit = persistent rejection of Spirit's witness to Christ; unforgivable because unrepented (Matt 12:31-32; Mark 3:29).'
+      translator_guidance: |
+        - FIRST CHOICE: Emphatic negative ("will NEVER be forgiven")
+        - SECOND CHOICE: Strong negative ("will not be forgiven, ever")
+        - Context: This is the ONLY unforgivable sin (contrast: "all other sins will be forgiven")
+        - FORBIDDEN: Weak negation implying possible forgiveness
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'All sins forgivable (no unforgivable sin)'
+        used_by: [Universalists, some liberal theologians]
+        christian_assessment: REJECTED (Matt 12:31-32 explicitly teaches unforgivable sin)
+      - interpretation: 'Blasphemy is any criticism of church/clergy'
+        used_by: [Some authoritarian church traditions]
+        christian_assessment: REJECTED (Blasphemy against Spirit is specific: attributing Spirit's work to Satan; Matt 12:24-28)
+
+# ============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+# ============================================================================
+
+arbitrary_contexts:
+
+  - pattern: "Narrative negations (e.g., 'He did not go to the city')"
+    rationale: 'Polarity is factual/contextual, not theologically significant. Choice is determined by narrative, not doctrine.'
+    estimated_percentage: 70%
+
+  - pattern: "Descriptive negations (e.g., 'There was no water in the well')"
+    rationale: 'Factual description. Polarity determined by reality described, not theology.'
+    estimated_percentage: 10%
+
+  - pattern: "Rhetorical questions with implied negation (e.g., 'Is there anyone who...?' = 'No one...')"
+    rationale: 'Stylistic choice. Some languages prefer rhetorical questions, others direct negation. Meaning same.'
+    estimated_percentage: 5%
+
+  - pattern: "Travel/movement negations (e.g., 'They did not go to Jerusalem')"
+    rationale: 'Historical fact. Polarity is neutral (could be affirmative or negative depending on history).'
+    estimated_percentage: 5%
+
+  - pattern: "Temporal negations (e.g., 'He had not yet arrived')"
+    rationale: 'Timeline description. Theologically neutral.'
+    estimated_percentage: 5%
+
+  - pattern: "Negative responses in dialogue (e.g., 'No, I will not do this')"
+    rationale: 'Character speech. Polarity reflects character's decision, not doctrinal truth (unless character is God/Jesus).'
+    estimated_percentage: 3%
+
+  - pattern: "Existential negations for non-theological entities (e.g., 'There was no food')"
+    rationale: 'Factual description. Theologically neutral.'
+    estimated_percentage: 2%
+
+# ============================================================================
+# SUMMARY
+# ============================================================================
+
+summary:
+  total_arbitrary_percentage: 85%
+  total_non_arbitrary_percentage: 15%
+
+  non_arbitrary_categories:
+    - Divine commands (prohibitions)
+    - Divine promises (God's faithfulness)
+    - Christological exclusivity claims
+    - Soteriological statements (law vs. grace, unforgivable sin)
+    - Doctrinal absolutes (sin, resurrection, creation)
+
+  arbitrary_categories:
+    - Narrative facts
+    - Descriptions
+    - Historical events
+    - Temporal sequences
+    - Character dialogue (non-divine)
+
+  key_insight: |
+    Polarity is ARBITRARY in ~85% of contexts (descriptive/narrative).
+    Polarity is NON-ARBITRARY in ~15% of contexts where it affects:
+    - Divine commands (positive/negative determines obligation)
+    - Divine promises (emphatic negation strengthens assurance)
+    - Exclusivity claims (negation defines uniqueness of Christ)
+    - Soteriological doctrines (law vs. grace, forgiveness)
+
+    CRITICAL: Emphatic negation (Greek ou mē) is systematically under-translated
+    in English. This affects promises, prohibitions, and exclusivity claims.
+
+    TBTA should add "Emphatic Negative" value (currently only has "Emphatic Affirmative").
+
+# ============================================================================
+# TRANSLATION GUIDANCE SUMMARY
+# ============================================================================
+
+translator_priorities:
+
+  critical_priority:
+    - Ten Commandments (Exodus 20) → Must use prohibitive form
+    - Christological exclusivity (John 14:6) → Must preserve universal negative
+    - Unforgivable sin (Matt 12:31-32) → Must use emphatic negative
+    - Law vs. grace (Rom 6:14, Gal 3:23-25) → Must preserve "not under law"
+
+  high_priority:
+    - Divine promises (Heb 13:5) → Use strongest negative in target language
+    - Sin and righteousness (1 John 1:8) → Preserve polarity to distinguish true/false claims
+    - Resurrection (John 11:25-26) → Use emphatic negative for eternal life promise
+
+  medium_priority:
+    - Creation negations (Gen 1:2) → Be cautious not to imply pre-existing matter
+    - Prophetic negations → Preserve polarity for divine judgment/blessing
+
+  low_priority:
+    - Narrative negations → Follow source polarity, but stylistic variation acceptable
+    - Descriptive negations → Factual accuracy more important than polarity emphasis
+
+# ============================================================================
+# RECOMMENDATIONS FOR TBTA ENHANCEMENT
+# ============================================================================
+
+recommendations:
+
+  - recommendation_1:
+      issue: "TBTA has 'Emphatic Affirmative' but NO 'Emphatic Negative'"
+      solution: "Add {Polarity: Emphatic Negative} value for verbs"
+      rationale: "Greek ou mē (double negative) is most emphatic structure in NT; must be marked"
+      examples: ["Hebrews 13:5 (5 negatives)", "John 11:26 (ou mē apothanē)", "Matthew 5:18 (ou mē parelthē)"]
+
+  - recommendation_2:
+      issue: "Prohibitives not distinguished from declarative negatives"
+      solution: "Cross-reference {Mood: Imperative} + {Polarity: Negative} for prohibitives"
+      rationale: "Many languages use different negators for prohibitions vs. declaratives"
+      examples: ["Hebrew lo (declarative) vs. al (prohibitive)", "Indonesian tidak vs. jangan"]
+
+  - recommendation_3:
+      issue: "Scope of negation not marked (constituent vs. sentential)"
+      solution: "Add {Negation Scope: Sentential | Constituent} sub-feature"
+      rationale: "Hebrew lo position varies; affects meaning (e.g., 'Not all' vs. 'All...not')"
+      examples: ["Genesis: lo kol ha-am (not all people) vs. kol ha-am lo (all people...not)"]
+
+  - recommendation_4:
+      issue: "Negative concord not flagged"
+      solution: "Mark clauses with multiple negative elements"
+      rationale: "Hebrew/Greek use negative concord (emphatic); English does not; affects translation"
+      examples: ["Hebrew lo + negative pronoun", "Greek ou mē double negative"]
+
+# ============================================================================
+# END OF DOCUMENT
+# ============================================================================

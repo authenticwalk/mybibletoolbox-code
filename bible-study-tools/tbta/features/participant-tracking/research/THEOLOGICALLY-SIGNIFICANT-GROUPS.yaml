@@ -1,0 +1,337 @@
+feature: participant-tracking
+default_classification: arbitrary # Default: choice is stylistic/contextual
+theological_significance: EXISTS # Flag: Does this ever matter doctrinally?
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Critical)
+
+non_arbitrary_contexts:
+
+  # 1a. TRINITY REFERENCES (Theologically Critical)
+  - verse_pattern: 'Genesis 1:26 - "Let us make man in our image" (unverified)'
+    affected_values: [presupposed, routine]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God - Three Persons, One Essence)
+      - Creation theology
+      - Imago Dei (image of God)
+
+    # Why is this non-arbitrary?
+    non_arbitrary_rationale: |
+      Participant tracking status affects how "us/our" is interpreted:
+      - Marked as PRESUPPOSED: Implies culturally known referent (Trinity)
+      - Marked as FIRST MENTION: Implies new revelation of divine plurality
+      - TBTA marks as "Routine" but this is theologically problematic (Gen 1:1 is first verse)
+
+      Interaction with Number feature:
+      - Trial Number (exactly 3) + Participant Tracking = Explicit Trinity encoding
+      - Must avoid Dual (only 2 = Arianism/Binitarianism - HERETICAL)
+      - Plural acceptable but less precise than Trial
+
+      Presupposition vs. Textual First Mention:
+      - God culturally presupposed (readers know who God is)
+      - But textually first mention in Genesis 1:1
+      - Participant tracking choice affects article/topic marker use in target languages
+
+    # What is the Orthodox view?
+    christian_orthodox_position:
+      preferred_value: presupposed
+      acceptable_alternatives: [first_mention, routine]
+      forbidden_values: [] # No PT value itself is forbidden, but must not obscure Trinity
+      theological_basis: 'God is eternally existent Trinity: One Essence, Three Persons (Father, Son, Holy Spirit). Genesis 1:26 reveals divine plurality consistent with Trinity.'
+      translator_guidance: |
+        - If target language distinguishes presupposed vs. first-textual-mention: Use PRESUPPOSED (God known to readers even before text begins)
+        - If target language requires topic marker for established participants: May use topic marker even at Gen 1:1 (presupposition)
+        - If target language requires definite article for known entities: Use definite article even at first textual mention
+        - Ensure "us/our" clearly refers to God (not angels, not divine council of separate beings)
+        - Coordinate with Number feature to ensure Trial (3) or Plural, never Dual (2)
+
+    # What are the alternatives/heresies?
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels create together)'
+        used_by: [Jewish non-Messianic interpretations, some ancient Near Eastern parallels]
+        christian_assessment: REJECTED - Angels do not create (Colossians 1:16 - "all things created by Him and for Him")
+      - interpretation: 'Royal Plural (majestic "we")'
+        used_by: [Some Jewish medieval commentators, rationalist interpreters]
+        christian_assessment: REJECTED - Inconsistent with NT revelation of Trinity, royal plural not elsewhere in Genesis
+      - interpretation: 'Polytheism (multiple gods)'
+        used_by: [Mormon/LDS theology]
+        christian_assessment: HERETICAL - Violates monotheism (Deuteronomy 6:4, Isaiah 44:6)
+      - interpretation: 'Binitarianism (only Father and Son, no Holy Spirit)'
+        used_by: [Some early heresies, Arianism variants]
+        christian_assessment: HERETICAL - Denies personhood/deity of Holy Spirit
+
+  # 1b. MESSIANIC PROPHECY - Participant Identity (Theologically Critical)
+  - verse_pattern: 'Isaiah 53 - The Suffering Servant (unverified)'
+    affected_values: [first_mention, routine, restaging]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (Jesus as Messiah)
+      - Atonement (substitutionary sacrifice)
+      - Prophecy fulfillment
+
+    non_arbitrary_rationale: |
+      Participant tracking affects identification of "he/him" throughout Isaiah 53:
+      - Is "Servant" FIRST MENTION (new participant) or ANAPHORIC to earlier Servant Songs (Isaiah 42, 49, 50)?
+      - Christian interpretation: Servant = Jesus Christ (Messianic prophecy)
+      - Jewish interpretation: Servant = Israel (corporate identity)
+
+      Participant continuity across chapters:
+      - If "Servant" in Isaiah 53 is ROUTINE continuation from Isaiah 52:13, strengthens continuity
+      - If RESTAGING after gap, may allow different referent
+
+      Translation impact:
+      - Topic-prominent languages: If Servant marked as topic across chapters, signals same referent
+      - Article languages: Definite article suggests continuing participant (same Servant)
+      - Pronoun vs. full NP: Affects clarity of who suffers
+
+    christian_orthodox_position:
+      preferred_value: routine # Continuous from Isaiah 52:13, same Servant
+      acceptable_alternatives: [restaging] # After gap from earlier Servant Songs
+      forbidden_values: [generic] # Must not be generic/indefinite servant (loses Messianic specificity)
+      theological_basis: 'Jesus Christ is the prophesied Messiah who fulfills the Suffering Servant prophecy (Acts 8:32-35, 1 Peter 2:24-25).'
+      translator_guidance: |
+        - Maintain participant continuity across Isaiah 52:13-53:12 (same Servant throughout)
+        - If target language allows, use forms suggesting definite, specific individual (not generic)
+        - Coordinate with denominational traditions: Footnotes may note Jewish interpretation differs
+        - Do not obscure connection to NT quotations (Matthew 8:17, John 12:38, Romans 10:16, etc.)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Servant = Nation of Israel (corporate)'
+        used_by: [Jewish non-Messianic interpretation, Rashi, Ibn Ezra]
+        christian_assessment: REJECTED - NT explicitly identifies Servant as Jesus (Acts 8:32-35); individual suffers, not nation
+      - interpretation: 'Servant = Isaiah himself'
+        used_by: [Some critical scholars]
+        christian_assessment: REJECTED - Isaiah did not die for others' sins; prophecy points beyond author
+      - interpretation: 'Servant = Generic righteous sufferer'
+        used_by: [Liberal Protestant interpretations]
+        christian_assessment: REJECTED - Loses prophetic specificity; NT shows fulfillment in Christ
+
+  # 2. DIVINE VS. HUMAN PARTICIPANTS - Clarity (Contextually Critical)
+  - verse_pattern: 'Passages with both God and human participants (e.g., Genesis 18 - Abraham and the three visitors) (unverified)'
+    affected_values: [first_mention, routine, frame_inferable]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Christophany (pre-incarnate Christ appearances)
+      - Angelology (nature and role of angels)
+      - Worship (appropriate objects of worship)
+
+    non_arbitrary_rationale: |
+      Participant tracking affects identification of divine vs. human/angelic participants:
+      - Genesis 18: "Three men" visit Abraham, but one is "LORD" (YHWH)
+      - Is "LORD" FIRST MENTION or same participant as earlier Genesis mentions of God?
+      - Are the "three men" separate participants (angels) or manifestation of Trinity?
+
+      Translation impact:
+      - Noun class languages (Bantu): May use different classes for divine vs. human participants
+      - Honorific languages (Japanese, Korean): Require different register for divine participants
+      - Article languages: Definite article for established divine participant
+
+    christian_orthodox_position:
+      preferred_value: routine # LORD = same God as throughout Genesis (continuity)
+      acceptable_alternatives: [presupposed]
+      forbidden_values: [first_mention] # God not "new" participant in middle of Genesis
+      theological_basis: 'God is eternal and immutable; appearances in OT (theophanies/Christophanies) are same divine person revealed progressively.'
+      translator_guidance: |
+        - Maintain continuity for divine participants across passages
+        - If target language marks divine participants with special forms (honorifics, noun classes), apply consistently
+        - Do not introduce God as "new" participant mid-narrative
+        - Distinguish between God (YHWH) and angels when text does (worship directed only to God)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Three visitors = distinct Trinity manifestation (three separate persons visible)'
+        used_by: [Some Orthodox icon traditions, Rublev's Trinity icon]
+        christian_assessment: ACCEPTABLE (artistic/theological reflection) but not required by text; Protestant traditions typically see one LORD + two angels
+      - interpretation: 'Polytheism (three separate gods)'
+        used_by: [Misinterpretations by those unfamiliar with Judeo-Christian monotheism]
+        christian_assessment: HERETICAL - Violates monotheism
+
+  # 3. PRONOUN AMBIGUITY IN THEOLOGICAL CONTEXTS (Contextually Critical)
+  - verse_pattern: 'John 1:1-3 - "He was in the beginning with God; all things were made through Him" (unverified)'
+    affected_values: [routine, restaging]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (deity of Christ)
+      - Trinity (distinction of Persons)
+      - Creation (Christ as Creator)
+
+    non_arbitrary_rationale: |
+      Participant tracking affects pronoun resolution in theologically dense passages:
+      - "He was in the beginning with God" - Who is "He"? (Answer: the Word/Logos = Jesus Christ)
+      - Is "He" ROUTINE continuation of "Word" or requires reactivation?
+      - Pronoun ambiguity in translation can obscure deity of Christ
+
+      Translation challenges:
+      - Languages requiring overt subjects: Must explicitly identify "He" = "the Word"
+      - Topic-prominent languages: Topic marker signals continuing referent
+      - Zero-anaphora languages: May drop pronoun, requiring clear participant tracking to avoid confusion
+
+    christian_orthodox_position:
+      preferred_value: routine # "He" continues reference to "the Word" from John 1:1
+      acceptable_alternatives: [restaging] # If clarity requires reintroducing "the Word" as full NP
+      forbidden_values: [generic] # Must be specific referent (Jesus Christ), not generic concept
+      theological_basis: 'The Word (Logos) is Jesus Christ, fully God, eternally existent with God the Father, through whom all creation came to be (John 1:14, Colossians 1:16-17, Hebrews 1:2).'
+      translator_guidance: |
+        - Ensure "He/Him" pronouns clearly refer back to "the Word" (not to "God" = Father)
+        - If target language allows ambiguity, use full NP "the Word" or "Jesus Christ" (even if source text has pronoun)
+        - Maintain distinction between "Word" (Jesus) and "God" (Father) while affirming both are deity
+        - Some languages may need: "The Word was with God, and the Word was God; the Word was in the beginning with God"
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Word = impersonal divine reason/principle (Logos philosophy)'
+        used_by: [Arianism, some liberal theology, Jehovah's Witnesses variant]
+        christian_assessment: HERETICAL - Word is personal (became flesh, John 1:14), fully divine
+      - interpretation: 'Word = created being'
+        used_by: [Jehovah's Witnesses, Arianism]
+        christian_assessment: HERETICAL - "All things were made through Him" excludes Word from created things; Word is Creator, not creature
+
+  # 4. CORPORATE VS. INDIVIDUAL IDENTITY (Contextually Critical)
+  - verse_pattern: 'Paul and Silas narratives (e.g., Acts 16:25 - "they were praying and singing") (unverified)'
+    affected_values: [routine, first_mention]
+    theological_stakes: LOW-MEDIUM
+    affected_doctrines:
+      - None directly, but affects narrative accuracy
+
+    non_arbitrary_rationale: |
+      Participant tracking affects whether pronouns/verbs refer to individuals or groups:
+      - "They were praying" - Paul and Silas (2 people) or larger group?
+      - Context: Verse 25 clearly "Paul and Silas," but later verses may introduce other participants
+      - Wrong participant tracking can confuse readers about who did what
+
+      Translation impact:
+      - Dual number languages: Can mark exactly 2 participants
+      - Plural: May be ambiguous (2 or more?)
+      - Participant tracking helps clarify boundaries
+
+    christian_orthodox_position:
+      preferred_value: routine # When context establishes Paul and Silas as active participants
+      acceptable_alternatives: [first_mention] # When new participants join
+      forbidden_values: [] # No forbidden values, but accuracy required
+      theological_basis: 'Faithful translation requires accurate identification of who performed actions. Misidentifying participants undermines biblical reliability.'
+      translator_guidance: |
+        - Use participant tracking to maintain clear reference to Paul and Silas vs. other participants (jailer, prisoners, household)
+        - If target language has dual number, use it for "Paul and Silas" to avoid ambiguity
+        - When participant set changes (jailer enters, household converts), update participant tracking appropriately
+
+    non_orthodox_alternatives_awareness: []
+    # No significant doctrinal alternatives; this is about narrative accuracy rather than theological interpretation
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Translator Freedom)
+
+arbitrary_contexts:
+
+  - pattern: 'Crowd sizes and generic groups (e.g., "multitude," "disciples," "people") (unverified)'
+    rationale: |
+      Exact participant tracking choice for generic groups does not affect doctrine.
+      - "Multitude followed" - whether marked FIRST MENTION or ROUTINE depends on discourse flow, not theology
+      - Generic groups often re-introduced with full NP for clarity even when "routine"
+      - Translator has freedom to choose based on target language conventions
+    estimated_percentage: 40%
+    examples:
+      - 'Matthew 5:1 - "the crowds" (following Jesus)'
+      - 'John 6:2 - "a great crowd" (following for signs)'
+      - 'Acts 2:6 - "the multitude" (gathering at Pentecost)'
+
+  - pattern: 'Minor characters who do not affect theological interpretation (unverified)'
+    rationale: |
+      Many biblical narratives include minor characters whose participant tracking status is stylistic:
+      - Servants, messengers, bystanders mentioned briefly
+      - Whether introduced with FIRST MENTION or assumed FRAME INFERABLE does not affect doctrine
+      - Translator has freedom to follow target language discourse conventions
+    estimated_percentage: 25%
+    examples:
+      - 'Genesis 24 - Servant sent by Abraham (not named)'
+      - 'Matthew 26:51 - "one of those with Jesus" (cut off ear)'
+      - 'Luke 7:12 - "dead man being carried out" (widow of Nain's son before resurrection)'
+
+  - pattern: 'Inanimate objects and locations (unverified)'
+    rationale: |
+      Participant tracking for inanimate participants (props) is largely stylistic:
+      - "The mountain," "the temple," "the boat"
+      - Whether marked FIRST MENTION, ROUTINE, or FRAME INFERABLE does not affect theology
+      - Translator follows target language conventions for introducing/tracking objects
+    estimated_percentage: 15%
+    examples:
+      - 'Exodus 3:1 - "the mountain of God" (Horeb/Sinai)'
+      - 'Mark 4:1 - "the boat" (Jesus teaching from boat)'
+      - 'John 2:14 - "the temple" (cleansing of temple)'
+
+  - pattern: 'Routine narrative participants in non-theological contexts (unverified)'
+    rationale: |
+      Most everyday narrative participant tracking is stylistic:
+      - Travel companions, family members, ordinary interactions
+      - How participants are introduced/tracked follows discourse flow, not theological stakes
+      - Translator has freedom to choose forms that create natural discourse in target language
+    estimated_percentage: 15%
+    examples:
+      - 'Ruth 1-2 - Naomi, Ruth, Boaz daily interactions'
+      - 'Acts 27 - Paul's shipwreck narrative (sailors, soldiers, passengers)'
+      - 'Philemon - Onesimus, Philemon, Apphia, Archippus'
+
+  - pattern: 'Generic references to common roles (priests, Pharisees, scribes) (unverified)'
+    rationale: |
+      Generic participant references ("a scribe," "the Pharisees") are usually stylistic:
+      - Unless specific individual has theological significance (Nicodemus, Joseph of Arimathea)
+      - Generic group references can be FIRST MENTION or ROUTINE depending on discourse context
+      - Translator chooses based on natural information flow in target language
+    estimated_percentage: 5%
+    examples:
+      - 'Matthew 8:19 - "a scribe" (volunteered to follow Jesus)'
+      - 'Mark 2:16 - "the scribes of the Pharisees" (questioned Jesus)'
+      - 'Luke 5:17 - "Pharisees and teachers of the law" (sitting there)'
+
+# SUMMARY STATISTICS
+
+total_arbitrary_percentage: 85% # Estimated: sum of arbitrary context percentages (40+25+15+15+5=100% of arbitrary contexts, but arbitrary contexts are 85% of all participant tracking instances)
+total_non_arbitrary_percentage: 15% # Estimated: theologically or contextually critical instances requiring careful attention
+
+critical_review_required:
+  - All Trinity references (Genesis 1:26, Matthew 28:19, 2 Corinthians 13:14, etc.)
+  - All Messianic prophecy participant identifications (Isaiah 53, Psalm 22, Zechariah, etc.)
+  - Divine participant introductions and continuity (theophanies, Christophanies)
+  - Theologically dense pronoun resolution (John 1, Colossians 1, Hebrews 1)
+  - Participant identity affecting atonement/salvation passages
+
+translator_freedom_zones:
+  - Generic groups and crowds
+  - Minor characters without theological significance
+  - Inanimate objects and locations
+  - Routine narrative flow
+  - Generic role references (unless specific named individual with theological import)
+
+# SPECIAL NOTES
+
+presupposition_issue:
+  note: |
+    TBTA marks God as "Routine" in Genesis 1:1 despite being textually first mention.
+    This conflates CULTURAL PRESUPPOSITION (readers know who God is) with TEXTUAL ANAPHORA (previously mentioned in text).
+
+    Recommendation for translators:
+    - Treat God as PRESUPPOSED (known to readers) even at first textual mention
+    - Use definite article in article languages ("the God" equivalent) even in Genesis 1:1
+    - Use topic marker in topic-prominent languages even at first textual mention
+    - Do not treat as FIRST MENTION (indefinite "a god") which could imply polytheism or unknown deity
+
+denominational_sensitivity:
+  note: |
+    Some participant tracking choices intersect with denominational interpretation differences:
+    - Messianic prophecy: Christian vs. Jewish interpretation of Servant identity (Isaiah 53)
+    - Divine participants: Trinitarian vs. Unitarian identification
+    - Mary references: Catholic/Orthodox emphasis vs. Protestant restraint (not participant tracking issue per se, but interaction with honorifics feature)
+
+    Recommendation:
+    - Follow conservative Protestant orthodox position as primary
+    - Note denominational variations in footnotes or study notes
+    - Avoid obscuring orthodox Christian interpretation
+    - Allow for valid Christian denominational differences on non-essentials
+
+interdisciplinary_consultation:
+  note: |
+    For theologically critical participant tracking decisions, consult:
+    - Theological scholars (systematic theology, biblical theology)
+    - Exegetical commentators (Hebrew/Greek text experts)
+    - Translation consultants (cross-linguistic discourse analysis)
+    - Target language speakers (naturalness and clarity)
+
+    Do not make theologically critical participant tracking decisions based solely on linguistic analysis.
+
+# END OF CLASSIFICATION

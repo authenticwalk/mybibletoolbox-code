@@ -1,0 +1,323 @@
+feature: aspect
+default_classification: arbitrary # Default: choice is stylistic/optional
+theological_significance: EXISTS # Flag: Does this feature matter doctrinally in some contexts?
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Important)
+
+non_arbitrary_contexts:
+
+  # --- THEOLOGICAL (Doctrinal Stakes) ---
+
+  - verse_pattern: '1 John 3:6, 9 - Habitual sin vs single act (unverified)'
+    affected_values: [imperfective, perfective]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Sanctification
+      - Nature of Christian life
+      - Perfectionism vs realistic theology
+
+    non_arbitrary_rationale: |
+      Greek uses PRESENT tense (imperfective aspect) for "keeps on sinning" /
+      "makes a practice of sinning". This is NOT aorist (perfective = single act).
+
+      CRITICAL DISTINCTION:
+      - Imperfective (present): Habitual, ongoing, persistent sinning
+      - Perfective (aorist): Single act of sin
+
+      Theological meaning:
+      - Correct (imperfective): Christians do not habitually, persistently live in sin
+      - WRONG (perfective): Christians never sin at all (contradicts 1 John 1:8)
+
+      Aspect is CRITICAL for orthodox theology. Wrong aspect = heresy (sinless perfectionism).
+
+    christian_orthodox_position:
+      preferred_value: imperfective
+      acceptable_alternatives: [progressive, habitual] # Must convey ongoing/repeated nature
+      forbidden_values: [perfective, completive, aorist] # NEVER use perfective (changes theology)
+      theological_basis: 'Christians do not habitually practice sin, but do commit individual sins (1 John 1:8-10). Imperfective aspect preserves this distinction.'
+      translator_guidance: |
+        - FIRST CHOICE: Use IMPERFECTIVE, PROGRESSIVE, or HABITUAL aspect
+        - Alternatively: Add "keeps on", "makes a practice of", frequency markers
+        - FORBIDDEN: Use perfective/aorist (implies never sin at all)
+        - Languages without aspect: Use lexical/adverbial markers for habitual action
+        - Test: Does your translation allow for Christians sinning occasionally? (must allow)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Sinless Perfectionism (Christians never sin)'
+        used_by: [Wesleyan Perfectionism extreme forms, some Holiness movements]
+        christian_assessment: REJECTED (Contradicts 1 John 1:8 "If we say we have no sin, we deceive ourselves")
+      - interpretation: 'License to sin (aspect distinction irrelevant)'
+        used_by: [Antinomianism]
+        christian_assessment: REJECTED (1 John 3:6 still forbids habitual sin practice)
+
+  - verse_pattern: 'Matthew 28:19-20 - Great Commission imperatives (unverified)'
+    affected_values: [perfective, imperfective]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Missiology
+      - Nature of discipleship
+      - Church mission
+
+    non_arbitrary_rationale: |
+      Greek uses AORIST imperative for "make disciples" (μαθητεύσατε) but
+      PRESENT participle for "teaching" (διδάσκοντες).
+
+      Aspectual distinction:
+      - "Make disciples" (aorist imperative, perfective): Single decisive command to accomplish
+      - "Teaching them" (present participle, imperfective): Ongoing process, means of discipleship
+      - "I am with you" (present indicative, imperfective): Continuous state
+
+      Theological nuance:
+      - Command to make disciples = one-time commission to church (perfective)
+      - Means of making disciples = ongoing teaching process (imperfective)
+      - Christ's presence = continuous reality (imperfective/stative)
+
+    christian_orthodox_position:
+      preferred_value:
+        - perfective for main command ("make disciples")
+        - imperfective for means ("teaching")
+      acceptable_alternatives:
+        - "make disciples": aorist, perfective, or unmarked imperative
+        - "teaching": progressive, habitual, imperfective
+      forbidden_values: [] # No forbidden values (lower stakes than habitual sin)
+      theological_basis: 'Great Commission is one-time command to church accomplished through ongoing teaching process.'
+      translator_guidance: |
+        - Main command "make disciples": Use decisive/simple imperative (perfective if language has it)
+        - Participle "teaching": Use ongoing/progressive form
+        - "I am with you": Use continuous/stative present
+        - If language lacks aspect: Can use same verb form for both (theological impact minimal)
+
+    non_orthodox_alternatives_awareness: [] # No major heresies hinge on this
+
+  - verse_pattern: 'Prophecy fulfillment - Hebrew prophetic perfect (unverified)'
+    affected_values: [perfective, imperfective]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prophecy and fulfillment
+      - Certainty of God's promises
+      - Eschatology
+
+    non_arbitrary_rationale: |
+      Hebrew uses QATAL (perfective) for future events to express certainty:
+      "Unto us a child IS BORN" (Isaiah 9:6) - perfect aspect for future event.
+
+      Aspectual meaning:
+      - Perfective (qatal): Future viewed as certain/completed (prophetic perfect)
+      - Imperfective (yiqtol): Future as uncertain/ongoing
+
+      Theological significance:
+      - Perfective emphasizes certainty and divine decree
+      - Imperfective would suggest uncertainty or ongoing process
+
+    christian_orthodox_position:
+      preferred_value: perfective
+      acceptable_alternatives:
+        - perfective
+        - perfect
+        - simple past (if translating as already completed)
+      forbidden_values: [] # Not forbidden, but imperfective loses nuance
+      theological_basis: 'Prophetic perfect expresses certainty of future fulfillment as if already accomplished.'
+      translator_guidance: |
+        - Use perfective aspect if available (views future as certain)
+        - Alternatively: Translate as past tense ("is born" not "will be born")
+        - Or add certainty markers: "certainly will", "surely"
+        - Preserves theological emphasis on divine certainty
+
+    non_orthodox_alternatives_awareness: [] # No major issues
+
+  # --- CONTEXTUAL (Affects Clarity/Accuracy but not Doctrine) ---
+
+  - verse_pattern: 'Narrative sequences - Hebrew wayyiqtol chain (unverified)'
+    affected_values: [perfective, imperfective]
+    theological_stakes: LOW
+    affected_doctrines: [] # No doctrinal issues
+
+    non_arbitrary_rationale: |
+      Hebrew narrative uses WAYYIQTOL (sequential perfective) for event chains:
+      "God created... and God said... and there was..." (Genesis 1)
+
+      Aspectual function:
+      - Perfective (wayyiqtol): Sequential completed events
+      - Imperfective: Background, description, circumstances
+
+      Contextual importance:
+      - Perfective chain = main storyline (foreground)
+      - Imperfective = background information, setting
+      - Wrong aspect = confuses foreground/background distinction
+
+    christian_orthodox_position:
+      preferred_value: perfective
+      acceptable_alternatives: [perfective, simple past, sequential markers]
+      forbidden_values: [] # Not forbidden, just less clear
+      theological_basis: 'Narrative structure distinction, not doctrinal content.'
+      translator_guidance: |
+        - Use perfective for main event sequence
+        - Use imperfective for background/setting
+        - If language lacks aspect: Can use same form (minimal theological impact)
+        - May add "then", "next" for sequence without aspect
+
+    non_orthodox_alternatives_awareness: [] # Not applicable
+
+  - verse_pattern: 'Imperative commands - one-time vs ongoing (unverified)'
+    affected_values: [perfective, imperfective]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Christian obedience
+      - Interpretation of commands
+
+    non_arbitrary_rationale: |
+      Greek distinguishes imperative aspect:
+      - AORIST imperative (perfective): Do this once, decisive action
+      - PRESENT imperative (imperfective): Keep doing this, ongoing habit
+
+      Examples:
+      - "Repent" (aorist): One-time decisive turn from sin
+      - "Be holy" (present): Ongoing lifestyle
+      - "Give us... bread" (aorist): Single request for today (Lord's Prayer)
+
+      Contextual importance:
+      - Wrong aspect changes whether command is one-time or habitual
+      - Affects practical obedience understanding
+
+    christian_orthodox_position:
+      preferred_value: match Greek aspect
+      acceptable_alternatives:
+        - perfective for aorist imperatives
+        - imperfective for present imperatives
+        - adverbial markers ("once", "always") if aspect unavailable
+      forbidden_values: [] # Not forbidden, but changes nuance
+      theological_basis: 'Greek imperative aspect affects practical application of command.'
+      translator_guidance: |
+        - Aorist imperative: Use simple/perfective command form
+        - Present imperative: Use continuous/habitual form
+        - Add frequency markers if language lacks aspect: "keep", "always", "once"
+        - Examples:
+          - Aorist: "Repent!" (decisive)
+          - Present: "Keep praying!" (ongoing)
+
+    non_orthodox_alternatives_awareness: [] # Not applicable
+
+  - verse_pattern: 'Greek aorist in parables - single event emphasis (unverified)'
+    affected_values: [perfective, imperfective]
+    theological_stakes: LOW
+    affected_doctrines: [] # Narrative clarity, not doctrine
+
+    non_arbitrary_rationale: |
+      Parables often use AORIST (perfective) for key actions:
+      - Prodigal son "arose and went" (aorist)
+      - Good Samaritan "saw and had compassion" (aorist)
+
+      Aspectual function:
+      - Perfective highlights decisive moment
+      - Imperfective would emphasize process
+
+      Contextual importance:
+      - Parable impact depends on decisive turning point
+      - Perfective emphasizes moment of decision
+
+    christian_orthodox_position:
+      preferred_value: perfective
+      acceptable_alternatives: [perfective, simple past, unmarked]
+      forbidden_values: [] # Not forbidden
+      theological_basis: 'Narrative effectiveness, not doctrinal content.'
+      translator_guidance: |
+        - Use perfective/simple past for parable key moments
+        - Preserves narrative impact
+        - If language lacks aspect: Simple past tense sufficient
+
+    non_orthodox_alternatives_awareness: [] # Not applicable
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - Theologically Neutral)
+
+arbitrary_contexts:
+  - pattern: "General past narrative events"
+    rationale: 'Most past events allow either perfective or imperfective without theological change. Example: "Jesus walked to the town" (perfective) vs "Jesus was walking to the town" (imperfective) - both theologically acceptable, stylistic choice.'
+    estimated_percentage: 70%
+
+  - pattern: "Descriptive states and conditions"
+    rationale: 'Stative verbs and descriptions (e.g., "the sky was blue", "people were hungry") - aspect choice is stylistic unless contrasting with events.'
+    estimated_percentage: 10%
+
+  - pattern: "Future predictions (non-prophetic)"
+    rationale: 'Non-prophetic future statements (e.g., "it will rain tomorrow") - aspect is stylistic preference unless emphasizing certainty.'
+    estimated_percentage: 5%
+
+  - pattern: "Questions and dialogue (non-imperative)"
+    rationale: 'Questions and statements in dialogue where aspect affects tone but not meaning (e.g., "Did you eat?" vs "Were you eating?") - contextually determined, not theologically critical.'
+    estimated_percentage: 10%
+
+  - pattern: "Background information and setting"
+    rationale: 'Scene-setting and background information (e.g., "It was evening", "People were gathering") - aspect choice affects narrative style but not theology.'
+    estimated_percentage: 5%
+
+# SECTION 3: SUMMARY STATISTICS
+
+estimated_distribution:
+  non_arbitrary_theological: 5% # HIGH stakes: Habitual sin, sinless perfectionism
+  non_arbitrary_contextual: 15% # MEDIUM stakes: Commands, prophecy, narrative structure
+  arbitrary: 80% # Most aspect choices are stylistic
+
+# SECTION 4: TRANSLATOR GUIDANCE SUMMARY
+
+key_principles:
+  - "Habitual sin (1 John 3:6,9): MUST use imperfective/habitual aspect or equivalents"
+  - "Imperatives: Match Greek aorist (perfective) vs present (imperfective) when possible"
+  - "Prophetic perfect: Preserve certainty nuance with perfective or certainty markers"
+  - "Narrative: Perfective for foreground, imperfective for background (enhances clarity)"
+  - "Most contexts: Aspect choice is stylistic preference, not theologically critical"
+
+high_stakes_verses_requiring_accuracy:
+  - "1 John 3:6 - 'No one who abides in him keeps on sinning' (imperfective required)"
+  - "1 John 3:9 - 'No one born of God makes a practice of sinning' (imperfective required)"
+  - "John 8:11 - 'Neither do I condemn you; go, and from now on sin no more' (aorist imperative - decisive command)"
+  - "Ephesians 4:26 - 'Be angry and do not sin' (present imperative for 'be angry' = can be angry, aorist for 'do not sin' = don't let it lead to sin)"
+
+# SECTION 5: COMMON TRANSLATION ERRORS TO AVOID
+
+common_errors:
+  - error: "Using perfective aspect for 1 John 3:6,9"
+    impact: "CRITICAL - Changes theology to sinless perfectionism (heresy)"
+    correction: "Must use imperfective/habitual aspect"
+
+  - error: "Ignoring imperative aspect distinction in Greek"
+    impact: "MEDIUM - Changes whether command is one-time or ongoing"
+    correction: "Aorist imperative → perfective/simple; Present imperative → imperfective/ongoing"
+
+  - error: "Using imperfective for prophetic perfect in Hebrew"
+    impact: "LOW - Loses emphasis on certainty"
+    correction: "Use perfective or certainty markers"
+
+  - error: "Random aspect assignment without considering source language"
+    impact: "VARIABLE - May accidentally create theological error"
+    correction: "Check Greek/Hebrew aspect; default to matching source language when in doubt"
+
+# NOTES
+
+notes: |
+  1. All verse patterns marked (unverified) are based on internal theological/exegetical
+     knowledge, not verified from external sources (per STAGE-1-RESEARCH.md guidance allowing
+     inference for theological classification).
+
+  2. Aspect theological significance is LOWER than some other features (e.g., number in
+     Trinity contexts) but HIGHER for specific contexts (habitual sin, imperatives).
+
+  3. Most dangerous error: Using perfective aspect for habitual sin passages (1 John 3:6,9).
+     This is the PRIMARY theologically critical context for aspect.
+
+  4. Stage 2 should analyze actual translations to verify these patterns and discover
+     additional non-arbitrary contexts not identified here.
+
+  5. Languages without grammatical aspect can express these distinctions lexically/adverbially
+     ("keeps on", "always", "once", etc.).
+
+# CITATION
+
+source: |
+  Theological analysis based on:
+  - Conservative Protestant Christian orthodox theology
+  - Greek/Hebrew aspectual distinctions in source texts
+  - Standard evangelical commentaries (unverified - from internal knowledge)
+  - Exegetical tradition on key passages
+
+  Specific verses and patterns are inferred (unverified) from internal theological knowledge
+  per Stage 1 Research guidelines allowing inference for theological classification.

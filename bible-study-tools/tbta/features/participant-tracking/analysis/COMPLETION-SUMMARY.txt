@@ -1,0 +1,184 @@
+================================================================================
+STAGE 2.1 - ANALYSIS DATASET CREATION
+Participant Tracking Feature
+================================================================================
+
+COMPLETION DATE: 2025-11-29
+
+STATUS: ✓ ALL STEPS COMPLETED SUCCESSFULLY
+
+================================================================================
+STEPS COMPLETED
+================================================================================
+
+✓ Step 1A: Extract Data
+   - Extracted 171,876 TBTA annotations
+   - Command: extract_feature.py --field "Participant Tracking"
+   - Output: tbta-extract.jsonl (renamed to .secret.jsonl)
+
+✓ Step 1A (cont.): Write Distribution
+   - Created distribution.yaml with value distribution
+   - Updated feature README.md with statistics
+
+✓ Step 1B: Create Balanced Dataset
+   - Generated draft dataset using draft_dataset.py
+   - Balanced by genre, one per verse, sampled by constituent
+   - Total: 4,153 entries (from 171,876 original)
+   - Enriched with strongs_number (93% coverage)
+   - Enriched with reason_group (15 categories, 100% coverage)
+   - Output: datasets.jsonl (deleted after enrichment)
+
+✓ Step 1C: Enrich with Translations
+   - Fetched sample verses to validate language selection
+   - Selected 12 translations (6 core + 6 additional)
+   - Core: eng-YLT, grc, hbo, heb-heb, lat-VUC, arb-NAV
+   - Additional: spa-BES, fra-LSG, deu-1912, ind-AYT, cmn, por-AA
+   - Created LANGUAGE-SELECTION.md with rationale
+   - Enriched 4,153 entries with verse text from all translations
+   - Cache: 99.6% hit rate (4,137/4,153)
+   - Output: enriched.jsonl (renamed to .secret.jsonl)
+
+✓ Step 1D: Audit the Data
+   - Verified all required fields present
+   - Confirmed all core translations included
+   - Validated 12 unique translation languages (no duplicates)
+   - Checked strongs_number coverage: 93.26% (3,873/4,153)
+   - Verified strongs field populated: 100%
+   - Confirmed reason_group distribution balanced
+   - Created audit-data.md with full report
+   - Result: PASS (all critical requirements met)
+
+✓ Step 1E: Split the Datasets
+   - Used split_dataset.py to create train/validate/test splits
+   - Training: 3,322 entries (80%)
+   - Validation: 415 entries (10%)
+   - Test: 416 entries (10%)
+   - Leftovers: 160,755 entries (remaining TBTA data)
+   - Created .secret.jsonl versions with labels
+   - Created public versions with labels removed for blind validation
+
+✓ Step 1F: Delete Artifacts
+   - Deleted intermediate files:
+     - datasets.jsonl
+     - draft_datasets.jsonl/
+     - enrich_dataset.py
+     - smart_enrich.py
+   - Kept essential files:
+     - distribution.yaml
+     - LANGUAGE-SELECTION.md
+     - audit-data.md
+     - data/ directory with splits
+     - .secret.jsonl files (for reference)
+
+================================================================================
+FINAL DELIVERABLES
+================================================================================
+
+/workspace/bible-study-tools/tbta/features/participant-tracking/analysis/
+├── README.md                      ✓ Complete documentation
+├── distribution.yaml              ✓ Value distribution summary
+├── LANGUAGE-SELECTION.md          ✓ Translation selection rationale
+├── audit-data.md                  ✓ Quality audit report
+├── enriched.secret.jsonl          ✓ Full enriched dataset (9.6M)
+├── tbta-extract.secret.jsonl      ✓ Original extraction (74M)
+└── data/
+    ├── train.jsonl                ✓ 3,322 entries (7.7M)
+    ├── validate.jsonl             ✓ 415 entries (903K, no labels)
+    ├── validate.secret.jsonl      ✓ 415 entries (955K, with labels)
+    ├── test.jsonl                 ✓ 416 entries (931K, no labels)
+    ├── test.secret.jsonl          ✓ 416 entries (982K, with labels)
+    └── leftovers.jsonl            ✓ 160,755 entries (69M)
+
+================================================================================
+KEY STATISTICS
+================================================================================
+
+TBTA Extraction:
+  - Total annotations: 171,876
+  - Unique labels: 6 (Routine, Generic, Frame Inferable, First Mention, 
+    Interrogative, Offstage)
+  - Dominant label: Routine (73.04%)
+
+Balanced Dataset:
+  - Total entries: 4,153
+  - Strongs coverage: 93.26%
+  - Reason groups: 15 categories
+  - Translations: 12 languages
+  - Missing data: 6.74% missing strongs_number (primarily NT verses)
+
+Dataset Splits:
+  - Train: 3,322 entries (80%)
+  - Validate: 415 entries (10%)
+  - Test: 416 entries (10%)
+
+Translation Languages:
+  - Core (6): eng-YLT, grc, hbo, heb-heb, lat-VUC, arb-NAV
+  - Additional (6): spa-BES, fra-LSG, deu-1912, ind-AYT, cmn, por-AA
+  - Language families: Indo-European (8), Semitic (2), Sino-Tibetan (1), 
+    Austronesian (1)
+
+================================================================================
+ISSUES & RESOLUTIONS
+================================================================================
+
+Issue: Missing strongs_number for 6.74% of entries
+Resolution: Primarily NT verses with complex Greek-English alignment.
+           Acceptable for analysis phase. Enrichment script uses
+           heuristics that work well for 93% of cases.
+
+Issue: No LANGUAGES.md file from Stage 1 research
+Resolution: Used general linguistic knowledge to select diverse
+           translations covering different participant tracking systems
+           (pro-drop, explicit marking, topic-prominent, etc.)
+
+Issue: Offstage label has only 1 example
+Resolution: Included in dataset despite low count. May need special
+           handling during algorithm development.
+
+================================================================================
+AUDIT RESULT
+================================================================================
+
+OVERALL: PASS ✓
+
+All critical requirements met:
+✓ Strong's codes present
+✓ Core translations included
+✓ Diverse language selection (12 > 3 minimum)
+✓ No duplicate languages
+✓ High strongs_number coverage (93% > 90% acceptable threshold)
+✓ Reason groups balanced and meaningful
+
+Dataset is READY for Stage 2.2: Translation Analysis & Pattern Discovery
+
+================================================================================
+NEXT STEPS
+================================================================================
+
+1. Move to Stage 2.2: Analyze translations to discover patterns
+2. Use train.jsonl to understand what translators actually did
+3. Develop hypotheses about participant tracking rules
+4. Create initial prompt based on translation evidence
+5. Test against validate.jsonl (blind validation)
+6. Reserve test.secret.jsonl for final evaluation only
+
+================================================================================
+NOTES
+================================================================================
+
+- All .secret.jsonl files contain full data and must NOT be accessed
+  during algorithm development to prevent bias
+  
+- The reason_group enrichment used smart heuristics based on constituent
+  patterns, providing good coverage across 15 meaningful categories
+  
+- Translation enrichment achieved 99.6% cache hit rate, with only 16
+  verses requiring sparse-checkout additions
+  
+- Dataset balancing successfully reduced 171K annotations to manageable
+  4K while maintaining representative coverage across all labels,
+  genres, and constituent types
+
+================================================================================
+END OF SUMMARY
+================================================================================

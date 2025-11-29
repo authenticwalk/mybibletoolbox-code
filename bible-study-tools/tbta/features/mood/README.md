@@ -102,10 +102,21 @@ See [research/README.md](research/README.md) for full summary.
 
 **Data extracted**: 72,089 annotations from TBTA. See [analysis/README.md](analysis/README.md) for full details.
 
-**Distribution** (confirms Stage 1 predictions):
-- Indicative: 97.21% (dominant as expected)
-- Obligation types: 2.05% (must/should/forbidden)
-- Potential types: 0.74% (might/may/definite/probable/unlikely)
+**Distribution** (see [analysis/distribution.yaml](analysis/distribution.yaml)):
+- **Indicative**: 70,079 (97.21%)
+- **Obligation moods**: 1,479 (2.05%)
+  - 'must' Obligation: 633 (0.88%)
+  - 'should' Obligation: 567 (0.79%)
+  - 'should not' Obligation: 158 (0.22%)
+  - Forbidden Obligation: 121 (0.17%)
+- **Potential moods**: 531 (0.74%)
+  - 'might' Potential: 367 (0.51%)
+  - 'may' (permissive): 150 (0.21%)
+  - Definite Potential: 8 (0.01%)
+  - Probable Potential: 5 (0.01%)
+  - Unlikely Potential: 1 (0.00%)
+
+**Total**: 72,089 annotations
 
 **LLM Baseline**: 55% accuracy on 100 diverse samples (zero-shot)
 

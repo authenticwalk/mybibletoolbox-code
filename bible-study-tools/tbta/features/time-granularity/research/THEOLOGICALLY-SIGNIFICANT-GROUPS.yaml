@@ -1,0 +1,328 @@
+feature: time-granularity
+default_classification: arbitrary  # Default: temporal distance is contextual/stylistic
+theological_significance: MINIMAL  # Time granularity rarely affects core doctrine
+
+# OVERVIEW
+# Time granularity (temporal remoteness) is almost entirely ARBITRARY from a theological
+# perspective. The question "how long ago did this happen?" rarely affects doctrine.
+#
+# CRITICAL DISTINCTION: The *fact* that something happened (historicity) is theologically
+# critical, but the *distance* in time is usually not. Genesis creation being "ancient"
+# vs "legendary" doesn't change the doctrine of creation - God created, regardless of
+# how we measure temporal distance.
+#
+# However, there are a few CONTEXTUAL cases where time granularity could mislead readers
+# if chosen incorrectly - these are listed as non-arbitrary CONTEXTUAL issues, not
+# theological ones.
+
+# SECTION 1: NON-ARBITRARY (Contextually Important, Not Theologically Critical)
+non_arbitrary_contexts:
+  - verse_pattern: 'Immediate prophetic fulfillment (e.g., Matthew 2:15, "Out of Egypt I called my son") (unverified)'
+    affected_values: [historic-past, timeless]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Prophecy fulfillment (interpretive accuracy, not core doctrine)
+
+    non_arbitrary_rationale: |
+      The original prophecy (Hosea 11:1) was about historic past (Exodus).
+      Matthew's quotation applies it to recent past (Jesus' childhood).
+      Using "timeless" might obscure the historical anchoring.
+      Using same time granularity for both might confuse referents.
+
+      HOWEVER: This affects interpretation clarity, not core doctrine.
+      Christian orthodoxy affirms prophecy fulfillment regardless of how
+      temporal distance is marked in translation.
+
+    christian_orthodox_position:
+      preferred_value: historic-past  # for original Hosea reference
+      acceptable_alternatives: [recent-past, timeless-principle]
+      forbidden_values: []  # No forbidden values - this is contextual, not doctrinal
+      theological_basis: 'Prophecy-fulfillment typology is real but temporal marking is not doctrinally determinative.'
+      translator_guidance: |
+        - PREFERRED: Mark original prophecy as historic past (Exodus), fulfillment as recent past (Jesus)
+        - ACCEPTABLE: Use timeless if language lacks remoteness or for theological application
+        - NOT HERETICAL: Any choice that maintains historical connection
+        - CONTEXTUAL: This helps readers track referents, but doesn't affect salvation doctrine
+
+    non_orthodox_alternatives_awareness: []  # No non-orthodox alternatives for this feature
+
+  - verse_pattern: 'Recent vs. remote past in narrative chains (e.g., flashbacks, recollections) (unverified)'
+    affected_values: [immediate-past, recent-past, historic-past]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Narrative coherence (reader comprehension, not doctrine)
+
+    non_arbitrary_rationale: |
+      When a character recounts recent events within a narrative (e.g., "yesterday we..."),
+      the time granularity should reflect the CHARACTER'S temporal perspective (yesterday),
+      not the READER'S perspective (thousands of years ago).
+
+      Incorrect choice creates confusion but doesn't affect theology.
+
+      Example: Joseph's brothers in Genesis 42:13 - "Yesterday we were in Canaan"
+      - From brothers' perspective: RECENT PAST (yesterday/days ago)
+      - From reader's perspective: HISTORIC PAST (thousands of years ago)
+      - Correct choice: Brothers' perspective (recent past in their discourse)
+      - Wrong choice: Reader's perspective → confuses narrative flow but not doctrine
+
+    christian_orthodox_position:
+      preferred_value: character-perspective-time  # Follow speaker's temporal frame
+      acceptable_alternatives: [narrative-relative-time]
+      forbidden_values: []  # No forbidden values
+      theological_basis: 'Accurate narrative representation honors Scripture''s integrity, but temporal framing doesn''t determine doctrine.'
+      translator_guidance: |
+        - PREFERRED: In direct discourse, use character's temporal perspective
+        - NARRATOR VOICE: Use reader's historical perspective (historic past)
+        - CHARACTER VOICE: Use speaker's temporal perspective (immediate/recent past)
+        - REASON: Maintains discourse coherence and naturalness
+        - NOT DOCTRINAL: Reader confusion is pedagogical issue, not theological error
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Timeless teaching vs. historical narrative (e.g., Sermon on Mount, Proverbs) (unverified)'
+    affected_values: [timeless, historic-past]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Application of Scripture (timelessness of God''s truth)
+      - Hermeneutics (eternal principles vs historical events)
+
+    non_arbitrary_rationale: |
+      Jesus' teachings (Sermon on Mount, parables) contain TIMELESS PRINCIPLES
+      even though the teaching EVENT occurred ~2000 years ago.
+
+      CRITICAL DISTINCTION:
+      - The act of teaching: HISTORIC PAST (Jesus spoke ~2000 years ago)
+      - The content of teaching: TIMELESS (principles still apply today)
+
+      Incorrect handling could suggest teachings are outdated or culturally bound
+      rather than eternally applicable. This affects APPLICATION more than
+      core doctrine, but is important for Christian life.
+
+      Example: Matthew 5:3 - "Blessed are the poor in spirit"
+      - Frame: "Jesus said" = HISTORIC PAST
+      - Content: "Blessed are..." = TIMELESS PRINCIPLE
+      - Wrong: Marking teaching content as historic past → suggests obsolescence
+      - Correct: Marking teaching content as timeless → emphasizes ongoing validity
+
+    christian_orthodox_position:
+      preferred_value: timeless  # For teaching content itself
+      acceptable_alternatives: [present-general]  # If language lacks timeless/gnomic
+      forbidden_values: []  # Even "wrong" choice (historic past) isn't heretical
+      theological_basis: 'God''s Word is "living and active" (Hebrews 4:12), eternally applicable. Temporal framing supports but doesn''t determine this truth.'
+      translator_guidance: |
+        - TEACHING CONTENT: Use timeless/gnomic aspect if available
+        - NARRATIVE FRAME: "Jesus said" can be historic past
+        - DOCTRINAL STATEMENTS: Timeless (e.g., "God is love")
+        - COMMANDS: Timeless application (e.g., "Love your neighbor")
+        - PARABLES: Mixed - frame is historic, principle is timeless
+        - EPISTLES: Doctrinal sections timeless, narrative sections historic
+        - NOT HERETICAL: Using historic past for teachings doesn't deny their authority
+        - PRACTICAL: Timeless marking helps readers apply Scripture today
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Eschatological prophecy (future from original perspective, past from Christian perspective) (unverified)'
+    affected_values: [future, historic-past, timeless]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prophecy fulfillment (Messianic prophecies)
+      - Eschatology (end times, already-not yet)
+
+    non_arbitrary_rationale: |
+      Old Testament prophecies about Messiah are FUTURE from Isaiah's perspective
+      but HISTORIC PAST from Christian perspective (fulfilled in Jesus).
+
+      Translation choice affects whether readers see prophecy-fulfillment connection.
+
+      Example: Isaiah 53 - "He was pierced for our transgressions"
+      - From Isaiah's perspective: PROPHETIC FUTURE (yet to come)
+      - From Christian perspective: HISTORIC PAST (fulfilled in Jesus)
+      - Hebrew: Past tense (prophetic perfect)
+      - Translation options:
+        a) Future (maintains original prophetic stance)
+        b) Past (emphasizes Christian fulfillment)
+        c) Timeless (eternal significance)
+
+      None of these choices changes the FACT of fulfillment, but affects
+      reader's engagement with the text.
+
+    christian_orthodox_position:
+      preferred_value: context-dependent  # Depends on translation philosophy
+      acceptable_alternatives: [prophetic-future, fulfilled-past, timeless-significance]
+      forbidden_values: []  # No forbidden values
+      theological_basis: 'Messianic prophecy fulfillment is core doctrine, but temporal framing is a translation choice. Jesus fulfilled prophecy regardless of how temporal distance is marked.'
+      translator_guidance: |
+        - OPTION 1 (ORIGINAL PERSPECTIVE): Future - maintains prophetic voice
+        - OPTION 2 (FULFILLMENT PERSPECTIVE): Past - emphasizes Christian reading
+        - OPTION 3 (ETERNAL PERSPECTIVE): Timeless - ongoing theological significance
+        - DENOMINATIONAL FACTORS: Some traditions prefer original voice, others Christian reading
+        - NOT HERETICAL: Any choice that maintains prophecy-fulfillment truth
+        - STUDY BIBLES: May use footnotes to show both perspectives
+        - LITURGICAL USE: May prefer timeless for contemporary application
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Prophecy not yet fulfilled (Jewish non-Messianic reading)'
+        used_by: [Jewish non-Messianic, some Dispensationalists for dual fulfillment]
+        christian_assessment: RESPECTFUL DISAGREEMENT (Jews await Messiah; Christians affirm Jesus fulfilled prophecy)
+      - interpretation: 'Prophecy is merely historical, not supernatural'
+        used_by: [Liberal Christianity, Historical-Critical skeptics]
+        christian_assessment: REJECTED (denies supernatural prophecy, core to orthodox faith)
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual - The Vast Majority)
+arbitrary_contexts:
+  - pattern: "Creation narratives (Genesis 1-11)"
+    rationale: |
+      Whether we mark creation as "remote past" vs "historic past" vs "legendary past"
+      is entirely dependent on target language's temporal system. The DOCTRINE is that
+      God created - the temporal distance is not doctrinally significant.
+
+      Languages with 5-way systems (Yagua) may use "legendary past" for creation.
+      Languages with 2-way systems may use "remote past."
+      Both are acceptable - neither changes creation doctrine.
+    estimated_percentage: 5%
+
+  - pattern: "Patriarchal narratives (Abraham, Isaac, Jacob, Joseph)"
+    rationale: |
+      These events occurred thousands of years ago. Whether marked as "historic past"
+      or "remote past" or "pre-hesternal" depends entirely on language system.
+      Doctrine: God called Abraham, made covenant. Time distance: arbitrary.
+    estimated_percentage: 10%
+
+  - pattern: "Exodus and wilderness narratives"
+    rationale: |
+      Ancient events (~3400 years ago). Time distance marking is arbitrary.
+      Doctrine: God delivered Israel from Egypt. Distance: not doctrinally relevant.
+    estimated_percentage: 5%
+
+  - pattern: "Conquest and Judges period"
+    rationale: |
+      Ancient Israelite history. Time marking arbitrary.
+      Doctrine: God's faithfulness to Israel. Distance: arbitrary.
+    estimated_percentage: 5%
+
+  - pattern: "Davidic monarchy and Kings narratives"
+    rationale: |
+      Ancient history (~3000-2500 years ago). Time marking arbitrary.
+      Doctrine: Davidic covenant, messianic line. Distance: arbitrary.
+    estimated_percentage: 10%
+
+  - pattern: "Prophetic books (historical narratives within)"
+    rationale: |
+      Prophets lived 2500-2700 years ago. Marking their historical context
+      (when they spoke) is arbitrary. Content may be timeless (see above).
+    estimated_percentage: 5%
+
+  - pattern: "Gospel narratives (Jesus' ministry)"
+    rationale: |
+      Events occurred ~2000 years ago. Whether marked "historic past" or "remote past"
+      is language-dependent. Doctrine: Jesus lived, died, rose. Distance: arbitrary.
+
+      EXCEPTION: Direct discourse (see above) - character perspective matters for clarity.
+    estimated_percentage: 20%
+
+  - pattern: "Acts narratives (early church)"
+    rationale: |
+      Events ~2000 years ago (AD 30-60s). Time marking arbitrary.
+      Doctrine: Church founded, gospel spread. Distance: arbitrary.
+    estimated_percentage: 10%
+
+  - pattern: "Epistles (narrative portions and greetings)"
+    rationale: |
+      Paul's travels, Timothy's situation, etc. - contemporary to recipients (~2000 years
+      ago from us). Time marking is arbitrary from modern reader's perspective.
+
+      EXCEPTION: Doctrinal statements should be timeless (see above).
+    estimated_percentage: 15%
+
+  - pattern: "Apocalyptic/Revelation (past visions, future events)"
+    rationale: |
+      John's vision: historic past (AD 90s).
+      Future events depicted: depends on eschatological view and target language.
+      Time marking is arbitrary - doesn't determine eschatological interpretation.
+    estimated_percentage: 5%
+
+  - pattern: "Travel narratives and itineraries"
+    rationale: |
+      "They went from X to Y" - all ancient. Time distance arbitrary.
+      Doctrine: not affected by temporal distance.
+    estimated_percentage: 5%
+
+  - pattern: "Genealogies and chronological notes"
+    rationale: |
+      "X lived Y years" - all ancient history. Time marking arbitrary.
+      Doctrine: historical rootedness, messianic line. Distance: arbitrary.
+    estimated_percentage: 3%
+
+  - pattern: "Ordinary dialogue and discourse"
+    rationale: |
+      Most conversations in Scripture. Time marking follows narrative context.
+      Rarely affects doctrine.
+
+      EXCEPTION: When dialogue references recent events (character perspective).
+    estimated_percentage: 2%
+
+# SUMMARY
+#
+# Time granularity is 95%+ ARBITRARY from a theological perspective.
+#
+# The few non-arbitrary cases are CONTEXTUAL (reader clarity, narrative coherence)
+# rather than DOCTRINAL (affecting core Christian beliefs).
+#
+# KEY PRINCIPLE: The *historicity* of events matters theologically.
+# The *temporal distance* of events rarely matters theologically.
+#
+# TRANSLATION GUIDANCE:
+# - Follow target language's temporal system
+# - Use TBTA's contextual analysis to choose appropriate granularity
+# - Prioritize natural language patterns over theological concerns
+# - Reserve theological caution for HISTORICITY, not TEMPORAL DISTANCE
+#
+# CONTRAST WITH OTHER FEATURES:
+# - Number (Gen 1:26 Trinity): THEOLOGICALLY CRITICAL (dual = heresy)
+# - Person (Acts 15:25 clusivity): CONTEXTUALLY IMPORTANT (exegetical accuracy)
+# - Time Granularity: MOSTLY ARBITRARY (linguistic choice, rarely doctrinal)
+#
+# CONFIDENCE: HIGH
+# - Based on internal knowledge of Scripture {llm-cs45}
+# - Marked as (unverified) per instructions
+# - Ready for peer review by theologians in Stage 6
+
+# PEER REVIEW QUESTIONS FOR STAGE 6:
+#
+# 1. Are there any contexts where temporal distance DOES affect core doctrine?
+#    (I could not identify any in this analysis)
+#
+# 2. Is the distinction between "timeless teaching" and "historic narrative"
+#    adequately captured? Does this affect any denominational distinctives?
+#
+# 3. Prophecy-fulfillment: Should translations prioritize original prophetic
+#    perspective (future) or Christian fulfillment perspective (past)?
+#    Is this a theological question or translation philosophy?
+#
+# 4. Eschatology: Do different temporal framings of Revelation affect
+#    premillennial vs amillennial vs postmillennial readings?
+#    (I assessed this as arbitrary, but worth peer review)
+#
+# 5. Are there any liturgical or devotional contexts where temporal framing
+#    matters for Christian practice (even if not doctrine)?
+#    (e.g., Psalms used in worship - timeless vs historic)
+
+# VALIDATION NOTES:
+#
+# This analysis is intentionally CONSERVATIVE in labeling things "non-arbitrary."
+# When in doubt, I classified as ARBITRARY to avoid false precision.
+#
+# The theological stakes are consistently LOW-MEDIUM (never HIGH) because
+# time granularity fundamentally doesn't affect core doctrines like:
+# - Trinity
+# - Deity of Christ
+# - Atonement
+# - Resurrection
+# - Salvation by grace
+# - Authority of Scripture
+#
+# Even the "non-arbitrary" cases are about CLARITY and INTERPRETATION,
+# not about ORTHODOXY vs HERESY.
+#
+# This makes time granularity fundamentally different from features like
+# NUMBER (where trial vs dual affects Trinitarian doctrine).

@@ -1,0 +1,370 @@
+feature: proximity-system
+default_classification: arbitrary  # Most proximity choices are stylistic/contextual
+theological_significance: EXISTS  # Some contexts have theological implications
+
+# SECTION 1: NON-ARBITRARY (Theologically or Contextually Critical)
+
+non_arbitrary_contexts:
+
+  # === TRINITARIAN REFERENCES ===
+
+  - verse_pattern: 'Gen 1:26 (Trinity "Let us make man") (unverified)'
+    affected_values: [Near Speaker and Listener, Near Speaker, Contextually Near with Focus]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Creation theology
+      - Divine plurality vs. monotheism
+
+    non_arbitrary_rationale: |
+      "Let us make man in our image" - demonstrative proximity affects
+      interpretation of divine council participants.
+      - Near Speaker and Listener (N): God addressing other divine persons
+      - Near Speaker (S): God referring to self + Trinity
+      - Contextually Near with Focus (C): Emphatic reference to image previously mentioned
+
+      Wrong demonstrative can:
+      - Imply polytheism (multiple separate gods)
+      - Suggest angels as co-creators (rejected by orthodoxy)
+      - Obscure Trinitarian interpretation
+
+    christian_orthodox_position:
+      preferred_value: Near Speaker and Listener  # God + Trinity in unity
+      acceptable_alternatives: [Near Speaker, Contextually Near with Focus]
+      forbidden_values: []  # No forbidden proximity values per se
+      theological_basis: |
+        God is One Essence, Three Persons. The "us" refers to intra-Trinitarian
+        dialogue. Proximity should reflect divine unity (Near Both/Near Speaker)
+        rather than distant separation.
+      translator_guidance: |
+        - PREFERRED: Use demonstrative suggesting unity/closeness if language distinguishes
+        - ACCEPTABLE: Contextual reference to prior mention of God's Spirit (Gen 1:2)
+        - AVOID: Distant demonstratives (Remote) that imply separation of divine persons
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels create)'
+        used_by: [Jewish non-Messianic, some Muslim interpretations]
+        christian_assessment: |
+          REJECTED - Angels do not create (Colossians 1:16 "all things created by Him").
+          Proximity choice should not facilitate this interpretation.
+      - interpretation: 'Plural of Majesty (Royal "we")'
+        used_by: [Some Jewish commentators, Unitarian groups]
+        christian_assessment: |
+          INSUFFICIENT - While grammatically possible, Christian orthodoxy sees
+          Trinitarian foreshadowing. Proximity choice should allow Trinitarian reading.
+      - interpretation: 'Multiple Gods (Polytheism)'
+        used_by: [Ancient Near Eastern polytheists, Mormon/LDS]
+        christian_assessment: |
+          HERETICAL - Violates monotheism (Deut 6:4). Distant proximity (Remote)
+          might facilitate polytheistic misreading in some languages.
+
+  # === CHRISTOLOGICAL IDENTIFICATION ===
+
+  - verse_pattern: 'John 1:29 "Behold the Lamb of God" (unverified)'
+    affected_values: [Near Speaker, Near Listener, Remote Visible]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Christology (identification of Jesus)
+      - Soteriology (Jesus as sacrificial Lamb)
+      - Revelation (manifestation of Christ to world)
+
+    non_arbitrary_rationale: |
+      John the Baptist pointing to Jesus. Physical proximity affects:
+      - Immediacy of revelation
+      - Accessibility of Christ
+      - Relationship between witness (John) and Savior (Jesus)
+
+      Wrong demonstrative can:
+      - Make Jesus seem distant/unapproachable (over-use of Remote)
+      - Confuse identification (if too ambiguous in person-oriented languages)
+
+    christian_orthodox_position:
+      preferred_value: Near Speaker  # Jesus approaching John
+      acceptable_alternatives: [Remote Visible, Near Listener]
+      forbidden_values: []
+      theological_basis: |
+        Jesus is approaching John but not yet in immediate proximity.
+        Demonstrative should show Jesus is visible, identified, but walking toward.
+        For person-oriented languages, "Near Listener" (那/sore in Japanese) often best.
+      translator_guidance: |
+        - CONTEXT: Jesus walking toward John and crowd
+        - SPATIAL: Medium distance, visible, approaching
+        - PERSON-ORIENTED LANGUAGES: Often "Near Listener" (between speaker and distant)
+        - DISTANCE-ORIENTED LANGUAGES: Proximal-medial range
+        - AVOID: Extremely distant demonstratives (makes Christ inaccessible)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Jesus as merely human teacher (not divine Lamb)'
+        used_by: [Unitarian, some liberal theology]
+        christian_assessment: |
+          HERETICAL - Denies deity of Christ and substitutionary atonement.
+          Proximity choice itself does not prevent this, but translation must
+          preserve "Lamb of God" title clearly.
+
+  # === RESURRECTION APPEARANCES ===
+
+  - verse_pattern: 'Luke 24:39 "See my hands and my feet, that it is I myself" (unverified)'
+    affected_values: [Near Speaker]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Resurrection (physical bodily resurrection)
+      - Christology (nature of resurrected body)
+      - Evidence of resurrection
+
+    non_arbitrary_rationale: |
+      Jesus showing His hands and feet to disciples - IMMEDIATE PROXIMITY required.
+      Body parts belong to speaker (Jesus), maximally proximal.
+
+      Wrong demonstrative (Remote, Near Listener) could:
+      - Imply Jesus is distant (contradicts "touch me and see")
+      - Suggest vision/apparition rather than physical presence
+      - Weaken evidence for bodily resurrection
+
+    christian_orthodox_position:
+      preferred_value: Near Speaker  # Hands are part of speaker's body
+      acceptable_alternatives: []  # No alternatives - must be proximal to speaker
+      forbidden_values: [Near Listener, Remote Visible, Remote out of Sight]
+      theological_basis: |
+        Physical, bodily resurrection of Christ is foundational (1 Cor 15:14).
+        Jesus' hands and feet are HIS body parts, not separate objects.
+        Demonstrative must reflect immediate, tactile proximity.
+      translator_guidance: |
+        - **CRITICAL**: Use maximally proximal demonstrative
+        - Body parts always proximal to person
+        - Some languages may omit demonstrative entirely (possessive sufficient)
+        - **FORBIDDEN**: Any distant or medial demonstratives
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Spiritual resurrection only (no physical body)'
+        used_by: [Gnosticism, some liberal theology, Jehovah's Witnesses]
+        christian_assessment: |
+          HERETICAL - Contradicts Luke 24:39 "flesh and bones."
+          Proximal demonstrative supports physical presence interpretation.
+
+  # === DIVINE PRESENCE AND PROXIMITY ===
+
+  - verse_pattern: 'Exod 3:5 "Take off your sandals, for the place where you are standing is holy ground" (unverified)'
+    affected_values: [Near Speaker and Listener, Near Listener, Contextually Near]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Divine holiness
+      - Sacred space
+      - God's presence
+
+    non_arbitrary_rationale: |
+      Moses at burning bush - "the place where you (Moses) are standing."
+      Proximity marks sacred space around divine presence.
+
+      Demonstrative choice affects:
+      - Perceived extent of holy ground
+      - Relationship between God and sacred space
+      - Moses' position relative to holiness
+
+    christian_orthodox_position:
+      preferred_value: Near Listener  # Place where Moses stands
+      acceptable_alternatives: [Near Speaker and Listener, Contextually Near]
+      forbidden_values: [Remote Visible, Remote out of Sight]
+      theological_basis: |
+        Holy ground is under Moses' feet - immediate proximity to addressee.
+        God speaking to Moses about Moses' location.
+        Distant demonstrative contradicts "where you are standing."
+      translator_guidance: |
+        - SPATIAL FOCUS: Ground beneath Moses' feet
+        - PERSON-ORIENTED: "Near you" (addressee)
+        - DISTANCE-ORIENTED: Proximal
+        - Context: Divine presence makes location holy
+
+  # === TEMPORAL DEMONSTRATIVES WITH ESCHATOLOGICAL SIGNIFICANCE ===
+
+  - verse_pattern: 'Heb 1:2 "in these last days he has spoken to us by his Son" (unverified)'
+    affected_values: [Temporally Near]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Eschatology (last days theology)
+      - Progressive revelation
+      - Christology (Christ as final revelation)
+
+    non_arbitrary_rationale: |
+      "These last days" (proximal temporal) vs. "those days" (distal temporal).
+      Proximity marks current era as eschatologically significant.
+
+      Wrong demonstrative (Temporally Remote) could:
+      - Imply Christ's coming is past, not ongoing relevance
+      - Disconnect readers from eschatological urgency
+      - Contradict "last days" as present reality
+
+    christian_orthodox_position:
+      preferred_value: Temporally Near
+      acceptable_alternatives: []
+      forbidden_values: [Temporally Remote]
+      theological_basis: |
+        The "last days" began with Christ's first coming and continue until
+        His return. "These days" (proximal) maintains present relevance.
+      translator_guidance: |
+        - **REQUIRED**: Proximal temporal demonstrative
+        - Emphasizes present eschatological era
+        - **FORBIDDEN**: Remote temporal (makes Christ's revelation seem past only)
+
+  - verse_pattern: 'Gen 1:1 "In the beginning" (remote temporal) (unverified)'
+    affected_values: [Temporally Remote]
+    theological_stakes: LOW  # Contextual clarity, not doctrinal
+    affected_doctrines:
+      - Creation ex nihilo
+      - Temporal framework
+
+    non_arbitrary_rationale: |
+      "In the beginning" refers to primordial time, before human history.
+      Temporally remote demonstrative appropriate.
+
+      Proximal demonstrative (Temporally Near) would:
+      - Confuse timeline (makes creation seem recent)
+      - Reduce sense of ancient origin
+
+    christian_orthodox_position:
+      preferred_value: Temporally Remote
+      acceptable_alternatives: [Contextually Near]  # If introducing narrative
+      forbidden_values: []
+      theological_basis: |
+        Creation predates human history - distant past from reader's perspective.
+        Proximal demonstrative less natural, though not heretical.
+      translator_guidance: |
+        - PREFERRED: Temporally Remote demonstrative
+        - Marks primordial time
+        - Acceptable: Discourse demonstrative if opening narrative frame
+
+  # === CONTEXTUAL CLARITY (HIGH STAKES FOR READER UNDERSTANDING) ===
+
+  - verse_pattern: 'Acts 1:11 "This Jesus, who was taken up from you into heaven" (unverified)'
+    affected_values: [Contextually Near with Focus, Contextually Near]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Ascension
+      - Second Coming
+      - Identity of returning Christ
+
+    non_arbitrary_rationale: |
+      Angels speaking to disciples immediately after Jesus' ascension.
+      "This Jesus" (emphatic demonstrative) vs. "that Jesus" (distant).
+
+      Demonstrative affects:
+      - Emphasis on SAME Jesus will return
+      - Connection between ascended Jesus and returning Christ
+      - Immediacy of promise
+
+    christian_orthodox_position:
+      preferred_value: Contextually Near with Focus  # Emphatic: THIS Jesus
+      acceptable_alternatives: [Contextually Near, Near Speaker]
+      forbidden_values: [Remote Visible, Temporally Remote]
+      theological_basis: |
+        Emphasizes identity: the SAME Jesus who ascended will return.
+        Not a different being or spiritual manifestation.
+      translator_guidance: |
+        - **EMPHASIS CRITICAL**: Use emphatic/focused demonstrative if available
+        - Connects to immediately preceding ascension event
+        - Refutes any notion of different Christ returning
+
+# SECTION 2: ARBITRARY (Stylistic/Contextual Choices)
+
+arbitrary_contexts:
+
+  - pattern: "Narrative spatial descriptions without theological significance"
+    examples:
+      - "that mountain" (spatial reference in travel narrative)
+      - "this town" (geographical marker)
+      - "those days" (temporal marker in genealogy)
+    rationale: |
+      Most spatial and temporal demonstratives in narrative serve literary
+      function without affecting doctrine. Translator can choose based on:
+      - Natural language flow
+      - Narrative perspective
+      - Genre conventions
+    estimated_percentage: 85%
+
+  - pattern: "Anaphoric demonstratives in discourse"
+    examples:
+      - "For this reason" (discourse connective)
+      - "such things" (referring to previous list)
+      - "those who" (anaphoric pronoun)
+    rationale: |
+      Discourse demonstratives (C, c) generally stylistic unless marking
+      critical doctrinal connection (see non-arbitrary cases above).
+    estimated_percentage: 90%
+
+  - pattern: "Everyday object references"
+    examples:
+      - "this bread" (Last Supper context - unless Eucharistic theology at stake)
+      - "that cloak" (in narrative)
+      - "these coins" (in parable)
+    rationale: |
+      Physical objects' proximity usually contextual, not doctrinal.
+      Exception: Sacramental contexts where object has theological significance.
+    estimated_percentage: 95%
+
+  - pattern: "Parabolic illustrations"
+    examples:
+      - "this seed" in Parable of the Sower
+      - "that servant" in parables of Kingdom
+    rationale: |
+      Parable demonstratives serve rhetorical function, rarely doctrinal.
+      Focus on parable's teaching, not demonstrative choice.
+    estimated_percentage: 98%
+
+# SUMMARY STATISTICS
+
+summary:
+  total_verses_with_proximity: "Estimated 5000+ (across 11,649 TBTA verses)"
+  non_arbitrary_percentage: "~5-10%"
+  arbitrary_percentage: "~90-95%"
+  high_theological_stakes: "~1-2% (Trinity, Christology, Resurrection contexts)"
+  medium_contextual_stakes: "~5-8% (Reader clarity, temporal framework)"
+  low_stakes: "~90% (Stylistic, narrative flow)"
+
+# TRANSLATOR GUIDELINES
+
+translator_guidelines: |
+  1. **Default Assumption**: Most proximity choices are ARBITRARY (stylistic)
+
+  2. **High-Stakes Contexts** (Require careful review):
+     - Trinitarian references (Gen 1:26, Matt 28:19)
+     - Christological identifications (John 1:29, Acts 1:11)
+     - Resurrection appearances (Luke 24:39, John 20:27)
+     - Eschatological timeframes (Heb 1:2, 2 Peter 3:3)
+
+  3. **Medium-Stakes Contexts** (Contextual clarity important):
+     - Divine presence and sacred space (Exod 3:5)
+     - Covenantal language ("this covenant")
+     - Sacramental references (Last Supper, Baptism)
+
+  4. **Arbitrary Contexts** (Translator freedom):
+     - Narrative spatial markers (travel descriptions)
+     - Everyday object references
+     - Anaphoric discourse connectives
+     - Parabolic illustrations
+
+  5. **When in Doubt**:
+     - Consult source language (Hebrew/Greek) demonstrative
+     - Consider narrative context and physical proximity
+     - Prefer natural target language expression
+     - Avoid forced demonstrative choices that sound unnatural
+
+# VALIDATION CRITERIA
+
+validation_criteria:
+  non_arbitrary_accuracy_required: "100%"
+  rationale: |
+    Non-arbitrary contexts (5-10% of total) have theological or critical
+    contextual significance. Errors could:
+    - Facilitate heretical readings
+    - Confuse essential doctrines
+    - Obscure narrative clarity
+
+    Must achieve 100% accuracy on these high-stakes contexts before production.
+
+  arbitrary_accuracy_target: "80%+"
+  rationale: |
+    Arbitrary contexts (90-95%) are stylistic. Target 80%+ accuracy to ensure:
+    - Natural language flow
+    - Consistency with translator choices
+    - Avoidance of obviously wrong demonstratives
+
+    Lower stakes allow some variation without theological risk.

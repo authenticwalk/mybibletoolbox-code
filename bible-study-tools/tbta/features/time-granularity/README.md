@@ -1,58 +1,125 @@
 # Time Granularity
 
-## Overview
+**Temporal distance marking - from "just now" to "legendary past"**
 
-This feature is under development as part of the TBTA (Translation-Based Text Analysis) project.
+## Quick Facts
 
-## Purpose
+| Property | Value |
+|----------|-------|
+| **TBTA Field** | Time (Position 1 in Verb codes) |
+| **Category** | Verb Features (Tier A - Essential) |
+| **Values** | 24 distinct values (72,087 total annotations) |
+| **Top 3 Values** | Discourse (40.4%), Present (35.6%), Immediate Future (16.2%) |
+| **Global Prevalence** | ~20% of languages (1000+ languages) |
+| **Source Languages** | ❌ NOT in Hebrew/Greek - fully inferential |
+| **Critical Families** | Bantu (80%), some Amazonian, scattered others |
+| **Theological Stakes** | MINIMAL (95%+ arbitrary - historicity matters, distance doesn't) |
+| **Status** | ✅ Research Complete (Stage 1) |
 
-Time granularity captures the level of temporal precision and specificity in references to time - ranging from general (e.g., "in ancient times") to very specific (e.g., "at 3 PM on Tuesday, March 15th").
+## Description
 
-## Development Status
+**Time granularity** (also called *temporal remoteness* or *metrical tense*) encodes how far in time an event is from the present moment. Unlike simple tense (past/present/future), it makes fine distinctions like "just now" vs "yesterday" vs "last year" vs "ancient times."
 
-🚧 **Stage 0**: Not yet started
+**Example**: In Yagua (5-way past system), Genesis creation requires "legendary past" while Joseph's recent travels use "1-2 months ago past."
 
-See [STAGES.md](../STAGES.md) for the complete 6-stage development methodology.
+## Critical Languages
 
-## Development Checklist
+### Mandatory (Must mark time distance)
 
-### Stage 1: Research TBTA Documentation
-- [ ] Review official TBTA docs for this feature
-- [ ] Review existing feature analysis (check `../features-archive/time-granularity/`)
-- [ ] Generate README.md with feature definition + stage checklist
+- **Bantu languages** (80% of family): ChiBemba, Swahili, Haya, Gĩkũyũ - 2-4 past distinctions, some with multiple futures
+- **Yagua** (Peru): 5 past tenses (richest system) - immediate, yesterday, week-month, months-years, legendary
+- **Some Austronesian**: Variable systems, often aspect + adverbs
 
-### Stage 2: Language Study
-- [ ] Identify which language families need this feature
-- [ ] Determine where feature is grammatically obligatory vs optional
-- [ ] Update README.md with language analysis + target scenarios
+### Absent (Tenseless or simple tense)
 
-### Stage 3: Scholarly and Internet Research
-- [ ] Find scholarly articles on this subject
-- [ ] Research general web information
-- [ ] Update README.md with latest findings
+- **Indo-European** (mostly): English, Spanish, Greek, Hebrew - no remoteness (rare exception: Balochi)
+- **Sino-Tibetan**: Mandarin, Burmese - tenseless, aspect-only
+- **Many Austronesian**: Hawaiian - no tense at all
 
-### Stage 4: Generate Test Set with Translation Data
-- [ ] Philosophy: Discover answers from what real translators did
-- [ ] Sample size: 100+ verses per value minimum
-- [ ] Create translation database (5-10 representative translations)
-- [ ] Generate dual outputs: answer sheets (TBTA) + question sheets (translations)
-- [ ] Split: train (40%), test (30%), validate (30%)
+## Translation Examples
 
-### Stage 5: Analyze Translations & Develop Algorithm
-- [ ] Translation discovery analysis (primary source)
-- [ ] Create ANALYSIS.md (up to 12 approaches)
-- [ ] Develop PROMPT1.md with locked predictions
-- [ ] Systematic error analysis (6-step process)
-- [ ] Iterative refinement (PROMPT2.md, PROMPT3.md, etc.)
+### ✅ Correct: Yagua Translation of Genesis 1:1
 
-### Stage 6: Test Against Validate Set & Peer Review
-- [ ] Blind subagent validation
-- [ ] 4 critical peer reviews (theological, linguistic, methodological, translation practitioner)
-- [ ] Translation practitioner testing with 2-3 languages
-- [ ] Production readiness verification
+| Element | Time Value | Yagua Choice |
+|---------|------------|--------------|
+| "In the beginning, God created..." | Historic/Legendary Past | **Legendary past tense** (value 5) |
+| **Why correct** | Creation is ancient, beyond living memory | Semantically coherent |
+| ❌ **Wrong choice** | Using "last month" past (value 3) | Incoherent - implies recent event |
 
-## Resources
+### ⚠️ Critical: Direct Discourse (Character Perspective)
 
-- **Authoritative Methodology**: [STAGES.md](../STAGES.md)
-- **Feature Template**: [TEMPLATE.md](../TEMPLATE.md)
-- **Previous Work**: [features-archive/time-granularity/](../features-archive/time-granularity/)
+| Speaker | Statement | Time Value | Rationale |
+|---------|-----------|------------|-----------|
+| Joseph's brothers (Gen 42) | "Yesterday we were in Canaan" | **RECENT past** (their perspective) | Follow character's timeframe |
+| Narrator | "The brothers came to Egypt" | **HISTORIC past** (our perspective) | Narrator uses reader's timeframe |
+
+### ✅ Timeless Teaching vs Historic Event
+
+| Text | Element | Time Value |
+|------|---------|------------|
+| Matthew 5:3 | "Jesus said..." | Historic past (narrative frame) |
+| Matthew 5:3 | "Blessed are the poor..." | **TIMELESS** (teaching content) |
+| **Why distinction matters** | Teaching is eternally applicable | Prevents suggestion of obsolescence |
+
+## Value Distribution (TBTA Data)
+
+**Total annotations**: 72,087 entries across 24 distinct values
+
+| Value | Count | % |
+|-------|-------|---|
+| Discourse | 29,102 | 40.4% |
+| Present | 25,659 | 35.6% |
+| Immediate Future | 11,669 | 16.2% |
+| Later Today | 1,295 | 1.8% |
+| Unknown Future | 627 | 0.9% |
+| During Speaker's Lifetime | 477 | 0.7% |
+| Earlier Today | 467 | 0.6% |
+| Historic Past | 460 | 0.6% |
+| A Year Ago | 455 | 0.6% |
+| Immediate Past | 309 | 0.4% |
+| Yesterday | 281 | 0.4% |
+| A Week Ago | 228 | 0.3% |
+| Other values (12) | <0.3% each | 1.4% |
+
+See [analysis/distribution.yaml](analysis/distribution.yaml) for complete distribution data.
+
+## TBTA Encoding
+
+**Position**: 1 in 9-position Verb code string
+**Gateway**: Part of Speech = Verb (ONLY verbs receive time values)
+**Dependencies**: None - orthogonal to Aspect, Mood, Polarity
+
+**Sample Values** (from TBTA DATA-STRUCTURE.md):
+- `P` = Present
+- `D` = Immediate Past (today)
+- `A` = Earlier Today
+- `a` = Yesterday
+- `i` = Historic Past (beyond living memory)
+- `T` = Timeless/Gnomic
+- `E` = Immediate Future
+
+**Full inventory**: See [research/TBTA.md](research/TBTA.md) for complete value list and gaps.
+
+## Target Audience
+
+**Primary**: Translators into Bantu languages (200+ languages, 80% require feature)
+**Secondary**: Amazonian languages (Yagua, Pano family), scattered others
+**Edge cases**: Aspect-based languages (Tagalog) - adverbial time framing
+
+## **FORBIDDEN** / **HERETICAL** Values
+
+**NONE** - Time granularity is 95%+ arbitrary. No choices are heretical.
+
+Even contextually suboptimal choices (e.g., marking timeless teaching as historic past) affect clarity but NOT core Christian doctrine. Historicity matters; temporal distance does not.
+
+## Development Resources
+
+- **[research/README.md](research/README.md)** - Research summary (200 lines)
+- **[research/TBTA.md](research/TBTA.md)** - TBTA documentation review (320 lines)
+- **[research/LANGUAGES.md](research/LANGUAGES.md)** - Language typology (575 lines)
+- **[research/SCHOLARLY.md](research/SCHOLARLY.md)** - 25+ scholarly sources (870 lines)
+- **[research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml](research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml)** - Theological analysis (380 lines)
+
+---
+
+**Stage 1 Complete**: 2025-11-29 | **Next**: Stage 2 (Translation Database Generation)

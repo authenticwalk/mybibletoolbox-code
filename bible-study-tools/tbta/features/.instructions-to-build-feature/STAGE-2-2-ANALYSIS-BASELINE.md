@@ -6,7 +6,7 @@
 
 ## Goal
 
-Quantitatively validate the feature against real-world translations _before_ writing prompts. Shift from "looking for patterns" to "testing hypotheses".
+Quantitatively train the feature against real-world translations _before_ writing prompts. Shift from "looking for patterns" to "testing hypotheses".
 
 ## SETUP
 
@@ -20,9 +20,9 @@ Quantitatively validate the feature against real-world translations _before_ wri
 analysis/
 ├── data/
 │   ├── train.jsonl      # max 300 entries
-│   ├── validate.jsonl   # max 100 entries
+│   ├── train.jsonl   # max 100 entries
 │   ├── test.jsonl       # max 100 entries (DO NOT TOUCH until final eval)
-│   └── leftovers.jsonl  # remaining entries not in train/validate/test
+│   └── leftovers.jsonl  # remaining entries not in train/train/test
 ├── tbta-extract.jsonl   # full extraction
 ├── README.md            # results summary
 └── logical.py           # optional rules script
@@ -42,6 +42,16 @@ You will work through these steps calling subagents as defined in each step to k
 If you have to redo a step debug the instructions and add your analysis and fix to `$ANALYSIS-DIR/_LEARNINGS.md`
 ---
 
+## Prepeartion
+
+Run as: Orchestrator
+
+Ensure you have the file `$ANALYSIS-DIR/data/train.jsonl` if not go back to `STAGE-2-1-ANALYSIS-DATASET.md`
+
+Run the script `python src/tools/predict/strip_labels.py --input $ANALYSIS-DIR/data/train.jsonl --output $ANALYSIS-DIR/data/train-no-labels.jsonl --limit 800`
+
+Run the script `python src/tools/predict/strip_labels.py --input $ANALYSIS-DIR/data/train.jsonl --output $ANALYSIS-DIR/data/train-no-decoration.jsonl --fields verse,text --limit 800`
+
 ## Step 2: Baseline Analysis
 
 ### LLM Baseline
@@ -50,7 +60,7 @@ If you have to redo a step debug the instructions and add your analysis and fix 
 
 **Goal**: Understand (1) what the LLM already knows about this feature, and (2) how much guidance helps.
 
-#### Test A: Zero-Shot Baseline (no definitions)
+#### Test A: Zero-Shot Baseline (no metadata)
 
 Run as: 3 Subagents
 Parallel: Yes
@@ -59,10 +69,9 @@ Models: Haiku, Opus, Sonnet
 Start a subagent with a minimal prompt that only lists the possible values without explaining them:
 
 **Task**:
-1. Read `$ANALYSIS-DIR/data/validate.jsonl`
-2. Extract the `reconstructed_verse` for each line
-3. Prompt the model with the values found in `$CURRENT-FEATURE-DIR/README.md` (Do NOT explain the values, just list them)
-4. Ask the model to label the **bolded** word in the reconstructed verse
+1. Read `$ANALYSIS-DIR/data/train-no-decoration.jsonl`
+2. Prompt the model with the values found in `$CURRENT-FEATURE-DIR/README.md` (Do NOT explain the values, just list them)
+3. Ask the model to label the **bolded** word in the text field using it's internal knowledge of the verse, translation notes, other translations that use this feature. (it is not allowed to use any web tools and is only to use internal knowedge from its pre-training)
 
 **Prompt Template**:
 ```
@@ -72,11 +81,33 @@ Label the **bolded** word in this verse with one of these {FeatureName} values:
 Return ONLY the label, nothing else.
 ```
 
-Give it ALL verses from `$ANALYSIS-DIR/data/validate.jsonl`.
+Save predictions to `$ANALYSIS-DIR/data/baseline_no_metadata_${modelName}.txt` (one label per line).
+
+#### Test B: Zero-Shot Baseline (no definitions)
+
+Run as: 3 Subagents
+Parallel: Yes
+Models: Haiku, Opus, Sonnet
+
+Start a subagent with a minimal prompt that only lists the possible values without explaining them:
+
+**Task**:
+1. Read `$ANALYSIS-DIR/data/train-no-labels.jsonl`
+2. Prompt the model with the values found in `$CURRENT-FEATURE-DIR/README.md` (Do NOT explain the values, just list them)
+
+**Prompt Template**:
+```
+Label the **bolded** word in this verse with one of these {FeatureName} values:
+{Value1}, {Value2}, {Value3}, ...
+
+Return ONLY the label, nothing else.
+```
+
+Give it ALL verses from `$ANALYSIS-DIR/data/train-no-labels.jsonl`.
 
 Save predictions to `$ANALYSIS-DIR/data/baseline_zero_shot_${modelName}.txt` (one label per line).
 
-#### Test B: Guided Baseline (with definitions)
+#### Test C: Guided Baseline (with definitions)
 
 Run as: 1 Subagents
 Parallel: Yes (with above)
@@ -99,24 +130,76 @@ Verse: {reconstructed_verse}
 Label the **bolded** word. Return ONLY the label.
 ```
 
-Give it the SAME verses from `$ANALYSIS-DIR/data/validate.jsonl`. Save predictions to `$ANALYSIS-DIR/data/baseline_guided.txt` (one label per line).
+Give it the SAME verses from `$ANALYSIS-DIR/data/train-no-labels.jsonl`. Save predictions to `$ANALYSIS-DIR/data/baseline_guided.txt` (one label per line).
 
-#### Analysis: Compare the Two Baselines
+#### Test D: Prompt Engineering
+
+Add to the prompt 
+
+```
+[PERSONA]
+You are a senior Bible Translator fluent in languages that use ${FEATURE-NAME}
+[STAKES]
+This is critical. If we get this wrong, we'll hit $5K/month in
+new expenses as all the work will have to be redone
+[INCENTIVE]
+I'll tip you $200 if you can get this right
+[CHALLENGE]
+I bet you can't get this right where it works across all languages AND
+is accurate.  Not even humans can label it that well.
+[METHODOLOGY]
+Take a deep breath and work through this step by step:
+1. Analyze what the feature is
+2. Consider the differences between languages that use it
+3. Figure out all the edge cases you need to account for
+4. Predict with high confidence
+[QUALITY CONTROL]
+After your solution, rate confidence (0-1) on:
+- Accuracy
+- How well it will work across all languages that need this linguistic feature
+- Explainability
+If any score < 0.9, refine it.
+[TASK]
+Design: [add the prompt from TEST C]
+```
+
+Give it the SAME verses from `$ANALYSIS-DIR/data/train-no-labels.jsonl`. Save predictions to `$ANALYSIS-DIR/data/prompt-engineered.txt` (one label per line).
+
+#### Score the predictions then audit the mistakes
 
 Score the predictions using `src/tools/predict/score_baseline.py`:
 
 ```bash
 python src/tools/predict/score_baseline.py \
-  --predictions $ANALYSIS-DIR/data/baseline_zero_shot_${modelName}.txt \
-  --ground-truth $ANALYSIS-DIR/data/validate.jsonl \
+  --predictions $ANALYSIS-DIR/data/${filename}.txt \
+  --ground-truth $ANALYSIS-DIR/data/train.jsonl \
   --output $ANALYSIS-DIR/score_${modelName}.md
 ```
+
+Now compare all the mistakes, creating a markdown file `COMMON-MISTAKES.md` that covers these key points
+
+ - Repeated Mistakes: Group the same mistakes into unique groups
+   - List verse reference and quote the rebuilt verse which highlights the word
+   - Put the above in a table with the correct answer and each answer from the models
+   - Debug what the issue is
+     - ex. the label is for all languages and is used mathematically where the analysis was generic (for instance labelling an item as 4 people works even if there are 3 people as <=3 but may not immediately appear right)
+     - ex. Human labelling inconsistency
+     - ex. Differences in how the feature is implemented among languages
+     - ex. Biases, assumptions
+   - Suggest different ways that this could be resolved
+     - ex. example of prompt edits (but note if that will overcomplicate the prompt - simple instructions are better than complex ones)
+     - ex. adding a note to the verse or the strongs words (this is preferred for edge cases but can we be exhaustive or is this whack a mole and risks blindspots.  I'm okay with adding up to 100 of the same note on multiple verses and loading it as needed but can we determine or guess which <=100 are worth adding it to?)
+   - Another approach is insted of listing a single value what if we listed helpful translators notes in the format of a dominant-answer: and why? with alternate-answers with why and potential risks (how could that choice cause unexpected bad theology, preaching, confusion)
+ - One-offs: Follow same as above but be more skeptical of your analysis due to small sample size
+
+#### Analysis: Compare the Two Baselines
 
 Create `$ANALYSIS-DIR/HIGH-LEVEL-REVIEW.md` with:
 
 1. **Accuracy comparison**:
    | Test | Accuracy |
    |------|----------|
+   ...all the other
    | Zero-shot-Haiku | X1% |
    | Zero-shot-Sonnet | X2% |
    | Zero-shot-Opus | X3% |
@@ -155,5 +238,3 @@ Include both prompts in the review file.
    - ❌ `LUK.005.019: "man could not enter house" → TBTA: Paucal`
 
 **Why**: Avoid overbuilding. The LLM may already have sufficient knowledge for common features.
-
-

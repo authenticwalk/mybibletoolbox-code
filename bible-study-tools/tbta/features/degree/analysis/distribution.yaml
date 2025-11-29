@@ -1,0 +1,63 @@
+---
+# Distribution of Degree Feature Values
+# Extracted from TBTA dataset on 2025-11-29
+# Total entries: 30,879
+
+distribution:
+  "No Degree":
+    count: 28970
+    percentage: 93.8
+    description: "No degree marking - base/positive form"
+
+  "Intensified":
+    count: 848
+    percentage: 2.7
+    description: "Intensified form (very, so, etc.)"
+
+  "Comparative":
+    count: 398
+    percentage: 1.3
+    description: "Comparative degree (more, -er)"
+
+  "Superlative":
+    count: 291
+    percentage: 0.9
+    description: "Superlative degree (most, -est)"
+
+  "Extremely Intensified":
+    count: 213
+    percentage: 0.7
+    description: "Extremely intensified form"
+
+  "'too'":
+    count: 78
+    percentage: 0.3
+    description: "Excessive degree ('too' construction)"
+
+  "'least'":
+    count: 35
+    percentage: 0.1
+    description: "Least form (inverse superlative)"
+
+  "'less'":
+    count: 23
+    percentage: 0.1
+    description: "Less form (inverse comparative)"
+
+  "Intensified Comparative":
+    count: 9
+    percentage: 0.0
+    description: "Comparative with intensification"
+
+  "Superlative of 2 items":
+    count: 7
+    percentage: 0.0
+    description: "Superlative used for comparison of only 2 items"
+
+  "Equality":
+    count: 7
+    percentage: 0.0
+    description: "Equative comparison (as...as)"
+
+total_entries: 30879
+extraction_date: "2025-11-29"

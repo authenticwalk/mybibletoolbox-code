@@ -1,0 +1,437 @@
+feature: person-system
+default_classification: arbitrary # Default: choice is stylistic/optional
+theological_significance: EXISTS # Flag: Does this ever matter doctrinally?
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+# These contexts require accurate person/clusivity to avoid heresy or major doctrinal error
+
+non_arbitrary_contexts:
+
+  # ========== TRINITY REFERENCES (HIGHEST STAKES) ==========
+
+  - verse_pattern: 'Gen 1:26 - "Let us make man in our image" (unverified)'
+    affected_values: [First Inclusive, Third]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (nature of God)
+      - Creation theology
+      - Imago Dei
+
+    non_arbitrary_rationale: |
+      Choice affects core doctrine. Hebrew uses 1st person plural ("let us... our image"),
+      but does not mark clusivity. Translation into clusivity-marking languages requires
+      choosing who "us" includes:
+      - First Inclusive + Trial Number = Trinity (God addresses Godself - 3 Persons)
+      - Third Person (+ angels/council) = Divine Council interpretation
+      Person choice determines whether Trinity or alternative interpretation.
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive # God speaks within Godhead
+      acceptable_alternatives: []
+      forbidden_values: [Second] # Would imply God addresses humans (who don't create)
+      theological_basis: 'God is One Essence, Three Persons. "Us" is intra-Trinitarian deliberation.'
+      translator_guidance: |
+        - FIRST CHOICE: Use First Inclusive (if language has trial number, use Trial Inclusive).
+        - RATIONALE: God (Father, Son, Holy Spirit) deliberate together as one God.
+        - AVOID: Third person (angels/divine council - violates "God alone creates").
+        - FORBIDDEN: Second person (would include humans in creation).
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Jewish non-Messianic, some liberal Protestant scholars]
+        christian_assessment: REJECTED (Angels do not create; Isa 44:24 "I alone")
+      - interpretation: 'Plural of Majesty (royal we)'
+        used_by: [Some Jewish interpreters]
+        christian_assessment: DEBATED (grammatically weak; no clear examples in Biblical Hebrew)
+      - interpretation: 'God addresses humanity'
+        used_by: []
+        christian_assessment: HERETICAL (humans do not create; violates context)
+
+  - verse_pattern: 'Gen 3:22 - "The man has become like one of us" (unverified)'
+    affected_values: [First Inclusive, Third]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity
+      - Knowledge of good and evil
+
+    non_arbitrary_rationale: |
+      Similar to Gen 1:26. God says man "has become like one of us, knowing good and evil."
+      Person choice determines Trinity vs divine council interpretation.
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: 'Parallel to Gen 1:26 - intra-Trinitarian speech.'
+      translator_guidance: |
+        - Consistent with Gen 1:26 interpretation.
+        - First Inclusive = God speaks within Godhead about humanity's new state.
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Jewish non-Messianic]
+        christian_assessment: REJECTED (same as Gen 1:26)
+
+  - verse_pattern: 'Gen 11:7 - "Let us go down and confuse their language" (Babel) (unverified)'
+    affected_values: [First Inclusive, Third]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity
+      - Divine judgment
+
+    non_arbitrary_rationale: |
+      God uses 1st person plural cohortative. Same pattern as Gen 1:26, 3:22.
+      Determines Trinity vs divine council interpretation.
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: 'Intra-Trinitarian deliberation before judgment.'
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Some scholars]
+        christian_assessment: REJECTED (judgment is God's prerogative alone)
+
+  - verse_pattern: 'Isa 6:8 - "Whom shall I send, and who will go for us?" (unverified)'
+    affected_values: [First Inclusive, Third]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity
+      - Isaiah's commission
+
+    non_arbitrary_rationale: |
+      God uses singular "I" then plural "us" in same verse.
+      Classic Trinitarian proof text (singular essence, plural persons).
+      Person choice affects Trinity interpretation.
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: []
+      forbidden_values: [Second] # God is not asking Isaiah to send
+      theological_basis: 'Trinity deliberation. Singular/plural shift shows one God, multiple Persons.'
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Divine Council (God + Angels)'
+        used_by: [Some scholars]
+        christian_assessment: REJECTED (Seraphim are worshipers, not co-senders)
+
+  - verse_pattern: 'John 14:23 - "We will come to him and make our home with him" (unverified)'
+    affected_values: [First Inclusive, First Exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Trinity
+      - Indwelling of God
+
+    non_arbitrary_rationale: |
+      Jesus says "My Father will love him, and we will come to him."
+      "We" = Father and Son (and implicitly Holy Spirit in context).
+      Clusivity choice determines whether Spirit is included in "we."
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive # Father, Son, (Holy Spirit)
+      acceptable_alternatives: [First Exclusive] # Father and Son, assuming Spirit separate mention
+      forbidden_values: [Second, Third]
+      theological_basis: 'Trinity indwells believers. "We" = Godhead (or Father + Son if Spirit mentioned separately in v. 26).'
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Only Father and Son (denying Holy Spirit as Person)'
+        used_by: [Some non-Trinitarian groups]
+        christian_assessment: REJECTED (Holy Spirit is third Person of Trinity)
+
+  # ========== PRAYERS (EXCLUDING GOD FROM HUMAN SIN) ==========
+
+  - verse_pattern: 'Matt 6:12; Luke 11:4 - "Forgive us our debts/sins" (Lord''s Prayer) (unverified)'
+    affected_values: [First Exclusive]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Sinlessness of God
+      - Nature of prayer
+      - Doctrine of sin
+
+    non_arbitrary_rationale: |
+      "Forgive us our trespasses/sins/debts" must use EXCLUSIVE "we" (excluding God).
+      Inclusive would imply God shares in human sin - HERETICAL.
+      Early missionaries made this error in Kwara'ae, had to correct it.
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive
+      acceptable_alternatives: []
+      forbidden_values: [First Inclusive]
+      theological_basis: 'God is sinless. "Us" = we humans, NOT you God. God forgives, does not need forgiveness.'
+      translator_guidance: |
+        - MANDATORY: Use First Exclusive (we humans, not you God).
+        - FORBIDDEN: First Inclusive would imply God sins (heresy).
+        - HISTORICAL ERROR: Kwara'ae early translation used inclusive = "Forgive us (yours and ours) our sins."
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Inclusive "we" (God included in sin)'
+        used_by: [Early missionary translation errors]
+        christian_assessment: HERETICAL (God is sinless; 1 John 1:5, Hab 1:13)
+
+  - verse_pattern: 'Dan 9:4-19 - Daniel''s prayer "we have sinned" (unverified)'
+    affected_values: [First Exclusive, First Inclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Confession of sin
+      - Corporate sin
+
+    non_arbitrary_rationale: |
+      Daniel prays on behalf of Israel, confessing "we have sinned."
+      If language marks clusivity, must exclude God from "we."
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive
+      acceptable_alternatives: []
+      forbidden_values: [First Inclusive]
+      theological_basis: 'Confession of human sin; God is sinless.'
+
+  - verse_pattern: 'Neh 9:33 - "You have acted faithfully, while we acted wickedly" (unverified)'
+    affected_values: [First Exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Confession of sin
+      - God's faithfulness vs human sin
+
+    non_arbitrary_rationale: |
+      Explicit contrast: God = faithful; we = wicked.
+      Inclusive "we" would contradict the contrast.
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive
+      acceptable_alternatives: []
+      forbidden_values: [First Inclusive]
+      theological_basis: 'God is excluded from "we the wicked."'
+
+  # ========== APOSTOLIC AUTHORITY (EXCLUSIVE "WE") ==========
+
+  - verse_pattern: 'Acts 15:25-28 - "It seemed good to us... the Holy Spirit and to us" (Jerusalem Council) (unverified)'
+    affected_values: [First Exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Apostolic authority
+      - Church governance
+      - Ecclesiastical decisions
+
+    non_arbitrary_rationale: |
+      Apostles/elders write to Gentile churches: "It seemed good to us."
+      "Us" = council members, NOT recipients (who did not participate in decision).
+      Inclusive would wrongly imply Gentile participation in council decision.
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive
+      acceptable_alternatives: []
+      forbidden_values: [First Inclusive]
+      theological_basis: 'Council made decision FOR churches, not WITH them. Apostolic authority.'
+      translator_guidance: |
+        - Use First Exclusive (we apostles/elders, not you Gentile believers).
+        - Inclusive would undermine apostolic authority (implying recipients made decision).
+
+  - verse_pattern: '1 Cor 4:9-13 - Paul describes apostolic suffering "we apostles... we are fools" (unverified)'
+    affected_values: [First Exclusive]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Apostolic suffering
+      - Leadership vs laity distinction
+
+    non_arbitrary_rationale: |
+      Paul contrasts apostles ("we") with Corinthians ("you"): "We are fools... but you are wise."
+      Exclusive distinguishes apostles from congregation.
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive
+      acceptable_alternatives: []
+      forbidden_values: [First Inclusive]
+      theological_basis: 'Paul distinguishes apostolic suffering from Corinthian complacency.'
+
+  - verse_pattern: '2 Cor 1:19 - "The Son of God... proclaimed among you by us" (unverified)'
+    affected_values: [First Exclusive]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Apostolic preaching
+      - Gospel proclamation
+
+    non_arbitrary_rationale: |
+      "By us" (Paul, Silvanus, Timothy) preached "among you" (Corinthians).
+      Clear sender-recipient distinction.
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive
+      acceptable_alternatives: []
+      forbidden_values: [First Inclusive]
+      theological_basis: 'Preachers ("us") vs hearers ("you").'
+
+  # ========== INCLUSIVE "WE" (INCLUDING AUDIENCE) ==========
+
+  - verse_pattern: 'Rom 3:23 - "All have sinned" / "We all fall short" (unverified)'
+    affected_values: [First Inclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Universal sinfulness
+      - Doctrine of sin
+      - Human depravity
+
+    non_arbitrary_rationale: |
+      Paul includes himself, his audience, and all humanity in "all have sinned."
+      Some translations use "we all fall short" (inclusive language).
+      Inclusive affirms universal sinfulness (including speaker and hearers).
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: [Third] # "All" (3rd person) is also used
+      forbidden_values: []
+      theological_basis: 'Universal sinfulness. Paul includes himself and readers: all are sinners.'
+      translator_guidance: |
+        - Inclusive "we" includes Paul + readers + all humanity.
+        - Emphasizes Paul's humility (not excluding himself from sinners).
+        - Exceptions: Jesus (sinless), possibly infants before age of accountability (debated).
+
+  - verse_pattern: '1 Cor 15:51-52 - "We shall all be changed... we shall be raised" (unverified)'
+    affected_values: [First Exclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Resurrection of believers
+      - Rapture/Second Coming
+      - Eschatology
+
+    non_arbitrary_rationale: |
+      Paul speaks of believers' resurrection: "We shall all be changed."
+      "We" = believers only (Paul + Corinthian Christians), NOT all humanity.
+      EXCLUSIVE of unbelievers (whose resurrection is separate: John 5:28-29).
+
+    christian_orthodox_position:
+      preferred_value: First Exclusive # Believers only, not unbelievers
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: '"We" = believers exclusively. Unbelievers have different resurrection (judgment).'
+      translator_guidance: |
+        - Paul addresses believers, speaking of their glorious resurrection.
+        - EXCLUDE unbelievers (who face resurrection to judgment, not glory).
+
+  - verse_pattern: 'Eph 2:4-5 - "God... made us alive together with Christ" (unverified)'
+    affected_values: [First Inclusive]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Salvation
+      - Union with Christ
+
+    non_arbitrary_rationale: |
+      Paul includes himself and Ephesian believers: "us" = all believers made alive.
+      Inclusive emphasizes shared salvation.
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: 'Paul and readers share in salvation through Christ.'
+
+  - verse_pattern: 'Heb 4:14-16 - "Let us hold fast... let us draw near" (exhortation) (unverified)'
+    affected_values: [First Inclusive]
+    theological_stakes: LOW
+    affected_doctrines:
+      - Perseverance
+      - Access to God
+
+    non_arbitrary_rationale: |
+      Author exhorts readers using "let us" (cohortative).
+      Inclusive = author joins readers in exhortation (not standing apart).
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: 'Preacher includes self in exhortation (humble, not aloof).'
+
+  - verse_pattern: '1 John 1:8-9 - "If we say we have no sin... if we confess our sins" (unverified)'
+    affected_values: [First Inclusive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Universal sinfulness (even of believers)
+      - Confession and forgiveness
+
+    non_arbitrary_rationale: |
+      John includes himself with readers: "we" = all Christians (including apostles).
+      Refutes perfectionism (claiming sinlessness).
+      Inclusive shows even John (apostle) needs ongoing confession.
+
+    christian_orthodox_position:
+      preferred_value: First Inclusive
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: 'Even apostles are sinners needing confession. "We" includes John + readers.'
+      translator_guidance: |
+        - Inclusive "we" counters pride/perfectionism.
+        - John does not exclude himself from needing confession.
+
+# SECTION 2: AMBIGUOUS CONTEXTS (Exegetically Debated)
+# These contexts have legitimate scholarly disagreement on clusivity
+
+ambiguous_contexts:
+
+  - verse_pattern: 'Gal 2:15 - "We ourselves are Jews by birth, not Gentile sinners" (unverified)'
+    rationale: |
+      Ambiguous whether Paul continues addressing Peter (Acts 15 incident) or shifts to addressing
+      Galatian audience. If addressing Peter: INCLUSIVE (includes Peter). If addressing Galatians:
+      EXCLUSIVE (Paul + Jewish Christians, not Gentile Galatians).
+      Greek text does not clarify. Scholars disagree.
+    scholarly_positions:
+      - Pickett & Cowan (1962): Recommend Inclusive
+      - SIL International (1999): Recommend Exclusive (but note uncertainty)
+    estimated_percentage: 5% # Small percentage of verses have exegetical ambiguity
+
+  - verse_pattern: '1 Cor 1:1 - "Paul... and Sosthenes" writing "to the church" (unverified)'
+    rationale: |
+      Ambiguous whether "we/our" in the letter includes readers or just Paul + Sosthenes.
+      Different translators make different choices.
+    scholarly_positions:
+      - Pickett & Cowan (1962): Recommend Inclusive
+      - SIL International (1999): Recommend Exclusive
+    estimated_percentage: '<1%'
+
+# SECTION 3: ARBITRARY (Stylistic/Contextual)
+# Most "we" contexts are stylistically flexible
+
+arbitrary_contexts:
+
+  - pattern: "Narrative travel companions (e.g., 'We sailed to...', Acts 'we-passages')"
+    rationale: 'Referent clear from context; clusivity is stylistic choice (traveling group).'
+    estimated_percentage: 30%
+
+  - pattern: "Generic humanity (e.g., 'We reap what we sow', proverbial wisdom)"
+    rationale: 'Generic "we" = people in general. Clusivity less important (universal principle).'
+    estimated_percentage: 20%
+
+  - pattern: "Crowd sizes, groups of people (e.g., 'multitude', 'all of us')"
+    rationale: 'Exact participant composition less theologically significant.'
+    estimated_percentage: 25%
+
+  - pattern: "Routine speech acts (e.g., 'We said', 'We went')"
+    rationale: 'Context clarifies participants; clusivity is stylistic.'
+    estimated_percentage: 20%
+
+# SECTION 4: SUMMARY STATISTICS
+
+summary_statistics:
+  total_estimated_non_arbitrary: '<3%' # Theologically critical contexts are rare
+  total_estimated_ambiguous: '<5%' # Some exegetical debates on clusivity
+  total_estimated_arbitrary: '>90%' # Most contexts are stylistically flexible
+
+  high_stakes_count: ~10 # Trinity, prayers excluding God, critical apostolic authority
+  medium_stakes_count: ~15 # Apostolic authority, resurrections, confessions
+  low_stakes_count: ~20 # Routine exhortations, apostolic references
+
+# SECTION 5: TRANSLATION BEST PRACTICES
+
+translation_best_practices:
+  - practice: 'For Trinity references (Gen 1:26, etc.), consistently use First Inclusive to maintain orthodox Christology.'
+  - practice: 'For prayers confessing sin, ALWAYS use First Exclusive (exclude God from human sin).'
+  - practice: 'For apostolic letters, distinguish: decisions BY apostles = Exclusive; exhortations TO believers = Inclusive.'
+  - practice: 'For ambiguous contexts (Gal 2:15), document choice in translator notes and maintain consistency within book.'
+  - practice: 'For narrative "we-passages" (Acts), use context to determine participant boundaries (author + companions).'
+
+# METADATA
+document_status: Complete
+last_updated: 2025-11-29
+source_methodology: 'Internal theological knowledge + web research (marked unverified where inference used)'
+verification_needed: 'All verse patterns should be verified against actual TBTA annotations and exegetical commentaries in Stage 2'

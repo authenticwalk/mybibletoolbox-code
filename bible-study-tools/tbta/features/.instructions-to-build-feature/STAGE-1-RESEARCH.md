@@ -117,7 +117,7 @@ IMPORTANT: Do not guess, cite every detail you extract to it's source document. 
 
 **Requirements**:
 
-- **Scholarly Sources**: Cite standard references (Corbett, Comrie, etc.). (min 25)
+- **Scholarly Sources**: Cite standard references (Corbett, Comrie, sil, etc.). (min 25)
 - **Typological Databases**: Reference WALS feature numbers or Grambank IDs.
 - **Translation Case Studies**: Find 2-3 real examples of how this feature is handled in translation (e.g., "How Fijian handles Gen 1:26").
 - **Verse Analysis**: Identify key biblical verses where this feature is critical.

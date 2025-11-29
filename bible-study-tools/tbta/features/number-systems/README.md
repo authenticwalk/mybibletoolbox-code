@@ -157,44 +157,64 @@ Grammatical number encodes the count of entities: singular (1), dual (2), trial 
 
 See [research/README.md](research/README.md) for full summary.
 
-## Stage 2 Analysis Results
+## Stage 2.1: Extraction & Dataset Creation
 
-**Data extracted**: 171,876 annotations from TBTA. See [analysis/README.md](analysis/README.md) for full details.
+### Step 1A: Data Extraction - COMPLETE
 
-**Distribution** (confirms Stage 1 predictions):
-- Singular: 66.2% (most common)
-- Plural: 32.4%
-- Dual: 1.0% (body parts, pairs)
-- Trial: 0.3% (rare)
-- **Quadrial: 0.1% - CONFIRMED SUSPICIOUS** (should be 0%)
-- Paucal: 0.03%
+**Data extracted**: 174,239 annotations from TBTA.
 
-**LLM Baseline**: 76% accuracy on 100 diverse samples
+**Distribution**:
+- Singular: 113,745 (65.29%)
+- Plural: 55,654 (31.94%)
+- Dual: 1,744 (1.00%)
+- Trial: 496 (0.28%)
+- Quadrial: 185 (0.11%)
+- Paucal: 52 (0.03%)
 
-**Key Error Patterns**:
-| Error Type | Frequency | Root Cause |
-|-----------|-----------|------------|
-| Paucal → Plural | 41.7% | Unclear criteria for "few" |
-| Quadrial → Plural | 12.5% | No linguistic basis for quadrial |
-| Trinity inconsistency | 8.3% | TBTA labels vary (some Trial, some Plural) |
+**Files**:
+- `analysis/tbta-extract.jsonl` - Full extraction (174,239 entries)
+- `analysis/distribution.yaml` - Detailed distribution analysis
 
-**TBTA Data Quality Issues Identified**:
-1. **Trinity passages inconsistent**: GEN.1.26 → Trial, but GEN.11.7 → Plural
-2. **Quadrial category**: 185 uses but no attested language has grammatical quadrial
-3. **Paucal boundary unclear**: Only 52 natural occurrences (0.03%)
-4. **Lexicalized dual exceptions**: PSA.19.1 "heavens" marked Plural (should be Singular)
+### Step 1B: Balanced Dataset Creation - COMPLETE
 
-**Files Created**:
-- `analysis/data/train.jsonl` - Training set (331 entries, stratified)
-- `analysis/data/validate.jsonl` - Validation set (100 entries) - Labels hidden
-- `analysis/data/test.jsonl` - Test set (96 entries) - RESERVED
-- `analysis/data/leftovers.jsonl` - Remaining TBTA data (171,260 entries)
-- `analysis/HIGH-LEVEL-REVIEW.md` - LLM baseline analysis
-- `analysis/EDGE-CASES.md` - When NOT Singular/Plural
-- `analysis/TBTA-QUALITY.md` - Data quality issues, questions for TBTA team
-- `analysis/STRONGS.md` - Strong's word pattern analysis
-- `analysis/WORD-ANALYSIS.md` - Translation word patterns
-- `analysis/reason-groupings-with-hints.jsonl` - Theological hints for verses
+**Total entries**: 986
+
+**Split distribution**:
+- train: 811
+- validate: 88
+- test: 87
+
+**Label distribution**:
+- Singular: 242
+- Plural: 241
+- Dual: 240
+- Trial: 131
+- Quadrial: 99
+- Paucal: 33
+
+**Reason group distribution** (top 10):
+- GENERAL: 207
+- PROPER-NAME: 131
+- OBJECT: 105
+- QUAD-COUNT: 99
+- TIME-UNIT: 96
+- ABSTRACT: 85
+- CROWD: 75
+- BODY-PART: 63
+- KINSHIP: 60
+- COLLECTIVE: 32
+
+**Quality metrics**:
+- strongs_number present: 986/986 (100%)
+- reason_group present: 986/986 (100%)
+- strongs list present: 911/986 (92%)
+
+**Files**:
+- `analysis/tbta-extract.jsonl` - Full extraction (171,876 entries)
+- `analysis/datasets.jsonl` - Balanced dataset with all enrichments (986 entries)
+- `analysis/distribution.yaml` - Label distribution from extraction
+
+**Status**: Ready for Step 1C (Enrich with Translations)
 
 ## Next Steps
 
@@ -231,6 +251,6 @@ See:
 
 ---
 
-**Status**: Stage 2 complete ✅
-**Ready for**: Stage 3 Experimentation
+**Status**: Stage 2 Step 1B complete - Ready for Step 1C (Translation Enrichment)
+**Ready for**: Step 1C (Enrich with Translations)
 

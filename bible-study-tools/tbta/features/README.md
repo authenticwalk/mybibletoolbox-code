@@ -4,48 +4,58 @@ This directory contains all TBTA (Translation-Based Text Analysis) features for 
 
 ## Development Methodology
 
-All features follow the authoritative **6-stage development methodology** documented in [STAGES.md](STAGES.md):
+All features follow the authoritative .instructions-to-build-feature
 
-1. **Research TBTA Documentation** - Review official TBTA docs and existing analyses
-2. **Language Study** - Identify which language families require this feature
-3. **Scholarly and Internet Research** - Find latest research and web information
-4. **Generate Test Set with Translation Data** - Create balanced datasets with real translation evidence
-5. **Analyze Translations & Develop Algorithm** - Discover patterns from what translators actually did
-6. **Test Against Validate Set & Peer Review** - Blind validation and critical peer reviews
-
-See [TEMPLATE.md](TEMPLATE.md) for the feature development template and [STAGES.md](STAGES.md) for complete methodology details.
 
 ## Features Overview
 
 ### Grammatical Features
 
-- **[aspect](aspect/)** - Grammatical aspect (perfective, imperfective, etc.)
-- **[degree](degree/)** - Degree of comparison or intensity
-- **[mood](mood/)** - Grammatical mood (indicative, subjunctive, imperative, etc.)
-- **[number-system](number-system/)** - Grammatical number (singular, dual, plural)
-- **[person-system](person-system/)** - Grammatical person (1st, 2nd, 3rd person)
-- **[polarity](polarity/)** - Affirmation vs negation
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [aspect](aspect/) | Perfective, imperfective, progressive, habitual | 2.1 ✅ | Yes |
+| [degree](degree/) | Comparative, superlative, intensified | 2.1 ✅ | Yes |
+| [mood](mood/) | Indicative, subjunctive, imperative, etc. | 2.1 ✅ | Yes |
+| [number-systems](number-systems/) | Singular, dual, trial, plural | 2.1 ✅ | Yes |
+| [person-system](person-system/) | 1st/2nd/3rd person + clusivity | 2.1 ✅ | Yes |
+| [polarity](polarity/) | Affirmative vs negative | 2.1 ✅ | Yes |
+| [reflexivity](reflexivity/) | Reflexive vs reciprocal | 2.1 ✅ | Yes (limited) |
+
+### Semantic Features
+
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [semantic-role](semantic-role/) | Agent, patient, source, destination, etc. | 2.1 ✅ | Yes |
 
 ### Discourse Features
 
-- **[discourse-genre](discourse-genre/)** - Type of discourse (narrative, poetry, prophecy, etc.)
-- **[honorifics-register](honorifics-register/)** - Social register and honorific language use
-- **[illocutionary-force](illocutionary-force/)** - Speech act force (command, question, statement, etc.)
-- **[participant-tracking](participant-tracking/)** - How participants are tracked across discourse
-- **[topic-np](topic-np/)** - Topic-prominent vs subject-prominent language features
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [discourse-genre](discourse-genre/) | Narrative, poetry, prophecy, epistolary | 2.1 ✅ | Yes |
+| [illocutionary-force](illocutionary-force/) | Declarative, interrogative, imperative | 2.1 ✅ | Yes |
+| [participant-tracking](participant-tracking/) | First mention, routine, exiting, restaging | 2.1 ✅ | Yes |
+| [honorifics-register](honorifics-register/) | Social register and honorific language | - | No TBTA data |
+| [topic-np](topic-np/) | Topic-prominent language features | - | No TBTA data |
 
 ### Spatial & Temporal Features
 
-- **[proximity-system](proximity-system/)** - Spatial/temporal proximity (near, far, etc.)
-- **[time-granularity](time-granularity/)** - Temporal granularity and precision
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [proximity-system](proximity-system/) | Near/far spatial and temporal deixis | 2.1 ✅ | Yes |
+| [time-granularity](time-granularity/) | Temporal precision (today, yesterday, etc.) | 2.1 ✅ | Yes |
 
 ### Surface Features
 
-- **[surface-realization](surface-realization/)** - How semantic content is expressed on the surface
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [surface-realization](surface-realization/) | Noun, pronoun, zero, clitic | 2.1 ✅ | Yes |
 
 ## Development Status
 
-All features are currently at **Stage 0: Not yet started**. Previous work has been archived in [features-archive/](features-archive/) for reference.
+**14 features** with TBTA data have completed Stage 2.1 (Analysis Dataset).
+**2 features** (honorifics-register, topic-np) have no TBTA data available.
+
+Previous work archived in [.features-archive/](.features-archive/).
 
 ## Key Principles
 
@@ -88,24 +98,3 @@ Previous feature implementations are available in [features-archive/](features-a
 
 Transferable patterns and insights from feature development are documented in [../learnings/README.md](../learnings/README.md). These learnings help accelerate development of new features by applying proven approaches.
 
-## Resources
-
-- **[STAGES.md](STAGES.md)** - Complete 6-stage development methodology (authoritative)
-- **[TEMPLATE.md](TEMPLATE.md)** - Feature development template with checklists
-- **[../learnings/README.md](../learnings/README.md)** - Cross-feature learnings and patterns
-- **[features-archive/](features-archive/)** - Previous feature implementations for reference
-
-## Getting Started
-
-To develop a new feature:
-
-1. Choose a feature directory (e.g., `aspect/`, `mood/`, etc.)
-2. Read [STAGES.md](STAGES.md) for the complete methodology
-3. Follow the stage checklist in the feature's README.md
-4. Use [TEMPLATE.md](TEMPLATE.md) for file structure and naming conventions
-5. Apply learnings from [../learnings/README.md](../learnings/README.md)
-6. Remember: Discovery-based development using real translation evidence
-
----
-
-**Need help?** Check [STAGES.md](STAGES.md) for methodology or [../learnings/README.md](../learnings/README.md) for patterns from other features.

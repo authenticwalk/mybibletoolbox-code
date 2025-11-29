@@ -1,0 +1,396 @@
+feature: degree
+default_classification: arbitrary  # Most degree choices are stylistic
+theological_significance: EXISTS  # Some degree choices affect doctrine or reader understanding
+
+# ==============================================================================
+# SECTION 1: NON-ARBITRARY (Theologically or Contextually Critical)
+# ==============================================================================
+
+non_arbitrary_contexts:
+
+  # --------------------------------------------------------------------------
+  # 1A. NON-ARBITRARY-THEOLOGICAL: Affects Doctrine
+  # --------------------------------------------------------------------------
+
+  - verse_pattern: 'God\'s attributes - superlative exclusivity (unverified)'
+    example_verses:
+      - 'Psalm 145:3 - "Great is the LORD and most worthy of praise"'
+      - 'Psalm 48:1 - "Great is the LORD, and greatly to be praised"'
+      - 'Isaiah 12:6 - "Great is the Holy One of Israel among you"'
+    affected_values: [superlative, elative, intensified, extremely_intensified]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Monotheism (God's unique supremacy)
+      - Divine Attributes (immutability, perfection)
+      - Worship (God alone worthy of ultimate praise)
+
+    non_arbitrary_rationale: |
+      God's attributes are ABSOLUTE, not comparative. Using proper superlative/
+      elative distinguishes God's unique supremacy from created beings.
+      - Comparative ("God is greater than X") implies limited comparison
+      - Superlative ("God is the greatest") establishes absolute supremacy
+      - Elative ("God is very great") emphasizes intensity without comparison
+
+      Theological risk: Weak degree (positive/comparative) may understate God's
+      absolute perfection, suggesting God is merely "better" than others rather
+      than categorically supreme.
+
+    christian_orthodox_position:
+      preferred_value: superlative  # or elative
+      acceptable_alternatives: [elative, extremely_intensified]
+      forbidden_values: [positive, comparative]  # Too weak for God's attributes
+      theological_basis: |
+        God is the summum bonum (highest good), not merely better than others.
+        Aseity (self-existence) and divine simplicity require absolute, not
+        relative, attributes.
+
+      translator_guidance: |
+        - FIRST CHOICE: Superlative if language has it ("greatest", "most holy")
+        - SECOND CHOICE: Elative/intensified if superlative unavailable ("very great")
+        - AVOID: Bare positive ("God is great") without intensification
+        - AVOID: Comparative unless explicit comparison in context ("greater than idols")
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Henotheism (God is greatest among gods)'
+        used_by: [Ancient Near Eastern polytheism, Mormon/LDS]
+        christian_assessment: HERETICAL (Violates monotheism - Deut 6:4)
+
+      - interpretation: 'Process Theology (God is growing/improving)'
+        used_by: [Liberal Protestant theologians]
+        christian_assessment: REJECTED (Violates immutability - Mal 3:6, Heb 13:8)
+
+  # --------------------------------------------------------------------------
+
+  - verse_pattern: 'Christ\'s superiority to angels/creation (unverified)'
+    example_verses:
+      - 'Hebrews 1:4 - "having become as much superior to angels"'
+      - 'Philippians 2:9 - "the name which is above every name"'
+      - 'Colossians 1:15 - "the firstborn over all creation"'
+    affected_values: [comparative, superlative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Christology (deity of Christ)
+      - Creation theology (Christ as Creator, not created)
+      - Soteriology (only divine Savior can redeem)
+
+    non_arbitrary_rationale: |
+      Christ's superiority to angels/creation is CATEGORICAL (deity vs. creation),
+      not merely GRADATIONAL (better creature). Degree choice affects whether
+      Christ is presented as:
+      - COMPARATIVE: Better than angels (but still created? - Arianism)
+      - SUPERLATIVE: Highest/supreme over all (divine status)
+
+      Hebrews 1:4 uses comparative κρείττων (kreittōn "superior/better"), but
+      context establishes categorical difference (Son vs. servants, Creator vs.
+      created). Degree must capture ontological distinction, not just excellence.
+
+    christian_orthodox_position:
+      preferred_value: superlative
+      acceptable_alternatives: [comparative_with_categorical_sense]
+      forbidden_values: []  # Comparative acceptable if context clarifies deity
+      theological_basis: |
+        Nicene Creed: "God from God, Light from Light, true God from true God."
+        Christ is not the best creature, but God incarnate. Superiority is
+        ontological (different kind of being), not gradational (better version
+        of same kind).
+
+      translator_guidance: |
+        - PRIORITY: Capture categorical superiority, not just gradational
+        - If comparative form in Greek, ensure context makes divine status clear
+        - Avoid: Translations suggesting Christ is merely highest angel/creature
+        - Key verses: Hebrews 1:4 (superior), Colossians 1:15-18 (supremacy)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Arianism (Christ is highest created being)'
+        used_by: [Jehovah\'s Witnesses, ancient Arianism]
+        christian_assessment: HERETICAL (Nicaea 325 AD condemned this)
+
+      - interpretation: 'Adoptionism (Jesus became divine)'
+        used_by: [Early heresies, some liberal theology]
+        christian_assessment: HERETICAL (Denies eternal deity)
+
+  # --------------------------------------------------------------------------
+
+  - verse_pattern: 'Greatest commandment - priority, not absolute value (unverified)'
+    example_verses:
+      - 'Matthew 22:36-38 - "the greatest commandment in the Law"'
+      - 'Mark 12:28-31 - "which is the most important?"'
+    affected_values: [superlative, positive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Ethics (moral priority)
+      - Hermeneutics (interpretive principle)
+      - Practical theology (discipleship)
+
+    non_arbitrary_rationale: |
+      "Greatest commandment" is about PRIORITY (first importance), not EXCLUSIVITY
+      (only important). Greek uses positive adjective μεγάλη (megalē "great") with
+      superlative sense contextually. Translation affects:
+      - Does "greatest" mean "most important" (priority)?
+      - Or "only important" (exclusivity)?
+      - Or "big commandment" (neutral)?
+
+      Theological issue: Jesus ranks commandments (love God > love neighbor),
+      establishing hermeneutical priority. Weak degree ("great commandment")
+      loses ranking function.
+
+    christian_orthodox_position:
+      preferred_value: superlative  # "greatest" captures priority
+      acceptable_alternatives: [positive_with_contextual_superlative_sense]
+      forbidden_values: []  # Positive acceptable if context clear
+      theological_basis: |
+        Jesus establishes hierarchy: Love God (first/greatest), love neighbor
+        (second, "like" the first). Not all commandments equal weight.
+
+      translator_guidance: |
+        - PREFERRED: "Greatest commandment" (explicit ranking)
+        - ACCEPTABLE: "Great commandment" if context shows comparison
+        - CLARIFY: "First/most important" if superlative unavailable
+        - AVOID: Implying all commandments are equally important (relativism)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'All commandments equally important'
+        used_by: [Some liberal theology, moral relativism]
+        christian_assessment: REJECTED (Jesus explicitly ranks them)
+
+  # --------------------------------------------------------------------------
+  # 1B. NON-ARBITRARY-CONTEXTUAL: Reader Understanding (Not Heresy, But Confusing)
+  # --------------------------------------------------------------------------
+
+  - verse_pattern: 'Comparative with explicit standard - preserves logic (unverified)'
+    example_verses:
+      - '1 Samuel 15:22 - "To obey is better than sacrifice"'
+      - 'Matthew 6:25 - "Is not life more than food?"'
+      - 'John 14:28 - "The Father is greater than I"'
+    affected_values: [comparative, positive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Ethics (value hierarchies)
+      - Trinitarian theology (John 14:28 - economic Trinity)
+
+    non_arbitrary_rationale: |
+      When source text has EXPLICIT comparison ("X is better than Y"), translating
+      as positive ("X is good") loses logical structure. Reader cannot understand
+      the ranking/contrast.
+
+      Example: "To obey is good" (positive) ≠ "To obey is better than sacrifice"
+      (comparative). First is generic praise; second is value hierarchy.
+
+      Contextual confusion: Without comparative, reader misses that obedience >
+      sacrifice in God's priorities.
+
+    christian_orthodox_position:
+      preferred_value: comparative
+      acceptable_alternatives: [periphrastic_comparative]  # "more good than"
+      forbidden_values: [positive]  # Loses comparison
+      theological_basis: |
+        Scripture establishes value hierarchies (mercy > sacrifice, obedience >
+        ritual, love > knowledge). Comparative degree preserves these rankings.
+
+      translator_guidance: |
+        - REQUIRED: Preserve comparative when explicit standard present
+        - If no comparative form: Use periphrastic ("more X than Y")
+        - AVOID: Reducing to positive; obscures scriptural priority
+
+    non_orthodox_alternatives_awareness: []  # Not a heresy issue, just clarity
+
+  # --------------------------------------------------------------------------
+
+  - verse_pattern: 'Least/last in kingdom - paradox of reversal (unverified)'
+    example_verses:
+      - 'Matthew 25:40,45 - "the least of these my brothers"'
+      - 'Matthew 18:4 - "Whoever humbles himself like this child is the greatest"'
+      - 'Luke 9:48 - "he who is least among you all is the one who is great"'
+    affected_values: [superlative, least, comparative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Kingdom ethics (reversal of worldly values)
+      - Christology (Christ identifies with marginalized)
+      - Ecclesiology (servant leadership)
+
+    non_arbitrary_rationale: |
+      Jesus' teaching on "least" and "greatest" creates theological paradox:
+      - Worldly "greatest" = Kingdom "least"
+      - Worldly "least" = Kingdom "greatest"
+
+      Using wrong degree obscures paradox:
+      - "Small people" (positive) ≠ "the least" (superlative minimum)
+      - "A child" (indefinite) ≠ "the least among you" (superlative comparison)
+
+      Reader impact: Misses Jesus' radical reversal of status/honor systems.
+
+    christian_orthodox_position:
+      preferred_value: superlative_least  # "the least", "the greatest"
+      acceptable_alternatives: [inverse_superlative]  # "smallest", "lowest"
+      forbidden_values: [positive_without_superlative_sense]
+      theological_basis: |
+        Jesus inverts worldly hierarchies (Mark 10:43-44). "Least" and "greatest"
+        are polar opposites; softening to "small" and "big" loses radical edge.
+
+      translator_guidance: |
+        - PRESERVE: Superlative extremes ("least", "greatest")
+        - CLARIFY: These are inversions (least becomes greatest)
+        - AVOID: Softening to comparative/positive (loses paradox)
+
+    non_orthodox_alternatives_awareness: []  # Ethical teaching, not doctrinal dispute
+
+  # --------------------------------------------------------------------------
+
+  - verse_pattern: 'Blessing superlatives - unique status (unverified)'
+    example_verses:
+      - 'Luke 1:42 - "Blessed are you among women" (Mary)'
+      - 'Genesis 12:2 - "I will make you... a great nation"'
+    affected_values: [superlative, elative, positive]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Mariology (Mary's unique role - contested across denominations)
+      - Election theology (God's chosen people/individuals)
+
+    non_arbitrary_rationale: |
+      "Blessed among women" (Luke 1:42) can be translated as:
+      - Superlative: "Most blessed of all women" (unique status)
+      - Elative: "Very blessed among women" (highly favored, but not exclusive)
+      - Positive: "You are blessed among women" (one of many blessed)
+
+      Denominational sensitivity:
+      - Roman Catholic: Prefers superlative (Mary as uniquely blessed)
+      - Protestant: Prefers elative/positive (Mary highly favored, not uniquely so)
+
+      Translation affects Marian theology without changing core gospel.
+
+    christian_orthodox_position:
+      preferred_value: elative_or_superlative  # Both acceptable
+      acceptable_alternatives: [superlative, elative, positive_with_honor]
+      forbidden_values: []  # All main traditions accept blessing
+      theological_basis: |
+        All Christians affirm Mary's blessedness (mother of Jesus). Debate is
+        DEGREE of honor (Hyperdulia vs. deep respect). Translation reflects but
+        doesn't determine denominational stance.
+
+      translator_guidance: |
+        - CATHOLIC PREFERENCE: "Most blessed" (superlative)
+        - PROTESTANT PREFERENCE: "Highly favored/blessed" (elative)
+        - AVOID: Minimizing Mary's honor (dishonors Scripture)
+        - AVOID: Excessive honor beyond biblical text (avoid accretions)
+
+    denominational_considerations_within_christianity:
+      - denomination: Roman Catholic
+        preferred_degree: superlative
+        rationale: 'Mary as Theotokos (God-bearer), unique among women'
+
+      - denomination: Protestant (Evangelical/Reformed)
+        preferred_degree: elative
+        rationale: 'Mary highly honored but not worshiped; avoid hyperdulia'
+
+      - denomination: Eastern Orthodox
+        preferred_degree: superlative
+        rationale: 'Mary as Panagia (All-Holy), greatest saint'
+
+    non_orthodox_alternatives_awareness: []  # Denominational variation, not heresy
+
+# ==============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Contextual Choice)
+# ==============================================================================
+
+arbitrary_contexts:
+
+  - pattern: 'General descriptions - crowd sizes, travel distances (unverified)'
+    examples:
+      - 'Large crowd (vs. very large crowd vs. enormous crowd)'
+      - 'Long journey (vs. longer vs. longest)'
+      - 'High mountain (vs. very high vs. highest)'
+    rationale: |
+      Exact degree of size/distance/height is stylistically chosen by translator,
+      not theologically determined. "Large crowd" vs. "very large crowd" affects
+      narrative vividness but not doctrine or reader comprehension.
+    estimated_percentage: 75%
+
+  - pattern: 'Comparisons without theological weight (unverified)'
+    examples:
+      - 'Older brother vs. younger brother (age comparison)'
+      - 'Richer vs. poorer (wealth comparison)'
+      - 'Stronger vs. weaker (physical strength)'
+    rationale: |
+      Factual comparisons (age, wealth, strength) are semantically necessary
+      (comparative degree preserves fact), but WHICH degree word is arbitrary
+      ("older" vs. "more advanced in years").
+    estimated_percentage: 15%
+
+  - pattern: 'Intensification for emphasis - stylistic choice (unverified)'
+    examples:
+      - 'Very happy vs. extremely happy vs. overjoyed'
+      - 'Quite sad vs. very sad vs. deeply grieved'
+      - 'Somewhat angry vs. very angry vs. furious'
+    rationale: |
+      Intensification strength (Intensified vs. Extremely Intensified) is often
+      translator's stylistic choice to match source language register/emphasis.
+      Biblical text: χαρᾷ μεγάλῃ (chara megalē "great joy") - how intensified?
+      Options: "great joy", "very great joy", "exceedingly great joy" - all valid.
+    estimated_percentage: 8%
+
+  - pattern: 'Poetic/prophetic language - literary style (unverified)'
+    examples:
+      - 'Highest heavens (poetic intensification)'
+      - 'Deepest depths (poetic extremes)'
+      - 'Darkest darkness (prophetic imagery)'
+    rationale: |
+      Poetic/prophetic texts use degree for literary effect. Translator balances
+      literal rendering vs. target language poetic conventions. Choice is literary,
+      not theological.
+    estimated_percentage: 2%
+
+# ==============================================================================
+# METADATA & SUMMARY
+# ==============================================================================
+
+summary_statistics:
+  non_arbitrary_percentage: ~15-20%  # Estimated
+  arbitrary_percentage: ~80-85%
+  highest_theological_stakes: 'God\'s attributes, Christology, Kingdom ethics'
+
+guidance_for_algorithm:
+  critical_contexts: |
+    - God's attributes: ALWAYS use superlative/elative (never bare positive)
+    - Christ's superiority: Ensure categorical sense preserved
+    - Explicit comparisons: MUST preserve comparative degree
+    - "Least" and "greatest" paradoxes: Preserve superlative extremes
+
+  arbitrary_contexts: |
+    - General descriptions: Follow source degree, but translation can adjust
+    - Intensification: Match source register, but exact strength is flexible
+    - Poetic language: Balance literalism with target poetic norms
+
+denominational_sensitivity:
+  high_sensitivity_verses:
+    - 'Luke 1:42 - Mary\'s blessedness (Catholic vs. Protestant degree preference)'
+    - 'John 14:28 - "Father is greater than I" (Trinitarian debates)'
+
+  guidance: |
+    For contested verses, note denominational preferences but do not force one
+    interpretation. Multi-denominational projects should provide notes explaining
+    valid alternatives within Christian orthodoxy.
+
+# ==============================================================================
+# NOTES & METHODOLOGY
+# ==============================================================================
+
+methodology_notes: |
+  This classification is based on:
+  1. Internal knowledge of Scripture (marked "unverified" per instructions)
+  2. Theological analysis of where degree affects doctrine/interpretation
+  3. Conservative Protestant orthodox perspective as primary framework
+  4. Denominational variations noted within Christian orthodoxy
+  5. Non-orthodox views (cults, other religions) flagged as rejected
+
+  All verses are (unverified) - Stage 2 research will validate with concordances,
+  commentaries, and actual Bible translation examples.
+
+future_validation_needed:
+  - 'Concordance search for all degree-marked words in Greek/Hebrew'
+  - 'Commentary review for verses where degree is exegetically debated'
+  - 'Translation comparison across 10 languages for contested verses'
+  - 'Theological expert review (Trinity, Christology, Mariology)'
+
+# ==============================================================================
+# END OF DOCUMENT
+# ==============================================================================

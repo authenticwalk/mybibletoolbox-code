@@ -1,0 +1,492 @@
+feature: Discourse Genre
+default_classification: contextual # Genre choice affects interpretation but rarely rises to heresy
+theological_significance: EXISTS # Genre recognition affects interpretation and application
+
+# ==============================================================================
+# SECTION 1: NON-ARBITRARY (Theologically Critical or Contextually Important)
+# ==============================================================================
+
+non_arbitrary_contexts:
+
+  # ---------------------------------------------------------------------------
+  # HIGH STAKES: Misidentifying genre leads to doctrinal error or heresy
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Genesis 1-2 (Creation narrative vs. poetry debate) (unverified)'
+    affected_values: [narrative, poetry]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Creation theology (literal 6-day vs. framework interpretation)
+      - Biblical inerrancy (historical vs. theological truth)
+      - Hermeneutics (literal vs. literary)
+
+    non_arbitrary_rationale: |
+      Genre determines interpretation method:
+      - NARRATIVE: Sequential, historical, literal 6 days
+      - POETRY: Framework, theological, non-sequential arrangement
+      Misidentification affects entire creation theology framework.
+
+    christian_orthodox_position:
+      preferred_value: narrative  # Majority conservative Protestant view
+      acceptable_alternatives: [narrative-with-elevated-style]
+      forbidden_values: [mythology, legend]  # Rejected by Christian orthodoxy
+      theological_basis: |
+        Conservative Protestant orthodoxy affirms Genesis 1-2 as historical narrative
+        (though elevated/liturgical style acknowledged). Framework hypothesis (poetic
+        interpretation) is minority view within orthodoxy.
+      translator_guidance: |
+        - FIRST CHOICE: Treat as NARRATIVE (historical account, sequential)
+        - Recognize elevated/liturgical style but maintain narrative features
+        - FORBIDDEN: Treat as myth, legend, or purely symbolic poetry
+        - DENOMINATIONAL VARIATION: Framework hypothesis accepted by some Reformed traditions
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Mythological/symbolic only (not historical)'
+        used_by: [Liberal theology, non-Christian comparative religion]
+        christian_assessment: REJECTED (undermines biblical authority and historicity)
+
+  - verse_pattern: 'Revelation 1-22 (Apocalyptic vs. literal narrative confusion) (unverified)'
+    affected_values: [apocalyptic, prophecy, narrative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Eschatology (end times interpretation)
+      - Christology (symbolic vs. literal descriptions of Christ)
+      - Hermeneutics (literal vs. symbolic)
+
+    non_arbitrary_rationale: |
+      Genre determines interpretation method:
+      - APOCALYPTIC: Symbolic imagery, numbers, visions require symbolic interpretation
+      - LITERAL NARRATIVE: Would lead to bizarre literalization (seven-headed beasts, etc.)
+      Misidentification leads to cultic or heretical eschatology.
+
+    christian_orthodox_position:
+      preferred_value: apocalyptic-prophecy
+      acceptable_alternatives: [prophetic-visionary]
+      forbidden_values: [plain-narrative, allegory-only]
+      theological_basis: |
+        Apocalyptic is a recognized biblical genre using symbolic imagery for theological truth.
+        NOT allegory (arbitrary symbols) but apocalyptic (culturally-coded symbols from
+        Daniel, Ezekiel, Zechariah). Requires recognizing genre to interpret correctly.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as APOCALYPTIC or PROPHETIC-VISIONARY
+        - Preserve symbolic imagery, do not over-literalize
+        - Recognize OT allusions and apocalyptic conventions (numbers, beasts, colors)
+        - AVOID: Treating as plain historical narrative or arbitrary allegory
+        - DENOMINATIONAL VARIATION: Premillennial, amillennial, postmillennial
+          interpretations differ but all recognize apocalyptic genre
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Purely symbolic with no future reference'
+        used_by: [Preterist extreme, Liberal theology]
+        christian_assessment: MINORITY VIEW (full preterism outside orthodoxy)
+      - interpretation: 'Literal beasts, dragons in physical future'
+        used_by: [Hyper-literalist fringe groups]
+        christian_assessment: MISAPPLIES GENRE (fails to recognize apocalyptic conventions)
+
+  - verse_pattern: 'Parables of Jesus (Matthew 13, Luke 15, etc.) - Parable vs. historical narrative (unverified)'
+    affected_values: [parable, narrative]
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Hermeneutics (parabolic truth vs. historical event)
+      - Christology (Jesus as teacher using parables)
+
+    non_arbitrary_rationale: |
+      Genre determines truth claims:
+      - PARABLE: Fictional narrative for teaching, theological truth not historical event
+      - HISTORICAL NARRATIVE: Actual events Jesus witnessed/reported
+      Confusing parable with history leads to false historical claims (e.g., claiming
+      literal Good Samaritan existed).
+
+    christian_orthodox_position:
+      preferred_value: parable  # Explicitly labeled by Jesus: "He spoke to them in parables"
+      acceptable_alternatives: [teaching-narrative, wisdom-story]
+      forbidden_values: [historical-report, mythology]
+      theological_basis: |
+        Jesus explicitly used parables (Greek παραβολή) - fictional narratives for
+        teaching. Gospels label them as parables. Not historical events.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as PARABLE (teaching story, not historical)
+        - Preserve signals: "He spoke to them in parables", "The kingdom is like..."
+        - AVOID: Treating as historical narrative (falsely claiming events happened)
+        - NOTE: Some parables may reference real types (Pharisee, tax collector) without
+          being about specific individuals
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Parables are coded allegory requiring secret knowledge'
+        used_by: [Gnostic interpretations]
+        christian_assessment: REJECTED (Jesus explained parables to disciples plainly)
+
+  # ---------------------------------------------------------------------------
+  # MEDIUM STAKES: Affects interpretation, application, or understanding
+  # ---------------------------------------------------------------------------
+
+  - verse_pattern: 'Psalms (Poetry vs. prose/narrative confusion) (unverified)'
+    affected_values: [poetry-hymnic, poetry-lament, poetry-wisdom, narrative, prose]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Worship theology (psalms as sung worship)
+      - Hermeneutics (poetic vs. prosaic interpretation)
+
+    non_arbitrary_rationale: |
+      Genre affects interpretation and use:
+      - POETRY: Parallelism, metaphor, hyperbole expected, emotional/imaginative
+      - NARRATIVE: Sequential events, literal expectations
+      Treating poetry as prose leads to over-literalization of metaphors
+      (e.g., "God has wings" from Psalm 91).
+
+    christian_orthodox_position:
+      preferred_value: poetry-hymnic  # Most psalms are hymnic/liturgical poetry
+      acceptable_alternatives: [poetry-lament, poetry-wisdom, poetry-royal]
+      forbidden_values: [prose-narrative, mythology]
+      theological_basis: |
+        Psalms are poetic, liturgical, meant for sung worship. Hebrew parallelism,
+        metaphor, and imagery are genre features, not literal descriptions.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as POETRY (hymnic, lament, wisdom, etc.)
+        - Preserve parallelism where possible
+        - Recognize metaphorical language (God's "wings", "right hand", etc.)
+        - AVOID: Treating metaphors as literal physical descriptions
+        - NOTE: Some psalms have historical superscriptions (narrative context) but
+          psalm itself is poetry
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Proverbs (Wisdom vs. absolute promise confusion) (unverified)'
+    affected_values: [wisdom, legal, prophecy]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Wisdom theology (general principles vs. absolute promises)
+      - Providence (how God works in the world)
+
+    non_arbitrary_rationale: |
+      Genre determines truth claims:
+      - WISDOM: General principles, "this is usually true", practical guidance
+      - LEGAL/PROPHECY: Absolute commands or promises, "this is always true"
+      Treating wisdom as legal/prophetic leads to "prosperity gospel" errors
+      (e.g., Proverbs 22:6 "train up a child" as absolute guarantee).
+
+    christian_orthodox_position:
+      preferred_value: wisdom-instructional
+      acceptable_alternatives: [wisdom-proverbial]
+      forbidden_values: [legal-absolute, prophetic-promise]
+      theological_basis: |
+        Proverbs are wisdom literature - general principles for wise living,
+        not absolute promises. "Train up a child..." is general principle,
+        not guarantee.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as WISDOM (instructional, proverbial)
+        - Recognize genre signals: "Hear, my son", comparison structures
+        - AVOID: Treating proverbs as absolute legal commands or prophetic promises
+        - NOTE: Helps avoid "prosperity gospel" misuse of Proverbs
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Proverbs as absolute promises (prosperity gospel)'
+        used_by: [Prosperity gospel movements]
+        christian_assessment: REJECTED (misunderstands wisdom genre)
+
+  - verse_pattern: 'Job 3-41 (Poetry/dialogue vs. narrative) (unverified)'
+    affected_values: [poetry-dialogue, narrative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Theodicy (suffering and God's justice)
+      - Hermeneutics (dialogue vs. narrated truth)
+
+    non_arbitrary_rationale: |
+      Genre affects authority of statements:
+      - POETRY-DIALOGUE: Speeches by Job, friends, Elihu - NOT always true,
+        sometimes wrong (God rebukes friends in Job 42)
+      - NARRATIVE: Framing story (Job 1-2, 42) - reliable narrator
+      Treating dialogue as authoritative narrative leads to bad theology
+      (friends' false accusations as divine truth).
+
+    christian_orthodox_position:
+      preferred_value: poetry-dialogue  # Chapters 3-41 are poetic dialogue
+      acceptable_alternatives: [wisdom-dialogue]
+      forbidden_values: [narrative-authoritative]
+      theological_basis: |
+        Job 3-41 are poetic dialogues with unreliable speakers. God explicitly
+        rebukes Job's friends (42:7). Dialogue ≠ divinely endorsed truth.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as POETRY-DIALOGUE or WISDOM-DIALOGUE
+        - Distinguish dialogue (chapters 3-41) from narrative frame (1-2, 42)
+        - CRITICAL: Do not treat friends' speeches as authoritative theology
+        - Recognize God's rebuke of friends (42:7-8) as corrective
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Song of Solomon (Love poetry vs. allegory) (unverified)'
+    affected_values: [poetry-lyric, allegory, wisdom]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Human sexuality and marriage (literal interpretation)
+      - Allegory of Christ and Church (allegorical interpretation)
+
+    non_arbitrary_rationale: |
+      Genre determines interpretation:
+      - LOVE POETRY (LITERAL): Celebrates human marital love
+      - ALLEGORY: Christ and Church, God and Israel
+      Both have Christian tradition support. Genre affects application.
+
+    christian_orthodox_position:
+      preferred_value: poetry-lyric-love  # Primary: celebrates marital love
+      acceptable_alternatives: [allegory-christological]  # Secondary: typological reading
+      forbidden_values: [erotic-secular, mythology]
+      theological_basis: |
+        Two main Christian interpretations both orthodox:
+        1. LITERAL: Celebrates God-ordained marital love (majority Protestant)
+        2. ALLEGORICAL: Christ-Church relationship (Catholic, some Protestant)
+        Both affirm goodness of marital love and Christ's love for Church.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as LOVE POETRY (lyric)
+        - Allow for dual interpretation (literal + allegorical/typological)
+        - AVOID: Secularizing (removing divine context) or mythologizing
+        - DENOMINATIONAL VARIATION: Catholics emphasize allegory, Protestants literal
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Jonah (Narrative vs. parable debate) (unverified)'
+    affected_values: [narrative, parable, prophecy]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Biblical inerrancy (historical truth)
+      - Hermeneutics (literal vs. parabolic)
+
+    non_arbitrary_rationale: |
+      Genre determines truth claims:
+      - NARRATIVE: Historical event, Jonah literally swallowed by fish
+      - PARABLE: Fictional teaching story, theological truth not historical
+      Affects biblical authority debates.
+
+    christian_orthodox_position:
+      preferred_value: narrative-prophetic  # Majority view: historical
+      acceptable_alternatives: [narrative-with-symbolic-elements]
+      forbidden_values: [parable-only, mythology]
+      theological_basis: |
+        Conservative Protestant orthodoxy: Historical narrative (Jesus references
+        Jonah as historical in Matthew 12:40). Minority view: Parabolic teaching.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as NARRATIVE-PROPHETIC (historical)
+        - Jesus' reference (Matthew 12:40) supports historicity
+        - DENOMINATIONAL VARIATION: Some accept parabolic interpretation
+        - AVOID: Mythological or purely fictional categories
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Mythological fish story'
+        used_by: [Liberal theology]
+        christian_assessment: REJECTED by conservative orthodoxy (undermines biblical authority)
+
+  - verse_pattern: 'Exodus 19-24, Leviticus, Deuteronomy (Legal vs. narrative) (unverified)'
+    affected_values: [legal, narrative]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Law and Gospel distinction
+      - Application of Mosaic law to Christians
+
+    non_arbitrary_rationale: |
+      Genre affects application:
+      - LEGAL: Direct commands, binding (at least for Israel), require obedience discussion
+      - NARRATIVE: Story about legal giving, historical context
+      Recognizing legal genre necessary for discussing Christian relationship to Mosaic law.
+
+    christian_orthodox_position:
+      preferred_value: legal  # Ten Commandments, Mosaic law are legal codes
+      acceptable_alternatives: [legal-within-narrative-frame]
+      forbidden_values: [narrative-only, wisdom-suggestions]
+      theological_basis: |
+        Mosaic law is legal code (commands, prohibitions, case law). Christians
+        debate application (abrogated, fulfilled, moral vs. ceremonial) but
+        recognize legal genre.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as LEGAL (apodictic commands, casuistic case law)
+        - Recognize narrative frame (Exodus 19-20 introduction) vs. legal content
+        - DENOMINATIONAL VARIATION: Application to Christians debated (Reformed
+          theonomy, dispensationalism, New Covenant theology) but all recognize
+          legal genre
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Paul's Epistles (Epistolary with expository + hortatory) (unverified)'
+    affected_values: [epistolary-expository, epistolary-hortatory]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Pauline theology (understanding vs. application)
+      - Church practice (applying Paul's commands)
+
+    non_arbitrary_rationale: |
+      Genre affects interpretation:
+      - EXPOSITORY: Theological explanation (Romans 1-11), requires understanding
+      - HORTATORY: Ethical exhortation (Romans 12-16), requires obedience
+      Epistolary frame (sender, recipient, situation) affects application to other contexts.
+
+    christian_orthodox_position:
+      preferred_value: epistolary-mixed  # Most epistles mix expository + hortatory
+      acceptable_alternatives: [epistolary-theological, epistolary-pastoral]
+      forbidden_values: [narrative, legal-universal]  # Not narrative, not universal law code
+      theological_basis: |
+        Paul's letters are epistles (specific audience, situation) mixing theology
+        (expository) and application (hortatory). Recognizing epistolary genre
+        helps with contextualization.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as EPISTOLARY (letter to specific church/person)
+        - Recognize expository sections (theological argument) vs. hortatory
+          (ethical application)
+        - Preserve epistolary formulas (greeting, thanksgiving, closing)
+        - Note: Epistle genre affects how we apply to other contexts (cultural
+          vs. universal principles)
+
+    non_orthodox_alternatives_awareness: []
+
+  - verse_pattern: 'Gospels (Biographical narrative vs. theology) (unverified)'
+    affected_values: [narrative-biographical, narrative-theological, gospel-genre]
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Christology (Jesus' life and teachings)
+      - Gospel genre (unique genre or type of biography)
+
+    non_arbitrary_rationale: |
+      Genre affects expectations:
+      - BIOGRAPHICAL NARRATIVE: Historical account of Jesus' life
+      - THEOLOGICAL NARRATIVE: Theologically-shaped presentation
+      Gospels are both - recognizing genre helps with harmonization issues.
+
+    christian_orthodox_position:
+      preferred_value: gospel-genre  # Unique genre: biographical-theological narrative
+      acceptable_alternatives: [narrative-biographical, narrative-theological]
+      forbidden_values: [mythology, legend, pure-theology-not-history]
+      theological_basis: |
+        Gospels are unique genre: historically-grounded theological narratives.
+        Not modern biography (chronological, comprehensive) but ancient
+        biographical-theological accounts.
+      translator_guidance: |
+        - FIRST CHOICE: Mark as GOSPEL or BIOGRAPHICAL-THEOLOGICAL NARRATIVE
+        - Recognize both historical (events happened) and theological (arranged
+          for theological purposes) aspects
+        - AVOID: Treating as either pure history (requiring strict chronology)
+          or pure theology (ignoring historicity)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Gospels as theology only, not historical'
+        used_by: [Liberal theology, Jesus Seminar]
+        christian_assessment: REJECTED (denies historicity of resurrection, miracles)
+
+# ==============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Contextual Choices)
+# ==============================================================================
+
+arbitrary_contexts:
+
+  - pattern: "Genealogies (Genesis 5, 10, Matthew 1, etc.)"
+    rationale: |
+      Whether classified as NARRATIVE, LEGAL-RECORD, or GENEALOGY subgenre does
+      not affect theological interpretation. Translation treats similarly regardless.
+    estimated_percentage: 2%
+
+  - pattern: "Transitional verses between genre shifts"
+    rationale: |
+      Exact boundary of genre transition (e.g., narrative to direct speech, narrative
+      to legal) is often ambiguous. Specific boundary placement does not affect theology.
+    estimated_percentage: 5%
+
+  - pattern: "Historical narrative (most OT narrative, Acts)"
+    rationale: |
+      Distinguishing NARRATIVE from HISTORICAL-NARRATIVE subtype is stylistic.
+      Both treated as historical accounts. Theological content unaffected.
+    estimated_percentage: 40%
+
+  - pattern: "Travel narratives (Paul's journeys in Acts)"
+    rationale: |
+      Whether marked as NARRATIVE or ITINERARY subgenre does not affect theology.
+      Translation strategy similar regardless.
+    estimated_percentage: 3%
+
+  - pattern: "Discourse sections in narrative (speeches, prayers)"
+    rationale: |
+      Embedded speeches may be EXPOSITORY, HORTATORY, or remain NARRATIVE-SPEECH.
+      Specific classification does not affect theological interpretation if
+      speaker and context are clear.
+    estimated_percentage: 15%
+
+  - pattern: "Wisdom sayings in narrative contexts"
+    rationale: |
+      Occasional proverbs or wisdom statements within narrative (e.g., 1 Samuel 24:13)
+      may be marked WISDOM or remain NARRATIVE. Does not affect interpretation.
+    estimated_percentage: 2%
+
+  - pattern: "Lists and catalogs (offerings, tribal counts, etc.)"
+    rationale: |
+      Whether marked as LEGAL-RECORD, PROCEDURAL, or NARRATIVE-LIST is stylistic.
+      Translation treats as factual record regardless.
+    estimated_percentage: 3%
+
+  - pattern: "Prophetic oracles (typical prophecy)"
+    rationale: |
+      Most prophetic oracles clearly prophetic genre. Specific subtype (judgment,
+      salvation, woe) is stylistic. Theological interpretation of specific oracle
+      unaffected by subtype.
+    estimated_percentage: 25%
+
+  - pattern: "Poetry subtypes (hymn vs. lament vs. thanksgiving)"
+    rationale: |
+      All recognized as POETRY. Subtype classification (hymnic, lament, wisdom,
+      royal, thanksgiving) helps but does not affect core theological content.
+    estimated_percentage: 5%
+
+# ==============================================================================
+# SUMMARY STATISTICS
+# ==============================================================================
+
+summary:
+  total_non_arbitrary_percentage: ~15%  # High stakes 5% + Medium stakes 10%
+  total_arbitrary_percentage: ~85%
+
+  high_stakes_count: 3  # Genesis 1-2, Revelation, Parables
+  medium_stakes_count: 9  # Psalms, Proverbs, Job, Song, Jonah, Legal, Epistles, Gospels, etc.
+
+  note: |
+    Discourse genre recognition affects INTERPRETATION and APPLICATION more than
+    DOCTRINE directly. Most genre errors lead to misinterpretation (medium stakes)
+    rather than heresy (high stakes). However, persistent genre confusion (e.g.,
+    literalizing all apocalyptic, allegorizing all narrative) can lead to systemic
+    theological error.
+
+# ==============================================================================
+# THEOLOGICAL GUIDANCE FOR TRANSLATORS
+# ==============================================================================
+
+translator_guidance:
+  general_principle: |
+    Discourse genre is CONTEXTUALLY CRITICAL. Misidentifying genre leads to:
+    1. INTERPRETATION ERRORS: Wrong hermeneutical approach (literal vs. symbolic)
+    2. APPLICATION ERRORS: Wrong life application (wisdom as absolute promise)
+    3. DOCTRINAL DRIFT: Accumulated genre errors create theological confusion
+
+  high_priority_checks:
+    - "Genesis 1-2: Ensure treated as NARRATIVE (not mythology), note elevated style"
+    - "Revelation: Mark as APOCALYPTIC (not literal narrative), preserve symbolism"
+    - "Parables: Clearly signal PARABLE genre, avoid historical confusion"
+    - "Psalms: Preserve POETIC features, avoid literalizing metaphors"
+    - "Proverbs: Mark as WISDOM (general principles), not absolute promises"
+    - "Job 3-41: Distinguish DIALOGUE from narrative frame, note unreliable speakers"
+    - "Legal codes: Mark as LEGAL, helps with Christian application discussion"
+    - "Epistles: Preserve EPISTOLARY frame, note expository vs. hortatory sections"
+
+  denominational_sensitivities:
+    - "Genesis 1-2: Framework hypothesis (poetry) is minority Reformed view"
+    - "Song of Solomon: Catholics emphasize allegory, Protestants literal love poetry"
+    - "Jonah: Most conservatives affirm historical, some allow parabolic"
+    - "Mosaic Law: Application debated (theonomy, dispensationalism, NCT) but all
+      recognize legal genre"
+    - "Revelation: Eschatological views differ (premil, amil, postmil) but all
+      recognize apocalyptic genre"
+
+  avoid_errors:
+    - "NEVER treat apocalyptic as plain narrative (leads to bizarre literalization)"
+    - "NEVER treat parables as historical events (creates false history)"
+    - "NEVER treat poetry as prose (over-literalizes metaphors)"
+    - "NEVER treat wisdom as legal promises (creates prosperity gospel errors)"
+    - "NEVER treat dialogue as authoritative narration (Job's friends' errors as truth)"
+    - "NEVER treat narrative as mythology (undermines biblical authority)"
+
+# ==============================================================================
+# END
+# ==============================================================================
