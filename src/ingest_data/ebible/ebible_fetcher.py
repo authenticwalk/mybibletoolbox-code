@@ -58,7 +58,7 @@ def _fetch_and_structure_verse(book: str, chapter: int, verse: int) -> Dict:
             # Format the note according to cross-referencing standards
             prev_verse = verse - 1
             if prev_verse > 0:
-                processed_translations[trans_id] = f"@see-verse:{book}.{chapter:03d}.{prev_verse:03d}"
+                processed_translations[trans_id] = f"@see-verse:{book}-{chapter:03d}-{prev_verse:03d}"
             else:
                 # Edge case: verse 1 marked as range (shouldn't happen but handle it)
                 processed_translations[trans_id] = '<range>'
@@ -67,7 +67,7 @@ def _fetch_and_structure_verse(book: str, chapter: int, verse: int) -> Dict:
     
     # Build the YAML structure
     verse_data = {
-        'verse': f"{book}.{chapter:03d}.{verse:03d}",
+        'verse': f"{book}-{chapter:03d}-{verse:03d}",
         'translations': processed_translations,
         'sources': [
             {

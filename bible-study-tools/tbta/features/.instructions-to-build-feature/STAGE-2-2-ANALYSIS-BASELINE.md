@@ -28,6 +28,19 @@ analysis/
 └── logical.py           # optional rules script
 ```
 
+## Process
+
+You will work through these steps calling subagents as defined in each step to keep your context clear.
+
+**CRITICAL: How to delegate to subagents**
+1. Tell the subagent to READ THIS FILE FIRST: `Read /workspace/bible-study-tools/tbta/features/.instructions-to-build-feature/STAGE-2-2-ANALYSIS-BASELINE.md`
+2. Tell them which step to execute (e.g., "Execute Step 2")
+3. Tell them the feature name and $CURRENT-FEATURE-DIR path (IMPORTANT: You must expand the variables $CURRENT-FEATURE-DIR and $ANALYSIS-DIR to their full paths when speaking to the subagent)
+4. DO NOT paraphrase the instructions - let them read the original
+5. When they are done, audit their work and redo up to 3 times if needed
+
+If you have to redo a step debug the instructions and add your analysis and fix to `$ANALYSIS-DIR/_LEARNINGS.md`
+---
 
 ## Step 2: Baseline Analysis
 
@@ -45,16 +58,23 @@ Models: Haiku, Opus, Sonnet
 
 Start a subagent with a minimal prompt that only lists the possible values without explaining them:
 
+**Task**:
+1. Read `$ANALYSIS-DIR/data/validate.jsonl`
+2. Extract the `reconstructed_verse` for each line
+3. Prompt the model with the values found in `$CURRENT-FEATURE-DIR/README.md` (Do NOT explain the values, just list them)
+4. Ask the model to label the **bolded** word in the reconstructed verse
+
+**Prompt Template**:
 ```
-Label each highlighted word (**word**) with one of these {FeatureName} values:
+Label the **bolded** word in this verse with one of these {FeatureName} values:
 {Value1}, {Value2}, {Value3}, ...
 
-Return format: $verse\t$label (e.g., "GEN.001.001\tValue1")
+Return ONLY the label, nothing else.
 ```
 
-Give it 100 diverse verses from `$ANALYSIS-DIR/data/train.jsonl`.
+Give it ALL verses from `$ANALYSIS-DIR/data/validate.jsonl`.
 
-Save predictions to `$ANALYSIS-DIR/data/baseline_zero_shot_${modelName}.tsv`.
+Save predictions to `$ANALYSIS-DIR/data/baseline_zero_shot_${modelName}.txt` (one label per line).
 
 #### Test B: Guided Baseline (with definitions)
 
@@ -64,31 +84,33 @@ Models: Sonnet
 
 Start a second subagent (in parallel) with a structured prompt:
 
-**Part A**: Write 1-3 sentences describing what the feature is and how to decide which label applies. Source this from Stage 1 `features/{feature}/research/README.md`.
+**Part A**: Write 1-3 sentences describing what the feature is and how to decide which label applies. Source this from Stage 1 `$CURRENT-FEATURE-DIR/research/README.md`.
 
 **Part B**: List each possible value as a bullet point, with up to 5 sub-bullets explaining when to use that value.
 
-**Example structure** (for a hypothetical "Tense" feature):
+**Prompt Template**:
 ```
-Tense indicates when an action occurs relative to the time of speaking.
-Label each highlighted verb with the tense that matches when the action happens.
+{Part A}
 
-- Past:
-  - Action completed before speaking time
-  - Hebrew perfect aspect (qatal)
-  - Narrative past events
-- Present:
-  - Action happening at speaking time
-  - Gnomic/timeless truths
-- Future:
-  - Action not yet completed
-  - Prophecies and predictions
-  - Hebrew imperfect with future context
+{Part B}
+
+Verse: {reconstructed_verse}
+
+Label the **bolded** word. Return ONLY the label.
 ```
 
-Give it the SAME 100 verses. Save predictions to `$ANALYSIS-DIR/data/baseline_guided.tsv`.
+Give it the SAME verses from `$ANALYSIS-DIR/data/validate.jsonl`. Save predictions to `$ANALYSIS-DIR/data/baseline_guided.txt` (one label per line).
 
 #### Analysis: Compare the Two Baselines
+
+Score the predictions using `src/tools/predict/score_baseline.py`:
+
+```bash
+python src/tools/predict/score_baseline.py \
+  --predictions $ANALYSIS-DIR/data/baseline_zero_shot_${modelName}.txt \
+  --ground-truth $ANALYSIS-DIR/data/validate.jsonl \
+  --output $ANALYSIS-DIR/score_${modelName}.md
+```
 
 Create `$ANALYSIS-DIR/HIGH-LEVEL-REVIEW.md` with:
 

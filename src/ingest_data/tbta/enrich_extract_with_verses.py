@@ -66,16 +66,44 @@ def parse_verse_ref(ref: str):
 
 def filter_translations_by_codes(translations: Dict[str, str], codes: list) -> Dict[str, str]:
     """
-    Filter translations dict to only include specified translation codes.
-    
+    Filter translations dict to include specified translation codes or language prefixes.
+
+    Supports two formats:
+    - Full code: "eng-YLT" matches exactly "eng-YLT"
+    - Language prefix: "eng" matches first translation starting with "eng-" (e.g., "eng-NIV")
+
     Args:
-        translations: Dict like {"eng-NIV": "...", "spa-RV1960": "..."}
-        codes: List of translation codes like ["eng-NIV", "spa-RV1960"]
-    
+        translations: Dict like {"eng-NIV": "...", "spa-RV1960": "...", "ara": "..."}
+        codes: List of translation codes or 3-letter language prefixes
+
     Returns:
-        Filtered dict with only matching translations
+        Filtered dict with matching translations
+
+    Example:
+        codes = ["eng-YLT", "ara", "heb"]
+        - "eng-YLT" -> exact match
+        - "ara" -> matches first "ara-*" or exact "ara"
+        - "heb" -> matches first "heb-*" or exact "heb"
     """
-    return {k: v for k, v in translations.items() if k in codes}
+    result = {}
+
+    for code in codes:
+        # Check if it's a language prefix (3 letters, no hyphen)
+        is_prefix = len(code) == 3 and '-' not in code
+
+        if is_prefix:
+            # Find first translation matching this language prefix
+            for trans_key, trans_value in translations.items():
+                # Match "ara" to "ara" or "ara-NAV"
+                if trans_key == code or trans_key.startswith(code + '-'):
+                    result[trans_key] = trans_value
+                    break  # Only take first match for prefix
+        else:
+            # Exact match
+            if code in translations:
+                result[code] = translations[code]
+
+    return result
 
 
 def main():
@@ -90,7 +118,9 @@ Examples:
     )
     parser.add_argument("--input", required=True, help="Input JSONL file (tbta-extract.jsonl)")
     parser.add_argument("--translations", required=True,
-                        help="Comma-separated list of translation codes (e.g., eng-NIV,spa-RV1960)")
+                        help="Comma-separated list of translation codes or language prefixes. "
+                             "Full codes (eng-YLT) match exactly. 3-letter prefixes (eng, ara, heb) "
+                             "match the first available translation in that language.")
     parser.add_argument("--output", required=True, help="Output JSONL file")
     parser.add_argument("--limit", required=False, type=int, help="Limit the number of entries to process")
 
@@ -141,6 +171,10 @@ Examples:
                     f_out.write(line)
                     continue
 
+                # Standardize verse reference in output (GEN-001-001)
+                standard_ref = f"{book}-{chapter:03d}-{verse:03d}"
+                entry['verse'] = standard_ref
+
                 # Fetch from cache using translations-ebible suffix
                 cached_data = get_cached_verse(book, chapter, verse, suffix="translations-ebible", cache_root=DATA_DIR / "commentary")
                 
@@ -152,7 +186,7 @@ Examples:
                     cache_hits += 1
                 else:
                     cache_misses += 1
-                    print(f"Cache miss: {verse_ref} - add to sparse checkout: cd .data && git sparse-checkout add commentary/{book}/{chapter:03d}", file=sys.stderr)
+                    print(f"Cache miss: {standard_ref} - add to sparse checkout: cd .data && git sparse-checkout add commentary/{book}/{chapter:03d}", file=sys.stderr)
 
                 # Write enriched entry
                 f_out.write(json.dumps(entry, ensure_ascii=False) + '\n')

@@ -19,7 +19,7 @@ Quantitatively validate the feature against real-world translations _before_ wri
 ```
 analysis/
 ├── data/
-│   ├── train.jsonl      # max 300 entries
+│   ├── train.jsonl      # max 800 entries
 │   ├── validate.jsonl   # max 100 entries
 │   ├── test.jsonl       # max 100 entries (DO NOT TOUCH until final eval)
 │   └── leftovers.jsonl  # remaining entries not in train/validate/test
@@ -30,12 +30,16 @@ analysis/
 
 ## Process
 
-You will work through these steps calling subagents as defined in each step to keep your context clear
-Be very clear with the subagent what their role is and provide necessary files for them to read
-When they are done you need to audit their work and redo it up to 3 times after giving better instructions
-to ensure they do as they are told
+You will work through these steps calling subagents as defined in each step to keep your context clear.
 
-If you have to redo a step debug the instructions and add your analysis and fix to `$ANALYSIS-DIR/_LEARNINGS`.md
+**CRITICAL: How to delegate to subagents**
+1. Tell the subagent to READ THIS FILE FIRST: `Read /workspace/bible-study-tools/tbta/features/.instructions-to-build-feature/STAGE-2-1-ANALYSIS-DATASET.md`
+2. Tell them which step to execute (e.g., "Execute Step 1B")
+3. Tell them the feature name and $CURRENT-FEATURE-DIR path (IMPORTANT: You must expand the variables $CURRENT-FEATURE-DIR and $ANALYSIS-DIR to their full paths when speaking to the subagent)
+4. DO NOT paraphrase the instructions - let them read the original
+5. When they are done, audit their work and redo up to 3 times if needed
+
+If you have to redo a step debug the instructions and add your analysis and fix to `$ANALYSIS-DIR/_LEARNINGS.md`
 ---
 
 ## Step 1: Create Dataset
@@ -45,6 +49,10 @@ If you have to redo a step debug the instructions and add your analysis and fix 
 Run as: Subagent
 Parallel: No
 Model: haiku
+
+Before you call this make sure you have the ENV variable DATA-DIR set (typically /.data)
+Make sure that the file `/.data/commentary/GEN/001/001/GEN-001-001-macula.yaml` exists
+If **not** then do a sparse checkout of all files matching -macula.yaml and tbta in them.
 
 ```bash
 python src/ingest_data/tbta/extract_feature.py --field {tbta_field} --format jsonl --with-text --with-strongs \
@@ -70,12 +78,14 @@ Model: Opus
 ```bash
 python src/tools/predict/draft_dataset.py \
   --input $ANALYSIS-DIR/tbta-extract.jsonl \
-  --output-dir $ANALYSIS-DIR/temp_data \
+  --output-dir $ANALYSIS-DIR/draft_datasets.jsonl \
   --balance-by-genre --one-per-verse \
   --sample-by-field constituent
 ```
 
-**This is an LLM task** - requires judgment about theological/literary diversity.
+**MANUAL LLM WORK REQUIRED** - Do NOT write automation scripts. YOU must manually edit each entry in batches
+  - The reason you cannot script this is if you script as training data then the AI will simply learn how you "guessed" it
+  - I created a script above draft_dataset.py to give you a good starting point so you have smaller data to work with, you can do this
 
 **Output File** - $ANALYSIS-DIR/datasets.jsonl (created using the edit file, write to file or other write tools by the LLM; Do **not** write a script to do this as you need to add fields that require your custom logic to each line)
 
@@ -85,18 +95,9 @@ python src/tools/predict/draft_dataset.py \
 - test: max 100 entries (RESERVE - don't look at until final eval)
 
 **Suggested Flow**
-1. **Bootstrap**: Run the script above to get a balanced starting set in `$ANALYSIS-DIR/temp_data`.
-2. **Enrich**: Read the generated jsonl files. Add `strongs_number` (inferred) and `reason_group` (logical/theological grouping) to each entry.
-3. **Gap Analysis**: Check `tbta-extract.jsonl` for missed edge cases or rare forms. Add them if missing.
-4. **Doc check**: Ensure ALL verses cited in feature docs/README are in the `train` split (move from val/test if needed).
-5. **Finalize**: Write all entries to `$ANALYSIS-DIR/datasets.jsonl` 
-
-**Selection criteria** for each split:
-- Balance across feature values
-- Mix of OT/NT
-- Mix of literary types (history, poetry, prophecy, epistles)
-- Include easy AND adversarial cases
-- Same verse = same split (don't leak)
+1. **Bootstrap**: Run the script above to get a balanced starting set in `$ANALYSIS-DIR/draft_datasets.jsonl`.
+2. **Enrich**: Read the generated jsonl file. Add `strongs_number` (inferred) and `reason_group` (logical/theological grouping) to each entry.
+3. **Finalize**: Write all entries to `$ANALYSIS-DIR/datasets.jsonl` 
 
 **Required fields in output**:
 
@@ -130,6 +131,7 @@ The following is showing too many newlines to make this file easier for me to re
  - Strongs_number must be added and correct
  - reason_group must be set
 
+If these two conditions above are not true then you have to redo the work
 
 ---
 ### 1C: Enrich with Translations
@@ -160,22 +162,40 @@ With the sample verses in front of you, validate each language:
 
 **Selection criteria**:
 - **MUST INCLUDE**: Languages from LANGUAGES.md where you validated you can identify the word and know the rules
-- **MUST INCLUDE**: grc-BYZ, lat-VUC, eng-YLT, heb-heb, arb-NAV, rus-SYN, jpn-1965
+- **MUST INCLUDE**: Core languages (see code formats below)
 - **LIMIT**: Do not duplicate - if arb-NAV is listed, don't also add ara
-- **LIMIT**: Use full `{lang}-{version}` codes from fetch_verse output (e.g., `ind-ind` not `ind`)
-- **ADD**: After validating LANGUAGES.md, add 3-5 additional languages that mark this feature (e.g., for number systems: haw, meu-meu, slv if available)
+- **ADD**: After validating LANGUAGES.md, add 3-5 additional languages that mark this feature
 
+**Translation code formats**:
+The enrich script supports two formats:
+- **Full code** (`eng-YLT`): Use when translation exists in BOTH OT and NT
+- **Language prefix** (`grc`): Use when OT/NT have different versions - matches first available
+
+| Code | Format | Reason |
+|------|--------|--------|
+| `eng-YLT` | full | Both OT and NT |
+| `grc` | prefix | OT=grc-BRENT, NT=grc-BYZ/SR |
+| `hbo` | prefix | OT only (hbo-WLC) |
+| `heb-heb` | full | Both OT and NT |
+| `lat-VUC` | full | Both OT and NT |
+| `arb-NAV` | full | Both OT and NT |
+| `deu-1912` | full | Both OT and NT |
+| `fra-LSG` | full | Both OT and NT |
+| `spa-BES` | full | Both OT and NT |
+| `ind-AYT` | full | Both OT and NT |
+
+Write to $ANALYSIS-DIR/LANGUAGE-SELECTION.md all your language choices
 
 ```bash
 python src/ingest_data/tbta/enrich_extract_with_verses.py \
   --input $ANALYSIS-DIR/datasets.jsonl \
-  --translations grc-BYZ,lat-VUC,eng-YLT,heb-heb,arb-NAV,rus-SYN,jpn-1965,...{validated-codes} \  # Only languages you validated above
+  --translations eng-YLT,grc,hbo,heb-heb,lat-VUC,arb-NAV,deu-1912,fra-LSG,spa-BES,ind-AYT,...{validated-codes} \
   --output $ANALYSIS-DIR/enriched.jsonl
 ```
 
 **Important notes**:
-- Use `{lang}-{version}` codes (e.g., `eng-YLT`), not just language codes
-- These match the keys returned by `fetch_verse.py`
+- Use full `{lang}-{version}` codes when translation covers both testaments
+- Use 3-letter language prefix when OT/NT have different versions
 - **Validate after enrichment**: Confirm the languages you selected actually appear in the output
 
 
@@ -184,11 +204,13 @@ python src/ingest_data/tbta/enrich_extract_with_verses.py \
 Sample datasets.jsonl
 
  - [ ] A list of strongs numbers in the field strongs
- - [ ] the langauges grc-BYZ, lat-VUC, eng-YLT, heb-heb, arb-NAV, rus-SYN, jpn-1965
+ - [ ] Core translations: eng-YLT, grc (prefix), hbo (prefix), heb-heb, lat-VUC, arb-NAV
  - [ ] at least 3 additional languages that are helpful for finding this feature but no repeats of the languages above (so only one english)
  - [ ] strongs_number should have the strongs code it in for all entries
  - [ ] strongs should have a list of strongs codes for the verse
  - [ ] dataset should have the field reason_group and it should be well balanced
+
+Store your audit in $ANALYSIS-DIR/audit-data.md
 
 If there are mistakes go back and redo the steps with better instructions.  
 
@@ -204,7 +226,7 @@ Call `src/tools/predict/split_dataset.py --input $ANALYSIS-DIR/enriched.jsonl --
 
 Now you can delete
  - datasets.jsonl
- - enriched.secret.jsonl
- - tbta-extract.secret.jsonl
- - 
+ - enriched.jsonl
+ - tbta-extract.jsonl
+ - draft_datasets.jsonl
   

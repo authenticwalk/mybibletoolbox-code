@@ -62,7 +62,7 @@ try:
 except ImportError:
     print("WARNING: PyYAML not installed. YAML output will be unavailable.")
     print("Install with: pip install pyyaml")
-    yaml = None
+    exit(1)
 
 # Add src to path for imports when run as script
 sys.path.insert(0, str(Path(__file__).parent.parent.parent))
@@ -479,7 +479,7 @@ def process_json_file(json_file, field_name, output_format='yaml', with_text=Fal
             # Format based on output type
             if output_format == 'jsonl':
                 # JSONL format: detailed annotations with verse reference
-                verse_ref = f"{book_code}.{chapter:03d}.{verse:03d}"
+                verse_ref = f"{book_code}-{chapter:03d}-{verse:03d}"
                 for ann in annotations:
                     result = {
                         'verse': verse_ref,

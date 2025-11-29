@@ -24,9 +24,22 @@ analysis/
 │   ├── test.jsonl       # max 100 entries (DO NOT TOUCH until final eval)
 │   └── leftovers.jsonl  # remaining entries not in train/validate/test
 ├── tbta-extract.jsonl   # full extraction
-├── README.md            # results summary
-└── logical.py           # optional rules script
+└── README.md            # results summary
 ```
+
+## Process
+
+You will work through these steps calling subagents as defined in each step to keep your context clear.
+
+**CRITICAL: How to delegate to subagents**
+1. Tell the subagent to READ THIS FILE FIRST: `Read /workspace/bible-study-tools/tbta/features/.instructions-to-build-feature/STAGE-2-3-ANALYSIS-PATTERNS.md`
+2. Tell them which step to execute (e.g., "Execute Step 3A")
+3. Tell them the feature name and $CURRENT-FEATURE-DIR path (IMPORTANT: You must expand the variables $CURRENT-FEATURE-DIR and $ANALYSIS-DIR to their full paths when speaking to the subagent)
+4. DO NOT paraphrase the instructions - let them read the original
+5. When they are done, audit their work and redo up to 3 times if needed
+
+If you have to redo a step debug the instructions and add your analysis and fix to `$ANALYSIS-DIR/_LEARNINGS.md`
+---
 
 ## Step 3: Analyze Patterns (Parallel Tasks)
 
@@ -85,15 +98,15 @@ Analyze ${filename} to find patterns for predicting ${feature} labels. Be critic
 **Theory**: Other languages encode ${feature} grammatically. If certain translation words consistently appear when a Hebrew/Greek word has a specific label, we can use those patterns as prediction rules.
 
 **Data structure**:
-- `entry.group`: The word we are trying to label for ${feature}
-- `entry.top_patterns.pattern.translation`: The language giving us a clue
-- `entry.top_patterns.pattern.word`: The word from that language that signals the label
+- `entry.group`: The grouping key from the script (either Strong's Number or Constituent word)
+- `entry.top_patterns[].pattern.translation`: The language giving us a clue
+- `entry.top_patterns[].pattern.word`: The word from that language that signals the label
 - `--GROUP-BY-ITSELF--`: The value in `entry.group` alone is sufficient to predict the label
 
 **Key insight**: For words with VARIABLE labels, find CONTEXTUAL patterns that explain the variation:
 - Preceding word context: "two **men**" → Dual, "three **men**" → Trial
 - Named entities in context: "**sons** of Zebedee" (we know there are 2) → Dual
-- Translation morphology: Arabic dual suffix (-ān), Hebrew suffix (-ayim) → Dual
+- Translation morphology: Arabic dual suffix (-ān), Hebrew suffix (-ayim) → Dual (Be careful: you are looking at raw strings, so only rely on suffixes if they are clearly visible in the token)
 - Verse context you know from memory
 
 Good hints:
@@ -126,7 +139,7 @@ Clear patterns where data labelling is inconsistent or confusing. Group by commo
 
 Now create a file in jsonl format with the schema of each entry as
 ```
-group: str: the name of your group. Not entry.group from above but how you grouped all those entries together
+group: str: the name of your Pattern Group (e.g., "Named Entities", "Numeric Context"). NOT the `entry.group` (Strongs/Constituent) from the input.
 rule: str: max 200 words; a long form description written to a human labeller about the policy of when to label a feature this value
 exceptions: []{
   group: str: group the exceptions into logical similar units and give it a name
@@ -165,7 +178,7 @@ The script outputs groups WITHOUT hints:
 
 **Phase 2: Add hints (LLM task)**
 
-- [ ] Read `features/${feature}/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml` for context
+- [ ] Read `$CURRENT-FEATURE-DIR/research/THEOLOGICALLY-SIGNIFICANT-GROUPS.yaml` for context
 - [ ] Review each group in `reason-groupings.jsonl`
 - [ ] For reason NONE verses: determine which reason group they belong to, or create new groups, or ignore
 - [ ] Add a `"hint"` field to each group (max 250 words)
@@ -217,11 +230,11 @@ Create `$ANALYSIS-DIR/README.md` linking to the subfiles for more details:
 - [Any TBTA labeling concerns]
 
 ## Recommended Approach
-- [ ] Simple rules (logical.py)
+- [ ] Simple rules based on patterns
 - [ ] LLM with hints
 - [ ] Hybrid approach
 ```
 
-Update `features/{feature}/README.md` with summary linking to analysis.
+Update `$CURRENT-FEATURE-DIR/README.md` with summary linking to analysis.
 
 

@@ -273,7 +273,7 @@ def process_hebrew_verse(chapter_elem, verse_ref):
         "source": "macula-hebrew",
         "version": "1.0.0",
         "language": "heb",
-        "verse": f"{book} {chapter}:{verse}",
+        "verse": f"{book}-{chapter:03d}-{verse:03d}",
         "text": "",
         "words": []
     }
@@ -310,7 +310,7 @@ def process_greek_verse(book_elem, verse_ref):
         "source": "macula-greek",
         "version": "1.0.0",
         "language": "grc",
-        "verse": f"{book} {chapter}:{verse}",
+        "verse": f"{book}-{chapter:03d}-{verse:03d}",
         "text": "",
         "words": []
     }
