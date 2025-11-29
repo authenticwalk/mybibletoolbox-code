@@ -1,0 +1,100 @@
+Definite Potential
+'should not' Obligation
+Indicative
+Definite Potential
+Indicative
+Definite Potential
+Definite Potential
+Indicative
+'must' Obligation
+'should not' Obligation
+Indicative
+'should not' Obligation
+Definite Potential
+Definite Potential
+Indicative
+'must' Obligation
+Indicative
+Definite Potential
+Indicative
+'might' Potential
+'must' Obligation
+'should not' Obligation
+'should not' Obligation
+'should' Obligation
+Definite Potential
+Indicative
+Indicative
+'should not' Obligation
+Definite Potential
+Definite Potential
+Indicative
+'should not' Obligation
+Indicative
+'should not' Obligation
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+'may' (permissive)
+Definite Potential
+'should' Obligation
+Indicative
+'should not' Obligation
+'may' (permissive)
+Indicative
+Definite Potential
+Definite Potential
+'should not' Obligation
+Indicative
+Indicative
+Indicative
+Probable Potential
+Definite Potential
+Indicative
+Indicative
+'should not' Obligation
+Forbidden Obligation
+Forbidden Obligation
+Forbidden Obligation
+'should' Obligation
+Indicative
+Indicative
+Indicative
+Indicative
+Definite Potential
+Indicative
+Definite Potential
+'must' Obligation
+Indicative
+Indicative
+Definite Potential
+Indicative
+Indicative
+Indicative
+Probable Potential
+Indicative
+Definite Potential
+Indicative
+Indicative
+Indicative
+Forbidden Obligation
+Indicative
+Indicative
+Indicative
+Definite Potential
+'should not' Obligation
+'must' Obligation
+Definite Potential
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
