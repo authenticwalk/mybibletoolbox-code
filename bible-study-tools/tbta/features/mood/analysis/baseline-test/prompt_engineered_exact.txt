@@ -1,0 +1,100 @@
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+'should' Obligation
+'must' Obligation
+Indicative
+'must' Obligation
+'should not' Obligation
+Indicative
+Forbidden Obligation
+'must' Obligation
+'should' Obligation
+Indicative
+'must' Obligation
+Indicative
+'must' Obligation
+Indicative
+'might' Potential
+'must' Obligation
+Forbidden Obligation
+Indicative
+'should' Obligation
+'must' Obligation
+Indicative
+Indicative
+'should not' Obligation
+'might' Potential
+Indicative
+Indicative
+'should' Obligation
+Indicative
+Forbidden Obligation
+'must' Obligation
+Indicative
+'should' Obligation
+Indicative
+Indicative
+Indicative
+'must' Obligation
+Indicative
+'might' Potential
+'must' Obligation
+'should' Obligation
+Indicative
+Forbidden Obligation
+Forbidden Obligation
+Indicative
+Indicative
+'might' Potential
+Indicative
+Indicative
+Indicative
+Indicative
+'might' Potential
+Indicative
+Indicative
+'must' Obligation
+Forbidden Obligation
+Forbidden Obligation
+Forbidden Obligation
+'should' Obligation
+Indicative
+'must' Obligation
+Indicative
+Forbidden Obligation
+'may' (permissive)
+Indicative
+Definite Potential
+'must' Obligation
+Forbidden Obligation
+Indicative
+Indicative
+'might' Potential
+'should' Obligation
+Indicative
+Forbidden Obligation
+'might' Potential
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Forbidden Obligation
+'must' Obligation
+'must' Obligation
+Indicative
+Indicative
+'might' Potential
+'may' (permissive)
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
+Indicative
