@@ -22,8 +22,17 @@
 | 1TH-002-015 | "Jew treat **Paul** also badly" | Paul | **Plural** | "did persecute us" |
 
 ### Key Finding
-**PHM-001-020 uses singular ἐγώ (I) in Greek**, NOT plural. Yet TBTA labels "Paul" as Plural.
-- The Strong's numbers confirm: G1473 = ἐγώ = "I" (first person singular)
+**PHM-001-020 has INCONSISTENT labeling within TBTA's own data:**
+
+| Clause Path | Text | TBTA Label |
+|-------------|------|------------|
+| Clause[0]/Clause[1] | "friend **Paul** want Philemon welcome Onesimus" | Singular |
+| Clause[1]/Clause[2] | "God unite **Paul** Lord" | **Plural** ← This one is in test set |
+| Clause[3]/Clause[3] | "then Philemon cause **Paul** be happy" | Singular |
+
+The same "Paul" in the same verse is labeled BOTH Singular and Plural depending on clause position.
+
+**Greek evidence**: ἐγώ (I) - singular. G1473 confirms first person singular.
 - Co-authors: Philemon 1:1 lists "Paul... and Timothy the brother"
 - Other examples (1TH, EPH) DO use Greek plural pronouns (ἡμεῖς, ἡμῶν, ἡμᾶς)
 
