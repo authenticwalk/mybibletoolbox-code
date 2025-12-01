@@ -5,13 +5,56 @@
 ## Process
 
 ```
-1. GET    ──► quote_verse
-2. DRAFT  ──► 5 transforms (no peeking!)
+1. GET    ──► quote_verse {Book} {ch}:{vs} NIV
+2. DRAFT  ──► 5 transforms, log to ./output/{BOOK}-{ch:03d}-{vs:03d}.md
 3. CHECK  ──► editor.tabitha.bible/check
 4. FIX    ──► rules/ folder, repeat until clean
 5. COMPARE──► sources.tabitha.bible (only now!)
 6. LEARN  ──► Update learnings.md
 ```
+
+---
+
+## Output Format
+
+**Create file**: `./output/{BOOK}-{ch:03d}-{vs:03d}.md`
+
+Show each step with the current text state:
+
+```markdown
+# {BOOK} {ch}:{vs} — He1 Encoding
+
+## Step 1: Download NIV
+text = "..."
+
+## Step 2: Fix Pronouns
+Changes: {list each pronoun → noun}
+text = "..."
+
+## Step 3: Simplify Vocabulary  
+Changes: {list each word → replacement}
+text = "..."
+
+## Step 4: Group Participants
+Changes: {list or "none needed"}
+text = "..."
+
+## Step 5: Fix Clauses
+Changes: {list clause fixes}
+text = "..."
+
+## Final He1
+text = "..."
+
+## Check Results
+Errors: {list or "None"}
+
+## Comparison
+Reference: {from sources.tabitha.bible}
+Differences: {list or "Matches"}
+```
+
+---
 
 ## The 5 Transforms
 
@@ -89,6 +132,7 @@
 policies/
 ├── SKILL.md          ← You are here (overview)
 ├── TODO.md           ← Verses to complete
+├── output/           ← Your step-by-step work logs
 ├── examples.md       ← Worked examples (any book)
 ├── learnings.md      ← Discovered patterns
 ├── rules/
