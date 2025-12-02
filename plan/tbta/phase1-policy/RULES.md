@@ -1,213 +1,142 @@
-# TBTA Verse Column Rules
+# TBTA Verse Rules (Compressed)
 
-> **Goal**: Transform NIV → language-neutral semantic representation any language can generate from.
+> **Goal**: NIV → Controlled Natural Language for universal translation
 
-## CRITICAL (Must Apply)
+## Source Strategy
 
-### R1: No 3rd Person Pronouns
-Replace he/she/it/they/him/her/them with explicit nouns.
+**Base**: Copy NIV text, **except**:
+- Pronouns (resolve to nouns)
+- Compound sentences (segment)
+- Idioms (decompose to meaning)
+- Passives (convert to active where possible)
+- Complex vocabulary (apply LDV substitution)
+
+**Incorporate from**:
+- **Hebrew**: "Yahweh" for יהוה (not NIV's "LORD")
+- **Greek/Hebrew**: Implicit cultural context `(implicit-info)`
+- **Scholarly sources**: Historical footnotes `(footnote)`
+- **Semantic analysis**: Clause boundaries, participant tracking
+
+---
+
+## Core Transforms (5 rules)
+
+### 1. Coreference Resolution
+Replace 3rd-person pronouns with explicit referents.
 ```
-"he went" → "John went"
-"she said" → "Naomi said"
-"they" → "those people" / "Naomi and Ruth"
+he/she/it/they → [Name] or [that + noun]
 ```
 
-### R2: One Verb Per Sentence
-Split compound sentences. Auxiliaries (do/will/can/may) don't count as separate verbs.
+### 2. Clause Segmentation
+One predicate per sentence. Split at conjunctions.
 ```
-"went and bought food" → "went to town. That man bought food."
+"X and Y did Z" → "X did A. Y did B."
 ```
 
-### R3: Bracket Subordinate Clauses
+### 3. Explicit Relativization
+Appositive → bracketed relative clause.
+```
+"X, the king" → "X, [who was the king]"
+"city in Y" → "city [which was in Y]"
+```
+
+### 4. Deixis Marking
+Mark 1st/2nd person referents in parentheses.
+```
+I(Speaker), you(Addressee), my(Possessor's), we(Group) _incl/_excl
+```
+
+### 5. LDV Substitution (Longman Defining Vocabulary)
+| Level | Color | Action |
+|-------|-------|--------|
+| L0-L1 | Blue/Cream | Use directly |
+| L2 | Magenta | Pair: `simple/complex` |
+| L3 | Green | Alternate: `(complex)...(simple)...` |
+| L4 | Brown | Proper nouns, use directly |
+
+**Common L2 pairings**: `family/clan`, `grain/barley`, `gather/harvest`, `buy/redeem`
+
+---
+
+## Notation Patterns (3 rules)
+
+### 6. Subordinate Bracketing
 All non-main clauses in `[...]`:
-- Relative: `man [who was in house]`
-- Patient: `knew [Mary was there]`
-- Purpose: `went [in order to see Mary]`
-- Adverbial: `[When John arrived] Mary left`
+- Relative: `[who/that/which...]`
+- Patient: `knew [X happened]`
+- Purpose: `[in order to...]`
+- Conditional: `[if X then...]`
 
-### R4: Patient Clauses
-**He1 (Phase 1):** "that" allowed for natural flow: `know [that Ruth is good]`
-**He2 (Phase 2):** Omit "that": `knew [Mary was there]`
-
-Ruth/Jonah/Genesis use He1 format; Matthew uses more He2 features.
-
-### R5: Numbers
-**Digits** for quantities/measurements: `13 kilograms`, `10 old men`, `2 people`
-**Words** for: ordinals (`first day`), "one of" (`one of the men`), scene markers (`One day...`)
-
----
-
-## HIGH PRIORITY
-
-### R6: Name Introduction
-`[article] [category] named [Name]`
+### 7. Quote Framing
 ```
-"Moab" → "a country named Moab"
-"Ruth" → "a woman named Ruth"
-After mention: "that country named Moab" or just "Moab"
+Speaker said, ["First sentence]. Continuation."
 ```
+Nested: `["X said, ["inner quote"]"]`
 
-### R7: Apposition → Relative Clause
+### 8. Imperative Marking
 ```
-"Elimelech, Naomi's husband" → "Elimelech, [who was Naomi's husband]"
-"Bethlehem in Judah" → "Bethlehem, [which was in Judah]"
-```
-
-### R8: Demonyms → Descriptions
-```
-"Moabite women" → "women [who were from Moab]"
-"Ephrathites" → "people [who were in Ephrah's family/clan]"
-```
-
-### R9: Determiner System
-| Determiner | When |
-|------------|------|
-| a/some | First mention |
-| that/those | Already mentioned |
-| this/these | Newly contrasted / physically present |
-| the | Frame inferable (the king = of this country) |
-| ∅ | Generic ("People like food") |
-
-### R10: Passive → Active
-```
-"was left with" → "lived with"
-"was given" → "received"
-```
-If passive needed, include agent: `was hit by X` or `by X _implicitActiveAgent`
-
----
-
-## STANDARD
-
-### R11: Pronoun Marking
-1st/2nd person: Mark referent in parentheses.
-```
-"I(Naomi) said"
-"you(Ruth) should go"
-"my(Boaz's) workers"
-"we(Peter) _excl" / "we(Peter) _incl"
-```
-
-### R12: L2 Vocabulary Pairings
-```
-family/clan       grain/barley      gathering/harvesting
-workers/harvesters  buy/redeem      master/lord
-wine/vinegar      serve/worship     promise/swear
-```
-**Explications**: `daughter-in-law` → `son's wife`
-
-### R13: Quote Structure
-Single: `X said, ["sentence"].`
-Multi: `X said, ["first]. Second. Third."`
-Nested: `X said, ["Y said, ["quote"]"]`
-
-### R14: Command (Imperative) Pattern
-```
-You(John) (imp) go to the town.
-```
-In quotes after addressee: `["My daughter, (imp) go."]`
-
-### R15: Purpose Clauses
-Use `[in order to...]` not bare "to".
-```
-Wrong: "went to see Mary"
-Right: "went [in order to see Mary]"
-```
-
-### R16: Implicit Information
-- Regular: `(implicit-info)` or `<<...>>`
-- Necessary: `_implicitNecessary` or `<...>`
-- Types: `(implicit-situational)`, `(implicit-background)`, `(implicit-subaction)`
-
-### R17: Titles/Sections
-```
-(title) Section heading here.
-(paragraph) for paragraph breaks.
+You(Addressee) (imp) verb...
 ```
 
 ---
 
-## SPECIAL CASES
+## Lexical Rules (3 rules)
 
-### R18: Hyphenated Verbs
-NEVER inflect. Use base form.
+### 9. Hyphenated Verbs
+Never inflect. Base form only.
 ```
-Wrong: "ran-away", "sat-down"
-Right: "run-away", "sit-down"
-```
-Mark tense if needed: `stand-up _present`
-
-### R19: No "can"
-```
-Wrong: "can go"
-Right: "is able [to go]"
+run-away, sit-down, stand-up (not ran-away, sat-down)
 ```
 
-### R20: No "when/where" as Relativizers
+### 10. Modal Decomposition
 ```
-Wrong: "time [when John left]"
-Right: "time [that John left at]"
-```
-
-### R21: Reflexives
-```
-"yourself(Boaz) (imp) buy the land"
-"each-other(people)"
+"can X" → "is able [to X]"
+"must X" → "has to [X]" / obligation marker
 ```
 
-### R22: Divine Names
-- Standard: "Yahweh"
-- Formal: "the LORD"
-- Prayer pattern: `I(X) pray [that Yahweh will...]`
-
-### R23: "all of" vs "all"
+### 11. Demonym → Description
 ```
-Generic: "God loves all people"
-Specific: "all of those people"
-```
-
-### R24: Membership = "in" not "from"
-```
-Wrong: "Boaz was from Elimelech's family"
-Right: "Boaz was in Elimelech's family/clan"
+"Moabite" → "[who was from Moab]"
+"Ephrathite" → "[who was in Ephrah's family/clan]"
 ```
 
 ---
 
-## ADVANCED MARKERS (underscore notation)
+## Implicit Information
 
-| Marker | Use | Example |
-|--------|-----|---------|
-| `_implicit` | Mark implicit word/phrase | `God _implicit` |
-| `_implicitNecessary` | Grammatically required implicit | `said _implicitNecessary` |
-| `_implicitActiveAgent` | Passive agent | `by God _implicitActiveAgent` |
-| `_paragraph` | Paragraph break | `(paragraph)` or `_paragraph` |
-| `_descriptive` | Descriptive relative clause | `[_descriptive who was tall]` |
-| `_frameInferable` | Inferable from context | `the king _frameInferable` |
-| `_excl` / `_incl` | Exclusive/inclusive we | `we(Paul) _excl` |
-| `_generic` | Generic noun | `people _generic` |
-| `_dual` | Dual number | `both men _dual` |
-| `_emphasized` | Emphasis | `John _emphasized` |
+### 12. Gap-filling
+Add missing subactions, cultural context:
+```
+(implicit-info) Boaz walked to Ruth.
+(footnote) At that time, judges ruled Israel.
+```
 
-### Alternates (for complex passages)
-```
-(literal) Literal translation here.
-(dynamic) More natural phrasing here.
-```
+Types: `(implicit-situational)`, `(implicit-background)`, `(implicit-subaction)`
 
 ---
 
-## QUICK CHECKLIST
+## Quick Reference
 
-- [ ] No he/she/it/they (R1)
-- [ ] One verb per sentence (R2)
-- [ ] Subordinates bracketed (R3)
-- [ ] No "that" in patient clauses (R4)
-- [ ] Numbers as digits (R5)
-- [ ] Names: "X named Y" (R6)
-- [ ] Appositives → relatives (R7)
-- [ ] Demonyms → descriptions (R8)
-- [ ] 1st/2nd pronouns marked (R11)
-- [ ] L2 words paired (R12)
-- [ ] Hyphenated verbs not inflected (R18)
-- [ ] "can" → "is able [to]" (R19)
+| NIV Pattern | TBTA Transform |
+|-------------|----------------|
+| "he went" | Coreference → "John went" |
+| "X, the king" | Relativization → "X, [who was king]" |
+| "harvest" | LDV L2 → "gather/harvest" |
+| "Moabite" | Demonym → "[from Moab]" |
+| "can do" | Modal → "is able [to do]" |
+| "LORD" | Hebrew → "Yahweh" |
+| Passive | Active voice where possible |
+
+---
+
+## Terminology Index
+
+| Term | Meaning |
+|------|---------|
+| **CNL** | Controlled Natural Language |
+| **LDV** | Longman Defining Vocabulary (2000 core words) |
+| **Coreference** | Pronoun → explicit noun |
+| **Deixis** | Speaker/hearer reference marking |
+| **Relativization** | Appositive → relative clause |
+| **L2 pairing** | simple/complex word pair |
+| **He1/He2** | Phase 1 (natural) / Phase 2 (strict) |
