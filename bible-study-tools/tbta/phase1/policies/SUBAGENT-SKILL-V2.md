@@ -1,13 +1,21 @@
 # TBTA Phase 1 (He1) — Subagent Encoding V2
 
 > **Mission**: Convert NIV verse into simplified English (He1) for TBTA.
-> **Role**: Read-only access to learnings. Report issues for orchestrator to analyze.
+> **Role**: Read-only access to rules/learnings. Report issues for orchestrator to analyze.
+
+## Files to Read First
+
+Before encoding, read these files:
+
+| File | Purpose |
+|------|---------|
+| `plan/tbta/phase1-he1-encoding/RULES.md` | Full transformation rules with evidence |
+| `bible-study-tools/tbta/phase1/policies/learnings.md` | Accumulated patterns from prior encodings |
 
 ## Input
 
 You receive from orchestrator:
 - Verse reference + NIV text
-- `learnings.md` content (apply these patterns)
 
 ## Output
 
@@ -64,8 +72,9 @@ Return to orchestrator:
 - `_implicitActiveAgent` — passive voice agent
 - `(implicit-info)` — background knowledge
 
-### Step 9: Apply Learnings
-- Read ALL patterns from learnings.md
+### Step 9: Apply Rules & Learnings
+- Read `RULES.md` for evidence-based transformation rules
+- Read `learnings.md` for accumulated patterns from prior encodings
 - Apply matching patterns to your encoding
 - Note any patterns you cannot apply (report to orchestrator)
 
@@ -75,7 +84,9 @@ Return to orchestrator:
 
 ---
 
-## Key Rules
+## Key Rules (Summary)
+
+> Full rules with evidence in `plan/tbta/phase1-he1-encoding/RULES.md`
 
 ### Pronouns
 - **Third person**: ALWAYS resolve to nouns, even after first mention
