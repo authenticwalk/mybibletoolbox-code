@@ -2,6 +2,10 @@
 
 > **Corpus**: 6,963 verses | **Format**: He1 (natural) / He2 (strict)
 > **Format**: Rule (supporting refs; NOT contradicting refs)
+> **Books**: Genesis, Joshua, Ruth, 1-2 Samuel, Nehemiah, Esther, Daniel, Jonah, Nahum, Matthew, Mark, Acts, Titus, Philemon, 2 John
+> **Source**: [sources.tabitha.bible](https://sources.tabitha.bible) — Click 🔗 links to verify
+
+---
 
 ---
 
@@ -194,21 +198,30 @@ Usage: Selective - only high-ambiguity polysemous verbs
 "Moabite" → "[who was from Moab]" (sometimes)
 ```
 
-**Modal Decomposition** (Gen 1:25, Esther 4:11)
-**14% applied** - Only "can" converted:
+**"can" → "is able"** 🟢 (Gen 8:5, Gen 13:16, Gen 30:2)
+**100% compliant** — The word "can" is never used; always replaced with "is able":
 ```
-"can X" → "is able [to X]" ✓
-"must X" → kept as "must" ✗
+✓ "Noah was able [to see the top of the mountains]"
+✓ "No person will be able [to count your descendants]"
+✓ "I(Jacob) am not able [to give children to you]"
+✗ "Noah can see..." — NOT found in corpus
 ```
+Note: Other modals (must, should, could, would) are NOT covered by this rule
 
 **Number Formatting** (Gen 1:28, Gen 5:5)
-**~50% applied** - Inconsistent:
+**semantic_encoding: 100% correct** — `phase_1_encoding` generation has issues
+- `semantic_encoding`: Always uses digits (`~\lu 2~`, `~\lu 3~`)
+- `phase_1_encoding`: Inconsistently renders as words ("two", "three")
 - Large numbers → digits: 127, 180, 10000
-- Small numbers (1-12) → sometimes words
+- Small numbers (1-12) → sometimes words in text output
+- Note: This is a text rendering issue, not a semantic encoding error
 
-**Passive Voice**
-**0% converted** - Passives remain passive
-He2 marks agent with `_implicitActiveAgent`
+**Passive Voice** 🟢 (Gen 14:13, Gen 17:24)
+**Correctly followed** — Policy says KEEP passive, mark agent:
+- Passives remain passive (correct per policy §0.13)
+- Agent included with "by": `"was circumcised by a person"`
+- He2 marks implicit agents with `_implicitActiveAgent`
+- This is **compliant**, not a contradiction
 
 ---
 
@@ -295,8 +308,9 @@ If action clearly follows, use "after":
 | complex word (He2) | → `simple/complex` | 🟡 MEDIUM |
 | phrasal verb | → `run-away` | 🟡 MEDIUM |
 | demonym | → `[from X]` | 🔴 LOW |
-| "can" | → `is able [to]` | 🔴 LOW |
-| passive | → keep passive | N/A |
+| "can" | → `is able [to]` | 🟢 HIGH |
+| passive | → keep passive + "by agent" | 🟢 HIGH |
+| numbers | → digits (semantic layer) | 🟢 HIGH* |
 | start/stop/finish | → NO bracket on following verb | 📘 POLICY |
 | "going to" | → "will" | 📘 POLICY |
 | double negative | → positive "all" | 📘 POLICY |

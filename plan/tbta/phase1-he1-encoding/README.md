@@ -7,8 +7,9 @@ Canonical merged rules for transforming NIV verses to Controlled Natural Languag
 | File | Purpose |
 |------|---------|
 | `SKILL.md` | 10-step transformation process with validation checklist |
-| `RULES.md` | Evidence-based rules (🟢🟡🔴) + policy rules (📘) |
-| `ORCHESTRATOR.md` | Parallel subagent workflow (V1 vs V2) |
+| `RULES.md` | Blended rules: evidence (🟢🟡🔴) + policy (📘) |
+| `ORCHESTRATOR.md` | Parallel subagent workflow (V1 vs V2 vs V3) |
+| `VERSION-COMPARISON.md` | Explains difference between V1, V2, V3 |
 | `CONTRADICTION-REPORT.md` | Discrepancies between TBTA policy and encoded verses |
 
 ## Sources
@@ -30,26 +31,27 @@ This folder merges findings from multiple analysis sessions:
 ## Architecture
 
 ```
-                         ORCHESTRATOR
-                    (SKILL.md, RULES.md)
-                             │
-              ┌──────────────┴──────────────┐
-              │      PARALLEL CALL          │
-              ▼                             ▼
-      ┌──────────────┐             ┌──────────────┐
-      │ Subagent V1  │             │ Subagent V2  │
-      │ (original)   │             │ (enhanced)   │
-      └──────┬───────┘             └──────┬───────┘
-             │                            │
-             └──────────────┬─────────────┘
-                            ▼
-                    COMPARE & SELECT
-                            │
-                            ▼
-                   UPDATE LEARNINGS
+                              ORCHESTRATOR
+                         (SKILL.md, RULES.md)
+                                  │
+            ┌─────────────────────┼─────────────────────┐
+            ▼                     ▼                     ▼
+    ┌──────────────┐     ┌──────────────┐     ┌──────────────┐
+    │ Subagent V1  │     │ Subagent V2  │     │ Subagent V3  │
+    │  (policy)    │     │ (evidence)   │     │  (blended)   │
+    └──────┬───────┘     └──────┬───────┘     └──────┬───────┘
+           └──────────────┬─────┴─────────────┘
+                          ▼
+                  COMPARE & SELECT
+                          │
+                          ▼
+                  UPDATE LEARNINGS
 ```
 
-**Subagent V1**: `bible-study-tools/tbta/phase1/policies/SUBAGENT-SKILL.md`
-**Subagent V2**: `bible-study-tools/tbta/phase1/policies/SUBAGENT-SKILL-V2.md`
+| Version | Approach | File |
+|---------|----------|------|
+| V1 | Policy-first | `SUBAGENT-SKILL.md` |
+| V2 | Reverse-engineering | `SUBAGENT-SKILL-V2.md` |
+| V3 | Blended | `SUBAGENT-SKILL-V3.md` |
 
-See `ORCHESTRATOR.md` for full workflow details.
+See `ORCHESTRATOR.md` and `VERSION-COMPARISON.md` for details.

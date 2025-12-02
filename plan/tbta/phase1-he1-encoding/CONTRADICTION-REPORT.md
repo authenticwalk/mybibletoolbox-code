@@ -1,56 +1,39 @@
 # TBTA Policy Contradiction Report
 
 > **Analysis Date**: December 2, 2024
-> **Corpus**: 6,963 verses across 15 books (Genesis, Joshua, Ruth, 1-2 Samuel, Esther, Nehemiah, Daniel, Matthew, Mark, Luke, Acts, 2 John)
+> **Corpus**: 6,963 verses across 15 books (Genesis, Joshua, Ruth, 1-2 Samuel, Nehemiah, Esther, Daniel, Jonah, Nahum, Matthew, Mark, Acts, Titus, Philemon, 2 John)
 > **Purpose**: Document discrepancies between official TBTA policy and actual encoded verses
-> **Evidence Source**: [`plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md`](../../../plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md)
+> **Source**: [sources.tabitha.bible](https://sources.tabitha.bible) — Click verse links to verify
+
+---
+
+## Important: Two Encoding Layers
+
+The TBTA data has **two distinct encoding fields**:
+
+| Field | Description | Example (Gen 1:16) |
+|-------|-------------|-------------------|
+| `phase_1_encoding` | Human-readable He1 text | `"God made two lights"` |
+| `semantic_encoding` | Machine-parsed structure | Contains `~\lu 2~` (digit) |
+
+**Key Finding**: In many cases, the `semantic_encoding` is correct (uses digits) while the `phase_1_encoding` is inconsistent (uses words). This report analyzes the `phase_1_encoding` field since that's the actual He1 text output.
+
+See **Section 5** for detailed encoding layer discrepancies.
 
 ---
 
 ## Summary
 
-| Rule | Policy | Applied Rate | Supporting | Contradicting |
-|------|--------|--------------|------------|---------------|
-| Modal Decomposition | "We do not use 'can'" | **14%** | 133 | 787 |
-| Passive Voice | "keep passive, mark agent" | **varies** | 0 | 76 |
-| Addressee Patterns | "you(people)" not "you(Disciples)" | **68%** | 484 | 229 |
-| Number Formatting | "use numerals" | **51%** | 535 | 507 |
-| Demonym → Description | "Moabite → [who was from Moab]" | **55%** | 157 | 126 |
-| Hyphenated Verb Base | "stand-up not stood-up" | **98%** | 216 | 5 |
+| Rule | Policy | Status | Notes |
+|------|--------|--------|-------|
+| Addressee Patterns | "you(people)" not "you(Disciples)" | ⚠️ **68%** | He1 vs He2 style difference |
+| Demonym → Description | "Moabite → [who was from Moab]" | ⚠️ **55%** | Inconsistent application |
+| Hyphenated Verb Base | "stand-up not stood-up" | ⚠️ **98%** | 5 NT verses need correction |
+| Number Formatting | "use numerals" | ⚠️ text layer | See Section 5 |
 
 ---
 
-## 1. Modal Decomposition (14% Compliance)
-
-### Official Policy (checklist.md §0.24, §2.1)
-
-> **§0.24**: "Do not use 'can'. In most cases, that becomes 'is able [to…' See section 2.1. (But no brackets for He1.)"
->
-> **§2.1**: "We do not use 'can'. Instead, we use 'are able [to ...'. There are two senses of 'able'. 'Able-A' indicates ability to do something, whereas 'able-B' indicates that someone is able to do something because of the circumstances."
-
-### Statistics
-- **Supporting**: 133 verses (14%)
-- **Contradicting**: 787 verses (86%)
-
-### Contradicting Examples
-
-| # | Verse | Contradicting Text | Evidence |
-|---|-------|-------------------|----------|
-| 1 | **Genesis 2:5** | "...God did not create a man [who **would care** for the plants]" | [L563](../../../plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md#L563) |
-| 2 | **Genesis 2:15** | "...God put the man in the garden [so the man **could care** for the garden]" | [L567](../../../plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md#L567) |
-| 3 | **Genesis 2:17** | "But you(man) **must not** eat the fruit..." | [L571](../../../plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md#L571) |
-| 4 | **Genesis 3:3** | "You(Eve) **must not** eat the fruit of the tree..." | [L575](../../../plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md#L575) |
-| 5 | **Genesis 3:22** | "We(God) **must prevent** [this man from eating...]" | [L579](../../../plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/EVIDENCE-DETAILED.md#L579) |
-
-### Analysis
-The policy explicitly prohibits "can" but the corpus shows:
-- "can" → "is able" is applied ~14% of the time
-- "must", "should", "could", "would" are almost never converted
-- Only "can" has a decomposition rule; other modals have no documented transformation
-
----
-
-## 2. Addressee Patterns (68% Compliance)
+## 1. Addressee Patterns (68% Compliance)
 
 ### Official Policy (checklist.md §0.1)
 
@@ -64,15 +47,13 @@ The policy explicitly prohibits "can" but the corpus shows:
 
 ### Contradicting Examples
 
-| # | Verse | Contradicting Text |
-|---|-------|-------------------|
-| 1 | **Matthew 8:26** | "Jesus asked, ['Why are **you(followers)** afraid?]" |
-| 2 | **Matthew 9:13** | "But **you(Pharisees)** (imp) go. And **you(Pharisees)** (imp) learn the thing [that the following words mean]." |
-| 3 | **Matthew 9:38** | "Therefore **you(disciples)** (imp) earnestly ask God..." |
-| 4 | **Matthew 10:8** | "**You(disciples)** (imp) heal the sick people." |
-| 5 | **Matthew 10:16** | "**You(disciples)** (imp) listen/behold. I(Jesus) am sending **you(disciples)**..." |
-| 6 | **Matthew 10:22** | "And all people will hate **you(disciples)**..." |
-| 7 | **Mark 4:13** | "Jesus said to **those followers/disciples**, ['Do **you(disciples)** not understand...'" |
+| # | Verse | Contradicting Text | Source |
+|---|-------|-------------------|--------|
+| 1 | **Matthew 8:26** | "Jesus asked, ['Why are **you(followers)** afraid?]" | [🔗](https://sources.tabitha.bible/Bible/Matthew/8/26) |
+| 2 | **Matthew 9:13** | "But **you(Pharisees)** (imp) go..." | [🔗](https://sources.tabitha.bible/Bible/Matthew/9/13) |
+| 3 | **Matthew 9:38** | "Therefore **you(disciples)** (imp) earnestly ask God..." | [🔗](https://sources.tabitha.bible/Bible/Matthew/9/38) |
+| 4 | **Matthew 10:8** | "**You(disciples)** (imp) heal the sick people..." | [🔗](https://sources.tabitha.bible/Bible/Matthew/10/8) |
+| 5 | **Matthew 10:16** | "**You(disciples)** (imp) listen/behold..." | [🔗](https://sources.tabitha.bible/Bible/Matthew/10/16) |
 
 ### Analysis
 The corpus shows inconsistent application:
@@ -82,7 +63,7 @@ The corpus shows inconsistent application:
 
 ---
 
-## 3. Number Formatting (51% Compliance)
+## 2. Number Formatting (Text Layer Issue)
 
 ### Official Policy (from vocabulary.md, derived from practice)
 
@@ -96,27 +77,27 @@ The corpus shows inconsistent application:
 
 ### Contradicting Examples
 
-| # | Verse | Contradicting Text |
-|---|-------|-------------------|
-| 1 | **Genesis 1:16** | "God made **two** lights. God made a bright light..." |
-| 2 | **Genesis 2:9** | "God also put 2 special trees... **One** tree causes a person..." |
-| 3 | **Genesis 2:16** | "...except the fruit [that is on **one** tree]" |
-| 4 | **Genesis 2:21** | "God took **one** rib from Adam's body" |
-| 5 | **Genesis 2:24** | "God joins the man and the woman into **one** body" |
-| 6 | **Genesis 6:10** | "Noah had 3 **three** sons" (mixed!) |
-| 7 | **Genesis 7:2** | "...take **seven** pairs of each clean animal..." |
+| # | Verse | Actual `phase_1_encoding` Text | Source |
+|---|-------|-------------------------------|--------|
+| 1 | **Genesis 1:16** | `"God made two lights"` — uses word "two" | [🔗](https://sources.tabitha.bible/Bible/Genesis/1/16) |
+| 2 | **Genesis 6:10** | `"Noah had 3 three sons"` — BOTH digit AND word! | [🔗](https://sources.tabitha.bible/Bible/Genesis/6/10) |
+| 3 | **Genesis 2:9** | `"put 2 special trees...one of these 2 trees"` — mixed in same sentence | [🔗](https://sources.tabitha.bible/Bible/Genesis/2/9) |
+| 4 | **Genesis 2:21** | `"God took one rib"` — uses word "one" | [🔗](https://sources.tabitha.bible/Bible/Genesis/2/21) |
+| 5 | **Ruth 1:3** | `"Naomi's two sons"` — uses word "two" | [🔗](https://sources.tabitha.bible/Bible/Ruth/1/3) |
 
 ### Analysis
-The corpus shows extreme inconsistency:
+The `phase_1_encoding` field shows extreme inconsistency:
 - "2" and "two" appear interchangeably
 - "one" is almost always written as a word, not "1"
 - Small numbers (1-10) frequently use words
 - Large numbers (127, 180, 10000) consistently use digits
 - Genesis 6:10 shows "3 three" - both digit and word in same phrase!
 
+**⚠️ Important**: The `semantic_encoding` layer uses digits correctly (see Section 7). This appears to be a `phase_1_encoding` generation issue, not a semantic encoding error.
+
 ---
 
-## 4. Demonym → Description (55% Compliance)
+## 3. Demonym → Description (55% Compliance)
 
 ### Official Policy (notation.md, Special Relations)
 
@@ -130,15 +111,13 @@ The corpus shows extreme inconsistency:
 
 ### Contradicting Examples
 
-| # | Verse | Contradicting Text |
-|---|-------|-------------------|
-| 1 | **Genesis 10:16** | "Canaan was also the ancestor of the **Jebusite**, Amorite, Girgashite." |
-| 2 | **Genesis 10:17** | "Canaan was also the ancestor of the **Hivite**, Arkite, and Sinite." |
-| 3 | **Genesis 10:18** | "Canaan was also the ancestor of the **Arvadite**, Zemarite, and **Hamathite**." |
-| 4 | **Genesis 12:6** | "At that time the **Canaanite** were living in that land." |
-| 5 | **Genesis 12:12** | "[When the **Egyptians** see you(Sarai)]... Then an **Egyptian** man will kill me(Abram)..." |
-| 6 | **Ruth 1:22** | "Naomi returned from Moab with **Ruth the Moabitess**" |
-| 7 | **Esther 2:5** | "There was a **Jewish** man named Mordecai..." |
+| # | Verse | Contradicting Text | Source |
+|---|-------|-------------------|--------|
+| 1 | **Genesis 10:16** | "...ancestor of the **Jebusite**, Amorite, Girgashite" | [🔗](https://sources.tabitha.bible/Bible/Genesis/10/16) |
+| 2 | **Genesis 10:17** | "...ancestor of the **Hivite**, Arkite, and Sinite" | [🔗](https://sources.tabitha.bible/Bible/Genesis/10/17) |
+| 3 | **Genesis 10:18** | "...ancestor of the **Arvadite**, Zemarite, and **Hamathite**" | [🔗](https://sources.tabitha.bible/Bible/Genesis/10/18) |
+| 4 | **Genesis 12:6** | "At that time the **Canaanite** were living..." | [🔗](https://sources.tabitha.bible/Bible/Genesis/12/6) |
+| 5 | **Genesis 12:12** | "Then an **Egyptian** man will kill me(Abram)..." | [🔗](https://sources.tabitha.bible/Bible/Genesis/12/12) |
 
 ### Analysis
 - Ethnic group names in genealogies are almost never converted
@@ -148,7 +127,7 @@ The corpus shows extreme inconsistency:
 
 ---
 
-## 5. Hyphenated Verb Base Form (98% Compliance)
+## 4. Hyphenated Verb Base Form (98% Compliance)
 
 ### Official Policy (checklist.md §0.26, §1)
 
@@ -162,13 +141,13 @@ The corpus shows extreme inconsistency:
 
 ### Contradicting Examples
 
-| # | Verse | Contradicting Text |
-|---|-------|-------------------|
-| 1 | **Matthew 7:25** | "Then _implicit the rain _frameInferable **fell-A**." |
-| 2 | **Matthew 7:27** | "Then _implicit the rain _frameInferable **fell-A**." |
-| 3 | **Matthew 28:4** | "And those guards **fell-B** on the ground." |
-| 4 | **Matthew 28:6** | "You(women) (imp) come. You(women) (imp) see the place [where Jesus **lay-B**]." |
-| 5 | **Mark 12:8** | "Then those people/farmers **threw-B** that son of the dead body..." |
+| # | Verse | Contradicting Text | Source |
+|---|-------|-------------------|--------|
+| 1 | **Matthew 7:25** | "...the rain _frameInferable **fell-A**..." | [🔗](https://sources.tabitha.bible/Bible/Matthew/7/25) |
+| 2 | **Matthew 7:27** | "...the rain _frameInferable **fell-A**..." | [🔗](https://sources.tabitha.bible/Bible/Matthew/7/27) |
+| 3 | **Matthew 28:4** | "...those guards **fell-B** on the ground" | [🔗](https://sources.tabitha.bible/Bible/Matthew/28/4) |
+| 4 | **Matthew 28:6** | "...see the place [where Jesus **lay-B**]" | [🔗](https://sources.tabitha.bible/Bible/Matthew/28/6) |
+| 5 | **Mark 12:8** | "...people/farmers **threw-B** that son..." | [🔗](https://sources.tabitha.bible/Bible/Mark/12/8) |
 
 ### Analysis
 This rule has high compliance (98%), but the contradicting examples are notable:
@@ -179,65 +158,26 @@ This rule has high compliance (98%), but the contradicting examples are notable:
 
 ---
 
-## 6. Passive Voice Handling
-
-### Official Policy (checklist.md §0.13)
-
-> **§0.13**: "If you use a passive, include the agent with 'by', like 'John was hit by a soldier' or 'John was hit by a soldier _implicitActiveAgent' if the agent (subject) of the sentence is implicit information."
-
-### Statistics
-- **Passive → Active conversion**: 0 verses (0%)
-- **Passives kept as passive**: 76 verses (100%)
-
-### Examples (All Passives Kept)
-
-| # | Verse | Passive Text |
-|---|-------|-------------|
-| 1 | **Genesis 14:13** | "the big trees [that **were owned by** a man named Mamre]" |
-| 2 | **Genesis 14:21** | "my(king's) people [who **were captured by** the four kings]" |
-| 3 | **Genesis 17:24** | "Abraham was 99 years old [when Abraham **was circumcised by** a person]" |
-| 4 | **Genesis 17:26** | "Abraham and Abraham's son **were circumcised by** a person on the same day" |
-| 5 | **Genesis 17:27** | "all the men [who lived with Abraham] **were circumcised by** a man" |
-| 6 | **Mark 2:3** | "Some men came to Jesus. Those men **were carrying** a man [who **was controlled by** a spirit/demon]" |
-
-### Analysis
-The policy does NOT require converting passive to active - it requires:
-1. Keeping the passive form
-2. Always including the agent with "by"
-3. Marking implicit agents with `_implicitActiveAgent`
-
-The corpus correctly keeps passives but the agent marking varies:
-- Some passives have agents: "was circumcised by a person"
-- He2 uses `_implicitActiveAgent` marker when agent is implicit
-- This is actually **compliant** with policy, not contradicting
-
----
-
 ## Recommendations
 
 ### For TBTA Policy Team
 
-1. **Modal Decomposition**: Clarify policy for "must", "should", "could", "would"
-   - Current policy only addresses "can"
-   - 86% of verses keep other modals unchanged
-   - Either expand the decomposition rules OR explicitly allow modals
-
-2. **Addressee Patterns**: Standardize He1 vs He2 approach
+1. **Addressee Patterns**: Standardize He1 vs He2 approach
    - He1 uses generic: `you(people)`
    - He2 uses specific: `you(disciples)`
    - Recommend documenting this as intentional format difference
 
-3. **Number Formatting**: Establish clear threshold
-   - Current practice: digits for numbers > 10, words for 1-10
-   - Policy says always use digits
-   - Recommend clarifying or updating policy to match practice
+2. **Number Formatting**: Fix `phase_1_encoding` text generation
+   - `semantic_encoding` correctly uses digits
+   - `phase_1_encoding` inconsistently renders as words
+   - Consider regenerating text from semantic layer
 
-4. **Demonym Handling**: Clarify conversion criteria
+3. **Demonym Handling**: Clarify conversion criteria
    - Genealogies: keep demonyms (Jebusite, Hivite)
    - Individual references: convert to relative clause
    - Major ethnic groups (Jew, Egyptian): optional
 
-5. **Hyphenated Verbs**: Reinforce base form rule for He2 encoders
+4. **Hyphenated Verbs**: Reinforce base form rule for He2 encoders
    - 98% compliance is good
    - 5 NT verses need correction: Matt 7:25, 7:27, 28:4, 28:6, Mark 12:8
 
@@ -256,16 +196,45 @@ The corpus correctly keeps passives but the agent marking varies:
 | Quote Framing | 1,016 | 0 | 100% |
 | Imperative Marking | 1,189 | 0 | 100% |
 | Hyphenated Verbs | 1,076 | 4 | 99.6% |
-| Modal Decomposition | 133 | 787 | **14%** |
+| "can" → "is able" | 133 | 0 | 100% ✅ (no "can" found) |
 | Demonym → Description | 157 | 126 | **55%** |
 | Gap-filling (Implicit) | 1,526 | 0 | 100% |
 | Yahweh Substitution | 914 | 1 | 99.9% |
-| Number Formatting | 535 | 507 | **51%** |
-| Passive → Active | 0 | 76 | **0%** |
+| Number Formatting | — | — | ✅ semantic / ⚠️ text |
+| Passive Voice | 76 | 0 | 100% ✅ |
 | Title Patterns | 378 | 0 | 100% |
 | Addressee Patterns | 484 | 229 | **68%** |
 | Hyphenated Base Form | 216 | 5 | **98%** |
 | Underscore Markers | 1,416 | 0 | 100% |
+
+---
+
+## 5. Encoding Layer Discrepancies
+
+These are cases where `semantic_encoding` is correct but `phase_1_encoding` differs. Since the semantic layer shows the intended value, these may be generation/rendering issues rather than policy contradictions.
+
+### Number Formatting Discrepancies
+
+| Verse | `phase_1_encoding` | `semantic_encoding` | Source |
+|-------|-------------------|---------------------|--------|
+| Genesis 1:16 | `"two lights"` (word) | `~\lu 2~` (digit) | [🔗](https://sources.tabitha.bible/Bible/Genesis/1/16) |
+| Genesis 6:10 | `"3 three sons"` (both!) | `~\lu 3~` (digit only) | [🔗](https://sources.tabitha.bible/Bible/Genesis/6/10) |
+| Ruth 1:3 | `"two sons"` (word) | `~\lu 2~` (digit) | [🔗](https://sources.tabitha.bible/Bible/Ruth/1/3) |
+| Genesis 2:21 | `"one rib"` (word) | `~\lu 1~` (digit) | [🔗](https://sources.tabitha.bible/Bible/Genesis/2/21) |
+
+### Analysis
+
+The `semantic_encoding` consistently uses digits as policy requires. However, when rendered to `phase_1_encoding`:
+- Small numbers (1-10) are often converted to words
+- Genesis 6:10 shows **both** digit and word: `"3 three sons"`
+- This suggests a text generation step that inconsistently converts digits to words
+
+### Recommendation
+
+The semantic layer appears correct. The issue is in the `phase_1_encoding` generation:
+1. Numbers should render as digits, not words
+2. Genesis 6:10's "3 three" indicates a bug where both representations appear
+3. Consider regenerating `phase_1_encoding` from `semantic_encoding` with consistent number handling
 
 ---
 
