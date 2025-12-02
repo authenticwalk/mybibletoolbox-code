@@ -4,36 +4,42 @@
 
 ## Input Handling
 
-**Accepts**: Text file or direct input with verse reference(s) and text.
+**Accepts**: Text file or direct input with verse reference(s), optionally with text.
 
 ### Validation
 
-Check input contains:
-1. **Verse reference** — any format: `Ruth 4:1`, `RUT 4:1`, `Ruth 4:1-5`, `Matthew 2:1-10`
-2. **Verse text** — the NIV (or other translation) text to encode
+**Required**: Verse reference — any format: `Ruth 4:1`, `RUT 4:1`, `Ruth 4:1-5`, `Matthew 2:1-10`
+**Optional**: Verse text — if not provided, will be fetched
 
-**If valid input provided** → Use it directly, skip fetching
-**If input missing reference OR text** → Return error:
+| Input | Action |
+|-------|--------|
+| Reference + text | Use provided text |
+| Reference only | Fetch text from sources |
+| No reference | Return error (see below) |
+
+**If no verse reference found** → Return error:
 ```
-ERROR: Input must contain both verse reference and text.
-Expected: "{Book} {ch}:{vs}" followed by verse text.
+ERROR: Input must contain a verse reference.
+Expected format: "{Book} {ch}:{vs}" (e.g., Ruth 4:1, Matthew 2:1-10)
 ```
-**If no input provided** → Fetch verse (see Process step 1)
 
 ### Input Examples
 
 ```
-# Single verse
+# Reference + text (uses provided text)
 Ruth 4:1  Boaz went up to the town gate and sat down there...
 
-# Multiple verses
+# Reference only (will fetch text)
+Matthew 2:1-10
+
+# Multiple verses with text
 Matthew 2:1-3
 v1: After Jesus was born in Bethlehem...
 v2: and asked, "Where is the one..."
 v3: When King Herod heard this...
 
 # Minimal format
-GEN 1:1 In the beginning God created the heavens and the earth.
+GEN 1:1
 ```
 
 ---
@@ -41,7 +47,7 @@ GEN 1:1 In the beginning God created the heavens and the earth.
 ## Workflow
 
 ```
-INPUT: Verse reference + text (or fetch if not provided)
+INPUT: Verse reference (text optional, fetched if missing)
     │
     ├──► Subagent V1 (Policy)
     ├──► Subagent V2 (Evidence)
