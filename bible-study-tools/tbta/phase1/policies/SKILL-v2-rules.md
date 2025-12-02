@@ -98,9 +98,9 @@ Differences: {list or "Matches"}
 ## Rules by Category
 
 ### Pronouns (§3)
-- ❌ Third person pronouns (he/she/they) — resolve to nouns
+- ❌ Third person (he/she/they/it) — ALWAYS resolve to nouns, even after first mention
 - ✅ First/second person: `I(Paul)`, `you(people)`, `we(Peter) _excl`
-- ✅ After first occurrence: can use natural pronouns
+- ⚠️ "Natural pronouns" = 1st/2nd person keeps pronoun form after initial marking
 
 ### Words (§1-2)
 | Level | Color | Action |
@@ -120,6 +120,7 @@ Differences: {list or "Matches"}
 - ✅ Max 4 levels of nesting
 - ❌ "that" starting patient clauses: `knew [X...]` not `knew [that X...]`
 - ✅ Relative clauses need relativizer: `who`, `whom`, `that`
+- ⚠️ Hyphenated verbs: NEVER inflect — `sit-down` not `sat-down` (see learnings.md)
 
 ### Determiners (§3.1)
 | Situation | Use |
@@ -168,6 +169,7 @@ You(John) (imp) go to the town.
 |------|-----|
 | Check | `editor.tabitha.bible/check?text={urlencoded}` |
 | Sources | `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` (JSON) |
+| Targets | `targets.tabitha.bible/English/{Book}/{ch}/{vs}` (sanity-check output) |
 | Ontology | `ontology.tabitha.bible/?q={word}` |
 
 ---
