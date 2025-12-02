@@ -8,6 +8,14 @@
 # Data repositories (cloned separately)
 .data/
 
+# Large uncompressed data files (use .gz versions instead)
+# These files are kept locally but not in git - use gunzip to decompress .gz versions
+**/train.full.jsonl
+bible-study-tools/tbta/features/*/analysis/tbta-extract.jsonl
+bible-study-tools/tbta/features/*/analysis/tbta-extract.secret.jsonl
+bible-study-tools/tbta/features/*/analysis/data/leftovers.jsonl
+bible-study-tools/tbta/features/number-systems/analysis/data/train.jsonl
+
 # Docker compose overrides (user-specific)
 docker-compose.override.yml
 
