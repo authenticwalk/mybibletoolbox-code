@@ -1,27 +1,18 @@
 # TBTA Phase 1 (He1) — Subagent Encoding V2
 
 > **Mission**: Convert NIV verse into simplified English (He1) for TBTA.
-> **Role**: Read-only access to rules/learnings. Report issues for orchestrator to analyze.
+> **Approach**: Reverse-engineering (rules derived from 6,963 encoded verses)
 
-## Files to Read First
-
-Before encoding, read these files:
+## Also Read
 
 | File | Purpose |
 |------|---------|
-| `plan/tbta/phase1-he1-encoding/RULES.md` | Full transformation rules with evidence |
 | `bible-study-tools/tbta/phase1/policies/learnings.md` | Accumulated patterns from prior encodings |
 
-## Input
+## Input/Output
 
-You receive from orchestrator:
-- Verse reference + NIV text
-
-## Output
-
-Return to orchestrator:
-- Encoded He1 text (linter-validated)
-- Issues encountered (patterns not in learnings)
+**Input**: Verse reference + NIV text
+**Output**: Encoded He1 text + linter results + issues for orchestrator
 
 ---
 
@@ -55,126 +46,250 @@ Return to orchestrator:
 - Nested quotes: additional bracket levels
 
 ### Step 6: Simplify Vocabulary
-- Check ontology for word levels
 - L0-1: use directly
 - L2: pair as `simple/complex`
 - L3+: alternate or explicate
 
 ### Step 7: Add Discourse Markers
-- "And" — continuation
-- "Then" — sequence
-- "But" — contrast
-- "So" — result
+- "And" — continuation, "Then" — sequence, "But" — contrast, "So" — result
 - Omit for: first clause, section starts
 
 ### Step 8: Mark Implicit Information (He2 mainly)
-- `_implicit` — general additions
-- `_implicitActiveAgent` — passive voice agent
-- `(implicit-info)` — background knowledge
+- `_implicit`, `_implicitActiveAgent`, `(implicit-info)`
 
-### Step 9: Apply Rules & Learnings
-- Read `RULES.md` for evidence-based transformation rules
-- Read `learnings.md` for accumulated patterns from prior encodings
-- Apply matching patterns to your encoding
-- Note any patterns you cannot apply (report to orchestrator)
+### Step 9: Apply Learnings
+- Read `learnings.md`, apply matching patterns, note issues
 
 ### Step 10: Validate with Linter
 - Run linter until clean (max 12 iterations)
-- Fix all blocking errors
 
 ---
 
-## Key Rules (Summary)
+# RULES (Reverse-Engineered from 6,963 Verses)
 
-> Full rules with evidence in `plan/tbta/phase1-he1-encoding/RULES.md`
+## Strategy
 
-### Pronouns
-- **Third person**: ALWAYS resolve to nouns, even after first mention
-- **First/second person**: `I(Paul)`, `you(people)`, `we(Peter) _excl`
-
-### Clauses
-- One verb per clause
-- Subordinate clauses in brackets: `[who was in the house]`
-- Max 4 levels of nesting
-- NO "that" starting patient clauses: `knew [X...]` not `knew [that X...]`
-- Hyphenated verbs NEVER inflect: `pick-up` not `picked-up`
-
-### Common L2 Pairings
-```
-serve/worship, promise/swear, gather/harvest
-grain/barley, family/clan, workers/servants
-daughter-in-law → son's wife
-mother-in-law → husband's mother
-```
-
-### Quotes
-```
-X said, ["First sentence]. Second sentence..."
-```
-Bracket only first sentence.
-
-### Commands
-```
-You(John) (imp) go to the town.
-```
-
-### Idioms
-- "find favor in eyes" → `be kind to me`
-- "The Lord be with you" → `I pray [that Yahweh will be with you]`
-
-### Verb-Specific
-- Use `gave birth to` (NOT "birth" or "birthed")
-- Use `sexed` not "slept with"
-- Use `came to X` instead of `arrived at X`
-- Use `lived` instead of `living`
+**Copy NIV EXCEPT**:
+- Pronouns → explicit nouns (coreference resolution)
+- Compound sentences → segmented clauses
+- Complex vocabulary → LDV pairs (He2)
 
 ---
 
-## Linter API
+## 🟢 HIGH Confidence Rules (>95% consistent)
 
-**URL**: `https://editor.tabitha.bible/check?text={urlencoded_he1}`
+### 1. Coreference Resolution
+(Gen 1:22, Gen 1:26, Gen 1:28, Gen 3:6, Gen 4:8; NOT Gen 1:2)
 
-**Ontology lookup**: `https://ontology.tabitha.bible/?q={word}`
+Replace 3rd-person pronouns with explicit referents:
+```
+he/she/it/they → [Name] or "that man/woman/person"
+his/her/their → [Name's] or "that person's"
+```
+
+### 2. Clause Segmentation
+(Gen 1:4, Gen 1:5, Gen 1:10, Gen 1:16, Gen 1:27)
+
+One predicate per sentence. Split at conjunctions:
+```
+"X and Y did Z" → "X did A. Y did B."
+```
+
+### 3. Subordinate Bracketing
+(Gen 1:6, Gen 1:9, Gen 1:11, Gen 1:17, Gen 1:18; NOT Gen 1:1)
+
+All non-main clauses in `[...]`:
+- Relative: `[that/who/which...]`
+- Purpose: `[in-order-to...]`, `[so-that...]`
+- Temporal: `[when...]`, `[after...]`, `[before...]`
+- Conditional: `[if...]`
+- Causal: `[because...]`
+- Result: `[with-the-result-that...]`
+
+### 4. Deixis Marking
+(Gen 1:26, Gen 1:28, Gen 1:29, Gen 3:9, Gen 3:11; NOT Gen 1:1)
+
+```
+I(Speaker), you(Addressee), my(Possessor's), we(Group)
+```
+
+**Prefer generic labels**: `you(people)` not `you(Disciples)`
+
+He2 additions: `_incl` (inclusive we), `_excl` (exclusive we)
+
+### 5. Quote Framing
+(Gen 1:3, Gen 1:6, Gen 1:9, Gen 1:11, Gen 1:26; NOT Gen 1:1)
+
+```
+Speaker said, ["Quote text."]
+Nested: ["X said, ['inner quote']"]
+```
+
+### 6. Imperative Marking
+(Gen 1:22, Gen 1:28, Gen 3:3, Gen 3:14, Gen 4:7)
+
+```
+You(Addressee) (imp) verb...
+```
+
+### 7. Yahweh Substitution
+(Gen 2:4, Gen 2:5, Gen 2:7, Gen 2:8, Gen 2:9; NOT Daniel references)
+
+```
+LORD (NIV) → Yahweh (CNL)
+```
+OT only.
+
+### 8. Explicit Relativization
+(Gen 1:11, Gen 1:12, Gen 1:21, Gen 1:24, Gen 2:8; NOT Gen 1:1)
+
+```
+"X, the king" → "X, [who was the king]"
+"city in Y" → "city [which was in Y]"
+```
 
 ---
 
-## Output Format
+## 🟡 MEDIUM Confidence Rules (Context-dependent)
+
+### 9. LDV Substitution
+(Matt 4:10, Matt 6:10, Mark 4:10, Ruth 1:2; NOT Ruth 1:1)
+
+L2 level words paired: `simple/complex`
+```
+people/disciples, stories/parables, spirits/demons
+family/clan, grain/barley, gather/harvest
+```
+
+He1: 9.2% | He2: 47.6%
+
+### 10. Hyphenated Verbs
+(Gen 2:21, Gen 3:8, Gen 4:8, Mark 1:17, Mark 2:14; NOT Gen 1:1)
+
+**ALWAYS BASE FORM** (never inflected):
+```
+go-up (not went-up), sit-down (not sat-down)
+```
+
+### 11. Underscore Implicit Markers (He2)
+(Matt 12:45, Matt 22:4, Mark 14:28, Mark 6:7, Acts 15:33)
+
+```
+_implicit, _implicitNecessary, _implicitActiveAgent
+_paragraph, _descriptive, _frameInferable
+_dual, _generic, _hyperbolic, _metonymy
+```
+
+### 12. Dual Representations (He2)
+(Matt 6:10, Matt 16:18, Matt 27:45, Mark 4:19, Acts 2:1)
+
+```
+(literal)/(dynamic) - Translation style
+(complex)/(simple) - Accessibility
+(literalunits)/(modernunits) - Time/measurement
+```
+
+### 13. Rhetorical Question Handling (He2)
+(Matt 16:10, Matt 23:11, Mark 2:7, Mark 7:18, Matt 5:47)
+
+```
+(norhetorical) Did you remember...?
+(statement) You should remember...
+```
+
+### 14. Named Entity Introduction
+(Gen 2:8, Gen 2:11, Gen 2:13, Gen 4:17, Gen 4:25; NOT Gen 1:1)
+
+```
+a man named Adam
+a city named Enoch
+a country named Moab
+```
+
+### 15. Structural Markers
+(Ruth 1:1, Matt 5:1, Matt 5:13, Matt 5:17, Acts 3:1)
+
+```
+(title), -Title - Section headers
+(paragraph), _paragraph - Breaks
+```
+
+**Titles describe ACTION**: "(title) Jesus teaches about God's laws"
+
+---
+
+## 🔴 LOW Confidence Rules (<50% consistent)
+
+### 16. Demonym → Description
+(Ruth 1:2, Ruth 1:4; NOT Ruth 1:1)
+**55% applied**: `"Moabite" → "[who was from Moab]"` (sometimes)
+
+### 17. Modal Decomposition
+(Gen 1:25, Esther 4:11; NOT Gen 3:3)
+**14% applied**: `"can X" → "is able [to X]"` ✓, keep "must/should"
+
+### 18. Number Formatting
+(Gen 1:28, Gen 5:5; NOT Gen 1:5)
+**~50% applied**: Large → digits, small → varies
+
+### 19. Passive Voice
+(N/A; NOT Mark 2:3, Mark 5:2)
+**0% converted** - Passives remain passive. He2 marks agent: `_implicitActiveAgent`
+
+---
+
+## Quick Reference
+
+| Pattern | Transform | Confidence |
+|---------|-----------|------------|
+| pronouns | → explicit nouns | 🟢 HIGH |
+| compound sentence | → multiple sentences | 🟢 HIGH |
+| subordinate clause | → `[bracketed]` | 🟢 HIGH |
+| I/you/we | → `I(Name)`, `you(Name)` | 🟢 HIGH |
+| direct speech | → `said, ["..."]` | 🟢 HIGH |
+| command | → `(imp) verb` | 🟢 HIGH |
+| LORD | → Yahweh | 🟢 HIGH |
+| complex word (He2) | → `simple/complex` | 🟡 MEDIUM |
+| phrasal verb | → `run-away` | 🟡 MEDIUM |
+| demonym | → `[from X]` | 🔴 LOW |
+| "can" | → `is able [to]` | 🔴 LOW |
+| passive | → keep passive | 🔴 N/A |
+
+---
+
+## He1 vs He2 Format
+
+| Feature | He1 (OT style) | He2 (NT style) |
+|---------|----------------|----------------|
+| Underscore markers | Rare (0.6%) | Common (64%) |
+| L2 word pairings | 9.2% | 47.6% |
+| Sense suffixes | No | Yes (-A, -B, -C) |
+| Dual translations | No | Yes |
+
+---
+
+## Linter & Output
+
+**Linter**: `https://editor.tabitha.bible/check?text={urlencoded_he1}`
+**Ontology**: `https://ontology.tabitha.bible/?q={word}`
+
+### Output Format
 
 ```markdown
-# {BOOK} {ch}:{vs} — He1 Encoding
+# {BOOK} {ch}:{vs} — He1 Encoding (V2)
 
 ## NIV Input
 "..."
 
 ## Transformations Applied
 1. [Step X]: {what changed}
-2. ...
 
 ## Final He1
 "..."
 
 ## Linter Results
 Errors: {list or "None"}
-Iterations: {count}
 
 ## Issues for Orchestrator
-- {Pattern not in learnings / unexpected behavior / ambiguity}
+- {Pattern not covered / ambiguity}
 ```
-
----
-
-## Self-Learning Protocol
-
-**Your role**: READ-ONLY
-
-1. Apply all patterns from `learnings.md`
-2. If you encounter something NOT covered by learnings:
-   - Complete the encoding as best you can
-   - Report the issue in "Issues for Orchestrator" section
-3. Do NOT modify learnings.md - orchestrator handles that
-
-**Orchestrator's role**: WRITE
-
-1. Analyzes your reported issues
-2. Writes detailed diagnostic to `learnings/{slug}.md`
-3. Updates `learnings.md` with new policy

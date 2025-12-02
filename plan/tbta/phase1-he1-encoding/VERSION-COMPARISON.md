@@ -112,16 +112,18 @@ Three versions of the subagent skill, each with a different approach to deriving
 
 ```
 bible-study-tools/tbta/phase1/policies/
-├── SUBAGENT-SKILL.md      # V1 - Policy-first
-├── SUBAGENT-SKILL-V2.md   # V2 - Reverse-engineering
-├── SUBAGENT-SKILL-V3.md   # V3 - Blended
+├── SUBAGENT-SKILL.md      # V1 - Policy-first (reads checklist.md)
+├── SUBAGENT-SKILL-V2.md   # V2 - Reverse-engineering (rules embedded)
+├── SUBAGENT-SKILL-V3.md   # V3 - Blended (rules embedded)
 └── learnings.md           # Shared by all versions
 
 plan/tbta/phase1-he1-encoding/
-├── RULES.md               # V3's blended rules (V2 also references this)
+├── RULES.md               # Reference copy of blended rules
 ├── SKILL.md               # Orchestrator reference
 └── ORCHESTRATOR.md        # Parallel subagent workflow
 ```
+
+**Note**: V2 and V3 have rules fully embedded in the skill file itself. No external file reads needed (except learnings.md).
 
 ---
 
