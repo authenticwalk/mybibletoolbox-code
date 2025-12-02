@@ -1,6 +1,6 @@
 # TBTA Phase 1 (He1) — Orchestrator Skill
 
-> **Mission**: Run parallel subagents to encode NIV verses to He1, select best result, update learnings.
+> **Mission**: Run parallel subagents to encode NIV verses to He1, select best result, debug failures.
 
 ## Workflow
 
@@ -12,20 +12,25 @@ INPUT: Verse reference (e.g., Ruth 4:1)
     └──► Subagent V3 (Blended)
            │
            ▼
+    FETCH REFERENCE (sources.tabitha.bible)
+           │
+           ▼
     COMPARE & SELECT (5 criteria)
            │
            ▼
-    UPDATE LEARNINGS (version-specific)
+    DEBUG FAILURES (update wrong version's learnings)
 ```
 
 ## Process
 
-1. **Get NIV** → Fetch verse from `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}`
+1. **Get NIV** → Fetch verse 
+   - Single verse: `src/tools/fetch_verse.py`
+   - Chapter: `https://www.biblestudytools.com/{book}/{chapter}.html`
 2. **Launch subagents** → Run V1, V2, V3 in parallel with NIV text
-3. **Collect results** → Each returns: He1 encoding + linter status + issues
-4. **Select winner** → Apply selection criteria (see below)
-5. **Update learnings** → Add patterns to winner's learnings file
-6. **Log conflicts** → If V1≠V2, document in `CONTRADICTION-REPORT.md`
+3. **Collect results** → Each returns: He1 encoding (linter-validated) + issues
+4. **Fetch reference** → `curl -H "Accept: application/json" "https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}"`
+5. **Compare & select** → Apply selection criteria (see below)
+6. **Debug failures** → Analyze what went wrong, update learnings
 
 ---
 
@@ -35,49 +40,79 @@ INPUT: Verse reference (e.g., Ruth 4:1)
 ```
 Read: ./SUBAGENT-SKILL.md (rules + learnings-v1.md)
 Input: "{niv_text}"
-Return: He1 encoding, linter results, issues
+Return: He1 encoding (linter-validated), issues
+NOTE: Run linter until clean (max 12 iterations) BEFORE returning
 ```
 
 ### V2 (Evidence-Based)
 ```
 Read: ./SUBAGENT-SKILL-V2.md (rules + learnings-v2.md)
 Input: "{niv_text}"
-Return: He1 encoding, linter results, issues
+Return: He1 encoding (linter-validated), issues
+NOTE: Run linter until clean (max 12 iterations) BEFORE returning
 ```
 
 ### V3 (Blended)
 ```
 Read: ./SUBAGENT-SKILL-V3.md (rules + learnings-v3.md)
 Input: "{niv_text}"
-Return: He1 encoding, linter results, issues
+Return: He1 encoding (linter-validated), issues
+NOTE: Run linter until clean (max 12 iterations) BEFORE returning
 ```
 
 ---
 
 ## Selection Criteria
 
-| Priority | Criterion | Check |
-|----------|-----------|-------|
-| 1 | Linter passes | Zero blocking errors |
-| 2 | Rule compliance | Matches HIGH confidence rules |
-| 3 | Pronoun resolution | All 3rd person → nouns |
-| 4 | Bracket correctness | Subordinate clauses bracketed |
-| 5 | Natural flow | Reads naturally |
+| Priority | Criterion | How to Check |
+|----------|-----------|--------------|
+| **1** | **Match reference `phase_1_encoding`** | Compare against Sources API (see below) |
+| 2 | Linter passes | Zero blocking errors |
+| 3 | Rule compliance | Matches HIGH confidence rules |
+| 4 | Pronoun resolution | All 3rd person → nouns |
+| 5 | Bracket correctness | Subordinate clauses bracketed |
 
-**If tie**: Prefer V3 (most comprehensive), then V2 (evidence-based), then V1.
+### Comparing Against Reference
+
+**Get reference encoding:**
+```bash
+curl -H "Accept: application/json" "https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}"
+```
+
+**Compare your output against `phase_1_encoding` field.**
+
+**IMPORTANT EXCEPTION**: When Phase 2 encoding (`semantic_encoding`) was created, they didn't fix Phase 1 errors they found. Common example: numbers written as words ("two") instead of digits ("2"). 
+
+**If a "difference" exists in both `phase_1_encoding` AND `semantic_encoding`, consider it acceptable** — the semantic layer preserved it, meaning it's functionally correct.
+
+### If Tie
+
+Prefer V3 (most comprehensive) > V2 (evidence-based) > V1 (policy-only)
 
 ---
 
 ## Learnings Update Protocol
 
+**Key principle**: Update the version(s) that got it WRONG, not the one that got it right.
+
 | Scenario | Action |
 |----------|--------|
-| All similar | No update needed |
-| V1 best | Update `learnings-v1.md` with pattern |
-| V2 best | Update `learnings-v2.md` with pattern |
-| V3 best | Update `learnings-v3.md` with pattern |
-| All failed same | Add to ALL learnings files |
-| V1 ≠ V2 | Log to `CONTRADICTION-REPORT.md` |
+| All match reference | No update needed |
+| Some wrong, some right | Update WRONG version's `learnings-{v}.md` with what they missed |
+| All wrong, same mistake | Add to ALL learnings files |
+| Right version learned something new | Note in learnings if a novel pattern was discovered |
+
+### Debug Process for Failed Encodings
+
+When a subagent produces incorrect output:
+
+1. **Identify the specific difference** — what's wrong vs. reference?
+2. **Diagnose root cause** — which rule/pattern was missed or misapplied?
+3. **Consider multiple fixes**:
+   - Is it a missing pattern in learnings?
+   - Is it a rule misinterpretation?
+   - Is it a vocabulary issue?
+4. **Update the appropriate learnings file** with the fix
 
 ### Learnings Format
 ```markdown
@@ -100,7 +135,7 @@ Return: He1 encoding, linter results, issues
 | 7 | — | Discourse Markers | Discourse Markers |
 | 8 | — | Mark Implicit | Mark Implicit (He1/He2) |
 | 9 | — | Apply Learnings | Grammar Constraints |
-| 10 | — | Linter | Linter |
+| 10 | — | **Linter (must pass)** | **Linter (must pass)** |
 
 ### Key Differences
 
@@ -115,11 +150,11 @@ Return: He1 encoding, linter results, issues
 
 ## APIs
 
-| Tool | URL |
-|------|-----|
-| Linter | `https://editor.tabitha.bible/check?text={urlencoded}` |
-| Sources | `https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` |
-| Ontology | `https://ontology.tabitha.bible/?q={word}` |
+| Tool | URL | Notes |
+|------|-----|-------|
+| Linter | `https://editor.tabitha.bible/check?text={urlencoded}` | Run until clean |
+| Sources | `https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` | Use `Accept: application/json` header |
+| Ontology | `https://ontology.tabitha.bible/?q={word}` | Check word levels |
 
 ---
 
@@ -130,7 +165,6 @@ Return: He1 encoding, linter results, issues
 | `SUBAGENT-SKILL.md` | V1 policy-first rules |
 | `SUBAGENT-SKILL-V2.md` | V2 evidence-based rules |
 | `SUBAGENT-SKILL-V3.md` | V3 blended rules |
-| `learnings-v1.md` | V1 patterns |
-| `learnings-v2.md` | V2 patterns |
-| `learnings-v3.md` | V3 patterns |
-| `CONTRADICTION-REPORT.md` | Policy vs evidence conflicts |
+| `learnings-v1.md` | V1 patterns (update when V1 fails) |
+| `learnings-v2.md` | V2 patterns (update when V2 fails) |
+| `learnings-v3.md` | V3 patterns (update when V3 fails) |
