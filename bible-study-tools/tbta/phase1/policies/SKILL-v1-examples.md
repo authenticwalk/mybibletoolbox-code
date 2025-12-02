@@ -42,6 +42,15 @@ text = "..."
 Changes: "in the house"→"[who was in the house]"
 text = "..."
 
+## Step 6: Checklist Pass
+Quotes: {ok or changes}
+Implicit: {ok or changes}  
+Passives: {ok or changes}
+Commands: {ok or changes}
+Causality: {ok or changes}
+Connectors: {ok or changes}
+text = "..."
+
 ## Final He1
 text = "..."
 
@@ -55,7 +64,23 @@ Differences: (list or "Matches")
 
 ---
 
-## The 5 Transforms — Learn from Examples
+## The 5 Transforms + Checklist Pass
+
+After the 5 transforms, run a checklist pass for rules not covered:
+
+| Check | Rule |
+|-------|------|
+| Quotes | Speaker + verb intro? First sentence bracketed? (§10) |
+| Implicit | `<<regular>>` or `<necessary>` marked? (§9) |
+| Passives | Agent included with "by"? (§13) |
+| Commands | `(imp)` notation or natural English? (§15) |
+| Causality | "to" → "in order to" where needed? (§8) |
+| Connectors | And/But/Then/So flow? (§32) |
+| Special | No "can", "even", "any"? (§17, §24) |
+
+---
+
+## Learn from Examples
 
 ### Example A: Ruth 1:2
 

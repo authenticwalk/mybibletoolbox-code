@@ -43,6 +43,15 @@ text = "..."
 Changes: {list clause fixes}
 text = "..."
 
+## Step 6: Checklist Pass
+Quotes: {ok or changes}
+Implicit: {ok or changes}
+Passives: {ok or changes}
+Commands: {ok or changes}
+Causality: {ok or changes}
+Connectors: {ok or changes}
+text = "..."
+
 ## Final He1
 text = "..."
 
@@ -56,15 +65,32 @@ Differences: {list or "Matches"}
 
 ---
 
-## The 5 Transforms
+## The 5 Transforms + Checklist Pass
 
 1. **Copy NIV** — raw input
 2. **Fix pronouns** — resolve he/she/they to nouns, split sentences
 3. **Simplify vocabulary** — ontology-friendly words, pairings for L2
 4. **Group participants** — collapse repeated noun phrases
 5. **Fix clauses** — add brackets, relative clauses
+6. **Checklist pass** — verify remaining rules (see below)
 
 [See worked examples →](./examples.md)
+
+### Step 6: Checklist Pass
+
+After the 5 transforms, verify these additional rules:
+
+| Category | Check | Reference |
+|----------|-------|-----------|
+| **Quotes** | Speaker + verb intro? First sentence bracketed? | §10 |
+| **Implicit** | `<<regular>>` or `<necessary>` marked? | §9 |
+| **Passives** | Agent included with "by"? | §13, §24 |
+| **Commands** | `(imp)` notation or natural English? | §15 |
+| **Causality** | "to" → "in order to" where needed? | §8 |
+| **Tense** | Perfect only if "recently/previously" works? | §18 |
+| **Connectors** | And/But/Then/So flow naturally? | §32 |
+| **Determiners** | a/that/this/the correct? | §3.1 |
+| **Special** | No "can", "even", "any", "own"? | §17, §24 |
 
 ---
 

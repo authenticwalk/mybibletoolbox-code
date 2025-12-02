@@ -59,6 +59,24 @@ text = "{updated text}"
 
 ---
 
+## Step 6: Checklist Pass
+
+| Check | Status |
+|-------|--------|
+| Quotes | {ok / speaker+verb added / first sentence bracketed} |
+| Implicit | {ok / marked <<...>> or <...>} |
+| Passives | {ok / added "by X"} |
+| Commands | {ok / added (imp)} |
+| Causality | {ok / "to"→"in order to"} |
+| Connectors | {ok / fixed And/But/Then} |
+| Forbidden | {ok / removed can/even/any/own} |
+
+```
+text = "{updated text}"
+```
+
+---
+
 ## Final He1
 
 ```

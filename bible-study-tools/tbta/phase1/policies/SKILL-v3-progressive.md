@@ -43,6 +43,16 @@ Rules used: (from rules/clauses.md)
 Changes: {list each change}
 text = "..."
 
+## Step 6: Checklist Pass
+Rules used: (from checklist.md §8-10, §13, §15, §17-18, §24, §32)
+Quotes: {ok or changes}
+Implicit: {ok or changes}
+Passives: {ok or changes}
+Commands: {ok or changes}
+Causality: {ok or changes}
+Connectors: {ok or changes}
+text = "..."
+
 ## Final He1
 text = "..."
 
@@ -59,13 +69,25 @@ Differences: {list or "Matches"}
 
 ---
 
-## The 5 Transforms
+## The 5 Transforms + Checklist Pass
 
 1. **Copy NIV** — raw input
 2. **Fix pronouns** — resolve he/she/they to nouns, split sentences → [rules/pronouns.md](./rules/pronouns.md)
 3. **Simplify vocabulary** — ontology-friendly words, pairings for L2 → [rules/vocabulary.md](./rules/vocabulary.md)
 4. **Group participants** — collapse repeated noun phrases
 5. **Fix clauses** — add brackets, relative clauses → [rules/clauses.md](./rules/clauses.md)
+6. **Checklist pass** — verify rules not covered by transforms 2-5:
+
+| Check | Rule | Reference |
+|-------|------|-----------|
+| Quotes | Speaker + verb? First sentence bracketed? | [→ quotes.md](./rules/quotes.md) |
+| Implicit | `<<regular>>` or `<necessary>`? | [→ implicit.md](./rules/implicit.md) |
+| Passives | Agent with "by"? | [→ special.md](./rules/special.md) |
+| Commands | `(imp)` or natural English? | [→ special.md](./rules/special.md) |
+| Causality | "to" → "in order to"? | [→ special.md](./rules/special.md) |
+| Tense | Perfect only if "recently/previously" works? | checklist.md §18 |
+| Connectors | And/But/Then/So flow? | checklist.md §32 |
+| Forbidden | No "can", "even", "any", "own"? | checklist.md §17, §24 |
 
 ---
 

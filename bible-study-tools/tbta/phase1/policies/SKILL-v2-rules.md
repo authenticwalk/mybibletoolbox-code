@@ -40,6 +40,15 @@ text = "..."
 Changes: {list clause fixes}
 text = "..."
 
+## Step 6: Checklist Pass
+Quotes: {ok or changes}
+Implicit: {ok or changes}
+Passives: {ok or changes}
+Commands: {ok or changes}
+Causality: {ok or changes}
+Connectors: {ok or changes}
+text = "..."
+
 ## Final He1
 text = "..."
 
@@ -53,7 +62,7 @@ Differences: {list or "Matches"}
 
 ---
 
-## The 5 Transforms
+## The 5 Transforms + Checklist Pass
 
 | Step | Goal | Rule |
 |------|------|------|
@@ -62,6 +71,20 @@ Differences: {list or "Matches"}
 | 3 | Simplify vocabulary | L0-1 direct, L2 pair, L3 alternate |
 | 4 | Group participants | Collapse repeated noun phrases |
 | 5 | Fix clauses | Add brackets, relative clauses |
+| **6** | **Checklist pass** | **Verify remaining rules (see below)** |
+
+### Step 6: Checklist Pass
+
+| Check | Rule | Reference |
+|-------|------|-----------|
+| Quotes | Speaker + verb intro? First sentence bracketed? | §10 |
+| Implicit | `<<regular>>` or `<necessary>` marked? | §9 |
+| Passives | Agent with "by"? | §13, §24 |
+| Commands | `(imp)` or natural English? | §15 |
+| Causality | "to" → "in order to"? | §8 |
+| Tense | Perfect only if "recently/previously" works? | §18 |
+| Connectors | And/But/Then/So flow? | §32 |
+| Special | No "can", "even", "any", "own"? | §17, §24 |
 
 ---
 
