@@ -7,7 +7,7 @@ Canonical merged rules for transforming NIV verses to Controlled Natural Languag
 | File | Purpose |
 |------|---------|
 | `SKILL.md` | 10-step transformation process with validation checklist |
-| `RULES.md` | Evidence-based rules with confidence levels |
+| `RULES.md` | Evidence-based rules (🟢🟡🔴) + policy rules (📘) |
 
 ## Sources
 
@@ -17,6 +17,7 @@ This folder merges findings from multiple analysis sessions:
 |--------|-------------|
 | `plan/tbta/.archive/phase1-reverse-engineer-claude-opus-4-5/` | Local pattern analysis |
 | Branch `claude/reverse-engineer-verse-column-*` | Evidence-based rules (6,963 verses) |
+| `bible-study-tools/tbta/phase1/policies/checklist.md` | Official TBTA policy (📘 rules) |
 
 ## Usage
 

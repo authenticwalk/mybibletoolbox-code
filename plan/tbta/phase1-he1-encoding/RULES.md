@@ -212,6 +212,75 @@ He2 marks agent with `_implicitActiveAgent`
 
 ---
 
+## Section K: Grammatical Constraints (from official docs)
+
+These rules come from official TBTA policy (checklist.md) but were not pattern-validated due to low occurrence in corpus.
+
+**Aspect Verbs Are Not Separate Verbs** (§0.19)
+"begin", "start", "stop", "finish", "continue" modify the following verb:
+```
+✓ John started talking to Mary
+✗ John started [talking to Mary]  (no bracket!)
+```
+
+**No "going to" for Future** (§0.28)
+```
+✓ John will see Mary
+✗ John is going to see Mary
+```
+
+**No Double Negatives** (§0.29)
+```
+✓ All people love their mothers
+✗ No person does not love his mother
+```
+
+**One Direct Object Per Verb** (§0.27)
+```
+✓ John gave the present to Mary
+✗ John gave Mary the present
+```
+
+**"all of" vs "all"** (§0.17)
+Use "all of" unless noun is generic:
+```
+✓ All of those people went   (specific)
+✓ God loves all people       (generic)
+✗ All those people went
+```
+
+**Same Noun Same Way** (§0.36)
+Within same sentence, repeat noun identically:
+```
+✓ Paul gave letters... those men would read letters
+✗ Paul gave letters... those men would read THOSE letters
+```
+
+**No Participles/Gerunds** (§0.31)
+Rewrite as clauses:
+```
+✓ It is fun [that a person teaches]
+✗ Teaching is fun
+```
+
+**"when" vs "after"** (§0.39)
+If action clearly follows, use "after":
+```
+✓ [After John saw Jesus] John was happy
+✗ [When John saw Jesus] John was happy (if caused by seeing)
+```
+
+**Forbidden Words** (§0.16-17):
+| Word | Why | Alternative |
+|------|-----|-------------|
+| even | emphasis not encodable | omit or rephrase |
+| any | use "a" in negative | "not eat an apple" |
+| own | emphasis not encodable | omit or `_emphasized` |
+| can | modal | "is able [to...]" |
+| going to | future | "will" |
+
+---
+
 ## Quick Reference
 
 | Pattern | Transform | Confidence |
@@ -228,6 +297,10 @@ He2 marks agent with `_implicitActiveAgent`
 | demonym | → `[from X]` | 🔴 LOW |
 | "can" | → `is able [to]` | 🔴 LOW |
 | passive | → keep passive | N/A |
+| start/stop/finish | → NO bracket on following verb | 📘 POLICY |
+| "going to" | → "will" | 📘 POLICY |
+| double negative | → positive "all" | 📘 POLICY |
+| two direct objects | → "give X to Y" | 📘 POLICY |
 
 ---
 
@@ -235,11 +308,18 @@ He2 marks agent with `_implicitActiveAgent`
 
 | Feature | He1 (OT style) | He2 (NT style) |
 |---------|----------------|----------------|
+| Implicit markers | `<<...>>` / `<...>` | `_implicit` / `_implicitNecessary` |
 | Underscore markers | Rare (0.6%) | Common (64%) |
-| L2 word pairings | 9.2% | 47.6% |
-| Sense suffixes | No | Yes (-A, -B, -C) |
+| L2 word pairings | 9.2% (optional) | 47.6% (required) |
+| Sense suffixes | Rare | Yes (-A, -B, -C) |
+| Brackets | No (for He1 draft) | Yes (full subordinate) |
 | Dual translations | No | Yes |
 | Use case | Natural reading | NLP/MT input |
+
+**He1 Implicit Notation** (from official docs):
+- `<<implicit info>>` — regular implicit information
+- `<necessary implicit>` — grammatically required implicit
+- Example: `John was hit <<by a soldier>>` (agent implicit)
 
 ---
 

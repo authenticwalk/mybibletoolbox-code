@@ -61,6 +61,13 @@
 - Omit for: first clause, section starts, speech intros
 
 ### Step 8: Mark Implicit Information
+
+**He1 format** (angle brackets):
+- `<<implicit info>>` — general additions
+- `<necessary implicit>` — grammatically required
+- Example: `John was hit <<by a soldier>>`
+
+**He2 format** (underscore):
 - `_implicit` — general additions
 - `_implicitActiveAgent` — passive voice agent
 - `_implicitNecessary` — grammatically required
@@ -91,36 +98,57 @@
 PRONOUNS:    I(Name), you(Name), _dual, _incl
 BRACKETS:    [relative], [temporal], [purpose], [if], [just-like]
 SPEECH:      ["quoted"], (imp), (rhetorical)/(statement)
-IMPLICIT:    _implicit, _implicitActiveAgent, (implicit-info)
+IMPLICIT:    He1: <<info>>, <necessary>  |  He2: _implicit, _implicitActiveAgent
 PAIRS:       (literal)/(dynamic), (complex)/(simple), (literalunits)/(modernunits)
 SEMANTIC:    _metonymy, _hyperbolic, _reflexive, -iteration N
 STRUCTURE:   (title), (paragraph), (footnote)
+FORBIDDEN:   can, even, any, own, "going to", double negatives, participles
 ```
 
 ---
 
 ## Validation Checklist
 
+**Core (all formats):**
 - [ ] No bare pronouns (he/she/they) without antecedent nearby
 - [ ] One main verb per sentence
-- [ ] All subordinate clauses in `[brackets]`
+- [ ] All subordinate clauses in `[brackets]` (He2) or unbracketed (He1 draft)
 - [ ] 1st/2nd person marked: `I(Name)`, `you(Name)`
-- [ ] Imperatives marked: `(imp)`
-- [ ] Quotes bracketed: `["..."]`
+- [ ] Imperatives marked: `(imp)` or bare command (He1)
+- [ ] Quotes bracketed: `["..."]` (He2) or `"..."` (He1)
 - [ ] "LORD" → "Yahweh" (OT)
-- [ ] He2: underscore markers present
-- [ ] He2: L2 pairings used
+
+**Grammatical constraints:**
+- [ ] "start/stop/finish" + verb → NO bracket (aspect, not clause)
+- [ ] No "going to" (use "will" for future)
+- [ ] No double negatives
+- [ ] One direct object per verb ("give X to Y" not "give Y X")
+- [ ] "all of" used unless noun is generic
+
+**He1 specific:**
+- [ ] Implicit: `<<info>>` / `<necessary>`
+- [ ] Brackets optional for clarity
+
+**He2 specific:**
+- [ ] Underscore markers present: `_implicit`, `_implicitActiveAgent`
+- [ ] L2 pairings used: `simple/complex`
 
 ---
 
 ## Common Errors to Avoid
 
 1. Converting "must/should" (keep as-is)
-2. Converting passive to active (keep passive)
-3. Missing brackets on subordinate clauses
+2. Converting passive to active (keep passive, mark agent with `_implicitActiveAgent`)
+3. Missing brackets on subordinate clauses (He2)
 4. Unmarked deixis (I/you without parenthetical)
 5. Unmarked imperatives (missing `(imp)`)
 6. Over-segmenting (lists can stay together)
+7. Bracketing after "start/stop/finish" (these modify verb, not create clause)
+8. Using "going to" instead of "will"
+9. Using double negatives (rewrite with positive "all")
+10. Using two direct objects ("give Mary the book" → "give the book to Mary")
+11. Using "Teaching is fun" (participle → "It is fun [that a person teaches]")
+12. Using "can" (→ "is able [to...]")
 
 ---
 
