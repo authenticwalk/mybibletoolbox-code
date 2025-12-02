@@ -25,12 +25,11 @@ All non-main clauses in `[...]`:
 - Purpose: `went [in order to see Mary]`
 - Adverbial: `[When John arrived] Mary left`
 
-### R4: No "that" in Patient Clauses
-TBTA interprets "that" as demonstrative.
-```
-Wrong: knew [that Mary was there]
-Right: knew [Mary was there]
-```
+### R4: Patient Clauses
+**He1 (Phase 1):** "that" allowed for natural flow: `know [that Ruth is good]`
+**He2 (Phase 2):** Omit "that": `knew [Mary was there]`
+
+Ruth/Jonah/Genesis use He1 format; Matthew uses more He2 features.
 
 ### R5: Numbers
 **Digits** for quantities/measurements: `13 kilograms`, `10 old men`, `2 people`
