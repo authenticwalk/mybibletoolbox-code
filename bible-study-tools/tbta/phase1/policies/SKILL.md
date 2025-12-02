@@ -166,22 +166,34 @@ When a subagent produces incorrect output:
 - {pattern} → `{solution}` — {verse reference}
 ```
 
+### Rule Aggregation
+
+**Before adding a new rule**, check if similar rules exist in the same section. If so, **aggregate into a generic rule** keeping verse references as examples.
+
+**Example — Before (3 similar rules):**
+```markdown
+## Vocabulary
+- "burnt offering" → `gift [that X burns]` — Gen 22:2
+- "sin offering" → `gift [for sins]` — Lev 4:3
+- "peace offering" → `gift [for peace]` — Lev 3:1
+```
+
+**After aggregation:**
+```markdown
+## Vocabulary
+- "{type} offering" → `gift [for/that {purpose}]` — Gen 22:2, Lev 4:3, Lev 3:1
+```
+
+**When to aggregate:**
+- Same category (Vocabulary, Pronouns, Clauses, etc.)
+- Same transformation pattern
+- Only the specific word/phrase differs
+
+**Keep separate if:**
+- Different transformation logic
+- Exception to the general pattern
+
 ---
-
-## Step Comparison
-
-| Step | V1 (Policy) | V2 (Evidence) | V3 (Blended) |
-|------|-------------|---------------|--------------|
-| 1 | Copy NIV | Resolve Coreference | Resolve Coreference |
-| 2 | Fix Pronouns | Segment Clauses | Segment Clauses (+aspect) |
-| 3 | Simplify Vocab | Add Brackets | Add Brackets (+after) |
-| 4 | Group Participants | Named Formula | Named Formula |
-| 5 | Fix Clauses | Mark Speech | Mark Speech (+rhetorical) |
-| 6 | Checklist Pass | Simplify Vocab | Simplify Vocab (+forbidden) |
-| 7 | — | Discourse Markers | Discourse Markers |
-| 8 | — | Mark Implicit | Mark Implicit (He1/He2) |
-| 9 | — | Apply Learnings | Grammar Constraints |
-| 10 | — | **Linter (must pass)** | **Linter (must pass)** |
 
 ### Key Differences
 
