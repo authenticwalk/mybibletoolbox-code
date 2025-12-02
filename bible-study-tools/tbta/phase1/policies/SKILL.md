@@ -18,7 +18,10 @@ INPUT: Verse reference (e.g., Ruth 4:1)
     COMPARE & SELECT (5 criteria)
            │
            ▼
-    DEBUG FAILURES (update wrong version's learnings)
+    DEBUG FAILURES (analyze what went wrong)
+           │
+           ▼
+    UPDATE LEARNINGS (wrong version's learnings-{v}.md)
 ```
 
 ## Process
