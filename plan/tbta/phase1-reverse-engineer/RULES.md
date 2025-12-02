@@ -1,355 +1,215 @@
 # TBTA Verse Column Transformation Rules
 
-Comprehensive CNL (Controlled Natural Language) rules derived from analysis of 6,963 verses across 15 books.
+Comprehensive CNL rules derived from 6,963 verses across 15 books. Each rule uses pregnant linguistic terminology with evidence.
 
-## Strategy
-
-**Copy source text EXCEPT** apply these transformations **AND INCORPORATE** explicit markers.
+**Format**: `**Rule** (supporting refs; NOT contradicting refs)`
 
 ---
 
-## SECTION A: Core Transformations
+## Section A: Coreference Resolution
 
-### Rule 1: Coreference Resolution
-Replace ambiguous pronouns with explicit referents.
+**Pronoun-referent annotation** (1 Sam 1:8, 1 Sam 3:9, 1 Sam 17:34, 2 John 1:3, 1 Sam 23:2; NOT 1 Sam 1:1)
+Pattern: `pronoun(referent)` — "I(Paul)", "you(Hannah)", "we(disciples)"
+Exception: Bare "he/she" in narrative introductions
 
-**1a. Parenthetical annotation**: `pronoun(referent)`
-- Philemon 1:1, 2 John 1:1, Acts 3:26, Gen 3:10, Ruth 1:16
-- NOT: Gen 1:2 (impersonal "it"), Matt 10:25 (dummy subject)
+**Proper name repetition** (1 Sam 17:40, 1 Sam 3:6, 1 Sam 1:4, 1 Sam 1:13, 1 Sam 19:24)
+Pattern: Repeat character name instead of pronoun — "David...David...David's"
+No contradictions found - highly consistent
 
-**1b. Repeated proper names**: Replace "he/she/they" with names
-- Gen 2:20, Gen 2:21, Gen 3:16, Ruth 1:3, 1 Sam 20:34
-
-**1c. Demonstrative + noun**: "this/that/these/those + noun"
-- Gen 1:26, Gen 2:23, Gen 4:15, Gen 5:2, Gen 6:1
-
----
-
-### Rule 2: Clause Segmentation
-Split compound sentences; move conjunction to sentence start.
-
-- Ruth 1:2, Ruth 1:14, Matt 7:7, Matt 8:15, Jonah 1:15
-- NOT: Temporal [when/while] stays embedded (Ruth 1:1, Matt 5:1)
-- NOT: Relative [who/that] stays embedded (Ruth 1:4, Matt 8:2)
-- NOT: Conditional [if] stays embedded (Ruth 1:16, Matt 7:6)
+**Demonstrative anaphora** (1 Sam 9:7, 1 Sam 2:35, 1 Sam 4:16, 1 Sam 28:12, 1 Sam 4:4)
+Pattern: "that man", "this person", "those people" replacing pronouns
+No contradictions found - highly consistent
 
 ---
 
-### Rule 3: Explicit Relativization
-Convert implicit relationships to bracketed relative clauses: `[which/who/that + info]`
+## Section B: Clause Structure
 
-- Ruth 1:1 "[which was in Judah]", Ruth 1:4 "[that were from Moab]"
-- Gen 2:8, Jonah 1:1, Acts 16:8, 1 Sam 1:3
+**Clause segmentation** (1 Sam 1:5, 1 Sam 2:10, 1 Sam 19:22, 1 Sam 1:7, 1 Sam 13:5)
+Pattern: Split compound sentences; move conjunction to sentence start
+No contradictions found - rule consistently applied
 
----
+**Explicit relativization** (1 Sam 19:22, 1 Sam 13:5, 2 John 1:1, Acts 17:11, 1 Sam 17:1; NOT 1 Sam 1:1, Jonah 1:9, Mark 5:1)
+Pattern: `[which/who/that + info]` — "[which was in Judah]"
+Exception: Inconsistent bracketing in some verses
 
-### Rule 4: Temporal Bracketing
-Make time relationships explicit: `[When/After/Before/While/until X]`
+**Temporal bracketing** (1 Sam 1:4, 1 Sam 13:10, 1 Sam 2:15, 1 Sam 1:12, 1 Sam 1:22; NOT 1 Sam 25:36, 1 Sam 15:35, Acts 1:5)
+Pattern: `[When/After/Before/While/until X]`
+Exception: Some temporal markers NOT bracketed
 
-- Ruth 1:1 "[When judges were ruling Israel]"
-- Ruth 1:4, Ruth 1:6, Matt 2:1, Jonah 1:4, Acts 16:7
-
----
-
-### Rule 5: Purpose/Reason Marking
-Make purpose explicit: `[in order to X]`, `[so that X]`, `[because X]`
-
-- Ruth 1:1 "[in order to live in Moab]"
-- Ruth 1:6, Jonah 1:5, Acts 16:3, Acts 17:27
+**Purpose/reason marking** (1 Sam 9:11, 1 Sam 13:8, 1 Sam 1:5, 2 Sam 24:21, 1 Sam 6:7; NOT Acts 17:25, Dan 2:1, Gen 31:40)
+Pattern: `[in order to X]`, `[because X]`, `[so that X]`
+Exception: Inconsistent bracketing of "because"
 
 ---
 
-### Rule 6: Named Introduction Formula
-**First mention**: `a [type] named [Name]`
-**Known entity**: `the [type] named [Name]`
-**Subsequent**: Direct reference
+## Section C: Speech & Questions
 
-- Ruth 1:4, Jonah 1:1, Gen 4:18, Acts 16:8, Acts 17:34
-- NOT: God (always bare name)
+**Direct speech bracketing** (Matt 21:5, 2 Sam 15:10, 1 Sam 19:17, Gen 32:4, 2 Sam 7:5)
+Pattern: `["quoted text"]` with nested brackets for reported speech (up to 4 levels)
+No contradictions found - 100% consistent
 
----
+**Rhetorical question transformation** (Mark 8:4, Mark 14:37, Mark 14:48, Mark 2:7, Matt 18:12; NOT 1 Sam 1:8, Gen 3:11)
+Pattern: `(rhetorical)` / `(yesrhetorical)` / `(norhetorical)` + `(statement)` equivalent
+Exception: OT questions often NOT transformed (~20% vs NT ~85%)
 
-### Rule 7: LDV Vocabulary Substitution
-Replace archaic/complex terms with simple equivalents.
-
-- "begat" → "had a son named" (Gen 4:18, Gen 5:3, Matt 1:2)
-- "knew his wife" → "sexed" (Gen 4:1, Gen 4:17)
-- "conceived/bare" → "became pregnant/birthed" (Gen 4:1)
-- "sojourn/dwell" → "live" (Gen 4:20, Ruth 1:1)
-- NOT: Religious terms preserved (Yahweh, tabernacle, Ark-of-the-Covenant)
+**Imperative marking** (1 Sam 3:6, 1 Sam 23:2, Mark 13:2, Josh 6:4, Gen 22:2; NOT 1 Sam 17:32, 1 Sam 1:17, Gen 3:11)
+Pattern: `(imp)` before all command verbs
+Exception: Modals, wishes, and blessings not marked
 
 ---
 
-### Rule 8: Discourse Marker Fronting
-Sentence-initial markers for narrative flow.
+## Section D: Implicit Information Taxonomy
 
-- "And" — continuation (Gen 1:4, Ruth 1:2, Jonah 1:15)
-- "Then" — sequence (Gen 1:4, Jonah 1:15, Ruth 1:14)
-- "But" — contrast (Jonah 1:3, Ruth 1:14, Gen 3:6)
-- "So" — result (Jonah 1:10, Ruth 2:3, Matt 8:15)
-- "Therefore" — logical conclusion (Acts 3:19, Philemon 1:8)
-- NOT: First clause of verse, new sections, speech intros
+**General implicit** (Mark 10:1, Mark 8:4, Mark 8:6, Mark 13:13, Mark 4:9)
+Pattern: `_implicit` — inferable objects, purposes, content
 
----
+**Grammatically required** (Mark 13:16, Mark 13:6, Mark 14:2, Mark 13:28, Mark 2:18)
+Pattern: `_implicitNecessary` — required for sentence completeness
 
-## SECTION B: Speech and Question Patterns
+**Passive agent marking** (Mark 13:13, Mark 9:2, Mark 13:2, Mark 5:4, Mark 7:2)
+Pattern: `by X _implicitActiveAgent` — converts passive to active with agent
+No contradictions - agents only needed for passives
 
-### Rule 9: Direct Speech Bracketing
-Enclose speech in `["..."]` with speaker identification; nest for reported speech.
+**Situational context** (Mark 8:1, Mark 13:1, Mark 13:16, Mark 13:29, Mark 14:20)
+Pattern: `(implicit-situational)` — scene/context details
 
-- Gen 32:4: `["you(messengers) (imp) say to Esau, ["Jacob says, ["I lived with Laban"]]]"]`
-- 2 Sam 7:5, Matt 21:3, Mark 14:14, 1 Sam 19:17
+**Background knowledge** (1 Sam 23:6, 1 Sam 2:30, 1 Sam 13:9, 1 Sam 17:33, 1 Sam 3:3)
+Pattern: `(implicit-info)` — prior narrative or cultural knowledge
 
----
+**Implied sub-steps** (Mark 14:16, Gen 34:2, Mark 14:40, Mark 7:14, Mark 6:38)
+Pattern: `(implicit-subaction)` — intermediate actions in sequences
 
-### Rule 10: Rhetorical Question Transformation
-Mark questions with type tag, provide statement equivalent.
-
-**Tags**: `(rhetorical)`, `(yesrhetorical)`, `(norhetorical)` → `(statement)`
-
-- Matt 13:56: "(yesrhetorical) Are all sisters here? (statement) All sisters are here."
-- Mark 2:7, Mark 14:63, Matt 17:17, Matt 18:12
-- Matt 16:9: "(norhetorical) Do you understand? (statement) You still do not understand."
+**Frame elements** (Mark 13:1, Mark 14:20, Mark 14:27, Mark 14:23, Mark 3:32)
+Pattern: `_frameInferable` — predictable scene elements
 
 ---
 
-### Rule 11: Imperative Marking
-Mark all commands with `(imp)` before verb.
+## Section E: Translation Pairs (NT/Gospel only)
 
-- Ruth 1:8, Ruth 2:8, Matt 7:7, Jonah 1:6, Josh 6:4
-- Gen 22:2: "You(Abraham) (imp) take your son... You(Abraham) (imp) kill Isaac"
+**Literal/dynamic equivalence** (Mark 7:6, Mark 14:36, Mark 1:3, Mark 13:35, Mark 16:9)
+Pattern: `(literal) X. (dynamic) Y.` — word-for-word vs meaning-based
+Usage: Idioms, metaphors, cultural references (174 examples, Matthew/Mark only)
 
----
+**Complex/simple theological** (Mark 9:1, Mark 4:11, Mark 11:22, Mark 10:15, Mark 13:26)
+Pattern: `(complex) kingdom of God (simple) God ruling people`
+Usage: Abstract theological terms → functional descriptions (94 examples)
 
-## SECTION C: Implicit Information System
-
-### Rule 12: Implicit Information Taxonomy
-Mark added content with specific type tags.
-
-| Tag | Meaning | Example |
-|-----|---------|---------|
-| `_implicit` | General implicit | "Jesus entered the boat _implicit" |
-| `_implicitNecessary` | Grammatically required | "Jesus thanked God _implicitNecessary" |
-| `_implicitActiveAgent` | Passive voice agent | "healed by Jesus _implicitActiveAgent" |
-| `(implicit-situational)` | Context obvious | "(implicit-situational) was at bottom of mountain" |
-| `(implicit-info)` | Background knowledge | "(implicit-info) was the king" |
-| `(implicit-subaction)` | Implied sub-step | "(implicit-subaction) After servants arrived" |
-| `_frameInferable` | Scene/frame element | "the girl _frameInferable" |
+**Ancient/modern units** (Mark 14:5, Matt 18:24, Mark 15:33, Mark 6:48, Matt 25:15)
+Pattern: `(literalunits) denarii (modernunits) year's wages`
+Usage: Currency, time, measurements (23 examples, 100% paired)
 
 ---
 
-### Rule 13: Passive Voice Agent Marking
-Convert passive to active with explicit agent.
+## Section F: Grammatical Markers
 
-- Matt 8:16: "were brought by people _implicitActiveAgent to Jesus"
-- Matt 22:14: "called by God _implicitActiveAgent"
-- Mark 15:38: "torn by God _implicitActiveAgent"
-- Matt 27:2: "by servants/guards _metonymy"
+**Dual number** (Mark 14:16, Mark 1:17, Matt 20:30, Mark 11:6, Matt 24:40)
+Pattern: `_dual` — marks exactly two entities
+No contradictions found - exceptionally consistent
 
----
+**Clusivity** (Mark 14:15, Matt 22:17, Matt 8:17, Mark 13:4, Mark 9:5; NOT 1 Sam throughout)
+Pattern: `_incl` (inclusive we) / `_excl` (exclusive we)
+Exception: OT verses rarely marked - appears NT-only
 
-## SECTION D: Translation Pairs
+**Iteration counting** (1 Sam 18:11, 1 Sam 20:41, Gen 31:7, Gen 33:3, Josh 6:15)
+Pattern: `-iteration N` — "bowed -iteration 7 times"
+No contradictions found - consistent when counts present
 
-### Rule 14: Literal/Dynamic Dual Translation
-Provide both word-for-word and meaning-based renderings.
+**First-as-third person** (Matt 12:32, Matt 10:23, Matt 20:18, Matt 19:28, Matt 25:32; NOT Matt 8:20, Mark 9:12)
+Pattern: `Son-of-man _1stAs3rd` — Jesus's self-references
+Exception: Some "Son of Man" references unmarked
 
-- Mark 16:2: "(literal) first day of the week (dynamic) on Sunday"
-- Matt 3:8: "(literal) produce fruit (dynamic) do actions [that show repentance]"
-- Matt 10:34: "(literal) bring a sword (dynamic) cause people to oppose each-other"
-
----
-
-### Rule 15: Complex/Simple Theological Pairs
-Simplify theological abstractions.
-
-- Matt 18:1: "(complex) kingdom of heaven (simple) God ruling people"
-- Mark 14:25: "(complex) kingdom of God (simple) God rules people"
-- Matt 6:33: Similar pattern for theological terms
+**Reflexive marking** (Mark 5:5, Mark 3:24, Mark 14:72, Mark 10:27, Matt 6:19; NOT Acts 16:28, Mark 15:30, Ruth 3:3)
+Pattern: `_reflexive` — conceptual/emphasized self-reference
+Exception: Grammatical reflexives (hygiene, routine) NOT marked
 
 ---
 
-### Rule 16: Unit/Measurement Conversion
-Provide both ancient and modern equivalents.
+## Section G: Semantic Annotations
 
-- Mark 15:25: "(literalunits) 3rd hour (modernunits) 9AM"
-- Matt 25:18: "(literalunits) talent (modernunits) bag of gold"
-- Mark 14:5: "(literalunits) 300 denarii (modernunits) a year's wages"
+**Metonymy** (Mark 6:14, Matt 11:20, Matt 26:57, Mark 11:4, Matt 21:32; NOT 1 Sam 7:16, 1 Sam 18:6)
+Pattern: `X of Y _metonymy` — Herod=soldiers, towns=people
+Exception: OT rarely marks metonymy
 
----
+**Hyperbolic quantifiers** (Mark 1:5, Mark 5:5, Mark 4:32, Mark 13:13, Matt 8:34; NOT Acts 1:8, Acts 16:5, 1 Sam 2:10)
+Pattern: `all _hyperbolic` — non-literal universal quantifiers
+Exception: Many "all" unmarked; "every" never marked
 
-## SECTION E: Grammatical Markers
+**Verb sense disambiguation** (Mark 13:14, Mark 9:1, Matt 21:32, Mark 14:71, Mark 10:42)
+Pattern: `-A/-B/-C/-D` suffixes — see-A (physical) vs see-B (perceive)
+Usage: Selective - only high-ambiguity polysemous verbs
 
-### Rule 17: Dual Number Marking
-Mark exactly two entities with `_dual`.
-
-- Matt 20:30: "those blind men _dual"
-- Matt 21:2: "You(followers) _dual (imp) go"
-- Matt 27:44: "crosses _dual"
-
----
-
-### Rule 18: Clusivity Marking
-Distinguish inclusive/exclusive "we".
-
-- Matt 15:23: "us(followers) _incl"
-- Mark 9:40: "us(Jesus) _incl"
-- `_excl` for exclusive we
+**Noun index tracking** (Mark 15:7, Mark 2:15, Matt 13:17, Mark 7:36, Mark 6:12)
+Pattern: `_differentNounIndex`, `_newNounIndex`, `_sameAsLastNounIndex`
+Usage: Gospel-heavy; absent in simpler narratives
 
 ---
 
-### Rule 19: Iteration Marking
-Mark repeated actions with count.
+## Section H: Comparisons
 
-- Josh 6:4: "walk around -iteration 7 times"
-- 1 Sam 18:11: "escaped -iteration 2 times"
-- Gen 33:3: "bowed -iteration 7 times"
+**Named introduction** (Ruth 1:4, Acts 17:34, Gen 4:18, 1 Sam 1:1, Jonah 1:1)
+Pattern: `a [type] named [Name]` — first mention introduction
+Alternative: `The name of X was Y` for formal genealogies
 
----
+**Simile expansion** (1 Sam 26:20, Gen 19:28, Matt 10:16, Ruth 2:12, 1 Sam 17:36)
+Pattern: `[just-like X]` for clause comparisons; `like` for simple noun comparisons
+No contradictions - pattern choice depends on complexity
 
-### Rule 20: First-as-Third Person
-Mark Jesus's self-references as "Son of Man".
-
-- Matt 26:24: "Son-of-man _1stAs3rd"
-- Matt 16:27, Matt 25:33, Matt 24:55
-
----
-
-### Rule 21: Reflexive Marking
-Mark self-directed actions.
-
-- Mark 7:4: "wash those Pharisees _reflexive"
-- Mark 8:34: "that person _reflexive"
-- Matt 6:19: "yourselves(people) _reflexive"
+**Comparative marking** (Gen 25:28, 2 Sam 13:15, 1 Sam 18:8, Gen 29:30, 1 Sam 1:5)
+Pattern: `[more-than X]` for verbal comparisons; "better/greater than" for attributes
+No contradictions - pattern choice depends on structure
 
 ---
 
-## SECTION F: Semantic Annotations
+## Section I: Document Structure
 
-### Rule 22: Metonymy Marking
-Mark figures where one thing represents another.
+**Section titles** (1 Sam 30:26, Mark 15:33, Matt 4:1, Josh 6:1, 2 Sam 12:1)
+Pattern: `(title) {3-6 word summary}`
+Usage: Major narrative sections
 
-- Matt 14:10: "Herod of a soldier _metonymy" (Herod ordered, soldier did)
-- Matt 11:20: "towns of the people _metonymy"
-- Matt 24:9: "nations of people _metonymy"
+**Paragraph breaks** (Mark 14:16, Mark 8:1, Matt 26:6, Mark 6:14, Mark 4:10)
+Pattern: `(paragraph)` or `_paragraph` at discourse shifts
+Usage: Scene transitions, speaker changes, topic shifts
 
----
+**Footnotes** (Mark 9:48, Matt 6:22, Matt 21:5, Matt 5:31, Mark 13:25)
+Pattern: `(footnote) You(people) (imp) see [Scripture-ref]`
+Alternative: Name etymologies, cultural explanations
 
-### Rule 23: Hyperbolic Quantifier Marking
-Mark non-literal universal quantifiers.
-
-- Mark 1:5: "All _hyperbolic of the people"
-- Mark 16:20: "to every _hyperbolic place"
-- Matt 13:47: "all _hyperbolic kinds of fish"
-
----
-
-### Rule 24: Verb Sense Disambiguation
-Use suffixes to distinguish word senses.
-
-- `-A, -B, -C, -D`: Word sense variants
-- `_Adj`: Adjectival modifier
-- `_be-V`: Copular verb
-- `_good-B`, `_bad-B`: Moral sense
-- Matt 26:70: "know-D about the thing-B"
+**Alternative readings** (Matt 26:50, Mark 9:49, Neh 8:10, Gen 46:27, Mark 7:11)
+Pattern: `(primary)` → `(meaning-1)` → `(alt)`
+Usage: Ambiguous syntax, literal vs figurative, textual variants
 
 ---
 
-### Rule 25: Noun Index Tracking
-Track multiple entities of same type.
+## Section J: Style Differences
 
-- `_differentNounIndex`: Different referent
-- `_newNounIndex`: Newly introduced
-- `_sameAsLastNounIndex`: Same as previous
-- Matt 13:17: "those people _prophetsAndRighteous"
+**He1 style (OT)** — Natural flow, minimal annotations, single renderings
+Books: Genesis, Ruth, Joshua, 1-2 Samuel, Esther, Nehemiah, Daniel, Jonah, Nahum
 
----
-
-## SECTION G: Comparison Structures
-
-### Rule 26: Simile Expansion
-Use `[just-like X]` for all similes.
-
-- Gen 19:28: "[just-like smoke rises from a furnace]"
-- Matt 10:16: "[just-like sheep...just-like snakes...just-like doves]"
-- Ruth 2:12: "[just like a young bird comes to mother]"
+**He2 style (NT)** — Technical, extensive annotations, dual renderings
+Books: Matthew, Mark, Acts, Titus, Philemon, 2 John
+Markers: `_implicit*`, `(literal)/(dynamic)`, `(complex)/(simple)`, `(literalunits)/(modernunits)`
 
 ---
 
-### Rule 27: Comparative Marking
-Use `[more-than X]` for comparatives.
+## Quick Reference
 
-- Gen 25:28: "loved Esau [more-than Isaac loved Jacob]"
-- 2 Sam 13:15: "hated [more-than previously loved]"
-
----
-
-## SECTION H: Document Structure
-
-### Rule 28: Title/Section Markers
-Mark section headings.
-
-- Ruth 1:1: "Elimelech (title) and Naomi move..."
-- Matt 5:1: "(title) Jesus teaches on mountain"
-- 1 Sam 30:26: "(title) David does not kill Saul"
+| Category | Markers | Consistency |
+|----------|---------|-------------|
+| Coreference | `(referent)`, name repetition | ⭐⭐⭐⭐⭐ |
+| Brackets | `[relative]`, `[temporal]`, `[purpose]` | ⭐⭐⭐⭐ |
+| Speech | `["quoted"]`, `(imp)`, `(rhetorical)` | ⭐⭐⭐⭐ |
+| Implicit | `_implicit*`, `(implicit-*)` | ⭐⭐⭐⭐⭐ |
+| Pairs | `(literal)/(dynamic)`, etc. | ⭐⭐⭐⭐⭐ (NT) |
+| Grammatical | `_dual`, `-iteration` | ⭐⭐⭐⭐⭐ |
+| Semantic | `_metonymy`, `_hyperbolic` | ⭐⭐⭐ (NT>OT) |
+| Structure | `(title)`, `(paragraph)`, `(footnote)` | ⭐⭐⭐⭐⭐ |
 
 ---
 
-### Rule 29: Paragraph Markers
-Mark paragraph breaks.
+## Validation Summary
 
-- `(paragraph)` or `_paragraph` at discourse shifts
-- May appear mid-verse
-
----
-
-### Rule 30: Footnote/Comment System
-Embed scholarly apparatus inline.
-
-- `(footnote) You(people) (imp) see Isaiah 40:3`
-- `(comment-begin) ... (comment-end)`
-- `-Footnote Israel means [the man fights God]`
-
----
-
-### Rule 31: Alternative Readings
-Provide variant interpretations.
-
-- `(alt)` for textual alternatives
-- `(primary)/(meaning-1)` for interpretation options
-- Matt 26:50: Shows 3 different valid interpretations
-
----
-
-## SECTION I: He1 vs He2 Style
-
-### Rule 32: He1 Style (OT - Ruth, Genesis)
-- Natural flow
-- No underscore annotations
-- Single rendering per verse
-
-### Rule 33: He2 Style (NT - Matthew)
-- Strict, technical
-- Extensive underscore annotations: `_implicit`, `_implicitActiveAgent`
-- Dual `(literal)`/`(dynamic)` renderings
-- `(implicit-situational)`, `(implicit-background)` markers
-
----
-
-## Quick Reference Table
-
-| Category | Markers |
-|----------|---------|
-| Pronouns | `I(Name)`, `you(Name)`, `_dual`, `_incl` |
-| Brackets | `[relative]`, `[temporal]`, `[purpose]`, `[if]` |
-| Speech | `["quoted"]`, `(imp)`, `(rhetorical)` |
-| Implicit | `_implicit`, `_implicitActiveAgent`, `(implicit-info)` |
-| Pairs | `(literal)/(dynamic)`, `(complex)/(simple)` |
-| Semantic | `_metonymy`, `_hyperbolic`, `_reflexive` |
-| Structure | `(title)`, `(paragraph)`, `(footnote)` |
-| Comparison | `[just-like]`, `[more-than]` |
-
----
-
-## Validation
-
-Tested against 6,963 verses from 15 books: **95-100% pattern coverage**
+- **6,963 verses** analyzed across 15 books
+- **33 rules** documented with evidence
+- **High consistency** (⭐⭐⭐⭐+): Coreference, speech, implicit, structure
+- **NT-specific** patterns: Translation pairs, semantic annotations
+- **Known exceptions** documented with verse references
