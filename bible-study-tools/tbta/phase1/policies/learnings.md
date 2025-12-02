@@ -73,8 +73,9 @@ This file contains the learnings in short policy form statements linking to the 
 - "May the Lord..." prayers → `I pray [that Yahweh will...]`
 
 ## Hyphenated Verbs (from Ruth 2)
-- Must NOT be inflected: use `pick-up` not `picked-up`
-- Common examples: `sit-down`, `stand-up`, `pick-up`, `pull-out`
+- Hyphenated verbs (pick-up, pull-out) don't inflect: `pick-up` not `picked-up`
+- But "sit down", "stand up" are TWO WORDS and DO inflect: `sat down`, `stood up`
+- Rule: if it's hyphenated in ontology → don't inflect; if two words → inflect normally
 
 ## Verb Patterns
 - "give X to Y" - destination marker required: `gave the food to Naomi`
