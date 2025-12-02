@@ -8,6 +8,8 @@ Canonical merged rules for transforming NIV verses to Controlled Natural Languag
 |------|---------|
 | `SKILL.md` | 10-step transformation process with validation checklist |
 | `RULES.md` | Evidence-based rules (🟢🟡🔴) + policy rules (📘) |
+| `ORCHESTRATOR.md` | Parallel subagent workflow (V1 vs V2) |
+| `CONTRADICTION-REPORT.md` | Discrepancies between TBTA policy and encoded verses |
 
 ## Sources
 
@@ -28,10 +30,26 @@ This folder merges findings from multiple analysis sessions:
 ## Architecture
 
 ```
-Orchestrator                          Subagent
-    │                                     │
-    ├─ Reads: SKILL.md, RULES.md          ├─ Reads: SUBAGENT-SKILL-V2.md
-    ├─ Writes: learnings.md               ├─ Reads: learnings.md (read-only)
-    ├─ Analyzes subagent issues           ├─ Reports issues encountered
-    └─ Updates policies                   └─ Encodes verses
+                         ORCHESTRATOR
+                    (SKILL.md, RULES.md)
+                             │
+              ┌──────────────┴──────────────┐
+              │      PARALLEL CALL          │
+              ▼                             ▼
+      ┌──────────────┐             ┌──────────────┐
+      │ Subagent V1  │             │ Subagent V2  │
+      │ (original)   │             │ (enhanced)   │
+      └──────┬───────┘             └──────┬───────┘
+             │                            │
+             └──────────────┬─────────────┘
+                            ▼
+                    COMPARE & SELECT
+                            │
+                            ▼
+                   UPDATE LEARNINGS
 ```
+
+**Subagent V1**: `bible-study-tools/tbta/phase1/policies/SUBAGENT-SKILL.md`
+**Subagent V2**: `bible-study-tools/tbta/phase1/policies/SUBAGENT-SKILL-V2.md`
+
+See `ORCHESTRATOR.md` for full workflow details.
