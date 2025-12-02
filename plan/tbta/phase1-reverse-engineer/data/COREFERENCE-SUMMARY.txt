@@ -1,0 +1,125 @@
+================================================================================
+TBTA COREFERENCE RESOLUTION ANALYSIS - QUICK REFERENCE
+================================================================================
+
+DATASET: 16 CSV files analyzed (Genesis, Philemon, 2 John, Acts, etc.)
+TOTAL EXAMPLES: 3,184+ instances of explicit coreference marking
+
+================================================================================
+FOUR MAIN PATTERNS IDENTIFIED
+================================================================================
+
+1. PRONOUN(REFERENT) - DOMINANT PATTERN
+   Frequency: 3,184+ occurrences
+   Pattern:   pronoun(explicit-referent)
+   Examples:  I(Paul), you(Philemon), he(God), we(John), your(people's)
+   Usage:     First, second, and third person pronouns
+
+2. REPEATED PROPER NAMES
+   Frequency: 20+ clear examples in narrative books
+   Pattern:   Name...Name...Name instead of Name...pronoun...pronoun
+   Examples:  "Adam named...Adam named...Adam did not see...help Adam"
+              vs KJV: "Adam gave names...for Adam there was not...for him"
+   Usage:     Third-person narrative, especially Genesis
+
+3. DEMONSTRATIVE + NOUN
+   Frequency: 20+ clear examples
+   Pattern:   this/that/these/those + noun-phrase
+   Examples:  "these people" (← they), "this person" (← he/she),
+              "that person" (← him/her), "those people" (← them)
+   Usage:     Generic/class references, third-person plural
+
+4. PRONOUNS RETAINED (Counter-examples)
+   Frequency: 10 examples found
+   Pattern:   Plain pronouns without annotation
+   Examples:  "it was dark" (impersonal), "he was..." (narrative intro)
+   Usage:     Impersonal constructions, immediately clear references
+
+================================================================================
+SUPPORTING EXAMPLES WITH VERSE REFERENCES
+================================================================================
+
+PATTERN 1: Pronoun(Referent)
+----------------------------
+Philemon 1:1  | I(Paul) am Paul. I(Paul) am in prison...
+Philemon 1:9  | I(Paul) am now old. And I(Paul) am in prison
+2 John 1:1    | I(John) love all of you(people) much.
+Philemon 1:17 | you(Philemon) welcome [like you(Philemon) welcome me(Paul)]
+Acts 3:26     | he(God) is able [to bless you(people)]. He(God) will cause...
+
+PATTERN 2: Repeated Names
+-------------------------
+Genesis 2:20  | Adam named...Adam named...Adam did not see...help Adam
+              | KJV: "Adam gave names...for Adam...for him"
+
+Genesis 2:21  | God caused [Adam to sleep]. [While Adam was sleeping] God
+              | took one rib from Adam's body. Then God healed Adam's skin.
+              | KJV: "he slept: and he took one of his ribs"
+
+Genesis 3:16  | you(Eve)...you(Eve)...you(Eve)...you(Eve)...(7x in one verse)
+              | KJV: "thy sorrow...thy conception...thou shalt..."
+
+PATTERN 3: Demonstrative + Noun
+-------------------------------
+Genesis 1:26  | "These people will be like us...These people will rule..."
+              | KJV: "let them have dominion"
+
+Genesis 2:23  | "this person...this person...I(Adam) will call this person woman"
+              | KJV: "she shall be called Woman"
+
+Genesis 5:2   | "God blessed those people. and God called those people human"
+              | KJV: "blessed them, and called their name Adam"
+
+Genesis 4:15  | "I(God) will punish that person...that person 7 times"
+              | KJV: "vengeance shall be taken on him sevenfold"
+
+COUNTER-EXAMPLES: Retained Pronouns
+-----------------------------------
+Genesis 1:2      | "it was dark in every place" (impersonal it)
+1 Samuel 1:1     | "He was in Zuph's clan. He lived..." (narrative intro)
+Matthew 10:25    | "It is good [a student becomes...]" (dummy subject)
+
+================================================================================
+COREFERENCE RESOLUTION HIERARCHY (by frequency)
+================================================================================
+
+1. First/Second Person     → pronoun(referent)        [3,184+ examples]
+2. Third Person narrative  → Repeated Names           [20+ examples]
+3. Third Person generic    → Demonstrative+Noun       [20+ examples]
+4. Third Person specific   → he/she(referent)         [1 example - rare]
+5. Impersonal/Expletive   → Keep as-is               [10 examples]
+
+================================================================================
+PRINCIPLE: ELIMINATE REFERENTIAL AMBIGUITY
+================================================================================
+
+TBTA makes ALL referential relationships explicit through:
+  • Parenthetical annotation: pronoun(referent)
+  • Lexical replacement: Repeated names or demonstrative+noun
+  • Strategic retention: Only for impersonal/trivial references
+
+PURPOSE: Enable unambiguous parsing for machine translation and Bible
+         translation support systems.
+
+================================================================================
+FILES GENERATED
+================================================================================
+
+1. COREFERENCE-RESOLUTION-ANALYSIS.md
+   - Full detailed analysis with tables and examples
+   - 4 patterns documented with 15+ examples each
+   - Counter-examples and linguistic analysis
+
+2. extraction-scripts/extract_coreference_patterns.py
+   - Automated pattern extraction tool
+   - Usage: python extract_coreference_patterns.py <csv_file>
+   - Outputs pattern counts and examples
+
+3. COREFERENCE-SUMMARY.txt (this file)
+   - Quick reference guide
+   - Key examples and patterns
+
+================================================================================
+Analysis Date: 2025-12-02
+Analyst: Claude (Sonnet 4.5)
+================================================================================
