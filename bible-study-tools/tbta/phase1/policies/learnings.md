@@ -36,7 +36,8 @@ This file contains the learnings in short policy form statements linking to the 
 - `daughter-in-law` → `son's wife` (or explicate)
 
 ## Verb-Specific Issues
-- Use `birth` as verb instead of `give birth` (not in ontology)
+- Use `gave birth to` (NOT "birth" or "birthed" as standalone verb)
+- Use `sexed` not "slept with" or "had sex with" (use direct verb form)
 - Use `came to X` instead of `arrived at X` (arrived has case frame issues)
 - Use `lived` instead of `living` (living not recognized)
 
