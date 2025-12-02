@@ -1,0 +1,330 @@
+patterns:
+  - name: Pronoun Resolution with Parenthetical Coreference
+    transformation: "Ambiguous pronouns → explicit noun in parentheses"
+    phase: Both
+    examples:
+      - "1 Samuel 29:8: 'I(David) did not do bad things' - pronoun marked with referent"
+      - "Mark 1:40: 'you(Jesus) are willing', 'me(man) to become healthy' - all pronouns disambiguated"
+      - "Matthew 19:13: 'Jesus's hands', 'those people did was bad' - possessives and demonstratives clarified"
+      - "Genesis 35:16: 'Israel and the people [who were with Israel]' - repeated reference maintained"
+      - "Nehemiah 13:22: 'you(God) (imp) remember me(Nehemiah)' - both addressee and speaker marked"
+    variations: "All personal pronouns (I, you, he, she, we, they, me, him, her, us, them) and possessives (my, your, his, her, our, their) receive explicit parenthetical marking"
+
+  - name: Bracket-Enclosed Relative Clauses
+    transformation: "Relative clauses marked with square brackets [that/who/which...]"
+    phase: Both
+    examples:
+      - "Mark 1:40: 'a man [who had a terrible disease of the skin]' - restrictive relative"
+      - "1 Samuel 29:8: '[since I(David) came to you(Achish)]' - temporal clause"
+      - "Matthew 19:13: 'the thing [that those people did was bad]' - nominal complement"
+      - "Genesis 20:1: 'a place [that was between Kadesh and between Shur]' - location relative"
+      - "Mark 1:27: 'the people [who (implicit-situational) were in the Jewish church]' - existential clause with implicit"
+    variations: "Both restrictive and non-restrictive clauses bracketed; includes temporal, locative, and complement clauses; often nested within other brackets"
+
+  - name: Implicit Information Markers
+    transformation: "Recoverable information tagged with _implicit* labels"
+    phase: Both
+    examples:
+      - "Mark 1:27: '(implicit-situational) were in the Jewish church' - situational context"
+      - "Matthew 19:13: '_implicit told those people' - recoverable verb argument"
+      - "Mark 13:3: '_descriptive which is on the other side of the valley' - descriptive detail"
+      - "Matthew 24:41: 'working _implicitNecessary in a field' - necessary semantic role"
+      - "Mark 15:24: '_implicitActiveAgent by officials' - agent in passive"
+    variations: "Types include: implicit-situational, _implicit, _implicitNecessary, _implicitActiveAgent, implicit-info, _implicitExplainName, _implicitDifferentNounIndex, _frameInferable"
+
+  - name: Imperative Marking with (imp)
+    transformation: "Imperative verbs tagged with (imp) marker"
+    phase: Both
+    examples:
+      - "1 Samuel 29:8: 'you(Achish) (imp) allow [me(David) to fight]' - permission request"
+      - "Jonah 1:6: 'You(Jonah) (imp) Get up. And you(Jonah) (imp) pray' - series of commands"
+      - "Nehemiah 13:22: 'You(God) (imp) remember me(Nehemiah)' - prayer imperative"
+      - "Mark 9:24: 'You(Jesus) (imp) help-B me(father)' - petition"
+      - "Matthew 21:22: 'you(disciples) (imp) give food' - directive"
+    variations: "Applied to direct commands, requests, permissions, prayers, and petitions; often combined with pronoun resolution"
+
+  - name: Quote Frame Introduction
+    transformation: "Quotes introduced with reporting verb + comma + bracket"
+    phase: Both
+    examples:
+      - "1 Samuel 29:8: 'Then David said, [\"But I(David) did not do bad things]\"' - frame before quote"
+      - "Mark 1:40: 'that man asked/beg, [\"[If you(Jesus) are willing...]]\"' - embedded conditional"
+      - "Jonah 1:6: 'the leader said to Jonah, [\"Why are you(Jonah) sleeping]?\"' - rhetorical question"
+      - "Genesis 35:16: 'Yahweh said to Jacob, [\"You(Jacob) (imp) return\"]' - divine speech"
+      - "Matthew 19:13: 'the followers/disciples _implicit told those people [the thing [that those people did was bad]]' - nominal quote"
+    variations: "Both direct and indirect speech; nested quotes use multiple bracket levels; often combined with verb alternatives (asked/beg, said/commanded)"
+
+  - name: Title and Paragraph Markers
+    transformation: "Structural markers: (title), (paragraph), -Title"
+    phase: Both
+    examples:
+      - "Mark 1:40: '(title) Jesus causes [a man...to become healthy]. (paragraph)' - section header"
+      - "Genesis 35:16: '-Title Rachel dies [after Rachel births Benjamin]' - hyphenated variant"
+      - "Matthew 19:13: '(title) Jesus prays [God will bless children]. _paragraph' - underscore variant"
+      - "1 Samuel 5:1: '(title) The Philistines have problems.' - standalone title"
+      - "Mark 4:35: '(title) Jesus causes [a storm to end]. (paragraph)' - both markers"
+    variations: "Three forms: (title), -Title, _paragraph; titles often contain summarized action; paragraphs mark discourse shifts"
+
+  - name: Footnote and Citation Markers
+    transformation: "Parenthetical notes: (footnote), (footnote)...You(people) (imp) see"
+    phase: Both
+    examples:
+      - "Mark 1:40: '(footnote) Jewish law said [people...were not clean]' - explanatory note"
+      - "Mark 12:30: '(footnote) You(people) (imp) see Deuteronomy 6:4-5' - cross-reference"
+      - "Matthew 15:4: '(footnote) You(people) (imp) see Exodus 20:12, Deuteronomy 5:16' - multiple refs"
+      - "Matthew 12:40: 'the Son-of-Man _1stAs3rd will stay' - person shift marker"
+      - "Genesis 6:2: '(footnote) Today some people think that [these sons of God were angels]' - interpretive note"
+    variations: "Two types: explanatory footnotes with content, cross-reference footnotes with 'see' formula; person markers (_1stAs3rd, _1stas3rd)"
+
+  - name: Rhetorical Question Frames
+    transformation: "(rhetorical)/(yesrhetorical)/(norhetorical) + question + (statement) + answer"
+    phase: Both
+    examples:
+      - "Matthew 20:8: '(yesrhetorical) Did you(worker) agree...? (statement) You(worker) agreed' - yes-expected"
+      - "Mark 9:50: '(rhetorical) how will you(followers) cause...? (statement) you(followers) will not be able' - negative answer"
+      - "Mark 14:60: '(yesrhetorical) Are you(Jesus) going to speak? (statement) You(Jesus) should speak' - yes-expected with modal"
+      - "Matthew 26:55: '(norhetorical) Am I(Jesus) a person [who breaks-C laws]? (statement) I(Jesus) am not' - no-expected"
+      - "Matthew 6:26: '(yesrhetorical) Are you(people) much more valuable? (statement) You(people) are' - affirmative expected"
+    variations: "Three types: (rhetorical) neutral, (yesrhetorical) expects yes, (norhetorical) expects no; always paired with (statement) answer"
+
+  - name: Clause Segmentation with Periods
+    transformation: "Complex sentences split into multiple bracket-enclosed clauses with periods"
+    phase: Both
+    examples:
+      - "2 Samuel 3:29: 'Joab killed Abner. I(David) hope [that Yahweh will punish Joab]' - event then consequence"
+      - "Mark 1:27: 'All of the people...were very surprised/amazed. So those people said' - result chain"
+      - "Matthew 14:32: '[When Jesus and Peter entered the boat,] the wind stopped blowing' - temporal then main"
+      - "Genesis 15:2: 'I(Abram) do not have a son. My(Abram's) slave...will inherit' - situation then implication"
+      - "Acts 20:31: 'you(Ephesians) be careful (imp)! You(leaders) remember (imp)' - parallel commands"
+    variations: "Separates coordinated clauses, temporal sequences, cause-effect, and parallel imperatives; maintains bracket structure across sentence boundaries"
+
+  - name: Vocabulary Alternatives with Slash
+    transformation: "Synonyms or L2 glosses provided with slash: word1/word2"
+    phase: Both
+    examples:
+      - "Mark 1:40: 'asked/beg' - verb alternatives"
+      - "Mark 1:27: 'surprised/amazed' - adjective synonyms"
+      - "Matthew 19:13: 'followers/disciples' - role alternatives"
+      - "Mark 15:43: 'asked-B...to Pilate' - verb with case/transitivity marker"
+      - "Genesis 20:18: 'take-away' - compound verb form"
+    variations: "Applied to verbs, nouns, adjectives; includes case markers (-A, -B, -C); compound forms with hyphen; sometimes three-way (literal/dynamic)"
+
+  - name: Name Introduction with Explicit Markers
+    transformation: "Names introduced: 'X named Y' or 'a man...named Z'"
+    phase: Both
+    examples:
+      - "Joshua 19:20: 'the towns named Rabbith, Kishion, and Ebez' - place names"
+      - "Nehemiah 13:22: 'the men [that were in the tribe named Levi]' - ethnic group"
+      - "Daniel 6:26: 'Daniel's God' - possessive form"
+      - "Matthew 14:73: 'Gennesaret named the area/region _implicitExplainName' - with type marker"
+      - "Mark 6:2: 'the town [that Jesus be-T from] named Nazareth _implicit' - with origin marker"
+    variations: "Patterns: 'X named Y', 'named X' in lists, possessive 'X's Y'; often with _implicitType, _implicitExplainName markers"
+
+  - name: Temporal and Iteration Markers
+    transformation: "Time/repetition marked: -iteration, _distantPast, _immediatePast, _dual"
+    phase: Both
+    examples:
+      - "Genesis 31:41: 'you(Laban) changed -iteration 10 times' - repetition count"
+      - "Joshua 10:24: '(imp) You(soldiers) come to this place! And (imp) you(soldiers) put' - sequence"
+      - "Matthew 5:38: 'were told _distantPast by the religious _implicit laws' - distant past"
+      - "Matthew 9:18: 'My(leader's) daughter died _immediatePast' - recent past"
+      - "Matthew 20:72: 'those blind men _dual heard' - dual number"
+    variations: "Markers: -iteration + number, _distantPast, _immediatePast, _dual, _paucal; attached to verbs or nouns"
+
+  - name: Complex/Simple Alternation
+    transformation: "(complex)/(simple) pairs for theological/literal concepts"
+    phase: He2-only
+    examples:
+      - "Mark 15:43: '(complex) the kingdom-B of God to begin. (simple) God to start ruling' - theological paraphrase"
+      - "Matthew 11:11: '(complex) the least important person [who is in the kingdom-B of heaven]. (simple) the least important person [that God rules]' - heaven = God's rule"
+      - "Matthew 5:8: '(literal) People [who have a pure heart]. (dynamic) People [who want [to do only good things]]' - metaphor explained"
+      - "Mark 12:34: '(complex) You(person) are not far-away-from the kingdom of God. (simple) You(person) are almost ready [to let [God lead your(person's) life]]' - kingdom paraphrased"
+      - "Matthew 21:43: '(complex) (literal) the kingdom-B of God. (complex) (dynamic) people [who belong to God]. (simple) (literal) God will accept. (simple) (dynamic) people [who live like people [who belong to God]]' - multiple levels"
+    variations: "Pairs complex theological terms with simpler equivalents; often includes (literal)/(dynamic) sub-marking; primarily for 'kingdom' terminology in gospels"
+
+  - name: Literal/Dynamic Translation Pairs
+    transformation: "(literal)/(dynamic) for idiomatic expressions"
+    phase: Both
+    examples:
+      - "Mark 7:6: '(literal) These people honor me(God) with these people's lips. (dynamic) These people honor me(God) with the words [that these people say]' - body part metaphor"
+      - "Matthew 11:11: '(literal) the most important person [who was born from a woman]. (dynamic) the most important person [who was born on earth]' - euphemism"
+      - "Matthew 5:8: '(literal) People [who have a pure heart]. (dynamic) People [who want [to do only good things]]' - abstract to concrete"
+      - "Mark 16:9: '(literal) the very early morning of the first day of the week. (dynamic) the very early morning of Sunday' - calendar system"
+      - "Mark 9:24: 'cry-out-B to Jesus _implicit' - case-marked verb"
+    variations: "Preserves Hebrew/Greek idioms in literal form while providing meaning in dynamic; common for body parts, calendar, and metaphors"
+
+  - name: Bracket Nesting for Embedded Clauses
+    transformation: "Multiple levels of square brackets for syntactic embedding"
+    phase: Both
+    examples:
+      - "Mark 1:40: '[If you(Jesus) are willing [(implicit-situational) to cause [me(man) to become healthy]],] you(Jesus) are able [to cause [me(man) to become clean]]' - 4 levels"
+      - "Matthew 19:13: 'people brought small children to Jesus [so that Jesus would put Jesus's hands on those children] [and so that Jesus would pray for those children]' - parallel purpose clauses"
+      - "2 Samuel 3:29: 'I(David) hope [that Yahweh will punish Joab and Joab's family]. I(David) hope [that the people [who are in Joab's family] will always have sores]' - nested relative in complement"
+      - "Genesis 35:16: 'the people [who were with Israel]' - simple relative"
+      - "Nehemiah 13:22: 'the men [that were in the tribe named Levi] to cause [those men to become clean]' - relative + infinitive"
+    variations: "3-5 levels common; marks complements, purpose clauses, relatives, conditionals; preserves syntactic structure"
+
+  - name: Deixis and Frame Markers
+    transformation: "_frameInferable, _descriptive, _addSourceArgument for contextual info"
+    phase: Both
+    examples:
+      - "Mark 14:18: 'lying/reclining at the table _frameInferable _implicit [(implicit-situational) in-order-to eat that Passover meal]' - cultural frame"
+      - "Matthew 26:72: 'the man _frameInferable!' - discourse-old referent"
+      - "Matthew 11:11: '(literal) from a woman _addSourceArgument' - semantic role added"
+      - "Mark 13:3: '_descriptive which is on the other side of the valley from the temple' - spatial detail"
+      - "Matthew 22:28: 'which brother's-C wife' - case marker on possessive"
+    variations: "Markers: _frameInferable (culturally/contextually recoverable), _descriptive (extra detail), _addSourceArgument (semantic role), _excl/_incl (clusivity)"
+
+  - name: Passive with Implicit Agent
+    transformation: "Passives marked: 'X by Y _implicitActiveAgent'"
+    phase: Both
+    examples:
+      - "Mark 1:13: 'those sick people were healed by Jesus _implicitActiveAgent' - agent specified"
+      - "Matthew 24:41: 'One of those men _dual will be taken by God _implicitActiveAgent' - divine agent"
+      - "Matthew 5:8: 'People...are blessed by God _implicitActiveAgent' - benefactive passive"
+      - "Matthew 27:52: 'the holes/cave...were opened by God _implicitActiveAgent' - opening action"
+      - "Matthew 13:6: 'those plants were burned by the sun _implicitActiveAgent' - natural force agent"
+    variations: "Always includes 'by X' phrase + _implicitActiveAgent tag; agents can be divine, human, or natural forces"
+
+  - name: Gender and Number Markers
+    transformation: "_singular, _dual, _plural, _paucal for explicit number"
+    phase: Both
+    examples:
+      - "Matthew 20:8: 'you(worker) _singular' - singular addressee"
+      - "Matthew 20:72: 'those blind men _dual heard' - dual number"
+      - "Matthew 15:36: 'the fish _paucal' - small number"
+      - "Mark 6:2: 'the town [that Jesus be-T from] named Nazareth _implicit' - origin marker"
+      - "Mark 11:5: 'you(followers) _dual' - dual addressee"
+    variations: "Markers: _singular, _dual (two), _paucal (small number), _plural; primarily on pronouns and nouns"
+
+  - name: Clusivity Markers
+    transformation: "_excl (exclusive we), _incl (inclusive we)"
+    phase: Both
+    examples:
+      - "Matthew 25:44: 'when did we(people) _excl not help you(Lord)' - speaker excludes addressee"
+      - "Genesis 42:13: 'We(brothers) are 10 brothers. We(brothers) all have the same father' - inclusive reference"
+      - "Acts 15:25: 'we(leaders) agreed/decided' - exclusive (leaders only)"
+      - "Joshua 22:28: 'our(descendants') descendants will say' - inclusive projection"
+      - "1 Samuel 25:8: 'about us(David)' - royal plural or group"
+    variations: "_excl excludes addressee from 'we', _incl includes; primarily on 1st person plural pronouns"
+
+  - name: Discourse Type Markers
+    transformation: "(literal)/(dynamic), (complex)/(simple) for register shifts"
+    phase: Both
+    examples:
+      - "Matthew 24:8: 'These events will be signs-B [that show [people _generic will soon suffer much]]. These events will be-U like the first pains' - metaphor explanation"
+      - "Mark 15:43: '(complex) waiting-B [the kingdom-B of God to begin]. (simple) waiting-B [God to start ruling]' - theological simplification"
+      - "Matthew 13:42: 'That container/furnace is-X hell-A' - equivalence marker"
+      - "Matthew 9:37: '(footnote) Jesus is saying [people are ready [to believe in God] [just-like grain...is ready]]' - interpretive note"
+      - "Mark 3:35: 'All people [who do _routinely the things [that God wants-A]]' - habitual marker"
+    variations: "Markers: is-X (equivalence), is-U (metaphor), be-U (categorical), _routinely (habitual), _generic (generic reference)"
+
+  - name: Verb Transitivity and Case Markers
+    transformation: "-A/-B/-C suffixes on verbs and nouns for roles"
+    phase: Both
+    examples:
+      - "Mark 15:43: 'asked-B Jesus's body to Pilate' - B marks benefactive/goal"
+      - "Mark 15:43: 'waiting-B [the kingdom-B of God]' - B on verb and noun"
+      - "Mark 9:50: 'Salt is good' - unmarked copula"
+      - "Matthew 22:28: 'which brother's-C wife' - C marks genitive relation"
+      - "Mark 12:30: 'love-B the Lord-A' - B verb, A object"
+    variations: "Suffixes -A/-B/-C mark semantic roles and case relations; applied to verbs (transitivity) and nouns (grammatical role)"
+
+  - name: Suggestive and Modal Markers
+    transformation: "_suggestiveLets for hortative, modal auxiliaries explicit"
+    phase: Both
+    examples:
+      - "Mark 4:35: 'We(Jesus) go _suggestiveLets to the other side' - hortative suggestion"
+      - "Matthew 8:26: 'You(followers) should not be afraid' - deontic modal"
+      - "1 Samuel 20:4: '[If you(David) want [me(Jonathan) to help]]' - volitional modal"
+      - "Daniel 1:13: '[After we(servants) eat vegetables]' - temporal modal"
+      - "Mark 9:24: 'I(father) believe in you(Jesus) _implicit' - implicit complement"
+    variations: "Modality marked through: auxiliaries (should, want, able), markers (_suggestiveLets), and explicit conditionals"
+
+  - name: Source and Attribution Markers
+    transformation: "through X _implicit, by X _implicitActiveAgent for information source"
+    phase: Both
+    examples:
+      - "Matthew 15:4: 'God said through Moses _implicit' - mediated source"
+      - "2 Samuel 23:2: 'Yahweh's Spirit spoke through me(David)' - instrumental"
+      - "Matthew 5:38: 'were told _distantPast by the religious _implicit laws/Law _implicitActiveAgent' - passive source"
+      - "Acts 3:14: 'Jesus was holy and good' - attribution implicit in context"
+      - "Mark 16:9: 'Previously _implicit Jesus forced [7 evil spirits/demons to leave]' - temporal source"
+    variations: "Patterns: 'through X', 'by X', 'from X'; combined with _implicit markers; marks mediation, instrument, and source"
+
+  - name: Comparative and Superlative Constructions
+    transformation: "[more-than X], [most X], [like X] for gradation"
+    phase: Both
+    examples:
+      - "Matthew 10:37: 'A person [who loves...father [more-than that person loves me(Jesus)]]' - comparative with bracket"
+      - "Matthew 11:11: 'the most important person [who was born from a woman]' - superlative"
+      - "2 Samuel 1:26: 'You(Jonathan) loved me(David) [more than women love me(David)]' - comparison"
+      - "Matthew 24:27: '[just-like lightning...is seen by all people]' - simile marker"
+      - "Mark 9:49: '[just-like a person _implicitNecessary puts salt]' - simile with implicit agent"
+    variations: "Comparatives use [more-than X], superlatives use 'most/least', similes use [just-like X] or [like X]"
+
+  - name: Purpose and Result Clauses
+    transformation: "[in-order-to X], [so that X], [because X] marked explicitly"
+    phase: Both
+    examples:
+      - "Matthew 19:13: '[so that Jesus would put Jesus's hands on those children]' - purpose"
+      - "Mark 1:40: '[in-order-to cause [me(man) to become clean]]' - purpose nested"
+      - "Genesis 20:52: '[in-order-to Yahweh punish Abimelech]' - result"
+      - "Matthew 6:14: '[because you(God) love your(God's) people much]' - reason"
+      - "Mark 14:11: '[if Judas-Iscariot (implicit-situational) gave/betray-A Jesus]' - condition"
+    variations: "Purpose: [in-order-to X], [so that X]; Result: [because X]; Condition: [if X]; always bracketed; can be nested"
+
+  - name: Definite Reference with Demonstratives
+    transformation: "this/that/these/those + noun explicit, often with brackets"
+    phase: Both
+    examples:
+      - "Mark 1:27: 'these things [that Jesus is teaching]' - demonstrative + relative"
+      - "Matthew 19:13: 'the thing [that those people did was bad]' - singular + relative"
+      - "2 Samuel 3:29: 'those people will not have food' - bare plural"
+      - "Mark 8:38: 'most people of this time/generation' - temporal demonstrative"
+      - "Genesis 31:41: 'On one day you(Laban) said [that you(Laban) would pay this thing]' - anaphoric"
+    variations: "All demonstratives explicit (this/that/these/those); often combined with relative clauses in brackets; maintains reference chains"
+
+  - name: Temporal Framing
+    transformation: "Time adverbials: [While X], [After X], [Before X], [When X]"
+    phase: Both
+    examples:
+      - "Matthew 14:32: '[When Jesus and Peter entered the boat,] the wind stopped' - simultaneous"
+      - "Genesis 35:16: '[Before Israel arrived at Ephrathah] Rachel began birthing' - prior"
+      - "Mark 16:9: '[After Jesus became alive again...] Jesus first appeared' - subsequent"
+      - "2 Samuel 15:2: '[While Amasa waited] Amasa called those men' - durative"
+      - "Acts 21:1: 'On the next day, we(disciples) traveled' - sequential"
+    variations: "Temporal subordinators: [While X], [After X], [Before X], [When X]; always bracketed; establish temporal relations"
+
+  - name: Quantifier Scope
+    transformation: "Quantifiers explicit: all, many, each, certain, some, one"
+    phase: Both
+    examples:
+      - "Mark 1:27: 'All of the people...were very surprised' - universal"
+      - "Matthew 19:13: 'small children' - indefinite quantity"
+      - "Joshua 19:20: 'the towns named Rabbith, Kishion, and Ebez' - exhaustive list"
+      - "2 Samuel 3:29: 'all of the people [who are in Joab's family]' - universal with restriction"
+      - "Genesis 31:41: 'one day you(Laban) said' - specific singular"
+    variations: "All quantifiers explicit (all, every, many, some, one, each); scope marked with brackets; includes universal, existential, and specific"
+
+  - name: Predicate Nominal Constructions
+    transformation: "Copula explicit, identity/class marked with is-X, be-U"
+    phase: Both
+    examples:
+      - "Matthew 13:42: 'That container/furnace is-X hell-A' - identity"
+      - "Mark 3:35: 'All people...be-U my(Jesus's) brother' - class membership"
+      - "Matthew 24:8: 'These events will be-U like the first pains' - metaphorical class"
+      - "Daniel 8:20: 'One horn is like a kingdom named Media' - simile copula"
+      - "Mark 9:50: 'Salt is good' - unmarked quality"
+    variations: "Copula always explicit (is, be, was); identity marked with is-X; metaphor/class with be-U; quality unmarked"
+
+  - name: Coordination with Explicit Conjunctions
+    transformation: "All coordinated elements marked: and, or, but with scope"
+    phase: Both
+    examples:
+      - "Matthew 19:13: '[so that Jesus would put Jesus's hands on those children] [and so that Jesus would pray for those children]' - parallel purpose"
+      - "2 Samuel 3:29: 'I(David) hope [that Yahweh will punish Joab]. And I(David) hope [that the people...will always have sores]' - sentential coordination"
+      - "Jonah 1:6: 'You(Jonah) (imp) Get up. And you(Jonah) (imp) pray' - imperative series"
+      - "Genesis 15:2: 'I(Abram) do not have a son. My(Abram's) slave...will inherit' - contrastive sequence"
+      - "Mark 1:40: 'That man knelt...And that man asked/beg' - narrative progression"
+    variations: "Conjunctions explicit (And, Or, But, So); scope marked with brackets or sentence boundaries; parallel structures preserved"

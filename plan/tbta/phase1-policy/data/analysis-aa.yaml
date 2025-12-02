@@ -1,0 +1,664 @@
+patterns:
+  - name: Pronoun Coreference Resolution
+    description: |
+      Pronouns are replaced with explicit referents using parenthetical notation.
+      Format: pronoun(referent) or pronoun(referent's)
+      NIV: "he said to him" / "his wife" / "they returned"
+      CNL: "Boaz said to Ruth" / "Abraham's wife" / "David and those men returned"
+    phase: Both
+    examples:
+      - Genesis 16:5: "my(Sarai's) servant" - possessive pronoun → explicit owner
+      - 2 Samuel 7:29: "you(Yahweh) bless my(David's) family" - both subject and possessive resolved
+      - Ruth 2:8: "Boaz said to Ruth" - third-person pronouns replaced with names
+      - Matthew 22:4: "I(king) have prepared my(king's) meal/feast" - first-person with role clarification
+      - Philemon 1:13: "I(Paul) want [Onesimus to stay with me(Paul)]" - consistent self-reference
+    variations: |
+      - Role-based: I(Sarai), you(Abram), me(Jacob)
+      - Name-based: he(Boaz), his(David's)
+      - Generic: people _generic, us(people)
+      - Dual: followers/disciples _dual (for groups of two)
+      - Inclusive/exclusive: we(Jesus) _incl, us(followers) _excl
+
+  - name: Addressee/Speaker Deixis Marking
+    description: |
+      First and second person pronouns marked with speaker/addressee identity.
+      Shows who is speaking to whom in dialogue contexts.
+      NIV: "I will bless you" / "you must obey me"
+      CNL: "I(Yahweh) will bless you(Abraham)" / "you(Jacob) (imp) obey me(Rebekah)"
+    phase: Both
+    examples:
+      - Genesis 16:9: "You(Hagar) (imp) return to your(Hagar's) master named Sarai"
+      - 2 Samuel 2:14: "Abner said to Joab, ['Let us(Abner) choose...']"
+      - Ruth 2:9: "I(Boaz) told [the men to not touch you(Ruth)]"
+      - Matthew 6:10: "We(people) pray-hope [your(Father's) kingdom-B come]"
+      - Genesis 27:8: "you(Jacob) (imp) obey me(Rebekah)"
+    variations: |
+      - Multiple addressees: you(servants), you(followers)
+      - Role-based: I(king), you(disciples), me(Paul)
+      - Possessive forms: my(Sarai's), your(Hagar's)
+
+  - name: Bracket-Enclosed Subordinate Clauses
+    description: |
+      Subordinate clauses, relative clauses, and embedded content enclosed in [brackets].
+      Creates hierarchical structure showing clause relationships.
+      NIV: "the man who was sitting" / "because he was afraid"
+      CNL: "the man [who was sitting]" / "[because he was afraid]"
+    phase: Both
+    examples:
+      - Genesis 16:5: "[When my(Sarai's) servant became pregnant] my(Sarai's) servant began to act badly"
+      - Matthew 12:45: "[if (implicit-situational) this group/generation does not change...]"
+      - 1 Samuel 17:4: "A soldier named Goliath was in the Philistines' army. Goliath fought very well. Previously Goliath (implicit-info) killed many soldiers."
+      - Acts 15:33: "[After Judas and Silas stayed in Antioch for some time]"
+      - Daniel 11:41: "But that king will not defeat Edom and Moab."
+    variations: |
+      - Temporal: [When X happened], [After X], [before Y]
+      - Conditional: [if X], [unless Y]
+      - Purpose: [in order to X], [so that Y]
+      - Relative: [who X], [that Y], [which Z]
+      - Nested: [[inner clause] outer clause]
+
+  - name: Quote Framing with Brackets
+    description: |
+      Direct speech enclosed in ["..."] brackets with explicit speech verbs.
+      Nested quotes use multiple bracket levels.
+      NIV: 'He said, "Go home"' / dialogue without explicit markers
+      CNL: 'He said to her, ["You(X) (imp) go home"]' / ["outer ["inner"] outer"]
+    phase: Both
+    examples:
+      - Genesis 16:9: "The angel said to Hagar, ['You(Hagar) (imp) return...']"
+      - 2 Samuel 2:14: "Abner said to Joab, ['Let us(Abner) choose...'] Joab said, ['Ok]...'"
+      - Ruth 1:8: "Naomi said to Naomi's daughters in law, ['My(Naomi's) daughters, you(daughters in law) must return...']"
+      - Matthew 22:4: "that king said to those servants-B, ['You(servants) (imp) tell the people...']"
+      - Genesis 27:7: "Isaac said to Esau, ['you(Esau) (imp) hunt an animal...']"
+    variations: |
+      - Single-level: ["direct quote"]
+      - Nested: ["outer ['inner'] outer"]
+      - Triple-nested: ["level1 ['level2 ['level3'] level2'] level1"]
+      - Imperatives in quotes: ["You(X) (imp) do Y"]
+
+  - name: Clause Segmentation (One Predicate Per Sentence)
+    description: |
+      Complex sentences split into simple clauses, each with one main predicate.
+      Compound predicates separated by periods or coordinating conjunctions.
+      NIV: "He came and saw and conquered"
+      CNL: "He came. And he saw. And he conquered." or "He came. He saw. He conquered."
+    phase: Both
+    examples:
+      - 1 Samuel 19:9: "At that time Saul was sitting in Saul's house. And Saul was holding a spear. David was playing a harp."
+      - 2 Samuel 21:20: "A very large man was at Gath. That man had 6 fingers on each hand. And that man had 6 toes on each foot."
+      - Ruth 2:10: "Then Ruth bowed to Boaz. And Ruth moved Ruth's face to the ground. Then Ruth asked Boaz..."
+      - Genesis 11:30: "Sarai was not able [to have children]." (single predicate)
+      - Acts 18:22: "And Paul arrived... Then Paul traveled... Then Paul traveled..."
+    variations: |
+      - Sequential actions: "X happened. Then Y happened. Then Z happened."
+      - Simultaneous: "X was doing A. And X was doing B."
+      - Simple states: "X was Y." (no compound predicates)
+
+  - name: Imperative (imp) Marking
+    description: |
+      Imperative mood marked with (imp) before the verb.
+      Commands, requests, and instructions made explicit.
+      NIV: "Go to the field" / "Listen to me"
+      CNL: "(imp) Go to the field" / "you(X) (imp) listen to me(Y)"
+    phase: Both
+    examples:
+      - 2 Samuel 7:29: "Please (imp) you(Yahweh) bless my(David's) family. (imp) You(Yahweh) allow..."
+      - Genesis 16:9: "You(Hagar) (imp) return to your(Hagar's) master named Sarai"
+      - Ruth 2:9: "You(Ruth) (imp) watch the field... And you(Ruth) (imp) follow the women."
+      - Matthew 22:4: "You(servants) (imp) tell the people... You(people) (imp) come to the meal/feast!"
+      - Matthew 26:46: "You(followers) (imp) stand-up! We(Jesus) _incl go _suggestiveLets! You(followers) (imp) look/behold."
+    variations: |
+      - Polite: "Please (imp) you(X) do Y"
+      - Direct: "(imp) Do X"
+      - Sequential: "(imp) Do X. And (imp) do Y. Then (imp) do Z."
+      - Negative: "(imp) do not X"
+      - Suggestive: "we(X) go _suggestiveLets"
+
+  - name: Implicit Information Marking
+    description: |
+      Implicit but recoverable information marked with _implicit or (implicit-X) tags.
+      Types: implicit-situational, implicit-info, implicit-subaction, _implicitActiveAgent, _implicitNecessary
+      NIV: relies on context / ellipted information
+      CNL: explicit marking of what's implicit in source
+    phase: Both
+    examples:
+      - Matthew 12:45: "(implicit-situational) this group/generation does not change"
+      - Matthew 22:4: "people [whom I(king) have invited to the meal/feast _implicit]"
+      - 1 Samuel 17:4: "Previously Goliath (implicit-info) killed many soldiers"
+      - Matthew 6:10: "be done by people _implicitActiveAgent also on earth"
+      - Mark 6:17: "Herod _emphasized commanded soldiers _implicitNecessary"
+    variations: |
+      - (implicit-situational): recoverable from context
+      - (implicit-info): background information
+      - (implicit-subaction): unstated action
+      - _implicit: generic unmarked ellipsis
+      - _implicitActiveAgent: unstated agent in passive
+      - _implicitNecessary: logically necessary participant
+      - _genericImplicit: generic unstated participant
+
+  - name: Proper Name Introductions
+    description: |
+      First mention of people/places includes identifying description.
+      Format: "role named Name" or "Name [who is X]"
+      NIV: "his wife Sarah" / "Goliath the Philistine"
+      CNL: "wife named Sarah" / "soldier named Goliath" / "Goliath [who was from Gath]"
+    phase: Both
+    examples:
+      - Genesis 23:19: "Abraham buried Abraham's wife named Sarah"
+      - Genesis 11:20: "[When Reu was 32 years old] Reu had a son named Serug"
+      - 1 Samuel 17:4: "A soldier named Goliath was in the Philistines' army... And Goliath was from Gath."
+      - Ruth 2:8: "Boaz (implicit-info) walked to Ruth. Then Boaz said to Ruth..."
+      - 2 Samuel 11:11: "My(Uriah's) captain named Joab"
+    variations: |
+      - "role named Name": "wife named Sarah", "servant named Hagar"
+      - "Name [who is X]": "Goliath [who was from Gath]"
+      - Implicit-info on first use: "Boaz (implicit-info) walked to Ruth"
+      - Repeated use: just "Name" after introduction
+
+  - name: L2 Vocabulary Pairing (Slash Notation)
+    description: |
+      Translation equivalents paired with slashes for L2 learner support.
+      Shows semantic range and helps with lexical choices.
+      NIV: single English word
+      CNL: "word1/word2" showing alternatives or precision
+    phase: Both
+    examples:
+      - Matthew 22:4: "meal/feast", "killed/slaughter"
+      - Mark 11:7: "horse/donkey", "coats/cloaks"
+      - Ruth 2:2: "grain/barley" (generic/specific)
+      - 1 Samuel 8:12: "choose/appoint"
+      - Matthew 23:13: "good/righteous"
+    variations: |
+      - Generic/specific: "grain/barley", "building/temple"
+      - Synonyms: "look/behold", "tell/preach"
+      - Register: "gift/sacrifice", "meal/feast"
+      - Semantic overlap: "killed/slaughter", "choose/appoint"
+
+  - name: Rhetorical Question Marking
+    description: |
+      Rhetorical questions marked with (rhetorical), (norhetorical), (yesrhetorical).
+      Followed by (statement) version for clarity.
+      NIV: rhetorical question (unmarked)
+      CNL: (rhetorical) Question? (statement) Assertion.
+    phase: Both
+    examples:
+      - Matthew 16:10: "(norhetorical) And do you(followers) remember... (statement) You(followers) should remember..."
+      - Mark 7:18: "(rhetorical) Are you(followers) like those other people... (statement) [You(followers) also do not understand...]"
+      - Matthew 12:5: "(yesrhetorical) And did you(Pharisees) read... (statement) And you(Pharisees) read _past..."
+      - Mark 9:29: "You(followers) need to pray [in-order-to cause [this kind of spirit to leave a person]]"
+    variations: |
+      - (rhetorical): expects "yes" answer, reformulated as statement
+      - (norhetorical): expects "no" answer, reformulated as negative
+      - (yesrhetorical): expects "yes", reformulated as positive
+      - (statement): declarative reformulation follows
+
+  - name: Passive to Active Voice Conversion
+    description: |
+      Passive constructions converted to active with explicit agent marking.
+      Format: "action by agent _implicitActiveAgent" when agent inferable
+      NIV: "was killed" / "were prepared"
+      CNL: "killed/slaughter by my(king's) servants-B _implicitActiveAgent" / "prepared-B by my(king's) servants-B _implicitActiveAgent"
+    phase: Both
+    examples:
+      - Matthew 22:4: "My(king's) cow... were killed/slaughter by my(king's) servants-B _implicitActiveAgent"
+      - Matthew 22:4: "all things-A are prepared-B by my(king's) servants-B _implicitActiveAgent"
+      - Matthew 6:10: "be done by people _implicitActiveAgent also on earth"
+      - Matthew 28:15: "this false _implicit story-B [that (implicit-situational) the soldiers told] was told by many Jews _implicitActiveAgent"
+      - Matthew 23:35: "all the good/righteous people [who were killed by you(scribes) and your(scribes') parents/ancestors _implicitActiveAgent]"
+    variations: |
+      - Explicit agent: "by X _implicitActiveAgent"
+      - Generic agent: "by people _implicitActiveAgent"
+      - Inferable agent: "by my(king's) servants-B _implicitActiveAgent"
+      - Retained passive: rare cases where agent truly unknown
+
+  - name: Paragraph and Section Markers
+    description: |
+      Discourse structure marked with (title), (paragraph), _paragraph, (comment-begin/end), (footnote).
+      Shows discourse boundaries and meta-information.
+      NIV: implicit paragraph breaks / section headers
+      CNL: explicit inline markers
+    phase: Both
+    examples:
+      - Matthew 22:15: "(title) The Pharisees ask Jesus about taxes. _paragraph Then..."
+      - Matthew 23:13: "(title) Jesus tells the people... _paragraph People [who teach...]"
+      - Genesis 6:9: "-Title God saves Noah from the flood."
+      - Mark 9:6: "(comment-begin) Peter did not know... (comment-end)"
+      - Genesis 23:19: "-Footnote Later people in Canban called Mamre Hebron."
+    variations: |
+      - (title): major section heading
+      - _paragraph: paragraph break marker
+      - (paragraph): explicit paragraph marker
+      - -Title: alternative title format
+      - (footnote): explanatory note
+      - -Footnote: alternative footnote format
+      - (comment-begin)...(comment-end): editorial comments
+
+  - name: Event/Situation Nominalization
+    description: |
+      Abstract nouns marked as events or situations with _event, _thing, etc.
+      Helps distinguish concrete vs abstract referents.
+      NIV: unmarked nominals
+      CNL: "thing _event", "things-A", "thing-C"
+    phase: Both
+    examples:
+      - Matthew 12:45: "The same thing _event will happen to this group/generation"
+      - Matthew 22:4: "all things-A are prepared-B"
+      - Matthew 24:25: "I(Jesus) am warning-C you(followers) about all of these things _implicit"
+      - Mark 7:18: "this thing _implicit"
+      - 2 Samuel 2:14: "the same thing-C"
+    variations: |
+      - _event: event nominalization
+      - things-A, thing-B, thing-C: tracking different referents
+      - _implicit: ellipted thing
+      - _frameInferable: recoverable from frame semantics
+
+  - name: Index Suffixes for Referent Tracking
+    description: |
+      Repeated referents disambiguated with -A, -B, -C, etc. suffixes.
+      Prevents confusion when multiple entities of same type in context.
+      NIV: relies on context ("the servants")
+      CNL: "servants-A", "servants-B" to track distinct groups
+    phase: Both
+    examples:
+      - Matthew 22:4: "that king sent more servants-B... said to those servants-B... My(king's) cow... killed by my(king's) servants-B _implicitActiveAgent"
+      - Matthew 21:30: "the same thing-C"
+      - Matthew 23:35: "guilty-A [you(scribes) killing all the good/righteous people]"
+      - Matthew 6:10: "kingdom-B", "things-A"
+    variations: |
+      - -A, -B, -C: tracking distinct referents of same type
+      - servants-A vs servants-B: different groups
+      - thing-A vs thing-C: different propositions/events
+      - kingdom-B: specific sense of "kingdom"
+
+  - name: Complex/Simple Parallelism
+    description: |
+      Difficult concepts presented twice: (complex) literal form, (simple) dynamic equivalent.
+      Aids comprehension by providing both formal and functional translations.
+      NIV: single rendering
+      CNL: (complex)...(simple)... showing both literal and dynamic
+    phase: Both (stronger in He2/Matthew)
+    examples:
+      - Matthew 6:10: "(complex) We(people) pray-hope [your(Father's) kingdom-B come]. (simple) We(people) pray-hope [you(Father) rule us(people)]."
+      - Matthew 23:13: "(complex) (literal) You(scribes) close the door of the kingdom-B... (complex) (dynamic) The things [that you(scribes) teach...]... (simple) (literal)... (simple) (dynamic)..."
+      - Matthew 22:2: "(complex) ['The kingdom-B of heaven is like...'] (simple) ['God calls-A people...']"
+    variations: |
+      - (complex)...(simple): basic parallelism
+      - (complex) (literal)...(complex) (dynamic): four-way expansion
+      - (simple) (literal)...(simple) (dynamic): clarifying pair
+      - Applies to difficult theological or metaphorical concepts
+
+  - name: Literal/Dynamic Parallelism
+    description: |
+      Figurative language rendered both literally and dynamically.
+      (literal) preserves metaphor, (dynamic) explains meaning.
+      NIV: typically chooses one approach
+      CNL: provides both for translator choice
+    phase: Both (stronger in He2/Matthew)
+    examples:
+      - Matthew 23:13: "(complex) (literal) You(scribes) close the door of the kingdom-B of heaven... (complex) (dynamic) The things [that you(scribes) teach to people _genericImplicit] prevent [people from entering the kingdom-B of heaven] [just-like a person prevents [another person from entering a room [by closing the door]]]"
+      - Matthew 13:16: "(literal) But you(followers) are blessed... [because your(followers') eyes see things _implicit]. (dynamic) But you(followers) are blessed... [because you(followers) understand things _implicit]"
+    variations: |
+      - (literal): preserves source metaphor/idiom
+      - (dynamic): functional equivalent explanation
+      - [just-like X]: explicit simile marker showing comparison
+      - Often combined with (complex)/(simple)
+
+  - name: Emphasis Markers
+    description: |
+      Focus and emphasis marked with _emphasized, _frameInferable, _dual, _routinely.
+      Shows pragmatic information and aspectual nuances.
+      NIV: relies on word order/context
+      CNL: explicit marking of focus and aspect
+    phase: Both
+    examples:
+      - Mark 6:17: "For Herod _emphasized commanded soldiers _implicitNecessary"
+      - Mark 13:11: "For you(followers) _emphasized will not be speaking. But the Holy-Spirit _emphasized will be speaking"
+      - Matthew 7:25: "Then _implicit the rain _frameInferable fell-A"
+      - Mark 11:15: "people [who were selling _routinely money]"
+      - Mark 11:7: "Those followers/disciples _dual brought-C that horse/donkey"
+    variations: |
+      - _emphasized: contrastive focus
+      - _frameInferable: recoverable from frame semantics
+      - _dual: exactly two participants
+      - _routinely: habitual aspect
+      - _past: past tense marker (where needed for clarity)
+
+  - name: Temporal Frame Setting
+    description: |
+      Temporal adverbials often fronted in brackets to set scene.
+      Format: [Time expression] main clause
+      NIV: varied temporal positioning
+      CNL: consistent initial temporal framing
+    phase: Both
+    examples:
+      - Genesis 11:20: "[When Reu was 32 years old] Reu had a son named Serug"
+      - Acts 15:33: "[After Judas and Silas stayed in Antioch for some time], the people... prayed"
+      - Mark 14:28: "But [after I(Jesus) become alive again,] I(Jesus) will go to Galilee"
+      - Esther 2:19: "One day the king's servants called... At that time Mordecai was sitting..."
+      - Mark 9:6: "Peter did not know... [because Peter and the other followers/disciples _dual were extremely afraid]"
+    variations: |
+      - [When X]: specific time point
+      - [After X]: sequential
+      - [Before X]: anterior
+      - At that time: anaphoric time reference
+      - One day: indefinite past time
+
+  - name: Conditional Frame Marking
+    description: |
+      Conditionals enclosed in [if X] brackets, showing protasis-apodosis structure.
+      Format: [if condition] result or result [if condition]
+      NIV: if/when/unless clauses (various positions)
+      CNL: bracketed [if], [unless] clauses with clear scope
+    phase: Both
+    examples:
+      - Matthew 12:45: "[if (implicit-situational) this group/generation does not change...] The same thing _event will happen"
+      - Genesis 27:12: "[If the father of me(Jacob) touches me(Jacob)] the father... will know"
+      - 1 Samuel 17:9: "[If that man kills me(Goliath)] then we(Philistines) will become your(Israelites') servants"
+      - Matthew 24:13: "[if a person continues to follow-B _routinely me(Jesus) until the end of that person's life _implicit,] a person will be saved"
+      - Matthew 18:8: "[If your(follower's) hand... causes [you(follower) to sin],] you(follower) (imp) cut-off that hand"
+    variations: |
+      - [if X]: open condition
+      - [unless X]: negative condition
+      - [when X]: temporal/conditional overlap
+      - Position: can be initial or final
+      - (implicit-situational): implicit condition content
+
+  - name: Purpose/Result Clauses
+    description: |
+      Purpose clauses marked with [in order to X] or [so that Y].
+      Result clauses with [so that Y] or unmarked [Y happens].
+      NIV: "to", "so that", "in order to"
+      CNL: consistently bracketed purpose/result expressions
+    phase: Both
+    examples:
+      - Genesis 16:9: "[in order to feed the lion's female lion]"
+      - Joshua 6:11: "[in-order-to sleep during the night]"
+      - Matthew 12:45: "[so that those thoughts and actions please God]"
+      - Acts 21:15: "Then we(disciples) prepared [to travel to Jerusalem]"
+      - 2 Samuel 15:11: "But those men did not know [that Absalom wanted [to become the king]]"
+    variations: |
+      - [in order to X]: purpose (infinitival)
+      - [in-order-to X]: same (hyphenated variant)
+      - [so that Y]: purpose/result (clausal)
+      - [to X]: simple infinitive purpose
+      - Nested: [[inner purpose] outer purpose]
+
+  - name: Relative Clause Marking
+    description: |
+      Relative clauses enclosed in [who/that/which X] brackets.
+      Shows restrictive modification clearly.
+      NIV: relative pronouns with various punctuation
+      CNL: bracketed relatives with clear scope
+    phase: Both
+    examples:
+      - Matthew 22:4: "people [whom I(king) have invited to the meal/feast _implicit]"
+      - 1 Samuel 8:12: "sons [to lead 1000 men]", "other sons [that will lead 50 men]"
+      - Genesis 49:30: "the cave [that is in that field]... the field [that belonged to Machpelah]"
+      - Matthew 6:10: "the things [that you(Father) want [to happen]]"
+      - 2 Samuel 21:20: "the man [who had 6 fingers on each hand]"
+    variations: |
+      - [who X]: human antecedent
+      - [that X]: non-human or human
+      - [which X]: non-human
+      - Nested: [outer [inner] outer]
+      - Reduced: [to do X] (infinitival relative)
+
+  - name: Descriptive vs Restrictive Modifiers
+    description: |
+      Non-restrictive/descriptive modifiers marked with [_descriptive ...].
+      Distinguishes essential vs. supplementary information.
+      NIV: commas for non-restrictive (sometimes ambiguous)
+      CNL: explicit [_descriptive ...] marking
+    phase: Both
+    examples:
+      - Matthew 23:35: "Zechariah, [_descriptive who was the son of Berekiah]"
+      - Matthew 10:6: "people of Israel [_descriptive who are _be-U like sheep [that those sheep's shepherd _implicitNecessary lost]]"
+      - Mark 3:18: "Simon [who was called by people _implicitActiveAgent Zealot]. (footnote) Zealots opposed the Roman government."
+    variations: |
+      - [_descriptive X]: non-restrictive modifier
+      - Unmarked [X]: restrictive modifier
+      - Usually proper names get descriptive modifiers
+      - Followed by footnotes for cultural info
+
+  - name: Iteration and Quantification
+    description: |
+      Repetition and quantity explicitly marked with -iteration, numbers, distributive expressions.
+      NIV: contextually clear quantities
+      CNL: explicit iteration/distribution markers
+    phase: Both
+    examples:
+      - Joshua 6:11: "carry the ark-of-the-covenant around the city -iteration one time"
+      - Nehemiah 11:6: "468 brave men... lived in Jerusalem"
+      - 2 Samuel 15:11: "200 men [who were from Jerusalem] went to Hebron"
+      - Nahum 2:12: "The lion killed many animals... And the lion killed many animals..."
+      - 2 Samuel 21:20: "6 fingers on each hand... 6 toes on each foot"
+    variations: |
+      - -iteration X: explicit repetition count
+      - Cardinal numbers: "200 men", "468 men"
+      - Distributive: "each hand", "each foot"
+      - many: unspecified large quantity
+      - all: universal quantifier
+
+  - name: Comparison and Simile Markers
+    description: |
+      Comparisons explicitly marked with [just-like X] or [like X] brackets.
+      Shows analogical relationships clearly.
+      NIV: "like", "as"
+      CNL: [just-like X] or [like X] with full scope bracketed
+    phase: Both
+    examples:
+      - Matthew 6:10: "[just-like the things [that you(Father) want [to happen]] happen in heaven]"
+      - Matthew 23:13: "[just-like a person prevents [another person from entering a room [by closing the door]]]"
+      - Matthew 22:2: "[like a king [who prepared-B a wedding big meal for that king's son]]"
+      - 1 Samuel 6:6: "[like the Egyptians and the king of Egypt were stubborn]"
+      - Matthew 10:6: "[_descriptive who are _be-U like sheep [that those sheep's shepherd _implicitNecessary lost]]"
+    variations: |
+      - [just-like X]: close analogy
+      - [like X]: looser comparison
+      - [_be-U like X]: identity-like comparison
+      - Used in parables and similes
+      - Often nested in complex structures
+
+  - name: Negation Scope Marking
+    description: |
+      Scope of negation made explicit through bracketing and clause structure.
+      NIV: negation scope sometimes ambiguous
+      CNL: bracket scope shows what is negated
+    phase: Both
+    examples:
+      - 2 Samuel 7:7: "But I(Yahweh) never asked [the Israelites' leaders to build a house made of cedar wood for me(Yahweh)]"
+      - Genesis 11:30: "Sarai was not able [to have children]"
+      - Matthew 23:13: "You(scribes) do not let [God rule you(scribes)]"
+      - Mark 5:19: "But Jesus did not allow [that man to go with Jesus]"
+      - Ruth 2:8: "You(Ruth) (imp) do not go to another field"
+    variations: |
+      - "not X": simple negation
+      - "do not X": negated imperative
+      - "never X": total negation
+      - Bracketing shows scope of negation
+      - "was not able [to X]": negated ability
+
+  - name: Pronoun Type Differentiation
+    description: |
+      Different types of "we/us" marked: inclusive (_incl), exclusive (_excl), dual (_dual).
+      Shows precise reference of plural pronouns.
+      NIV: unmarked "we"
+      CNL: we(X) _incl / we(X) _excl / _dual
+    phase: Both
+    examples:
+      - Matthew 26:46: "We(Jesus) _incl go _suggestiveLets"
+      - Mark 10:35: "we(James) _excl want [you(Jesus) to do for us(James) _excl...]"
+      - Mark 11:7: "Those followers/disciples _dual brought-C"
+      - Mark 9:6: "Peter and the other followers/disciples _dual were extremely afraid"
+      - Matthew 24:3: "You(Jesus) (imp) tell us(followers) _excl about these things-B"
+    variations: |
+      - _incl: includes addressee (speaker + hearer)
+      - _excl: excludes addressee (speaker + others, not hearer)
+      - _dual: exactly two people
+      - Critical for translation into languages with these distinctions
+
+  - name: Frame Semantics and Inferable Participants
+    description: |
+      Participants inferable from frame semantics marked with _frameInferable, _implicitNecessary.
+      NIV: relies on frame knowledge
+      CNL: explicit marking of frame-based inference
+    phase: Both
+    examples:
+      - Matthew 7:25: "Then _implicit the rain _frameInferable fell-A"
+      - Matthew 21:30: "the father _frameInferable went to the other son"
+      - Mark 6:17: "Herod _emphasized commanded soldiers _implicitNecessary [to arrest John]"
+      - Matthew 10:6: "sheep [that those sheep's shepherd _implicitNecessary lost]"
+    variations: |
+      - _frameInferable: recoverable from scenario/frame
+      - _implicitNecessary: logically required participant
+      - Often with verbs requiring specific participants
+      - Rain→fall, father→son, shepherd→sheep frames
+
+  - name: Aspect and Tense Marking
+    description: |
+      Aspectual information marked with _routinely, _past, become/become, finish/complete.
+      Tense sometimes marked where crucial for clarity.
+      NIV: English tense-aspect system
+      CNL: explicit aspect markers for L2 clarity
+    phase: Both
+    examples:
+      - Mark 11:15: "people [who were selling _routinely money]"
+      - Matthew 12:5: "And you(Pharisees) read _past in Moses's _implicit religious laws"
+      - Mark 14:28: "But [after I(Jesus) become alive again,]"
+      - Genesis 16:5: "[When my(Sarai's) servant became pregnant]"
+      - Matthew 24:13: "[if a person continues to follow-B _routinely me(Jesus)...]"
+    variations: |
+      - _routinely: habitual aspect
+      - _past: past tense marker
+      - become/became: inchoative/change of state
+      - continues to X: progressive/durative
+      - finish/complete: perfective/telic
+
+  - name: Cultural and Linguistic Footnotes
+    description: |
+      Background information, textual variants, and explanations in (footnote) or -Footnote.
+      Helps translator understand context.
+      NIV: footnotes outside text
+      CNL: inline footnotes integrated into flow
+    phase: Both
+    examples:
+      - Genesis 23:19: "-Footnote Later people in Canaan called Mamre Hebron"
+      - Mark 9:29: "(footnote) Some manuscripts _copiesInLDV of this part of the Scriptures also say..."
+      - Mark 3:18: "(footnote) Zealots opposed the Roman government"
+      - Joshua 5:9: "Gilgal (footnote) means take-away"
+      - Ruth 4:12: "(footnote) Tamar was from another country [just like Ruth was from another country]"
+    variations: |
+      - (footnote): inline footnote
+      - -Footnote: alternative format
+      - _copiesInLDV: manuscript variants
+      - Etymology, cultural background, textual issues
+
+  - name: Generic and Specific Reference
+    description: |
+      Generic reference marked with _generic or people _generic.
+      Distinguishes specific individuals from generic/universal statements.
+      NIV: context-dependent interpretation
+      CNL: explicit generic marking
+    phase: Both
+    examples:
+      - Matthew 23:13: "(complex) (literal) You(scribes) close the door of the kingdom-B of heaven in front of people _generic"
+      - Matthew 23:13: "The things [that you(scribes) teach to people _genericImplicit]"
+      - Matthew 7:25: "that house was built by that person _implicitActiveAgent on stone"
+    variations: |
+      - people _generic: any person, people in general
+      - people _genericImplicit: unstated generic referent
+      - a person: indefinite/generic individual
+      - Contrasts with specific "the people", "those people"
+
+  - name: He1-Specific Patterns
+    description: |
+      Patterns more common or unique to Hebrew narrative (Ruth, Jonah, Genesis, Joshua, 1-2 Samuel, Nehemiah, Esther, Daniel, Nahum).
+      Narrative structure, genealogy, OT-specific elements.
+    phase: He1-only
+    examples:
+      - Genesis 11:20: "[When Reu was 32 years old] Reu had a son named Serug" - genealogical formula
+      - Ruth 1:14: "Then Orpah kissed Naomi. And Orpah goodbye Naomi" - narrative sequence
+      - 1 Samuel 9:3: "One day Kish's donkeys run-away" - narrative scene-setting
+      - Nahum 2:12: "The lion killed... And the lion killed... The lion filled... The lion brought..." - poetic repetition
+      - Genesis 6:9: "-Title God saves Noah from the flood" - narrative title format
+    variations: |
+      - Genealogical formulas: "[When X was Y years old] X had a son named Z"
+      - Narrative sequences: "Then X did Y. And X did Z."
+      - Scene-setting: "One day...", "At that time..."
+      - OT poetic patterns: repetitive parallelism
+      - "run-away", "goodbye" (Hebrew narrative verbs)
+
+  - name: He2-Specific Patterns
+    description: |
+      Patterns more common or unique to Greek NT (Matthew, Mark, Acts, Titus, Philemon, 2 John).
+      Theological vocabulary, complex/simple parallelism, NT-specific structures.
+    phase: He2-only
+    examples:
+      - Matthew 6:10: "kingdom-B", "kingdom-B of heaven" - theological terminology
+      - Matthew 23:13: "(complex)...(simple)..." - extensive parallelism for clarity
+      - Titus 1:9: "We(Paul) taught... And we(Paul) are able..." - epistolary "we"
+      - Acts 15:33: "the people [who believe in Jesus]" - Christian community reference
+      - Matthew 22:2: "The kingdom-B of heaven is like..." - parabolic formula
+    variations: |
+      - "kingdom-B", "kingdom-B of heaven": consistent theological term
+      - Extensive (complex)/(simple) parallelism
+      - "people [who believe in Jesus]": Christian believers
+      - Epistolary conventions: "We(Paul)"
+      - Parabolic formulas: "The kingdom-B... is like..."
+      - "Lord-A": theological title marking
+
+summary:
+  total_patterns: 31
+  core_transformations:
+    - Pronoun → Explicit referent with (referent) notation
+    - Subordinate clauses → [bracketed] hierarchical structure
+    - Direct speech → ["quoted"] with explicit framing
+    - Complex sentences → One predicate per sentence
+    - Imperatives → (imp) marking
+    - Implicit info → _implicit or (implicit-X) tags
+    - Names → "role named Name" on first mention
+    - L2 vocabulary → "word1/word2" pairings
+    - Rhetorical questions → (rhetorical)...(statement) pairs
+    - Passives → Active voice with "_implicitActiveAgent"
+    - Discourse structure → (title), _paragraph, (footnote) markers
+    - Figurative language → (literal)...(dynamic) parallelism
+    - Theological concepts → (complex)...(simple) parallelism
+
+  he1_distinguishing_features:
+    - Genealogical formulas with age patterns
+    - Narrative sequence markers (Then X. And X. Then X.)
+    - Scene-setting temporal frames ("One day", "At that time")
+    - OT poetic repetition patterns
+    - Hebrew-specific verbs (run-away, goodbye)
+    - -Title format for narrative sections
+
+  he2_distinguishing_features:
+    - Extensive (complex)/(simple) parallelism
+    - (literal)/(dynamic) rendering pairs
+    - "kingdom-B of heaven" consistent theological terminology
+    - "people [who believe in Jesus]" Christian community references
+    - Parabolic formulas
+    - Epistolary "we(Paul)" conventions
+    - "Lord-A" with theological marking suffixes
+
+  both_phases_shared:
+    - Pronoun coreference resolution
+    - Bracket-enclosed subordinate clauses
+    - Quote framing
+    - Clause segmentation (one predicate)
+    - Imperative (imp) marking
+    - Implicit information marking
+    - Name introductions
+    - L2 vocabulary pairing
+    - Rhetorical question reformulation
+    - Passive to active conversion
+    - Most grammatical and discourse markers
+
+methodology:
+  sample_size: 500 verses (full chunk-aa.tsv)
+  sampling_strategy: Systematic sampling every 10th verse with offset variations
+  books_represented:
+    he1: Genesis, Joshua, Ruth, 1-2 Samuel, Nehemiah, Esther, Daniel, Jonah, Nahum
+    he2: Matthew, Mark, Acts, Titus, Philemon
+  niv_baseline: Memorized NIV knowledge used to infer NIV→CNL transformations
+  pattern_identification: Linguistic terminology applied (coreference, deixis, subordination, etc.)

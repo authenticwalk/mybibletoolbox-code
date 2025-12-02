@@ -1,0 +1,593 @@
+patterns:
+  - name: Parenthetical Pronoun Disambiguation
+    description: Pronouns are explicitly disambiguated by adding the referent in parentheses
+    transformation: "NIV: 'he said to him' → CNL: 'he(David) said to him(Saul)'"
+    phase: Both
+    verses:
+      - "2 Samuel 14:13"
+      - "Mark 10:36"
+      - "Genesis 44:15"
+      - "Daniel 3:29"
+      - "Matthew 17:12"
+    exceptions: "Pronouns may include possessive forms like your(David's), my(Joseph's)"
+
+  - name: Bracket Nesting for Clause Embedding
+    description: Nested clauses are wrapped in brackets to show syntactic hierarchy and embedding levels
+    transformation: "NIV: 'The woman who came yesterday said that she saw the man who stole the bread' → CNL: 'The woman [who came yesterday] said [that she saw [the man [who stole the bread]]]'"
+    phase: Both
+    verses:
+      - "2 Samuel 14:13"
+      - "Genesis 35:7"
+      - "Genesis 44:5"
+      - "Mark 6:15"
+      - "Daniel 3:29"
+    exceptions: "Deeply nested structures can have 4+ levels of brackets"
+
+  - name: Imperative Marker
+    description: Imperative mood verbs are explicitly marked with (imp) tag
+    transformation: "NIV: 'Go to the city' → CNL: '(imp) You(David) go to the city'"
+    phase: Both
+    verses:
+      - "2 Samuel 3:13"
+      - "2 Samuel 21:6"
+      - "Nehemiah 5:19"
+      - "Genesis 24:31"
+      - "Matthew 9:38"
+    exceptions: "Often combined with explicit subject pronouns"
+
+  - name: Implicit Information Marking
+    description: Information implicit in NIV but necessary for understanding is marked with various implicit tags
+    transformation: "NIV: 'after this' → CNL: '[after this (implicit-situational)]' or '_implicit'"
+    phase: Both
+    verses:
+      - "Matthew 13:30"
+      - "Matthew 12:30"
+      - "Matthew 10:57"
+      - "2 Samuel 3:59"
+      - "Mark 7:3"
+    exceptions: "Multiple variants: (implicit-situational), (implicit-info), _implicit, _implicitNecessary, _implicitActiveAgent, _implicitType"
+
+  - name: Quote Framing with Brackets
+    description: Direct speech is enclosed in brackets rather than quotation marks
+    transformation: "NIV: 'He said, \"Go home\"' → CNL: 'He said, [\"Go home\"]'"
+    phase: Both
+    verses:
+      - "Genesis 25:23"
+      - "Genesis 24:31"
+      - "2 Samuel 8:17"
+      - "Mark 6:25"
+      - "Genesis 43:27"
+    exceptions: "Can nest multiple levels of reported speech with brackets"
+
+  - name: Paragraph and Title Markers
+    description: Discourse structure marked with (paragraph), (title), (footnote), (comment-begin) tags
+    transformation: "NIV: '[Section heading]' → CNL: '(title) [Section heading text]'"
+    phase: Both
+    verses:
+      - "Mark 10:36"
+      - "Mark 6:15"
+      - "Genesis 41:37"
+      - "Matthew 13:1"
+      - "1 Samuel 23:1"
+    exceptions: "Paragraph markers often at verse start; titles introduce new sections"
+
+  - name: Name Introduction Formula
+    description: Names introduced with explicit relationship patterns using 'named' or 'was named'
+    transformation: "NIV: 'his wife Rebekah' → CNL: 'his wife named Rebekah'"
+    phase: Both
+    verses:
+      - "Genesis 11:29"
+      - "Daniel 7:4"
+      - "2 Samuel 8:17"
+      - "Genesis 36:33"
+      - "1 Samuel 10:7"
+    exceptions: "Consistent pattern across all naming contexts"
+
+  - name: Relative Clause Bracketing
+    description: Relative clauses marked with brackets and explicit relative pronouns retained
+    transformation: "NIV: 'the man who came' → CNL: 'the man [who came]'"
+    phase: Both
+    verses:
+      - "Genesis 35:7"
+      - "Mark 6:7"
+      - "Joshua 13:13"
+      - "Daniel 7:4"
+      - "Matthew 17:12"
+    exceptions: "All relative clauses bracketed regardless of length"
+
+  - name: Coreference with First-as-Third
+    description: First person pronouns replaced with third person when speaker refers to self by name/title
+    transformation: "NIV: 'I the Son of Man will come' → CNL: 'the Son-of-Man _1stAs3rd will come'"
+    phase: He2-only
+    verses:
+      - "Matthew 19:28"
+      - "Matthew 17:12"
+      - "Matthew 16:27"
+      - "Matthew 26:64"
+      - "Matthew 12:30"
+    exceptions: "Marked with _1stAs3rd tag; primarily Jesus referring to himself as Son of Man"
+
+  - name: Dual Pronoun Marking
+    description: Dual number explicitly marked on pronouns when referring to exactly two people
+    transformation: "NIV: 'What do you want me to do for you?' → CNL: 'What do you(James) _dual want [me(Jesus) to do for you(James) _dual]?'"
+    phase: He2-only
+    verses:
+      - "Mark 10:36"
+      - "Mark 9:4"
+      - "Matthew 17:1"
+    exceptions: "Only appears in NT Greek contexts where dual exists"
+
+  - name: Rhetorical Question Marking
+    description: Rhetorical questions tagged with (rhetorical) followed by statement equivalent
+    transformation: "NIV: 'Who can do this?' → CNL: '(rhetorical) Who can do this? (statement) No one can do this.'"
+    phase: Both
+    verses:
+      - "Mark 9:19"
+      - "Matthew 27:4"
+      - "Mark 14:63"
+      - "Matthew 9:15"
+      - "Matthew 12:39"
+    exceptions: "Often paired with (statement) version showing intended meaning"
+
+  - name: Passive to Active Agent Marking
+    description: Passive constructions made explicit with active agent marked as _implicitActiveAgent
+    transformation: "NIV: 'was healed' → CNL: 'was healed by Jesus _implicitActiveAgent'"
+    phase: Both
+    verses:
+      - "Matthew 17:18"
+      - "Matthew 9:22"
+      - "Matthew 24:9"
+      - "Matthew 13:14"
+      - "Matthew 2:22"
+    exceptions: "Agent added when recoverable from context"
+
+  - name: Purpose Clause Marking
+    description: Purpose marked with [in-order-to] or [so that] constructions in brackets
+    transformation: "NIV: 'He went to buy food' → CNL: 'He went [in-order-to buy food]'"
+    phase: Both
+    verses:
+      - "Genesis 39:11"
+      - "Genesis 26:1"
+      - "Nehemiah 9:36"
+      - "Joshua 2:6"
+      - "Matthew 10:8"
+    exceptions: "Clear syntactic marking of purpose/result clauses"
+
+  - name: Temporal Clause Bracketing
+    description: Temporal clauses bracketed with explicit temporal markers
+    transformation: "NIV: 'When he arrived, they left' → CNL: '[When he arrived] they left'"
+    phase: Both
+    verses:
+      - "Genesis 17:22"
+      - "Genesis 21:4"
+      - "Genesis 25:11"
+      - "2 Samuel 2:11"
+      - "Joshua 4:18"
+    exceptions: "Includes [After X], [When X], [While X] patterns"
+
+  - name: Comparative Like-Clause
+    description: Comparisons marked with [like X] or [just-like X] in brackets
+    transformation: "NIV: 'as an eagle has wings' → CNL: '[like an eagle has wings]'"
+    phase: Both
+    verses:
+      - "Daniel 7:4"
+      - "Nahum 3:12"
+      - "Genesis 21:9"
+      - "Matthew 10:16"
+      - "Genesis 49:21"
+    exceptions: "Consistent bracketing of simile constructions"
+
+  - name: Coordination Segmentation
+    description: Coordinate clauses separated and often repeated subject/verb for clarity
+    transformation: "NIV: 'Jacob built an altar and named it Bethel' → CNL: 'Jacob built an altar. and Jacob named that place Bethel'"
+    phase: Both
+    verses:
+      - "Genesis 35:7"
+      - "Genesis 47:28"
+      - "Genesis 11:17"
+      - "Genesis 11:29"
+      - "Genesis 4:19"
+    exceptions: "Lowercase 'and' suggests continuation; subjects often repeated"
+
+  - name: Demonstrative Specificity
+    description: Demonstratives made specific by adding clarifying noun or relative clause
+    transformation: "NIV: 'that man' → CNL: 'that man [who came yesterday]' or 'that man named David'"
+    phase: Both
+    verses:
+      - "2 Samuel 20:21"
+      - "Genesis 33:13"
+      - "Daniel 9:21"
+      - "Mark 6:25"
+      - "Matthew 2:22"
+    exceptions: "Adds specificity to vague demonstrative references"
+
+  - name: Vocabulary L2 Pairings with Underscore
+    description: Complex or abstract vocabulary paired with simpler alternatives using underscore tags
+    transformation: "NIV: 'glory' → CNL: 'glory _implicitNecessary' or 'righteous' → 'righteous/good _morally'"
+    phase: Both
+    verses:
+      - "Matthew 16:27"
+      - "Matthew 13:30"
+      - "Nahum 3:4"
+      - "Mark 9:45"
+      - "Titus 3:3"
+    exceptions: "Multiple tag types: _morally, _routinely, _emphasized, _descriptive, _frameInferable"
+
+  - name: Literal-Dynamic Pairs
+    description: Difficult expressions given both literal and dynamic meaning alternatives
+    transformation: "NIV: 'gather sheep' → CNL: '(literal) gather sheep (dynamic) call people to follow me'"
+    phase: He2-only
+    verses:
+      - "Matthew 12:30"
+      - "Matthew 12:44"
+      - "Matthew 6:23"
+      - "Matthew 11:19"
+      - "Matthew 10:27"
+    exceptions: "Marked as (literal) and (dynamic) or (complex) and (simple)"
+
+  - name: Footnote Inline Integration
+    description: Footnotes integrated inline with -footnote or (footnote) markers
+    transformation: "NIV: '[footnote at bottom]' → CNL: '-footnote Bethel means the house of God.'"
+    phase: Both
+    verses:
+      - "Genesis 35:7"
+      - "2 Samuel 5:20"
+      - "Genesis 30:18"
+      - "Matthew 26:64"
+      - "Matthew 23:7"
+    exceptions: "Name etymologies and explanatory notes marked inline"
+
+  - name: Hyperbolic Marking
+    description: Hyperbolic language explicitly marked with _hyperbolic tag
+    transformation: "NIV: 'all nations' → CNL: 'all _hyperbolic nations'"
+    phase: He2-only
+    verses:
+      - "Matthew 24:9"
+      - "Mark 7:3"
+      - "Matthew 6:33"
+    exceptions: "Identifies non-literal universal quantifiers"
+
+  - name: Frame-Inferable Additions
+    description: Elements inferable from semantic frames marked with _frameInferable
+    transformation: "NIV: 'Jesus sat' → CNL: 'Jesus sit-down by the lake _frameInferable'"
+    phase: He2-only
+    verses:
+      - "Matthew 13:1"
+      - "Matthew 13:30"
+      - "Mark 6:47"
+      - "Matthew 11:19"
+      - "Matthew 24:30"
+    exceptions: "Adds contextually obvious elements from situation frame"
+
+  - name: Metonymy Marking
+    description: Metonymic expressions tagged to show figure of speech
+    transformation: "NIV: 'all nations hated them' → CNL: 'all nations of people _metonymy hated them'"
+    phase: He2-only
+    verses:
+      - "Matthew 24:9"
+      - "Matthew 17:25"
+    exceptions: "Identifies metonymic usage for clarity"
+
+  - name: Iteration Marking
+    description: Repeated actions marked with -iteration suffix showing count
+    transformation: "NIV: 'marched around the city once' → CNL: 'walk around the city -iteration 1 time'"
+    phase: He1-only
+    verses:
+      - "Joshua 6:3"
+      - "Joshua 6:16"
+    exceptions: "Marks counted repetitions explicitly"
+
+  - name: Episode Boundaries
+    description: Episode boundaries marked with -Begin-episode or -Title tags
+    transformation: "NIV: '[new paragraph]' → CNL: '-Begin-episode [text]' or '-Title [heading]'"
+    phase: Both
+    verses:
+      - "Genesis 9:21"
+      - "Genesis 41:37"
+      - "Genesis 38:1"
+      - "1 Samuel 23:1"
+      - "2 Samuel 22:1"
+    exceptions: "Marks major discourse boundaries and narrative units"
+
+  - name: Conditional Clause Bracketing
+    description: Conditional clauses explicitly bracketed with [If X] or [Unless X]
+    transformation: "NIV: 'If you go there, I will follow' → CNL: '[If you(David) go there] I(Jonathan) will follow'"
+    phase: Both
+    verses:
+      - "Genesis 26:10"
+      - "Genesis 20:7"
+      - "Matthew 12:30"
+      - "Mark 10:15"
+      - "Genesis 44:9"
+    exceptions: "All conditional protases clearly marked"
+
+  - name: Seeking Attention Vocatives
+    description: Vocatives and attention-seeking calls marked with seek-attention verb
+    transformation: "NIV: 'O Lord' → CNL: 'seek-attention Lord' or 'God seek-attention Jacob'"
+    phase: He1-only
+    verses:
+      - "Genesis 46:2"
+    exceptions: "Marks vocative function explicitly"
+
+  - name: Number Agreement Preservation
+    description: Number agreement explicitly preserved in verb forms and pronouns
+    transformation: "NIV: 'they were' → CNL: 'those people [who were from X] were'"
+    phase: Both
+    verses:
+      - "Nehemiah 7:21"
+      - "Nehemiah 7:27"
+      - "Nehemiah 7:12"
+      - "Joshua 15:57"
+      - "Joshua 15:59"
+    exceptions: "Maintains grammatical number throughout chains"
+
+  - name: Collective to Distributed
+    description: Collective actions distributed to individuals when needed
+    transformation: "NIV: 'the army returned' → CNL: 'each soldier returned to that soldier's house'"
+    phase: Both
+    verses:
+      - "2 Samuel 20:22"
+      - "Joshua 10:21"
+    exceptions: "Shows distribution over collective groups"
+
+  - name: Possessive Chain Clarification
+    description: Long possessive chains clarified with repeated possessor marking
+    transformation: "NIV: 'his father's house' → CNL: 'the house of his(David's) father' or 'his(David's) father's house'"
+    phase: Both
+    verses:
+      - "Genesis 38:13"
+      - "2 Samuel 14:13"
+      - "Genesis 46:18"
+      - "Matthew 16:27"
+    exceptions: "Possessive 's chains made explicit with referents"
+
+  - name: Alternative Verb Forms
+    description: Verbs marked with suffix letters showing alternative aspects or readings
+    transformation: "NIV: 'appeared' → CNL: 'appeared-C' or 'believe' → 'believe-B'"
+    phase: Both
+    verses:
+      - "Mark 9:4"
+      - "Mark 10:15"
+      - "Mark 3:9"
+      - "Acts 15:14"
+      - "Matthew 5:32"
+    exceptions: "Suffixes like -A, -B, -C mark aspectual or sense distinctions; unclear system"
+
+  - name: Subaction Marking
+    description: Implicit subactions or preparatory actions marked with (implicit-subaction)
+    transformation: "NIV: 'they sat down' → CNL: '(implicit-subaction) Jesus's followers told [the people to sit-down]. So the people sit-down'"
+    phase: He2-only
+    verses:
+      - "Mark 6:40"
+      - "Mark 12:7"
+    exceptions: "Shows intermediate steps between events"
+
+  - name: Background Information Marking
+    description: Background or parenthetical information marked with (implicit-background)
+    transformation: "NIV: 'Jesus (called the Christ)' → CNL: 'Jesus (implicit-background) call Jesus Christ'"
+    phase: He2-only
+    verses:
+      - "Matthew 1:16"
+    exceptions: "Marks backgrounded or explanatory material"
+
+  - name: Descriptive Modifier Marking
+    description: Descriptive relative clauses marked with _descriptive tag
+    transformation: "NIV: 'my son whom I love' → CNL: 'my(God's) Son, [ _descriptive whom I(God) love very much]'"
+    phase: Both
+    verses:
+      - "Mark 1:11"
+      - "Matthew 22:44"
+      - "Matthew 18:31"
+      - "Matthew 10:12"
+    exceptions: "Distinguishes restrictive vs non-restrictive relatives"
+
+  - name: Different Noun Index Marking
+    description: When same noun type appears multiple times with different referents, marked with _differentNounIndex
+    transformation: "NIV: 'the servants... other servants' → CNL: 'servants-A... other servants-B _differentNounIndex'"
+    phase: He2-only
+    verses:
+      - "Matthew 18:31"
+    exceptions: "Disambiguates multiple tokens of same noun"
+
+  - name: Restrictive Relative Marking
+    description: Restrictive relative clauses marked with _restrictive tag
+    transformation: "NIV: 'people who are on earth' → CNL: 'people [_restrictive who are on the earth]'"
+    phase: He2-only
+    verses:
+      - "Matthew 24:30"
+    exceptions: "Opposite of _descriptive; marks essential identification"
+
+  - name: Other-Thing-List Coordination
+    description: Items in coordinated lists marked with _otherThingList tag
+    transformation: "NIV: 'one for Moses and one for Elijah' → CNL: '1 shelter _otherThingList will be for Moses'"
+    phase: He2-only
+    verses:
+      - "Matthew 17:4"
+    exceptions: "Marks items in parallel lists"
+
+  - name: Quoted Name Explanation
+    description: When explaining terms in quotes, marked with _inQuotesPreferred
+    transformation: "NIV: 'when I say stone' → CNL: '[When Jesus says the word named stone _inQuotesPreferred]'"
+    phase: He2-only
+    verses:
+      - "Matthew 21:44"
+    exceptions: "Metalinguistic use of quoted words"
+
+  - name: Suggestive Imperative
+    description: Imperatives with hortative/suggestive force marked with _suggestiveLets
+    transformation: "NIV: 'Come, let us kill him' → CNL: 'You(people) kill _suggestiveLets this person'"
+    phase: He2-only
+    verses:
+      - "Matthew 21:38"
+      - "Mark 12:7"
+    exceptions: "Marks hortative/jussive suggestions"
+
+  - name: Adverb Marking
+    description: Adverbial expressions marked with _adv or _Adv suffix
+    transformation: "NIV: 'Jesus spoke first' → CNL: 'Jesus spoke first _adv'"
+    phase: He2-only
+    verses:
+      - "Matthew 17:25"
+      - "Matthew 17:10"
+      - "Mark 9:11"
+    exceptions: "Marks adverbial constituents explicitly"
+
+  - name: Inclusion Marking
+    description: Inclusive reference marked with _incl tag
+    transformation: "NIV: 'we are here' → CNL: 'we(followers) _incl are here'"
+    phase: He2-only
+    verses:
+      - "Matthew 17:4"
+      - "Mark 10:33"
+    exceptions: "Shows speaker includes addressee in 'we'"
+
+  - name: Exclusion Marking
+    description: Exclusive reference marked with _excl tag
+    transformation: "NIV: 'Why were we not able' → CNL: 'Why were we(followers) _excl not able'"
+    phase: He2-only
+    verses:
+      - "Matthew 17:19"
+    exceptions: "Shows speaker excludes addressee from 'we'"
+
+  - name: Name Explanation Formulas
+    description: Name etymologies given in special formula with -Footnote or _ExplainName
+    transformation: "NIV: 'Bethel means house of God' → CNL: 'Bethel (footnote) means the house of God' or 'Rabbi named the word _ExplainName of Hebrew means-C teacher'"
+    phase: Both
+    verses:
+      - "Genesis 35:7"
+      - "2 Samuel 5:20"
+      - "Matthew 23:7"
+      - "Genesis 30:18"
+    exceptions: "Consistent pattern for name meanings"
+
+  - name: Region of Authority Marking
+    description: Titles with implicit domain marked with _RegionofAuthority
+    transformation: "NIV: 'king of Israel' → CNL: 'king of Israel _RegionofAuthority'"
+    phase: He2-only
+    verses:
+      - "Mark 15:32"
+    exceptions: "Shows domain/scope of authority titles"
+
+  - name: Routinely Action Marking
+    description: Habitual or routine actions marked with _routinely tag
+    transformation: "NIV: 'workers deserve wages' → CNL: 'person [who works _routinely] deserves wages'"
+    phase: Both
+    verses:
+      - "Matthew 10:57"
+      - "Matthew 6:33"
+      - "Matthew 24:9"
+    exceptions: "Marks habitual/characteristic actions"
+
+  - name: Morphological Simplification
+    description: Complex verb forms simplified to base + explicit tense/aspect marking
+    transformation: "NIV: 'lived' → CNL: 'live-B' or 'was living'"
+    phase: Both
+    verses:
+      - "Genesis 14:22"
+      - "2 Samuel 2:11"
+      - "Mark 1:23"
+    exceptions: "Simplified morphology with explicit temporal anchoring"
+
+  - name: Then-D Temporal Result
+    description: Temporal result sequences marked with Then-D vs sequential Then
+    transformation: "NIV: 'Then' → CNL: 'Then-D' (consequence) vs 'Then' (sequence)"
+    phase: Both
+    verses:
+      - "Matthew 18:31"
+      - "Matthew 9:22"
+      - "Mark 5:35"
+    exceptions: "Then-D shows logical result; Then shows sequence"
+
+  - name: Copular Predicate Marking
+    description: Copular 'be' constructions marked with is-V or be-X variants
+    transformation: "NIV: 'this is good' → CNL: 'this is-V good' or 'if light is darkness' → 'if light be-X darkness'"
+    phase: Both
+    verses:
+      - "Matthew 17:4"
+      - "Matthew 6:23"
+    exceptions: "Marks copular vs existential vs auxiliary uses"
+
+  - name: Yes-No Question Type Marking
+    description: Yes/no questions that expect positive answer marked as (yesrhetorical)
+    transformation: "NIV: 'Should you not pity?' → CNL: '(yesrhetorical) Should you(servant) pity...? (statement) You should pity...'"
+    phase: He2-only
+    verses:
+      - "Matthew 18:33"
+    exceptions: "Subset of rhetorical questions expecting yes"
+
+  - name: LDV Reference Tracking
+    description: Elements serving as Local Discourse Variables marked with _inLDV
+    transformation: "NIV: 'that person's wisdom' → CNL: 'that person's wisdom _inLDV'"
+    phase: He2-only
+    verses:
+      - "Matthew 11:19"
+    exceptions: "Tracks discourse referents for resolution"
+
+  - name: Generic Reference Marking
+    description: Generic or indefinite references marked with _generic
+    transformation: "NIV: 'people greet them' → CNL: 'people _generic to greet those people'"
+    phase: He2-only
+    verses:
+      - "Matthew 23:7"
+      - "Mark 1:12"
+    exceptions: "Shows non-specific reference"
+
+  - name: Present-Time Relative Marking
+    description: Present-tense relative clauses marked with _present
+    transformation: "NIV: 'Jesus whom people call Christ' → CNL: 'Jesus [whom people call _present Christ]'"
+    phase: He2-only
+    verses:
+      - "Matthew 1:16"
+    exceptions: "Distinguishes present from past in relatives"
+
+  - name: Right-Side Positional Marking
+    description: Spatial expressions of honor/position marked with right-B or right-C
+    transformation: "NIV: 'sit at my right hand' → CNL: 'sit at my right-B side'"
+    phase: He2-only
+    verses:
+      - "Matthew 22:44"
+    exceptions: "Marks figurative positional meanings"
+
+  - name: Comment Bracketing
+    description: Editorial or cultural comments marked with (comment-begin)
+    transformation: "NIV: '[cultural note]' → CNL: '(comment-begin) [cultural explanation]'"
+    phase: He2-only
+    verses:
+      - "Mark 7:3"
+    exceptions: "Marks asides or explanatory comments"
+
+  - name: Relation-Not-Argument Marking
+    description: Elements expressing relation rather than core argument marked with _relationNotArgument
+    transformation: "NIV: 'will come with angels' → CNL: 'will come with _relationNotArgument angels'"
+    phase: He2-only
+    verses:
+      - "Matthew 16:27"
+    exceptions: "Distinguishes adjuncts from arguments"
+
+  - name: Morpheme Explanation
+    description: Morphemes or grammatical elements explained with special markers
+    transformation: "NIV: 'in glory' → CNL: '(complex) in-H glory (simple) in great power'"
+    phase: He2-only
+    verses:
+      - "Matthew 16:27"
+    exceptions: "Explains prepositional or grammatical meanings"
+
+  - name: Unit System Alternation
+    description: Measurements given in both literal ancient and modern equivalents
+    transformation: "NIV: '1 talent' → CNL: '(literalunits) 1 talent (modernunits) 1 bag'"
+    phase: He2-only
+    verses:
+      - "Matthew 25:24"
+    exceptions: "Provides measurement conversions"
+
+  - name: Segmented Coordination with Periods
+    description: Coordinate clauses separated by periods rather than commas, even when coordinated
+    transformation: "NIV: 'He came, saw, and conquered' → CNL: 'He came. and He saw. and He conquered'"
+    phase: Both
+    verses:
+      - "Genesis 35:7"
+      - "Genesis 11:17"
+      - "Genesis 4:19"
+      - "2 Samuel 13:36"
+    exceptions: "Period + lowercase 'and' shows continuation but clause independence"
+

@@ -1,0 +1,319 @@
+patterns:
+  - name: Pronoun Disambiguation with Parenthetical Names
+    transformation: "Ambiguous pronoun → Pronoun + (explicit referent)"
+    phase: Both
+    examples:
+      - "Gen 24:20: 'Rebekah quickly poured' → 'Rebekah quickly poured all the water [that was in Rebekah's jar]'"
+      - "Gen 29:30: 'Then Jacob sexed Rachel. Jacob loved Rachel [more-than Jacob loved Leah]'"
+      - "Gen 47:4: 'These 5 brothers said to the king' (explicit count + referent)"
+      - "Esther 5:11: 'Haman said to Haman's friends and to Haman's wife'"
+      - "2 Sam 4:5: 'Rekab and Baanah started walking... Rekab and Baanah were Rimmon's sons'"
+    exceptions: "In some cases, pronouns are kept when referent is immediately clear from context"
+
+  - name: Explicit Coreference Chains
+    transformation: "Repeated pronoun references → Full noun phrase repetition"
+    phase: Both
+    examples:
+      - "Gen 39:1: 'Potiphar bought Joseph from the people [who brought Joseph to Egypt]'"
+      - "Mark 6:13: 'The followers/disciples forced... The followers/disciples also put oil'"
+      - "Acts 16:34: 'the chief guard of the prison led... the chief guard of the prison gave'"
+      - "1 Sam 30:14: 'We(men) attacked... And we(men) attacked... And we(men) also burned'"
+      - "Ruth 4:13: 'Boaz married Ruth. [When Boaz sexed Ruth] Yahweh caused [Ruth to become pregnant]'"
+    exceptions: "Single-sentence immediate repetition sometimes uses pronouns"
+
+  - name: Bracketed Relative Clauses
+    transformation: "Embedded relative clause → Square brackets with explicit relative pronoun"
+    phase: Both
+    examples:
+      - "Gen 24:20: '[that was in Rebekah's jar]', '[until all the camels finished drinking water]'"
+      - "Gen 47:4: '[who live in Canaan]', '[that our(brothers') animals eat]'"
+      - "Titus 1:10: '[who teach people false things]', '[that all men should allow...]'"
+      - "2 Sam 9:6: '[who Yahweh chose/appointed to be king]'"
+      - "Josh 22:30: '[who were in the tribes named Reuben, Gad, and Manasseh]'"
+    exceptions: "Restrictive vs. descriptive distinction marked with _restrictive/_descriptive tags"
+
+  - name: Title Markers with Dash Prefix
+    transformation: "Section heading → -Title [content]"
+    phase: He1-only
+    examples:
+      - "Gen 11:10: '-Title Shem has a family'"
+      - "Gen 5:1: '-Title Adam has a family'"
+      - "Gen 33:1: '-Title Jacob meets Esau'"
+      - "Gen 39:1: '-Title Potiphar buys Joseph'"
+      - "Gen 2:5: '-title Adam and Eve live in Eden'"
+    exceptions: "NT uses different title system: (title) without dash"
+
+  - name: Paragraph Markers
+    transformation: "Paragraph break → _paragraph or (paragraph)"
+    phase: He2-only
+    examples:
+      - "Matt 16:14: '_paragraph Those followers/disciples answered'"
+      - "Mark 2:1: '(paragraph) After a few days, Jesus returned'"
+      - "Matt 5:48: No marker, but Matt 8:1 has '(paragraph)'"
+      - "Mark 15:1: '(paragraph) Early in the morning'"
+      - "Matt 27:38: '_paragraph The soldiers also hung'"
+    exceptions: "He1 books do not use paragraph markers"
+
+  - name: Implicit Information Marking
+    transformation: "Recoverable ellipsis → _implicit or _implicitNecessary tags"
+    phase: Both
+    examples:
+      - "Matt 11:14: 'you(Jesus) _implicitNecessary are _implicitNecessary John the Baptist'"
+      - "Mark 2:1: 'people _implicitNecessary heard [Jesus was at a house in that place _implicit]'"
+      - "Matt 15:23: 'those followers/disciples came to Jesus _implicit'"
+      - "Gen 37:2: '-implicit Rachel [who had died] was the mother of Joseph'"
+      - "Matt 14:4: 'John had repeatedly _implicit said to Herod'"
+    exceptions: "Different tags: _implicitNecessary (must infer), _implicit (helpful), (implicit-situational), (implicit-cultural), (implicit-info)"
+
+  - name: Pronoun Person/Number in Parentheses
+    transformation: "Pronoun → pronoun(referent) with grammatical detail"
+    phase: Both
+    examples:
+      - "Gen 47:4: 'We(brothers) came', 'our(brothers') animals', 'us(brothers) to live'"
+      - "Gen 34:9: 'you(brothers)', 'me(Hamor)', 'you(brothers)', 'me(Hamor)'"
+      - "2 Sam 5:2: 'our(people's) king', 'we(people) fought', 'you(David)'"
+      - "Mark 15:23: 'us(followers) _incl' (inclusive marking)"
+      - "Acts 20:23: 'me(Paul)', 'I(Paul)'"
+    exceptions: "Generic references use _generic: 'people _generic should not pour' (Matt 9:17)"
+
+  - name: Imperative Marking
+    transformation: "Imperative verb → (imp) marker before verb"
+    phase: Both
+    examples:
+      - "Gen 47:4: 'please you(king) (imp) allow [us(brothers) to live in Goshen]'"
+      - "Josh 10:12: 'Sun, (imp) you(sun) stay over Gibeon'"
+      - "1 Sam 12:24: 'you(Israelites) (imp) remember the great things'"
+      - "Matt 5:48: 'you(people) (imp) be perfect'"
+      - "Mark 4:23: 'you(people) (imp) listen to these words'"
+    exceptions: "Sometimes appears mid-clause, sometimes at verb start"
+
+  - name: Quote Frame with Square Brackets
+    transformation: "Speech → Speaker said, [quoted content]"
+    phase: Both
+    examples:
+      - "1 Sam 3:12: 'Eli said, [\"Yahweh is Yahweh]. Yahweh may do all of the things [that Yahweh wants [to do]]]'"
+      - "Gen 31:48: 'Laban said to Jacob, [\"These stones will remind us(Laban)...]'"
+      - "Josh 10:12: 'Joshua said, [\"Sun, (imp) you(sun) stay over Gibeon]'"
+      - "Mark 4:13: 'Jesus said to those people [...], [\"[If you(people) do not understand...]']'"
+      - "2 Sam 14:12: 'that woman said, [\"My(woman's) king, I(woman) am your(David's) servant]'"
+    exceptions: "Nested quotes maintain bracket depth: [\"outer [inner]\"]"
+
+  - name: Rhetorical Question Marking
+    transformation: "Rhetorical question → (rhetorical) or (yesrhetorical) + (statement) paraphrase"
+    phase: He2-only
+    examples:
+      - "Mark 4:13: '(rhetorical) \"[If you(people) do not understand this story/parable,] then-D how will you(people) understand all the other stories/parables?\" (statement) \"[If you(people) do not understand...] then you(people) certainly will not understand...\"'"
+      - "Mark 9:23: '(yesrhetorical) Jesus asked that father, [\"Do you(father) _implicitNecessary think [I(Jesus) might not be able...]?] (statement) Jesus said... [\"You(father) _implicitNecessary should not think...\"]'"
+      - "Matt 8:29: '(rhetorical) ...why do you(Jesus) come to us(spirits)?] (statement) ...We(spirits) do not want [you(Jesus) to come to us(spirits)]'"
+      - "Matt 7:10: '(rhetorical) Or, [if that son asks...] will that person give a snake...? (statement) Or...that person will not give a snake'"
+      - "Mark 12:36: No marking in OT quote, but rhetorical structure preserved"
+    exceptions: "He1 books do not mark rhetorical questions; norhetorical indicates non-rhetorical question (Matt 26:22)"
+
+  - name: Alternative Readings with Alt/Footnote
+    transformation: "Variant interpretation → Main reading. -Alternate/-Footnote variant"
+    phase: Both
+    examples:
+      - "Gen 6:3: 'I(God) will allow [people to live for only 120 years]. -Alternate I(God) will destroy these people in 120 years'"
+      - "Neh 7:29: 'Hananiah was an honest man. (alt) Hananiah did not lie to people'"
+      - "1 Sam 20:16: 'I(Jonathan) hope [that Yahweh will punish David's enemies]. (alt) I(Jonathan) hope [that Yahweh will punish David's family [if David does not treat me(Jonathan) kindly]]'"
+      - "Mark 6:48: '(literalunits) At about the fourth period/watch _PeriodinLDV of the night (modernunits) At about 3AM'"
+      - "Acts 15:34: 'But Silas (questionable text) decided to remain in Antioch'"
+    exceptions: "Different markers: -Alternate, (alt), -Footnote, (footnote), (literalunits), (modernunits), (questionable text)"
+
+  - name: Metonymy and Figure Marking
+    transformation: "Figure of speech → Content _metonymy or other figure tag"
+    phase: Both
+    examples:
+      - "Matt 26:19: 'the Passover of the meal _metonymy'"
+      - "Matt 28:18: 'heaven of servants/angel _metonymy and of evil spirits _metonymy and the all the earth of people _metonymy'"
+      - "Mark 15:1: 'those people _newNounIndex of the servants/guards _metonymy'"
+      - "Mark 6:14: 'Herod of the soldiers _metonymy'"
+      - "Mark 1:6: 'clothes of _madeOf animal's/camel's hair', 'belt of _madeOf leather'"
+    exceptions: "Different figure types: _metonymy (most common), _madeOf (material), _inLDV (in LDV context)"
+
+  - name: Dual and Plural Number Marking
+    transformation: "Dual reference → Content _dual or _ImplicitDual"
+    phase: He2-only
+    examples:
+      - "Matt 27:38: 'The soldiers also hung on crosses _dual 2 thieves beside Jesus'"
+      - "Matt 8:29: 'Those evil spirits/demons shouted through those men _ImplicitDual'"
+      - "Matt 20:34: 'Jesus pitied those men _dual. And Jesus touched those men's _dual eyes'"
+      - "2 Sam 9:6: Not marked in He1 even for dual subjects"
+      - "Mark 15:40: Not marked for group of three women"
+    exceptions: "Only appears in He2 (NT) books; He1 does not mark dual"
+
+  - name: Literal vs Dynamic Translation Pairs
+    transformation: "Difficult passage → (literal) version (dynamic) version"
+    phase: Both
+    examples:
+      - "Matt 5:48: '(literal) Therefore, you(people) (imp) be perfect... (dynamic) Therefore, you(people) (imp) be completely good'"
+      - "Mark 4:25: '(literal) Every person [who has some things] will be given more things... (dynamic) Every person [who understands my(Jesus's) words] will be able [to understand more things]'"
+      - "Matt 12:35: '(literal) A good person pull-out _present good things from the good things/treasure... (dynamic) A good person does good-B things'"
+      - "Mark 8:36: '(literal) (rhetorical) What does a person gain... (dynamic) (rhetorical) What does a person gain...'"
+      - "Mark 2:28: '(literal) So the Son-of-man is Lord of the seventh day... (dynamic) So I(Jesus) [who am the Son-of-man] have authority'"
+    exceptions: "Can appear with or without rhetorical/statement pairs"
+
+  - name: Person Shift Marking
+    transformation: "1st/3rd person shift → _1stAs3rd tag"
+    phase: He2-only
+    examples:
+      - "Matt 24:41: 'At the time [that the Son-of-man _1stAs3rd will come again _implicit at]'"
+      - "Matt 26:24: 'The Son-of-man _1stas3rd will die... the Son-of-man _1stas3rd to the Son-of-man's _1stas3rd enemies'"
+      - "Matt 16:28: 'the Son-of-Man _1stAs3rd coming in the Son-of-Man's _1stAs3rd kingdom'"
+      - "Mark 2:28: 'the Son-of-man is Lord' (then dynamic: 'I(Jesus) [who am the Son-of-man]')"
+      - "Matt 28:18: Not marked for simple 'me(Jesus)'"
+    exceptions: "Only for Son-of-man self-references; regular 1st person uses I(Jesus)"
+
+  - name: Frame Inferable Marking
+    transformation: "Frame semantics recoverable → _frameInferable tag"
+    phase: He2-only
+    examples:
+      - "Mark 11:23: 'A person might say to this mountain _frameInferable'"
+      - "Matt 8:1: '[When Jesus come-down from the mountain _frameInferable of the side _implicitType]'"
+      - "Matt 27:59: Not marked in simple actions"
+      - "Matt 26:66: 'The priests _frameInferable answered' (inferable from context)"
+      - "Mark 12:36: 'King _implicit David _emphasized said through the Holy-Spirit'"
+    exceptions: "Appears sparingly; overlaps with _implicit system"
+
+  - name: Comparative Constructions
+    transformation: "Comparison → Explicit comparative structure with more-than"
+    phase: Both
+    examples:
+      - "Gen 29:30: 'Jacob loved Rachel [more-than Jacob loved Leah]'"
+      - "Neh 7:29: 'Hananiah feared/respected God [more than most people]'"
+      - "Matt 11:27: 'No person knows... except the Father... except the Son'"
+      - "Mark 6:20: Not explicit comparative, uses intensifiers"
+      - "1 Sam 14:30: '[If the soldiers had eaten...] the soldiers would have killed more Philistines'"
+    exceptions: "English 'than' rendered as 'more-than' or explicit clause repetition"
+
+  - name: Quantity and Number Prefixing
+    transformation: "Number expression → -quantity marker before number"
+    phase: Both
+    examples:
+      - "Gen 6:10: 'After the flood -quantity two years Shem was 100 years old'"
+      - "Josh 7:21: 'I(Achan) saw silver -quantity about 2 kilograms'"
+      - "1 Sam 23:13: 'At that time about 600 men were with David' (no marker)"
+      - "2 Sam 8:4: Not marked in all number contexts"
+      - "Esther 8:12: 'On March seven' (no marker for dates)"
+    exceptions: "Inconsistent application; more common in He1"
+
+  - name: Active Agent Marking in Passives
+    transformation: "Passive voice → by [agent] _implicitActiveAgent"
+    phase: Both
+    examples:
+      - "Matt 28:18: 'All authority was given to me(Jesus) by the Father _implicitActiveAgent'"
+      - "Mark 3:29: 'that person will never be forgiven-C by God _implicitActiveAgent'"
+      - "Mark 4:25: 'will be given more things by God _implicitActiveAgent... will be take-away by God _implicitActiveAgent'"
+      - "Mark 11:23: 'that thing will be done by God _implicitActiveAgent for that person'"
+      - "Matt 4:18: 'Simon [who was called by people _implicitActiveAgent Peter]'"
+    exceptions: "God/people most common agents; sometimes marked, sometimes not"
+
+  - name: Temporal Sequence Markers
+    transformation: "Temporal relation → Then-A, Then-D, At-that-time, Later, etc."
+    phase: Both
+    examples:
+      - "Gen 24:20: 'Then Rebekah repeatedly ran to the well'"
+      - "Matt 24:14: 'Then-A the end-A of the world _implicit will come'"
+      - "Matt 11:29: 'Then-D your(people's) souls will rest peacefully'"
+      - "Gen 47:13: 'Later the famine became very bad'"
+      - "Mark 4:13: 'then-D how will you(people) understand'"
+    exceptions: "Multiple types: Then (simple), Then-A, Then-D (discourse), At-that-time, Later, After"
+
+  - name: Name Introduction with Named
+    transformation: "Name in apposition → person named X or X named title"
+    phase: Both
+    examples:
+      - "Gen 11:10: 'At-that-time Shem had a son named Arphaxad'"
+      - "Josh 22:13: 'the Israelites sent a man named Phinehas to Gilead'"
+      - "Mark 15:1: 'those people brought-B Jesus to Pilate named the Roman ruler/governor _implicitType'"
+      - "Matt 4:18: 'Simon [who was called by people _implicitActiveAgent Peter] and Simon's brother named Andrew'"
+      - "1 Sam 9:14: 'Saul saw Samuel. Samuel was walking to the place'"
+    exceptions: "Sometimes uses 'named', sometimes simple apposition, sometimes 'who was called'"
+
+  - name: Quantifier Scope Marking
+    transformation: "Quantified NP → all/many/some + the + noun + bracketed restriction"
+    phase: Both
+    examples:
+      - "Gen 47:4: 'All the people [who live in Canaan] and all the animals [that live in Canaan]'"
+      - "Titus 1:10: 'Many people oppose... Those people say many things'"
+      - "Acts 16:34: 'All the people [who were in that place] were very happy'"
+      - "Matt 27:38: Not marked: 'The soldiers also hung on crosses _dual 2 thieves'"
+      - "Josh 11:12: 'all of the people [who lived in those cities]'"
+    exceptions: "Quantifier + definite article + bracketed restriction is standard pattern"
+
+  - name: Deixis with This/That Explicit Marking
+    transformation: "Demonstrative → this/that + noun with context"
+    phase: Both
+    examples:
+      - "2 Sam 4:5: 'At that time Ish-Bosheth was sleeping/napping'"
+      - "Gen 5:1: 'This story is about Adam's family'"
+      - "Mark 11:23: 'this mountain', 'that thing-B will happen', 'that thing will be done'"
+      - "Matt 9:17: 'that wine', 'those containers/wineskins', 'that person'"
+      - "Gen 2:5: 'At that time there were no plants on the earth'"
+    exceptions: "Context often provided in brackets after demonstrative"
+
+  - name: Clause Segmentation with Periods
+    transformation: "Complex sentence → Multiple simple sentences with repeated referents"
+    phase: Both
+    examples:
+      - "Gen 24:20: 'So Rebekah quickly poured all the water... into the trough. Then Rebekah repeatedly ran to the well. And Rebekah brought water...'"
+      - "1 Sam 3:18: 'So Samuel told Eli about all of the things. Then Eli said...'"
+      - "Acts 16:34: 'Then the chief guard led Paul and Silas. And the chief guard gave some food.'"
+      - "Mark 6:13: 'The followers/disciples forced... The followers/disciples also put oil... And the followers/disciples healed...'"
+      - "Gen 7:13: Three-part sequence broken into segments"
+    exceptions: "Some complex sentences preserved with nested brackets"
+
+  - name: Vocabulary L2 Pairing with Slash
+    transformation: "Technical term → L2_term/familiar_term"
+    phase: Both
+    examples:
+      - "Mark 6:7: 'The followers/disciples forced'"
+      - "Neh 7:29: 'the leaders/nobles and officials'"
+      - "Matt 16:14: 'Those followers/disciples answered'"
+      - "Mark 1:6: 'insects/locusts'"
+      - "2 Sam 14:12: 'My(woman's) king, I(woman) am your(David's) servant'"
+    exceptions: "Common pattern: technical/common or formal/familiar pairings"
+
+  - name: Hyperbolic and Emphasis Marking
+    transformation: "Hyperbole/emphasis → _hyperbolic, _emphasized, _adverb tags"
+    phase: Both
+    examples:
+      - "Matt 8:34: 'Then all _hyperbolic the people go-out of the city'"
+      - "Mark 12:36: 'King _implicit David _emphasized said'"
+      - "Mark 6:48: 'Jesus saw [those followers/disciples trying hard _adverb [to move/row the boat]]'"
+      - "Gen 24:20: 'Rebekah repeatedly ran' (adverbial sense unmarked)"
+      - "Matt 14:4: 'John had repeatedly _implicit said to Herod'"
+    exceptions: "Multiple emphasis systems: _hyperbolic (exaggeration), _emphasized (focus), _adverb (manner), repeatedly (iteration)"
+
+  - name: Cross-Reference Footnotes
+    transformation: "Scripture reference → (footnote) You(people) (imp) see [citation]"
+    phase: He2-only
+    examples:
+      - "Mark 9:48: '(footnote) You(people) (imp) see Isaiah 66:24'"
+      - "Matt 5:31: '(footnote) You(people) (imp) see Deuteronomy 24:1'"
+      - "Matt 13:35: '(footnote) You(people) (imp) see Psalms 78:2'"
+      - "Matt 15:9: '(footnote) You(people) (imp) see Isaiah 29:13'"
+      - "Mark 12:31: '(footnote) You(people) (imp) see Leviticus 19:18'"
+    exceptions: "Only in He2; He1 uses different footnote system with dash prefix"
+
+  - name: Type Specification Marking
+    transformation: "Underspecified noun → noun _implicitType"
+    phase: Both
+    examples:
+      - "Matt 8:1: 'from the mountain _frameInferable of the side _implicitType'"
+      - "Mark 15:1: 'Pilate named the Roman ruler/governor _implicitType'"
+      - "Matt 4:13: 'Capernaum named the town [in order to live at that place]'"
+      - "Mark 12:41: 'the people of Nineveh named the city _implicitType'"
+      - "Matt 4:18: 'the sea-Galilee named big lake _implicit'"
+    exceptions: "Marks type/category information that clarifies referent"
+
+  - name: Complex Embedding with Nested Brackets
+    transformation: "Multiple levels of embedding → Nested square brackets"
+    phase: Both
+    examples:
+      - "Gen 47:4: 'the food [that our(brothers') animals eat]... allow [us(brothers) to live in Goshen]'"
+      - "1 Sam 3:12: 'Yahweh may do all of the things [that Yahweh wants [to do]]'"
+      - "Mark 4:13: 'people [(implicit-situational) who asked about the stories/parables]'"
+      - "Matt 11:14: 'Some people say [that you(Jesus) _implicitNecessary are _implicitNecessary John the Baptist]'"
+      - "Gen 22:11: Deep nesting up to 4-5 levels in some verses"
+    exceptions: "Unlimited nesting depth; purpose clauses, relative clauses, complements all use brackets"

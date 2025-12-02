@@ -1,0 +1,740 @@
+patterns:
+  - name: Explicit Pronoun Coreference
+    category: Pronoun/coreference
+    description: |
+      NIV pronouns are expanded with explicit referents in parentheses to disambiguate
+      who is speaking, acting, or being referenced.
+    transformation: |
+      NIV: "And I tell you" → CNL: "And I(Jesus) tell you(Simon)"
+      NIV: "you will" → CNL: "you(Israelites) will"
+    phase: Both
+    supporting_verses:
+      - Matthew 16:18
+      - 1 Samuel 12:20
+      - Matthew 26:3
+      - 1 Samuel 1:17
+      - Joshua 22:22
+    exceptions: |
+      Generic "you(people)" is used when referencing crowds or unspecified groups.
+      When the referent is clear from immediate context, may be omitted.
+
+  - name: Reflexive Pronoun Marking
+    category: Pronoun/coreference
+    description: |
+      Reflexive actions are marked with _reflexive or explicit self-referencing pronouns
+      in parentheses to clarify when subjects act upon themselves.
+    transformation: |
+      NIV: "cutting himself" → CNL: "cutting that man _reflexive with stones"
+      NIV: "cares only about himself" → CNL: "you(person) care about only _implicit that person _reflexive"
+    phase: Both
+    supporting_verses:
+      - Mark 5:5
+      - Mark 8:34
+      - Mark 3:24
+      - Genesis 13:13
+    exceptions: |
+      Not all self-referential actions use _reflexive; some use explicit pronouns like "that person _reflexive".
+
+  - name: Possessive Pronoun Expansion
+    category: Pronoun/coreference
+    description: |
+      Possessive pronouns are expanded to show explicit ownership relationships,
+      especially in genealogies and family relationships.
+    transformation: |
+      NIV: "his church" → CNL: "my(Jesus's) church"
+      NIV: "your heart" → CNL: "your(Israelites') heart"
+    phase: Both
+    supporting_verses:
+      - Matthew 16:18
+      - 1 Samuel 12:20
+      - 2 Samuel 3:5
+      - Genesis 5:18
+    exceptions: |
+      May be omitted when the possessive relationship is unambiguous.
+
+  - name: Imperative Marking
+    category: Imperatives
+    description: |
+      Commands and imperatives are explicitly marked with (imp) to distinguish
+      them from statements or other verb forms.
+    transformation: |
+      NIV: "Do not be afraid" → CNL: "You(Israelites) (imp) do not be afraid"
+      NIV: "Go into the city" → CNL: "You(followers) (imp) go into the city"
+    phase: Both
+    supporting_verses:
+      - 1 Samuel 12:20
+      - Matthew 26:18
+      - Joshua 18:3
+      - 1 Samuel 15:6
+      - Matthew 5:39
+    exceptions: |
+      All imperatives receive the (imp) marker regardless of context.
+
+  - name: Bracket-Enclosed Clauses
+    category: Bracket conventions
+    description: |
+      Subordinate clauses, especially relative clauses and purpose clauses,
+      are enclosed in brackets to show structural relationships.
+    transformation: |
+      NIV: "the things that you asked God for" → CNL: "the things [that you(Hannah) asked God for]"
+      NIV: "when each family should bring wood" → CNL: "the time [when each family should bring wood]"
+    phase: Both
+    supporting_verses:
+      - 1 Samuel 1:17
+      - Nehemiah 10:34
+      - Matthew 13:32
+      - Mark 4:19
+      - Joshua 11:9
+    exceptions: |
+      Simple direct objects may not be bracketed. Complex nested clauses use multiple levels of brackets.
+
+  - name: Quote Frame Markers
+    category: Quote framing
+    description: |
+      Direct speech is enclosed in brackets following reporting verbs, with nested
+      brackets for quotes within quotes.
+    transformation: |
+      NIV: 'Then Samuel said, "You did evil things"' → CNL: 'Then Samuel said, ["You(Israelites) did evil things"]'
+      NIV: 'He said, "David said to me, \'Help me\'"' → CNL: 'He said, ["David said to me(Michal), ["Help me(David)"]]'
+    phase: Both
+    supporting_verses:
+      - 1 Samuel 12:20
+      - 1 Samuel 1:17
+      - Joshua 22:22
+      - 2 Samuel 20:18
+      - 1 Samuel 19:17
+    exceptions: |
+      All direct speech requires bracket enclosure, regardless of length.
+
+  - name: Implicit Information Markers
+    category: Implicit info markers
+    description: |
+      Information not explicitly stated in the source text but necessary for
+      understanding is marked with _implicit, (implicit-situational), (implicit-info),
+      or (implicit-background).
+    transformation: |
+      NIV: "gave authority to command unclean spirits" → CNL: "gave authority [to command unclean spirits [(implicit-situational) to leave people]]"
+      NIV: "When Saul heard" → CNL: "[After (implicit-info) David put-on those special clothes], David prayed"
+    phase: Both
+    supporting_verses:
+      - Mark 6:7
+      - Matthew 5:39
+      - 1 Samuel 30:63
+      - Mark 4:19
+      - Matthew 2:1
+    exceptions: |
+      Multiple implicit types exist: _implicit (generic), (implicit-situational) (context-based),
+      (implicit-info) (added background), (implicit-background) (cultural background).
+
+  - name: Literal vs Dynamic Alternatives
+    category: Clause segmentation
+    description: |
+      Figurative or idiomatic expressions are presented with both literal
+      and dynamic (explanatory) interpretations marked accordingly.
+    transformation: |
+      NIV: "the gates of hell will not overcome it" → CNL: "(literal) the gates of hell-B will not defeat-A that church-A. (dynamic) the power of Satan will not defeat-A that church-A"
+      NIV: "the message does not produce fruit" → CNL: "(literal) the message does not produce fruit. (dynamic) the message does not change those people"
+    phase: Both
+    supporting_verses:
+      - Matthew 16:18
+      - Mark 4:19
+      - Matthew 6:21
+      - Mark 8:34
+      - Matthew 13:38
+    exceptions: |
+      Not all metaphors receive this treatment; only those deemed significantly unclear
+      or culturally distant.
+
+  - name: Paragraph and Title Markers
+    category: Title/paragraph markers
+    description: |
+      Section breaks and titles are marked with _paragraph and (title) to
+      show discourse structure.
+    transformation: |
+      NIV: [section break] → CNL: "_paragraph"
+      NIV: [implied section title] → CNL: "Peter (title) helps a man [who is not able [to walk]]"
+    phase: Both
+    supporting_verses:
+      - Matthew 26:3
+      - Acts 3:1
+      - Mark 6:30
+      - Matthew 8:23
+      - 2 Samuel 13:23
+    exceptions: |
+      Titles are often reconstructed from content when not present in source.
+      _paragraph appears before the new section begins.
+
+  - name: Name Introductions with Type
+    category: Name introductions
+    description: |
+      First mentions of names or when disambiguating receive "named X" construction,
+      often with type information for geographic or role clarity.
+    transformation: |
+      NIV: "Caiaphas" → CNL: "the chiefest priest was named Caiaphas"
+      NIV: "in Jerusalem" → CNL: "to Jerusalem named the city _implicit"
+      NIV: "Bethlehem in Judea" → CNL: "in Bethlehem named the town _implicit in Judea named the region/province _implicit"
+    phase: Both
+    supporting_verses:
+      - Matthew 26:3
+      - Matthew 2:1
+      - Mark 6:21
+      - Genesis 2:13
+      - Joshua 15:49
+    exceptions: |
+      Well-known names or names already introduced may not receive this treatment.
+      Type markers (_implicit) often accompany the "named" construction.
+
+  - name: Temporal Frame Segmentation
+    category: Clause segmentation
+    description: |
+      Temporal clauses are bracketed separately and often fronted to establish
+      time frames before main actions.
+    transformation: |
+      NIV: "When Abner arrived in Hebron, Joab took him" → CNL: "[When Abner arrived in Hebron] Joab took Abner into a room"
+      NIV: "After the sun set" → CNL: "[After the sun set] the sky became dark"
+    phase: Both
+    supporting_verses:
+      - 2 Samuel 3:27
+      - Genesis 15:17
+      - Matthew 14:13
+      - Mark 1:32
+      - Genesis 41:46
+    exceptions: |
+      Sometimes temporal information is moved to clarify sequence of events.
+
+  - name: Passive to Active Agent Recovery
+    category: Implicit info markers
+    description: |
+      Passive constructions are often made active with explicit agent marking
+      using _implicitActiveAgent when the agent is recoverable but unstated.
+    transformation: |
+      NIV: "was called the Christ" → CNL: "was called-C by people _implicitActiveAgent the Christ"
+      NIV: "were destroyed" → CNL: "were destroyed by soldiers _implicitActiveAgent"
+    phase: Both
+    supporting_verses:
+      - Matthew 27:22
+      - Nehemiah 1:3
+      - Matthew 11:5
+      - Matthew 18:17
+      - Mark 13:25
+    exceptions: |
+      Not all passives are converted; only those where agent recovery aids clarity.
+
+  - name: Rhetorical Question Marking
+    category: Clause segmentation
+    description: |
+      Rhetorical questions are explicitly marked with (rhetorical), (yesrhetorical),
+      or (norhetorical), often followed by (statement) giving the implied answer.
+    transformation: |
+      NIV: "Did you go to see grass moved by wind?" → CNL: "(norhetorical) [When you(people) went to the desert], did you(people) go there [to see grass]? (statement) You(people) did not go there [to see grass]"
+    phase: He2-only
+    supporting_verses:
+      - Matthew 11:7
+      - Matthew 6:27
+      - Mark 2:7
+      - Matthew 12:34
+      - Matthew 19:18
+    exceptions: |
+      (yesrhetorical) expects "yes" answer, (norhetorical) expects "no" answer.
+      Pattern appears exclusively in NT books.
+
+  - name: Complex/Simple Alternative Forms
+    category: Clause segmentation
+    description: |
+      Abstract or theological concepts are presented in both complex (original)
+      and simple (clarified) forms to aid understanding.
+    transformation: |
+      NIV: "the kingdom of heaven" → CNL: "(complex) the kingdom-B of heaven (simple) [when God starts ruling all God's people]"
+      NIV: "Elijah comes first" → CNL: "(complex) Elijah certainly comes first. (simple) Elijah causes [all things to become like new things]"
+    phase: He2-only
+    supporting_verses:
+      - Matthew 13:33
+      - Matthew 26:29
+      - Mark 10:23
+      - Mark 9:12
+      - Matthew 11:1
+    exceptions: |
+      This pattern appears almost exclusively in Gospel accounts and is not
+      found in OT materials.
+
+  - name: Vocative Deixis with Metonymy
+    category: Deixis marking
+    description: |
+      Vocatives addressing cities or groups use "X of people _metonymy" to clarify
+      that the city name refers to its inhabitants.
+    transformation: |
+      NIV: "Chorazin, woe to you" → CNL: "Chorazin of people _metonymy, bad-A things will happen to you(people)"
+      NIV: "Jerusalem, Jerusalem" → CNL: "Jerusalem, Jerusalem, you(Jerusalem) kill the people/prophets"
+    phase: He2-only
+    supporting_verses:
+      - Matthew 11:21
+      - Matthew 11:23
+      - Matthew 23:37
+      - Matthew 11:21
+    exceptions: |
+      This construction appears only in Gospel prophetic pronouncements.
+
+  - name: Verb Tense/Aspect Suffix Markers
+    category: Vocabulary L2 pairings
+    description: |
+      Verbs receive suffix markers like -A, -B, -C to distinguish different senses,
+      or aspectual markers like _routinely, _implicit, _past to show aspect/mood.
+    transformation: |
+      NIV: "called the disciples" → CNL: "called-A the 12 disciples"
+      NIV: "will see me" → CNL: "will not see me(Joseph) again"
+      NIV: "follow me" → CNL: "follow-B _routinely me(Jesus)"
+    phase: Both
+    supporting_verses:
+      - Mark 6:7
+      - Genesis 44:23
+      - Mark 8:34
+      - Matthew 16:18
+    exceptions: |
+      Suffix markers (-A, -B, -C) distinguish lexical senses, not grammatical features.
+      Aspect markers (_routinely, _implicit) show habitual or understood actions.
+
+  - name: Adjective Position Markers
+    category: Vocabulary L2 pairings
+    description: |
+      Adjectives marked with _adj to show attributive position, and states
+      marked with "were satisfied _adj" to distinguish stative results.
+    transformation: |
+      NIV: "chief priests" → CNL: "chief _adj priests"
+      NIV: "were satisfied" → CNL: "were satisfied _adj"
+    phase: Both
+    supporting_verses:
+      - Matthew 26:3
+      - Matthew 15:37
+      - Mark 7:37
+      - 2 Samuel 14:25
+    exceptions: |
+      Not all adjectives receive _adj marker; appears selectively for emphasis or clarity.
+
+  - name: Number Specificity and Dual Marking
+    category: Grammar
+    description: |
+      Numbers are made explicit when vague in source, and dual forms marked
+      with _dual for pairs or sets of two.
+    transformation: |
+      NIV: "two sons" → CNL: "2 sons"
+      NIV: "James and John" → CNL: "you(sons) _dual"
+      NIV: "did these things" → CNL: "did these things _dual"
+    phase: Both
+    supporting_verses:
+      - Genesis 32:14
+      - Matthew 20:23
+      - Matthew 11:21
+      - 2 Samuel 3:5
+    exceptions: |
+      _dual appears for paired actions, objects, or dual subjects but not consistently.
+
+  - name: Parenthetical Background Info
+    category: Implicit info markers
+    description: |
+      Background information or explanatory notes are enclosed in parentheses
+      mid-sentence to provide necessary context without disrupting flow.
+    transformation: |
+      NIV: "Kiriath-Sannah (that is, Debir)" → CNL: "Kiriath-Sannah. ( People called Kiriath-Sannah Debir. )"
+      NIV: "at the gate" → CNL: "(The people [who lived in Gibeon] were not Israelites.)"
+    phase: Both
+    supporting_verses:
+      - Joshua 15:49
+      - Joshua 21:9
+      - 2 Samuel 21:2
+      - Genesis 47:27
+    exceptions: |
+      Parenthetical notes often provide historical, cultural, or linguistic background.
+
+  - name: Footnote Markers for Cross-References
+    category: Implicit info markers
+    description: |
+      Explanatory footnotes marked with (footnote) provide cultural background,
+      name meanings, or cross-references to other passages.
+    transformation: |
+      NIV: [no explicit note] → CNL: "(footnote) The Greek word named Peter means rock. The rock means Peter, Jesus, or the words"
+      NIV: [no explicit note] → CNL: "(footnote) People _generic did these things _dual [to show people [that people repented]]"
+    phase: Both
+    supporting_verses:
+      - Matthew 16:18
+      - Matthew 11:21
+      - Genesis 47:27
+      - Matthew 10:25
+      - Mark 8:34
+    exceptions: |
+      Footnotes provide information not in source text but necessary for cultural understanding.
+
+  - name: Frame-Inferable Markers
+    category: Implicit info markers
+    description: |
+      Information recoverable from discourse frame marked with _frameInferable
+      or _frameInferable to indicate it can be inferred from context.
+    transformation: |
+      NIV: "stay in that place until you leave" → CNL: "stay in that place [until you(followers) leave that town _frameInferable]"
+      NIV: "entered the boat" → CNL: "entered the boat _frameInferable"
+    phase: Both
+    supporting_verses:
+      - Mark 6:27
+      - Matthew 8:23
+      - Mark 15:8
+      - Matthew 21:40
+    exceptions: |
+      Marks information that is strongly implied by the surrounding narrative frame.
+
+  - name: Hyperbolic Quantifier Marking
+    category: Vocabulary L2 pairings
+    description: |
+      Universal or near-universal quantifiers marked with _hyperbolic to show
+      they are not literally "all" but "very many" or emphatic.
+    transformation: |
+      NIV: "all the people" → CNL: "all _hyperbolic the people"
+      NIV: "smaller than all other seeds" → CNL: "smaller than all _hyperbolic other seeds"
+    phase: Both
+    supporting_verses:
+      - Matthew 13:32
+      - Mark 1:37
+      - Mark 5:31
+      - Mark 1:32
+      - Matthew 10:22
+    exceptions: |
+      Marks rhetorical hyperbole to prevent over-literal interpretation.
+
+  - name: L2 Vocabulary Glosses
+    category: Vocabulary L2 pairings
+    description: |
+      Abstract or figurative terms receive paired concrete glosses, often
+      separated by slashes showing semantic alternatives.
+    transformation: |
+      NIV: "your heart" → CNL: "your(people's) heart-A" (where -A = emotions/will)
+      NIV: "followers" → CNL: "followers/disciples"
+      NIV: "bad things" → CNL: "bad-A things" or "bad _morally actions"
+    phase: Both
+    supporting_verses:
+      - 1 Samuel 12:20
+      - Matthew 16:18
+      - Mark 2:7
+      - Matthew 6:9
+    exceptions: |
+      Suffixes (-A, -B) distinguish senses; slashes show synonymous alternatives.
+
+  - name: Episode Begin/End Markers
+    category: Title/paragraph markers
+    description: |
+      Narrative episodes marked with -beginepisode, -endepisode, or -Title
+      to show major discourse boundaries.
+    transformation: |
+      NIV: [chapter break] → CNL: "-Title Jacob dreams at Bethel. -beginepisode"
+      NIV: [new section] → CNL: "(title) Jesus causes [a storm to end]"
+    phase: He1-only
+    supporting_verses:
+      - Genesis 28:10
+      - Genesis 47:27
+      - 2 Samuel 13:23
+      - 2 Samuel 17:24
+    exceptions: |
+      -Title appears in OT narrative; (title) appears in NT. Both mark discourse structure.
+
+  - name: Participant Tracking Indices
+    category: Pronoun/coreference
+    description: |
+      When multiple referents of same type exist, numerical indices or
+      _nounNotPronoun markers distinguish participants.
+    transformation: |
+      NIV: "people heard... people followed" → CNL: "people _nounIndex2 heard... people _nounIndex2 followed"
+      NIV: "said to Peter" → CNL: "said to Peter _nounNotPronoun"
+    phase: Both
+    supporting_verses:
+      - Matthew 14:13
+      - Mark 14:49
+      - 2 Samuel 13:4
+    exceptions: |
+      Used sparingly when pronoun ambiguity would cause confusion.
+
+  - name: Instrumentality and Means Markers
+    category: Grammar
+    description: |
+      Instruments or means of action marked with prepositions or _madeOf,
+      _addInstrumentArg to show how actions are performed.
+    transformation: |
+      NIV: "wearing a linen cloth" → CNL: "wearing only a sheet of _madeOf linen"
+      NIV: "eating with unclean hands" → CNL: "eating food with _addInstrumentArg religious _implicit dirty/unclean hands"
+    phase: Both
+    supporting_verses:
+      - Mark 14:51
+      - Mark 7:2
+      - Nehemiah 9:12
+    exceptions: |
+      Marks material composition or added instrumental arguments.
+
+  - name: Significant Time Markers
+    category: Deixis marking
+    description: |
+      Durative or significant time periods marked with _significantTime to
+      emphasize extended or notable timeframes.
+    transformation: |
+      NIV: "during the nights and during the days" → CNL: "during the nights and during the days _significantTime"
+      NIV: "during that night" → CNL: "during that night _significantTime"
+    phase: Both
+    supporting_verses:
+      - Mark 5:5
+      - Matthew 2:14
+    exceptions: |
+      Emphasizes duration or importance of time reference.
+
+  - name: First-Person as Third-Person Self-Reference
+    category: Pronoun/coreference
+    description: |
+      Jesus's self-references as "Son of Man" marked with _1stAs3rd to show
+      that third-person form refers to first-person speaker.
+    transformation: |
+      NIV: "the Son of Man" → CNL: "the Son-of-man _1stas3rd"
+      NIV: "I will return" → CNL: "the Son-of-man _1stas3rd will return"
+    phase: He2-only
+    supporting_verses:
+      - Mark 13:32
+      - Matthew 12:8
+      - Matthew 20:19
+      - Mark 9:31
+    exceptions: |
+      Exclusive to Gospel accounts where Jesus uses "Son of Man" title for himself.
+
+  - name: Modality and Permissive Marking
+    category: Grammar
+    description: |
+      Permissive or modal expressions marked with _permissive, _suggestiveLets,
+      or modal auxiliaries to show deontic meanings.
+    transformation: |
+      NIV: "what people may do" → CNL: "what people may _permissive do"
+      NIV: "let us not arrest" → CNL: "we(priests) do not _suggestiveLets take-away/arrest"
+    phase: Both
+    supporting_verses:
+      - Matthew 12:8
+      - Matthew 26:5
+    exceptions: |
+      Marks permission, suggestion, or other modal meanings beyond simple possibility.
+
+  - name: Comparative and Equality Constructions
+    category: Grammar
+    description: |
+      Comparisons use "is-U" (is like), "be-U" (is like), or "is-X" (represents)
+      to show metaphorical or literal equivalences in parables.
+    transformation: |
+      NIV: "is like" → CNL: "is-U like"
+      NIV: "the field is the world" → CNL: "The field is-X the earth"
+      NIV: "the seeds are" → CNL: "the good seeds are-X the people"
+    phase: Both
+    supporting_verses:
+      - Matthew 13:33
+      - Matthew 13:38
+      - Matthew 10:25
+      - Matthew 13:22
+    exceptions: |
+      -U marks simile/likeness; -X marks metaphorical identification or symbolism.
+
+  - name: Adverbial Manner Marking
+    category: Vocabulary L2 pairings
+    description: |
+      Manner adverbs marked with _adv to distinguish from adjectives, and
+      degree/manner shown with position markers.
+    transformation: |
+      NIV: "does all things well" → CNL: "does all things well _adv"
+    phase: Both
+    supporting_verses:
+      - Mark 7:37
+    exceptions: |
+      Helps distinguish adverbial from adjectival uses in L2.
+
+  - name: Generic Reference Marking
+    category: Pronoun/coreference
+    description: |
+      Generic or habitual references marked with _generic or _gnomic to show
+      timeless or general statements.
+    transformation: |
+      NIV: "People did these things to show repentance" → CNL: "People _generic did these things _dual"
+      NIV: "who is glorious" → CNL: "[who is _gnomic wonderful/glorious]"
+    phase: Both
+    supporting_verses:
+      - Matthew 11:21
+      - Nehemiah 9:5
+    exceptions: |
+      _generic marks generic noun phrases; _gnomic marks timeless truths.
+
+  - name: Exclusivity/Inclusivity Markers
+    category: Pronoun/coreference
+    description: |
+      First-person plural marked with _excl (excludes addressee) or _incl
+      (includes addressee) to clarify participant scope.
+    transformation: |
+      NIV: "we will" → CNL: "we(followers') _excl will"
+      NIV: "we will die" → CNL: "we(disciples) _incl will die"
+    phase: Both
+    supporting_verses:
+      - Mark 4:38
+      - Mark 8:34
+      - Mark 4:30
+      - Acts 15:19
+    exceptions: |
+      Crucial for Bible translation into languages with inclusive/exclusive distinction.
+
+  - name: Iterative and Repeated Action Markers
+    category: Grammar
+    description: |
+      Repeated or iterative actions marked with -iteration, "repeatedly", or
+      numerical iteration counts.
+    transformation: |
+      NIV: "walk around the city seven times" → CNL: "walk around the city -iteration 7 times"
+      NIV: "hit Jesus's head" → CNL: "repeatedly hit Jesus's head with sticks"
+    phase: Both
+    supporting_verses:
+      - Joshua 6:4
+      - Mark 15:19
+      - Nehemiah 9:12
+    exceptions: |
+      Marks both exact iteration counts and indefinite repetition.
+
+  - name: Alternative Form Markers
+    category: Clause segmentation
+    description: |
+      Alternative phrasings or reformulations marked with (alt) to show
+      equivalent expressions of the same content.
+    transformation: |
+      NIV: "during each day with a pillar of cloud" → CNL: "During each day (alt) you(Yahweh) led our(people's) people with a tall cloud"
+    phase: Both
+    supporting_verses:
+      - Nehemiah 9:12
+    exceptions: |
+      Provides alternative wording for same semantic content.
+
+  - name: Temporal Unit Specifications
+    category: Deixis marking
+    description: |
+      Time references given in both literal ancient units and modern equivalents
+      marked with (literalunits) and (modernunits).
+    transformation: |
+      NIV: "the sixth hour" → CNL: "(literalunits) the 6th hour (modernunits) 12PM"
+      NIV: "the eleventh hour" → CNL: "(literalunits) the 11th hour (modernunits) 5PM"
+    phase: He2-only
+    supporting_verses:
+      - Matthew 27:45
+      - Matthew 20:9
+    exceptions: |
+      Appears only in NT where Roman/Jewish hour system differs from modern time.
+
+  - name: Descriptive Appositive Brackets
+    category: Bracket conventions
+    description: |
+      Appositives and descriptive relative clauses marked with [_descriptive ...]
+      to show they identify/describe rather than restrict.
+    transformation: |
+      NIV: "Peter who was the one who planned" → CNL: "Judas _implicitNecessary, [_descriptive who was the man [who planned [to give Jesus]]]"
+      NIV: "you who are evil" → CNL: "you(Pharisees) [_descriptive who are evil]"
+    phase: Both
+    supporting_verses:
+      - Mark 14:44
+      - Matthew 12:34
+    exceptions: |
+      Distinguishes non-restrictive (descriptive) from restrictive relative clauses.
+
+  - name: Subaction Bracketing
+    category: Bracket conventions
+    description: |
+      Actions that are part of or precede main actions marked with (implicit-subaction)
+      to show they're components of larger events.
+    transformation: |
+      NIV: "When Jesus heard Bartimaeus" → CNL: "[(implicit-subaction) When Jesus heard Bartimaeus,] Jesus stopped walking"
+    phase: Both
+    supporting_verses:
+      - Mark 10:49
+    exceptions: |
+      Marks subsidiary actions that enable or accompany main predicate.
+
+  - name: Consequential Then Markers
+    category: Grammar
+    description: |
+      Result or consequence "then" marked with Then-C or Then-D to distinguish
+      from temporal "then" (simple sequence).
+    transformation: |
+      NIV: "then what should I do" → CNL: "Then-D what should I(Pilate) do"
+      NIV: "then the servant knelt" → CNL: "Then-C the servant-B knelt"
+    phase: Both
+    supporting_verses:
+      - Matthew 27:22
+      - Matthew 18:26
+      - Mark 11:33
+    exceptions: |
+      -C/-D distinguish logical consequence from mere temporal sequence.
+
+  - name: Different Noun Index for Repetition
+    category: Pronoun/coreference
+    description: |
+      When same noun class appears with different referents, marked with
+      _implicitDifferentNounIndex or _differentNounIndex.
+    transformation: |
+      NIV: "do not kill a person" → CNL: "You(person) (imp) do not kill/murder a person _implicitDifferentNounIndex"
+    phase: Both
+    supporting_verses:
+      - Matthew 19:18
+    exceptions: |
+      Prevents misreading coreferential when referents differ.
+
+  - name: Motion Verb Directionality
+    category: Vocabulary L2 pairings
+    description: |
+      Motion verbs receive directional suffixes or explicit source/goal marking
+      to show spatial relationships.
+    transformation: |
+      NIV: "returned" → CNL: "return-A to that person's house"
+      NIV: "go out" → CNL: "go-out from the house _implicit"
+    phase: Both
+    supporting_verses:
+      - Mark 5:40
+      - Mark 13:16
+    exceptions: |
+      Marks source (from), goal (to), or path for motion predicates.
+
+  - name: In-LDV Markers for Lists
+    category: Grammar
+    description: |
+      Items within lists or sets marked with _inLDV or similar to show
+      membership in a larger defined set.
+    transformation: |
+      NIV: "do not take things except a staff" → CNL: "do not take things/supplies _supplyInLDV, except a staff"
+      NIV: "put ashes on themselves" → CNL: "put ashes _inLDV on themselves(people)"
+    phase: Both
+    supporting_verses:
+      - Mark 6:8
+      - Matthew 11:21
+    exceptions: |
+      Marks that an item belongs to a previously defined list or set.
+
+metadata:
+  total_verses: 500
+  he1_books:
+    - Ruth
+    - Jonah
+    - Genesis
+    - Joshua
+    - 1_Samuel
+    - 2_Samuel
+    - Nehemiah
+    - Esther
+    - Daniel
+    - Nahum
+  he2_books:
+    - Matthew
+    - Mark
+    - Acts
+    - Titus
+    - Philemon
+    - 2_John
+  pattern_distribution:
+    both_phases: 34
+    he1_only: 1
+    he2_only: 5
+  notes: |
+    This analysis identified 40 distinct transformation patterns from NIV to CNL.
+    Most patterns (34/40) appear in both OT and NT materials, showing consistent
+    application across testaments. Five patterns are exclusive to NT (He2):
+    rhetorical question marking, complex/simple alternatives, vocative deixis
+    with metonymy, first-person as third-person self-reference, and temporal
+    unit specifications. One pattern (episode markers) shows stylistic variation
+    between testaments (different marker forms).

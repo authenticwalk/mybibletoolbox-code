@@ -1,0 +1,531 @@
+# TBTA Pattern Analysis: NIV → CNL Transformations
+# Source: chunk-ai.tsv (500 verses across He1 and He2 books)
+# He1: Ruth, Jonah, Genesis, Joshua, 1-2 Samuel, Nehemiah, Esther, Daniel, Nahum
+# He2: Matthew, Mark, Acts, Titus, Philemon, 2 John
+
+patterns:
+  - name: Pronoun Resolution (Anaphora)
+    description: "Pronouns replaced with explicit referents using parenthetical notation: 'he' → 'he(David)', 'they' → 'they(disciples)'"
+    phase: Both
+    examples:
+      - ref: "2 Samuel 10:5"
+        transformation: "you(officials) stay in Jericho [until your(officials') beards grow]"
+      - ref: "Genesis 23:11"
+        transformation: "I(Ephron) will give the land... to you(Abraham)"
+      - ref: "Matthew 27:6"
+        transformation: "us(priests) to put this money into the box"
+      - ref: "Mark 8:2"
+        transformation: "These people already stayed with me(Jesus) for 3 days"
+      - ref: "Acts 16:36"
+        transformation: "you(Paul and Silas) may go"
+    variations:
+      - "Possessives: your(Abraham's), my(David's)"
+      - "Reflexives: themselves(Jews), yourself(Ruth)"
+      - "Complex chains: your(brothers') youngest brother"
+
+  - name: Bracket-Based Clause Nesting
+    description: "Subordinate clauses, relative clauses, and embedded content marked with square brackets to show hierarchical relationships"
+    phase: Both
+    examples:
+      - ref: "Genesis 14:1"
+        transformation: "a man named Amraphel was the king of Babylonia"
+      - ref: "Matthew 27:6"
+        transformation: "[that people _generic put money [that is for the building/temple] into]"
+      - ref: "Mark 8:35"
+        transformation: "a person [who wants [to keep-B that person's life]] will die"
+      - ref: "1 Samuel 23:4"
+        transformation: "I(Yahweh) will help [you(David) defeat the Philistines]"
+      - ref: "Daniel 11:16"
+        transformation: "all of the things [that the king wants [to do]]"
+    variations:
+      - "Purpose clauses: [in-order-to marry a woman]"
+      - "Temporal clauses: [when the priests carried the ark]"
+      - "Result clauses: [so that the boat was almost full]"
+      - "Deep nesting: 3-4 levels common"
+
+  - name: Implicit Information Markers
+    description: "Implicit/inferable information from context marked with underscore tags: _implicit, _frameInferable, _implicitNecessary, etc."
+    phase: Both
+    examples:
+      - ref: "Matthew 27:6"
+        transformation: "a person would be killed by people _implicitActiveAgent"
+      - ref: "Mark 4:37"
+        transformation: "the lake _implicit... full of water _implicit"
+      - ref: "Matthew 24:38"
+        transformation: "eating good food _implicit... drinking alcohol _implicit"
+      - ref: "Nehemiah 12:28"
+        transformation: "The people _passivenoagent gathered the people"
+      - ref: "Mark 8:35"
+        transformation: "will not live forever _implicit with God _implicit"
+    variations:
+      - "_implicitActiveAgent: passive agent not stated"
+      - "_frameInferable: inferable from frame/scene"
+      - "_implicitNecessary: logically required"
+      - "_generic: generic referent"
+      - "(implicit-info): general implicit information marker"
+      - "(implicit-situational): situational context"
+      - "(implicit-subaction): implicit sub-action"
+
+  - name: Imperative Marking
+    description: "Commands/imperatives marked with (imp) prefix before the verb"
+    phase: Both
+    examples:
+      - ref: "2 Samuel 10:5"
+        transformation: "(imp) You(officials) stay in Jericho... Then (imp) you(officials) return"
+      - ref: "Genesis 23:11"
+        transformation: "You(Abraham) (imp) bury your(Abraham's) wife"
+      - ref: "1 Samuel 23:4"
+        transformation: "You(David) (imp) go to Keilah"
+      - ref: "Matthew 9:6"
+        transformation: "You(man) (imp) get-up... you(man) (imp) go to your(man's) house"
+      - ref: "Mark 3:3"
+        transformation: "You(man) (imp) stand-up in-front-of all of the people"
+    variations:
+      - "Sequential imperatives with 'Then (imp)'"
+      - "Conditional imperatives: [If...] then (imp)"
+      - "Negative imperatives: (imp) do not"
+
+  - name: Quote Frame Notation
+    description: "Direct speech enclosed in brackets with speaker identification: 'David said, [\"...\"]'"
+    phase: Both
+    examples:
+      - ref: "2 Samuel 10:5"
+        transformation: "The king said, [\"(imp) You(officials) stay in Jericho\"]"
+      - ref: "1 Samuel 23:4"
+        transformation: "David again asked Yahweh, [\"Should I(David) attack...\"]"
+      - ref: "Matthew 27:6"
+        transformation: "the chief priests said, [\"The religious laws do not allow...\"]"
+      - ref: "Genesis 23:11"
+        transformation: "Ephron said, [\"My(Ephron's) master, no].\""
+      - ref: "Mark 8:2"
+        transformation: "\" I(Jesus) pity these people."
+    variations:
+      - "Nested quotes: said, [\"...said, ['...']\"]"
+      - "Question quotes with embedded clauses"
+      - "Broken quotes with narration between"
+
+  - name: Paragraph and Title Markers
+    description: "Structural markers: -Title, _paragraph, (title), (paragraph) to segment discourse units"
+    phase: Both
+    examples:
+      - ref: "Genesis 14:1"
+        transformation: "-Title The king of Elam captures Lot."
+      - ref: "Matthew 27:6"
+        transformation: "_paragraph The chief priests pick-up the coins"
+      - ref: "2 Samuel 2:18"
+        transformation: "(title) Abner kills Asahel."
+      - ref: "Matthew 26:17"
+        transformation: "(title) Jesus eats Jesus's last meal... _paragraph On the first day"
+      - ref: "Mark 4:1"
+        transformation: "(title) Jesus tells a story/parable"
+    variations:
+      - "Hyphenated form: -Title"
+      - "Parenthetical form: (title), (paragraph)"
+      - "Underscore form: _paragraph"
+
+  - name: Name Introductions
+    description: "Names introduced with 'a/the X named Y' pattern, followed by pronominal reference"
+    phase: Both
+    examples:
+      - ref: "Genesis 14:1"
+        transformation: "a man named Amraphel was the king of Babylonia. and Arioch was the king of Ellasar"
+      - ref: "1 Samuel 27:3"
+        transformation: "One wife's name was Ahinoam. Ahinoam was from Jezreel"
+      - ref: "2 Samuel 2:18"
+        transformation: "Zeruiah had three sons named Joab, Abishai, and Asahel"
+      - ref: "Matthew 26:17"
+        transformation: "On the first day of the Feast-of-Unleavened-Bread"
+      - ref: "Daniel 9:27"
+        transformation: "The prince will make a covenant"
+    variations:
+      - "'a man named X', 'a woman named Y'"
+      - "'X's name was Y'"
+      - "Title + name: 'king Achish', 'the king named David'"
+      - "Appositive constructions"
+
+  - name: Vocabulary L2 Pairing (Dynamic/Literal)
+    description: "L2-friendly vocabulary paired with literal/idiomatic forms using (literal)/(dynamic) tags or slash alternatives"
+    phase: He2-only
+    examples:
+      - ref: "Matthew 24:38"
+        transformation: "(literal) And people were giving those people's daughters to each-other(people)... (dynamic) And people were marrying each-other(people)"
+      - ref: "Mark 8:35"
+        transformation: "(literal) For a person [who wants [to keep-B that person's life]] will die. (dynamic) For a person [who wants [to continue living on this earth]]"
+      - ref: "Mark 14:24"
+        transformation: "(primary) is my(Jesus's) blood]. [\"(meaning-1) This wine is like my(Jesus's) blood]"
+      - ref: "Matthew 1:17"
+        transformation: "14 fathers/generations [who lived between _newSense the time..."
+      - ref: "Mark 1:3"
+        transformation: "(literal) That person/messenger be-U a voice... (dynamic) That person/messenger is shouting"
+    variations:
+      - "(literal) vs (dynamic) alternates"
+      - "(primary) vs (meaning-1) for metaphors"
+      - "(complex) vs (simple) for sentence structures"
+      - "Slash pairs: fathers/generations, bread/wine"
+
+  - name: Reflexive Markers
+    description: "Reflexive actions marked with _reflexive tag"
+    phase: Both
+    examples:
+      - ref: "Nehemiah 9:2"
+        transformation: "The people of Israel had separated _reflexive those people from all people"
+      - ref: "Ruth 3:3"
+        transformation: "you(Ruth) (imp) wash yourself(Ruth)"
+      - ref: "Genesis 18:3"
+        transformation: "I(Abraham) will bring water [so that you(3 men) will be able [to wash yourselves(3 men)]]"
+    variations:
+      - "Pronoun form: yourself(Ruth), themselves(Jews)"
+      - "Tag form: separated _reflexive"
+
+  - name: Coreference Chain Management
+    description: "Repeated noun phrases with consistent referent marking to avoid ambiguity: 'those officials... Those officials... those officials'"
+    phase: Both
+    examples:
+      - ref: "2 Samuel 10:5"
+        transformation: "David sent messengers to those officials. Those officials were very ashamed... The king said..."
+      - ref: "1 Samuel 27:3"
+        transformation: "Those men brought those men's families... And David's two wives were with David"
+      - ref: "Nehemiah 9:2"
+        transformation: "Those people stood. And those people admitted... And those people also admitted"
+      - ref: "Genesis 34:25"
+        transformation: "Simeon and Levi picked up the swords of Simeon and Levi. Then Simeon and Levi went"
+      - ref: "Mark 16:11"
+        transformation: "Those people were told... But those people did not believe"
+    variations:
+      - "Demonstrative chains: 'those men... those men... those men'"
+      - "Name + pronoun alternation"
+      - "Possessive chains: 'David's officials... those officials... the officials'"
+
+  - name: Deixis Marking (Spatial/Temporal)
+    description: "Deictic references made explicit: 'that place', 'at-that-time', 'this man', 'that day'"
+    phase: Both
+    examples:
+      - ref: "Genesis 14:1"
+        transformation: "at-that-time a man named Amraphel was the king"
+      - ref: "2 Samuel 2:20"
+        transformation: "[While Abner was run-away from Asahel] Abner looked at Asahel"
+      - ref: "Genesis 34:25"
+        transformation: "Then Simeon and Levi went to that town"
+      - ref: "Matthew 8:16"
+        transformation: "In the evening on that day _implicit"
+      - ref: "Mark 14:17"
+        transformation: "In the evening of that day _implicit"
+    variations:
+      - "Spatial: 'to that place', 'from that city', 'at that pool'"
+      - "Temporal: 'at-that-time', 'on that day', 'After 3 days'"
+      - "Demonstrative: 'this man', 'that woman', 'these people'"
+
+  - name: Passive Voice Decomposition
+    description: "Passive constructions converted to active with explicit agent marking or _passivenoagent"
+    phase: Both
+    examples:
+      - ref: "Matthew 27:6"
+        transformation: "this money was used [so that a person would be killed by people _implicitActiveAgent]"
+      - ref: "Nehemiah 12:28"
+        transformation: "The people _passivenoagent gathered the people [who sang]"
+      - ref: "Matthew 8:16"
+        transformation: "many people... were brought by people _implicitActiveAgent to Jesus"
+      - ref: "Mark 6:3"
+        transformation: "This man is Mary's son... (yesrhetorical) Is this man the person [who builds things with wood]?"
+      - ref: "Matthew 5:10"
+        transformation: "People [who are persecuted by other people _implicit]"
+    variations:
+      - "by X _implicitActiveAgent: implicit/generic agent"
+      - "_passivenoagent: no agent specified"
+      - "Converted to active with 'people _generic' as agent"
+
+  - name: Rhetorical Question Marking
+    description: "Rhetorical questions tagged with (rhetorical)/(norhetorical)/(yesrhetorical) followed by statement equivalent"
+    phase: He2-only
+    examples:
+      - ref: "Mark 6:3"
+        transformation: "(yesrhetorical) Is this man the person [who builds things with wood]? (statement) This man is only-C _implicit the person"
+      - ref: "Matthew 7:16"
+        transformation: "(norhetorical) Do people pick grapes from wild/thorny bushes? (statement) People do not pick grapes"
+      - ref: "Matthew 20:15"
+        transformation: "(yesrhetorical) Am I(man) allowed by the laws... (statement) I(man) am allowed by the laws"
+      - ref: "Matthew 26:25"
+        transformation: "(norhetorical) Then Judas-Iscariot... asked, [\"Rabbi, am I(Judas) the follower...\"] (statement) Then Judas-Iscariot... said"
+      - ref: "Mark 14:48"
+        transformation: "(norhetorical) Am I(Jesus) a person [who breaks laws]? (statement) I(Jesus) am not a person"
+    variations:
+      - "(yesrhetorical): expects 'yes' answer"
+      - "(norhetorical): expects 'no' answer"
+      - "(rhetorical): general rhetorical question"
+      - "Followed by (statement) paraphrase"
+
+  - name: Number and Quantifier Specification
+    description: "Precise numbers and quantities explicitly stated: '7 female sheep', '3 days', '20000 men', '66 people'"
+    phase: Both
+    examples:
+      - ref: "Genesis 21:28"
+        transformation: "Abraham also put 7 female sheep in-front-of Abimelech"
+      - ref: "Mark 8:2"
+        transformation: "These people already stayed with me(Jesus) for 3 days"
+      - ref: "Genesis 46:26"
+        transformation: "Thus 66 people [who were descendants of Jacob] traveled to Egypt"
+      - ref: "2 Samuel 18:7"
+        transformation: "20000 men died"
+      - ref: "Daniel 9:27"
+        transformation: "The prince will make a covenant with many people for 7 years"
+    variations:
+      - "Ordinal: 'the first day', 'the second time'"
+      - "Quantified nouns: '7 female sheep', '3 sons'"
+      - "Measurement units: 'about 58 kilograms', '13 kilograms'"
+      - "Time periods: 'for 40 days', 'After 3 days'"
+
+  - name: Temporal Sequence Markers
+    description: "Temporal connectives made explicit: 'Then', 'Later', 'After', 'Before', '[While...]'"
+    phase: Both
+    examples:
+      - ref: "2 Samuel 10:5"
+        transformation: "Then (imp) you(officials) return to Jerusalem"
+      - ref: "Genesis 34:25"
+        transformation: "Later 3 days the men were still feeling much pain... Then Simeon and Levi went"
+      - ref: "Mark 4:37"
+        transformation: "Then a very strong wind started to blow"
+      - ref: "Matthew 24:38"
+        transformation: "Then Noah entered the big boat"
+      - ref: "2 Samuel 2:20"
+        transformation: "[While Abner was run-away from Asahel] Abner looked at Asahel. Then Abner asked"
+    variations:
+      - "'Then X happened': sequential events"
+      - "'Later X happened': temporal gap"
+      - "'[While X], Y': simultaneous events"
+      - "'[After X], Y': temporal dependency"
+      - "'Before X, Y': precedence"
+
+  - name: Verb Suffix Notations
+    description: "Verb suffixes mark aspectual/semantic distinctions: -A, -B, -C, -D, etc."
+    phase: Both
+    examples:
+      - ref: "Mark 8:35"
+        transformation: "to keep-B that person's life"
+      - ref: "Matthew 24:38"
+        transformation: "water completely covered-C the earth"
+      - ref: "Mark 8:2"
+        transformation: "I(Jesus) pity these people"
+      - ref: "Matthew 11:2"
+        transformation: "John the Baptist heard-D about the things"
+      - ref: "Mark 4:1"
+        transformation: "The crowd [that gathered-C around Jesus]"
+    variations:
+      - "-A suffix: variant 1"
+      - "-B suffix: variant 2"
+      - "-C suffix: variant 3"
+      - "-D suffix: variant 4"
+      - "Appears on verbs across semantic fields"
+
+  - name: Semantic Role Labels
+    description: "Specialized markers for roles/relations: _metonymy, _routinely, _emphasized, _newSense, _restrictive, _descriptive"
+    phase: Both
+    examples:
+      - ref: "Matthew 26:17"
+        transformation: "the Passover of the meal _metonymy"
+      - ref: "Matthew 17:24"
+        transformation: "tax collectors collected _routinely the tax"
+      - ref: "Matthew 11:10"
+        transformation: "about John _emphasized"
+      - ref: "Matthew 1:17"
+        transformation: "between _newSense the time [that Abraham lived at]"
+      - ref: "Matthew 26:86"
+        transformation: "with Jesus [_restrictive who is from Galilee]"
+    variations:
+      - "_metonymy: metonymic reference"
+      - "_routinely: habitual/routine action"
+      - "_emphasized: emphatic information"
+      - "_newSense: new/extended sense"
+      - "_restrictive: restrictive modifier"
+      - "_descriptive: descriptive modifier"
+
+  - name: Footnote and Comment Markers
+    description: "Explanatory notes marked with (footnote) or (comment-begin)/(comment-end)"
+    phase: He2-only
+    examples:
+      - ref: "Matthew 26:17"
+        transformation: "(footnote) For _relation the meal of Passover a young sheep was killed"
+      - ref: "Mark 15:28"
+        transformation: "(footnote) Most manuscripts of this part of the Scriptures do not include verse 28"
+      - ref: "Matthew 27:46"
+        transformation: "(comment-begin) These words mean-B [My(Jesus's) God...] (comment-end)"
+      - ref: "Mark 4:9"
+        transformation: "You(people) [who have ears [in-order-to hear things _implicit ]]"
+      - ref: "Matthew 9:13"
+        transformation: "_footnote You(people) (imp) see Hosea 6:6"
+    variations:
+      - "(footnote): explanatory note"
+      - "(comment-begin)...(comment-end): bracketed comment"
+      - "_footnote: inline footnote marker"
+      - "Cross-references: 'see Psalms 22:1'"
+
+  - name: Dual Number Marking
+    description: "Dual pronouns marked explicitly: you(followers) _dual for exactly two referents"
+    phase: He2-only
+    examples:
+      - ref: "Matthew 9:4"
+        transformation: "Jesus and Jesus's disciples _implicit were leaving"
+      - ref: "Mark 11:3"
+        transformation: "You(followers) _dual (imp) say to that person"
+      - ref: "Mark 14:14"
+        transformation: "You(followers) _dual (imp) say to the person [who owns that house]"
+    variations:
+      - "_dual: exactly two people"
+      - "Used with pronouns: 'you(followers) _dual'"
+      - "Distinguished from plural"
+
+  - name: Time Unit Specification
+    description: "Time units marked with both literal and modern equivalents using (literalunits)/(modernunits)"
+    phase: He2-only
+    examples:
+      - ref: "Mark 15:33"
+        transformation: "(literalunits) At-B the 6th hour... until-B the 9th hour. (modernunits) At-B 12PM... until-B 3PM"
+      - ref: "Matthew 27:46"
+        transformation: "(literalunits) At about the 9th hour... (modernunits) At about 3PM"
+    variations:
+      - "(literalunits): biblical time units (hours 1-12)"
+      - "(modernunits): modern time (AM/PM)"
+
+  - name: Iteration and Repetition Markers
+    description: "Repetitive actions marked with -iteration tag"
+    phase: He1-only
+    examples:
+      - ref: "Joshua 6:14"
+        transformation: "The Israelites walked around the city -iteration 1 time each day"
+    variations:
+      - "-iteration X: repetition count"
+      - "Used in cyclical/repeated events"
+
+  - name: Quantifier Scope Marking
+    description: "Hyperbolic/non-literal quantifiers marked: _hyperbolic, _implicitHyperbolic, all _hyperbolic"
+    phase: He2-only
+    examples:
+      - ref: "Matthew 21:9"
+        transformation: "All _implicitHyperbolic those people shouted"
+      - ref: "Mark 11:11"
+        transformation: "Jesus looked at all _hyperbolic the things [that were in that place]"
+    variations:
+      - "_hyperbolic: hyperbolic/exaggerated"
+      - "_implicitHyperbolic: implicitly hyperbolic"
+      - "Marks non-literal universal quantification"
+
+  - name: Discourse Particle Marking
+    description: "Discourse connectives and particles marked: 'and', 'So', 'But', 'For', with capitalization for discourse boundaries"
+    phase: Both
+    examples:
+      - ref: "Genesis 14:1"
+        transformation: "and Arioch was the king... and Kedorlaomer was the king"
+      - ref: "2 Samuel 10:5"
+        transformation: "So David sent messengers"
+      - ref: "Matthew 27:6"
+        transformation: "And the chief priests said... For this money was used"
+      - ref: "Mark 8:35"
+        transformation: "But a person [who dies for me(Jesus)]"
+    variations:
+      - "Lowercase 'and': within-sentence coordination"
+      - "Uppercase 'And/So/But/For': discourse-level connectives"
+      - "Sentence-initial position"
+
+  - name: Comparison/Simile Markers
+    description: "Comparisons marked with [just-like...] or [like...] patterns"
+    phase: Both
+    examples:
+      - ref: "2 Samuel 2:27"
+        transformation: "Asahel ran[like a deer runs]"
+      - ref: "Mark 8:35"
+        transformation: "[just-like that person is living now]"
+      - ref: "Matthew 9:36"
+        transformation: "[just-like sheep [who do not have a shepherd] need a shepherd]"
+      - ref: "Mark 14:24"
+        transformation: "This wine is like my(Jesus's) blood"
+    variations:
+      - "[just-like X]: exact comparison"
+      - "[like X]: simile"
+      - "Embedded in brackets"
+
+  - name: Relational Markers
+    description: "Relationship/role markers: brother-A, brother-D, sister-B, Son-of-Man _1stAs3rd, king _1stAs3rd"
+    phase: Both
+    examples:
+      - ref: "Mark 6:3"
+        transformation: "the brother-A of James, Joseph, Judas, and Simon... this man's sisters-B"
+      - ref: "Matthew 25:40"
+        transformation: "my(king's) least important friends/brothers-D... my(king's) least important sisters-D"
+      - ref: "Matthew 13:37"
+        transformation: "is-X the Son-of-Man _1stAs3rd"
+      - ref: "Matthew 9:6"
+        transformation: "the Son-of-Man _1stAs3rd has authority"
+    variations:
+      - "Kinship suffixes: -A, -B, -D (semantic distinctions)"
+      - "_1stAs3rd: first person speaking as third person"
+      - "Role markers for social relations"
+
+  - name: Negation Scope Marking
+    description: "Negation patterns with explicit scope: 'do not', 'will not', 'did not' with bracketed complements"
+    phase: Both
+    examples:
+      - ref: "Genesis 23:11"
+        transformation: "I(Ephron) will not sell the land to you(Abraham)"
+      - ref: "Mark 8:35"
+        transformation: "will not live forever _implicit with God _implicit"
+      - ref: "Matthew 24:6"
+        transformation: "But you(followers) (imp) do not become upset/troubled"
+      - ref: "1 Samuel 1:16"
+        transformation: "You(Eli) (imp) do not think [that I(Hannah) am an evil woman]"
+    variations:
+      - "Negated imperatives: (imp) do not"
+      - "Negated modals: will not, should not"
+      - "Scope indicated by brackets"
+
+  - name: Collective/Subgroup Marking
+    description: "Part-whole relations marked: of-Subgroup, one of, part of"
+    phase: He1-only
+    examples:
+      - ref: "Genesis 34:25"
+        transformation: "were 2 of-Subgroup sons of Jacob"
+    variations:
+      - "of-Subgroup: subset relationship"
+      - "one of X: single member of group"
+
+  - name: Genitive Constructions
+    description: "Possessive and genitive relations made explicit with 'of' and possessives: 'the X of Y', 'Y's X'"
+    phase: Both
+    examples:
+      - ref: "Genesis 14:1"
+        transformation: "the king of Babylonia... the king of Ellasar"
+      - ref: "1 Samuel 27:3"
+        transformation: "David's two wives were with David... One wife's name was Ahinoam"
+      - ref: "Matthew 26:17"
+        transformation: "the first day of the Feast-of-Unleavened-Bread"
+      - ref: "Mark 8:2"
+        transformation: "the Good-News"
+    variations:
+      - "'the X of Y': head-final genitive"
+      - "'Y's X': possessive clitic"
+      - "Complex chains: 'the son of Zebedee'"
+
+  - name: Adverbial Phrase Marking
+    description: "Manner, degree, and intensifier adverbs: 'very', 'much', 'completely', 'quickly', 'always'"
+    phase: Both
+    examples:
+      - ref: "Mark 4:37"
+        transformation: "a very strong wind"
+      - ref: "2 Samuel 10:5"
+        transformation: "Those officials were very ashamed/humiliated"
+      - ref: "Matthew 24:38"
+        transformation: "water completely covered-C the earth"
+      - ref: "Genesis 18:6"
+        transformation: "Abraham walked quickly to the tent"
+    variations:
+      - "Degree: 'very', 'much', 'extremely'"
+      - "Manner: 'quickly', 'slowly', 'carefully'"
+      - "Completeness: 'completely', 'totally'"
+      - "Frequency: 'always', 'never', 'often'"
+
+notes:
+  - "Phase classification based on book corpus: He1 (Hebrew Bible books), He2 (Greek NT books)"
+  - "Many patterns appear in both corpora with varying frequency"
+  - "He2 shows more metalinguistic markers (rhetorical, literal/dynamic, footnotes)"
+  - "Bracket depth averages 2-3 levels, can reach 4-5 in complex sentences"
+  - "System prioritizes explicitness over conciseness for L2 learners"
+  - "Underscore tags (_implicit, _reflexive, etc.) are productive pattern"
+  - "Parenthetical pronoun resolution is most pervasive pattern across all verses"

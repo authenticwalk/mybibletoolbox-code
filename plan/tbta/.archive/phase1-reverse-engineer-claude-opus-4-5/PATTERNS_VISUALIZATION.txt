@@ -1,0 +1,136 @@
+================================================================================
+TBTA LINGUISTIC PATTERNS - VISUAL SUMMARY
+================================================================================
+
+FREQUENCY DISTRIBUTION
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Pattern 1: Nested Square Brackets                    ████████████████████████████████████████████████ 70.0%
+Pattern 2: Parentheses Person Clarifications        ██████████████████████████████ 54.4%
+Pattern 3: Parenthetical Grammatical Tags           ███████████████████ 39.6%
+Pattern 4: Bracketed Logical Clauses                ██████████████ 35.0%
+Pattern 5: Hyphenated Semantic Units                ██████████████ 34.6%
+Pattern 6: Grammatical Function Tags                ████████████ 31.8%
+Pattern 7: Verb Alternative Forms                   ██████ 19.2%
+Pattern 8: Underscore Semantic Markers              █████ 18.4%
+Pattern 9: Capital Letter Suffixed Compounds        █████ 18.0%
+Pattern 10: Subject Reference Chains                ████ 12.0%
+Pattern 11: Dash Prefixed Explanations              ░ 0.8%
+Pattern 12: Double Quote Closures                   ░ 0.6%
+Pattern 13: Means Definition Statements             ░ 0.6%
+
+FUNCTIONAL BREAKDOWN
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Structural Markers         ███████████████████████████ 70%  [Patterns 1,4,5,6,8,9]
+Disambiguation             ████████████████ 54%  [Patterns 2,10]
+Translation Guidance       ██████████ 40%  [Patterns 3,6,7]
+Semantic Precision         ███████████████ 35%  [Patterns 5,8,9]
+Specialized Notation       ░ <1%  [Patterns 11,12,13]
+
+PATTERN CATEGORIES
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+HIGH FREQUENCY (25%+)                MEDIUM (10-25%)              LOW (<10%)
+─────────────────────────────────    ─────────────────────────    ─────────────────
+1. Nested Brackets       70%          7. Verb Alternatives   19%   11. Dash Explain  <1%
+2. Person Clarif.        54%          8. Underscore Mark.    18%   12. Quote Close   <1%
+3. Grammar Tags          40%          9. Capital Suffix      18%   13. Means Def.    <1%
+4. Logical Clauses       35%         10. Subject Chains      12%
+5. Hyphenated Units      35%
+6. Function Tags         32%
+
+CORE MECHANISMS (used in 70% of verses)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+[Bracket Structure]                          (Person Clarification)
+├─ Main clause [subordinate clause]          ├─ you(Pharisees)
+├─ [When X happens]                          ├─ David(king)
+├─ [so that purpose]                         └─ I(Gabriel)
+└─ Nested hierarchy
+
+UNDERSCORE MARKER SYSTEM (15 marker types)
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+_implicit              ███████████ 22%  Content reader must infer
+_paragraph            ██ 6%             Structural division
+_implicitNecessary    █ 5%              Grammar requires but unstated
+_implicitActiveAgent  █ 3%              Subject of action not named
+_plural               ░ 2%              Plural number
+_dual                 ░ 2%              Exactly two items
+_generic              ░ 1%              Generic reference
+_singular             ░ 1%              Singular reference
+_hyperbolic           ░ 1%              Rhetorical exaggeration
++ 6 more markers with <1% frequency each
+
+IMPLEMENTATION ROADMAP
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+PHASE 1 (Critical)        PHASE 2 (Recommended)     PHASE 3 (Specialized)
+─────────────────         ──────────────────────    ─────────────────────
+Patterns 1-6              Patterns 7-10              Patterns 11-13
+70-32% coverage           19-12% coverage            <1% coverage
+Essential for:            Extends with:              Add when:
+• Structural clarity      • Translation options     • Etymology needed
+• Pronoun resolution      • Semantic variants       • Definitions required
+• Grammar guidance        • Linguistic markers      • Quote marks needed
+
+PATTERN NESTING EXAMPLE
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Simple Structure:
+  you(Pharisees) ignore [command]
+
+Complex Structure:
+  _paragraph You(David) were [wanting [to help [those people(soldiers)]]]
+
+With Alternates:
+  Jesus was teaching/preaching [so-that people would believe]
+
+With Semantic Markers:
+  They went [in-order-to (purpose) find the _implicit lost _implicit sheep]
+
+STATISTICAL SUMMARY
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+Verses Analyzed:              500
+Patterns Discovered:           13
+High-Frequency (25%+):         6 patterns
+Medium-Frequency (10-25%):     4 patterns
+Low-Frequency (<10%):          3 patterns
+Underscore Markers:           15 types
+Parenthetical Tags:           10 types
+Total Marker Coverage:        25+ distinct markers
+
+Coverage Analysis:
+Verses with brackets:        350/500 (70%)
+Verses with person clarif.:  272/500 (54%)
+Verses with grammar tags:    198/500 (40%)
+Verses with 3+ patterns:     ~300/500 (60%)
+Verses with 1-2 patterns:    ~150/500 (30%)
+Verses with minimal markup:  ~50/500 (10%)
+
+KEY INSIGHTS
+━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
+
+1. MULTI-LAYER SYSTEM
+   Most verses use 3+ patterns simultaneously for maximum semantic clarity
+
+2. PRONOUN FOCUS
+   54% person clarification suggests target languages with different pronoun systems
+
+3. TRANSLATION-AWARE
+   40% include explicit translation guidance (literal/dynamic, simple/complex)
+
+4. EXTENSIBLE DESIGN
+   Underscore prefix system allows unlimited future annotation types
+
+5. THEOLOGICAL PRECISION
+   Capital suffixes distinguish semantic and doctrinal variants
+
+6. ACCESSIBILITY
+   High-frequency patterns cover 70% with simple nested bracket mechanism
+
+================================================================================
+END VISUALIZATION
+================================================================================

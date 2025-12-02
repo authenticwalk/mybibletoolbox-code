@@ -1,0 +1,456 @@
+patterns:
+  - name: Pronoun Expansion with Possessive Clarification
+    description: "NIV pronouns expanded to noun phrases with possessive markers in parentheses showing coreference"
+    phase: Both
+    examples:
+      - "Genesis 2:25: 'the man and the man's wife'"
+      - "Genesis 8:12: 'Noah waited... Then Noah put the dove outside'"
+      - "Genesis 21:15: 'Hagar put Hagar's son under a big bush'"
+      - "1 Samuel 17:56: 'that young man's father'"
+      - "Matthew 12:10: 'Jesus was doing bad _morally things'"
+    variations:
+      - "Possessive always shows full noun: 'your(Abraham's)' not just 'your'"
+      - "Reflexive uses same noun: 'Hagar put Hagar's son'"
+
+  - name: Implicit Information Marking
+    description: "Content not in source text marked with (implicit-*) tags indicating type of inference"
+    phase: Both
+    examples:
+      - "Matthew 12:10: '(implicit-situational) were there'"
+      - "1 Samuel 22:4: '(implicit-info) returned to the cave'"
+      - "Mark 11:18: '(implicit-situational) But those chief priests... did not try [to take-away/arrest Jesus at that time]'"
+      - "2 Samuel 10:4: '(implicit-info) wanted [to embarrass those men]'"
+      - "Acts 20:16: '(implicit-situational) people will much suffer'"
+    variations:
+      - "implicit-situational: inferable from context"
+      - "implicit-info: background information added"
+      - "implicit-subaction: implied action"
+      - "_implicit: unmarked implicit content"
+
+  - name: Bracket Nesting for Clause Embedding
+    description: "Square brackets mark clause boundaries and grammatical relationships with deep nesting"
+    phase: Both
+    examples:
+      - "1 Samuel 17:27: 'men told David [that the king will give much money to the man [who will kill Goliath]]'"
+      - "Matthew 12:10: 'Pharisees asked Jesus, [\"Does the religious laws allow [people to heal people _implicit _otherThingList on the Sabbath]?\"]'"
+      - "Daniel 5:23: 'gods [that other people made]. Those gods were made of gold... Those gods are not able [to see things]'"
+      - "Genesis 13:15: 'all the places [that you(Abram) are able [to see]]'"
+      - "Joshua 5:1: '[When all of the Amorite kings [who were living on the western side] heard that [Yahweh did this thing]]'"
+    variations:
+      - "Brackets for relative clauses: [who...], [that...]"
+      - "Brackets for complement clauses: [to verb...]"
+      - "Multiple levels common: [[[]]]"
+
+  - name: Quote Framing with Speaker Attribution
+    description: "Direct speech marked with brackets and speaker identified before or within quote"
+    phase: Both
+    examples:
+      - "Genesis 8:26: 'Abimelech said, [\"I(Abimelech) did not know...\"]'"
+      - "Joshua 2:3: 'That soldier said to Rahab, [\"You(Rahab) (imp) bring the men...\"]'"
+      - "Matthew 12:10: 'those Pharisees asked Jesus, [\"Does the religious laws allow...\"]'"
+      - "Jonah 2:9: 'I(Jonah) will say, [\"Yahweh, you(Yahweh) are the God...\"]'"
+      - "2 Samuel 3:12: 'Abner said, [\"Who will rule this land]?\"'"
+    variations:
+      - "Speaker before quote with comma: 'X said, [\"...\"]'"
+      - "Quote verb in bracket: 'asked Jesus, [\"...\"]'"
+      - "Nested quotes with multiple brackets"
+
+  - name: Imperative Marking with (imp)
+    description: "Imperative mood explicitly marked with (imp) tag before or after verb"
+    phase: Both
+    examples:
+      - "Joshua 3:12: 'You(people) (imp) choose 12 men'"
+      - "Genesis 38:11: 'You(Tamar) (imp) return to your(Tamar's) father'"
+      - "Joshua 2:3: 'You(Rahab) (imp) bring the men'"
+      - "1 Samuel 3:9: 'You(Samuel) (imp) return to your(Samuel's) bed'"
+      - "Matthew 6:3: 'you(person) (imp) do not let [your(person's) left hand know...]'"
+    variations:
+      - "Usually before main verb: '(imp) choose'"
+      - "Can appear after subject: 'You(people) (imp) choose'"
+      - "Consistent across all command forms"
+
+  - name: Deixis with First/Second Person Parenthetical Identity
+    description: "Personal pronouns clarified with speaker/referent identity in parentheses"
+    phase: Both
+    examples:
+      - "Genesis 8:26: 'I(Abimelech) did not know... You(Abraham) did not tell me(Abimelech)'"
+      - "Genesis 13:15: 'I(Yahweh) will give all these places to you(Abram)'"
+      - "Jonah 2:9: 'I(Jonah) will give a gift/sacrifice to you(Yahweh)'"
+      - "Daniel 9:16: 'you(Lord) are always righteous... your(Lord's) city'"
+      - "Matthew 17:27: 'we(Jesus) _incl do not want'"
+    variations:
+      - "First person: I(speaker), we(group)"
+      - "Second person: you(addressee), your(addressee's)"
+      - "Inclusive/exclusive: we(Jesus) _incl"
+
+  - name: Vocabulary L2 Pairings with Slash Alternatives
+    description: "Multiple English glosses for single source term separated by slashes"
+    phase: Both
+    examples:
+      - "Matthew 12:10: 'sick/shriveled hand'"
+      - "Mark 11:18: 'started planning/plotting-B'"
+      - "Nahum 2:8: 'You(people) (imp) stop run-away'"
+      - "1 Samuel 13:21: 'plows become sharp... forks, axes, and goads become sharp'"
+      - "Matthew 23:38: 'empty _implicit house [that is left/abandon by God]'"
+    variations:
+      - "Semantic alternatives: 'sick/shriveled'"
+      - "Verbal synonyms: 'planning/plotting'"
+      - "Sometimes unmarked alternatives in different clauses"
+
+  - name: Name Introduction Formula
+    description: "Names introduced with 'named X' pattern or appositive structure"
+    phase: Both
+    examples:
+      - "Joshua 15:41: 'the towns named Gederoth, Beth-Dagon, Naamah, and Makkedah'"
+      - "Genesis 30:25: 'Jacob's son named Joseph'"
+      - "2 Samuel 14:27: 'Absalom's daughter's name was Tamar'"
+      - "Genesis 11:24: 'Nahor had a son named Terah'"
+      - "Matthew 4:21: 'James [who was the son of Zebedee named a man _implicitType]'"
+    variations:
+      - "Post-nominal: 'the towns named X, Y, Z'"
+      - "Possessive construction: 'daughter's name was X'"
+      - "Relative clause: '[who was named X]'"
+
+  - name: Title and Paragraph Markers
+    description: "Structural markers for titles, paragraphs, and section breaks"
+    phase: Both
+    examples:
+      - "Genesis 30:25: '-Title Jacob tricks Laban'"
+      - "Mark 10:10: '(paragraph) [When Jesus and Jesus's disciples were alone...]'"
+      - "1 Samuel 30:1: '(title) David defeats the Amalekites'"
+      - "Genesis 32:22: '-Title Jacob fights with God'"
+      - "Matthew 12:15: '(title) Jesus is the servant-A [that God chose]. _paragraph Jesus knew...'"
+    variations:
+      - "Hyphenated title: '-Title X'"
+      - "Parenthetical title: '(title) X'"
+      - "Paragraph marker: '(paragraph)' or '_paragraph'"
+
+  - name: Relative Clause with Demonstrative Antecedent
+    description: "Demonstrative pronouns (these, those) followed by relative clauses with [that/who...]"
+    phase: Both
+    examples:
+      - "Genesis 2:25: 'these 2 people were not ashamed'"
+      - "Daniel 1:19: 'these four men began to serve the king'"
+      - "Genesis 9:15: 'all things [that live on the earth]'"
+      - "1 Samuel 30:10: 'Those men were not able [to cross the valley]'"
+      - "Joshua 5:1: 'those kings became very afraid'"
+    variations:
+      - "Demonstrative + number: 'these 2 people', 'these four men'"
+      - "Demonstrative + relative: 'those men [who...]'"
+      - "Distance marked: 'these' vs 'those'"
+
+  - name: Temporal and Logical Connectives
+    description: "Time and logical relationships marked with 'Then', 'So', 'But' at clause start"
+    phase: Both
+    examples:
+      - "Genesis 7:8: 'These animals came to Noah. [connective missing but implied]'"
+      - "1 Samuel 17:27: 'And those men told David about all of the other things'"
+      - "Daniel 5:23: 'And you(Belshazzar) did not honor the true God'"
+      - "2 Samuel 14:29: 'Then Absalom sent another messenger'"
+      - "Joshua 5:1: 'So Yahweh caused [the Jordan River to become dry]'"
+    variations:
+      - "'Then' for temporal sequence"
+      - "'So' for result/conclusion"
+      - "'But' for contrast"
+      - "'And' for continuation"
+
+  - name: Bracket Convention for Relative Clauses
+    description: "All relative clauses enclosed in square brackets regardless of restrictive/non-restrictive"
+    phase: Both
+    examples:
+      - "Matthew 12:10: 'a man [who had a sick/shriveled hand]'"
+      - "Esther 4:2: 'people [that were wearing clothes [that were made of sackcloth]]'"
+      - "Joshua 15:41: 'towns [that were in that region]'"
+      - "Daniel 5:23: 'gods [that other people made]'"
+      - "Genesis 13:15: 'places [that you(Abram) are able [to see]]'"
+    variations:
+      - "Always bracketed: [who...], [that...], [which...]"
+      - "Works with nested clauses"
+      - "No distinction for restrictive vs non-restrictive"
+
+  - name: Coreference Chain with Repeated Nouns
+    description: "Pronouns replaced by full noun phrases creating explicit coreference chains"
+    phase: Both
+    examples:
+      - "Genesis 21:15: 'Hagar and Ishmael drank all the water... Hagar put Hagar's son under a big bush'"
+      - "1 Samuel 30:10: '200 of the men stayed... Those men were not able... So David and the other 400 men continued'"
+      - "Daniel 1:19: 'The king spoke to the young men... So these four men began to serve the king'"
+      - "Genesis 36:7: 'Esau and Jacob had many animals. These animals were not able...'"
+      - "Mark 11:18: 'those chief priests and those people/scribes... those chief priests and those people/scribes'"
+    variations:
+      - "Initial full noun phrase, then 'these/those + noun'"
+      - "Sometimes full repetition: 'Hagar... Hagar... Hagar'"
+      - "Number marking: 'these 2 people', 'these four men'"
+
+  - name: Passive Avoidance with Agent Marking
+    description: "Passive voice avoided or marked with explicit agent in brackets or _passive tags"
+    phase: Both
+    examples:
+      - "Matthew 21:13: 'My(God's) house will be called by people _implicitActiveAgent a house'"
+      - "Nehemiah 12:44: 'The priests _passivenoagent put the gifts... leaders _passivenoagent chose/appointed men'"
+      - "Matthew 27:66: 'those people put a mark on the stone'"
+      - "Mark 16:6: 'soldiers _implicitNecessary killed [by putting on a cross]'"
+      - "Esther 2:3: 'These women will live at the women's house'"
+    variations:
+      - "Agent specified: 'by people _implicitActiveAgent'"
+      - "Passive marked: '_passivenoagent'"
+      - "Recast as active when possible"
+
+  - name: Literal vs Dynamic Alternatives
+    description: "Both literal and dynamic translations provided with explicit labels"
+    phase: He2-only
+    examples:
+      - "Matthew 26:70: '(literal) Peter said, [\"I(Peter) do not know-D about the thing-B...\"] (dynamic) Peter said, [\"I(Peter) do not know-D that man\"]'"
+      - "Matthew 10:13: '(literal) [If that house... treat you kindly,] you(disciples) (imp) let [your(disciples') peace be in that house]. (dynamic) ... you(disciples) (imp) give peace to those people'"
+      - "Matthew 6:3: '(literal) do not let [your(person's) left hand know...] (dynamic) do not let [people see...]'"
+      - "Mark 1:10: '(literal) Jesus immediately saw [the sky being opened...] (dynamic) Jesus immediately saw [the Spirit of God...]'"
+      - "Matthew 15:13: '(complex) ... (simple) ...'"
+    variations:
+      - "Labels: (literal), (dynamic), (complex), (simple)"
+      - "Full parallel translations"
+      - "Appears only in He2 (NT) books"
+
+  - name: Rhetorical Question Labeling
+    description: "Rhetorical questions labeled with (rhetorical)/(norhetorical) and statement equivalent"
+    phase: He2-only
+    examples:
+      - "Matthew 12:26: '(norhetorical) Then-D is Satan... able [to continue being/exist powerful]? (statement) Then-D Satan... is not able [to continue being/exist]'"
+      - "Mark 10:37: '(rhetorical) Jesus asked that man, [\"Why do you(man) say [I(Jesus) am good]?] (statement) Jesus said... [\"You(man) should think [before you(man) say...]'\"]]"
+      - "Matthew 16:9: '(norhetorical) Do you(followers) understand me(Jesus) _implicit? (statement) You(followers) still do not understand'"
+      - "Matthew 7:3: '(rhetorical) Why do you(person) look at the piece of dust... (statement) [If you(person) do not notice...] you(person) should not look...'"
+    variations:
+      - "Question followed by statement form"
+      - "Labels: (rhetorical), (norhetorical)"
+      - "He2 books only"
+
+  - name: Footnote and Reference Markers
+    description: "Cross-references and textual notes marked with (footnote) tag"
+    phase: Both
+    examples:
+      - "Matthew 21:13: '(footnote) You(people) (imp) see Isaiah 56:7 and Jeremiah 7:11'"
+      - "Mark 7:4: '(footnote) Some manuscripts _copiesInLDV of this part of the Scripture say...'"
+      - "Matthew 17:21: '(footnote) Some copies/manuscripts... include the words [that are in Mark 9:29]'"
+      - "Genesis 30:24: '-Footnote Joseph means another'"
+      - "Mark 14:27: '(footnote) You(people) (imp) see Zechariah 13:7'"
+    variations:
+      - "Parenthetical: '(footnote)'"
+      - "Hyphenated: '-Footnote'"
+      - "Cross-references: 'see Book chapter:verse'"
+      - "Textual variants noted"
+
+  - name: Semantic Type Markers with Underscore
+    description: "Special semantic categories marked with underscore prefix (_morally, _implicit, etc.)"
+    phase: Both
+    examples:
+      - "Matthew 12:10: 'bad _morally things'"
+      - "Mark 7:4: 'manuscripts _copiesInLDV'"
+      - "Matthew 18:10: 'children [_restrictive who believe in me(Jesus)]'"
+      - "Matthew 10:13: 'house of the people _implicitType'"
+      - "Mark 6:41: 'the pieces _implicit of bread'"
+    variations:
+      - "_morally: moral evaluation"
+      - "_implicit: understood but not stated"
+      - "_restrictive: restrictive relative clause"
+      - "_implicitType: implied type/category"
+      - "_copiesInLDV: manuscripts"
+      - "_dual: dual number"
+      - "_incl/_excl: inclusive/exclusive we"
+
+  - name: Clause Segmentation at Conjunction
+    description: "Coordinate clauses separated with period instead of 'and', creating multiple sentences"
+    phase: Both
+    examples:
+      - "Genesis 28:15: 'I(Yahweh) am with you(Jacob). and I(Yahweh) will always protect you(Jacob). and I(Yahweh) will cause [you(Jacob) to return to this land]'"
+      - "Genesis 31:38: 'I(Jacob) worked for you(Laban) for 20 years. [While I(Jacob) worked for you(Laban)] all of the animal's babies lived. and I(Jacob) did not eat any male sheep'"
+      - "Genesis 21:17: 'The boy also was crying. God heard [the boy crying]. So the angel of God... called Hagar'"
+      - "Genesis 17:20: 'I(God) will also bless Ishmael. and I(God) will cause [Ishmael to have many descendants]'"
+    variations:
+      - "Lowercase 'and' after period"
+      - "Creates topic/focus structure"
+      - "Alternative to comma coordination"
+
+  - name: Comparative Constructions with just-like
+    description: "Similes and comparisons using [just-like...] or be-U like construction"
+    phase: Both
+    examples:
+      - "Joshua 10:38: 'the Israelites killed that city's king [just-like the Israelites killed the king of Jericho]'"
+      - "Matthew 25:32: 'the Son-of-man... will separate... people [just-like a person... separates sheep from goats]'"
+      - "Mark 14:27: 'you(followers) will leave/abandon me(Jesus) [(implicit-situational) just-like sheep leave/abandon those sheep's shepherd]'"
+      - "Matthew 15:13: 'people are-U like plants [that God plants]'"
+      - "Matthew 13:20: 'A person... is _be-U like the seeds...'"
+    variations:
+      - "Bracketed: [just-like...]"
+      - "Copula: 'is like', 'are-U like', '_be-U like'"
+      - "Comparisons explicit, not elliptical"
+
+  - name: Number and Dual Marking
+    description: "Grammatical number explicitly marked, especially dual (_dual) for pairs"
+    phase: Both
+    examples:
+      - "Genesis 2:25: 'these 2 people were not ashamed'"
+      - "Matthew 21:31: 'the sons _dual'"
+      - "Mark 11:2: 'you(followers) _dual (imp) go... you(followers) _dual will immediately find-A'"
+      - "2 Samuel 1:23: 'with each-other(Saul) [referring to Saul and Jonathan]'"
+      - "Matthew 27:56: 'Zebedee's sons _dual named James _implicit and John _implicit'"
+    variations:
+      - "Explicit number: 'these 2 people', 'these four men'"
+      - "Dual marker: '_dual'"
+      - "Reciprocal: 'each-other(reference)'"
+
+  - name: Iteration and Quantification Markers
+    description: "Repetition and frequency marked with -iteration or -quantity tags"
+    phase: Both
+    examples:
+      - "Nehemiah 4:12: 'those Jews said -iteration many times'"
+      - "1 Samuel 13:21: 'silver -quantity 100 pieces'"
+      - "Matthew 27:30: 'Those soldier hit Jesus's head... repeatedly-A'"
+      - "Joshua 24:32: 'silver -quantity 100 pieces'"
+      - "Nehemiah 6:4: 'the same message... -Iteration four times'"
+    variations:
+      - "-iteration: repeated action"
+      - "-quantity: numerical amount"
+      - "repeatedly-A: adverbial repetition marker"
+
+  - name: Discourse Particle Marking
+    description: "Discourse markers and particles explicitly tagged (Then-D, asked-D, etc.)"
+    phase: He2-only
+    examples:
+      - "Mark 10:10: 'those disciples asked-D Jesus'"
+      - "Matthew 12:26: '(norhetorical) Then-D is Satan...'"
+      - "Mark 14:36: 'Peter remembered-D the words'"
+      - "Mark 7:17: 'disciples... asked-D Jesus about that lesson/parable'"
+      - "Matthew 24:39: 'What then-D will we(followers)... receive?'"
+    variations:
+      - "-D suffix on verbs: asked-D, remembered-D"
+      - "Then-D: discourse then vs temporal then"
+      - "Appears primarily in He2 (NT) books"
+
+  - name: Frame and Type Inference Markers
+    description: "Inferable frames and types marked with _frameInferable, _implicitType tags"
+    phase: Both
+    examples:
+      - "Matthew 24:43: 'the person [who owns the house _frameInferable]'"
+      - "Matthew 10:13: 'house of the people _implicitType'"
+      - "Mark 12:1: 'Jesus told parables to the people _frameInferable'"
+      - "Mark 11:4: 'outside _AdverbInLDV on-D the street _frameInferable'"
+      - "Mark 12:20: 'the seats _frameInferableDual'"
+    variations:
+      - "_frameInferable: inferable semantic frame"
+      - "_implicitType: implicit category/type"
+      - "_frameInferableDual: dual number inferable frame"
+
+  - name: Metonymy and Figure Marking
+    description: "Metonymic and figurative uses explicitly marked with _metonymy tag"
+    phase: He2-only
+    examples:
+      - "Matthew 12:26: 'Satan of the nation/kingdom-C _metonymy'"
+      - "Matthew 11:20: 'the towns of the people _metonymy'"
+      - "Mark 11:4: 'tied-B with a rope _implicit to a door of the post _metonymy'"
+    variations:
+      - "_metonymy: metonymic usage"
+      - "Often with part/whole relationships"
+      - "Primarily He2 books"
+
+  - name: Comment Begin/End Markers
+    description: "Parenthetical explanatory comments marked with (comment-begin)/(comment-end)"
+    phase: Both
+    examples:
+      - "Mark 15:34: '(comment-begin) Those words mean-B [My(Jesus's) God...] (comment-end)'"
+      - "Mark 7:4: '(comment-end) (footnote) Some manuscripts...'"
+    variations:
+      - "Explicit boundaries for metalinguistic comment"
+      - "Usually translation/explanation of foreign terms"
+
+  - name: Copula and Predicate Specification
+    description: "Copula verbs explicitly retained and predicate structures specified"
+    phase: Both
+    examples:
+      - "Genesis 36:32: 'Bela... was the king of Edom'"
+      - "Matthew 13:20: 'A person... is _be-U like the seeds'"
+      - "Genesis 9:20: 'Noah became a farmer'"
+      - "Acts 19:35: 'we(people) people [who live in Ephesus] are-U like plants'"
+    variations:
+      - "Copula never deleted: 'was', 'is', 'are'"
+      - "Predicate nominals explicit"
+      - "Sometimes marked: '_be-U'"
+
+he1_specific_patterns:
+  - name: Limited Discourse Marking
+    description: "He1 books show less explicit discourse particle marking compared to He2"
+    examples:
+      - "Genesis, Joshua, Ruth, 1-2 Samuel: minimal -D marking"
+      - "Simpler clause transitions without Then-D"
+    note: "Contrast with He2 extensive -D marking (asked-D, Then-D, etc.)"
+
+  - name: Historical Narrative Style
+    description: "Heavy use of temporal sequencing with 'Then', 'After', 'Later'"
+    examples:
+      - "Genesis 21:15: '[After Hagar and Ishmael drank all the water] Hagar put...'"
+      - "Joshua 3:2: 'After 3 days the officers walked'"
+      - "2 Samuel 14:29: 'One day Absalom sent... Then Absalom sent another'"
+    note: "Historical narrative dominated by temporal chaining"
+
+he2_specific_patterns:
+  - name: Literal/Dynamic Pairing
+    description: "Gospel and epistles provide both literal and dynamic translations for difficult passages"
+    examples:
+      - "Matthew 26:70, Matthew 10:13, Matthew 6:3"
+      - "Mark 1:10, Matthew 15:13"
+    note: "Only in He2 (Matthew, Mark, Acts, Titus, Philemon, 2 John)"
+
+  - name: Rhetorical Question Handling
+    description: "Explicit labeling and statement reformulation of rhetorical questions"
+    examples:
+      - "Matthew 12:26, Mark 10:37, Matthew 16:9"
+    note: "Pedagogical feature for He2 texts"
+
+  - name: Dense Discourse Marking
+    description: "Frequent use of discourse particles (-D suffix) on verbs and connectives"
+    examples:
+      - "Mark 10:10: asked-D"
+      - "Matthew 24:39: Then-D"
+      - "Mark 14:36: remembered-D"
+    note: "Distinguishes pragmatic function from semantic meaning"
+
+cross_category_observations:
+  - observation: "Pronoun expansion is universal across both He1 and He2"
+    evidence: "All books show full noun phrase replacement with possessive clarification"
+
+  - observation: "Bracket nesting depth correlates with clause complexity"
+    evidence: "3-4 levels common in both testaments for embedded relative and complement clauses"
+
+  - observation: "Implicit marking more refined in He2"
+    evidence: "He2 shows _frameInferable, _metonymy, discourse -D tags not prevalent in He1"
+
+  - observation: "Title/paragraph marking consistent across both"
+    evidence: "Both use (title)/-Title and (paragraph)/_paragraph markers"
+
+  - observation: "Imperative marking universal"
+    evidence: "(imp) tag appears in all books for commands"
+
+  - observation: "Name introduction formula stable"
+    evidence: "'named X' pattern used consistently in genealogies and place names"
+
+exceptional_cases:
+  - pattern: "Some verses have extreme bracket nesting"
+    example: "Matthew 12:10 with 4-5 levels"
+    note: "Complex theological or legal discourse"
+
+  - pattern: "Code-switching in foreign terms"
+    example: "Mark 15:34: 'Eloi-Eloi-lema-sabachthani?'"
+    note: "Aramaic preserved with comment blocks explaining meaning"
+
+  - pattern: "Alternative units provided"
+    example: "Matthew 25:22: (literalunits) 2 talents vs (modernunits) 2 bags"
+    note: "Reader accommodation for measurements"
+
+  - pattern: "Dual addressing"
+    example: "Matthew 7:21: 'Lord, Lord _bothAddressees'"
+    note: "Marks vocative repetition as addressing multiple aspects"
+
+summary:
+  total_patterns_identified: 29
+  both_phase: 23
+  he1_only: 2
+  he2_only: 4
+  key_insight: "TBTA transformation consistently expands implicit information, eliminates pronouns for explicit coreference, nests clauses with brackets, and marks grammatical/semantic categories with tags. He2 adds pedagogical layers (literal/dynamic, rhetorical labeling) and denser discourse marking. Both phases maintain strict bracket nesting, imperative marking, and name introduction conventions."

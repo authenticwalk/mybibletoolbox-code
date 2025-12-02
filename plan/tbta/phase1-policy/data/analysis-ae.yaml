@@ -1,0 +1,445 @@
+patterns:
+  - name: Bracket-Embedded Clausal Information
+    category: Bracket conventions
+    transformation: "NIV implicit information → CNL bracketed clauses with semantic role labels"
+    phase: Both
+    description: |
+      Information implicit in NIV is made explicit in CNL using brackets with various semantic markers.
+      Brackets contain subordinate clauses, purpose clauses, causal relationships, and background info.
+    examples:
+      - Mark 2:8: "knew in his spirit" → "knew in Jesus's spirit [those people/scribes were thinking about those things in those people's/scribes's hearts]"
+      - Daniel 5:15: "tell me about" → "tell me(king) about the meaning of this message"
+      - Joshua 17:2: "descendants of Manasseh" → "descendants of Manasseh [who was the son of Joseph]"
+      - Mark 14:20: "dipping bread" → "dipping bread _implicit into the bowl _frameInferable with me(Jesus)"
+      - Matthew 5:43: "were told" → "were told _distantPast by the religious _implicit laws/Law _implicitActiveAgent"
+    variations: |
+      - Purpose clauses: [in-order-to VERB]
+      - Causal: [because CLAUSE]
+      - Temporal: [when CLAUSE], [while CLAUSE], [after CLAUSE]
+      - Conditional: [if CLAUSE]
+      - Relative: [who/that CLAUSE]
+      - Descriptive: [_descriptive which/that CLAUSE]
+
+  - name: Coreference Chain Explicit Marking
+    category: Pronoun/coreference
+    transformation: "NIV pronouns → CNL explicit noun phrase with optional pronoun retention"
+    phase: Both
+    description: |
+      All referents are explicitly named, even when pronouns exist in source.
+      Pattern: pronoun(referent) or just referent name.
+    examples:
+      - Mark 2:8: "he knew" → "Jesus knew", "Why are you" → "Why (rhetorical) are you(people) thinking"
+      - Esther 9:17: "they rested" → "those Jews rested"
+      - Genesis 12:5: "Abram took his wife" → "Abram took Abram's wife"
+      - Joshua 6:15: "they woke up" → "the Israelites woke-up"
+      - Mark 15:21: "Simon" → "a certain man named Simon"
+    variations: |
+      - you(David), me(Jesus), we(Nehemiah)
+      - those people/scribes, the Israelites
+      - Full NP repetition: "Abram took Abram's wife"
+
+  - name: Implicit Agent Passive Marking
+    category: Implicit info markers
+    transformation: "NIV passive construction → CNL passive with _implicitActiveAgent marker"
+    phase: Both
+    description: |
+      Passive constructions mark when the agent is not specified but understood.
+      Uses _implicitActiveAgent or by-phrase with implicit agent identified.
+    examples:
+      - Matthew 5:43: "you have heard that it was said" → "were told _distantPast by the religious _implicit laws/Law _implicitActiveAgent"
+      - Mark 14:5: "it could have been sold" → "that perfume might be sold by that woman _implicitActiveAgent"
+      - Matthew 27:16: "a famous prisoner" → "a famous prisoner [who was put in prison by the Roman soldiers _implicitActiveAgent]"
+      - Matthew 22:19: "the coin used to pay" → "the coin [that people _generic use]"
+      - Matthew 25:43: "those women/widows were taken advantage of" → "by cheating those women/widows"
+    variations: |
+      - _implicitActiveAgent (no by-phrase)
+      - by people _implicitActiveAgent
+      - by God _implicitActiveAgent
+      - _generic for generic agents
+
+  - name: Parenthetical Metadata Markers
+    category: Title/paragraph markers
+    transformation: "NIV section headings/implicit structure → CNL inline (title), (paragraph), (footnote) markers"
+    phase: Both
+    description: |
+      Discourse structure is marked with parenthetical labels.
+      Titles, paragraph breaks, and footnotes are explicitly marked inline.
+    examples:
+      - Mark 2:8: "(paragraph) (literal) Immediately Jesus knew"
+      - Ruth 4:18: no title in NIV → implicit title marking
+      - Matthew 5:43: "(title) Jesus says [people should love all people]. (paragraph)"
+      - Jonah 1:14: "(footnote) The word of Aramaic named Abba means 'father'"
+      - Mark 8:31: "(title) Jesus talks about Jesus's death. (paragraph)"
+    variations: |
+      - (title), (paragraph), (footnote)
+      - (comment-begin) ... (comment-end)
+      - Section breaks marked inline
+
+  - name: Rhetorical Question Explicit Tagging
+    category: Imperatives
+    transformation: "NIV rhetorical question → CNL (rhetorical)/(norhetorical)/(yesrhetorical) + (statement) paraphrase"
+    phase: Both
+    description: |
+      Questions are tagged as rhetorical or not, followed by statement equivalent.
+      Helps L2 readers understand the communicative intent.
+    examples:
+      - Matthew 23:17: "(norhetorical) You(scribes), stupid/foolish people ... are the gold ... greater than that building/temple? (statement) ... the gold ... are not greater than that building/temple"
+      - Mark 5:7: "(rhetorical) Jesus, Son of God-Most-High, what will you(Jesus) do to me(man)? (statement) Jesus ... you(Jesus) (imp) do not treat me(man) badly!"
+      - Matthew 12:11: "(yesrhetorical) ... will a person pull-out a sheep ...? (statement) ... a person will pull-out a sheep"
+      - Matthew 16:11: "(rhetorical) Why do you(followers) not understand ...? (statement) You(followers) should understand"
+      - Matthew 7:4: "(rhetorical) Why do you(person) say ...? (statement) You(person) should not say"
+    variations: |
+      - (rhetorical) for yes-expected/no-expected rhetorical questions
+      - (yesrhetorical), (norhetorical) for clear expectations
+      - (statement) paraphrase follows
+
+  - name: Literal-Dynamic Dual Rendering
+    category: Vocabulary L2 pairings
+    transformation: "NIV metaphor/idiom → CNL (literal) + (dynamic) dual forms"
+    phase: Both
+    description: |
+      Figurative language given both word-for-word and meaning-based translations.
+      Helps L2 readers understand both form and function.
+    examples:
+      - Mark 14:36: "(literal) You(Father) please (imp) take-away this cup from me(Jesus). (dynamic) You(Father) please (imp) save-A me(Jesus) [so that I(Jesus) will not need [to suffer]]"
+      - Mark 14:25: "(complex) that I(Jesus) drink a new wine in the kingdom-B of God ... (simple) that I(Jesus) drink a new wine [after God starts ruling God's people]"
+      - Mark 6:9: "(literal) But you(followers) (imp) do not wear two shirts. (dynamic) But you(followers) (imp) do not take extra clothes"
+      - Matthew 3:8: "(literal) You(Pharisees) (imp) produce fruit [that shows [ you(Pharisees) repented]]. (dynamic) You(Pharisees) (imp) do actions [that show [ you(Pharisees) repented]]"
+      - Mark 14:22: "(primary) This bread is my(Jesus's) body. (meaning-1) This bread is like my(Jesus's) body"
+    variations: |
+      - (literal) / (dynamic)
+      - (primary) / (meaning-1)
+      - (complex) / (simple)
+      - Dual forms for metaphors, idioms, cultural items
+
+  - name: Implicit-Situational Context Markers
+    category: Implicit info markers
+    transformation: "NIV pragmatically inferred info → CNL (implicit-situational) or (implicit-cultural) labels"
+    phase: Both
+    description: |
+      Information that readers must infer from context is explicitly marked and provided.
+      Distinguishes situational inference from cultural knowledge.
+    examples:
+      - Mark 14:10: "dipping bread _implicit into the bowl _frameInferable with me(Jesus)"
+      - Matthew 24:28: "(implicit-situational) Therefore [when you(followers) see a vulture,] you(followers) know [there is a dead animal there]"
+      - Mark 5:6: "That man saw Jesus [when Jesus was far-away-from that man]"
+      - Matthew 3:4: "(implicit-cultural) wore rough clothes [that were like the clothes [that poor people and prophets wore]]"
+      - Mark 2:4: "(implicit-situational) wanted [Jesus to cause [that man to become healthy]]"
+    variations: |
+      - (implicit-situational)
+      - (implicit-cultural)
+      - (implicit-info)
+      - (implicit-subaction)
+      - _implicit, _frameInferable
+
+  - name: Imperative Politeness and Mood Marking
+    category: Imperatives
+    transformation: "NIV imperatives → CNL (imp) with optional politeness/expectation markers"
+    phase: Both
+    description: |
+      All imperative forms explicitly tagged, with please and other modality markers.
+      Helps L2 readers distinguish commands, requests, permissions.
+    examples:
+      - Genesis 13:17: "You(Abram) (imp) stand-up! You(Abram) (imp) walk through this land"
+      - Jonah 1:14: "you(Yahweh) (imp) please do not let [us(men) die]"
+      - Mark 9:39: "You(followers) (imp) do not prevent [that man doing that thing]"
+      - Matthew 26:67: "You(priests) (imp) You(priests) tell [David to immediately leave that place]"
+      - Ruth 1:20: "You(people) (imp) do not call me(Naomi) Naomi]. You(people) (imp) call me(Naomi) Mara"
+    variations: |
+      - (imp) for all imperatives
+      - please for requests
+      - _imperativeWithEmphasizedAgent for agent focus
+      - Jussive: let _jussive
+
+  - name: Temporal and Aspectual Verb Suffixes
+    category: Grammar
+    transformation: "NIV verb tenses → CNL base verb with aspectual suffixes and temporal adverbs"
+    phase: Both
+    description: |
+      Verb aspect/tense marked with suffixes like -iteration, _routinely, _past, _distantPast.
+      Reduces tense complexity for L2 readers.
+    examples:
+      - Joshua 6:8: "walked around the city -iteration seven times"
+      - Mark 1:16: "follow-B _routinely Jesus"
+      - 1 Samuel 18:11: "David escaped from Saul -iteration 2 times"
+      - Matthew 5:43: "were told _distantPast"
+      - Mark 14:34: "continue to be awake _inLDV"
+    variations: |
+      - -iteration N times
+      - _routinely, _past, _distantPast
+      - _inLDV (in Local Dominant Variety)
+      - Continuous: continue VERB-ing
+
+  - name: Participant Deixis with Inline Identification
+    category: Deixis marking
+    transformation: "NIV named entities → CNL [who is/was DESCRIPTION] appositive brackets"
+    phase: Both
+    description: |
+      Every participant introduced with identifying appositive in brackets.
+      Avoids need to track characters across verses.
+    examples:
+      - Mark 15:21: "A certain man named Simon, [who was from Cyrene,] [and who was the father of Alexander and Rufus,]"
+      - 2 Samuel 21:17: "a man named Abishai [who was Zeruiah's son]"
+      - Joshua 17:2: "Men named Abiezer, Helek, Asriel, Shechem, Hepher, and Shemida were the leaders of those families"
+      - Mark 1:16: "Jesus saw Simon and Simon's brother named Andrew"
+      - Acts 16:29: "the chief guard of the prison"
+    variations: |
+      - [who was DESCRIPTION]
+      - [who is ROLE]
+      - named X construction
+      - Inline identification at first mention
+
+  - name: Frame-Inferable and Implicit Marking System
+    category: Implicit info markers
+    transformation: "NIV elided arguments → CNL _implicit, _frameInferable, _implicitNecessary tags"
+    phase: Both
+    description: |
+      Omitted but recoverable arguments marked with various implicit tags.
+      Distinguishes frame-based inference from discourse inference.
+    examples:
+      - Mark 14:10: "into the bowl _frameInferable"
+      - Matthew 21:32: "And those followers/disciples said to Jesus _implicit"
+      - Matthew 8:33: "Those men went into the city _frameInferable"
+      - Matthew 26:62: "the things-C [that these 2 _implicit men said about you(Jesus)]"
+      - Mark 6:37: "give to those people some food _implicitNecessary"
+    variations: |
+      - _implicit (recoverable from discourse)
+      - _frameInferable (recoverable from verb frame)
+      - _implicitNecessary (logically required)
+      - _implicitActiveAgent (for passive)
+      - _implicitWithNewThingIndex (for new referents)
+
+  - name: Clause Segmentation with Embedding Depth
+    category: Clause segmentation
+    transformation: "NIV complex sentences → CNL multiply-nested bracket structures"
+    phase: Both
+    description: |
+      Long sentences broken into deeply nested bracketed clauses.
+      Each bracket contains a complete proposition with arguments.
+    examples:
+      - 1 Samuel 25:7: "Previously I(Abigail) said [that I(Abigail) will punish Eli and Eli's family]. Now I(Abigail) will do those things"
+      - Matthew 5:43: "You(people) heard [that our(Jesus's) people/ancestors were told _distantPast by the religious _implicit laws/Law _implicitActiveAgent, [ \" You(people) (imp) love the person [who lives near you(people)]]]]"
+      - Genesis 44:20: "We(Judah) told you(Joseph), [\"We(Judah) have an old father]. And our(Judah's) father has a young son [that was born [when our(Judah's) father was old]]]"
+      - Mark 2:4: "those people were not able [to bring that man through the door _implicit to Jesus] because of the crowd"
+      - Acts 15:3: "Paul and Barnabas and the other people [whom the group of people [who believe in Jesus] sent with Paul and Barnabas]"
+    variations: |
+      - 3+ levels of nesting common
+      - Complement clauses, relative clauses, adverbial clauses all bracketed
+      - Maintains compositional semantics
+
+  - name: Number and Unit Modernization Dual Forms
+    category: Vocabulary L2 pairings
+    transformation: "NIV ancient units → CNL (literalunits) + (modernunits) dual forms"
+    phase: He2-only
+    description: |
+      Ancient measurements given in both original and modern equivalents.
+      Primarily in NT (He2) books with denarii and other Roman units.
+    examples:
+      - Mark 14:5: "(literalunits) For that perfume might be sold ... for more-than _Adj 300 denarii. (modernunits) For that perfume might be sold ... for the amount of money [that a person earns in about _Adj a year]"
+      - Mark 6:37: "(literalunits) Should we(followers) spend 200 denarii for food ...? (modernunits) Should we(followers) spend the amount of money [that a man earns [by working for 8 months]] for food"
+      - Matthew 25:25: "(literalunits) So I(servant) ... hid your(master's) talent in the ground. (modernunits) ... I(servant) hid your(master's) gold in the ground"
+    variations: |
+      - (literalunits) / (modernunits)
+      - Denarii → working time equivalent
+      - Talent → gold
+      - Only in He2 (NT) books
+
+  - name: Possessive Chain Explicit Resolution
+    category: Pronoun/coreference
+    transformation: "NIV possessive pronouns → CNL explicit possessor names in genitive"
+    phase: Both
+    description: |
+      All possessives use full NP forms rather than pronouns.
+      Pattern: X's Y even when pronoun exists in source.
+    examples:
+      - Nehemiah 4:23: "we always wore our clothes" → "we(Nehemiah) always wore our(Nehemiah's) clothes"
+      - Genesis 12:5: "Abram took his wife" → "Abram took Abram's wife named Sarai and Abram's nephew named Lot"
+      - Mark 14:36: "your Father" → "your(David's) Father"
+      - Esther 5:13: "I am not happy" → "I(Haman) am not happy"
+      - 1 Samuel 25:29: "your God" → "your(David's) God"
+    variations: |
+      - Full NP repetition: Abram's wife
+      - Parenthetical ID: our(Nehemiah's)
+      - Possessor always explicit
+
+  - name: Quote Frame Explicit Marking
+    category: Quote framing
+    transformation: "NIV quotation → CNL bracket-embedded quote with speaker/addressee marked"
+    phase: Both
+    description: |
+      All quotes explicitly marked with speaker and addressee identified.
+      Uses brackets and parenthetical markers for embedded speech.
+    examples:
+      - Mark 2:8: "So Jesus said to those people/scribes , [\"Why (rhetorical) are you(people) thinking ...\"]"
+      - Daniel 5:15: "I(king) told [the wise men and the enchanters to read these words]"
+      - Jonah 1:14: "And those men said, [\"Yahweh, you(Yahweh) (imp) please do not let ...\"]"
+      - Genesis 28:20: "Then Jacob said to Jacob, [\"I(Jacob) want [God to be with me(Jacob)]\"]"
+      - Matthew 23:17: "(norhetorical) You(scribes) ... [\" ... \"]"
+    variations: |
+      - Speaker marked: "X said to Y, [QUOTE]"
+      - Embedded quotes in brackets
+      - Addressee identified in quote
+
+  - name: Name Introduction with Gloss Pattern
+    category: Name introductions
+    transformation: "NIV proper names → CNL 'named X' construction on first mention"
+    phase: Both
+    description: |
+      All proper names introduced with 'named' construction.
+      Helps L2 readers identify names vs common nouns.
+    examples:
+      - Mark 15:21: "A certain man named Simon"
+      - Genesis 12:5: "Abram's wife named Sarai and Abram's nephew named Lot"
+      - Joshua 17:2: "Men named Abiezer, Helek, Asriel, Shechem, Hepher, and Shemida"
+      - 1 Samuel 25:2: "A certain man [who lived in Maon]"
+      - Esther 1:1: "A man named Xerxes was the king"
+    variations: |
+      - 'named X' for personal names
+      - 'a man/woman named X'
+      - 'X named city/river'
+
+  - name: Vocab Alternate Forms
+    category: Vocabulary L2 pairings
+    transformation: "NIV technical/rare terms → CNL (vocab-alternate) dual forms"
+    phase: Both
+    description: |
+      Technical or difficult vocabulary given with simpler alternates.
+      Uses (vocab-alternate) or slash notation.
+    examples:
+      - 1 Samuel 7:1: "consecrated (vocab-alternate) Eleazar"
+      - Mark 5:7: "hurt/torture me(man)"
+      - Matthew 8:2: "religiously/ritually _implicit clean/clean-B"
+      - Acts 2:5: "honored/worship God"
+    variations: |
+      - (vocab-alternate) marker
+      - Slash notation: hurt/torture
+      - L2-friendly synonyms provided
+
+  - name: Implicit Info Reason Marking
+    category: Implicit info markers
+    transformation: "NIV unstated motivations → CNL (implicit-info) with reason stated"
+    phase: Both
+    description: |
+      Unstated reasons, motivations, or background info explicitly provided.
+      Tagged with (implicit-info) to show it's inferential.
+    examples:
+      - Nehemiah 8:9: "Those people (implicit-info) cried [because previously those people did not obey those laws]"
+      - Ruth 4:10: "that son (implicit-info) will be Elimelech's grandson"
+      - 2 Samuel 19:1: "The king (implicit-info) is very sad [because Absalom is dead]"
+      - Nehemiah 3:32: "So (implicit-info) the people repaired all of Jerusalem's wall"
+      - 1 Samuel 24:14: "You(Saul) (implicit-info) should do important things"
+    variations: |
+      - (implicit-info) marker
+      - Provides causal/background reasoning
+      - Helps L2 readers understand pragmatics
+
+  - name: Significant Location Marking
+    category: Deixis marking
+    transformation: "NIV place names → CNL _significantLocation marker for key geographical references"
+    phase: Both
+    description: |
+      Important locations marked to help readers track geographical setting.
+      Uses _significantLocation tag.
+    examples:
+      - Matthew 2:2: "In the eastern land/region _significantLocation we(men) saw that king's star"
+      - Mark 1:16: "beside the sea-Galilee named the big lake _implicitGeoName"
+    variations: |
+      - _significantLocation
+      - _implicitGeoName
+      - Helps track narrative geography
+
+  - name: First-Person as Third-Person Reference
+    category: Pronoun/coreference
+    transformation: "NIV first-person self-reference → CNL _1stas3rd or _1stAs3rd marker"
+    phase: Both
+    description: |
+      Self-references in third person (especially for Jesus as Son-of-man) marked.
+      Shows when speaker refers to self with title/name.
+    examples:
+      - Mark 13:29: "the Son-of-man _1stas3rd is already _implicit at the door"
+      - Mark 14:25: "until the day ... that I(Jesus) drink a new wine"
+      - Matthew 24:28: "the Son-of-man _1stAs3rd is here again"
+    variations: |
+      - _1stas3rd, _1stAs3rd
+      - Common with "Son-of-man" title
+      - Marks self-referential titles
+
+  - name: Dual Pronoun Exclusivity Marking
+    category: Pronoun/coreference
+    transformation: "NIV 'we' → CNL we(X) _excl or we(X) _incl markers"
+    phase: He2-only
+    description: |
+      First person plural marked for inclusivity/exclusivity.
+      Primarily in NT dialogues.
+    examples:
+      - Matthew 25:38: "When did we(people) _excl invite [you(Lord) to enter our(people's) houses]"
+    variations: |
+      - _excl (excludes addressee)
+      - _incl (includes addressee)
+      - Rare in corpus
+
+  - name: Metonymy Explicit Marking
+    category: Vocabulary L2 pairings
+    transformation: "NIV metonymic expressions → CNL _metonymy tag"
+    phase: Both
+    description: |
+      Metonymic language (name for associated concept) explicitly tagged.
+      Helps L2 readers recognize non-literal usage.
+    examples:
+      - Matthew 21:25: "why did you(priests) not believe John of the message _metonymy"
+      - Matthew 26:58: "to the house _metonymy [of the chiefest priest]"
+    variations: |
+      - _metonymy marker
+      - Shows part-for-whole, name-for-institution
+
+  - name: Morphological Suffix Semantic Tags
+    category: Grammar
+    transformation: "NIV verb meanings → CNL verb root + semantic suffixes (A/B/C/D)"
+    phase: Both
+    description: |
+      Polysemous verbs disambiguated with letter suffixes.
+      Each suffix represents a distinct sense.
+    examples:
+      - Mark 2:14: "follow-A me(Jesus)" vs "follow-B _routinely me(Jesus)"
+      - Matthew 8:33: "run-away" vs "run to"
+      - Mark 5:6: "that man ran to Jesus"
+      - Genesis 27:20: "find this animal"
+      - Matthew 21:34: "that man sent-C that man's servants"
+    variations: |
+      - Verb-A, Verb-B, Verb-C, Verb-D
+      - Disambiguates polysemy
+      - Helps L2 readers learn word senses
+
+  - name: Descriptive Relative Clause Marking
+    category: Clause segmentation
+    transformation: "NIV restrictive relatives → CNL [_descriptive which/that CLAUSE] for non-restrictive"
+    phase: Both
+    description: |
+      Relative clauses marked as descriptive (non-restrictive) vs restrictive.
+      Uses _descriptive tag in brackets.
+    examples:
+      - Matthew 19:1: "the area/region of Judea, [_descriptive that is on the other side of the river-Jordan]"
+      - Matthew 23:17: "that building/temple [_descriptive which causes [those gold _madeOf things-A to be special/sacred]]"
+      - Mark 1:9: "from Nazareth named town _implicit [ _descriptive which is in Galilee named region _implicit,]"
+    variations: |
+      - [_descriptive which/that CLAUSE]
+      - Distinguishes restrictive vs non-restrictive
+      - Helps parse modification scope
+
+  - name: Material Composition Marking
+    category: Vocabulary L2 pairings
+    transformation: "NIV 'of' phrases → CNL of _madeOf or _quantity markers"
+    phase: Both
+    description: |
+      Prepositional phrases disambiguated for semantic role.
+      Material, quantity, and other relations explicitly marked.
+    examples:
+      - Matthew 23:17: "the gold _madeOf things-A"
+      - Matthew 3:4: "clothes of _madeOf animal's/camel's hair ... belt of _madeOf leather"
+      - Matthew 25:25: "bag of _quantity gold"
+    variations: |
+      - of _madeOf (material)
+      - of _quantity (measure)
+      - of _authority (domain)
+      - Disambiguates genitive semantics
+
