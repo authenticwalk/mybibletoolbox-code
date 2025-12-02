@@ -32,11 +32,9 @@ Wrong: knew [that Mary was there]
 Right: knew [Mary was there]
 ```
 
-### R5: Numbers as Digits
-```
-Wrong: "two sons", "ten years"
-Right: "2 sons", "10 years"
-```
+### R5: Numbers
+**Digits** for quantities/measurements: `13 kilograms`, `10 old men`, `2 people`
+**Words** for: ordinals (`first day`), "one of" (`one of the men`), scene markers (`One day...`)
 
 ---
 
@@ -173,6 +171,29 @@ Specific: "all of those people"
 ```
 Wrong: "Boaz was from Elimelech's family"
 Right: "Boaz was in Elimelech's family/clan"
+```
+
+---
+
+## ADVANCED MARKERS (underscore notation)
+
+| Marker | Use | Example |
+|--------|-----|---------|
+| `_implicit` | Mark implicit word/phrase | `God _implicit` |
+| `_implicitNecessary` | Grammatically required implicit | `said _implicitNecessary` |
+| `_implicitActiveAgent` | Passive agent | `by God _implicitActiveAgent` |
+| `_paragraph` | Paragraph break | `(paragraph)` or `_paragraph` |
+| `_descriptive` | Descriptive relative clause | `[_descriptive who was tall]` |
+| `_frameInferable` | Inferable from context | `the king _frameInferable` |
+| `_excl` / `_incl` | Exclusive/inclusive we | `we(Paul) _excl` |
+| `_generic` | Generic noun | `people _generic` |
+| `_dual` | Dual number | `both men _dual` |
+| `_emphasized` | Emphasis | `John _emphasized` |
+
+### Alternates (for complex passages)
+```
+(literal) Literal translation here.
+(dynamic) More natural phrasing here.
 ```
 
 ---

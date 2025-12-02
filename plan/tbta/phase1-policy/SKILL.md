@@ -57,7 +57,7 @@ Apply checklist:
 - [ ] One verb per sentence
 - [ ] All subordinates bracketed
 - [ ] No "that" starting patient clauses
-- [ ] Numbers as digits (2, 10, not two, ten)
+- [ ] Numbers: digits for quantities (`10 men`), words for ordinals/scene markers (`first`, `One day`)
 - [ ] Names introduced: "X named Y"
 - [ ] Hyphenated verbs base form: `run-away` not `ran-away`
 
@@ -115,3 +115,19 @@ Plain text with:
 - Marked pronouns: `I(X)`, `you(Y)`, `my(Z's)`
 - Commands: `You(X) (imp) verb`
 - Quotes: `X said, ["first]. rest."`
+
+---
+
+## Validation
+
+### Linter Check
+URL: `https://editor.tabitha.bible/check?text={urlencoded_output}`
+
+### Compare to Reference
+URL: `https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}`
+
+### Self-Check Questions
+1. Can this sentence be translated word-for-word into any language?
+2. Are all implicit cultural assumptions made explicit?
+3. Would a non-English speaker understand who "he/she/they" refers to?
+4. Is there exactly one action (verb) per sentence?
