@@ -2,10 +2,46 @@
 
 > **Mission**: Run parallel subagents to encode NIV verses to He1, select best result, debug failures.
 
+## Input Handling
+
+**Accepts**: Text file or direct input with verse reference(s) and text.
+
+### Validation
+
+Check input contains:
+1. **Verse reference** — any format: `Ruth 4:1`, `RUT 4:1`, `Ruth 4:1-5`, `Matthew 2:1-10`
+2. **Verse text** — the NIV (or other translation) text to encode
+
+**If valid input provided** → Use it directly, skip fetching
+**If input missing reference OR text** → Return error:
+```
+ERROR: Input must contain both verse reference and text.
+Expected: "{Book} {ch}:{vs}" followed by verse text.
+```
+**If no input provided** → Fetch verse (see Process step 1)
+
+### Input Examples
+
+```
+# Single verse
+Ruth 4:1  Boaz went up to the town gate and sat down there...
+
+# Multiple verses
+Matthew 2:1-3
+v1: After Jesus was born in Bethlehem...
+v2: and asked, "Where is the one..."
+v3: When King Herod heard this...
+
+# Minimal format
+GEN 1:1 In the beginning God created the heavens and the earth.
+```
+
+---
+
 ## Workflow
 
 ```
-INPUT: Verse reference (e.g., Ruth 4:1)
+INPUT: Verse reference + text (or fetch if not provided)
     │
     ├──► Subagent V1 (Policy)
     ├──► Subagent V2 (Evidence)
@@ -26,9 +62,10 @@ INPUT: Verse reference (e.g., Ruth 4:1)
 
 ## Process
 
-1. **Get NIV** → Fetch verse 
-   - Single verse: `src/tools/fetch_verse.py`
-   - Chapter: `https://www.biblestudytools.com/{book}/{chapter}.html`
+1. **Get NIV** → Validate input OR fetch verse
+   - If input provided: validate has reference + text (see Input Handling)
+   - Single verse fetch: `src/tools/fetch_verse.py`
+   - Chapter fetch: `https://www.biblestudytools.com/{book}/{chapter}.html`
 2. **Launch subagents** → Run V1, V2, V3 in parallel with NIV text
 3. **Collect results** → Each returns: He1 encoding (linter-validated) + issues
 4. **Fetch reference** → `curl -H "Accept: application/json" "https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}"`
