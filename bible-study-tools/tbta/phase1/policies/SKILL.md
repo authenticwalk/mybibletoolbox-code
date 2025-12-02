@@ -1,166 +1,115 @@
-# TBTA Phase 1 (He1) — V2: Rules-First
+# TBTA Phase 1 (He1) — Orchestrator Skill
 
-> **Mission**: Convert NIV verses into simplified English (He1) for TBTA.
+> **Mission**: Run parallel subagents to encode NIV verses to He1, select best result, update learnings.
+
+## Workflow
+
+```
+INPUT: Verse reference (e.g., Ruth 4:1)
+    │
+    ├──► Subagent V1 (Policy)
+    ├──► Subagent V2 (Evidence)
+    └──► Subagent V3 (Blended)
+           │
+           ▼
+    COMPARE & SELECT (5 criteria)
+           │
+           ▼
+    UPDATE LEARNINGS (version-specific)
+```
 
 ## Process
 
-For each verse in `./TODO.md`:
-
-1. **Get NIV** → `quote_verse {Book} {ch}:{vs} NIV`
-2. **Read learnings** → Check `./learnings.md` for known patterns ⚠️ REQUIRED
-3. **Draft He1** → Apply 5 transforms + checklist pass, log to `./output/{BOOK}-{ch}-{vs}.md`
-4. **Check** → `editor.tabitha.bible/check?text={urlencoded}` ⚠️ MUST PASS
-5. **Fix** → Repeat steps 3-4 until linter clean (max 12 iterations)
-6. **Compare** → `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` (only after drafting!)
-7. **Learn** → Add new patterns to `./learnings.md` ⚠️ REQUIRED
-
-**Hard Requirements:**
-- ⚠️ Linter MUST pass — verse not done until `check` returns no blocking errors
-- ⚠️ Check learnings FIRST — avoid repeating known mistakes
-- ⚠️ Update learnings — add any new patterns discovered
+1. **Get NIV** → Fetch verse from `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}`
+2. **Launch subagents** → Run V1, V2, V3 in parallel with NIV text
+3. **Collect results** → Each returns: He1 encoding + linter status + issues
+4. **Select winner** → Apply selection criteria (see below)
+5. **Update learnings** → Add patterns to winner's learnings file
+6. **Log conflicts** → If V1≠V2, document in `CONTRADICTION-REPORT.md`
 
 ---
 
-## Output Format
+## Subagent Prompts
 
-**Create file**: `./output/{BOOK}-{ch:03d}-{vs:03d}.md`
+### V1 (Policy-First)
+```
+Read: ./SUBAGENT-SKILL.md (rules + learnings-v1.md)
+Input: "{niv_text}"
+Return: He1 encoding, linter results, issues
+```
 
+### V2 (Evidence-Based)
+```
+Read: ./SUBAGENT-SKILL-V2.md (rules + learnings-v2.md)
+Input: "{niv_text}"
+Return: He1 encoding, linter results, issues
+```
+
+### V3 (Blended)
+```
+Read: ./SUBAGENT-SKILL-V3.md (rules + learnings-v3.md)
+Input: "{niv_text}"
+Return: He1 encoding, linter results, issues
+```
+
+---
+
+## Selection Criteria
+
+| Priority | Criterion | Check |
+|----------|-----------|-------|
+| 1 | Linter passes | Zero blocking errors |
+| 2 | Rule compliance | Matches HIGH confidence rules |
+| 3 | Pronoun resolution | All 3rd person → nouns |
+| 4 | Bracket correctness | Subordinate clauses bracketed |
+| 5 | Natural flow | Reads naturally |
+
+**If tie**: Prefer V3 (most comprehensive), then V2 (evidence-based), then V1.
+
+---
+
+## Learnings Update Protocol
+
+| Scenario | Action |
+|----------|--------|
+| All similar | No update needed |
+| V1 best | Update `learnings-v1.md` with pattern |
+| V2 best | Update `learnings-v2.md` with pattern |
+| V3 best | Update `learnings-v3.md` with pattern |
+| All failed same | Add to ALL learnings files |
+| V1 ≠ V2 | Log to `CONTRADICTION-REPORT.md` |
+
+### Learnings Format
 ```markdown
-# {BOOK} {ch}:{vs} — He1 Encoding (V2)
-
-## Step 1: Download NIV
-text = "..."
-
-## Step 2: Fix Pronouns
-Changes: {list each pronoun → noun replacement}
-text = "..."
-
-## Step 3: Simplify Vocabulary  
-Changes: {list each word → replacement with reason}
-text = "..."
-
-## Step 4: Group Participants
-Changes: {list groupings or "none needed"}
-text = "..."
-
-## Step 5: Fix Clauses
-Changes: {list clause fixes}
-text = "..."
-
-## Step 6: Checklist Pass (read `./checklist.md`)
-Quotes: {ok or changes}
-Implicit: {ok or changes}
-Passives: {ok or changes}
-Commands: {ok or changes}
-Causality: {ok or changes}
-Connectors: {ok or changes}
-(other...): {ok or changes}
-text = "..."
-
-## Final He1
-text = "..."
-
-## Check Results
-Errors: {list or "None"}
-
-## Comparison
-Reference: {from sources.tabitha.bible}
-Differences: {list or "Matches"}
+## {Category}
+- {pattern} → `{solution}` — {verse reference}
 ```
 
 ---
 
-## The 5 Transforms + Checklist Pass
+## Step Comparison
 
-| Step | Goal | Rule |
-|------|------|------|
-| 1 | Copy NIV | Raw input |
-| 2 | Fix pronouns | Resolve 3rd person, split sentences |
-| 3 | Simplify vocabulary | L0-1 direct, L2 pair, L3 alternate |
-| 4 | Group participants | Collapse repeated noun phrases |
-| 5 | Fix clauses | Add brackets, relative clauses |
-| **6** | **Checklist pass** | **Verify remaining rules (see below)** |
+| Step | V1 (Policy) | V2 (Evidence) | V3 (Blended) |
+|------|-------------|---------------|--------------|
+| 1 | Copy NIV | Resolve Coreference | Resolve Coreference |
+| 2 | Fix Pronouns | Segment Clauses | Segment Clauses (+aspect) |
+| 3 | Simplify Vocab | Add Brackets | Add Brackets (+after) |
+| 4 | Group Participants | Named Formula | Named Formula |
+| 5 | Fix Clauses | Mark Speech | Mark Speech (+rhetorical) |
+| 6 | Checklist Pass | Simplify Vocab | Simplify Vocab (+forbidden) |
+| 7 | — | Discourse Markers | Discourse Markers |
+| 8 | — | Mark Implicit | Mark Implicit (He1/He2) |
+| 9 | — | Apply Learnings | Grammar Constraints |
+| 10 | — | Linter | Linter |
 
-### Step 6: Checklist Pass
+### Key Differences
 
-| Check | Rule | Reference |
-|-------|------|-----------|
-| Quotes | Speaker + verb intro? First sentence bracketed? | §10 |
-| Implicit | `<<regular>>` or `<necessary>` marked? | §9 |
-| Passives | Agent with "by"? | §13, §24 |
-| Commands | `(imp)` or natural English? | §15 |
-| Causality | "to" → "in order to"? | §8 |
-| Tense | Perfect only if "recently/previously" works? | §18 |
-| Connectors | And/But/Then/So flow? | §32 |
-| Special | No "can", "even", "any", "own"? | §17, §24 |
-
----
-
-## Rules by Category
-
-### Pronouns (§3)
-- ❌ Third person (he/she/they/it) — ALWAYS resolve to nouns, even after first mention
-- ✅ First/second person: `I(Paul)`, `you(people)`, `we(Peter) _excl`
-- ⚠️ "Natural pronouns" = 1st/2nd person keeps pronoun form after initial marking
-
-### Words (§1-2)
-| Level | Color | Action |
-|-------|-------|--------|
-| 0-1 | Blue/Cream | Use directly |
-| 2 | Magenta | Pair: `simple/complex` |
-| 3 | Green | Alternate: `(complex)...(simple)...` |
-| 4 | Brown | Proper nouns, use directly |
-
-**Common pairings**: `serve/worship`, `promise/swear`, `gather/harvest`, `grain/barley`, `family/clan`
-
-**Explications**: `daughter-in-law` → `son's wife`, `mother-in-law` → `husband's mother`
-
-### Clauses (§4-7)
-- ✅ One verb per clause
-- ✅ Subordinate clauses in brackets: `[who was in the house]`
-- ✅ Max 4 levels of nesting
-- ❌ "that" starting patient clauses: `knew [X...]` not `knew [that X...]`
-- ✅ Relative clauses need relativizer: `who`, `whom`, `that`
-- ⚠️ Hyphenated verbs: NEVER inflect — `sit-down` not `sat-down` (see learnings.md)
-
-### Determiners (§3.1)
-| Situation | Use |
-|-----------|-----|
-| First mention | `a man`, `some men` |
-| Already mentioned | `that man` |
-| Newly contrasted | `this man` |
-| Frame inferable | `the king` |
-| Generic | No article |
-
-### Quotes (§10)
-```
-X said, ["First sentence]. Second sentence..."
-```
-Bracket only first sentence (patient clause of "say").
-
-### Commands (§15)
-```
-You(John) (imp) go to the town.
-```
-
-### Special Constructions
-
-| Pattern | ❌ Wrong | ✅ Right |
-|---------|----------|----------|
-| Existence | "did not have food" | "there was not enough food" |
-| Numbers | "two sons" | "2 sons" |
-| Ambiguity | "judges ruled" | "judges _noun ruled" |
-| Apposition | "X, Y's husband" | "X [who was Y's husband]" |
-| Nationality | "X the Moabite" | "X [who was from Moab]" |
-| Ability | "can go" | "is able [to go]" |
-| Purpose | "went to see" | "went [in order to see]" |
-| Passive | "was hit" | "was hit by X" |
-
-### Idioms (from learnings)
-- "find favor in eyes" → `be kind to me`
-- "The Lord be with you" → `I pray [that Yahweh will be with you]`
-- "was left with" → `lived with only`
-- "leftover grain" → `grain [that people left]`
+| Aspect | V1 | V2 | V3 |
+|--------|----|----|-----|
+| Steps | 5+1 | 10 | 10 |
+| Rules | Policy docs | 6,963 verse corpus | Policy + corpus |
+| Confidence | None | 🟢🟡🔴 | 🟢🟡🔴 + 📘 |
+| Self-contained | Mostly | Yes | Yes |
 
 ---
 
@@ -168,30 +117,20 @@ You(John) (imp) go to the town.
 
 | Tool | URL |
 |------|-----|
-| Check | `editor.tabitha.bible/check?text={urlencoded}` |
-| Sources | `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` (JSON) |
-| Targets | `targets.tabitha.bible/English/{Book}/{ch}/{vs}` (sanity-check output) |
-| Ontology | `ontology.tabitha.bible/?q={word}` |
-
----
-
-## Success Criteria
-
-A verse is **NOT DONE** until:
-
-- [ ] ⚠️ **Linter passes** — `check` returns no blocking errors
-- [ ] L2+ words: pairings or alternates
-- [ ] Pronouns: resolved
-- [ ] Patient clauses: no leading "that"
-- [ ] Compared with `sources.tabitha.bible` reference
-- [ ] ⚠️ **Learnings updated** — new patterns added to `./learnings.md`
+| Linter | `https://editor.tabitha.bible/check?text={urlencoded}` |
+| Sources | `https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` |
+| Ontology | `https://ontology.tabitha.bible/?q={word}` |
 
 ---
 
 ## Files
 
-- `./checklist.md` — Full rules (344 lines)
-- `./notation.md` — Bracket syntax
-- `./learnings.md` — Patterns from practice
-- `./output/` — Your step-by-step work logs
-
+| File | Purpose |
+|------|---------|
+| `SUBAGENT-SKILL.md` | V1 policy-first rules |
+| `SUBAGENT-SKILL-V2.md` | V2 evidence-based rules |
+| `SUBAGENT-SKILL-V3.md` | V3 blended rules |
+| `learnings-v1.md` | V1 patterns |
+| `learnings-v2.md` | V2 patterns |
+| `learnings-v3.md` | V3 patterns |
+| `CONTRADICTION-REPORT.md` | Policy vs evidence conflicts |

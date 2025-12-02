@@ -1,4 +1,13 @@
-# Learnings
+# Learnings (ARCHIVED)
+
+> **DEPRECATED**: This shared file has been replaced by version-specific learnings:
+> - `learnings-v1.md` — V1 (Policy-First) patterns
+> - `learnings-v2.md` — V2 (Evidence-Based) patterns
+> - `learnings-v3.md` — V3 (Blended) patterns
+>
+> This file is kept for historical reference. Do not add new patterns here.
+
+---
 
 This file contains the learnings in short policy form statements linking to the full document for longer explanation
 

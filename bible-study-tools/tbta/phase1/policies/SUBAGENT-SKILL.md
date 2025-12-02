@@ -1,11 +1,17 @@
-# TBTA Phase 1 (He1) — Subagent Encoding Instructions
+# TBTA Phase 1 (He1) — Subagent V1 (Policy-First)
 
 > **Mission**: Convert NIV verse into simplified English (He1) for TBTA.
+> **Approach**: Policy-based rules from official TBTA documentation.
+
+## Also Read
+
+| File | Purpose |
+|------|---------|
+| `learnings-v1.md` | V1-specific patterns from prior encodings |
 
 ## Your Task
 
-You will receive: verse reference + NIV text + learnings.md content
-
+You will receive: verse reference + NIV text
 You must return: encoded He1 text that passes the linter
 
 ## Process
@@ -180,4 +186,11 @@ Your encoding is complete when:
 - [ ] L2+ words have pairings or alternates
 - [ ] All 3rd person pronouns resolved to nouns
 - [ ] Patient clauses have no leading "that"
-- [ ] All learnings.md patterns applied
+- [ ] All `learnings-v1.md` patterns applied
+
+## Issues for Orchestrator
+
+If you encounter patterns not covered in this skill or learnings-v1.md, report them:
+```
+Issues: {list patterns/ambiguities encountered}
+```

@@ -7,7 +7,7 @@
 
 | File | Purpose |
 |------|---------|
-| `bible-study-tools/tbta/phase1/policies/learnings.md` | Accumulated patterns from prior encodings |
+| `learnings-v2.md` | V2-specific patterns from prior encodings |
 
 ## Input/Output
 
