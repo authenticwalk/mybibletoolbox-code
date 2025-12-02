@@ -85,13 +85,15 @@ text = "{updated text}"
 
 ---
 
-## Check Tool Results
+## Check Tool Results (⚠️ MUST PASS)
 
 **URL**: `editor.tabitha.bible/check?text={urlencoded}`
 
 **Errors**: {list or "None"}
 
 **Fixes applied**: {if any}
+
+**Status**: ✅ PASSED / ❌ FAILED (iteration {n} of 12)
 
 ---
 
@@ -109,8 +111,16 @@ text = "{updated text}"
 
 ---
 
-## Learnings
+## Learnings Checked
+
+**Before drafting, reviewed these patterns from `./learnings.md`:**
+- {list relevant patterns that applied to this verse}
+
+---
+
+## New Learnings (⚠️ REQUIRED: add to ./learnings.md)
 
 - {any new patterns discovered}
 - {any mistakes made and how to avoid}
+- {or "None — no new patterns discovered"}
 

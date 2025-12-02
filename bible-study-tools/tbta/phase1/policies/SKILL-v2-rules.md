@@ -7,10 +7,17 @@
 For each verse in `./TODO.md`:
 
 1. **Get NIV** → `quote_verse {Book} {ch}:{vs} NIV`
-2. **Draft He1** → Apply 5 transforms, log each step to `./output/{BOOK}-{ch}-{vs}.md`
-3. **Check** → `editor.tabitha.bible/check?text={urlencoded}`
-4. **Compare** → `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` (only after drafting!)
-5. **Learn** → Update `./learnings.md` if new pattern
+2. **Read learnings** → Check `./learnings.md` for known patterns ⚠️ REQUIRED
+3. **Draft He1** → Apply 5 transforms + checklist pass, log to `./output/{BOOK}-{ch}-{vs}.md`
+4. **Check** → `editor.tabitha.bible/check?text={urlencoded}` ⚠️ MUST PASS
+5. **Fix** → Repeat steps 3-4 until linter clean (max 12 iterations)
+6. **Compare** → `sources.tabitha.bible/Bible/{Book}/{ch}/{vs}` (only after drafting!)
+7. **Learn** → Add new patterns to `./learnings.md` ⚠️ REQUIRED
+
+**Hard Requirements:**
+- ⚠️ Linter MUST pass — verse not done until `check` returns no blocking errors
+- ⚠️ Check learnings FIRST — avoid repeating known mistakes
+- ⚠️ Update learnings — add any new patterns discovered
 
 ---
 
@@ -167,11 +174,14 @@ You(John) (imp) go to the town.
 
 ## Success Criteria
 
-- [ ] Check Tool: no blocking errors
+A verse is **NOT DONE** until:
+
+- [ ] ⚠️ **Linter passes** — `check` returns no blocking errors
 - [ ] L2+ words: pairings or alternates
 - [ ] Pronouns: resolved
 - [ ] Patient clauses: no leading "that"
-- [ ] Compared with reference
+- [ ] Compared with `sources.tabitha.bible` reference
+- [ ] ⚠️ **Learnings updated** — new patterns added to `./learnings.md`
 
 ---
 

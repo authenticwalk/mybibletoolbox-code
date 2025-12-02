@@ -5,13 +5,19 @@
 ## Process
 
 ```
-1. GET    ──► quote_verse {Book} {ch}:{vs} NIV
-2. DRAFT  ──► 5 transforms, log to ./output/{BOOK}-{ch:03d}-{vs:03d}.md
-3. CHECK  ──► editor.tabitha.bible/check
-4. FIX    ──► rules/ folder, repeat until clean
-5. COMPARE──► sources.tabitha.bible (only now!)
-6. LEARN  ──► Update learnings.md
+1. GET      ──► quote_verse {Book} {ch}:{vs} NIV
+2. LEARNINGS──► Read ./learnings.md for known patterns
+3. DRAFT    ──► 5 transforms + checklist pass
+4. CHECK    ──► editor.tabitha.bible/check ⚠️ MUST PASS
+5. FIX      ──► Repeat steps 3-4 until linter clean (max 12 iterations)
+6. COMPARE  ──► sources.tabitha.bible (only now!)
+7. LEARN    ──► Add new patterns to ./learnings.md
 ```
+
+**Hard Requirements:**
+- ⚠️ **Linter MUST pass** — verse is not done until `check` returns no blocking errors
+- ⚠️ **Check learnings FIRST** — read `./learnings.md` before drafting to avoid known mistakes
+- ⚠️ **Update learnings** — if you discover a new pattern, add it to `./learnings.md`
 
 ---
 
@@ -144,11 +150,14 @@ After the 5 transforms, verify these additional rules:
 
 ## Success Criteria
 
-- [ ] Check Tool clean
+A verse is **NOT DONE** until:
+
+- [ ] ⚠️ **Linter passes** — `editor.tabitha.bible/check` returns no blocking errors
 - [ ] L2+ words paired/alternated  
 - [ ] Pronouns resolved
 - [ ] No "that" in patient clauses
-- [ ] Compared with reference
+- [ ] Compared with `sources.tabitha.bible` reference
+- [ ] ⚠️ **Learnings updated** — new patterns added to `./learnings.md`
 
 ---
 
