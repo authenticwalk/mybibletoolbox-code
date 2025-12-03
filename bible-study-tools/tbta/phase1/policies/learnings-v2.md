@@ -29,9 +29,11 @@ Add learnings here when V2 wins or discovers a new pattern.
 ## Possessive Pronouns
 - "their way" → restructure to avoid possessive (Mt 2:9)
 - Pattern: eliminate possessive pronouns where possible
+- For family: "that man's wife/sons" is clearer than "the wife of that man" (Ru 1:1)
 
 ## Hyphenated Verbs (Phrasal Verbs)
 - went-up, gone-up, bring-back — always base form, hyphenated (Ac 10:9)
+- CAUTION: "[in-order-to" vs "[in order to" — prefer spaced brackets for multi-word conjunctions (Ru 1:1)
 
 ## Nested Brackets
 - Successfully handled: `[in-order-to bring-back... [who people call Peter]]` (Ac 10:5)
@@ -92,8 +94,68 @@ Add learnings here when V2 wins or discovers a new pattern.
 
 ## Determiner Patterns
 - First mention of specific individual: "A certain man" (Ru 1:1)
+  - ERROR: Evidence approach produced "one man" which differs from policy "A certain man" (Ru 1:1)
+  - Policy takes priority over evidence for determiners
 - Subsequent reference: "That man" not "the man" (Ru 1:1)
 
 ## Title Clause Names
 - Title clause may use character names from later verses (Ru 1:1)
 - Pattern: `Name (title) and Name verb from Place to Place.` (Ru 1:1)
+
+## Speech Introduction
+- Add `(implicit-info) walked to X` before speech when motion implicit (Ru 2:8)
+
+## Relative Clause Relativizers
+- Use "that" for people in He1, not "who": "women [that work for...]" (Ru 2:8)
+
+## State Changes
+- "become thirsty" not "are thirsty" for state changes (Ru 2:9)
+
+## Object Vocabulary
+- "containers" not "jars" for water vessels (Ru 2:9)
+
+## Indirect Commands
+- "told [X to not verb Y]" structure for reported commands (Ru 2:9)
+
+## Body Movement
+- "moved X's face to the ground" for prostration (Ru 2:10)
+
+## Location Descriptions
+- "the land [that you were born in]" for "homeland" (Ru 2:11)
+
+## Prayer Expressions
+- "I(X) will pray [that Yahweh will verb...]" for blessings (Ru 2:12)
+
+## Simile Structure
+- "[just like X verbs Y]" then separate explanation sentence (Ru 2:12)
+
+## Section Markers
+- `_paragraph` at section starts (Ac 16:25)
+
+## Dual Translations
+- "(complex)/(simple)" for difficult concepts (Ac 16:26)
+
+## Implicit Agents
+- `_implicitActiveAgent` for passive agents (Ac 16:26)
+- "opened by this event" - event as agent (Ac 16:26)
+
+## Role Descriptions
+- "the man [who was responsible for the prisoners]" for jailer (Ac 16:27)
+
+## Causal Connectors
+- "For" instead of "Because" at sentence start (Ac 16:27)
+
+## Request Structure
+- "asked-B [X to bring Y]" for requests (Ac 16:29)
+
+## Posture Verbs
+- "knelt in front of" not "fell before" (Ac 16:29)
+
+## Movement Verbs
+- "led...from that room" not "brought out" (Ac 16:30)
+
+## Title/Honorific L2
+- "Masters-B/lords" for "Sirs" (Ac 16:30)
+
+## Interrogative
+- "which things-B" not "what" (Ac 16:30)

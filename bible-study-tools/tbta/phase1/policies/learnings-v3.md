@@ -67,8 +67,17 @@ Add learnings here when V3 wins or discovers a new pattern.
 ## "order" Requires Full Construction
 - Even in negatives: `do not order [you(Philemon) to help me(Paul)]` (Phm 1:8)
 
+## Possessive Structures (Narrative)
+- For narrative family: "that man's wife/sons" is correct and clearer (Ru 1:1) ✓ V3 SUCCESS
+- Clearer than restructured forms like "the wife of that man"
+
 ## Bracket Capitalization
 - First word capitalized: `[When...]`, `[Because...]` (Phm 1:4)
+- Bracketed temporal clauses: `[During the time [that...]]` — nested brackets work well (Ru 1:1) ✓ V3 SUCCESS
+
+## Conjunction Spacing
+- Multi-word conjunctions: "[in order to" not "[in-order-to" ✓ V3 SUCCESS (Ru 1:1)
+- Linter accepts both but spaced is clearer and matches policy formatting
 
 ## Narrative Structure
 - Use `(title)` marker at narrative section starts (Jon 1:1)
@@ -95,9 +104,81 @@ Add learnings here when V3 wins or discovers a new pattern.
 - Use active subject with relative clause, not existential "there was"
 
 ## Determiner Patterns
-- First mention of specific individual: "A certain man" (Ru 1:1)
+- First mention of specific individual: "A certain man" (Ru 1:1) ✓ V3 SUCCESS
+  - Blended approach correctly prioritizes policy "a certain man" over evidence variations
+  - V1 produced "A man", V2 produced "one man" — V3's "a certain man" matches reference
 - Subsequent reference: "That man" not "the man" (Ru 1:1)
 
 ## Title Clause Names
 - Title clause may use character names from later verses (Ru 1:1)
 - Pattern: `Name (title) and Name verb from Place to Place.` (Ru 1:1)
+
+## Speech Introduction
+- Add `(implicit-info) walked to X` before speech when motion implicit (Ru 2:8)
+
+## Relative Clause Relativizers
+- Use "that" for people in He1, not "who": "women [that work for...]" (Ru 2:8)
+
+## State Changes
+- "become thirsty" not "are thirsty" for state changes (Ru 2:9)
+
+## Object Vocabulary
+- "containers" not "jars" for water vessels (Ru 2:9)
+
+## Indirect Commands
+- "told [X to not verb Y]" structure for reported commands (Ru 2:9)
+
+## Body Movement
+- "moved X's face to the ground" for prostration (Ru 2:10)
+
+## Location Descriptions
+- "the land [that you were born in]" for "homeland" (Ru 2:11)
+
+## Prayer Expressions
+- "I(X) will pray [that Yahweh will verb...]" for blessings (Ru 2:12)
+
+## Simile Structure
+- "[just like X verbs Y]" then separate explanation sentence (Ru 2:12)
+
+## Section Markers
+- `_paragraph` at section starts (Ac 16:25)
+
+## Dual Translations
+- "(complex)/(simple)" for difficult concepts (Ac 16:26)
+
+## Implicit Agents
+- `_implicitActiveAgent` for passive agents (Ac 16:26)
+- "opened by this event" - event as agent (Ac 16:26)
+
+## Role Descriptions
+- "the man [who was responsible for the prisoners]" for jailer (Ac 16:27)
+
+## Causal Connectors
+- "For" instead of "Because" at sentence start (Ac 16:27)
+
+## Request Structure
+- "asked-B [X to bring Y]" for requests (Ac 16:29)
+
+## Posture Verbs
+- "knelt in front of" not "fell before" (Ac 16:29)
+
+## Movement Verbs
+- "led...from that room" not "brought out" (Ac 16:30)
+
+## Title/Honorific L2
+- "Masters-B/lords" for "Sirs" (Ac 16:30)
+
+## Interrogative
+- "which things-B" not "what" (Ac 16:30)
+
+## Modal Obligations
+- "must die/pay" are modals NOT marked with (imp) (2Sa 12:5)
+
+## Emotion Expressions
+- "became very angry" for "burned with anger" (2Sa 12:5)
+
+## Word Disambiguation
+- "anything_noun", "living_verb" for ambiguous words (2Sa 12:1, 12:3)
+
+## Transformative Actions
+- "make X into Y" for preparing/cooking (2Sa 12:4)

@@ -20,6 +20,7 @@ Add learnings here when V1 wins or discovers a new pattern.
 
 ## Ambiguous Words
 - Add `_noun`, `_verb`, `_adj` to clarify ambiguous words like "judges"
+- CAUTION: "judges _noun" works but reference prefers just "judges" when context is clear (Ru 1:1)
 
 ## Patient Clauses
 - Never use "that" at start: `[God gave food...]` not `[that God gave food...]`
@@ -152,8 +153,88 @@ Add learnings here when V1 wins or discovers a new pattern.
 
 ## Determiner Patterns
 - First mention of specific individual: "A certain man" not just "a man" (Ru 1:1)
+  - ERROR: Produced "A man" instead of "A certain man" (Ru 1:1, V1 failed on Ruth encoding task)
 - Subsequent reference: "That man" not "the man" (Ru 1:1)
 
 ## Title Clause Names
 - Title clause may use character names from later verses (Ru 1:1)
 - Pattern: `Name (title) and Name verb from Place to Place.` (Ru 1:1)
+
+## Speech Introduction
+- Add `(implicit-info) walked to X` before speech when motion implicit (Ru 2:8)
+
+## Relative Clause Relativizers
+- Use "that" for people in He1, not "who": "women [that work for...]" (Ru 2:8)
+
+## State Changes
+- "become thirsty" not "are thirsty" for state changes (Ru 2:9)
+
+## Object Vocabulary
+- "containers" not "jars" for water vessels (Ru 2:9)
+
+## Indirect Commands
+- "told [X to not verb Y]" structure for reported commands (Ru 2:9)
+
+## Body Movement
+- "moved X's face to the ground" for prostration (Ru 2:10)
+
+## Location Descriptions
+- "the land [that you were born in]" for "homeland" (Ru 2:11)
+
+## Prayer Expressions
+- "I(X) will pray [that Yahweh will verb...]" for blessings (Ru 2:12)
+
+## Simile Structure
+- "[just like X verbs Y]" then separate explanation sentence (Ru 2:12)
+
+## Section Markers
+- `_paragraph` at section starts (Ac 16:25)
+
+## Dual Translations
+- "(complex)/(simple)" for difficult concepts (Ac 16:26)
+
+## Building Parts
+- "bottom layer of stones" for foundations (Ac 16:26)
+
+## Implicit Agents
+- `_implicitActiveAgent` for passive agents (Ac 16:26)
+- "opened by this event" - event as agent (Ac 16:26)
+
+## Role Descriptions
+- "the man [who was responsible for the prisoners]" for jailer (Ac 16:27)
+
+## Causal Connectors
+- "For" instead of "Because" at sentence start (Ac 16:27)
+
+## Footnotes
+- "(footnote)" for extended implicit explanation (Ac 16:27)
+
+## Exclusive We
+- `_excl` with us(Paul) for exclusive we (Ac 16:28)
+
+## Emphasis Markers
+- "still _implicit" for emphasis words (Ac 16:28)
+
+## Request Structure
+- "asked-B [X to bring Y]" for requests (Ac 16:29)
+
+## Situational Implicit
+- "(implicit-situational)" for contextual info (Ac 16:29)
+
+## Posture Verbs
+- "knelt in front of" not "fell before" (Ac 16:29)
+
+## Movement Verbs
+- "led...from that room" not "brought out" (Ac 16:30)
+
+## Question Sense
+- "asked-E" sense suffix for asking questions (Ac 16:30)
+
+## Title/Honorific L2
+- "Masters-B/lords" for "Sirs" (Ac 16:30)
+
+## Interrogative
+- "which things-B" not "what" (Ac 16:30)
+
+## Salvation Clause
+- Full form: "[in-order-to be saved by God _implicitActiveAgent from bad-B actions and death]" (Ac 16:30)
