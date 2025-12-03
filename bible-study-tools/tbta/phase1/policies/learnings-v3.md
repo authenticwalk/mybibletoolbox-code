@@ -253,3 +253,55 @@ Add learnings here when V3 wins or discovers a new pattern.
 - "breathing out threats" → "wanted [to kill X]" + "speaking angry words"
 - "persecute" → "harm" (Act 9:4)
 - "get up" → "stand-up" (hyphenated, base form) (Act 9:6)
+
+## Time Expression Patterns (Mt 14, Jon 3)
+- "shortly before dawn" → "[During the time [before the sun would come-up in the morning]]" (Mt 14:25)
+- "shortly" not in ontology → use temporal bracket constructions
+- Hyphenated verbs with modals still use base form: "would come-up" not "would came-up" (Mt 14:25)
+
+## Aspect Verb Confirmation
+- "started sinking" → NO bracket (Policy §0.19 confirmed) (Mt 14:30)
+- "began walking" → NO bracket after aspect verbs (Jon 3:4)
+- Aspect verbs (start, stop, begin, finish, continue) modify the following verb directly
+
+## Ontology Vocabulary Gaps (Mk 2, Act 2)
+- "opening" → "hole" (not in ontology) (Mk 2:4)
+- "mat" → "bed" (not in ontology) (Mk 2:4)
+- "Holy" not recognized → "Spirit of God" not "Holy Spirit" (Act 2:4)
+- "together" → "in the same place" (Act 2:1)
+- "bewildered/confused" → "surprised" (Act 2:6)
+
+## Disability/Ability Expressions (Mk 2)
+- "paralyzed" → "not able [to move]" or "[who was not able [to walk]]" (Mk 2:3)
+- "could not" → "were not able [to...]" (modal verb ban) (Mk 2:4)
+
+## Religious Group Vocabulary (Act 2)
+- "believers" → "people [who believed in Jesus]" (Act 2:1)
+- "God-fearing Jews" → "Jews [who honored God]" (Act 2:5)
+
+## Discourse Markers (Act 2)
+- "Now" as discourse marker → "At this time" (Act 2:5)
+- TBTA has temporal "now" but not discourse marker "now"
+
+## Fasting/Mourning Vocabulary (Jon 3)
+- "proclaimed a fast" → "decided [to not eat food]" or "told people [to not eat]" (Jon 3:5)
+- "sackcloth" → "cloth/sackcloth" or "clothes [that were made from goat hair]" (Jon 3:5)
+- "greatest to least" → "most important to least important" or "Powerful people and weak people" (Jon 3:5)
+
+## Epistle Relationship Language (Phm 1)
+- "loved brother" triggers passive detection → use "loving brother" instead (Phm 1:16)
+- "separate" has complex arguments → "caused [to be away from]" (Phm 1:15)
+- "as" comparisons unsupported → restructure with "like" or explicit "[X is Y]" statements (Phm 1:16)
+- "if" conditionals → "Perhaps" for hypothetical meanings (Phm 1:18)
+- "partner" → "friend/partner" (L2 pairing) (Phm 1:17)
+- "welcome" → "accept/welcome" or "receive/welcome" (Phm 1:17)
+- "refresh my heart" → "make my heart strong" or "cause [me to be happy]" (Phm 1:20)
+- "charge it to me" → "add that debt to my account" or "blame me" (Phm 1:18)
+
+## "write" Verb Requirement
+- "write" always needs explicit patient object (Phm 1:19)
+- "am writing this" → "am writing this letter" or "make these marks"
+
+## "give" Verb Constraints (Phm 1)
+- "give" + predicate adjective fails → use "cause [X to be happy]" (Phm 1:20)
+- "give joy/happiness" → "cause [X to have joy]" or "make X happy"
