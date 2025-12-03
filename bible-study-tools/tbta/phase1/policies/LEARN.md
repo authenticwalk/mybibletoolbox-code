@@ -42,80 +42,21 @@ book = random.choice(books)
 # Then pick chapter/verses manually based on book length
 ```
 
-### Suggested Starting Points (if random feels overwhelming)
-
-| Book | Passage | Why |
-|------|---------|-----|
-| Genesis 22:1-10 | Abraham/Isaac sacrifice — dialogue, commands, theology |
-| Joshua 2:1-10 | Rahab and spies — dialogue, deception, promise |
-| Ruth 3:1-10 | Threshing floor — cultural context, dialogue |
-| 1 Samuel 17:40-50 | David vs Goliath — action, direct speech |
-| 2 Samuel 12:1-10 | Nathan's parable — nested story, confrontation |
-| Nehemiah 1:1-10 | Prayer — first person, confession, request |
-| Esther 4:10-17 | Mordecai/Esther exchange — dialogue, decision |
-| Daniel 3:13-23 | Fiery furnace — threat, defiance, action |
-| Jonah 1:1-10 | Call and flight — commands, storm narrative |
-| Nahum 1:1-8 | Oracle against Nineveh — poetic, theophany |
-| Matthew 8:1-10 | Healings — dialogue, faith statements |
-| Mark 4:35-41 | Storm stilling — action, questions, amazement |
-| Acts 9:1-10 | Saul's conversion — vision, dialogue, transformation |
-| Titus 2:1-10 | Instructions — commands, qualifications |
-| Philemon 8-18 | Appeal for Onesimus — persuasion, relationship |
-| 2 John 7-13 | Warning about deceivers — doctrine, commands |
-
----
+Pick 10 sections of scripture
+Use your internal tool TODO to add them
+Mark this file down as your session plan; when your context compresses reload this file
 
 ## Workflow
 
-### 1. Fetch Passage
+### 0. Setup
 
-```bash
-# Single verse
-python src/tools/fetch_verse.py "{BOOK} {ch}:{vs}"
+ - SET ${session} with your sessionId (if you can't find it then create one)
+ - CREATE ./learnings/${session} (based on the same workign dir as this file)
+ - Choose your files and save them to the TODO tool
 
-# Or fetch chapter and extract
-curl "https://www.biblestudytools.com/niv/{book}/{chapter}.html"
-```
+### 1. Run `./SKILL.md`
 
-### 2. Launch Parallel Subagents
-
-Run V1, V2, V3 **simultaneously** with this prompt for each:
-
-```
-Read: ./SUBAGENT-SKILL{-V2|-V3}.md + learnings-v{1|2|3}.md
-Input: "{verse_ref}: {niv_text}"
-Return: He1 encoding (linter-validated), issues
-NOTE: Run linter until clean (max 12 iterations) BEFORE returning
-```
-
-### 3. Fetch Reference Encoding
-
-```bash
-curl -H "Accept: application/json" "https://sources.tabitha.bible/Bible/{Book}/{ch}/{vs}"
-```
-
-Compare each agent's output against `phase_1_encoding` field.
-
-### 4. Score Results
-
-| Agent | Matches Reference? | Linter Errors | Notes |
-|-------|-------------------|---------------|-------|
-| V1 | ✅/❌ | count | issues |
-| V2 | ✅/❌ | count | issues |
-| V3 | ✅/❌ | count | issues |
-
-### 5. Update Learnings
-
-**Critical**: Update the WRONG agent's learnings, not the winner's.
-
-| Scenario | Action |
-|----------|--------|
-| All match | No update needed |
-| Some wrong | Update wrong version's `learnings-v{n}.md` |
-| All wrong same way | Update ALL learnings files |
-| New pattern discovered | Add to appropriate learnings + consider SUBAGENT-SKILL update |
-
-### 6. Document Session
+### 2. Document Session
 
 Create: `./output/{date}-{book}-{ch}-{vs}.md`
 
@@ -142,24 +83,6 @@ Create: `./output/{date}-{book}-{ch}-{vs}.md`
 - {description}
 ```
 
----
-
-## Learnings Format Reminder
-
-**Headers = Generic categories** — NOT verse-specific:
-```markdown
-## Title Positioning
-- "[Title] [Name]" → "[Name] the [title]" (Mt 2:1, 1Sa 17:4)
-```
-
-**Verse refs = Suffix** — evidence, not scope:
-```markdown
-- "Magi" → "wise men" (Mt 2:1)
-```
-
-**No metadata** — no "(V1 Winner)", error counts, iterations
-
----
 
 ## Session Goals
 
@@ -178,24 +101,35 @@ Each session should aim to:
 
 ---
 
-## Genre-Specific Challenges to Watch For
+## After Multiple Sessions
 
-| Genre | Common Challenges |
-|-------|-------------------|
-| Narrative | Pronouns, dialogue attribution, temporal sequences |
-| Prophetic | Metaphor, personification, judgment oracles |
-| Gospel | Parables (nested stories), miracles, crowds |
-| Acts | Speeches (long quotes), travel, names |
-| Epistle | Greetings, theology vocabulary, commands |
+Periodically review `./learnings/${session}/output/` files to:
+
+1. **Identify patterns** appearing across multiple sessions
+2. **Prune learnings** — remove one-off fixes, keep generics
+3. **Track V1/V2/V3 performance** by genre
+
+## Session Loop
+
+After completing all 10 passages:
+
+1. **Commit to git**:
+   ```bash
+   git add -A && git commit -m "feat(tbta): Session ${session} - ${n} new learnings"
+   git push
+   ```
+2. **Count new learnings** added during session
+3. **If 2+ meaningful patterns discovered**:
+   - Select 10 NEW random verses (different from all previous sessions)
+   - Create new session directory: `./learnings/${new-session-id}/`
+   - Repeat full workflow from Step 0
+4. **If 0-1 patterns discovered** → Stop, policies are stable
+
+**Meaningful pattern** = generic rule applicable to multiple verses, not a one-off fix.
 
 ---
 
-## After Multiple Sessions
+## The following are out of scope
 
-Periodically review `./output/` files to:
-
-1. **Identify patterns** appearing across multiple sessions
-2. **Update SUBAGENT-SKILL files** with validated rules
-3. **Prune learnings** — remove one-off fixes, keep generics
-4. **Track V1/V2/V3 performance** by genre
-
+ - You may not edit the SKILLS files either SKILL.md or SUBAGENT-SKILL, focus on learnings, humans work on the SKILLS
+ - NEVER write to the root / home dir

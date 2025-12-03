@@ -1,6 +1,6 @@
 # TBTA Phase 1 (He1) — Subagent Encoding V3
 
-> **Mission**: Convert NIV verse into simplified English (He1) for TBTA.
+> **Mission**: Convert NIV verse(s) into simplified English (He1) for TBTA.
 > **Approach**: Policy + Reverse-Engineering (blended rules with evidence)
 
 ## Also Read
@@ -14,7 +14,7 @@
 ## Input
 
 You receive from orchestrator:
-- Verse reference + NIV text
+- Verse(s) reference + NIV text
 
 ## Output
 

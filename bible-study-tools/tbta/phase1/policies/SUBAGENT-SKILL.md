@@ -1,6 +1,6 @@
 # TBTA Phase 1 (He1) — Subagent V1 (Policy-First)
 
-> **Mission**: Convert NIV verse into simplified English (He1) for TBTA.
+> **Mission**: Convert NIV verse(s) into simplified English (He1) for TBTA.
 > **Approach**: Policy-based rules from official TBTA documentation.
 
 ## Also Read
@@ -11,7 +11,7 @@
 
 ## Your Task
 
-You will receive: verse reference + NIV text
+You will receive: verse(s) reference + NIV text
 You must return: encoded He1 text that passes the linter
 
 ## Process

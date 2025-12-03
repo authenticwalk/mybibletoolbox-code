@@ -1,0 +1,24 @@
+{
+  "name": "tbta-encoder",
+  "version": "1.0.0",
+  "description": "TBTA He1 encoding agent using Claude Agent SDK",
+  "type": "module",
+  "main": "index.ts",
+  "scripts": {
+    "start": "npx ts-node index.ts",
+    "build": "tsc",
+    "test": "echo \"No tests yet\" && exit 0"
+  },
+  "dependencies": {
+    "@anthropic-ai/claude-agent-sdk": "^0.1.56"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.0.0",
+    "ts-node": "^10.9.0"
+  },
+  "engines": {
+    "node": ">=18"
+  }
+}
+
