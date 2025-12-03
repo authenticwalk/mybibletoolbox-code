@@ -60,3 +60,8 @@ Add learnings here when V2 wins or discovers a new pattern.
 ## Genre Complexity
 - Epistles are much harder than narrative
 - Dense theological language causes many more errors (Tit 1:1-9)
+
+## Verb Argument Ordering
+- "send" — patient immediately follows: "sent X to Y" not "sent to Y X" (Mt 2:8)
+- "learn" — patient required: "learned X from Y" not "learned from Y" (Mt 2:7)
+- "born" — passive triggers agent errors; prefer active/future: "will be king" not "was born king" (Mt 2:2)

@@ -1,6 +1,6 @@
 # TBTA Phase 1 (He1) — Subagent Encoding V2
 
-> **Mission**: Convert NIV verse into simplified English (He1) for TBTA.
+> **Mission**: Convert NIV verse(s) into simplified English (He1) for TBTA.
 > **Approach**: Reverse-engineering (rules derived from 6,963 encoded verses)
 
 ## Also Read
@@ -11,7 +11,7 @@
 
 ## Input/Output
 
-**Input**: Verse reference + NIV text
+**Input**: Verse(s) reference + NIV text
 **Output**: Encoded He1 text + linter results + issues for orchestrator
 
 ---
@@ -87,6 +87,12 @@ he/she/it/they → [Name] or "that man/woman/person"
 his/her/their → [Name's] or "that person's"
 ```
 
+**Possessive pronouns**: Eliminate or restructure:
+```
+"their way" → "away" or restructure sentence
+"his star" → "[Name]'s star" or "that person's star"
+```
+
 ### 2. Clause Segmentation
 (Gen 1:4, Gen 1:5, Gen 1:10, Gen 1:16, Gen 1:27)
 
@@ -106,6 +112,13 @@ All non-main clauses in `[...]`:
 - Causal: `[because...]`
 - Result: `[with-the-result-that...]`
 
+**Indirect questions**: where/when/why cannot be relativizers — restructure:
+```
+"asked where X was" → "asked about the place [that X was in]"
+"asked when X happened" → "asked about the time [that X happened]"
+"asked why X did Y" → "asked about the reason [that X did Y]"
+```
+
 ### 4. Deixis Marking
 (Gen 1:26, Gen 1:28, Gen 1:29, Gen 3:9, Gen 3:11; NOT Gen 1:1)
 
@@ -124,6 +137,11 @@ He2 additions: `_incl` (inclusive we), `_excl` (exclusive we)
 Speaker said, ["Quote text."]
 Nested: ["X said, ['inner quote']"]
 ```
+
+**Complexity limits**:
+- Single-sentence quotes: ✅ reliable
+- Multi-sentence quotes (2+): ⚠️ bracket matching issues — test carefully
+- Nested quotes with brackets inside: ❌ often fails — consider splitting
 
 ### 6. Imperative Marking
 (Gen 1:22, Gen 1:28, Gen 3:3, Gen 3:14, Gen 4:7)
@@ -204,6 +222,14 @@ _dual, _generic, _hyperbolic, _metonymy
 a man named Adam
 a city named Enoch
 a country named Moab
+```
+
+**Title positioning**: Titles follow names, not precede:
+```
+"King Herod" → "Herod the king"
+"Chief Priest Caiaphas" → "Caiaphas the chief priest"
+"Prophet Isaiah" → "Isaiah the prophet"
+"Simon the tanner" ✓ (correct)
 ```
 
 ### 15. Structural Markers
