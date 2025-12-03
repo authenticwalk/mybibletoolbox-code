@@ -182,3 +182,74 @@ Add learnings here when V3 wins or discovers a new pattern.
 
 ## Transformative Actions
 - "make X into Y" for preparing/cooking (2Sa 12:4)
+
+## Military/Role Vocabulary (Gen 18, 1Sa 17, Mt 8)
+- "shield bearer" → "man [who carried a big cover for X]" (1Sa 17:41)
+- "centurion" → "army leader [who was in charge of 100 soldiers]" or "officer/centurion" (Mt 8:5)
+- "armor bearer" → "man [who carried the weapons of X]"
+- "captain" → "leader of the ship" (Jon 1:6)
+
+## Spatial Relativizer Forbidden
+- "where" cannot be relativizer → use "the place [that...]" (Act 9:2)
+- "when" for temporal → use "the time [that...]" when needed
+
+## Proper Name Marker
+- Use `_properName` for special terms: "the Way _properName" (Act 9:2)
+- Helps distinguish religious/historical proper nouns
+
+## Hospitality Vocabulary (Gen 18)
+- "bowed low" → "put X's face to the ground" (Gen 18:2)
+- "refreshed" → "will be strong again" or "will have strength" (Gen 18:5)
+- "knead" → "mix flour with water" (Gen 18:6)
+- "finest flour" → "best flour" (Gen 18:6)
+
+## "want" Verb Senses
+- `want-A` for different-participant: "wanted [Jesus to help]"
+- `want-B` for same-participant: "wanted [to take those people]" (Act 9:2)
+- Careful sense selection required
+
+## "ask" Verb Complexity
+- Has 6+ senses with different argument structures (Act 9:2)
+- When problematic, restructure to "wanted X from Y" construction
+- Avoid complex "asked X for Y to do Z" patterns
+
+## Prophetic/Poetic Simplification (Nah 1)
+- "jealous" → "wants [all people to honor only Yahweh]"
+- "avenging/vengeance" → "punishes"
+- "wrath" → "anger"
+- "fierce anger" → "strong anger"
+- "poured out like fire" → "flows-out like fire"
+- "shattered" → "break"
+
+## Prophetic Metaphors
+- Use simile marker: "like the dust of Yahweh's feet" (Nah 1:3)
+- Convert passives to causatives: "causes [the sea to become dry]" (Nah 1:4)
+- Double negative → positive: "will not leave unpunished" → "will certainly punish" (Nah 1:3)
+
+## Epistle Vocabulary (2Jn, Tit 2)
+- "deceiver" → "person [who tricks people]" (2Jn 1:7)
+- "antichrist" → "enemy of Christ" (2Jn 1:7)
+- "sound doctrine" → "healthy words/teaching" (Tit 2:1)
+- "temperate/self-controlled" → "control [the mind of X]" (Tit 2:2)
+- "reverent" → "honor God" (Tit 2:3)
+- "slanderers" → "say bad things about people" (Tit 2:3)
+
+## Reflexive Pronoun Handling
+- "themselves" not recognized → repeat noun (Tit 2:2)
+- "control themselves" → "control those men/women"
+
+## Long Quote Management
+- Split multi-sentence quotes into separate `said` statements (Jos 2, Mt 8)
+- Pattern: `X said, ["A."] X said, ["B."]` not `X said, ["A. B. C."]`
+- Reduces linter bracket-matching errors
+
+## Gospel Dialogue Patterns (Mt 8, Mk 10)
+- "lying" needs sense: "lying-A" for physical position (Mt 8:6)
+- "paralyzed" → "not able [to move]" (Mt 8:6)
+- "Teacher" is L2 → "Master" or "person [who teaches]" (Mk 10:17)
+- "eternal life" → "life [that will not end]" (Mk 10:17)
+
+## Conversion Narrative (Act 9)
+- "breathing out threats" → "wanted [to kill X]" + "speaking angry words"
+- "persecute" → "harm" (Act 9:4)
+- "get up" → "stand-up" (hyphenated, base form) (Act 9:6)
