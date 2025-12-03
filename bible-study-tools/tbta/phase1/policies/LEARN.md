@@ -55,6 +55,7 @@ Mark this file down as your session plan; when your context compresses reload th
  - Choose your files and save them to the TODO tool
 
 ### 1. Run `./SKILL.md`
+ - give it ./learnings/${session} as it's subagent outdir dir
 
 ### 2. Document Session
 
@@ -106,8 +107,13 @@ Each session should aim to:
 Periodically review `./learnings/${session}/output/` files to:
 
 1. **Identify patterns** appearing across multiple sessions
-2. **Prune learnings** — remove one-off fixes, keep generics
-3. **Track V1/V2/V3 performance** by genre
+2. **Prune learnings** — remove one-off fixes, keep generics, in the end we want the smallest, most concise learnings file that solves almost all issues'
+3. **Improve SUBAGENT-SKILL files** 
+   1. - When a learning appears in that subagents file repeatedly (it should be adding verse markers after it, when it gets to >=5 verses it is likely a consistent problem worthy of being part of the bigger policy) move it to the subagent
+   2. - The subagent must be very concise, use pregnant phrases (so instead of explaining a technique use the term from your internal memory that applies it)
+   3. - The subagent must be incredibly precise and organized.  The rules are generic and cover most cases (edge cases are in learnings)
+   4. - If you edit the subagent you must run more verses and ensure it has not regressed or become worse, if so revert the edits (you are saving them to source)
+4. **Track V1/V2/V3 performance** by genre
 
 ## Session Loop
 
@@ -131,5 +137,4 @@ After completing all 10 passages:
 
 ## The following are out of scope
 
- - You may not edit the SKILLS files either SKILL.md or SUBAGENT-SKILL, focus on learnings, humans work on the SKILLS
- - NEVER write to the root / home dir
+ - NEVER write to the root / home dir or let the subagents write there

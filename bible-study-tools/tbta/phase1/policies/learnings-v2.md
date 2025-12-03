@@ -65,3 +65,35 @@ Add learnings here when V2 wins or discovers a new pattern.
 - "send" — patient immediately follows: "sent X to Y" not "sent to Y X" (Mt 2:8)
 - "learn" — patient required: "learned X from Y" not "learned from Y" (Mt 2:7)
 - "born" — passive triggers agent errors; prefer active/future: "will be king" not "was born king" (Mt 2:2)
+
+## Narrative Structure
+- Use `(title)` marker at narrative section starts (Jon 1:1)
+- Use "One day" opener for narrative beginnings (Jon 1:1)
+- "decided [to verb]" for intent/purpose (Jon 1:3)
+
+## Causative Constructions
+- "caused [X to verb]" for divine actions on nature (Jon 1:4)
+
+## Vocabulary Patterns
+- "heavy things" not "cargo" for ship goods (Jon 1:5)
+- "leader of the ship" not "captain" (Jon 1:6)
+- "Perhaps" not "Maybe" for possibility (Jon 1:6)
+- "men [who worked on that ship]" for sailors (Jon 1:5)
+
+## Geographic Names
+- Name seas explicitly: "Mediterranean Sea" (Jon 1:4)
+
+## Implicit Markers (He1)
+- Use `(implicit-info)` for implicit information (Jon 1:5)
+
+## Famine/Scarcity Expression
+- "there was a famine" → "many people [who were living in X] did not have enough food" (Ru 1:1)
+- Use active subject with relative clause, not existential "there was"
+
+## Determiner Patterns
+- First mention of specific individual: "A certain man" (Ru 1:1)
+- Subsequent reference: "That man" not "the man" (Ru 1:1)
+
+## Title Clause Names
+- Title clause may use character names from later verses (Ru 1:1)
+- Pattern: `Name (title) and Name verb from Place to Place.` (Ru 1:1)

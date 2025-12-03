@@ -62,9 +62,14 @@ INPUT: Verse reference (text optional)
 ```
 Read: ./SUBAGENT-SKILL{-V2|-V3}.md + learnings-v{1|2|3}.md
 Input: "{verse_ref}: {niv_text}"
+File Ouput: "Write to `${OUTPUT}`" OR Don't save to files
 Return: He1 encoding (linter-validated), issues
 NOTE: Run linter until clean (max 12 iterations) BEFORE returning
+
+
 ```
+
+Note: only write to ${OUTPUT} if you where told what your subagent outdir was otherwise the subagent is not allowed to save to files (default)
 
 | Version | Skill File | Learnings |
 |---------|------------|-----------|

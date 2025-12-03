@@ -125,3 +125,35 @@ Add learnings here when V1 wins or discovers a new pattern.
 ## Command Case Frames
 - "Father commanded us [we must...]" FAILS (same-participant) (2Jn 1:4)
 - Solution: "Father commanded [people must...]" (generic patient)
+
+## Narrative Structure
+- Use `(title)` marker at narrative section starts (Jon 1:1)
+- Use "One day" opener for narrative beginnings (Jon 1:1)
+- "decided [to verb]" for intent/purpose (Jon 1:3)
+
+## Causative Constructions
+- "caused [X to verb]" for divine actions on nature (Jon 1:4)
+
+## Vocabulary Patterns
+- "heavy things" not "cargo" for ship goods (Jon 1:5)
+- "leader of the ship" not "captain" (Jon 1:6)
+- "Perhaps" not "Maybe" for possibility (Jon 1:6)
+- "men [who worked on that ship]" for sailors (Jon 1:5)
+
+## Geographic Names
+- Name seas explicitly: "Mediterranean Sea" (Jon 1:4)
+
+## Implicit Markers (He1)
+- Use `(implicit-info)` for implicit information (Jon 1:5)
+
+## Famine/Scarcity Expression
+- "there was a famine" → "many people [who were living in X] did not have enough food" (Ru 1:1)
+- Use active subject "many people did not have" not existential "there was not"
+
+## Determiner Patterns
+- First mention of specific individual: "A certain man" not just "a man" (Ru 1:1)
+- Subsequent reference: "That man" not "the man" (Ru 1:1)
+
+## Title Clause Names
+- Title clause may use character names from later verses (Ru 1:1)
+- Pattern: `Name (title) and Name verb from Place to Place.` (Ru 1:1)
