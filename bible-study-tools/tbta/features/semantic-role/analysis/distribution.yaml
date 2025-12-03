@@ -1,0 +1,58 @@
+# Distribution of Semantic Role TBTA values
+# Generated from: tbta-extract.jsonl
+# Total annotations: 138,723
+# Unique verses: ~9,779 (based on TBTA repo stats)
+
+values:
+  - label: "Most Agent-like"
+    count: 74510
+    percentage: 53.7
+    description: "Prototypical Agent - volitional doer of action"
+
+  - label: "Most Patient-like"
+    count: 36704
+    percentage: 26.5
+    description: "Prototypical Patient - entity undergoing change/effect"
+
+  - label: "Destination"
+    count: 12611
+    percentage: 9.1
+    description: "Goal or endpoint of motion/transfer"
+
+  - label: "State"
+    count: 10365
+    percentage: 7.5
+    description: "Experiencer of mental/emotional state"
+
+  - label: "Source"
+    count: 1851
+    percentage: 1.3
+    description: "Origin or starting point of motion/transfer"
+
+  - label: "Beneficiary"
+    count: 1031
+    percentage: 0.7
+    description: "Entity for whose benefit action is performed"
+
+  - label: "Addressee"
+    count: 998
+    percentage: 0.7
+    description: "Recipient of communication act"
+
+  - label: "Instrument"
+    count: 653
+    percentage: 0.5
+    description: "Tool or means by which action is performed"
+
+total_annotations: 138723
+
+sampling_notes: |
+  - Most Agent-like and Most Patient-like are dominant (80% of data)
+  - Destination and State are substantial minorities (9.1% and 7.5%)
+  - Remaining roles are rare (< 2% each): Source, Beneficiary, Addressee, Instrument
+  - For balanced dataset: oversample rare values, undersample common values
+  - Target: ~800 train + ~100 validate + ~100 test = ~1000 total entries
+  - Suggested per-value targets:
+    - Agent/Patient: 250-300 each (many examples available)
+    - Destination/State: 100-120 each (sufficient examples)
+    - Source/Beneficiary/Addressee/Instrument: 50-80 each (use most/all available)

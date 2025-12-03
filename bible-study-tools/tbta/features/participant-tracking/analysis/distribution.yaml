@@ -1,0 +1,42 @@
+# Participant Tracking Feature Distribution
+# Generated from TBTA extraction
+
+total_annotations: 171876
+
+distribution:
+  Routine:
+    count: 125543
+    percentage: 73.04
+    description: Default tracking - participant continues in focus
+
+  Generic:
+    count: 23856
+    percentage: 13.88
+    description: Generic reference to participant type
+
+  Frame Inferable:
+    count: 12815
+    percentage: 7.46
+    description: Participant inferable from semantic frame
+
+  First Mention:
+    count: 9267
+    percentage: 5.39
+    description: First introduction of participant
+
+  Interrogative:
+    count: 394
+    percentage: 0.23
+    description: Interrogative reference to participant
+
+  Offstage:
+    count: 1
+    percentage: 0.00
+    description: Participant mentioned but not present in scene
+
+notes:
+  - Routine dominates at 73%, which is expected for continued reference
+  - Generic and Frame Inferable together account for ~21%
+  - First Mention at 5.39% represents new participant introductions
+  - Interrogative and Offstage are rare edge cases
+  - Offstage has only 1 annotation - may need special handling in dataset

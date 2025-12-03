@@ -6,9 +6,10 @@ This script is called by the bible-study-tool-creator skill.
 
 import os
 import sys
-import yaml
-from pathlib import Path
 from datetime import datetime
+from pathlib import Path
+
+import yaml
 
 
 def replace_placeholders(content, replacements):
@@ -25,7 +26,7 @@ def load_template(template_path):
         return f.read()
 
 
-def create_tool_structure(tool_data, base_dir="/Users/chrispriebe/projects/context-grounded-bible"):
+def create_tool_structure(tool_data, base_dir=""):
     """Create the complete directory and file structure for a new tool."""
 
     tool_name_kebab = tool_data['tool_name_kebab']

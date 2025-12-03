@@ -1,0 +1,535 @@
+patterns:
+  - name: Pronoun Resolution with Bracket Coreference
+    category: Pronoun/coreference
+    description: |
+      Pronouns are explicitly resolved with bracketed antecedents. Pattern: pronoun(antecedent)
+      Applied consistently for clarity, especially with multiple referents or ambiguity.
+    transformation: "NIV: 'he said' → CNL: 'he(David) said'"
+    phase: Both
+    examples:
+      - Mark 12:14: "you(Jesus) are honest"
+      - Genesis 29:18: "you(Laban) will allow [me(Jacob) to marry..."
+      - Matthew 24:34: "you(followers) the truth"
+      - 1 Samuel 10:24: "we(Israelites) hope"
+      - Joshua 1:7: "you(Joshua) be strong"
+    variations:
+      - Inclusive/exclusive markers: "we(Pharisees) _excl know"
+      - First-person as third: "_1stAs3rd" for Jesus self-references
+      - Generic pronouns: "people _generic"
+
+  - name: Implicit Information Marking
+    category: Implicit info markers
+    description: |
+      Information not explicit in NIV but necessary for understanding is marked with _implicit or (implicit-*) tags.
+      Multiple subtypes identify the reason for implicitness.
+    transformation: "NIV: 'the people there' → CNL: 'the people _implicit [who were at that place]'"
+    phase: Both
+    examples:
+      - Mark 12:14: "people _implicit about the things"
+      - Matthew 6:1: "people to give money or other things _implicit"
+      - Matthew 26:9: "should have been sold by a person _implicitActiveAgent"
+      - Mark 5:31: "the crowd [that is pushing against you(Jesus)]"
+      - Matthew 8:30: "A big group of pigs was eating food _implicit"
+    variations:
+      - _implicitActiveAgent: passive voice agents
+      - _implicitNecessary: contextually required info
+      - (implicit-situational): inferrable from context
+      - (implicit-info): background information
+      - (implicit-background): scene-setting details
+      - (implicit-subaction): unstated sub-steps
+
+  - name: Clause Segmentation with Brackets
+    category: Clause segmentation
+    description: |
+      Complex sentences broken into nested bracket structures showing logical dependencies.
+      Main clauses contain subordinate clauses in brackets, creating explicit syntactic trees.
+    transformation: "NIV: 'If you obey, you will succeed' → CNL: '[If you(Joshua) obey those laws] you(Joshua) will always succeed'"
+    phase: Both
+    examples:
+      - Joshua 1:7: "[If you(Joshua) obey those laws] you(Joshua) will always succeed"
+      - Genesis 29:18: "[If you(Laban) will allow [me(Jacob) to marry your(Laban's) younger daughter named Rachel]] I(Jacob) will work for you(Laban) for 7 years"
+      - Mark 13:22: "[in-order-to deceive people]"
+      - Genesis 13:16: "[just-like no person is able [to count all the dust [that is on the earth]]]"
+      - Matthew 24:22: "[Unless the Lord-A causes [those days to end-A quickly],] all people will die"
+    variations:
+      - Purpose clauses: "[in-order-to X]"
+      - Conditional clauses: "[If X] then Y"
+      - Temporal clauses: "[When X]"
+      - Comparison clauses: "[just-like X]"
+      - Multi-level nesting up to 4+ levels deep
+
+  - name: Quote Frame Markers
+    category: Quote framing
+    description: |
+      Quotations explicitly marked with brackets and speaker identification.
+      Nested quotes show quote-within-quote structure.
+    transformation: "NIV: 'He said, \"Go\"' → CNL: 'He(David) said, [\"You(servant) (imp) go\"]'"
+    phase: Both
+    examples:
+      - Genesis 29:18: "Jacob said to Laban, [\"[If you(Laban) will allow...] I(Jacob) will work...\"]"
+      - 1 Samuel 10:24: "Samuel said to the people, [\"You(Israelites) (imp) look at the man...\"]"
+      - Matthew 24:34: "I(Jesus) am telling you(followers) the truth"
+      - Joshua 2:12: "you(men/spies) (imp) promise me(Rahab)"
+      - Genesis 32:3: "you(messengers) (imp) say to the master of me(Jacob) named Esau, [\"the servant of you(Esau) named Jacob says, [\"I(Jacob) lived...\"]]\"]"
+    variations:
+      - Direct quotes: ["text"]
+      - Indirect quotes: embedded clauses
+      - Multi-level quote nesting (up to 3 levels)
+
+  - name: Imperative Marking
+    category: Imperatives
+    description: |
+      Imperatives explicitly tagged with (imp) marker before the verb.
+      Distinguishes commands from indicative statements.
+    transformation: "NIV: 'Be strong' → CNL: '(imp) you(Joshua) be strong'"
+    phase: Both
+    examples:
+      - Joshua 1:7: "(imp) you(Joshua) be strong"
+      - Joshua 2:12: "you(men/spies) (imp) promise me(Rahab)"
+      - Genesis 19:17: "you(Lot) (imp) run to the mountains!"
+      - Matthew 6:1: "You(people) (imp) be careful"
+      - 1 Samuel 10:24: "You(Israelites) (imp) look at the man"
+    variations:
+      - Positive commands: "(imp) do X"
+      - Negative commands: "(imp) do not do X"
+      - Polite requests: "(imp) please do X"
+
+  - name: Name Introductions with 'named'
+    category: Name introductions
+    description: |
+      Names introduced with "named" marker when first mentioned or clarified.
+      Pattern: "person named X" or "place named Y"
+    transformation: "NIV: 'David' → CNL: 'David' (first) or 'the son named David' (introduction)"
+    phase: Both
+    examples:
+      - Ruth 4:22: "a son named Jesse"
+      - 2 Samuel 23:34: "Eliphelet was the son of Ahasbai"
+      - Genesis 29:18: "younger daughter named Rachel"
+      - Matthew 10:4: "Simon [who was called by people _implicitActiveAgent Zealot]"
+      - 1 Samuel 9:1: "A man named Kish"
+    variations:
+      - Direct naming: "named X"
+      - Passive naming: "who was called X"
+      - Relational naming: "son of X", "daughter of Y"
+
+  - name: Title and Paragraph Markers
+    category: Title/paragraph markers
+    description: |
+      Explicit structural markers for discourse organization.
+      (title), (paragraph), _paragraph used to mark sections.
+    transformation: "NIV: [new section] → CNL: '(title) Jesus teaches...'"
+    phase: He2-only
+    examples:
+      - Matthew 6:1: "(title) Jesus teach-how people [people to give money...]"
+      - Mark 14:53: "(title) The Jewish leaders decide... (paragraph) Those people..."
+      - Matthew 27:62: "(title) Soldiers guard the hole/tomb. _paragraph On the next day..."
+      - Mark 1:1: "(title) prepares people... (paragraph) The Good-News..."
+      - Matthew 17:14: "(title) Jesus heals a boy... _paragraph Jesus and the followers..."
+    variations:
+      - (title): section heading
+      - (paragraph): new paragraph start
+      - _paragraph: inline paragraph marker
+
+  - name: Temporal and Situational Deixis
+    category: Deixis marking
+    description: |
+      Explicit marking of time, place, and situational context.
+      Often marked with (implicit-situational) or explicit temporal phrases.
+    transformation: "NIV: 'on that day' → CNL: 'on that day' (preserved) or '[When X happened]'"
+    phase: Both
+    examples:
+      - Mark 12:14: "(implicit-situational) So you(Jesus) (imp) please answer"
+      - Matthew 26:44: "[when Jesus prayed earlier]"
+      - Genesis 40:11: "At that time I(man) was holding"
+      - Joshua 22:20: "(imp) You(people) remember [that God punished us(Israelites) at Peor]"
+      - 1 Samuel 14:23: "on that day"
+    variations:
+      - Temporal: "at that time", "[When X]", "on that day"
+      - Spatial: "at that place", "there"
+      - Situational: "(implicit-situational)"
+
+  - name: Passive Voice Active Agent Marking
+    category: Implicit info markers
+    description: |
+      Passive constructions explicitly identify implied agents with _implicitActiveAgent.
+      Pattern: "was VERBed by agent _implicitActiveAgent"
+    transformation: "NIV: 'was brought' → CNL: 'was brought by people _implicitActiveAgent'"
+    phase: Both
+    examples:
+      - Matthew 18:24: "was brought by people _implicitActiveAgent to that king"
+      - Matthew 10:4: "Simon [who was called by people _implicitActiveAgent Zealot]"
+      - Mark 7:35: "that man's ears were opened by God _implicitActiveAgent"
+      - Matthew 26:9: "should have been sold by a person _implicitActiveAgent"
+      - Matthew 5:3: "are blessed by God _implicitActiveAgent"
+    variations:
+      - Generic agent: "by people _implicitActiveAgent"
+      - Divine agent: "by God _implicitActiveAgent"
+      - Unspecified agent: "by a person _implicitActiveAgent"
+
+  - name: Rhetorical Question Conversion
+    category: Clause segmentation
+    description: |
+      Rhetorical questions marked and often followed by statement equivalent.
+      Pattern: (rhetorical) question + (statement) declarative version
+    transformation: "NIV: 'Why did you...?' → CNL: '(rhetorical) Why did you...? (statement) You should not...'"
+    phase: He2-only
+    examples:
+      - Mark 7:5: "(rhetorical) So those Pharisees... asked... (statement) So those Pharisees... said..."
+      - Matthew 3:7: "(rhetorical) who warned you... (statement) you(Pharisees) (imp) do not think..."
+      - Matthew 16:8: "(rhetorical) Why are you(followers) saying... (statement) You(followers) should not be saying..."
+      - Matthew 26:50: "(rhetorical) why did you(Judas) come here? (statement) You(Judas) should not have come here"
+      - Mark 8:17: "(rhetorical) Do you(followers) still not know? (statement) You(followers) should already know"
+    variations:
+      - (yesrhetorical): expects 'yes' answer
+      - (rhetorical) + (statement): question-statement pair
+      - Standalone rhetorical without restatement
+
+  - name: Bracket Conventions for Clarification
+    category: Bracket conventions
+    description: |
+      Multiple bracket types and tags for different clarification purposes.
+      Square brackets for explanatory content, tags for grammatical/semantic info.
+    transformation: "NIV: 'the king' → CNL: 'King _implicit Herod' or 'the king [who is in Egypt]'"
+    phase: Both
+    examples:
+      - Mark 12:14: "King _implicit Herod"
+      - Matthew 6:1: "good/righteous actions"
+      - Mark 15:31: "saved-A other people"
+      - Matthew 24:41: "women _dual"
+      - Acts 2:6: "water [in order to make the seas and the sky]"
+    variations:
+      - _implicit: unexpressed but understood
+      - _inLDV: "in the Lord's Divine Vision"
+      - _dual: dual number
+      - _trial: trial number (3 persons)
+      - _emphasized: emphatic marking
+      - _sameThingList: anaphoric list reference
+      - _otherThingList: cataphoric list reference
+      - Suffixed verbs: save-A, save-B for disambiguation
+
+  - name: Vocabulary Level-2 Pairing
+    category: Vocabulary L2 pairings
+    description: |
+      Complex or abstract words paired with simpler alternatives using slash notation.
+      Pattern: "complex/simple" or "(literal) X (dynamic) Y"
+    transformation: "NIV: 'temple' → CNL: 'house _implicitType' or 'Teacher/Master'"
+    phase: Both
+    examples:
+      - Mark 12:14: "Master/Teacher"
+      - Matthew 6:1: "good/righteous actions"
+      - Mark 14:53: "the chief priest of the house _implicitType"
+      - Matthew 5:3: "(literal) kingdom-B of heaven... (dynamic) God will be those people's king"
+      - Mark 4:11: "(complex) The secret... (simple) You(people) are allowed..."
+    variations:
+      - Direct pairing: "word1/word2"
+      - (literal) / (dynamic) pairs
+      - (complex) / (simple) pairs
+      - (primary) / (meaning-1) pairs
+      - Type markers: _implicitType, _metonymy
+      - Descriptive markers: _descriptive
+
+  - name: Footnote and Alternative Renderings
+    category: Bracket conventions
+    description: |
+      Inline footnotes and alternative translations marked explicitly.
+      Pattern: (footnote) text or (alt) alternative reading
+    transformation: "NIV: [footnote marker] → CNL: '(footnote) explanatory text'"
+    phase: Both
+    examples:
+      - Matthew 18:24: "(literalunits) 10000 talents... (modernunits) 10000 bags... (footnote) 1 talent was like..."
+      - Philemon 1:10: "Onesimus (footnote) was a slave..."
+      - Mark 1:13: "(implicit-background) Jesus did not do the things..."
+      - Genesis 49:17: "(alt) until the leader [whom God chooses] comes"
+      - Matthew 18:22: "(footnote) Some people think [the Greek words mean 490 times]"
+    variations:
+      - (footnote): explanatory notes
+      - (alt): alternative reading
+      - (literalunits) / (modernunits): measurement conversions
+      - -Footnote: section marker
+      - -Title: title marker
+      - -CommentBegin: commentary section
+
+  - name: Relative Clause Expansion
+    category: Clause segmentation
+    description: |
+      Relative clauses fully bracketed to show scope and antecedent relationships.
+      Pattern: "noun [that/who verb...]"
+    transformation: "NIV: 'people who live there' → CNL: 'people [who live at that place]'"
+    phase: Both
+    examples:
+      - Mark 12:14: "the things [that God wants [people to do]]"
+      - Matthew 6:1: "the things [that you(people) want]"
+      - Genesis 13:16: "all the dust [that is on the earth]"
+      - Joshua 1:14: "the men [who are able [to fight]]"
+      - Mark 13:22: "people [who tell false-B messages [that do not come from God]]"
+    variations:
+      - Subject relatives: "[who/that VERB]"
+      - Object relatives: "[that X VERB]"
+      - Nested relatives: multiple levels
+      - Reduced relatives: "[in X]", "[at Y]"
+
+  - name: Temporal Sequencing Markers
+    category: Deixis marking
+    description: |
+      Explicit temporal relationships marked with brackets and conjunctions.
+      Shows before/after relationships and simultaneity.
+    transformation: "NIV: 'After he left' → CNL: '[After David left]'"
+    phase: Both
+    examples:
+      - Matthew 26:9: "[After Jesus sent the crowd from the house _implicitNecessary,] Jesus entered"
+      - Genesis 45:26: "[After the brothers arrived at the brothers' house] the brothers said"
+      - Joshua 4:8: "[because Israel had 12 tribes]"
+      - 1 Samuel 14:32: "[because the soldiers did not eat food on that day]"
+      - Mark 5:38: "[(implicit-situational) When Jesus and those people arrived at that house,]"
+    variations:
+      - [After X]: subsequent action
+      - [When X]: simultaneous action
+      - [Before X]: prior action
+      - [While X]: ongoing during
+      - [because X]: causal relationship
+
+  - name: List and Coordination Markers
+    category: Bracket conventions
+    description: |
+      Lists and coordinated items marked to show relationships.
+      "and" preserved but items may be bracketed for clarity.
+    transformation: "NIV: 'A, B, and C' → CNL: 'A, B, and C' (preserved structure)"
+    phase: Both
+    examples:
+      - Nehemiah 10:16: "Adonijah, Bigvai, Adin,"
+      - Genesis 29:29: "Laban also gave Laban's female slave named Bilhah to Rachel"
+      - 2 Samuel 17:28: "beds, bowls and pots... wheat, barley, flour..."
+      - Matthew 10:4: "Simon... and Judas-Iscariot"
+      - Nehemiah 8:7: "Jeshua, Bani, Sherebiah, Jamin..."
+    variations:
+      - Simple lists: "A, B, C"
+      - Coordinated clauses: "X. and Y. and Z."
+      - Grouped lists: descriptive categories
+
+  - name: Possession and Relational Marking
+    category: Pronoun/coreference
+    description: |
+      Possessive relationships explicitly marked with full referent chains.
+      Pattern: "X's Y" with full resolution in parentheses
+    transformation: "NIV: 'his son' → CNL: 'the son of him(David)' or 'David's son'"
+    phase: Both
+    examples:
+      - Genesis 29:18: "your(Laban's) younger daughter"
+      - 2 Samuel 23:34: "the son of Ahasbai"
+      - Matthew 6:1: "your(people's) Father [who is in heaven]"
+      - 1 Samuel 16:19: "your(Jesse's) son named David"
+      - Genesis 35:14: "the place [where God talked to Jacob]"
+    variations:
+      - Genitive: "X of Y"
+      - Possessive: "X's Y"
+      - Resolved possessive: "your(owner's) thing"
+      - Relational: "son of", "daughter of", "father of"
+
+  - name: Verbal Aspect and Tense Marking
+    category: Vocabulary L2 pairings
+    description: |
+      Verbal aspects marked with suffixes and temporal markers.
+      Pattern: verb-A, verb-B for disambiguation or aspectual differences
+    transformation: "NIV: 'saved' → CNL: 'saved-A' or 'saved-B' (different senses)"
+    phase: Both
+    examples:
+      - Mark 15:31: "saved-A other people"
+      - Mark 12:5: "sent-A another servant-B"
+      - Matthew 21:27: "will not tell-C to you(priests)"
+      - Matthew 27:29: "get-up"
+      - Mark 5:38: "crying/weep loudly"
+    variations:
+      - Suffixed verbs: -A, -B, -C, -D for polysemy
+      - Tense preservation: "will X", "did X"
+      - Aspect marking through periphrasis
+      - Alternative verbs: "cry-out-A"
+
+  - name: Benefactive and Purpose Constructions
+    category: Clause segmentation
+    description: |
+      Purpose and benefactive relationships explicitly bracketed.
+      Pattern: "[in-order-to VERB]" or "[so that X could Y]"
+    transformation: "NIV: 'to save them' → CNL: '[in-order-to save them]'"
+    phase: Both
+    examples:
+      - Mark 13:22: "[in-order-to deceive people]"
+      - Joshua 1:14: "[in-order-to fight]"
+      - Genesis 19:17: "[If you(Lot) do not run to the mountains] you(Lot) will be destroyed"
+      - Matthew 18:24: "[so that I(king) could eat that food]"
+      - Mark 6:39: "[in-order-to tell-B all the people [all the people to sit-down]]"
+    variations:
+      - Purpose: "[in-order-to X]"
+      - Result: "[so that X]"
+      - Benefactive: "for X"
+      - Conditional result: "[If X] then Y"
+
+  - name: Numerical and Measurement Precision
+    category: Bracket conventions
+    description: |
+      Numbers preserved precisely, with conversions in footnotes.
+      Unit clarifications provided inline or in footnotes.
+    transformation: "NIV: '10,000 talents' → CNL: '(literalunits) 10000 talents... (modernunits) 10000 bags... (footnote) explanation'"
+    phase: Both
+    examples:
+      - Matthew 18:24: "(literalunits) 10000 talents (modernunits) 10000 bags [that contained gold]"
+      - 2 Samuel 6:1: "30000 soldiers"
+      - Genesis 17:24: "99 years old"
+      - Ruth 2:7: "from the morning until now"
+      - 1 Samuel 4:10: "30000 Israelite soldiers"
+    variations:
+      - Direct numbers: preserved as-is
+      - (literalunits) / (modernunits): dual rendering
+      - Temporal: "40 days", "3 years"
+      - Counting: "12 tribes", "7 brothers"
+
+  - name: Spatial and Directional Marking
+    category: Deixis marking
+    description: |
+      Spatial relationships and movements explicitly marked.
+      Direction, location, and motion verbs clarified.
+    transformation: "NIV: 'went there' → CNL: 'went to that place' or 'went to Jerusalem'"
+    phase: Both
+    examples:
+      - Joshua 18:12: "went to the northern side of Jericho"
+      - Genesis 19:17: "you(Lot) (imp) run to the mountains!"
+      - Matthew 21:10: "[When Jesus entered Jerusalem,]"
+      - 2 Samuel 6:14: "in front of Yahweh"
+      - Mark 5:38: "went to the house of the leader"
+    variations:
+      - Movement: "went to", "came from", "run to"
+      - Location: "at that place", "in Jerusalem"
+      - Direction: "to the north", "toward X"
+      - Proximity: "near", "beside", "in front of"
+
+  - name: Semantic Role Marking
+    category: Vocabulary L2 pairings
+    description: |
+      Semantic roles clarified with subscript-style tags.
+      Pattern: word_tag where tag indicates semantic category
+    transformation: "NIV: 'kingdom' → CNL: 'kingdom-B' (metaphorical sense)"
+    phase: Both
+    examples:
+      - Matthew 5:3: "kingdom-B of heaven"
+      - Mark 13:22: "false-B Christs"
+      - Mark 4:11: "kingdom-B of God"
+      - Matthew 18:7: "the world of the people _metonymy"
+      - Mark 7:21: "sex a person _implicit _otherThingList badly-B"
+    variations:
+      - Domain markers: -B for specialized sense
+      - _metonymy: metonymic usage
+      - _RealmOfAuthority: political domain
+      - Modifier tags: _modifiesOne, _modifiesAdj
+      - Reference tags: _inLDV, _frameInferable
+
+  - name: Event and State Distinctions
+    category: Clause segmentation
+    description: |
+      Events distinguished from states through explicit marking.
+      Stative verbs and achievements marked differently.
+    transformation: "NIV: 'was sitting' → CNL: 'was sitting' (state preserved)"
+    phase: Both
+    examples:
+      - Genesis 19:1: "Lot was sitting near the city's gate"
+      - 1 Samuel 28:5: "[When Saul saw the Philistines' army] Saul became extremely afraid"
+      - Matthew 24:41: "will be crushing grains"
+      - Mark 5:15: "That man was sitting... wearing clothes"
+      - 2 Samuel 12:16: "David lay on the ground"
+    variations:
+      - Progressive states: "was VERBing"
+      - Achievements: "became X"
+      - Activities: "continued VERBing"
+      - Accomplishments: full event structure
+
+  - name: Comparative and Superlative Constructions
+    category: Clause segmentation
+    description: |
+      Comparisons explicitly bracketed to show base and standard.
+      Pattern: "[just-like X] Y" or "more-than X"
+    transformation: "NIV: 'like dust' → CNL: '[just-like no person is able [to count all the dust]]'"
+    phase: Both
+    examples:
+      - Genesis 13:16: "[just-like no person is able [to count all the dust [that is on the earth]]]"
+      - Joshua 2:12: "[just-like I(Rahab) was kind to you(men/spies)]"
+      - Nahum 3:16: "those merchants are like locusts"
+      - Mark 13:19: "[more-than _Adp people _implicitNecessary will suffer in those days]"
+      - Matthew 9:25: "Then the girl get-up"
+    variations:
+      - Similes: "[just-like X]"
+      - Comparatives: "more-than X"
+      - Superlatives: "the most X"
+      - Equality: "[as X as Y]"
+
+cross_cutting_observations:
+  he1_specific:
+    - More narrative-focused transformations
+    - Frequent genealogical lists (Genesis, 1-2 Samuel, Joshua)
+    - Battle and movement descriptions (Joshua, 1 Samuel)
+    - Less rhetorical question conversion
+    - More direct speech frames
+    - Examples from Ruth, Jonah, Genesis, Joshua, 1-2 Samuel, Nehemiah, Esther, Daniel, Nahum
+
+  he2_specific:
+    - Title and paragraph markers more frequent
+    - Rhetorical question to statement conversion common
+    - (literal)/(dynamic) pairs for theological terms (kingdom of heaven)
+    - More complex discourse markers
+    - Teaching and dialogue emphasis
+    - Examples from Matthew, Mark, Acts, Titus, Philemon, 2 John
+
+  both_phases:
+    - Core pronoun resolution system identical
+    - Bracket-based clause segmentation universal
+    - Implicit marking system consistent
+    - Imperative marking unchanged
+    - Quote framing structure same
+    - Passive agent marking identical
+    - Name introduction patterns consistent
+    - Temporal and spatial deixis similar
+
+  complexity_notes:
+    - Nesting depth can exceed 5 levels
+    - Multiple simultaneous marking systems (pronouns + implicit + semantic)
+    - Consistent application across diverse genres (narrative, law, poetry, teaching)
+    - Dense information packing in brackets
+    - Systematic disambiguation through suffixes
+
+exceptions_and_variations:
+  pronoun_resolution:
+    - Generic pronouns sometimes left unresolved when clear from context
+    - Some first-person references to Jesus marked _1stAs3rd
+    - Inclusive/exclusive distinction marked for "we"
+
+  implicit_marking:
+    - Hierarchy of implicit types: situational < info < necessary < activeAgent
+    - Some predictable implicits unmarked when fully recoverable
+
+  bracket_usage:
+    - Occasional unbracketed modifiers when immediately adjacent
+    - Title markers may appear without closing bracket
+    - Some temporal phrases remain unbracketted when discourse-initial
+
+  vocabulary_pairs:
+    - Not all complex words paired, only when L2 gap significant
+    - Sometimes 3-way distinction: (literal)/(dynamic)/(complex)
+    - Alternative readings with (alt) for ambiguous source text
+
+summary:
+  total_patterns_identified: 21
+  core_transformations:
+    - Pronoun resolution with explicit antecedents
+    - Bracket-based clause structure showing dependencies
+    - Implicit information marking with typed tags
+    - Imperative and mood explicit marking
+    - Quote framing with nesting
+    - Name introduction conventions
+    - Vocabulary L2 pairing for accessibility
+
+  consistency_level: Very high across both He1 and He2 books
+
+  genre_adaptability: System applies consistently to narrative, legal, poetic, and didactic texts
+
+  key_insight: |
+    TBTA creates a maximally explicit representation by resolving all referential
+    ambiguity, making implicit information explicit, and showing syntactic structure
+    through systematic bracketing. The goal is zero-inference reading for L2 learners
+    and clear logical structure for translation into target languages.

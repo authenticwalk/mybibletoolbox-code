@@ -1,0 +1,1089 @@
+---
+# TBTA Pattern Analysis: chunk-al.tsv
+# NIV → CNL Transformation Patterns (500 verses analyzed)
+# He1: Ruth, Jonah, Genesis, Joshua, 1-2 Samuel, Nehemiah, Esther, Daniel, Nahum
+# He2: Matthew, Mark, Acts, Titus, Philemon, 2 John
+
+patterns:
+
+  # ====================
+  # PRONOUN/COREFERENCE
+  # ====================
+
+  - name: Explicit Pronoun Antecedents
+    category: Pronoun/Coreference
+    description: |
+      Pronouns replaced with full noun phrases showing explicit antecedents.
+      NIV "he/she/they" → CNL "that man/woman/those people"
+    phase: Both
+    examples:
+      - ref: Genesis 22:20
+        niv_pattern: "he/his"
+        cnl_pattern: "Abraham/Abraham's"
+      - ref: Mark 13:34
+        niv_pattern: "he/his"
+        cnl_pattern: "that man/that man's"
+      - ref: 1 Samuel 18:1
+        niv_pattern: "he/his"
+        cnl_pattern: "Jonathan/David"
+      - ref: Acts 18:3
+        niv_pattern: "they/their"
+        cnl_pattern: "Aquila and Priscilla/Paul"
+      - ref: Daniel 10:14
+        niv_pattern: "I/you"
+        cnl_pattern: "I(man)/you(Daniel)"
+    variations: |
+      - May use possessive forms: "the wife of Abraham" instead of "his wife"
+      - Can include disambiguating parentheticals: "you(Abraham)"
+      - Sometimes uses "that person/man/woman" for generic reference
+
+  - name: Parenthetical Speaker/Addressee Tags
+    category: Pronoun/Coreference
+    description: |
+      First and second person pronouns tagged with speaker/addressee identities.
+      NIV "I/me/you" → CNL "I(speaker)/me(speaker)/you(addressee)"
+    phase: Both
+    examples:
+      - ref: Joshua 24:24
+        niv_pattern: "We will"
+        cnl_pattern: "We(people) will"
+      - ref: 2 Samuel 7:8
+        niv_pattern: "I took you"
+        cnl_pattern: "I(Yahweh) took you(David)"
+      - ref: Nahum 1:15
+        niv_pattern: "I see"
+        cnl_pattern: "I(Nahum) see"
+      - ref: Matthew 27:44
+        niv_pattern: "the thieves"
+        cnl_pattern: "the thieves... by me(Jesus)"
+      - ref: Mark 13:34
+        niv_pattern: "a man"
+        cnl_pattern: "that man... that man... that man's"
+    variations: |
+      - Tags identify specific individuals: "I(David)", "you(Saul)"
+      - Can tag groups: "we(disciples)", "you(people)"
+      - Used consistently throughout discourse
+      - Sometimes shows possession: "my(king's) servant"
+
+  - name: Possessive Reformulation
+    category: Pronoun/Coreference
+    description: |
+      Possessive pronouns expanded to "of" constructions with explicit referents.
+      NIV "his X" → CNL "the X of that man" or "that man's X"
+    phase: Both
+    examples:
+      - ref: Genesis 43:26
+        niv_pattern: "the gifts they brought"
+        cnl_pattern: "the gifts [that the brothers brought]"
+      - ref: 1 Samuel 23:9
+        niv_pattern: "his plans"
+        cnl_pattern: "that Saul was planning"
+      - ref: Matthew 27:63
+        niv_pattern: "that deceiver said"
+        cnl_pattern: "that man [who deceived people] said"
+      - ref: Mark 15:39
+        niv_pattern: "his spirit"
+        cnl_pattern: "Jesus die"
+      - ref: Genesis 49:31
+        niv_pattern: "his wife Sarah"
+        cnl_pattern: "Abraham's wife named Sarah"
+    variations: |
+      - Two forms: "the X of Y" vs "Y's X"
+      - May include relative clauses for additional specification
+      - Maintains chain of reference across clauses
+
+  # ====================
+  # CLAUSE SEGMENTATION
+  # ====================
+
+  - name: Bracket-Based Clause Nesting
+    category: Clause Segmentation
+    description: |
+      Complex sentences broken into bracket-nested constituents showing hierarchical structure.
+      NIV compound sentence → CNL [main [subordinate [embedded]]]
+    phase: Both
+    examples:
+      - ref: Mark 13:34
+        niv_pattern: "a man going away leaves his house"
+        cnl_pattern: "a man [who travels to a place [that is far-away]]"
+      - ref: 1 Samuel 23:9
+        niv_pattern: "David learned that Saul was plotting"
+        cnl_pattern: "David heard [that Saul was planning [to come to Keilah [in-order-to kill David]]]"
+      - ref: Matthew 27:44
+        niv_pattern: "the robbers who were crucified with him"
+        cnl_pattern: "the thieves [who were put on crosses _dual by soldiers _implicitActiveAgent beside Jesus]"
+      - ref: Nehemiah 13:5
+        niv_pattern: "grain offerings, incense, and temple articles"
+        cnl_pattern: "grain, a substance [that smells good [when people burned that substance]], and the temple's things"
+      - ref: Daniel 5:16
+        niv_pattern: "if you can read this writing"
+        cnl_pattern: "[If you(Daniel) are able [to explain this message to me(king)]]"
+    variations: |
+      - Deeply nested brackets (3-4 levels common)
+      - Relative clauses always bracketed
+      - Purpose clauses: [in-order-to X]
+      - Conditional clauses: [If X] then Y
+
+  - name: Temporal/Background Clause Fronting
+    category: Clause Segmentation
+    description: |
+      Temporal and background information moved to clause-initial position with brackets.
+      NIV "X when Y" → CNL "[after/when Y] X"
+    phase: Both
+    examples:
+      - ref: Genesis 43:26
+        niv_pattern: "When Joseph came home"
+        cnl_pattern: "[after Joseph arrived at that house]"
+      - ref: 1 Samuel 18:1
+        niv_pattern: "After David had finished"
+        cnl_pattern: "[After David finished talking to Saul]"
+      - ref: Mark 15:39
+        niv_pattern: "when the centurion saw"
+        cnl_pattern: "[When that Roman officer saw [Jesus die]]"
+      - ref: Matthew 27:9
+        niv_pattern: "Then was fulfilled"
+        cnl_pattern: "Then the things-C [that God said] happened/be-fulfilled"
+      - ref: Acts 16:12
+        niv_pattern: "From there we traveled"
+        cnl_pattern: "Then we(disciples) left that place"
+    variations: |
+      - Temporal adverbials bracketed: [after X], [when Y], [while Z]
+      - May include implicit information markers within brackets
+      - Positioned at clause start or before main verb
+
+  - name: Verb Complement Extraction
+    category: Clause Segmentation
+    description: |
+      Verb complements (that-clauses, infinitives) explicitly bracketed as arguments.
+      NIV "V that S" → CNL "V [that S]" or "V [to X]"
+    phase: Both
+    examples:
+      - ref: Joshua 24:24
+        niv_pattern: "We will serve the LORD"
+        cnl_pattern: "We(people) will serve our(people's) God named Yahweh"
+      - ref: 1 Samuel 12:23
+        niv_pattern: "I will teach you"
+        cnl_pattern: "I(Samuel) will teach you(Israelites) about things [that are good]"
+      - ref: Daniel 10:14
+        niv_pattern: "I have come to explain"
+        cnl_pattern: "I(man) came to you(Daniel) [in order to help [you(Daniel) understand this vision]]"
+      - ref: Matthew 7:8
+        niv_pattern: "everyone who asks receives"
+        cnl_pattern: "each person [who asks for a thing _implicit] will receive that thing _implicit"
+      - ref: Mark 12:24
+        niv_pattern: "because you do not know"
+        cnl_pattern: "[because you(Sadducees) do not understand the Scriptures or God's power]"
+    variations: |
+      - That-clauses: V [that S]
+      - Infinitival complements: V [to X], V [in-order-to Y]
+      - Question complements: V [whether/if S]
+
+  # ====================
+  # BRACKET CONVENTIONS
+  # ====================
+
+  - name: Implicit Information Markers
+    category: Bracket Conventions
+    description: |
+      Information not explicit in source but necessary for clarity marked with _implicit tags.
+      NIV ellipsis/zero → CNL "X _implicit" or "(implicit-situational) X"
+    phase: Both
+    examples:
+      - ref: Mark 8:10
+        niv_pattern: "he went to the region"
+        cnl_pattern: "Jesus went with those followers/disciples _implicit to the area/region"
+      - ref: Matthew 7:6
+        niv_pattern: "do not throw your pearls"
+        cnl_pattern: "[If you(people) do that thing _implicit,]"
+      - ref: Mark 13:34
+        niv_pattern: "the doorkeeper to keep watch"
+        cnl_pattern: "the servant/slave [who guards-B the door _frameInferable]"
+      - ref: Matthew 12:3
+        niv_pattern: "in the Scriptures"
+        cnl_pattern: "in the Scriptures _implicit"
+      - ref: Matthew 4:17
+        niv_pattern: "preach to people"
+        cnl_pattern: "teach/preach people _genericImplicit about God _implicit"
+    variations: |
+      - Multiple types: _implicit, _implicitNecessary, _implicitActiveAgent
+      - Situational: (implicit-situational), (implicit-info), (implicit-cultural)
+      - Frame-based: _frameInferable
+      - Generic referents: _genericImplicit
+
+  - name: Passive Agent Specification
+    category: Bracket Conventions
+    description: |
+      Passive voice agents made explicit with "by X _implicitActiveAgent" tags.
+      NIV passive → CNL "passive by agent _implicitActiveAgent"
+    phase: Both
+    examples:
+      - ref: Matthew 27:13
+        niv_pattern: "were crucified with him"
+        cnl_pattern: "who were put on crosses _dual by soldiers _implicitActiveAgent"
+      - ref: Matthew 7:8
+        niv_pattern: "it will be opened"
+        cnl_pattern: "a door _implicitNecessary will be opened by God _implicitActiveAgent"
+      - ref: Matthew 26:75
+        niv_pattern: "Before the rooster crows"
+        cnl_pattern: "[Before a male chicken shouts,]"
+      - ref: Genesis 17:27
+        niv_pattern: "all the men were circumcised"
+        cnl_pattern: "all the men [who lived with Abraham] were circumcised by a man"
+      - ref: Matthew 2:12
+        niv_pattern: "having been warned in a dream"
+        cnl_pattern: "[because the wise men were warned by God _implicitActiveAgent in a dream]"
+    variations: |
+      - Explicit agents: "by soldiers", "by God"
+      - Implicit agents tagged: _implicitActiveAgent
+      - Sometimes agent omitted if truly unimportant
+
+  - name: Metalinguistic Annotations
+    category: Bracket Conventions
+    description: |
+      Parenthetical notes about literal vs dynamic, rhetorical questions, textual variants.
+      NIV unmarked → CNL "(literal/dynamic)", "(yesrhetorical)", "(footnote)"
+    phase: Both
+    examples:
+      - ref: Mark 12:24
+        niv_pattern: "Are you not in error"
+        cnl_pattern: "(yesrhetorical) Jesus asked... (statement) Jesus said"
+      - ref: Mark 15:29
+        niv_pattern: "Golgotha (which means The Place of the Skull)"
+        cnl_pattern: "(comment-begin) Golgotha means-C place of the bones of a person's head. (comment-end)"
+      - ref: Matthew 4:17
+        niv_pattern: "the kingdom of heaven is near"
+        cnl_pattern: "(complex) For the kingdom-B of heaven is near. (simple) For God is here [in-order-to rule]"
+      - ref: Mark 15:39
+        niv_pattern: "Some manuscripts add"
+        cnl_pattern: "(footnote) Some copies/manuscripts of this part of the Scriptures say"
+      - ref: Mark 9:5
+        niv_pattern: "Rabbi"
+        cnl_pattern: "Rabbi (footnote) Rabbi named the word _implicitType of Hebrew means-C teacher"
+    variations: |
+      - Rhetorical questions: (yesrhetorical), (norhetorical)
+      - Translation approaches: (literal), (dynamic), (complex), (simple)
+      - Text-critical: (footnote)
+      - Comments: (comment-begin)...(comment-end)
+
+  # ====================
+  # DEIXIS MARKING
+  # ====================
+
+  - name: Demonstrative Distance Specification
+    category: Deixis Marking
+    description: |
+      Demonstratives disambiguated with specific antecedents or spatial references.
+      NIV "this/that" → CNL "that X [with specific referent]"
+    phase: Both
+    examples:
+      - ref: Genesis 4:26
+        niv_pattern: "At that time"
+        cnl_pattern: "At that time people began to pray"
+      - ref: Mark 15:22
+        niv_pattern: "to the place called Golgotha"
+        cnl_pattern: "to the place named Golgotha"
+      - ref: Matthew 4:17
+        niv_pattern: "From that time"
+        cnl_pattern: "From that time [_descriptive (implicit-situational) that Jesus was at Capernaum at]"
+      - ref: Acts 16:9
+        niv_pattern: "that man"
+        cnl_pattern: "That man was standing... And that man begged"
+      - ref: Genesis 44:19
+        niv_pattern: "we came before"
+        cnl_pattern: "[When (implicit) we(brothers) came to this place previously]"
+    variations: |
+      - Temporal deixis: "that time", "this place"
+      - Anaphoric: "that X [relative clause]"
+      - May include spatial information: "at", "to", "from"
+
+  - name: Spatial Reference Anchoring
+    category: Deixis Marking
+    description: |
+      Spatial prepositions and locations made explicit with reference points.
+      NIV "there/here" → CNL "at that place [specification]"
+    phase: Both
+    examples:
+      - ref: Acts 16:12
+        niv_pattern: "we stayed there"
+        cnl_pattern: "We(disciples) stayed in Philippi several days"
+      - ref: Matthew 20:6
+        niv_pattern: "standing here"
+        cnl_pattern: "people [who were standing] [and who were not working]"
+      - ref: Mark 3:34
+        niv_pattern: "Here are my mother"
+        cnl_pattern: "My(Jesus's) mother and my(Jesus's) brothers are here!"
+      - ref: Genesis 29:14
+        niv_pattern: "you came to my house"
+        cnl_pattern: "[because you(Jacob) came to my(Laban's) house]"
+      - ref: Joshua 10:17
+        niv_pattern: "hiding in the cave"
+        cnl_pattern: "that the kings were hiding in that cave"
+    variations: |
+      - Replaces "there/here" with named locations
+      - Adds locative information when contextually important
+      - May use "at that place", "in that house" construction
+
+  # ====================
+  # VOCABULARY L2 PAIRINGS
+  # ====================
+
+  - name: Slash Synonym Pairs
+    category: Vocabulary L2 Pairings
+    description: |
+      Key vocabulary presented as synonym pairs with "/" separator for L2 clarity.
+      NIV single term → CNL "term1/term2"
+    phase: Both
+    examples:
+      - ref: Mark 13:34
+        niv_pattern: "servants"
+        cnl_pattern: "servants/slave... that servant/slave"
+      - ref: 1 Samuel 23:9
+        niv_pattern: "the ephod"
+        cnl_pattern: "the special clothes [that the priests wear]"
+      - ref: Matthew 7:6
+        niv_pattern: "pearls"
+        cnl_pattern: "jewelry/pearls _plural"
+      - ref: Mark 2:13
+        niv_pattern: "disciples"
+        cnl_pattern: "followers/disciples"
+      - ref: Acts 20:7
+        niv_pattern: "the Lord's Supper"
+        cnl_pattern: "to eat the Lord's Supper"
+    variations: |
+      - Common pairs: servant/slave, followers/disciples, leader/ruler
+      - May include descriptive expansion after slash pair
+      - Used for culturally specific terms
+
+  - name: Named Entity Introduction
+    category: Vocabulary L2 Pairings
+    description: |
+      Names introduced with "named" marker and sometimes meanings explained.
+      NIV "X" → CNL "a person/place named X" or "X -Footnote X means Y"
+    phase: Both
+    examples:
+      - ref: Genesis 22:20
+        niv_pattern: "Your brother Nahor and his wife Milcah"
+        cnl_pattern: "Your(Abraham's) brother named Nahor and the wife of Nahor named Milcah"
+      - ref: Mark 15:29
+        niv_pattern: "Golgotha (which means The Place of the Skull)"
+        cnl_pattern: "the place named Golgotha. (comment-begin) Golgotha means-C place of the bones"
+      - ref: Genesis 4:16
+        niv_pattern: "Cain lived in the land of Nod"
+        cnl_pattern: "Cain lived in a region named Nod"
+      - ref: Joshua 12:23
+        niv_pattern: "the king of Dor"
+        cnl_pattern: "the king of Dor [which was in Naphoth-Dor]"
+      - ref: Genesis 32:2
+        niv_pattern: "he called that place Mahanaim"
+        cnl_pattern: "Jacob named that place Mahanaim. -Footnote Mahanaim means 2 camps"
+    variations: |
+      - Pattern: "X named Y" or "a person/place named X"
+      - May include meaning: "X means Y" or "-Footnote X means Y"
+      - Sometimes includes location: "[which was in Z]"
+
+  - name: Measure/Time Modernization
+    category: Vocabulary L2 Pairings
+    description: |
+      Ancient measures given with literal and modern equivalents.
+      NIV ancient unit → CNL "(literalunits) X hours (modernunits) Y AM/PM"
+    phase: Both
+    examples:
+      - ref: Mark 15:25
+        niv_pattern: "the third hour"
+        cnl_pattern: "(literalunits) The time was the 3rd hour. (modernunits) The time was 9AM"
+      - ref: Matthew 20:6
+        niv_pattern: "about the eleventh hour"
+        cnl_pattern: "(literalunits) [When the time was about the 11th hour,] (modernunits) [When the time was about 5PM,]"
+      - ref: Mark 16:2
+        niv_pattern: "on the first day of the week"
+        cnl_pattern: "(literal) In-E the very early morning of the first day of the week. (dynamic) In-E the very early morning on Sunday"
+      - ref: Matthew 18:28
+        niv_pattern: "a hundred denarii"
+        cnl_pattern: "100 denarii (footnote) 1 denarius was about the amount of money/wages [that a man received [when that man worked for 1 day]]"
+      - ref: Matthew 25:28
+        niv_pattern: "the talent"
+        cnl_pattern: "(literalunits) talent (modernunits) bag [that contains gold]"
+    variations: |
+      - Temporal: (literalunits) hours vs (modernunits) AM/PM
+      - Currency: denarii with footnote explanation
+      - Days: "first day of the week" vs "Sunday"
+      - Weights: talent vs modern equivalent
+
+  # ====================
+  # IMPERATIVES
+  # ====================
+
+  - name: Explicit Imperative Marking
+    category: Imperatives
+    description: |
+      All imperative verbs marked with (imp) tag for L2 clarity.
+      NIV imperative → CNL "you(X) (imp) verb"
+    phase: Both
+    examples:
+      - ref: Joshua 24:24
+        niv_pattern: "We will serve"
+        cnl_pattern: "We(people) will serve... And we(people) will obey"
+      - ref: 1 Samuel 23:9
+        niv_pattern: "Bring me the ephod"
+        cnl_pattern: "You(Abiathar) (imp) bring the special clothes [that the priests wear] to me(David)"
+      - ref: Nahum 1:15
+        niv_pattern: "Look... Celebrate"
+        cnl_pattern: "you(people) (imp) look... you(people) (imp) celebrate"
+      - ref: Matthew 5:41
+        niv_pattern: "go with him"
+        cnl_pattern: "you(person) (imp) walk with that person"
+      - ref: Mark 11:14
+        niv_pattern: "May no one ever eat"
+        cnl_pattern: "I(Jesus) pray-hope [people will never eat]"
+    variations: |
+      - Always includes addressee tag: you(person) (imp)
+      - May be embedded in reported speech: "said [you (imp) do X]"
+      - Hortative/jussive also marked: (imp) let us, (imp) may X
+
+  - name: Imperative Address Specification
+    category: Imperatives
+    description: |
+      Imperative addressees always explicitly identified in parentheses.
+      NIV "do X" → CNL "you(addressee) (imp) do X"
+    phase: Both
+    examples:
+      - ref: 2 Samuel 7:8
+        niv_pattern: "say to my servant David"
+        cnl_pattern: "you(Nathan) (imp) say to my(Yahweh's) servant named David"
+      - ref: 1 Samuel 22:5
+        niv_pattern: "Do not stay"
+        cnl_pattern: "You(David) (imp) do not stay in the cave"
+      - ref: Matthew 5:14
+        niv_pattern: "You are the light"
+        cnl_pattern: "You(people) be-X the light of the world"
+      - ref: Genesis 27:43
+        niv_pattern: "flee to Laban"
+        cnl_pattern: "you(Jacob) (imp) go to the brother of me(Rebekah) named Laban"
+      - ref: Joshua 1:18
+        niv_pattern: "be strong and courageous"
+        cnl_pattern: "(imp) you(Joshua) be strong and brave!"
+    variations: |
+      - Singular: you(David), you(person)
+      - Plural: you(people), you(Israelites)
+      - Sometimes includes role: you(king), you(priest)
+
+  # ====================
+  # QUOTE FRAMING
+  # ====================
+
+  - name: Quote Bracket Nesting
+    category: Quote Framing
+    description: |
+      Nested quotations shown with layered brackets, each level marked.
+      NIV quote → CNL "X said [Y said [Z said [...]]]"
+    phase: Both
+    examples:
+      - ref: 2 Samuel 7:8
+        niv_pattern: "say to David: 'This is what the LORD says...'"
+        cnl_pattern: "you(Nathan) (imp) say to my(Yahweh's) servant named David, [\"Yahweh-Almighty says to you(David), [\"I(Yahweh) took you(David)...]]\"]"
+      - ref: Genesis 44:19
+        niv_pattern: "My lord asked his servants"
+        cnl_pattern: "my(Judah's) master asked the master's servants, [\"Do you(brothers) have a father?\"]"
+      - ref: Matthew 12:3
+        niv_pattern: "Haven't you read"
+        cnl_pattern: "(yesrhetorical) Jesus asked... [\"Did you(Pharisees) read... about the thing [that king _implicit David did]?\"]"
+      - ref: Mark 13:34
+        niv_pattern: "like a man... who tells"
+        cnl_pattern: "that man will tell that man's servants/slave [that man's servants/slave to care-C for that man's property]"
+      - ref: Daniel 5:16
+        niv_pattern: "I have heard that you can"
+        cnl_pattern: "I(King) have heard [that you(Daniel) are able [to understand the meaning of dreams]]"
+    variations: |
+      - Each quote level uses brackets: [" ... [" ... "] "]
+      - Speaker always identified before quote
+      - May nest 3-4 levels deep
+
+  - name: Rhetorical Question Marking
+    category: Quote Framing
+    description: |
+      Rhetorical questions tagged with (yesrhetorical) or (norhetorical) and restated as statements.
+      NIV rhetorical question → CNL "(yesrhetorical) Q? (statement) equivalent statement"
+    phase: Both
+    examples:
+      - ref: Mark 12:24
+        niv_pattern: "Are you not in error"
+        cnl_pattern: "(yesrhetorical) Jesus asked... [\"Are you(Sadducees) making _imperfectiveNotBackgrounded a mistake?\"] (statement) Jesus said... [\"You(Sadducees) are making _imperfectiveNotBackgrounded a mistake\"]"
+      - ref: Matthew 17:17
+        niv_pattern: "how long shall I stay with you"
+        cnl_pattern: "(rhetorical) how-long will I(Jesus) stay with you(people)? (statement) I(Jesus) do not want [to continue staying with you(people)]"
+      - ref: Matthew 12:3
+        niv_pattern: "Haven't you read"
+        cnl_pattern: "(yesrhetorical) Jesus asked... [\"Did you(Pharisees) read in the Scriptures?\"] (statement) Jesus answered... [\"You(Pharisees) read _past in the Scriptures\"]"
+      - ref: Matthew 22:18
+        niv_pattern: "why are you trying to trap me"
+        cnl_pattern: "(rhetorical) why are you(Pharisees) trying [to trick me(Jesus)]? (statement) you(Pharisees) should not be trying [to trick me(Jesus)]"
+      - ref: Matthew 239
+        niv_pattern: "Do you understand"
+        cnl_pattern: "(norhetorical) Jesus asked... [\"Do you(followers) understand?\"] (statement) Jesus said... [\"You(followers) still do not understand\"]"
+    variations: |
+      - Two types: (yesrhetorical) expects yes, (norhetorical) expects no
+      - Always followed by (statement) reformulation
+      - May have same speaker for both Q and statement
+
+  # ====================
+  # TITLE/PARAGRAPH MARKERS
+  # ====================
+
+  - name: Section Title Markers
+    category: Title/Paragraph Markers
+    description: |
+      Section headings marked with (title) tag, not part of main text.
+      NIV section heading → CNL "(title) heading text"
+    phase: Both
+    examples:
+      - ref: 1 Samuel 18:1
+        niv_pattern: "[Section: Saul's Fear and Jealousy]"
+        cnl_pattern: "(title) Saul becomes afraid of David."
+      - ref: Genesis 4:16
+        niv_pattern: "[Section: Cain]"
+        cnl_pattern: "-Title Cain has a family."
+      - ref: 1 Samuel 1:21
+        niv_pattern: "[Section: Hannah Dedicates Samuel]"
+        cnl_pattern: "(title) Hannah gives/dedicates Samuel to God."
+      - ref: Mark 3:1
+        niv_pattern: "[Section: Jesus Heals on the Sabbath]"
+        cnl_pattern: "(title) Jesus heals a man's hand on the Sabbath."
+      - ref: Acts 20:7
+        niv_pattern: "[Section: Eutychus Raised]"
+        cnl_pattern: "Paul (title) caused [a man named Eutychus to live again]"
+    variations: |
+      - Two formats: "(title) X" or "-Title X"
+      - Placed at beginning of pericope
+      - Sometimes mid-verse if new section starts
+
+  - name: Paragraph Boundary Markers
+    category: Title/Paragraph Markers
+    description: |
+      Paragraph breaks within verses marked with (paragraph) tag.
+      NIV paragraph break → CNL "(paragraph) next segment"
+    phase: Both
+    examples:
+      - ref: Mark 3:34
+        niv_pattern: "[New paragraph] Then Jesus looked"
+        cnl_pattern: "(paragraph) Then Jesus looked at the people"
+      - ref: Matthew 5:14
+        niv_pattern: "[New paragraph] You are the light"
+        cnl_pattern: "(paragraph) You(people) be-X the light of the world"
+      - ref: Matthew 12:3
+        niv_pattern: "[New paragraph] Jesus answered"
+        cnl_pattern: "_paragraph (yesrhetorical) Jesus asked"
+      - ref: Mark 2:6
+        niv_pattern: "[New paragraph] Some teachers"
+        cnl_pattern: "(paragraph) But some of the scribes were sitting"
+      - ref: Matthew 17:16
+        niv_pattern: "I brought him to your disciples"
+        cnl_pattern: "_paragraph I(man) brought my(man's) son to your(Jesus's) followers/disciples"
+    variations: |
+      - Two forms: "(paragraph)" or "_paragraph"
+      - Signals discourse shift
+      - May co-occur with other markers
+
+  # ====================
+  # IMPLICIT INFO MARKERS
+  # ====================
+
+  - name: Temporal Implicit Information
+    category: Implicit Info Markers
+    description: |
+      Time references not explicit in NIV but necessary for clarity added with tags.
+      NIV unmarked time → CNL "_past", "_once", "_distantPast", "_significantTime"
+    phase: Both
+    examples:
+      - ref: Matthew 12:3
+        niv_pattern: "what David did when"
+        cnl_pattern: "the thing [that king _implicit David did [when David and the men [who were with David] were _once hungry]]"
+      - ref: Matthew 5:33
+        niv_pattern: "it was said to the people"
+        cnl_pattern: "our(Jesus's) people/ancestors were told _distantPast"
+      - ref: Mark 16:2
+        niv_pattern: "very early on the first day"
+        cnl_pattern: "In-E the very early morning of the first day of the week"
+      - ref: Matthew 28:1
+        niv_pattern: "After the Sabbath"
+        cnl_pattern: "After the seventh day of the week _significantTime"
+      - ref: Matthew 9:20
+        niv_pattern: "a woman who had been bleeding"
+        cnl_pattern: "a woman [who bled continuously for 12 years] [and who (implicit-situational) was still bleeding at that time]"
+    variations: |
+      - Aspect markers: _once (single occurrence), _past, _immediatePast
+      - Temporal salience: _significantTime
+      - Situational: (implicit-situational) for contextually obvious times
+
+  - name: Situational Implicit Information
+    category: Implicit Info Markers
+    description: |
+      Contextually recoverable information marked as (implicit-situational) or (implicit-info).
+      NIV context-dependent ellipsis → CNL "(implicit-situational) X"
+    phase: Both
+    examples:
+      - ref: Mark 11:14
+        niv_pattern: "his disciples heard him"
+        cnl_pattern: "And Jesus's followers/disciples were listening [(implicit-situational) when Jesus said that thing]"
+      - ref: Matthew 4:17
+        niv_pattern: "the kingdom of heaven is near"
+        cnl_pattern: "From that time [_descriptive (implicit-situational) that Jesus was at Capernaum at]"
+      - ref: Mark 6:29
+        niv_pattern: "When John's disciples heard of this"
+        cnl_pattern: "[After John's disciples heard [(implicit-situational) John was dead],]"
+      - ref: Matthew 9:23
+        niv_pattern: "the flute players"
+        cnl_pattern: "People _frameInferable were playing instruments/flute [that (implicit-situational) people play [when a person dies _immediatePast]]"
+      - ref: 2 Samuel 7:1
+        niv_pattern: "King David was settled"
+        cnl_pattern: "King David was living in David's palace. And Yahweh caused [the Israelites' enemies to stop attacking the Israelites]. (implicit-info)"
+    variations: |
+      - Contextual: (implicit-situational)
+      - Inferrable info: (implicit-info)
+      - Cultural knowledge: (implicit-cultural)
+
+  - name: Active/Background Marking
+    category: Implicit Info Markers
+    description: |
+      Aspectual distinctions marked with _imperfective, _backgrounded, _routinely tags.
+      NIV unmarked aspect → CNL "verb _imperfectiveNotBackgrounded" or "verb _routinely"
+    phase: Both
+    examples:
+      - ref: Mark 12:24
+        niv_pattern: "you are in error"
+        cnl_pattern: "You(Sadducees) are making _imperfectiveNotBackgrounded a mistake"
+      - ref: Mark 2:15
+        niv_pattern: "many tax collectors followed"
+        cnl_pattern: "many people [who follow _routinely Jesus]... And many people [who do bad _morally actions]"
+      - ref: Mark 7:36
+        niv_pattern: "the more they kept talking"
+        cnl_pattern: "[whenever Jesus commanded those people] those people told-C people _otherPeopleNounIndex about the event more"
+      - ref: Mark 14:49
+        niv_pattern: "I was with you teaching"
+        cnl_pattern: "I(Jesus) was with you(people) every day [when I(Jesus) was teaching-B God's message]"
+      - ref: Matthew 9:20
+        niv_pattern: "a woman subject to bleeding"
+        cnl_pattern: "a woman [who bled continuously for 12 years]"
+    variations: |
+      - Imperfective: _imperfective, _imperfectiveNotBackgrounded
+      - Habitual: _routinely, continuously
+      - Background vs foreground events
+
+  # ====================
+  # NUMBERED REFERENTS
+  # ====================
+
+  - name: Dual/Plural Number Marking
+    category: Implicit Info Markers
+    description: |
+      Exact number of referents marked when semantically significant.
+      NIV generic plural → CNL "X _dual" or "X _plural" with number specification
+    phase: Both
+    examples:
+      - ref: Matthew 27:44
+        niv_pattern: "the robbers"
+        cnl_pattern: "the thieves [who were put on crosses _dual by soldiers]"
+      - ref: Mark 9:5
+        niv_pattern: "three shelters"
+        cnl_pattern: "3 shelters. 1 shelter will be for you(Jesus). 1 shelter _otherThinglist will be for Moses. And 1 shelter _otherThinglist will be for Elijah"
+      - ref: Matthew 7:6
+        niv_pattern: "your pearls"
+        cnl_pattern: "your(people's) jewelry/pearls _plural"
+      - ref: Matthew 20:33
+        niv_pattern: "they answered"
+        cnl_pattern: "Those men _dual answered"
+      - ref: Mark 10:39
+        niv_pattern: "James and John"
+        cnl_pattern: "James and John... You(James) _dual... you(James) _dual"
+    variations: |
+      - _dual for exactly two
+      - _plural for multiple (when not otherwise clear)
+      - May enumerate list items: _otherThinglist
+
+  # ====================
+  # VERB TYPE MARKERS
+  # ====================
+
+  - name: Stative Verb Markers
+    category: Implicit Info Markers
+    description: |
+      Stative verbs (be, become, remain) marked with type tags for L2 clarity.
+      NIV "be/become" → CNL "be-X", "be-U", "become-A"
+    phase: Both
+    examples:
+      - ref: Matthew 5:14
+        niv_pattern: "You are the light"
+        cnl_pattern: "You(people) be-X the light of the world"
+      - ref: Matthew 6:22
+        niv_pattern: "The eye is the lamp"
+        cnl_pattern: "(literal) The eye be-X the body's lamp. (dynamic) A person's eyes be-U like a light-C"
+      - ref: Mark 1:15
+        niv_pattern: "the kingdom is near"
+        cnl_pattern: "God's kingdom (literal) is near you(people)"
+      - ref: Matthew 19:10
+        niv_pattern: "it is better"
+        cnl_pattern: "it is-V better [men do not marry women _implicit]"
+      - ref: Matthew 25:21
+        niv_pattern: "you have been faithful"
+        cnl_pattern: "you(servant) were faithful-A to me(master) _implicit"
+    variations: |
+      - be-X: identity/classification
+      - be-U: simile/comparison ("like")
+      - is-V: evaluative ("better/worse")
+      - become-A: change of state
+
+  - name: Semantic Verb Class Suffixes
+    category: Implicit Info Markers
+    description: |
+      Verbs marked with semantic class suffixes for nuance (-A, -B, -C, -D, etc.).
+      NIV unmarked verb → CNL "verb-A/B/C" based on semantic class
+    phase: Both
+    examples:
+      - ref: Mark 15:29
+        niv_pattern: "Golgotha (which means)"
+        cnl_pattern: "Golgotha means-C place of the bones"
+      - ref: Matthew 25:21
+        niv_pattern: "the servant's master"
+        cnl_pattern: "That servant's master-A said"
+      - ref: Mark 11:25
+        niv_pattern: "forgive"
+        cnl_pattern: "you(followers) (imp) first _implicit forgive-C other people... Then-D your(followers') Father... will also forgive-B"
+      - ref: Matthew 26:75
+        niv_pattern: "Peter remembered"
+        cnl_pattern: "Then Peter remembered-D the words"
+      - ref: Mark 13:34
+        niv_pattern: "to take care of"
+        cnl_pattern: "to care-C for that man's property"
+    variations: |
+      - Different verb classes marked: -A, -B, -C, -D
+      - Appears on various verb types: means-C, forgive-C, remember-D
+      - Disambiguates polysemous verbs
+
+  # ====================
+  # CROSS-REFERENCE SYSTEM
+  # ====================
+
+  - name: Footnote Cross-References
+    category: Quote Framing
+    description: |
+      Biblical cross-references provided in footnotes with standard references.
+      NIV allusion → CNL "(footnote) You(people) (imp) see Reference X:Y"
+    phase: Both
+    examples:
+      - ref: Matthew 5:33
+        niv_pattern: "[allusion to OT]"
+        cnl_pattern: "(footnote) You(people) (imp) see Leviticus 19:12, Numbers 30:2 and Deuteronomy 23:21"
+      - ref: Matthew 22:84
+        niv_pattern: "I am the God of Abraham"
+        cnl_pattern: "God _implicitNecessary said _implicitNecessary to Moses _implicit, [\"I(God) am the God of Abraham...\"] (footnote) You(people) (imp) see Exodus 3:6"
+      - ref: Mark 10:4
+        niv_pattern: "Moses permitted"
+        cnl_pattern: "Moses allowed [a man to write a letter] (footnote) You(people) (imp) see Deuteronomy 24:1"
+      - ref: Mark 9:5
+        niv_pattern: "Rabbi"
+        cnl_pattern: "(footnote) Rabbi named the word _implicitType of Hebrew means-C teacher"
+      - ref: Matthew 18:28
+        niv_pattern: "denarii"
+        cnl_pattern: "100 denarii (footnote) 1 denarius was about the amount of money/wages [that a man received [when that man worked for 1 day]]"
+    variations: |
+      - Pattern: "(footnote) You(people) (imp) see Reference"
+      - May include explanatory notes
+      - Sometimes includes word meanings
+
+  # ====================
+  # CONJUNCTION MARKERS
+  # ====================
+
+  - name: Conjunction Type Specification
+    category: Clause Segmentation
+    description: |
+      Conjunctions marked with semantic type when ambiguous.
+      NIV "and/then" → CNL "Then-D" (temporal), "And" (additive)
+    phase: Both
+    examples:
+      - ref: Mark 11:25
+        niv_pattern: "And when you stand praying... then"
+        cnl_pattern: "And [whenever you(followers) are praying,]... Then-D your(followers') Father"
+      - ref: Matthew 22:43
+        niv_pattern: "Then how"
+        cnl_pattern: "Then-D why did king _implicit David"
+      - ref: Genesis 43:26
+        niv_pattern: "When Joseph came... they gave"
+        cnl_pattern: "[after Joseph arrived at that house] the brothers gave"
+      - ref: Acts 18:3
+        niv_pattern: "so he stayed with them and worked"
+        cnl_pattern: "so Paul stayed with Aquila and Priscilla. And Paul worked with Aquila and Priscilla"
+      - ref: Mark 15:46
+        niv_pattern: "So Joseph bought... took... wrapped... placed"
+        cnl_pattern: "So Joseph bought linen. Joseph took Jesus's body. And Joseph wrapped... And Joseph put"
+    variations: |
+      - Then-D: temporal/sequential
+      - And: simple addition
+      - So: result/inference
+      - But: contrast
+
+  # ====================
+  # SPECIAL CONSTRUCTIONS
+  # ====================
+
+  - name: Subaction Implicit Markers
+    category: Implicit Info Markers
+    description: |
+      Subactions not explicitly stated but necessary for event sequence marked.
+      NIV event gap → CNL "(implicit-subaction) bridging action"
+    phase: Both
+    examples:
+      - ref: Matthew 9:7
+        niv_pattern: "the man got up and went home"
+        cnl_pattern: "Then the man get-up. (implicit-subaction) The man pick-up that man's bed/mat. And the man went to that man's house"
+      - ref: Matthew 26:49
+        niv_pattern: "[After Judas... arrived] Judas immediately went"
+        cnl_pattern: "[After (implicit-subaction) Judas and those people arrived at that place,] Judas immediately went to Jesus"
+      - ref: Genesis 34:29
+        niv_pattern: "They carried off all their wealth"
+        cnl_pattern: "And (implicit-subaction) those sons led those children and wives to the son's camp"
+      - ref: Matthew 25:28
+        niv_pattern: "Take the talent from him"
+        cnl_pattern: "(implicit-subaction) Then the master turned to the people [who were standing near]"
+      - ref: Matthew 21:8
+        niv_pattern: "spread them on the road"
+        cnl_pattern: "And those people put those branches on the road [(implicit-situational) in-order-to honor-A Jesus]"
+    variations: |
+      - Marks physically necessary intermediate steps
+      - Explicit actions that are culturally/logically required
+      - Bridge temporal or spatial gaps
+
+  - name: Alternates and Options
+    category: Quote Framing
+    description: |
+      Alternative renderings provided with (alt) or multiple numbered options.
+      NIV single rendering → CNL "X (alt) Y" or variant textual options
+    phase: Both
+    examples:
+      - ref: Genesis 46:27
+        niv_pattern: "seventy in all"
+        cnl_pattern: "Thus 70 people [who were descendants of Jacob] lived in Egypt. Thus (alt) 75 people"
+      - ref: Mark 9:5
+        niv_pattern: "Let us put up three shelters"
+        cnl_pattern: "We(men) _excl set-up _suggestiveLets 3 shelters"
+      - ref: Genesis 31:10
+        niv_pattern: "striped or speckled"
+        cnl_pattern: "only male goats [that had black marks or stripe]"
+      - ref: Mark 16:2
+        niv_pattern: "On the first day of the week"
+        cnl_pattern: "(literal) In-E the very early morning of the first day of the week. (dynamic) In-E the very early morning on Sunday"
+      - ref: Matthew 4:17
+        niv_pattern: "the kingdom of heaven has come near"
+        cnl_pattern: "(complex) For the kingdom-B of heaven is near. (simple) For God is here [in order to rule]"
+    variations: |
+      - (alt): textual variants or alternate numberings
+      - (literal)/(dynamic): translation philosophy pairs
+      - (complex)/(simple): theological complexity levels
+
+  # ====================
+  # NAME INTRODUCTION
+  # ====================
+
+  - name: Relational Name Introduction
+    category: Vocabulary L2 Pairings
+    description: |
+      Names introduced with full relational/genealogical context.
+      NIV "X son of Y" → CNL "X [who was a son of Y]. Y was a son of Z..."
+    phase: Both
+    examples:
+      - ref: Nehemiah 11:17
+        niv_pattern: "Mattaniah son of Mika"
+        cnl_pattern: "Mattaniah [who was a son of Mika]. Mika was a son of Zabdi. Zabdi was a son of Asaph"
+      - ref: Nehemiah 11:11
+        niv_pattern: "Seraiah son of Hilkiah"
+        cnl_pattern: "Seraiah [who was a son of Hilkiah]. Hilkiah was a son of Meshullam. Meshullam was a son of Zadok"
+      - ref: 1 Samuel 1:1
+        niv_pattern: "Elkanah son of Jeroham"
+        cnl_pattern: "Elkanah. He was a son of Jeroham. Jeroham was Elihu's son. Elihu was Tohu's son"
+      - ref: Genesis 25:13
+        niv_pattern: "Nebaioth the firstborn of Ishmael"
+        cnl_pattern: "Ishmael had sons named Nebaioth, named Kedar, named Adbeel and named Mibsam. Nebaioth was the oldest son of Ishmael"
+      - ref: Matthew 1:15
+        niv_pattern: "Eliud the father of Eleazar"
+        cnl_pattern: "Eliud became the father of Eleazar. Eleazar became the father of Matthan. And Matthan became the father of Jacob"
+    variations: |
+      - Unpacks genealogies into separate sentences
+      - Each generation gets explicit statement
+      - May use "X was a son of Y" or "Y was the father of X"
+
+  # ====================
+  # FRAME-BASED INFERENCES
+  # ====================
+
+  - name: Frame-Inferable Elements
+    category: Implicit Info Markers
+    description: |
+      Elements inferable from semantic frames marked _frameInferable.
+      NIV ellipsis → CNL "element _frameInferable"
+    phase: Both
+    examples:
+      - ref: Mark 13:34
+        niv_pattern: "putting his servants in charge, each with their assigned task, and tells the one at the door to keep watch"
+        cnl_pattern: "And that man will tell the servant/slave [who guards-B the door _frameInferable] [the servant/slave to be ready-C]"
+      - ref: Matthew 17:16
+        niv_pattern: "I brought him to your disciples"
+        cnl_pattern: "You(man) (imp) bring the boy _frameInferable to me(Jesus)"
+      - ref: Matthew 9:23
+        niv_pattern: "the flute players and the noisy crowd"
+        cnl_pattern: "People _frameInferable were playing instruments/flute... And other _implicit people were crying/weeping"
+      - ref: Mark 12:37
+        niv_pattern: "The large crowd listened to him with delight"
+        cnl_pattern: "And the big crowd _frameInferable enjoyed [big crowd listening to Jesus]"
+      - ref: Mark 7:36
+        niv_pattern: "Jesus commanded them"
+        cnl_pattern: "Then Jesus commanded the people _frameInferable [the people not to tell-C people]"
+    variations: |
+      - Used when semantic frame makes referent clear
+      - Common in event scenarios with standard participants
+      - Marks culturally expected roles
+
+  # ====================
+  # PHASE-SPECIFIC PATTERNS
+  # ====================
+
+  - name: Lists and Enumerations (He1)
+    category: Clause Segmentation
+    description: |
+      Lists broken into separate sentences, especially genealogies and place names.
+      NIV "X, Y, and Z" → CNL "X. Y. and Z." or numbered items
+    phase: He1-only
+    examples:
+      - ref: Nehemiah 7:11
+        niv_pattern: "2,818 of Pahath-Moab (through the line of Jeshua and Joab)"
+        cnl_pattern: "2818 men [that were from Pahath-Moab] returned. (These men were descendants of Jeshua and Joab.)"
+      - ref: Nehemiah 10:12
+        niv_pattern: "Zakkur, Sherebiah, Shebaniah"
+        cnl_pattern: "Zakkur, Sherebiah, Shebaniah,"
+      - ref: Joshua 12:10
+        niv_pattern: "one the king of Jerusalem, one the king of Hebron"
+        cnl_pattern: "The Israelites defeated the king of Jerusalem and the king of Hebron"
+      - ref: Genesis 36:41
+        niv_pattern: "Oholibamah, Elah, Pinon"
+        cnl_pattern: "Oholibamah, Elah, and Pinon were also leaders of the Edomites"
+      - ref: Nehemiah 11:34
+        niv_pattern: "Hadid, Zeboim and Neballat"
+        cnl_pattern: "Hadid, Zeboim, Neballat,"
+    variations: |
+      - Some lists preserved as comma-separated
+      - Genealogies often unpacked into separate sentences
+      - May add explanatory phrases in parentheses
+
+  - name: 1st-as-3rd Person Shifts (He2)
+    category: Pronoun/Coreference
+    description: |
+      Jesus referring to himself as "Son of Man" marked with _1stAs3rd tag.
+      NIV "the Son of Man" → CNL "the Son-of-man _1stAs3rd"
+    phase: He2-only
+    examples:
+      - ref: Mark 13:34
+        niv_pattern: "It's like a man going away"
+        cnl_pattern: "The Son-of-man _1stas3rd _implicitNecessary will be like a man"
+      - ref: Matthew 26:45
+        niv_pattern: "the hour has come, and the Son of Man is delivered"
+        cnl_pattern: "The time [when the Son-of-man _1stAs3rd is given/betrayed to people]"
+      - ref: Matthew 20:28
+        niv_pattern: "the Son of Man did not come to be served"
+        cnl_pattern: "the Son-of-man _1stAs3rd did not come to this earth _implicit [so that people _implicitNecessary would serve the Son-of-man _1stAs3rd]"
+      - ref: Matthew 25:14
+        niv_pattern: "the kingdom of heaven will be like"
+        cnl_pattern: "the events [that will happen [when the Son-of-Man _1stAs3rd returns]]"
+      - ref: Matthew 25:34
+        niv_pattern: "the King will say"
+        cnl_pattern: "Then the king _1stAs3rd will say to the people"
+    variations: |
+      - Specific to Jesus's self-reference
+      - Also applies to "king" in parables where Jesus = king
+      - Marks 1st person semantics with 3rd person form
+
+  - name: Coreference Chains (He2)
+    category: Pronoun/Coreference
+    description: |
+      Extended discourse with multiple same-referent mentions maintaining explicit reference.
+      NIV pronoun chain → CNL repeated full NP with modifiers
+    phase: He2-only
+    examples:
+      - ref: Mark 13:34
+        niv_pattern: "a man... he... his servants... he... the one"
+        cnl_pattern: "a man... that man... that man's servants/slave... that man... the servant/slave"
+      - ref: Matthew 18:28
+        niv_pattern: "that servant... he... another servant... he... the other servant"
+        cnl_pattern: "that servant... that servant... another servant [_descriptive who owed to that servant _first 100 denarii]. The first servant... the other servant"
+      - ref: Acts 16:9
+        niv_pattern: "Paul had a vision... a man... he"
+        cnl_pattern: "Paul saw a vision. And Paul saw a man... That man was standing... And that man begged Paul. And that man said to Paul"
+      - ref: Matthew 25:28
+        niv_pattern: "Take the bag... give it to the one who has ten"
+        cnl_pattern: "take-away the talent from this servant... give/entrust that talent to the servant-B [who has 10 talents]"
+      - ref: Mark 15:39
+        niv_pattern: "the centurion... who stood there... he saw... he said"
+        cnl_pattern: "A Roman officer was standing... [When that Roman officer saw [Jesus die]] the Roman officer said"
+    variations: |
+      - More common in narrative (Gospels, Acts)
+      - Uses indexing: servant _first, servant _second
+      - May use "that X" repeatedly vs new full NP
+
+  - name: Theological Title Expansion (He2)
+    category: Vocabulary L2 Pairings
+    description: |
+      Theological titles given with explanatory expansions specific to NT context.
+      NIV title → CNL "title with theological specification"
+    phase: He2-only
+    examples:
+      - ref: Matthew 4:17
+        niv_pattern: "the kingdom of heaven is near"
+        cnl_pattern: "(complex) the kingdom-B of heaven is near. (simple) For God is here [in-order-to rule you(people)]"
+      - ref: Mark 1:15
+        niv_pattern: "The kingdom of God has come near"
+        cnl_pattern: "God's kingdom (literal) is near you(people). (dynamic) God is here [in order-to rule you(people)]"
+      - ref: Matthew 22:32
+        niv_pattern: "I am the God of Abraham"
+        cnl_pattern: "God _implicitNecessary said _implicitNecessary to Moses _implicit, [\"I(God) am the God of Abraham, the God of Isaac, and the God of Jacob\"]"
+      - ref: Acts 2:2
+        niv_pattern: "the Holy Spirit came"
+        cnl_pattern: "Then the Holy Spirit will be with the disciples. The Holy Spirit will give power to Jesus' disciples"
+      - ref: Titus 1:4
+        niv_pattern: "God our Savior and Christ Jesus"
+        cnl_pattern: "God [who is our(Paul's) Father] and Christ Jesus [who saves us(Paul) from bad things and death]"
+    variations: |
+      - Kingdom language gets dual rendering
+      - Christological titles expanded
+      - Holy Spirit role specified
+
+notes: |
+  ## Cross-Phase Patterns
+
+  Most patterns appear in both He1 and He2 books, showing TBTA is a consistent system
+  rather than phase-specific. Key differences:
+
+  1. **He1 (OT narrative)**: More lists/genealogies, place names, less theological titles
+  2. **He2 (NT narrative)**: More discourse, 1st-as-3rd marking, kingdom language pairs
+
+  ## Linguistic Sophistication
+
+  The CNL shows careful attention to:
+  - Coreference resolution (every pronoun antecedent tracked)
+  - Event structure (implicit subactions made explicit)
+  - Information structure (background vs foreground marking)
+  - Semantic roles (agents, patients, beneficiaries all explicit)
+  - Discourse coherence (quote nesting, paragraph boundaries)
+
+  ## L2 Learner Focus
+
+  Features supporting L2 acquisition:
+  - Synonym pairs (servant/slave, followers/disciples)
+  - Explicit imperatives with addressees
+  - Rhetorical questions restated as statements
+  - Cultural explanations in footnotes
+  - Measure conversions (literal + modern)
+
+  ## Theological Precision
+
+  Conservative Protestant perspective maintained through:
+  - Explicit divine agency markers
+  - Careful handling of Christological titles
+  - Kingdom language dual renderings
+  - Cross-reference system to source texts

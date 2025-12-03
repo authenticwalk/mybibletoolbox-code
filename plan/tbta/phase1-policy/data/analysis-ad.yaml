@@ -1,0 +1,513 @@
+---
+# TBTA Pattern Analysis: chunk-ad.tsv
+# Analysis of NIV→CNL transformations across He1 and He2 books
+# He1: Ruth, Jonah, Genesis, Joshua, 1-2 Samuel, Nehemiah, Esther, Daniel, Nahum
+# He2: Matthew, Mark, Acts, Titus, Philemon, 2 John
+
+patterns:
+
+  # ============================================================
+  # PRONOUN AND COREFERENCE
+  # ============================================================
+
+  - name: Full Pronoun Disambiguation
+    description: "NIV pronouns → CNL explicit referent in parentheses (he→he(David), they→they(brothers))"
+    phase: Both
+    examples:
+      - "Genesis 42:28: 'Then that brother said to the other brothers'"
+      - "Mark 5:33: 'the woman knew the thing [that happened to the woman]'"
+      - "Acts 15:30: 'Barnabas and Paul and Judas and Silas gave the letter to the people'"
+      - "2 Samuel 12:13: 'Then David said to Nathan'"
+      - "Matthew 19:24: 'I(Jesus) am telling you(followers) again'"
+    notes: "Every pronoun receives explicit referent - universal across both phases"
+
+  - name: Speaker/Addressee Role Marking
+    description: "NIV dialogue → CNL with speaker(role) and addressee(role) markers"
+    phase: Both
+    examples:
+      - "Matthew 21:5: 'That prophet _implicitNecessary said _implicitNecessary, [\"God _implicitNecessary says _implicitNecessary\"'"
+      - "Genesis 27:46: 'Rebekah said to Isaac, [\"I(Rebekah) do not like these female Hittites\"]'"
+      - "1 Samuel 24:16: 'Saul said, [\"David, my(Saul's) son, I(Saul) hear your(David's) voice\"]'"
+      - "Mark 14:64: 'What do you(leaders) think-A?'"
+      - "Acts 15:4: 'Paul said [that God had given the power to Paul and Barnabas]'"
+    notes: "First-person and second-person pronouns always disambiguated with role"
+
+  - name: Possessive Pronoun Expansion
+    description: "NIV possessive pronouns → CNL explicit possessor (his→his(David's), their→their(people's))"
+    phase: Both
+    examples:
+      - "Nehemiah 13:13: 'the son of Zakkur [who was the son of Mattaniah]'"
+      - "Matthew 19:24: 'your(king's) wounds will cause [you(king) to die]'"
+      - "Genesis 6:10: 'The names of these sons were Shem, Ham, and Japheth'"
+      - "Joshua 13:29: 'Half of the families [that were in the tribe named Manasseh]'"
+      - "Mark 5:33: 'the woman's clothes'"
+    notes: "Possessive relationships always made explicit"
+
+  - name: First-Person as Third-Person Conversion
+    description: "NIV 1st person → CNL 3rd person with _1stAs3rd marker (I will rise→the Son-of-Man _1stAs3rd will be raised)"
+    phase: He2-only
+    examples:
+      - "Matthew 17:23: 'The Son-of-Man's _1stAs3rd enemies _frameInferable will kill the Son-of-Man _1stAs3rd'"
+      - "Matthew 13:41: 'the Son-of-Man _1stAs3rd will send the Son-of-Man's _1stAs3rd angels'"
+      - "Matthew 25:31: 'the Son-of-man _1stAs3rd comes with the Son-of-man's glory'"
+      - "Matthew 24:26: 'The Christ is in the desert/wilderness'"
+    notes: "Jesus speaking about himself in third person - NT narrative convention"
+
+  - name: Reflexive Pronoun Specification
+    description: "NIV reflexive → CNL explicit antecedent in parentheses (himself→himself(David), themselves→themselves(brothers))"
+    phase: Both
+    examples:
+      - "Acts 15:39: 'Paul and Barnabas definitely did not agree with each-other(Paul and Barnabas)'"
+      - "Genesis 42:28: 'The brothers said to each-other(brothers)'"
+      - "Matthew 14:26: 'Those followers/disciples said to each-other(followers)'"
+      - "Mark 12:7: 'those people/farmers [will certainly respect my(man's) son]'"
+    notes: "Reflexive and reciprocal pronouns receive explicit antecedents"
+
+  # ============================================================
+  # CLAUSE SEGMENTATION
+  # ============================================================
+
+  - name: Nested Bracket Structure
+    description: "NIV complex sentences → CNL nested brackets showing clause embedding [that [who [where]]]"
+    phase: Both
+    examples:
+      - "Acts 15:4: '[When Paul and Barnabas and the other people [whom the group of people [who believe in Jesus] had sent with Paul and Barnabas] arrived in Jerusalem]'"
+      - "Nehemiah 13:13: 'the men [that were in those rooms] to the other people [that were in the tribe named Levi]'"
+      - "Matthew 24:15: 'the terrible thing [that causes [the big building _implicitNecessaryFrameInferable of Jerusalem _implicit [that Jews honor/worship God in] to become religiously/ritually dirty]'"
+      - "Joshua 13:27: 'places [that Moses did not give to the tribe named Reuben]'"
+    notes: "Deep embedding common, brackets show syntactic boundaries"
+
+  - name: Temporal Clause Fronting
+    description: "NIV embedded time clauses → CNL fronted temporal frames [When X], main-clause"
+    phase: Both
+    examples:
+      - "Acts 15:30: '[When Paul and Barnabas and Judas and Silas arrived in Antioch], Barnabas and Paul and Judas and Silas gathered the people'"
+      - "Matthew 20:3: '[When the time was the third hour,] that man left again _implicit'"
+      - "Genesis 29:25: 'In the morning Jacob find-out [that Jacob sexed Leah]'"
+      - "Joshua 8:19: 'The 5000 Israelite soldiers [that were hiding] saw [Joshua raise Joshua's spear]'"
+      - "Mark 5:33: 'the woman came to Jesus _implicit'"
+    notes: "Temporal information often placed in sentence-initial position"
+
+  - name: Conditional Clause Fronting
+    description: "NIV if-then → CNL fronted conditionals [If X] then-Y with explicit then markers"
+    phase: Both
+    examples:
+      - "Genesis 45:10: '[If you(Jacob) move to Goshen] you(Jacob) will be near me(Joseph)'"
+      - "Joshua 23:13: '[If you(Israelites) do these things] your(Israelites') God named Yahweh will help'"
+      - "Matthew 18:35: '[if you(followers) do not forgive your(followers') friend/brother-D]'"
+      - "Genesis 27:9: '[so-that the father of you(Jacob) will like [to eat the goats]]'"
+    notes: "Conditional protases consistently fronted"
+
+  - name: Participial Clause Expansion
+    description: "NIV participles → CNL full relative clauses with [who were/was doing-X]"
+    phase: Both
+    examples:
+      - "1 Samuel 1:25: 'the priests [that killed/sacrificed the bull]'"
+      - "Mark 5:33: 'the woman [who was not able [to see things]]'"
+      - "Matthew 20:3: 'people [who were standing in the market] [and who were not working]'"
+      - "Joshua 2:4: 'those 2 men [that came to my(Rahab's) house]'"
+    notes: "Participial phrases converted to full relative clauses"
+
+  # ============================================================
+  # BRACKET CONVENTIONS
+  # ============================================================
+
+  - name: Speech Frame Brackets
+    description: "NIV quoted speech → CNL with nested quote brackets [\"outer [\"inner\"]\"]"
+    phase: Both
+    examples:
+      - "Matthew 21:5: 'God _implicitNecessary says _implicitNecessary, [\"You(prophet) (imp) speak to my(God's) people\"]]'"
+      - "Genesis 42:1: 'Jacob said to Jacob's sons, [\"You(sons) (imp) stop sitting here!\"]'"
+      - "2 Samuel 12:2: 'David said to Yahweh, [\"I(David) sinned\"]'"
+      - "Mark 14:64: 'What do you(leaders) think-A?'"
+    notes: "Nested quotes maintain bracket depth, speech acts clearly bounded"
+
+  - name: Complement Clause Bracketing
+    description: "NIV that-clauses → CNL bracketed complements after verbs [that X]"
+    phase: Both
+    examples:
+      - "Nehemiah 13:13: 'I(Nehemiah) told [Hanan to help those men]'"
+      - "Matthew 19:24: '[A big animal/camel goes through the hole of a needle] is very hard-B'"
+      - "Acts 15:4: 'God had done [many things]'"
+      - "Genesis 6:10: 'Noah had 3 three sons'"
+    notes: "Complement clauses uniformly bracketed"
+
+  - name: Purpose Clause Marking
+    description: "NIV purpose expressions → CNL [in-order-to X] or [so-that Y]"
+    phase: Both
+    examples:
+      - "Joshua 8:19: 'those soldiers quickly ran from the place [where the soldiers were hiding] toward the city'"
+      - "Matthew 18:6: '[in-order-to take Jesus from that cross]'"
+      - "Genesis 47:23: '[so that you(people) could plant those seeds in the king's fields]'"
+      - "1 Samuel 23:12: '[Will the people [who are living in Keilah] allow [Saul to kill me(David)]]?'"
+    notes: "Purpose consistently marked with in-order-to or so-that"
+
+  # ============================================================
+  # DEIXIS MARKING
+  # ============================================================
+
+  - name: Explicit Location Markers
+    description: "NIV spatial deixis → CNL explicit location references (here→this place, there→that place)"
+    phase: Both
+    examples:
+      - "Joshua 2:4: 'those 2 men came to my(Rahab's) house'"
+      - "Genesis 28:17: 'I(Jacob) am afraid of this place!'"
+      - "Matthew 24:26: 'The Christ is in the desert/wilderness'"
+      - "Mark 8:24: 'that man looked around that place _implicit'"
+    notes: "Deictic terms replaced with demonstrative + place/person/thing"
+
+  - name: Temporal Deixis Specification
+    description: "NIV time deixis → CNL explicit temporal references (now→today, then→at-that-time)"
+    phase: Both
+    examples:
+      - "Matthew 20:3: '[When the time was the third hour,] that man left again'"
+      - "Genesis 29:6: 'The daughter of Laban named Rachel is bringing the sheep of Laban to this well now'"
+      - "1 Samuel 25:43: 'Previously David married Ahinoam'"
+      - "Daniel 1:21: 'Daniel lived in Babylon until the year [when king Cyrus began to rule Babylon]'"
+    notes: "Temporal deictics anchored to narrative timeline"
+
+  - name: Demonstrative Pronoun Expansion
+    description: "NIV demonstratives → CNL demonstrative + head noun (this→this thing, that→that person)"
+    phase: Both
+    examples:
+      - "Matthew 24:2: 'You(followers) (imp) look at all these things'"
+      - "Mark 8:24: 'Those people look like trees [that are walking around this place]'"
+      - "Genesis 42:28: 'the money [that I(brother) paid for the grain] is in my(brother's) bag!'"
+      - "Nahum 3:19: 'those people will become happy'"
+    notes: "Bare demonstratives receive explicit head nouns"
+
+  # ============================================================
+  # VOCABULARY L2 PAIRINGS
+  # ============================================================
+
+  - name: Complex-Simple Dual Rendering
+    description: "NIV theological terms → CNL paired (complex) and (simple) versions"
+    phase: He2-only
+    examples:
+      - "Matthew 19:24: '(complex) But [a rich person enters the kingdom-B of God] is extremely hard-B. (simple) But [a rich person lets [God rule that person]] is extremely hard-B'"
+      - "Matthew 13:19: '(complex) [When a person hears the message [that is about the kingdom-B of heaven _implicit]] (simple) [When a person hears the message [that is about God [who rules people]]]'"
+      - "Matthew 13:52: '(complex) the kingdom-B of heaven (simple) starts following-B me(Jesus)'"
+      - "Matthew 5:18: '(literal) kingdom-B of heaven (dynamic) become God's people'"
+    notes: "Theological vocabulary receives dual complexity levels for L2 learners"
+
+  - name: Literal-Dynamic Dual Rendering
+    description: "NIV idioms → CNL with (literal) and (dynamic) meaning pairs"
+    phase: Both
+    examples:
+      - "Matthew 8:17: '(literal) That person carried our(people's) _incl diseases. (dynamic) That person caused [us(people) to become healthy]'"
+      - "Matthew 9:29: '(complex) healed by me(Jesus) _implicitActiveAgent because of your(men's) faith (simple) healed by me(Jesus) _implicitActiveAgent [because you(men) believe in me(Jesus)]'"
+      - "Mark 12:38: '(literal) You(people) (imp) watch-out for the scribes (dynamic) You(people) (imp) do not act [just-like the scribes act]'"
+    notes: "Idiomatic expressions unpacked for L2 comprehension"
+
+  - name: Modern-Literal Unit Conversion
+    description: "NIV time/measurement → CNL (literalunits) and (modernunits) pairs"
+    phase: He2-only
+    examples:
+      - "Matthew 20:3: '(literalunits) [When the time was the third hour,] (modernunits) [When the time was 9AM,]'"
+      - "Matthew 20:5: '(literalunits) the sixth hour (modernunits) 12PM. (literalunits) the 9th hour (modernunits) 3PM'"
+      - "Matthew 25:15: '(literalunits) 5 talents (modernunits) 5 bags of _quantity gold'"
+    notes: "Ancient units paired with modern equivalents"
+
+  - name: Rhetorical-Statement Conversion
+    description: "NIV rhetorical questions → CNL (rhetorical) followed by (statement) answer"
+    phase: Both
+    examples:
+      - "Matthew 24:2: '(yesrhetorical) Jesus asked the followers/disciples, [Do you(followers) see all these things?] (statement) Jesus said to the followers/disciples, [You(followers) (imp) look at all these things]'"
+      - "Matthew 13:55: '(yesrhetorical) Is this man the son of a carpenter? (statement) This man is the son of a carpenter'"
+      - "Mark 10:26: '(rhetorical) [\"Then-D who is able-B [to be saved-A by God _implicitActiveAgent]?\"] (statement) And those followers/disciples said to each-other(followers), [\"Then-D perhaps people are not able-B [to be saved-A by God _implicitActiveAgent]\"]'"
+      - "Matthew 9:11: '(rhetorical) [\"Why does your(disciples') teacher eat a meal _implicit with people [who collect taxes]\"] (statement) [\"Your(disciples') teacher should not eat a meal _implicit with people [who collect taxes]\"]'"
+    notes: "Rhetorical questions decoded to declarative statements"
+
+  # ============================================================
+  # IMPERATIVES
+  # ============================================================
+
+  - name: Imperative Marking with (imp)
+    description: "NIV imperatives → CNL (imp) marker before verb phrase"
+    phase: Both
+    examples:
+      - "Matthew 21:5: 'You(prophet) (imp) speak to my(God's) people'"
+      - "Genesis 47:23: 'I(Joseph) will give seeds to you(people) [so that you(people) could plant those seeds]'"
+      - "Joshua 3:8: 'You(Joshua) (imp) say to those priests'"
+      - "Mark 1:17: 'You(Simon) _dualThroughoutVerse (imp) come'"
+    notes: "All imperative constructions marked explicitly"
+
+  - name: Imperative Addressee Specification
+    description: "NIV generic imperatives → CNL imperative with explicit addressee you(role)"
+    phase: Both
+    examples:
+      - "Matthew 24:26: 'you(followers) (imp) do not go there _implicit'"
+      - "Genesis 27:9: 'You(Jacob) (imp) bring 2 young goats'"
+      - "1 Samuel 10:8: 'You(Saul) (imp) go to Gilgal'"
+      - "Mark 7:14: 'you(people) (imp) listen to me(Jesus)'"
+    notes: "Imperative addressees always disambiguated"
+
+  - name: Negated Imperative Construction
+    description: "NIV negative commands → CNL you(role) (imp) do not + verb"
+    phase: Both
+    examples:
+      - "Matthew 24:26: 'you(followers) (imp) do not believe that thing-C _implicit'"
+      - "Jonah 4:4: 'You(Jonah) should not be angry'"
+      - "Genesis 14:23: 'I(Abram) will not keep any thing [that belongs to you(king)]'"
+      - "Nehemiah 6:11: 'I(Nehemiah) will not go to the temple!'"
+    notes: "Negative imperatives consistently structured"
+
+  # ============================================================
+  # IMPLICIT INFORMATION MARKERS
+  # ============================================================
+
+  - name: Implicit Object Marking
+    description: "NIV omitted objects → CNL verb + _implicit marker"
+    phase: Both
+    examples:
+      - "Mark 5:33: 'the woman came to Jesus _implicit'"
+      - "Matthew 20:3: 'that man left again _implicit'"
+      - "Mark 8:13: 'Jesus left those Pharisees'"
+      - "Matthew 12:9: 'Jesus went into the synagogue of that town _implicit'"
+    notes: "Recoverable null arguments marked as _implicit"
+
+  - name: Implicit Active Agent Marking
+    description: "NIV passives → CNL passive + _implicitActiveAgent or explicit agent"
+    phase: Both
+    examples:
+      - "Matthew 17:23: 'the Son-of-Man _1stAs3rd will be raised-B by God _implicitActiveAgent'"
+      - "Matthew 8:13: 'Your(officer's) servant will immediately _implicit be healed by me(Jesus) _implicitActiveAgent'"
+      - "Matthew 27:37: 'the reason [that Jesus was on that cross for] was written on that sign-C by people _ImplicitActiveAgent'"
+      - "Matthew 5:4: 'People [who cry/mourn-B now _implicit] are blessed by God _implicitActiveAgent'"
+    notes: "Passive agent either explicit or marked as implicit"
+
+  - name: Situational Implicit Marker
+    description: "NIV context-dependent information → CNL (implicit-situational) marker"
+    phase: Both
+    examples:
+      - "Mark 5:33: 'the woman admitted/confess [ the woman touched Jesus's clothes]. (implicit-situational) The woman admitted'"
+      - "Matthew 22:12: 'that man did not have a good _implicit answer'"
+      - "Mark 14:3: 'in-order-to eat a meal _frameInferable _implicit [(implicit-situational)]'"
+    notes: "Situational inferences marked explicitly"
+
+  - name: Implicit Info Marker
+    description: "NIV unstated information → CNL (implicit-info) for background information"
+    phase: Both
+    examples:
+      - "2 Samuel 19:20: 'I(Shimei) (implicit-info) want [you(David) to forgive me(Shimei)]'"
+      - "Ruth 2:1: 'Boaz (implicit-info) lived in Bethlehem. And (implicit-info) Boaz was rich'"
+      - "1 Samuel 20:39: 'The boy (implicit-info) did not know [that Jonathan was actually talking to David]'"
+      - "2 Samuel 8:11: 'King David (implicit-info) accepted those things'"
+    notes: "Pragmatic inferences about mental states and background marked"
+
+  - name: Frame-Inferable Marker
+    description: "NIV frame-dependent info → CNL _frameInferable for script knowledge"
+    phase: Both
+    examples:
+      - "Matthew 17:23: 'The Son-of-Man's _1stAs3rd enemies _frameInferable will kill the Son-of-Man'"
+      - "Matthew 24:15: '[the big building _implicitNecessaryFrameInferable of Jerusalem _implicit]'"
+      - "Mark 14:3: 'in-order-to eat a meal _frameInferable _implicit'"
+      - "Matthew 21:18: 'Jesus left the city _frameInferable [in order to go to Bethany]'"
+    notes: "Frame-based inferences (e.g., enemies kill, meals eaten at tables) marked"
+
+  # ============================================================
+  # QUOTE FRAMING
+  # ============================================================
+
+  - name: Embedded Quote Attribution
+    description: "NIV reported speech → CNL with explicit verb of saying and speaker"
+    phase: Both
+    examples:
+      - "Matthew 21:5: 'That prophet _implicitNecessary said _implicitNecessary, [\"God _implicitNecessary says _implicitNecessary\"]'"
+      - "Genesis 29:6: 'Jacob asked, [\"Is Laban healthy?\"] The shepherds answered, [\"Laban is healthy\"]'"
+      - "2 Samuel 12:13: 'David said to Nathan, [\"I(David) sinned against Yahweh\"]'"
+      - "Mark 14:64: 'those leaders agreed [that Jesus was guilty]'"
+    notes: "All quoted speech has explicit attribution frame"
+
+  - name: Nested Quote Depth
+    description: "NIV indirect quotes → CNL maintains bracket depth for quote-within-quote"
+    phase: Both
+    examples:
+      - "Matthew 21:5: '[\"God _implicitNecessary says _implicitNecessary, [\"You(prophet) (imp) speak to my(God's) people [_descriptive who are-X my(God's) daughter named Zion]]\"]'"
+      - "Genesis 42:1: 'Jacob said to Jacob's sons, [\"You(sons) (imp) stop sitting here!\"]'"
+      - "1 Samuel 20:3: 'your(Jonathan's) father said to your(Jonathan's) father, [\"I(Saul) will not tell Jonathan about my(Saul's) plans\"]'"
+    notes: "Deep quote nesting preserved with bracket structure"
+
+  - name: Thought vs Speech Distinction
+    description: "NIV mental verbs → CNL [think/know X] vs. speech verbs [say/tell X]"
+    phase: Both
+    examples:
+      - "Genesis 42:28: 'The brothers said to each-other(brothers), [\"God is punishing us(brothers)!\"]'"
+      - "Matthew 9:3: 'some scribes thought-B, [\"This man is insulting God\"]'"
+      - "Esther 6:6: 'Haman thought, [\"The king wants [to honor me(Haman)]\"]'"
+      - "Mark 10:24: 'Those followers/disciples thought [certain people were rich [because God did good things for certain people]]'"
+    notes: "Mental states vs. overt speech clearly distinguished"
+
+  # ============================================================
+  # TITLE AND PARAGRAPH MARKERS
+  # ============================================================
+
+  - name: Section Title Markers
+    description: "NIV section headings → CNL (title) or -Title markers"
+    phase: Both
+    examples:
+      - "Jonah 1:1: 'Jonah (title) run-away from Yahweh'"
+      - "Genesis 37:1: '-Title Joseph dreams'"
+      - "Matthew 2:19: '(title) Joseph and Joseph's family return to Nazareth'"
+      - "Mark 3:7: '(title) Crowds of people follow Jesus'"
+      - "Acts 1:6: '-Title Jesus is carried to heaven by God'"
+    notes: "Section breaks explicitly marked in discourse"
+
+  - name: Paragraph Break Markers
+    description: "NIV paragraph breaks → CNL _paragraph marker"
+    phase: He2-only
+    examples:
+      - "Matthew 21:7: '_paragraph Then Jesus left those priests'"
+      - "Matthew 8:10: '(paragraph) [When Jesus heard these words _implicit,] Jesus was surprised/amazed'"
+      - "Mark 14:71: '(paragraph) But Peter spoke with rude words'"
+      - "Matthew 15:32: '_paragraph Jesus called-A Jesus's followers/disciples'"
+    notes: "Discourse paragraph structure marked explicitly - more common in NT"
+
+  - name: Comment Markers
+    description: "NIV narrator asides → CNL (comment-begin) content (comment-end)"
+    phase: He2-only
+    examples:
+      - "Matthew 24:15: '(comment-begin) I(Matthew) pray/pray-hope [you(person) [who are reading this book _implicit] understand the meaning _implicit of these words]. (comment-end)'"
+      - "Mark 7:19: '(comment-begin) Thus Jesus _implicitNecessary said/declare [all kinds of food are religiously _implicit clean/clean-B]. (comment-end)'"
+      - "Mark 11:32: '(comment-begin) Those chief priests, those people/scribes, and those older leaders were afraid of the crowd. (comment-end)'"
+    notes: "Editorial comments/explanations bracketed separately"
+
+  # ============================================================
+  # NAME INTRODUCTIONS
+  # ============================================================
+
+  - name: Named Entity Role Introduction
+    description: "NIV bare names → CNL name + role/relationship descriptor"
+    phase: Both
+    examples:
+      - "Nehemiah 13:13: 'a prophet named Nathan'"
+      - "Jonah 1:1: 'Jonah was Amittai's son'"
+      - "Ruth 2:1: 'Naomi had a relative named Boaz'"
+      - "Daniel 2:14: 'Arioch was the captain of the king's guards'"
+      - "Matthew 2:19: 'an angel of the Lord appeared in a dream to Joseph'"
+    notes: "Names introduced with identifying information"
+
+  - name: Name Glossing with named
+    description: "NIV proper names → CNL 'a/the X named Y' construction"
+    phase: Both
+    examples:
+      - "Genesis 6:10: 'sons.  The names of these sons were Shem, Ham, and Japheth'"
+      - "Joshua 13:27: 'cities named Beth-Haram, Beth-Nimrah, Sukkoth, and Zaphon'"
+      - "Nehemiah 12:12: 'the family of Seraiah. Hananiah was the leader of the family of Jeremiah'"
+      - "Mark 14:3: 'Simon [who previously _implicit had a terrible skin disease]'"
+    notes: "Proper names marked with 'named' construction"
+
+  - name: Kinship Term Expansion
+    description: "NIV kinship terms → CNL with explicit antecedent (father→father of X, son→son of Y)"
+    phase: Both
+    examples:
+      - "Jonah 1:1: 'Jonah was Amittai's son'"
+      - "Nehemiah 13:13: 'Hanan was the son of Zakkur [who was the son of Mattaniah]'"
+      - "Genesis 22:22: 'the other sons of Nahor are Kesed, Hazo, Pildash'"
+      - "2 Samuel 19:16: 'Shimei was Gera's son'"
+    notes: "Kinship relations always explicitly linked to antecedent"
+
+  - name: Appositive Name Structure
+    description: "NIV name apposition → CNL bracketed relative clause [who was X]"
+    phase: Both
+    examples:
+      - "Daniel 2:14: 'Arioch [who was the captain of the king's guards]'"
+      - "Mark 5:33: 'Bartimaeus [who was the son of Timaeus]'"
+      - "Nehemiah 13:13: 'Shelemiah [who was the priest]'"
+      - "Joshua 13:27: 'Sihon [who was the king of Heshbon]'"
+    notes: "Appositives converted to relative clauses"
+
+  # ============================================================
+  # ADDITIONAL PATTERNS
+  # ============================================================
+
+  - name: Footnote Integration
+    description: "NIV cross-references → CNL (footnote) inline markers"
+    phase: Both
+    examples:
+      - "Matthew 21:5: '(footnote) You(people) (imp) see Zechariah 9:9'"
+      - "Matthew 20:3: '(footnote) (literalunits) The third hour was 9AM'"
+      - "Matthew 8:17: '(footnote) You(people) (imp) see Isaiah 53:4'"
+      - "Matthew 2:15: '(footnote) That person/prophet was Hosea. You(people) (imp) see Hosea 11:1'"
+    notes: "Biblical cross-references and explanatory notes marked inline"
+
+  - name: Descriptive Modifier Bracketing
+    description: "NIV relative clauses → CNL [_descriptive who/which X] for non-restrictive"
+    phase: Both
+    examples:
+      - "Matthew 21:5: 'my(God's) people _implicitNecessary [_descriptive who are-X my(God's) daughter named Zion]'"
+      - "Matthew 27:37: '[_descriptive who is the king of the Jews _RealmofAuthority]'"
+      - "Mark 12:6: 'And that person was that man's son [ _descriptive whom that man loved]'"
+    notes: "Non-restrictive modifiers marked as descriptive"
+
+  - name: Routinely Repeated Action Marker
+    description: "NIV habitual verbs → CNL verb + _routinely marker"
+    phase: Both
+    examples:
+      - "Mark 5:4: 'that man broke _routinely the chains'"
+      - "Matthew 9:11: 'people [who do _routinely sins]'"
+      - "Mark 1:17: 'you(Simon) gathered _routinely fish _generic'"
+    notes: "Habitual/iterative aspect explicitly marked"
+
+  - name: Dual Number Marking
+    description: "NIV two entities → CNL _dual marker on verbs/nouns"
+    phase: Both
+    examples:
+      - "Matthew 21:7: 'Those followers/disciples _dual brought-C that horse/donkey and that horse's/donkey young horse/donkey'"
+      - "Mark 1:17: 'You(Simon) _dualThroughoutVerse (imp) come'"
+      - "2 Samuel 15:33: 'Zadok and Abiathar [who were those two men]'"
+    notes: "Dual number explicitly marked when referring to pairs"
+
+  - name: Quantifier Specification
+    description: "NIV vague quantities → CNL explicit quantity markers -quantity N"
+    phase: Both
+    examples:
+      - "Genesis 23:15: 'silver -quantity 5 kilograms'"
+      - "Matthew 25:15: '5 bags of _quantity gold'"
+      - "Genesis 20:16: 'silver -quantity 12 kilograms'"
+      - "Nehemiah 7:31: '122 men [that were from Mikmash]'"
+    notes: "Quantities made explicit with -quantity marker"
+
+  - name: Material Composition Marking
+    description: "NIV material nouns → CNL noun + of _madeOf material"
+    phase: Both
+    examples:
+      - "Matthew 7:5: 'piece of dust of _madeOf wood'"
+      - "Mark 14:3: 'container/jar of _madeOf beautiful white and yellow stone'"
+      - "Matthew 23:27: 'a white stone _madeOf structure'"
+      - "Genesis 19:26: 'Lot's wife became a pillar -composed-of salt'"
+    notes: "Material composition explicitly marked"
+
+  - name: Generic Reference Marking
+    description: "NIV generic NPs → CNL noun + _generic marker"
+    phase: Both
+    examples:
+      - "Mark 1:17: 'you(Simon) to gather people _generic'"
+      - "Mark 5:4: 'people _implicitActiveAgent'"
+      - "Nehemiah 9:32: 'people [who tell your(Yahweh's) messages to people _generic]'"
+    notes: "Generic vs. specific reference disambiguated"
+
+summary:
+  total_verses_analyzed: 500
+  he1_books: "Ruth, Jonah, Genesis, Joshua, 1-2 Samuel, Nehemiah, Esther, Daniel, Nahum"
+  he2_books: "Matthew, Mark, Acts, Titus, Philemon, 2 John"
+
+  shared_patterns: "Pronoun disambiguation, clause bracketing, imperative marking, implicit markers, quote framing, name introductions, basic vocabulary pairs"
+
+  he2_only_patterns: "_1stAs3rd conversion (Jesus self-reference), complex-simple theological pairs, modern-literal unit conversion, paragraph markers more frequent, comment markers"
+
+  transformation_principles:
+    - "Every pronoun receives explicit antecedent in parentheses"
+    - "All clause boundaries marked with brackets showing syntactic structure"
+    - "Implicit information marked with _implicit, _implicitActiveAgent, (implicit-situational), etc."
+    - "Theological/complex vocabulary receives dual renderings for L2 learners (He2)"
+    - "All named entities introduced with role/relationship descriptors"
+    - "Time and measurement units paired with modern equivalents (He2)"
+    - "Rhetorical questions converted to declarative statements"
+    - "Imperatives explicitly marked with (imp) and addressee"
+
+notes:
+  - "He2 books show more pedagogical support: dual renderings, paragraph markers, comment asides"
+  - "He1 books have simpler structure but same core disambiguation strategy"
+  - "Bracket nesting can be very deep (5+ levels) in both phases"
+  - "Material from chunk-ad shows consistent application of Phase 1 policy across both testaments"

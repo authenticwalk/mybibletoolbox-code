@@ -1,0 +1,293 @@
+patterns:
+  - name: Possessive Pronoun Expansion
+    description: "NIV possessive pronouns ('his', 'her', 'their') → CNL explicit possessive phrases with full noun specification"
+    phase: Both
+    examples:
+      - Mat.15:6: "his father" → "that person's father"
+      - Dan.6:14: "the king heard" → "[When the king heard...]"
+      - 2Sa.10:6: "David was angry at the Ammonites" → "David was angry at the Ammonites"
+      - Gen.43:24: "gave water to the brothers" → "gave water to the brothers [so that the brothers could wash the brothers' feet]"
+      - Mat.9:35: "Jesus was traveling through all the towns" → "Jesus was traveling through all _hyperbolic the towns"
+    variations: "Includes reflexive possessives (e.g., 'yourself(man)' in Mat.19:19)"
+
+  - name: Bracket-Enclosed Clausal Subordination
+    description: "NIV subordinate clauses → CNL bracketed clauses with explicit subordination markers"
+    phase: Both
+    examples:
+      - Dan.6:14: "When the king heard that Daniel broke the law" → "[When the king heard [that Daniel broke the law]]"
+      - 2Sa.10:6: "so that those soldiers would help" → "[so that those soldiers would help [the Ammonites fight David]]"
+      - Gen.43:24: "so that the brothers could wash" → "[so that the brothers could wash the brothers' feet]"
+      - Mat.9:35: "who had all kinds of diseases" → "[who had all kinds of diseases]"
+      - 1Sa.18:24: "the things that David said" → "the things [that David said]"
+    variations: "Nested brackets for complex subordination; includes purpose clauses with '[in order to...]', '[so that...]', result clauses, and relative clauses with '[that...]', '[who...]'"
+
+  - name: Implicit Information Markers
+    description: "NIV implicit content → CNL explicit markers: _implicit, _implicitNecessary, (implicit-situational), (implicit-info), (implicit-subaction), (implicit-background)"
+    phase: Both
+    examples:
+      - Mat.13:38: "seeds _implicitNecessary of plants" → explicit that seeds are from plants
+      - Mat.9:21: "healed by Jesus _implicitNecessary" → explicit agent
+      - Mat.7:2: "judged by God _implicitActiveAgent" → explicit passive agent
+      - Mat.14:8: "(implicit-situational) So Herodias' daughter went to Herodias" → situation inferred from context
+      - Mat.20:2: "(implicit-subaction) That man found some people" → implied action
+    variations: "Multiple marker types based on semantic category; sometimes combined with other markers like _newNounIndex"
+
+  - name: Parenthetical Command Markers
+    description: "NIV imperatives → CNL (imp) marker before imperative verb forms"
+    phase: Both
+    examples:
+      - Mat.19:19: "You(man) (imp) honor your(person's) father" → explicit imperative marking
+      - Jos.23:12: "(imp) You(Israelites) continue obeying" → explicit command
+      - Gen.50:6: "You(Joseph) (imp) keep your(Joseph's) promise" → explicit imperative
+      - Rut.1:9: "I(Naomi) hope [that Yahweh will give peace]" → optative not imperative
+      - Mar.1:2: "You(Christ) (imp) listen to me(God)" → imperative in quoted speech
+    variations: "Consistently marks all imperatives regardless of context (commands, exhortations, permissions)"
+
+  - name: Coreference Pronoun Specification
+    description: "NIV pronouns → CNL pronouns with parenthetical referent specification using proper nouns or role labels"
+    phase: Both
+    examples:
+      - Mat.15:6: "you(Pharisees) ignore God's command" → explicit addressee
+      - Dan.6:14: "the king wanted [to help Daniel]" → 'he' becomes 'the king'
+      - 2Sa.10:6: "the Ammonites realized [that David was angry]" → 'they' becomes 'the Ammonites'
+      - Gen.43:24: "the servant gave water to the brothers" → 'he' becomes 'the servant'
+      - Mat.9:35: "Jesus was teaching in the synagogues" → 'he' becomes 'Jesus'
+    variations: "Includes role-based referents (e.g., 'you(king)', 'me(servant)'), numbered referents for disambiguation (e.g., 'you(people)_plural'), and dual markers (e.g., 'those followers/disciples _dual')"
+
+  - name: Title and Paragraph Markers
+    description: "NIV section headings → CNL (title) markers; paragraph breaks → _paragraph markers"
+    phase: Both
+    examples:
+      - Mat.9:35: "(title) Jesus says [there are not many people [who do the work of God]]" → explicit section boundary
+      - 1Sa.3:1: "(title) God calls Samuel." → chapter opening title
+      - Mat.6:16: "(title) Jesus teach-how people [people to fast]" → topical marker
+      - Mat.9:35: "_paragraph Jesus was traveling" → paragraph boundary
+      - Mat.26:1: "_paragraph [When Jesus finished saying all these things-C,]" → paragraph start
+    variations: "Titles may contain bracketed content; _paragraph can appear mid-verse"
+
+  - name: Quote Frame Marking
+    description: "NIV quotations → CNL explicit quote frames with speaker/addressee identification and brackets for quoted content"
+    phase: Both
+    examples:
+      - Gen.50:6: "the king said to Joseph, [\"You(Joseph) (imp) keep your(Joseph's) promise.\"]" → quoted speech with addressee
+      - 1Sa.17:58: "David answered, [\"I(David) am the son of Jesse\"]" → self-identification in quote
+      - Dan.8:14: "I(Gabriel) have told you(Daniel) about the meaning" → speaker/hearer marking
+      - Gen.29:34: "Leah said, [\"My(Leah's) husband will stay near me(Leah)\"]" → possessive in quoted speech
+      - Acts.15:5: "These people stood up and said, [\"The leaders must cut off...\"]" → multi-clause quote
+    variations: "Nested quotes use multiple bracket levels; speaker/addressee marked with parenthetical noun specification"
+
+  - name: Footnote and Comment Insertion
+    description: "NIV cross-references and editorial notes → CNL (footnote), (comment-begin)/(comment-end) markers"
+    phase: Both
+    examples:
+      - Mat.19:19: "(footnote) You(people) (imp) see Exodus 20:12-16" → cross-reference
+      - Gen.29:34: "-Footnote Levi means near" → etymological note
+      - Mar.15:42: "(comment-begin) That day was the day [that is before the Sabbath]. (comment-end)" → editorial clarification
+      - Mar.12:19: "(footnote) You(people) (imp) see Deuteronomy 25:5-10" → law citation
+      - 2Sa.6:2: "Baalah (footnote) is Kiriath-Jearim" → geographic clarification
+    variations: "Footnotes typically for cross-references; comments for cultural/chronological context; hyphenated format (-Footnote) also used"
+
+  - name: Deixis and Temporal Marking
+    description: "NIV deictic expressions → CNL explicit temporal/spatial markers with brackets for contextual specification"
+    phase: Both
+    examples:
+      - Dan.6:14: "All day the king worked" → temporal boundary explicit
+      - Gen.43:24: "Then that servant led the men" → sequencing marker 'Then'
+      - Mat.9:35: "at that area/region" → spatial deictic
+      - 1Sa.3:1: "At that time Samuel was serving" → temporal frame
+      - Acts.18:19: "At that place, Paul left Priscilla" → locative marker
+    variations: "Includes 'Then', 'At that time', 'at that place', '[while...]', '[when...]' with explicit bracket framing"
+
+  - name: Complex-Simple Semantic Pairing
+    description: "NIV single renderings → CNL dual renderings marked (complex)/(simple) or (literal)/(dynamic) for theologically/semantically loaded terms"
+    phase: He2-only
+    examples:
+      - Mat.9:35: "(complex) Good-News of the kingdom-B. (simple) Good-News [that is about God [ruling people]]" → kingdom unpacked
+      - Mat.13:17: "(rhetorical) Did you(people) go there... (statement) And you(people) did not go there" → rhetorical converted to statement
+      - Mat.17:20: "(complex) your(followers's) faith is small (simple) you(followers) believe little in God" → abstract to concrete
+      - Mat.22:37: "(complex) love-B the Lord-A... with your whole heart-A (simple) love-B the Lord-A completely" → figurative to literal
+      - Mar.1:2: "(literal) will prepare-B your(Christ's) path. (dynamic) will say/announce [you(Christ) are coming]" → metaphor unpacked
+    variations: "Always provides both renderings; (literal)/(dynamic) for metaphors; (complex)/(simple) for abstractions; (rhetorical)/(statement) for rhetorical questions; (primary)/(meaning-1) for polysemous terms"
+
+  - name: Hyperbolic and Quantifier Markers
+    description: "NIV universal quantifiers → CNL _hyperbolic markers to indicate non-literal totality"
+    phase: Both
+    examples:
+      - Mat.9:35: "all _hyperbolic the towns [that were in that area/region]" → not literally every town
+      - Mat.2:3: "all _hyperbolic of the people [who were in Jerusalem]" → rhetorical exaggeration
+      - Mat.13:25: "all the people [who (implicit-situational) lived with that man]" → household scope
+      - 1Sa.4:5: "all of the Israelites started shouting" → collective action
+    variations: "Used when 'all' is culturally/rhetorically hyperbolic rather than strictly universal"
+
+  - name: Passive Agent Specification
+    description: "NIV passive constructions → CNL passive with explicit _implicitActiveAgent markers for divine or human agents"
+    phase: Both
+    examples:
+      - Mat.7:2: "you(person) will be judged by God _implicitActiveAgent" → divine agent made explicit
+      - Mat.9:21: "I(woman) will be healed by Jesus _implicitNecessary" → human agent explicit
+      - Mat.27:2: "those people of the servants/guards _metonymy tied Jesus" → agent via metonymy
+      - Mat.19:11: "caused by God _implicitActiveAgent [to be able...]" → divine causation
+      - Mar.12:25: "given-B to men by those women's families _implicitActiveAgent" → cultural agent
+    variations: "Distinguished from _implicitNecessary; sometimes combined with _metonymy for institutional agents"
+
+  - name: Vocabulary L2 Expansion
+    description: "NIV single lexemes → CNL slash-separated L2 vocabulary pairs for synonyms or translation alternatives"
+    phase: Both
+    examples:
+      - Mat.9:35: "followers/disciples" → synonymous pairing
+      - Mar.1:2: "person/messenger" → functional pairing
+      - 2Sa.13:1: "rapes/sex" → action pairing
+      - Rut.2:3: "gathering/harvesting grain/barley" → process/object pairing
+      - Acts.18:12: "gathered-together(Jews)" → action with participant
+    variations: "Sometimes includes parenthetical specification of which noun; used for technical terms, synonyms, and culturally specific concepts"
+
+  - name: Name Introduction with Descriptive Clauses
+    description: "NIV name mentions → CNL explicit introduction formulas with bracketed descriptive relative clauses"
+    phase: Both
+    examples:
+      - 1Sa.16:18: "Jesse [who lives in Bethlehem] has a son" → geographic descriptor
+      - Dan.4:6: "all the wise men [who were in Babylon]" → locative relative
+      - Mar.7:24: "Jesus left that place. And Jesus went to the region of Tyre" → place name with context
+      - Acts.3:6: "Jesus Christ [who is from Nazareth]" → origin descriptor
+      - Mat.13:25: "that man's enemy came" → role label
+    variations: "Often includes geographic, relational, or role-based descriptors; sometimes with multiple nested brackets"
+
+  - name: Rhetorical Question Conversion
+    description: "NIV rhetorical questions → CNL paired (rhetorical)/(statement) or (yesrhetorical)/(statement) or (norhetorical)/(statement) renderings"
+    phase: He2-only
+    examples:
+      - Mar.12:45: "(yesrhetorical) Did you(Sadducees) read-C the part...? (statement) You(Sadducees) certainly read-C" → yes-expected question
+      - Mat.7:9: "(rhetorical) Which person... will give a stone...? (statement) No person... will give a stone" → negative answer expected
+      - Mar.14:37: "(norhetorical) Were you(Peter) able...? (statement) You(Peter) should be able" → no-expected question
+      - Mat.26:65: "(rhetorical) Why do we(priests) need...? (statement) We(priests) do not need" → why-question to statement
+      - Mar.8:4: "(rhetorical) Where will a person be able...? (statement) A person will not be able" → where-question to negative
+    variations: "Three subtypes: (yesrhetorical) expects 'yes', (norhetorical) expects 'no', (rhetorical) generic; always paired with (statement) providing propositional content"
+
+  - name: Metonymy and Frame-Inferability Markers
+    description: "NIV literal references → CNL _metonymy, _frameInferable markers for institutional/conceptual substitutions"
+    phase: Both
+    examples:
+      - Mat.27:2: "those people of the servants/guards _metonymy" → institution for individuals
+      - Mat.27:11: "the ruler/governor _frameInferable" → role inferable from context
+      - Mat.28:9: "those followers/disciples _implicit" → group membership inferred
+      - Mar.6:54: "people immediately recognized Jesus" → cognitive frame
+      - Mar.15:42: "the day _frameInferable" → temporal frame
+    variations: "_metonymy for part-whole or container-contained; _frameInferable for culturally/contextually obvious referents"
+
+  - name: Number and Measure Specification
+    description: "NIV numbers → CNL explicit number formatting with dual literal/modern units where applicable"
+    phase: Both
+    examples:
+      - 2Sa.10:6: "20000 Aramean soldiers" → explicit count
+      - Mat.20:2: "a denarius [after those people work for 1 day]" → time specification
+      - Mat.20:2: "(footnote) A denarius was the money/wages [that a person usually received...]" → currency explanation
+      - Mar.14:30: "before a male chicken shouts-C 2 times" → specific count
+      - Mar.12:41: "(literalunits)/(modernunits)" → dual measurement systems
+    variations: "Often includes footnotes explaining ancient measures; sometimes paired modern equivalents"
+
+  - name: Segment Conjunction Reduction
+    description: "NIV coordinated clauses → CNL period-separated independent sentences with explicit subject repetition"
+    phase: Both
+    examples:
+      - Gen.7:10: "After 7 days the weather began to be rain." → simple sentence
+      - Gen.43:24: "the servant gave water to the brothers. Then the servant gave food to the brothers' donkeys." → two sentences, repeated subject
+      - Mat.9:35: "Jesus was teaching... And Jesus was also healing" → coordinated independent clauses
+      - Mar.14:39: "Then Jesus left again. And Jesus prayed the same prayer." → sequential sentences
+      - 1Sa.17:52: "Then the Israelites shouted. And the Israelites started chasing" → explicit subject in each clause
+    variations: "Conjunction 'And' retained at sentence start; subjects always repeated rather than elided"
+
+  - name: Descriptive Modifier Bracketing
+    description: "NIV attributive modifiers → CNL bracketed [_descriptive ...] clauses with explicit modification scope"
+    phase: Both
+    examples:
+      - Phi.1:8: "God [who is our(people's) Father]" → parenthetical descriptor
+      - Mat.4:3: "The devil [_descriptive who tempts people _genericImplicit]" → role description
+      - Mat.22:37: "the Lord-A, [_descriptive who is your(person's) God,]" → identity clarification
+      - Mar.1:2: "Isaiah [who told God's messages to people]" → functional descriptor
+      - Acts.15:5: "people who believed in Jesus [and who lived in Jerusalem]" → dual relative clauses
+    variations: "May use [_descriptive ...] marker; often stacked relative clauses; includes role, location, and relationship descriptors"
+
+  - name: Suffix Markers for Semantic Nuance
+    description: "NIV verbs/nouns → CNL base forms with suffix markers (-A, -B, -C, etc.) for disambiguation or semantic variation"
+    phase: Both
+    examples:
+      - Mat.21:6: "did the things-C" → specific action reference
+      - Mat.22:37: "love-B the Lord-A" → love type specification
+      - Mar.12:19: "brother-C [who married a woman]" → kinship type
+      - Mar.15:4: "asked-A Jesus another question" → asking type
+      - Mar.12:26: "read-C the part of the book" → reading type
+    variations: "Letters (A, B, C) distinguish semantic variants; context-dependent; not consistently explained"
+
+  - name: Index Markers for Referent Tracking
+    description: "NIV repeated nouns → CNL _newNounIndex, _sameAsLastNounIndex, _differentNounIndex markers for discourse tracking"
+    phase: Both
+    examples:
+      - Mat.27:2: "those people _newNounIndex of the servants/guards" → first mention in new referent chain
+      - Mat.13:17: "those people _prophetsAndRighteous... Those people _sameAsLastNounIndex" → same referent
+      - Mat.22:16: "Those people _differentNounIndex said to Jesus" → different referent than previous
+      - Mat.13:34: "those people _implicitNecessary" → referent tracking with implicit marker
+    variations: "Three types: _newNounIndex (new chain), _sameAsLastNounIndex (continuation), _differentNounIndex (switch); sometimes combined with other markers"
+
+  - name: Dual Number Marking
+    description: "NIV generic plurals → CNL _dual markers for specifically two participants"
+    phase: Both
+    examples:
+      - Mar.11:6: "those followers/disciples _dual said" → exactly two disciples
+      - Mat.21:1: "Jesus sent 2 followers/disciples" → explicit dual
+      - Mar.14:13: "Jesus sent-A 2 of Jesus's followers/disciples" → dual specification
+      - Mat.21:3: "you(followers) (imp) tell a person... you(followers) _dual" → dual addressees
+    variations: "Explicitly marks pairs; often in sending/mission contexts"
+
+  - name: Inclusion-Exclusion Pronouns
+    description: "NIV 'we/us' → CNL _incl (inclusive) or _excl (exclusive) markers for addressee inclusion"
+    phase: Both
+    examples:
+      - Mar.12:19: "Moses wrote-E the following law for us(Jews) _incl" → hearers included
+      - Mar.14:2: "We(priests) _incl _implicitNecessary must not take-away/arrest" → group includes speaker
+      - Mat.9:27: "us(men)" → exclusive (blind men, not Jesus)
+      - Mat.22:16: "we(Pharisees) _excl know" → speaker group excluding addressee
+    variations: "_incl includes addressee in group; _excl excludes addressee; culturally important in discourse structure"
+
+  - name: Episode and Comment Boundaries
+    description: "NIV unmarked narrative structure → CNL -Title, -BeginEpisode, -CommentEnd markers for discourse segmentation"
+    phase: Both
+    examples:
+      - Gen.28:1: "–Title Isaac sends Jacob to Laban" → episode opener
+      - Gen.34:1: "-Title Shechem attacks Dinah. -BeginEpisode the daughter of Leah" → dual boundary markers
+      - Acts.1:19: "Akeldama means field of blood. -CommentEnd" → end of explanatory aside
+      - 1Sa.25:36: "(title) Nabal dies." → event title
+      - Rut.1:1: "(title) and Naomi move from Bethlehem to Moab" → narrative section
+    variations: "Hyphenated format (-Title) for major boundaries; (title) for subsections; -BeginEpisode for narrative start; -CommentEnd for editorial close"
+
+  - name: Passive Voice Preference
+    description: "NIV active constructions → CNL passive voice with explicit agent marking via 'by' phrases"
+    phase: Both
+    examples:
+      - Mat.9:21: "I(woman) will be healed by Jesus _implicitNecessary" → active 'Jesus will heal me' becomes passive
+      - Mat.7:2: "you(person) will be judged by God _implicitActiveAgent" → divine passive
+      - Mat.19:11: "caused by God _implicitActiveAgent [to be able...]" → causative passive
+      - Mar.12:25: "given-B to men by those women's families _implicitActiveAgent" → cultural passive
+      - Mat.12:32: "will be forgiven-C by God _implicitActiveAgent" → theological passive
+    variations: "Consistently converts active to passive when agent is divine, institutional, or culturally significant; agent always marked with 'by' phrase and often _implicitActiveAgent"
+
+  - name: 1st-as-3rd Person Markers
+    description: "NIV 1st person references → CNL 3rd person with _1stAs3rd marker for titular/prophetic self-reference"
+    phase: He2-only
+    examples:
+      - Mat.10:23: "before the Son-of-Man _1stAs3rd comes" → Jesus referring to himself in 3rd person
+      - Mat.24:42: "the Son-of-man _1stAs3rd will come" → prophetic self-reference
+      - Mar.14:41: "The Son-of-man _1stAs3rd is being given/betrayed" → passion prediction
+      - Mat.12:32: "the Son-of-Man _1stAs3rd" → messianic title
+    variations: "Exclusively for 'Son of Man' title; marks Jesus's self-referential use of titular language"
+
+  - name: Generic vs. Specific Person Marking
+    description: "NIV indefinite agents → CNL _generic, _genericImplicit markers for non-specific human referents"
+    phase: Both
+    examples:
+      - Mat.4:3: "who tempts people _genericImplicit" → people in general
+      - Mat.21:3: "a person _generic says a thing-C" → any person
+      - Mat.5:13: "people will throw-away that salt" → generic human agents
+      - Mar.2:22: "people _necessaryImplicit pour _necessaryImplicit new wine" → generic action
+      - Mar.13:21: "you(followers) (imp) do not believe-A those people _implicitNecessary" → specific but unidentified
+    variations: "_generic for universal human agents; _genericImplicit when context makes generic reading clear; contrasts with specific referent tracking"
+

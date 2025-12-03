@@ -1,0 +1,47 @@
+# Distribution of Number Feature Values
+# Generated from tbta-extract.jsonl
+# Total entries: 174,239
+
+distribution:
+  Singular:
+    count: 113745
+    percentage: 65.29%
+    description: Single entity or individual
+
+  Plural:
+    count: 55654
+    percentage: 31.94%
+    description: Multiple entities (2 or more in most languages)
+
+  Dual:
+    count: 1744
+    percentage: 1.00%
+    description: Exactly two entities
+
+  Trial:
+    count: 496
+    percentage: 0.28%
+    description: Exactly three entities
+
+  Quadrial:
+    count: 185
+    percentage: 0.11%
+    description: Exactly four entities
+
+  Paucal:
+    count: 52
+    percentage: 0.03%
+    description: A few entities (more than one, less than many)
+
+summary:
+  total_entries: 174239
+  unique_values: 6
+  most_common: Singular (65.29%)
+  least_common: Paucal (0.03%)
+
+notes:
+  - Singular dominates (65.29%), which is expected in discourse
+  - Plural is the second most common (31.94%)
+  - Rare number values (Dual, Trial, Quadrial, Paucal) together account for only 1.42%
+  - Dual (1744 occurrences) is the most common of the rare number values
+  - Trial and beyond are very rare but theologically significant

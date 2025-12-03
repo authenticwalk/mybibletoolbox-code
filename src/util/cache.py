@@ -4,6 +4,7 @@ This module provides clean, focused cache operations for storing and retrieving
 Bible verse translations in YAML format following SCHEMA.md standards.
 """
 
+import sys
 from pathlib import Path
 from typing import Callable, Dict, Optional, Union
 
@@ -66,6 +67,7 @@ def get_cached_verse(book: str, chapter: int, verse: int,
     cache_path = get_file_path(book, chapter, verse, suffix, extension, cache_root=cache_root)
 
     if not cache_path.exists():
+        print(f"Cache miss: {cache_path}", file=sys.stderr)
         return None
 
     try:

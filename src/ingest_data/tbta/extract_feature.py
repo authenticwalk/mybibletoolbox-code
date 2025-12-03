@@ -15,6 +15,12 @@ Usage:
     python extract_feature.py --field Number --format jsonl --output data.jsonl
     python extract_feature.py --source-dir /path/to/tbta --field Person --format jsonl
 
+    # Extract with reconstructed text (shows clause with highlighted word)
+    python extract_feature.py --field Number --format jsonl --with-text --output data.jsonl
+
+    # Extract with Strong's codes from macula dataset
+    python extract_feature.py --field Number --format jsonl --with-strongs --output data.jsonl
+
 Features:
 - Downloads fresh TBTA data from GitHub (or use custom --source-dir)
 - Extracts all verses for a given feature field
@@ -31,26 +37,43 @@ Output Formats:
 2. JSONL: Detailed format for ML pipelines
    - One annotation per line
    - Fields: verse, label, constituent, part, path
+   - With --with-text: adds 'text' field with reconstructed clause
+     Example: "then **God** say now God create person"
+     (word with extracted feature wrapped in **)
+   - With --with-strongs: adds 'strongs' field with Strong's codes and glosses from macula
+     Example: "G3972-Paul G0652-an_apostle G5547-of_Christ G2424-Jesus..."
+     (H prefix for OT, G prefix for NT, 4-digit zero-padded, gloss with underscores)
    - All occurrences included (no LRU limit)
 """
 
-import os
-import sys
-import json
-import subprocess
-from pathlib import Path
-from datetime import datetime
-from collections import OrderedDict, Counter, defaultdict
-from typing import Dict, List, Any, Optional
 import argparse
+import json
 import logging
+import os
+import subprocess
+import sys
+from collections import Counter, OrderedDict, defaultdict
+from datetime import datetime
+from pathlib import Path
+from typing import Any, Dict, List, Optional
 
 try:
     import yaml
 except ImportError:
     print("WARNING: PyYAML not installed. YAML output will be unavailable.")
     print("Install with: pip install pyyaml")
-    yaml = None
+    exit(1)
+
+# Add src to path for imports when run as script
+sys.path.insert(0, str(Path(__file__).parent.parent.parent))
+
+try:
+    from config import DATA_DIR
+    from util.cache import get_cached_verse
+    MACULA_AVAILABLE = True
+except ImportError:
+    MACULA_AVAILABLE = False
+    DATA_DIR = None
 
 # Configure logging
 logging.basicConfig(
@@ -99,6 +122,77 @@ OT_BOOKS = {
     "JOB", "PSA", "PRO", "ECC", "SNG", "ISA", "JER", "LAM", "EZK", "DAN",
     "HOS", "JOL", "AMO", "OBA", "JON", "MIC", "NAM", "HAB", "ZEP", "HAG", "ZEC", "MAL"
 }
+
+
+def get_strongs_from_macula(book_code: str, chapter: int, verse: int) -> str:
+    """
+    Get Strong's codes with glosses from macula data for a verse.
+    
+    Args:
+        book_code: USFM book code (e.g., "MAT", "GEN")
+        chapter: Chapter number
+        verse: Verse number
+        
+    Returns:
+        Space-separated Strong's codes formatted as (H|G)####-gloss
+        Example: "G3972-Paul G0652-an_apostle G5547-of_Christ"
+        Returns empty string if macula data not available
+    """
+    if not MACULA_AVAILABLE or DATA_DIR is None:
+        return ""
+    
+    try:
+        # Get macula data from cache
+        cache_root = Path(DATA_DIR) / "commentary"
+        logger.debug(f"Fetching macula for {book_code} {chapter}:{verse} from {cache_root}")
+        
+        macula_data = get_cached_verse(
+            book_code, chapter, verse,
+            suffix="macula",
+            cache_root=cache_root
+        )
+        
+        if not macula_data:
+            logger.warning(f"No macula data found for {book_code} {chapter}:{verse}")
+            return ""
+            
+        if 'words' not in macula_data:
+            logger.warning(f"No 'words' key in macula data for {book_code} {chapter}:{verse}")
+            return ""
+        
+        # Determine prefix based on testament (H for Hebrew/OT, G for Greek/NT)
+        prefix = "H" if book_code in OT_BOOKS else "G"
+        
+        # Extract Strong's codes with glosses from words
+        strongs_entries = []
+        for word in macula_data.get('words', []):
+            lexical = word.get('lexical', {})
+            strong = lexical.get('strong')
+            if strong:
+                # Get gloss from translation
+                translation = word.get('translation', {})
+                gloss = translation.get('gloss', '')
+                
+                # Format as (H|G) + 4-digit zero-padded number
+                try:
+                    strong_num = int(strong)
+                    code = f"{prefix}{strong_num:04d}"
+                except (ValueError, TypeError):
+                    # Handle cases where strong isn't a pure number
+                    code = f"{prefix}{strong}"
+                
+                # Combine code with gloss (replace spaces with underscores)
+                if gloss:
+                    gloss_clean = gloss.replace(' ', '_')
+                    strongs_entries.append(f"{code}-{gloss_clean}")
+                else:
+                    strongs_entries.append(code)
+        
+        return " ".join(strongs_entries)
+        
+    except Exception as e:
+        logger.debug(f"Could not get macula data for {book_code} {chapter}:{verse}: {e}")
+        return ""
 
 
 class LRUCache:
@@ -254,9 +348,10 @@ def extract_field_from_clause(clause_data, field_name, results=None, path=""):
             'path': path
         })
 
-    # Recurse into Children
-    if "Children" in clause_data and isinstance(clause_data["Children"], list):
-        for i, child in enumerate(clause_data["Children"]):
+    # Recurse into Children (handle both "Children" and "children" keys)
+    children = clause_data.get("Children") or clause_data.get("children") or []
+    if isinstance(children, list):
+        for i, child in enumerate(children):
             # Build hierarchical path
             child_path = f"{path}/{part}[{i}]" if path else f"{part}[{i}]"
             extract_field_from_clause(child, field_name, results, child_path)
@@ -264,7 +359,69 @@ def extract_field_from_clause(clause_data, field_name, results=None, path=""):
     return results
 
 
-def process_json_file(json_file, field_name, output_format='yaml'):
+def extract_tokens_with_paths(clause_data, tokens=None, path=""):
+    """
+    Extract all word tokens from a clause with their paths.
+
+    Walks the clause tree in document order, collecting Constituent values
+    (the semantic words) along with their paths for later highlighting.
+
+    Args:
+        clause_data: TBTA clause dictionary
+        tokens: Accumulator list (internal)
+        path: Current path in tree (matching extract_field_from_clause format)
+
+    Returns:
+        List of (token, path) tuples in document order
+    """
+    if tokens is None:
+        tokens = []
+
+    if not isinstance(clause_data, dict):
+        return tokens
+
+    constituent = clause_data.get('Constituent', '')
+    part = clause_data.get('Part', '')
+
+    # Add token if it's a real word:
+    # - Has a Constituent value
+    # - Not a marker (like -QuoteBegin, -QuoteEnd)
+    # - Not a Space or Period
+    skip_parts = {'Space', 'Period'}
+    if constituent and not constituent.startswith('-') and part not in skip_parts:
+        tokens.append((constituent, path))
+
+    # Recurse into Children (using same path-building logic as extract_field_from_clause)
+    children = clause_data.get("Children") or clause_data.get("children") or []
+    if isinstance(children, list):
+        for i, child in enumerate(children):
+            child_path = f"{path}/{part}[{i}]" if path else f"{part}[{i}]"
+            extract_tokens_with_paths(child, tokens, child_path)
+
+    return tokens
+
+
+def build_highlighted_text(tokens_with_paths, highlight_path):
+    """
+    Build readable text from tokens, highlighting the one at highlight_path.
+
+    Args:
+        tokens_with_paths: List of (token, path) tuples from extract_tokens_with_paths
+        highlight_path: Path of the token to wrap in **
+
+    Returns:
+        String with reconstructed clause text, target word wrapped in **
+    """
+    result = []
+    for token, path in tokens_with_paths:
+        if path == highlight_path:
+            result.append(f"**{token}**")
+        else:
+            result.append(token)
+    return " ".join(result)
+
+
+def process_json_file(json_file, field_name, output_format='yaml', with_text=False, with_strongs=False):
     """
     Process a single TBTA JSON file.
 
@@ -272,6 +429,8 @@ def process_json_file(json_file, field_name, output_format='yaml'):
         json_file: Path to JSON file
         field_name: TBTA field to extract
         output_format: 'yaml' or 'jsonl'
+        with_text: Include reconstructed clause text with highlighting (JSONL only)
+        with_strongs: Include Strong's codes from macula dataset (JSONL only)
 
     Returns:
         For 'yaml': list of (book_code, chapter, verse, value) tuples
@@ -295,11 +454,24 @@ def process_json_file(json_file, field_name, output_format='yaml'):
     clauses = tbta_data if isinstance(tbta_data, list) else [tbta_data]
 
     results = []
+    
+    # Get Strong's codes once per verse (shared across all annotations in this verse)
+    strongs_codes = ""
+    if output_format == 'jsonl' and with_strongs:
+        strongs_codes = get_strongs_from_macula(book_code, chapter, verse)
+        if not strongs_codes:
+            logger.warning(f"Empty strongs codes for {book_code} {chapter}:{verse}")
+
 
     for clause_idx, clause in enumerate(clauses):
         try:
             # Build path prefix for this clause
             clause_path = f"Clause[{clause_idx}]"
+
+            # Extract tokens for text reconstruction (JSONL with text only)
+            tokens_with_paths = None
+            if output_format == 'jsonl' and with_text:
+                tokens_with_paths = extract_tokens_with_paths(clause, path=clause_path)
 
             # Extract features from this clause
             annotations = extract_field_from_clause(clause, field_name, path=clause_path)
@@ -307,15 +479,22 @@ def process_json_file(json_file, field_name, output_format='yaml'):
             # Format based on output type
             if output_format == 'jsonl':
                 # JSONL format: detailed annotations with verse reference
-                verse_ref = f"{book_code}.{chapter:03d}.{verse:03d}"
+                verse_ref = f"{book_code}-{chapter:03d}-{verse:03d}"
                 for ann in annotations:
-                    results.append({
+                    result = {
                         'verse': verse_ref,
                         'label': ann['value'],
                         'constituent': ann['constituent'],
                         'part': ann['part'],
                         'path': ann['path']
-                    })
+                    }
+                    # Add reconstructed text with highlighted word
+                    if with_text and tokens_with_paths:
+                        result['text'] = build_highlighted_text(tokens_with_paths, ann['path'])
+                    # Add Strong's codes from macula
+                    if with_strongs and strongs_codes:
+                        result['strongs'] = strongs_codes
+                    results.append(result)
             else:
                 # YAML format: simple tuples for aggregation
                 for ann in annotations:
@@ -328,7 +507,7 @@ def process_json_file(json_file, field_name, output_format='yaml'):
     return results
 
 
-def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False):
+def extract_feature(field_name, source_dir=None, max_per_value=2000, output_format='yaml', dry_run=False, with_text=False, with_strongs=False, limit=None):
     """
     Extract all verses for a given feature field from TBTA data.
 
@@ -338,6 +517,9 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         max_per_value: LRU cache size (YAML format only)
         output_format: 'yaml' or 'jsonl'
         dry_run: Show stats without writing output
+        with_text: Include reconstructed clause text with highlighting (JSONL only)
+        with_strongs: Include Strong's codes from macula dataset (JSONL only)
+        limit: Maximum number of files to process (for testing)
 
     Returns:
         For 'yaml': dict with feature metadata and aggregated data
@@ -348,6 +530,12 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
     logger.info(f"Output format: {output_format}")
     if output_format == 'yaml':
         logger.info(f"Max verses per value: {max_per_value}")
+    if output_format == 'jsonl' and with_text:
+        logger.info("Including reconstructed text with highlighting")
+    if output_format == 'jsonl' and with_strongs:
+        logger.info("Including Strong's codes from macula dataset")
+    if limit:
+        logger.info(f"Limiting processing to {limit} files")
     if dry_run:
         logger.info("DRY RUN MODE - No output file will be written")
     logger.info("=" * 60)
@@ -383,6 +571,9 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         # Process files
         processed = 0
         for json_file in json_files:
+            if limit and processed >= limit:
+                break
+
             results = process_json_file(json_file, field_name, output_format='yaml')
 
             for book_code, chapter, verse, value in results:
@@ -463,12 +654,15 @@ def extract_feature(field_name, source_dir=None, max_per_value=2000, output_form
         total_files = len(json_files)
 
         for idx, json_file in enumerate(json_files, 1):
+            if limit and (idx - 1) >= limit:
+                break
+
             # Progress indicator
             if idx % 100 == 0 or idx == total_files:
                 logger.info(f"Processing: {idx}/{total_files} files ({idx*100//total_files}%)")
 
             try:
-                results = process_json_file(json_file, field_name, output_format='jsonl')
+                results = process_json_file(json_file, field_name, output_format='jsonl', with_text=with_text, with_strongs=with_strongs)
                 all_annotations.extend(results)
                 file_count += 1
             except Exception as e:
@@ -513,6 +707,7 @@ Examples:
   # Extract to JSONL (for ML pipelines)
   python extract_feature.py --field Number --format jsonl --output number.jsonl
   python extract_feature.py --field Person --format jsonl --source-dir /path/to/tbta
+  python extract_feature.py --field Number --format jsonl --limit 100 --output sample.jsonl
 
   # Dry run to see statistics
   python extract_feature.py --field Gender --dry-run
@@ -552,6 +747,21 @@ Examples:
         help="Show statistics without writing output"
     )
     parser.add_argument(
+        "--with-text",
+        action="store_true",
+        help="Include reconstructed clause text with highlighted word (JSONL only)"
+    )
+    parser.add_argument(
+        "--with-strongs",
+        action="store_true",
+        help="Include Strong's codes from macula dataset (JSONL only, requires .data/commentary)"
+    )
+    parser.add_argument(
+        "--limit",
+        type=int,
+        help="Maximum number of files to process (for testing)"
+    )
+    parser.add_argument(
         "--verbose",
         action="store_true",
         help="Enable verbose logging"
@@ -568,13 +778,21 @@ Examples:
         logger.error("PyYAML is required for YAML output. Install with: pip install pyyaml")
         sys.exit(1)
 
+    # Check macula availability if strongs requested
+    if args.with_strongs and not MACULA_AVAILABLE:
+        logger.warning("--with-strongs requested but macula cache not available")
+        logger.warning("Ensure .data/commentary has macula YAML files")
+    
     # Extract feature
     result = extract_feature(
         args.field,
         source_dir=args.source_dir,
         max_per_value=args.max_per_value,
         output_format=args.format,
-        dry_run=args.dry_run
+        dry_run=args.dry_run,
+        with_text=args.with_text,
+        with_strongs=args.with_strongs,
+        limit=args.limit
     )
 
     # Output

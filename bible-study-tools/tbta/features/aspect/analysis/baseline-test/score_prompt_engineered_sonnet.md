@@ -1,0 +1,82 @@
+# Baseline Analysis Report
+
+- **Accuracy**: 26.0%
+- **Correct**: 26/100
+
+## Errors
+| Line | Verse | Predicted | Actual |
+|------|-------|-----------|--------|
+| 1 | MRK-008-016 | Imperfective | Inceptive |
+| 2 | JHN-004-030 | Completive | Inceptive |
+| 3 | 1SA-014-017 | Completive | Unmarked |
+| 4 | JOS-024-022 | Unmarked | Imperfective |
+| 6 | JOS-023-001 | Completive | Cessative |
+| 8 | JHN-006-043 | Imperfective | Cessative |
+| 9 | 2SA-022-025 | Completive | Unmarked |
+| 10 | EXO-005-011 | Unmarked | Continuative |
+| 12 | COL-001-009 | Continuative | Cessative |
+| 14 | JDG-020-023 | Unmarked | Continuative |
+| 15 | 1SA-023-027 | Completive | Imperfective |
+| 16 | JOS-018-006 | Unmarked | Completive |
+| 17 | GEN-014-005 | Completive | Inceptive |
+| 18 | EPH-004-025 | Unmarked | Cessative |
+| 20 | EPH-001-006 | Unmarked | Gnomic |
+| 21 | MAT-011-005 | Gnomic | Inceptive |
+| 22 | GEN-040-009 | Completive | Routinely |
+| 23 | LUK-023-023 | Imperfective | Continuative |
+| 24 | LUK-001-048 | Habitual | Unmarked |
+| 26 | PRO-010-003 | Gnomic | Continuative |
+| 27 | GEN-024-054 | Completive | Unmarked |
+| 28 | NEH-004-004 | Unmarked | Imperfective |
+| 29 | PHP-004-002 | Unmarked | Imperfective |
+| 31 | 1SA-004-014 | Unmarked | Imperfective |
+| 32 | 1KI-020-028 | Completive | Unmarked |
+| 33 | GEN-035-010 | Completive | Cessative |
+| 35 | JDG-011-029 | Completive | Unmarked |
+| 36 | MAT-024-025 | Completive | Imperfective |
+| 37 | MAT-013-001 | Completive | Unmarked |
+| 38 | PRO-014-015 | Gnomic | Unmarked |
+| 39 | 2SA-010-009 | Completive | Unmarked |
+| 40 | 2SA-001-022 | Habitual | Unmarked |
+| 41 | 1KI-003-022 | Imperfective | Unmarked |
+| 42 | HAB-001-013 | Unmarked | Imperfective |
+| 44 | GEN-045-028 | Unmarked | Imperfective |
+| 46 | 1SA-018-009 | Continuative | Inceptive |
+| 47 | GEN-014-022 | Completive | Unmarked |
+| 48 | JDG-018-022 | Completive | Inceptive |
+| 49 | GEN-007-015 | Completive | Unmarked |
+| 50 | JHN-003-025 | Completive | Inceptive |
+| 51 | PRO-003-018 | Gnomic | Habitual |
+| 53 | 2SA-010-017 | Completive | Unmarked |
+| 55 | 2SA-021-015 | Completive | Inceptive |
+| 56 | JDG-020-032 | Completive | Unmarked |
+| 58 | MAT-026-016 | Imperfective | Inceptive |
+| 61 | 2SA-021-014 | Completive | Inceptive |
+| 62 | MAT-010-014 | Completive | Unmarked |
+| 63 | MAT-009-013 | Unmarked | Routinely |
+| 65 | 1SA-017-004 | Completive | Inceptive |
+| 66 | PRO-006-014 | Routinely | Unmarked |
+| 67 | GEN-038-014 | Completive | Routinely |
+| 69 | EXO-013-018 | Completive | Unmarked |
+| 70 | 2SA-016-011 | Unmarked | Imperfective |
+| 72 | MAT-013-019 | Completive | Unmarked |
+| 73 | LUK-015-024 | Unmarked | Inceptive |
+| 75 | NEH-001-011 | Completive | Routinely |
+| 76 | MAT-004-016 | Completive | Inceptive |
+| 78 | MRK-004-014 | Unmarked | Imperfective |
+| 81 | GEN-030-036 | Completive | Continuative |
+| 82 | 2SA-003-001 | Imperfective | Continuative |
+| 83 | GEN-026-027 | Completive | Unmarked |
+| 84 | RUT-002-021 | Unmarked | Completive |
+| 86 | ACT-002-001 | Completive | Inceptive |
+| 87 | PRO-010-012 | Gnomic | Unmarked |
+| 88 | ACT-002-003 | Completive | Continuative |
+| 91 | GEN-049-005 | Habitual | Routinely |
+| 92 | 2SA-022-033 | Completive | Routinely |
+| 93 | EXO-022-010 | Unmarked | Imperfective |
+| 94 | JOL-002-023 | Completive | Routinely |
+| 95 | EPH-002-007 | Unmarked | Gnomic |
+| 96 | 2SA-007-011 | Completive | Cessative |
+| 97 | JHN-006-065 | Completive | Unmarked |
+| 98 | JOS-022-029 | Unmarked | Imperfective |
+| 99 | MRK-004-017 | Unmarked | Cessative |

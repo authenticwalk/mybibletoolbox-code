@@ -1,0 +1,598 @@
+patterns:
+  - name: Pronoun Resolution with Parenthetical Referents
+    category: Pronoun/coreference
+    description: |
+      Pronouns (he, she, they, you, we, I) are disambiguated with parenthetical references
+      showing the explicit antecedent. Pattern: pronoun(referent)
+    transformation: "NIV implicit pronouns → CNL pronoun(antecedent)"
+    phase: Both
+    examples:
+      - ref: Genesis 39:5
+        pattern: "Yahweh blessed the people [who were in Potiphar's house] because of Joseph"
+      - ref: 2 Samuel 3:36
+        pattern: "All of those people heard [David make that promise]"
+      - ref: Nehemiah 9:17
+        pattern: "you(Yahweh) did for our(Nehemiah's) ancestors"
+      - ref: Matthew 23:39
+        pattern: "I(Jesus) tell you(Jerusalem)"
+      - ref: Acts 18:5
+        pattern: "Paul told those people [that Jesus is the Christ]"
+    variations: |
+      - First person: I(speaker), me(speaker), my(speaker's), we(group), us(group), our(group's)
+      - Second person: you(addressee), your(addressee's)
+      - Third person: he(name), she(name), they(group), those people
+
+  - name: Embedded Relative Clause Bracketing
+    category: Clause segmentation
+    description: |
+      Relative clauses and modifying phrases are enclosed in square brackets.
+      Creates explicit hierarchical structure showing clause embedding levels.
+    transformation: "NIV embedded clauses → CNL [bracketed clauses] with nesting"
+    phase: Both
+    examples:
+      - ref: Genesis 39:5
+        pattern: "[While Joseph was the leader of all the people [who worked in Potiphar's house]]"
+      - ref: 2 Samuel 22:18
+        pattern: "the people [who fight me(David)]"
+      - ref: Nehemiah 9:17
+        pattern: "all of the things [that only you(Yahweh) are able [to do]]"
+      - ref: Matthew 23:39
+        pattern: "the person [who comes in-H the name of the Lord]"
+      - ref: Acts 15:12
+        pattern: "Paul and Barnabas told those people [that God helped [Paul and Barnabas do things]]"
+    variations: |
+      - Nested up to 3-4 levels deep
+      - Relative pronouns: [who...], [that...], [which...]
+      - Temporal/conditional: [When...], [If...], [While...], [After...]
+
+  - name: Implicit Information Markers
+    category: Implicit info markers
+    description: |
+      Information not explicit in the source text but necessary for understanding
+      is marked with (implicit-info), _implicit, _implicitNecessary, etc.
+    transformation: "NIV unstated assumptions → CNL (implicit-info) or _implicit markers"
+    phase: Both
+    examples:
+      - ref: 2 Samuel 4:22
+        pattern: "Those people were too strong. I(David) (implicit-info) was not able [to defeat those people]"
+      - ref: 2 Samuel 9:5
+        pattern: "At that time (implicit-info) important people often had many wives"
+      - ref: Ruth 3:4
+        pattern: "Boaz (implicit-info) will know [that you(Ruth) want [Boaz to take care of you(Ruth)]]"
+      - ref: Mark 6:21
+        pattern: "[After Jesus and Jesus's followers/disciples went across the lake _implicitNecessary,]"
+      - ref: Matthew 10:42
+        pattern: "God said to Abraham, [\"(implicit-background) which is Jerusalem\"]"
+    variations: |
+      - (implicit-info): cultural background or unstated premise
+      - _implicit: elided but recoverable from context
+      - _implicitNecessary: required for clarity
+      - _implicitActiveAgent: passive voice agent
+      - (implicit-situational): contextually obvious
+      - (implicit-subaction): subsidiary action
+
+  - name: Title and Paragraph Markers
+    category: Title/paragraph markers
+    description: |
+      Section titles and paragraph breaks are explicitly marked with (title) and (paragraph) tags.
+    transformation: "NIV section headings → CNL (title) ... (paragraph)"
+    phase: He2-only
+    examples:
+      - ref: 1 Samuel 28:1
+        pattern: "(title) Saul talks to a woman/witch at Endor."
+      - ref: Mark 6:21
+        pattern: "(paragraph) [After Jesus and Jesus's followers/disciples went across the lake]"
+      - ref: Matthew 9:14
+        pattern: "(title) The followers/disciples ask Jesus about people [who fast]. _paragraph"
+      - ref: Mark 5:1
+        pattern: "(title) Jesus forces [evil spirits/demons to leave a man]. (paragraph)"
+      - ref: Matthew 18:15
+        pattern: "(title) Jesus talks about friends/brothers-D [who sin] and sisters-D _implicit [who sin]. _paragraph"
+    variations: |
+      - (title) at section start
+      - (paragraph) or _paragraph for new paragraph
+      - Multiple titles in longer sections
+
+  - name: Quote Frame Insertion
+    category: Quote framing
+    description: |
+      Direct speech is framed with explicit quotation attribution and brackets for quote content.
+      Pattern: Speaker said, ["quote content"]
+    transformation: "NIV dialogue → CNL Speaker said to Addressee, [\"quote\"]"
+    phase: Both
+    examples:
+      - ref: 2 Samuel 18:10
+        pattern: "that soldier said to Joab, [\"I(soldier) saw [Absalom hanging in an oak tree].\"]"
+      - ref: Mark 16:7
+        pattern: "you(women) (imp) tell Jesus's disciples and Peter, [\"Jesus is going to Galilee\"]"
+      - ref: Nehemiah 4:14
+        pattern: "I(Nehemiah) said to the leaders, the officials, and all of the other people, [\"You(people) (imp) do not be afraid\"]"
+      - ref: Genesis 24:4
+        pattern: "Abraham said, [\"You(servant) (imp) return to the country\"]"
+      - ref: Genesis 45:5
+        pattern: "You(brothers) (imp) do not be afraid"
+    variations: |
+      - Nested quotes: outer ["...inner [\"...\"]..."]
+      - Multiple addressees specified
+      - Quote attribution precedes or follows content
+
+  - name: Imperative Mood Marking
+    category: Imperatives
+    description: |
+      Imperative verbs are explicitly marked with (imp) tag to distinguish commands from statements.
+    transformation: "NIV imperatives → CNL (imp) verb"
+    phase: Both
+    examples:
+      - ref: Mark 16:7
+        pattern: "you(women) (imp) go. And you(women) (imp) tell Jesus's disciples"
+      - ref: Nehemiah 4:14
+        pattern: "You(people) (imp) do not be afraid. You(people) (imp) remember. You(people) (imp) fight"
+      - ref: Genesis 24:4
+        pattern: "You(servant) (imp) return to the country"
+      - ref: Genesis 45:5
+        pattern: "You(brothers) (imp) do not be afraid. You(brothers) (imp) do not be angry"
+      - ref: Joshua 7:14
+        pattern: "all of you(people) must stand in-front-of Yahweh"
+    variations: |
+      - Positive commands: (imp) do X
+      - Negative commands: (imp) do not do X
+      - Modal must/should without (imp) tag
+
+  - name: Temporal and Sequential Clause Ordering
+    category: Clause segmentation
+    description: |
+      Temporal relationships made explicit with bracketed clauses showing sequence.
+      Pattern: [When X], then Y. [After X], Y.
+    transformation: "NIV temporal flow → CNL [temporal clause], main clause"
+    phase: Both
+    examples:
+      - ref: Genesis 7:16
+        pattern: "[just-like God promised Noah]. Then God closed the door"
+      - ref: 2 Samuel 18:10
+        pattern: "[When that man arrived in Shiloh] Eli was sitting"
+      - ref: Mark 4:34
+        pattern: "[when Jesus was alone with Jesus's disciples] Jesus explained"
+      - ref: Acts 18:5
+        pattern: "[When Silas and Timothy arrived at that place from the nation named Macedonia,] Paul preached"
+      - ref: Genesis 31:21
+        pattern: "Jacob traveled across the Euphrates. Then Jacob traveled toward the mountains"
+    variations: |
+      - [When...], then...
+      - [After...], Y
+      - [While...], X
+      - [Before...], Y
+      - Sequential: X. Then Y. Later Z.
+
+  - name: Deixis and Demonstrative Expansion
+    category: Deixis marking
+    description: |
+      Demonstratives (this, that, these, those) are often expanded with explicit referents.
+      Pattern: that X, those Y [with identifying clause]
+    transformation: "NIV bare demonstratives → CNL that/those + noun + [identifying clause]"
+    phase: Both
+    examples:
+      - ref: 2 Samuel 3:36
+        pattern: "All of those people heard [David make that promise]. And that promise pleased those people"
+      - ref: 2 Samuel 22:18
+        pattern: "Those people were too strong"
+      - ref: Acts 15:12
+        pattern: "Then all those people stopped talking"
+      - ref: Acts 17:22
+        pattern: "Paul stood among those people [who were at the place named Areopagus]"
+      - ref: Esther 8:4
+        pattern: "Then Esther stood up. and Esther stood in front of the king"
+    variations: |
+      - that X [identifying clause]
+      - those people [who...]
+      - this thing [that...]
+      - these men [that...]
+
+  - name: Name Introduction with Apposition
+    category: Name introductions
+    description: |
+      Personal names are introduced with explicit role/relationship markers using "named" pattern.
+      Pattern: person [who is] named Name or role named Name
+    transformation: "NIV name mentions → CNL role named Name or person named Name"
+    phase: Both
+    examples:
+      - ref: 1 Samuel 28:1
+        pattern: "Achish said to David"
+      - ref: Mark 6:21
+        pattern: "the region named Gennesaret"
+      - ref: Genesis 10:18
+        pattern: "Canaan was also the ancestor of the Arvadite, Zemarite, and Hamathite"
+      - ref: Nehemiah 3:24
+        pattern: "A man named Binnui [who was a son of Henadad]"
+      - ref: Genesis 31:18
+        pattern: "the house of Jacob's father named Isaac"
+    variations: |
+      - person named X
+      - city/region named Y
+      - son/daughter named Z
+      - tribe named W
+      - Name [who was relationship]
+
+  - name: Bracket Convention for Comments and Asides
+    category: Bracket conventions
+    description: |
+      Parenthetical comments, explanations, and footnotes use specific bracket types.
+      (comment-begin) ... (comment-end), (footnote), (literal)/(dynamic)
+    transformation: "NIV editorial notes → CNL (comment-begin)...(comment-end) or (footnote)"
+    phase: He2-only
+    examples:
+      - ref: Matthew 27:33
+        pattern: "(comment-begin) Golgotha means-C the place of the bones of a person's head. (comment-end)"
+      - ref: Mark 3:16
+        pattern: "(comment-begin) Jesus named Simon Peter. (comment-end)"
+      - ref: Matthew 10:42
+        pattern: "(footnote) You(people) (imp) see Psalms 118:26"
+      - ref: Mark 9:44
+        pattern: "(footnote) Most manuscripts of this part of the Scriptures do not include verse 44"
+      - ref: Mark 5:39
+        pattern: "(literal) [\"Daughter, your(woman's) faith healed you(woman)\"]). (simple) [\"Daughter, you(woman) were healed by me(Jesus)\"]"
+    variations: |
+      - (comment-begin) ... (comment-end): explanatory note
+      - (footnote): cross-reference or textual note
+      - (literal)/(dynamic): translation alternatives
+      - (complex)/(simple): different complexity renderings
+
+  - name: Vocabulary L2 Pairing with Glosses
+    category: Vocabulary L2 pairings
+    description: |
+      Source language terms or cultural vocabulary paired with L2 explanations.
+      Pattern: term means-C explanation, or X _descriptive which is Y
+    transformation: "NIV cultural terms → CNL term + gloss or explanation marker"
+    phase: Both
+    examples:
+      - ref: Matthew 27:33
+        pattern: "Golgotha means-C the place of the bones of a person's head"
+      - ref: Genesis 26:50
+        pattern: "Rehoboth means enough land"
+      - ref: Mark 7:11
+        pattern: "Corban (implicit-situational) _descriptive is a Hebrew word. Corban means-C a gift [that is for God]"
+      - ref: Mark 7:1
+        pattern: "religious _implicit laws/Law"
+      - ref: Matthew 2:6
+        pattern: "Bethlehem of people _metonymy"
+    variations: |
+      - X means-C Y
+      - X _descriptive which is Y
+      - X of Y _metonymy
+      - X _implicit (supplies implicit word)
+      - term [(implicit-situational) explanation]
+
+  - name: Passive to Active Voice with Agent Marking
+    category: Grammar
+    description: |
+      Passive constructions converted to active or marked with _implicitActiveAgent.
+      Pattern: action by Agent _implicitActiveAgent
+    transformation: "NIV passive voice → CNL active voice or passive + by Agent _implicitActiveAgent"
+    phase: He2-only
+    examples:
+      - ref: Matthew 9:30
+        pattern: "(literal) And those men's eyes were opened by Jesus _implicitActiveAgent. (dynamic) And those men became able [to see things] again"
+      - ref: Mark 5:39
+        pattern: "(simple) you(woman) were healed by me(Jesus) _implicitActiveAgent [because you(woman) believed in me(Jesus) _implicit]"
+      - ref: Matthew 14:11
+        pattern: "John's head was brought by that soldier _implicitActiveAgent on a big plate"
+      - ref: Mark 16:16
+        pattern: "A person [who is dipped/baptize into water by a person _implicitActiveAgent]"
+      - ref: Matthew 27:8
+        pattern: "that field is still called by people _implicitActiveAgent the field of blood"
+    variations: |
+      - by Agent _implicitActiveAgent
+      - passive → active reformulation
+      - (literal) passive / (dynamic) active pair
+
+  - name: Rhetorical Question Tagging
+    category: Quote framing
+    description: |
+      Rhetorical questions explicitly tagged as (rhetorical) with statement equivalent.
+      Pattern: (rhetorical) Question? (statement) Equivalent statement.
+    transformation: "NIV rhetorical questions → CNL (rhetorical) question + (statement) answer"
+    phase: He2-only
+    examples:
+      - ref: Matthew 12:23
+        pattern: "(rhetorical) [\"Is-V it possible [this person is the Son-of-David]?\"] (statement) Those people said [\"Perhaps this person is the Son-of-David!\"]"
+      - ref: Matthew 9:14
+        pattern: "(rhetorical) So _implicit why do your(Jesus's) followers/disciples not fast? (statement) So _implicit your(Jesus's) followers/disciples should also _implicit fast"
+      - ref: Mark 5:34
+        pattern: "(rhetorical) Why should you(Jairus) continue to annoy/bother the teacher? (statement) You(Jairus) should not continue annoying/bother the teacher"
+      - ref: Matthew 24:45
+        pattern: "(rhetorical) Who is a faithful and wise servant-A? (statement) A master might appoint a faithful and wise servant-A"
+      - ref: Matthew 19:4
+        pattern: "(yesrhetorical) Did you(Pharisees) read in the Scriptures? (statement) You(Pharisees) read _past in the Scriptures"
+    variations: |
+      - (rhetorical) Question? (statement) Answer.
+      - (yesrhetorical) Yes-question? (statement) Affirmative.
+      - (norhetorical) No-question? (statement) Negative.
+
+  - name: Genitive and Possessive Expansion
+    category: Grammar
+    description: |
+      Possessive constructions expanded to show explicit relationships.
+      Pattern: X's Y, Y of X, or X [who owns/has Y]
+    transformation: "NIV compact genitives → CNL explicit possessive with pronoun reference"
+    phase: Both
+    examples:
+      - ref: 2 Samuel 22:18
+        pattern: "my(David's) powerful enemy"
+      - ref: Nehemiah 9:17
+        pattern: "our(Nehemiah's) ancestors"
+      - ref: Genesis 31:18
+        pattern: "the house of Jacob's father"
+      - ref: 2 Samuel 13:24
+        pattern: "my(Absalom's) sheep"
+      - ref: Genesis 24:4
+        pattern: "the son of me(Abraham)"
+    variations: |
+      - my(person's) X
+      - your(person's) Y
+      - X of Y
+      - X's Y expanded to the Y of X
+
+  - name: Conditional Clause Explicit Bracketing
+    category: Clause segmentation
+    description: |
+      Conditional relationships explicitly bracketed with [If...] or [When...] protasis.
+      Pattern: [If condition], consequence. [When condition], result.
+    transformation: "NIV conditionals → CNL [If/When bracketed condition], result"
+    phase: Both
+    examples:
+      - ref: Genesis 45:5
+        pattern: "[if you(brothers) come with me(Naomi)] you(brothers) also will be very sad"
+      - ref: Ruth 3:4
+        pattern: "[When Boaz lies down] you(Ruth) (imp) watch Boaz carefully"
+      - ref: Mark 4:34
+        pattern: "[when Jesus was alone with Jesus's disciples] Jesus explained"
+      - ref: Acts 16:38
+        pattern: "[When the officials heard [that Paul and Silas were citizens of Rome]], the officials were shocked"
+      - ref: Matthew 21:46
+        pattern: "[because the people _frameInferable thought [Jesus was a prophet]]"
+    variations: |
+      - [If X], then Y
+      - [When X], Y
+      - [because X], Y
+      - [although X], Y
+      - [Unless X], Y
+
+  - name: Metonymy and Figure Tagging
+    category: Vocabulary L2 pairings
+    description: |
+      Figurative language tagged with markers like _metonymy, _descriptive, _inLDV.
+      Pattern: term _metonymy or phrase _descriptive
+    transformation: "NIV figurative language → CNL literal + _metonymy/_descriptive tag"
+    phase: Both
+    examples:
+      - ref: Matthew 2:6
+        pattern: "Bethlehem of people _metonymy [which is in the land of Judah]"
+      - ref: Matthew 18:16
+        pattern: "the church of the leaders _metonymy"
+      - ref: Mark 7:7
+        pattern: "These people honor/worship me(God) without a purpose _inLDV"
+      - ref: Mark 9:20
+        pattern: "that boy rolled _inLDV on the ground"
+      - ref: Matthew 26:57
+        pattern: "Caiaphas of the house _metonymy"
+    variations: |
+      - X _metonymy: metonymic usage
+      - X _descriptive: descriptive/attributive
+      - X _inLDV: language-specific idiom
+      - X _frameInferable: frame-based inference
+
+  - name: Coptic Dual and Trial Marking
+    category: Grammar
+    description: |
+      Dual (two) and trial (three) number marked with _dual and _trial tags.
+      Pattern: those X _dual or these Y _trial
+    transformation: "NIV plural with dual/trial meaning → CNL _dual or _trial marker"
+    phase: He2-only
+    examples:
+      - ref: Matthew 18:16
+        pattern: "2 or 3 friends/brothers-D or sisters-D _trial"
+      - ref: Matthew 18:16
+        pattern: "those friends/brothers-D or sisters-D will be able [to tell/testify"
+      - ref: Matthew 5:17
+        pattern: "the religious _implicit laws/Law and the things [that the prophets said]]. I(Jesus) did not come [in order to end those things _dual]"
+    variations: |
+      - X _dual (referring to two entities)
+      - Y _trial (referring to three entities)
+      - Explicit number + _dual/_trial
+
+  - name: Frame-Based Inference Marking
+    category: Implicit info markers
+    description: |
+      Information inferable from cultural/situational frames marked with _frameInferable.
+      Pattern: action _frameInferable or entity _frameInferable
+    transformation: "NIV culturally obvious → CNL explicit + _frameInferable"
+    phase: He2-only
+    examples:
+      - ref: Matthew 21:46
+        pattern: "[because the people _frameInferable thought [Jesus was a prophet]]"
+      - ref: Mark 9:20
+        pattern: "So the people _frameInferable brought that boy to Jesus"
+      - ref: Mark 13:35
+        pattern: "the master-A of the house will return"
+      - ref: Matthew 13:2
+        pattern: "Jesus sat in that boat [while all the people stood on the shore]"
+      - ref: Matthew 20:19
+        pattern: "those people/workers also received 1 denarius"
+    variations: |
+      - people _frameInferable (contextually obvious group)
+      - action _frameInferable (culturally expected action)
+      - X [just-like culturally expected pattern]
+
+  - name: Alternative Renderings with (alt) Tag
+    category: Bracket conventions
+    description: |
+      Alternative translations or interpretations provided with (alt) marker.
+      Pattern: primary rendering. (alt) alternative rendering.
+    transformation: "NIV single rendering → CNL primary + (alt) alternative"
+    phase: Both
+    examples:
+      - ref: Acts 15:36
+        pattern: "So (alt) you (Jews) do not (imp) cause [God to be angry] [by giving a difficult rule to people]"
+      - ref: Acts 15:9
+        pattern: "God (alt) took away the punishment for the sins of those people"
+    variations: |
+      - Main text. (alt) alternative
+      - (literal) X / (dynamic) Y pairs
+      - (complex) / (simple) pairs
+
+  - name: Multi-Level Bracket Nesting for Complex Syntax
+    category: Clause segmentation
+    description: |
+      Complex sentences with 3-4 levels of embedded clauses using nested brackets.
+      Pattern: [outer [middle [inner clause]]]
+    transformation: "NIV complex syntax → CNL deeply nested [[[clauses]]]"
+    phase: Both
+    examples:
+      - ref: Nehemiah 9:17
+        pattern: "our(Nehemiah's) ancestors forgot all of the things [that only you(Yahweh) are able [to do]] [that you(Yahweh) did for our(Nehemiah's) ancestors]"
+      - ref: Acts 15:12
+        pattern: "Paul and Barnabas told those people [that God helped [Paul and Barnabas do things [while Paul and Barnabas were with those people [who are not Jews]]]]"
+      - ref: Matthew 23:39
+        pattern: "you(Jerusalem) will not see me(Jesus) again [until you(Jerusalem) say again _implicit, [\"God _implicitNecessary does _implicitNecessary good things for the person [who comes in-H the name of the Lord]]]"
+      - ref: Daniel 1:4
+        pattern: "Nebuchadnezzar wanted [Ashpenaz to bring men [who were healthy and handsome]]. And Nebuchadnezzar wanted [Ashpenaz to bring men [who were wise] and men [who were able [to learn things quickly]]]"
+    variations: |
+      - 2 levels: [outer [inner]]
+      - 3 levels: [outer [middle [inner]]]
+      - 4 levels: [outer [middle [inner [innermost]]]]
+      - Mixed clause types at different levels
+
+  - name: Iterative Action Marking
+    category: Grammar
+    description: |
+      Repeated or iterative actions marked with iteration count.
+      Pattern: action -iteration N times
+    transformation: "NIV repetition → CNL action -iteration count"
+    phase: Both
+    examples:
+      - ref: Genesis 31:7
+        pattern: "your(Rachel's) father changed -iteration 10 times"
+    variations: |
+      - action -iteration N times
+      - Numerical specificity for iterations
+
+  - name: Person Deixis Shift Marking
+    category: Deixis marking
+    description: |
+      First-person self-reference in third person marked with _1stas3rd.
+      Pattern: the Son-of-Man _1stas3rd (referring to speaker)
+    transformation: "NIV third-person self-reference → CNL _1stas3rd marker"
+    phase: He2-only
+    examples:
+      - ref: Matthew 25:13
+        pattern: "the Son-of-Man _1stas3rd will return"
+      - ref: Mark 14:21
+        pattern: "the Son-of-man _1stas3rd will die"
+    variations: |
+      - X _1stas3rd (first person in third person form)
+
+  - name: Hyperbolic Quantification Marking
+    category: Grammar
+    description: |
+      Hyperbolic "all" or universal quantifiers marked with _hyperbolic.
+      Pattern: all _hyperbolic X
+    transformation: "NIV universal quantifiers → CNL all _hyperbolic when non-literal"
+    phase: Both
+    examples:
+      - ref: Matthew 21:26
+        pattern: "For all _hyperbolic the people _frameInferable think-C [John was a prophet]"
+      - ref: Mark 1:5
+        pattern: "All _hyperbolic of the people [who lived in Judea named region _implicit] and all _hyperbolic of the people [who lived in Jerusalem]"
+    variations: |
+      - all _hyperbolic X
+      - every _hyperbolic Y
+
+  - name: Comparative and Superlative Suffix Marking
+    category: Grammar
+    description: |
+      Comparative and superlative forms marked with suffixes like -A, -B, -C, -D.
+      Pattern: good-A, better-B, best-C or word-A vs word-B
+    transformation: "NIV unmarked comparatives → CNL word-suffix for tracking"
+    phase: He2-only
+    examples:
+      - ref: Matthew 12:2
+        pattern: "the religious laws _implicitNecessary do not allow"
+      - ref: Mark 10:42
+        pattern: "the rulers of the people [who are not Jews] like-B [showing-B those people]"
+      - ref: Matthew 6:25
+        pattern: "Is life-B more important than food?"
+    variations: |
+      - word-A, word-B, word-C (tracking different instances)
+      - Comparative/superlative degree marking
+
+metadata:
+  corpus: chunk-am.tsv
+  total_verses: 500
+  he1_books:
+    - Ruth
+    - Jonah
+    - Genesis
+    - Joshua
+    - 1_Samuel
+    - 2_Samuel
+    - Nehemiah
+    - Esther
+    - Daniel
+    - Nahum
+  he2_books:
+    - Matthew
+    - Mark
+    - Acts
+    - Titus
+    - Philemon
+    - 2_John
+  analysis_date: 2025-12-02
+
+phase_distribution:
+  he1_only_patterns:
+    - None identified (most patterns appear in both phases)
+  he2_only_patterns:
+    - Title and Paragraph Markers
+    - Rhetorical Question Tagging
+    - Passive to Active Voice with Agent Marking
+    - Coptic Dual and Trial Marking
+    - Frame-Based Inference Marking
+    - Person Deixis Shift Marking
+    - Comparative and Superlative Suffix Marking
+  both_phases:
+    - Pronoun Resolution with Parenthetical Referents
+    - Embedded Relative Clause Bracketing
+    - Implicit Information Markers
+    - Quote Frame Insertion
+    - Imperative Mood Marking
+    - Temporal and Sequential Clause Ordering
+    - Deixis and Demonstrative Expansion
+    - Name Introduction with Apposition
+    - Vocabulary L2 Pairing with Glosses
+    - Genitive and Possessive Expansion
+    - Conditional Clause Explicit Bracketing
+    - Metonymy and Figure Tagging
+    - Alternative Renderings
+    - Multi-Level Bracket Nesting
+    - Iterative Action Marking
+    - Hyperbolic Quantification Marking
+
+observations:
+  - |
+    He1 (Hebrew Bible) verses show consistent pronoun disambiguation and clause
+    bracketing but lack the metalinguistic markers (title, paragraph, rhetorical tags)
+    that appear in He2 (Greek NT/NT-era).
+  - |
+    He2 verses show more sophisticated grammatical analysis including passive voice
+    conversion, rhetorical question marking, and frame-based inference tagging.
+  - |
+    Both phases use extensive bracket nesting (3-4 levels) for complex embedded clauses.
+  - |
+    Implicit information marking is pervasive in both phases but with different subtypes:
+    He1 uses more (implicit-info) for cultural background; He2 uses _frameInferable
+    for situational inference.
+  - |
+    Imperative marking with (imp) is consistent across both phases, distinguishing
+    commands from statements.
+  - |
+    Vocabulary glosses and L2 pairings appear in both but He2 shows more explicit
+    metalinguistic tagging (e.g., _metonymy, _descriptive).

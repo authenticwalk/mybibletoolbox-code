@@ -1,0 +1,13 @@
+feature: Mood
+total_annotations: 72089
+distribution:
+  Indicative: 70079
+  '''must'' Obligation': 633
+  '''should'' Obligation': 567
+  '''might'' Potential': 367
+  '''should not'' Obligation': 158
+  '''may'' (permissive)': 150
+  Forbidden Obligation: 121
+  Definite Potential: 8
+  Probable Potential: 5
+  Unlikely Potential: 1

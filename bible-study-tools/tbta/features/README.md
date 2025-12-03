@@ -4,6 +4,7 @@ This directory contains all TBTA (Translation-Based Text Analysis) features for 
 
 ## Development Methodology
 
+<<<<<<< HEAD
 All features follow the authoritative **6-stage development methodology** documented in [STAGES.md](STAGES.md):
 
 1. **Research TBTA Documentation** - Review official TBTA docs and existing analyses
@@ -14,11 +15,16 @@ All features follow the authoritative **6-stage development methodology** docume
 6. **Test Against Validate Set & Peer Review** - Blind validation and critical peer reviews
 
 See [TEMPLATE.md](TEMPLATE.md) for the feature development template and [STAGES.md](STAGES.md) for complete methodology details.
+=======
+All features follow the authoritative .instructions-to-build-feature
+
+>>>>>>> origin/feat/self-learning-tbta
 
 ## Features Overview
 
 ### Grammatical Features
 
+<<<<<<< HEAD
 - **[aspect](aspect/)** - Grammatical aspect (perfective, imperfective, etc.)
 - **[degree](degree/)** - Degree of comparison or intensity
 - **[mood](mood/)** - Grammatical mood (indicative, subjunctive, imperative, etc.)
@@ -65,6 +71,53 @@ All 14 features have completed **Stage 1: Research & Definition**.
 | [surface-realization](surface-realization/) | Surface | Voice and surface patterns | ✅ Stage 1 |
 
 **Next**: Stage 2 (Generate Test Set) for all features.
+=======
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [aspect](aspect/) | Perfective, imperfective, progressive, habitual | 2.1 ✅ | Yes |
+| [degree](degree/) | Comparative, superlative, intensified | 2.1 ✅ | Yes |
+| [mood](mood/) | Indicative, subjunctive, imperative, etc. | 2.1 ✅ | Yes |
+| [number-systems](number-systems/) | Singular, dual, trial, plural | 2.1 ✅ | Yes |
+| [person-system](person-system/) | 1st/2nd/3rd person + clusivity | 2.1 ✅ | Yes |
+| [polarity](polarity/) | Affirmative vs negative | 2.1 ✅ | Yes |
+| [reflexivity](reflexivity/) | Reflexive vs reciprocal | 2.1 ✅ | Yes (limited) |
+
+### Semantic Features
+
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [semantic-role](semantic-role/) | Agent, patient, source, destination, etc. | 2.1 ✅ | Yes |
+
+### Discourse Features
+
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [discourse-genre](discourse-genre/) | Narrative, poetry, prophecy, epistolary | 2.1 ✅ | Yes |
+| [illocutionary-force](illocutionary-force/) | Declarative, interrogative, imperative | 2.1 ✅ | Yes |
+| [participant-tracking](participant-tracking/) | First mention, routine, exiting, restaging | 2.1 ✅ | Yes |
+| [honorifics-register](honorifics-register/) | Social register and honorific language | - | No TBTA data |
+| [topic-np](topic-np/) | Topic-prominent language features | - | No TBTA data |
+
+### Spatial & Temporal Features
+
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [proximity-system](proximity-system/) | Near/far spatial and temporal deixis | 2.1 ✅ | Yes |
+| [time-granularity](time-granularity/) | Temporal precision (today, yesterday, etc.) | 2.1 ✅ | Yes |
+
+### Surface Features
+
+| Feature | Description | Stage | TBTA Data |
+|---------|-------------|-------|-----------|
+| [surface-realization](surface-realization/) | Noun, pronoun, zero, clitic | 2.1 ✅ | Yes |
+
+## Development Status
+
+**14 features** with TBTA data have completed Stage 2.1 (Analysis Dataset).
+**2 features** (honorifics-register, topic-np) have no TBTA data available.
+
+Previous work archived in [.features-archive/](.features-archive/).
+>>>>>>> origin/feat/self-learning-tbta
 
 ## Key Principles
 
@@ -99,10 +152,18 @@ Features are production-ready only when:
 - ✅ Real-world testing with both marking and non-marking languages
 - ✅ Translation teams would recommend using this data
 
+<<<<<<< HEAD
+=======
+## Archive
+
+Previous feature implementations are available in [features-archive/](features-archive/) for reference. These contain valuable learnings but did not follow the complete 6-stage methodology.
+
+>>>>>>> origin/feat/self-learning-tbta
 ## Cross-Feature Learnings
 
 Transferable patterns and insights from feature development are documented in [../learnings/README.md](../learnings/README.md). These learnings help accelerate development of new features by applying proven approaches.
 
+<<<<<<< HEAD
 ## Resources
 
 - **[STAGES.md](STAGES.md)** - Complete 6-stage development methodology (authoritative)
@@ -123,3 +184,5 @@ To develop a new feature:
 ---
 
 **Need help?** Check [STAGES.md](STAGES.md) for methodology or [../learnings/README.md](../learnings/README.md) for patterns from other features.
+=======
+>>>>>>> origin/feat/self-learning-tbta

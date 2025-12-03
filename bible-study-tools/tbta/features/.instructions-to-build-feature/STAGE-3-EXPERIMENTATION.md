@@ -8,12 +8,61 @@
 
 Develop and refine the logic to predict the feature using parallel experimental tracks. We move from "Analysis" (understanding data) to "Engineering" (building the predictor).
 
+<<<<<<< HEAD
+=======
+Your output will be a prompt that an LLM can use to accurately predict this feature.  
+ - The shorter the better
+
+This prompt will eventually (not now) be merged with other features prompts and we will give it
+one verse at a time in the Greek/Hebrew and it needs to for each word add the value for each feature.
+
+
+## Background
+
+ - `{feature}/research/README.md` - In the first stage we did extensive research
+ - `{feature}/analysis/README.md` - then we did lots of analysis
+ - `{feature}/analysis/data/` - We created a dataset, you are not allowed to look at any file named *.secret.jsonl when predicting, only when testing.
+
+There are a few ways we are solving this problem
+
+ 1. If there are 1 or 2 dominant and obvious values (>90% together) then we are looking for all the reasons (the edge cases) why something is not labelled that
+ 2. Typically there are "magic keys" in the translations.  For instance in number systems the dominant values are singular and plural.  Hebrew, Greek already have that so that gets us most of the way.  All we need to know is when is it not plural?  Are there any exeptions to singular
+ 3. Usually when there are exceptions other languages that require this feature have this.  So let's say plural needs to be TWO people when two people are speaking.  In many languages they already dealt with that such as Peter and Paul where...   So if we look at those languages they have the case of their word for two already there.
+ 4. Othertimes languages disagree and that could be really important
+ 5. Sometimes it is context or theology driven.  Let **us** make man -> well this is God, the Trinity speaking so should be three.  Or Peter and Paul where... a chapter later.. they (2 people) said.  
+
+So we solve it as follows
+
+### Hints
+
+If a word is a "magic key" like "us" we add a hint to the Strong's word for us saying look at x language if they use ... then it is likely ...  If the us is God then consider it should be Trinitarian.  
+
+If it is small enough edge case <50 we can just add the hint to every verse as well.  For instance we may know all the Trinitian verses that would need it and put the explanation on it
+
+We did all this in stage 2 analysis but if you find missing patterns you may need to extend it (check what work they did first then improve on it)
+
+The idea here is don't write out every condition in your prompt, move rare edge cases and anything you can break down into an exhaustive list of words in Greek|Hebrew then use hints
+
+### Guidance
+
+Then for the prompt we just need general guidance.  We should cover all the major edge cases for each possible value the feature can be set to.
+
+When we are given the verse it will extract all the strongs data and all the data about this verse for us and add it to our context.
+
+>>>>>>> origin/feat/self-learning-tbta
 ## Core Requirement: The "One-Pass" Evaluator
 
 All experiments must use a standardized evaluation loop:
 
+<<<<<<< HEAD
 1.  Input: `train_questions.jsonl` (or `test_inputs.jsonl`)
 2.  Process: LLM/Script generates predictions.
+=======
+Create a folder in experiments/v{currentIteration}
+
+1.  Input: `analysis/data/train.jsonl` 
+2.  Process: LLM generates predictions.
+>>>>>>> origin/feat/self-learning-tbta
 3.  Output: `predictions.jsonl`
 4.  Score: `score_predictions.py` (compares against secret answers)
 5.  **Constraint**: The agent must be able to run this loop autonomously.
@@ -194,3 +243,38 @@ Count: 2 errors (10% of failures)
 - No "Hardcoded Exceptions" in code; rules live in data or concise logic.
 - Error patterns documented and systematically addressed.
 
+<<<<<<< HEAD
+=======
+
+
+## OTHER
+#### Phase 3: Persist hints to Strong's files
+
+```bash
+python src/tools/append_to_strongs.py \
+  --input ${TBTA-DIR}/features/{feature}/analysis/strongs-hints.jsonl \
+  --feature {FeatureName} \
+  --tool tbta-hints
+```
+
+This creates/updates `$DATA_DIR/strongs/{strongs}/{strongs}-tbta-hints.yaml` files.
+
+**Key insight**: Variable patterns often become predictable with context. Look for:
+- Preceding words (numerals, quantifiers): "two **men**" → Dual
+- Following modifiers: "**sons** of Zebedee" (2 sons → Dual)
+- Translation morphology in other languages (see 3D)
+
+**Warning**: Low counts are overfitting. Only trust patterns with 5+ occurrences.
+
+
+**Phase 3: Persist hints to verse files**
+
+```bash
+python src/tools/append_to_verses.py \
+  --input ${TBTA-DIR}/features/{feature}/analysis/reason-groupings-with-hints.jsonl \
+  --feature {FeatureName} \
+  --tool tbta-hints
+```
+
+This creates/updates `$DATA_DIR/commentary/{BOOK}/{CCC}/{VVV}/{BOOK}-{CCC}-{VVV}-tbta-hints.yaml` files.
+>>>>>>> origin/feat/self-learning-tbta

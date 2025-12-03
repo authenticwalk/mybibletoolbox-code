@@ -1,0 +1,56 @@
+# Distribution of Aspect Feature Values
+# Source: TBTA Database Export
+# Total entries: 72,089
+
+distribution:
+  Unmarked:
+    count: 69430
+    percentage: 96.31
+    description: "Default/unmarked aspect"
+
+  Imperfective:
+    count: 927
+    percentage: 1.29
+    description: "Ongoing or incomplete action"
+
+  Inceptive:
+    count: 471
+    percentage: 0.65
+    description: "Beginning of action"
+
+  Continuative:
+    count: 391
+    percentage: 0.54
+    description: "Continuing action"
+
+  Cessative:
+    count: 354
+    percentage: 0.49
+    description: "Ending of action"
+
+  Routinely:
+    count: 271
+    percentage: 0.38
+    description: "Routine or regular action"
+
+  Completive:
+    count: 116
+    percentage: 0.16
+    description: "Completed action"
+
+  Gnomic:
+    count: 102
+    percentage: 0.14
+    description: "Timeless truth or general statement"
+
+  Habitual:
+    count: 27
+    percentage: 0.04
+    description: "Habitual action"
+
+summary:
+  total_entries: 72089
+  unique_values: 9
+  most_common: "Unmarked (96.31%)"
+  marked_aspect_total: 2659
+  marked_aspect_percentage: 3.69

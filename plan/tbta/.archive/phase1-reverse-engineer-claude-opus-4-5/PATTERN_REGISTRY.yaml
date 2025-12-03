@@ -1,0 +1,317 @@
+patterns:
+  - id: 1
+    name: "Nested Square Brackets"
+    frequency: "70.0%"
+    occurrences: 350
+    category: "Structural Markers"
+    purpose: "Mark clausal groupings, relationships, and subordinate information with hierarchical nesting"
+    format: "[content [nested content]]"
+    examples:
+      - reference: "Daniel 6:14"
+        text: "[When the king heard [that Daniel broke the law]]"
+      - reference: "2 Samuel 10:6"
+        text: "[so that those soldiers would help [the Ammonites fight David]]"
+      - reference: "Genesis 43:24"
+        text: "[so that the brothers could wash the brothers' feet]"
+    implementation_priority: "Critical - use in all encodings"
+    related_patterns: ["4_bracketed_logical_clauses"]
+
+  - id: 2
+    name: "Parentheses Person Clarifications"
+    frequency: "54.4%"
+    occurrences: 272
+    category: "Disambiguation"
+    purpose: "Resolve pronoun ambiguity by explicitly naming the person referenced"
+    format: "pronoun(PersonName) or (name/relationship)"
+    examples:
+      - reference: "Matthew 15:6"
+        text: "you(Pharisees) ignore God's command [by obeying your(Pharisees's) religious]"
+      - reference: "Matthew 19:19"
+        text: "You(man) (imp) honor your(person's) father"
+      - reference: "1 Samuel 3:1"
+        text: "Samuel was serving Yahweh. And Eli was taking care of Samuel."
+    implementation_priority: "Critical - very high disambiguation value"
+    related_patterns: ["10_subject_reference_chains"]
+
+  - id: 3
+    name: "Parenthetical Grammatical Tags"
+    frequency: "39.6%"
+    occurrences: 198
+    category: "Translation Guidance"
+    purpose: "Indicate grammatical mood, translation approach, or discourse structure"
+    format: "(tag_word)"
+    valid_tags:
+      - tag: "imp"
+        meaning: "Imperative mood"
+      - tag: "title"
+        meaning: "Section heading or title"
+      - tag: "paragraph"
+        meaning: "Paragraph boundary marker"
+      - tag: "complex"
+        meaning: "Multi-clause construction"
+      - tag: "simple"
+        meaning: "Simplified or single-clause"
+      - tag: "footnote"
+        meaning: "Annotation or explanatory note"
+      - tag: "literal"
+        meaning: "Word-for-word translation approach"
+      - tag: "dynamic"
+        meaning: "Meaning-for-meaning translation"
+      - tag: "implicit-situational"
+        meaning: "Situation provides meaning"
+      - tag: "implicit-info"
+        meaning: "Information context provides meaning"
+    examples:
+      - reference: "Matthew 9:35"
+        text: "(title) Jesus says, (complex) Jesus was teaching"
+      - reference: "Matthew 19:19"
+        text: "(literal) And you(man), (dynamic) And you(man)"
+      - reference: "1 Samuel 3:1"
+        text: "(title) God calls Samuel"
+    implementation_priority: "High - provides translation guidance"
+    related_patterns: ["6_grammatical_function_tags"]
+
+  - id: 4
+    name: "Bracketed Logical Clauses"
+    frequency: "35.0%"
+    occurrences: 175
+    category: "Structural Markers"
+    purpose: "Mark causal, conditional, temporal, or purposive relationships between events"
+    format: "[relationship-marker content]"
+    relationship_types:
+      - type: "Causal"
+        markers: ["because", "since", "as"]
+      - type: "Temporal"
+        markers: ["when", "whenever", "while", "before", "after"]
+      - type: "Conditional"
+        markers: ["if"]
+      - type: "Purposive"
+        markers: ["so that", "in order to", "in-order-to"]
+    examples:
+      - reference: "Daniel 6:14"
+        text: "[When the king heard [that Daniel broke the law]]"
+      - reference: "2 Samuel 10:6"
+        text: "[so that those soldiers would help [the Ammonites fight David]]"
+      - reference: "Genesis 43:24"
+        text: "[so that the brothers could wash the brothers' feet]"
+    implementation_priority: "High - essential for understanding event relationships"
+    related_patterns: ["1_nested_square_brackets"]
+
+  - id: 5
+    name: "Hyphenated Semantic Units"
+    frequency: "34.6%"
+    occurrences: 173
+    category: "Semantic Precision"
+    purpose: "Represent multi-word concepts as single semantic units preserving compositional meaning"
+    format: "word-word or word-word-word"
+    categories:
+      - type: "Relational concepts"
+        examples: ["just-like", "more-than"]
+      - type: "Purposive phrases"
+        examples: ["in-order-to"]
+      - type: "Spatial markers"
+        examples: ["east-west", "beth-rehob"]
+      - type: "Quantity expressions"
+        examples: ["one-half", "three-fourths"]
+    examples:
+      - reference: "Matthew 18:13"
+        text: "And you(man) love your(man's) neighbor [just-like you(man) love yourself]"
+      - reference: "Genesis 35:20"
+        text: "[in-order-to honor Rachel]"
+      - reference: "2 Samuel 10:6"
+        text: "From Beth-Rehob and Zobah"
+    implementation_priority: "Recommended - preserves semantic integrity"
+    related_patterns: []
+
+  - id: 6
+    name: "Grammatical Function Tags"
+    frequency: "31.8%"
+    occurrences: 159
+    category: "Translation Guidance"
+    purpose: "Explicit labels for translation choices and grammatical structures"
+    format: "(function_tag)"
+    note: "Overlaps significantly with Pattern 3 (Parenthetical Grammatical Tags)"
+    examples:
+      - reference: "Matthew 9:35"
+        text: "(title) Jesus says, (complex) Jesus was teaching, (simple) Jesus was teaching/preach"
+      - reference: "Matthew 19:19"
+        text: "(literal) And you(man), (dynamic) And you(man), (imp) honor your(person's) father"
+      - reference: "1 Samuel 3:1"
+        text: "(title) God calls Samuel"
+    implementation_priority: "High - essential for translation decisions"
+    related_patterns: ["3_parenthetical_grammatical_tags"]
+
+  - id: 7
+    name: "Verb Alternative Forms"
+    frequency: "19.2%"
+    occurrences: 96
+    category: "Translation Guidance"
+    purpose: "Show multiple valid translations or meaning variations separated by forward slash"
+    format: "verb1/verb2"
+    usage_context: "Indicates translation ambiguity or theological significance"
+    examples:
+      - reference: "Matthew 9:35"
+        text: "Jesus was teaching/preach the Good-News"
+      - reference: "Matthew 15:6"
+        text: "obeying your(Pharisees's) religious customs/traditions"
+      - reference: "1 Samuel 11:9"
+        text: "we(people) will save/rescue those people tomorrow"
+    implementation_priority: "Recommended - clarifies semantic ambiguity"
+    related_patterns: []
+
+  - id: 8
+    name: "Underscore Semantic Markers"
+    frequency: "18.4%"
+    occurrences: 92
+    category: "Semantic Precision"
+    purpose: "Mark special linguistic features and translation notes using underscore prefix"
+    format: "_marker_word"
+    marker_types:
+      - marker: "implicit"
+        meaning: "Content reader must infer from context"
+        frequency: "22.2%"
+      - marker: "paragraph"
+        meaning: "Structural division or new section"
+        frequency: "6.0%"
+      - marker: "implicitNecessary"
+        meaning: "Grammatically required but not explicit in source"
+        frequency: "4.6%"
+      - marker: "implicitActiveAgent"
+        meaning: "Subject of action not explicitly named"
+        frequency: "3.2%"
+      - marker: "plural"
+        meaning: "Grammatical number - plural"
+        frequency: "2.2%"
+      - marker: "dual"
+        meaning: "Grammatical number - exactly two"
+        frequency: "1.8%"
+      - marker: "generic"
+        meaning: "Generic/non-specific reference"
+        frequency: "1.4%"
+      - marker: "singular"
+        meaning: "Singular item"
+        frequency: "1.4%"
+      - marker: "hyperbolic"
+        meaning: "Rhetorical exaggeration"
+        frequency: "0.6%"
+      - marker: "frameInferable"
+        meaning: "Context makes meaning clear"
+        frequency: "0.6%"
+    examples:
+      - reference: "Matthew 15:6"
+        text: "_implicit customs/traditions"
+      - reference: "Matthew 9:35"
+        text: "_paragraph Jesus was traveling, _hyperbolic the towns"
+      - reference: "Matthew 13:25"
+        text: "_implicitNecessary exiled those Jews"
+    implementation_priority: "Recommended - extensible annotation system"
+    extensibility: "System supports addition of new markers as needed"
+    related_patterns: []
+
+  - id: 9
+    name: "Capital Letter Suffixed Compounds"
+    frequency: "18.0%"
+    occurrences: 90
+    category: "Semantic Precision"
+    purpose: "Distinguish semantic variants using lowercase-to-capital letter transitions"
+    format: "word-LETTER"
+    usage_context: "Letter suffix distinguishes different interpretations or theological concepts"
+    examples:
+      - reference: "Matthew 9:35"
+        text: "Good-News of the kingdom-B"
+      - reference: "Matthew 25:27"
+        text: "[if you(servant) had taken my(master's) money to the bank]"
+      - reference: "Mark 1:2"
+        text: "Prophet with capital markers"
+    implementation_priority: "Consider - useful for theological vocabulary management"
+    related_patterns: []
+
+  - id: 10
+    name: "Subject Reference Chains"
+    frequency: "12.0%"
+    occurrences: 60
+    category: "Disambiguation"
+    purpose: "Prevent pronoun ambiguity by repeating subject throughout passage"
+    format: "SubjectName + action [bracket] + SubjectName + action"
+    usage_context: "Avoids pronouns in complex narratives with multiple subjects"
+    examples:
+      - reference: "Matthew 9:35"
+        text: "Jesus was traveling... Jesus was teaching... Jesus was also healing"
+      - reference: "Daniel 8:26"
+        text: "you(Daniel) know... I(Gabriel) have told you(Daniel)... you(Daniel) (imp) do not tell"
+      - reference: "Acts 15:5"
+        text: "Some of the people... These people stood up... We(people) must tell"
+    implementation_priority: "Recommended - improves clarity in multi-sentence passages"
+    related_patterns: ["2_parentheses_person_clarifications"]
+
+  - id: 11
+    name: "Dash Prefixed Explanations"
+    frequency: "0.8%"
+    occurrences: 4
+    category: "Specialized Notation"
+    purpose: "Provide standalone etymological or definitional notes"
+    format: "-Marker Text explanation"
+    markers:
+      - "-Footnote"
+      - "-note"
+    usage_context: "Etymology, cross-references, or clarifications outside main text"
+    examples:
+      - reference: "Genesis 29:34"
+        text: "-Footnote Levi means near"
+      - reference: "Genesis 41:51"
+        text: "-footnote Manasseh means [God caused [me(Joseph) to forget]]"
+      - reference: "Acts 1:19"
+        text: "-footnote Relating to place name meaning"
+    implementation_priority: "Specialized - use for rare etymological cases"
+    related_patterns: ["13_means_definition_statements"]
+
+  - id: 12
+    name: "Double Quote Closures"
+    frequency: "0.6%"
+    occurrences: 3
+    category: "Specialized Notation"
+    purpose: "Mark the end of quoted or direct speech sections"
+    format: "text\"\""
+    usage_context: "Indicates speech/quote boundary closure"
+    examples:
+      - reference: "Matthew 19:19"
+        text: "You(people) (imp) see Exodus 20:12-16...\"\""
+      - reference: "1 Samuel 18:25"
+        text: "And Saul said these things...\"\""
+      - reference: "1 Samuel 10:18"
+        text: "Samuel said, [You are my people]\"\""
+    implementation_priority: "Specialized - use for quote delineation"
+    related_patterns: []
+
+  - id: 13
+    name: "Means Definition Statements"
+    frequency: "0.6%"
+    occurrences: 3
+    category: "Specialized Notation"
+    purpose: "Provide etymological or definitional meaning for proper names and terms"
+    format: "Name means [definition/explanation]"
+    usage_context: "Defines proper names and theological concepts"
+    examples:
+      - reference: "Genesis 29:34"
+        text: "Levi said, [My(Leah's) husband will stay near me]' -Footnote Levi means near"
+      - reference: "Acts 1:19"
+        text: "'Field of Blood' means [place where blood was spilled]"
+      - reference: "Genesis 41:51"
+        text: "Manasseh means [God caused [me(Joseph) to forget]]"
+    implementation_priority: "Specialized - use for name definitions"
+    related_patterns: ["11_dash_prefixed_explanations"]
+
+frequency_distribution:
+  high_frequency: "Patterns 1-6 (25%+ occurrence) - Core encoding mechanisms"
+  medium_frequency: "Patterns 7-10 (10-25% occurrence) - Common specialized notation"
+  low_frequency: "Patterns 11-13 (<10% occurrence) - Rare specialized cases"
+
+implementation_strategy:
+  phase_1: "Implement patterns 1-6 (core structural and disambiguation)"
+  phase_2: "Add patterns 7-10 (translation guidance and semantic precision)"
+  phase_3: "Include patterns 11-13 (specialized notation as needed)"
+
+total_patterns_discovered: 13
+total_verses_analyzed: 500
+analysis_date: "2025-12-02"
+analysis_scope: "chunk-aj.tsv"

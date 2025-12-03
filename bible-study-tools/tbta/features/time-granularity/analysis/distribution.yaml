@@ -1,0 +1,76 @@
+feature: Time
+total_entries: 72087
+unique_values: 24
+distribution:
+  Discourse:
+    count: 29102
+    percentage: 40.37
+  Present:
+    count: 25659
+    percentage: 35.59
+  Immediate Future:
+    count: 11669
+    percentage: 16.19
+  Later Today:
+    count: 1295
+    percentage: 1.8
+  Unknown Future:
+    count: 627
+    percentage: 0.87
+  During Speaker's Lifetime:
+    count: 477
+    percentage: 0.66
+  Earlier Today:
+    count: 467
+    percentage: 0.65
+  Historic Past:
+    count: 460
+    percentage: 0.64
+  A Year Ago:
+    count: 455
+    percentage: 0.63
+  Immediate Past:
+    count: 309
+    percentage: 0.43
+  Yesterday:
+    count: 281
+    percentage: 0.39
+  A Week Ago:
+    count: 228
+    percentage: 0.32
+  A Year from Now:
+    count: 213
+    percentage: 0.3
+  Tomorrow:
+    count: 205
+    percentage: 0.28
+  A Month Ago:
+    count: 178
+    percentage: 0.25
+  A Week from Now:
+    count: 115
+    percentage: 0.16
+  Unknown Past:
+    count: 71
+    percentage: 0.1
+  Timeless:
+    count: 63
+    percentage: 0.09
+  3 Days Ago:
+    count: 46
+    percentage: 0.06
+  A Month from Now:
+    count: 42
+    percentage: 0.06
+  Eternity Past:
+    count: 39
+    percentage: 0.05
+  2 Days Ago:
+    count: 36
+    percentage: 0.05
+  3 Days from Now:
+    count: 34
+    percentage: 0.05
+  2 Days from Now:
+    count: 16
+    percentage: 0.02

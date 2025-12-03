@@ -1,0 +1,52 @@
+[02:35:22] INFO: Enriching with 14 translations: eng-YLT, grc, hbo, heb-heb, lat-VUC, ara, spa-RV-1909, ind-ind, swh-ONEN, zho, rus-SYN-1876, fra-LSG-1910, por-JFA, deu-LU-1912
+[02:35:22] INFO: Processing 2318 entries...
+[02:35:27] INFO: Progress: 100/2318 (4.3%) - Hits: 100, Misses: 0
+[02:35:33] INFO: Progress: 200/2318 (8.6%) - Hits: 200, Misses: 0
+Cache miss: /workspace/.data/commentary/NEH/009/038/NEH-009-038-translations-ebible.yaml
+Cache miss: NEH-009-038 - add to sparse checkout: cd .data && git sparse-checkout add commentary/NEH/009
+[02:35:39] INFO: Progress: 300/2318 (12.9%) - Hits: 299, Misses: 1
+[02:35:45] INFO: Progress: 400/2318 (17.3%) - Hits: 399, Misses: 1
+[02:35:51] INFO: Progress: 500/2318 (21.6%) - Hits: 499, Misses: 1
+Cache miss: /workspace/.data/commentary/1KI/004/022/1KI-004-022-translations-ebible.yaml
+Cache miss: 1KI-004-022 - add to sparse checkout: cd .data && git sparse-checkout add commentary/1KI/004
+[02:35:57] INFO: Progress: 600/2318 (25.9%) - Hits: 598, Misses: 2
+[02:36:02] INFO: Progress: 700/2318 (30.2%) - Hits: 698, Misses: 2
+[02:36:09] INFO: Progress: 800/2318 (34.5%) - Hits: 798, Misses: 2
+[02:36:14] INFO: Progress: 900/2318 (38.8%) - Hits: 898, Misses: 2
+[02:36:19] INFO: Progress: 1000/2318 (43.1%) - Hits: 998, Misses: 2
+[02:36:25] INFO: Progress: 1100/2318 (47.5%) - Hits: 1098, Misses: 2
+Cache miss: /workspace/.data/commentary/JOL/003/018/JOL-003-018-translations-ebible.yaml
+Cache miss: JOL-003-018 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/003
+[02:36:30] INFO: Progress: 1200/2318 (51.8%) - Hits: 1197, Misses: 3
+Cache miss: /workspace/.data/commentary/1KI/004/034/1KI-004-034-translations-ebible.yaml
+Cache miss: 1KI-004-034 - add to sparse checkout: cd .data && git sparse-checkout add commentary/1KI/004
+[02:36:35] INFO: Progress: 1300/2318 (56.1%) - Hits: 1296, Misses: 4
+Cache miss: /workspace/.data/commentary/JOL/003/008/JOL-003-008-translations-ebible.yaml
+Cache miss: JOL-003-008 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/003
+[02:36:41] INFO: Progress: 1400/2318 (60.4%) - Hits: 1395, Misses: 5
+[02:36:46] INFO: Progress: 1500/2318 (64.7%) - Hits: 1495, Misses: 5
+[02:36:50] INFO: Progress: 1600/2318 (69.0%) - Hits: 1595, Misses: 5
+[02:36:55] INFO: Progress: 1700/2318 (73.3%) - Hits: 1695, Misses: 5
+Cache miss: /workspace/.data/commentary/JOL/003/011/JOL-003-011-translations-ebible.yaml
+Cache miss: JOL-003-011 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/003
+[02:37:00] INFO: Progress: 1800/2318 (77.7%) - Hits: 1794, Misses: 6
+[02:37:04] INFO: Progress: 1900/2318 (82.0%) - Hits: 1894, Misses: 6
+Cache miss: /workspace/.data/commentary/JOL/003/013/JOL-003-013-translations-ebible.yaml
+Cache miss: JOL-003-013 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/003
+[02:37:09] INFO: Progress: 2000/2318 (86.3%) - Hits: 1993, Misses: 7
+Cache miss: /workspace/.data/commentary/JOL/002/028/JOL-002-028-translations-ebible.yaml
+Cache miss: JOL-002-028 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/002
+Cache miss: /workspace/.data/commentary/JOL/003/010/JOL-003-010-translations-ebible.yaml
+Cache miss: JOL-003-010 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/003
+[02:37:15] INFO: Progress: 2100/2318 (90.6%) - Hits: 2091, Misses: 9
+[02:37:20] INFO: Progress: 2200/2318 (94.9%) - Hits: 2191, Misses: 9
+Cache miss: /workspace/.data/commentary/JOL/003/012/JOL-003-012-translations-ebible.yaml
+Cache miss: JOL-003-012 - add to sparse checkout: cd .data && git sparse-checkout add commentary/JOL/003
+[02:37:25] INFO: Progress: 2300/2318 (99.2%) - Hits: 2290, Misses: 10
+[02:37:26] INFO: ==================================================
+[02:37:26] INFO: ENRICHMENT COMPLETE
+[02:37:26] INFO: ==================================================
+[02:37:26] INFO: Processed: 2318 entries
+[02:37:26] INFO: Cache hits: 2308
+[02:37:26] INFO: Cache misses: 10
+[02:37:26] INFO: Output: /workspace/bible-study-tools/tbta/features/proximity-system/analysis/enriched.jsonl

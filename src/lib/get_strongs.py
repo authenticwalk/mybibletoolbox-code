@@ -26,13 +26,14 @@ Usage:
     python get_strongs.py --word love --output love-words.yaml
 """
 
-import os
-import sys
-import re
-import yaml
 import argparse
+import os
+import re
+import sys
 from pathlib import Path
-from typing import Dict, List, Any, Optional, Set
+from typing import Any, Dict, List, Optional, Set
+
+import yaml
 
 # Add src to path for imports
 sys.path.insert(0, str(Path(__file__).parent.parent))
@@ -96,6 +97,73 @@ def load_strongs_entry(strongs_number: str) -> Optional[Dict[str, Any]]:
     except Exception as e:
         print(f"Error loading Strong's entry {strongs_number}: {e}", file=sys.stderr)
         return None
+
+
+def get_strongs_tool_file(strongs_number: str, tool: str) -> Optional[Dict[str, Any]]:
+    """
+    Load a specific tool file for a Strong's number.
+    
+    Args:
+        strongs_number: Strong's number (e.g., "G0025", "H0430")
+        tool: Tool name (e.g., "tbta-hints", "lexicon")
+    
+    Returns:
+        Dictionary with file contents, or None if not found
+    
+    Example:
+        >>> data = get_strongs_tool_file("H0376", "tbta-hints")
+        >>> if data:
+        ...     data["Number"]["hints"].append({"hint": "Look at preceding numeral"})
+        ...     save_strongs_tool_file("H0376", "tbta-hints", data)
+    """
+    normalized = normalize_strongs_number(strongs_number)
+    if not normalized:
+        return None
+    
+    file_path = STRONGS_DIR / normalized / f"{normalized}-{tool}.yaml"
+    
+    if not file_path.exists():
+        return None
+    
+    try:
+        with open(file_path, 'r', encoding='utf-8') as f:
+            return yaml.safe_load(f) or {}
+    except (yaml.YAMLError, IOError):
+        return None
+
+
+def save_strongs_tool_file(strongs_number: str, tool: str, data: Dict[str, Any]) -> Path:
+    """
+    Save a specific tool file for a Strong's number.
+    
+    Args:
+        strongs_number: Strong's number (e.g., "G0025", "H0430")
+        tool: Tool name (e.g., "tbta-hints", "lexicon")
+        data: Dictionary to save
+    
+    Returns:
+        Path to the saved file
+    
+    Example:
+        >>> data = get_strongs_tool_file("H0376", "tbta-hints") or {}
+        >>> if "Number" not in data:
+        ...     data["Number"] = {"hints": []}
+        >>> data["Number"]["hints"].append({"hint": "Look at preceding numeral"})
+        >>> save_strongs_tool_file("H0376", "tbta-hints", data)
+    """
+    normalized = normalize_strongs_number(strongs_number)
+    if not normalized:
+        raise ValueError(f"Invalid Strong's number: {strongs_number}")
+    
+    strongs_dir = STRONGS_DIR / normalized
+    strongs_dir.mkdir(parents=True, exist_ok=True)
+    
+    file_path = strongs_dir / f"{normalized}-{tool}.yaml"
+    
+    with open(file_path, 'w', encoding='utf-8') as f:
+        yaml.dump(data, f, default_flow_style=False, allow_unicode=True, sort_keys=False)
+    
+    return file_path
 
 
 def get_all_strongs_numbers() -> List[str]:

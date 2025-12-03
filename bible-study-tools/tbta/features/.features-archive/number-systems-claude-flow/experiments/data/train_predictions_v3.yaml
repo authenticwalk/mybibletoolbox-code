@@ -1,0 +1,1659 @@
+feature: number-systems
+dataset: train_predictions_v3
+prompt_version: PROMPT3
+generated: '2025-11-18T06:00:00Z'
+total_verses: 236
+note: 'PROMPT3: Subject-focused analysis'
+predictions:
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1KI.002.028
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 4.3 (Four Subject)
+  rationale: Subject numbered as four
+  subject_identified: four
+  arbitrarity: arbitrary
+  reference: 1KI.007.019
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 4.3 (Four Subject)
+  rationale: Subject numbered as four
+  subject_identified: four
+  arbitrarity: arbitrary
+  reference: 1KI.007.030
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1KI.007.035
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1KI.020.029
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Hophni and Phinehas'
+  subject_identified: Hophni and Phinehas
+  arbitrarity: arbitrary
+  reference: 1SA.004.004
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1SA.009.013
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Jonathan and his armor-bearer'
+  subject_identified: Jonathan and his armor-bearer
+  arbitrarity: arbitrary
+  reference: 1SA.014.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: 1SA.025.039
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Paul, Silas and Timothy'
+  subject_identified: Paul, Silas and Timothy
+  arbitrarity: arbitrary
+  reference: 1TH.001.001
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Paul, Silas and Timothy'
+  subject_identified: Paul, Silas and Timothy
+  arbitrarity: arbitrary
+  reference: 1TH.001.001
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Macedonia and Achaia'
+  subject_identified: Macedonia and Achaia
+  arbitrarity: arbitrary
+  reference: 1TH.001.007
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Macedonia and Achaia'
+  subject_identified: Macedonia and Achaia
+  arbitrarity: arbitrary
+  reference: 1TH.001.008
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Macedonia and Achaia'
+  subject_identified: Macedonia and Achaia
+  arbitrarity: arbitrary
+  reference: 1TH.001.008
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.001.009
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.002.002
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.002.003
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.002.005
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.002.005
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.002.008
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.002.013
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.002.013
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 1TH.002.014
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.002.015
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.003.001
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.003.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: 1TH.003.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 1TH.003.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: 1TH.003.012
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: God and Father'
+  subject_identified: God and Father
+  arbitrarity: arbitrary
+  reference: 1TH.003.013
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: God and Father'
+  subject_identified: God and Father
+  arbitrarity: arbitrary
+  reference: 1TH.003.013
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.003
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.003
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.004
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.004
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.005
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.004.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.004.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 1TH.004.009
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 1TH.004.009
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 1TH.004.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 1TH.004.015
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.004.017
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.005.002
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.005.002
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.005.003
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 1TH.005.004
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 1TH.005.004
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.005.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 1TH.005.009
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 1TH.005.013
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: 1TH.005.018
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: 2JN.001.007
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2JN.001.012
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Joab, Abishai and Asahel'
+  subject_identified: Joab, Abishai and Asahel
+  arbitrarity: arbitrary
+  reference: 2SA.002.018
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2SA.013.038
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: 2SA.023.017
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2SA.023.018
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Paul, Silas and Timothy'
+  subject_identified: Paul, Silas and Timothy
+  arbitrarity: arbitrary
+  reference: 2TH.001.001
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: 2TH.001.005
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2TH.001.006
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 2TH.001.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 2TH.001.012
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 2TH.002.001
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 2TH.002.001
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2TH.002.004
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: 2TH.002.010
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 2TH.002.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: 2TH.002.017
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: 2TH.003.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: 2TH.003.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: 2TH.003.001
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2TH.003.004
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 2TH.003.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 2TH.003.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 5.3 (Collective Noun - Epistle)
+  rationale: Collective noun in epistle
+  subject_identified: believers/saints/etc
+  arbitrarity: arbitrary
+  reference: 2TH.003.006
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: 2TH.003.009
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: 2TH.003.014
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: 2TH.003.017
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: COL.004.009
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: COL.004.011
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: COL.004.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: COL.004.016
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: COL.004.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: DAN.002.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: DAN.002.018
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: DAN.003.015
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: Three named individuals
+  subject_identified: Shadrach, Meshach, Abednego
+  arbitrarity: arbitrary
+  reference: DAN.003.016
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: DAN.003.018
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: DAN.007.005
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: DAN.010.002
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Bigthana and Teresh'
+  subject_identified: Bigthana and Teresh
+  arbitrarity: arbitrary
+  reference: EST.002.021
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: EST.004.016
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: EST.009.022
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: EXO.003.018
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: EXO.005.021
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: EXO.006.003
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Gershon, Kohath and Merari'
+  subject_identified: Gershon, Kohath and Merari
+  arbitrarity: arbitrary
+  reference: EXO.006.016
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Assir, Elkanah and Abiasaph'
+  subject_identified: Assir, Elkanah and Abiasaph
+  arbitrarity: arbitrary
+  reference: EXO.006.024
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: EXO.012.045
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 4.1 (Two/Both Subject)
+  rationale: Subject numbered as two
+  subject_identified: two/both
+  arbitrarity: arbitrary
+  reference: EXO.022.009
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 4.3 (Four Subject)
+  rationale: Subject numbered as four
+  subject_identified: four
+  arbitrarity: arbitrary
+  reference: EXO.025.012
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: EXO.025.016
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 1 (Trinity)
+  rationale: Trinity reference
+  subject_identified: Trinity
+  arbitrarity: non-arbitrary
+  reference: GEN.001.026
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 1 (Trinity)
+  rationale: Trinity reference
+  subject_identified: Trinity
+  arbitrarity: non-arbitrary
+  reference: GEN.001.026
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: GEN.007.007
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: GEN.014.014
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: GEN.014.016
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: GEN.018.005
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: GEN.019.003
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: GEN.019.018
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: GEN.019.025
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.021.014
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: GEN.024.022
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.027.023
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.029.034
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.030.030
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: GEN.031.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: GEN.031.015
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.032.002
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.032.010
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Rachel and Joseph'
+  subject_identified: Rachel and Joseph
+  arbitrarity: arbitrary
+  reference: GEN.033.002
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: GEN.036.016
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: GEN.036.016
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 4.2 (Three Subject)
+  rationale: Subject numbered as three
+  subject_identified: three
+  arbitrarity: arbitrary
+  reference: GEN.040.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: GEN.040.020
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: GEN.048.009
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 4.1 (Two/Both Subject)
+  rationale: Subject numbered as two
+  subject_identified: two/both
+  arbitrarity: arbitrary
+  reference: GEN.048.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: JDG.019.021
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: JDG.019.024
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 4.3 (Four Subject)
+  rationale: Subject numbered as four
+  subject_identified: four
+  arbitrarity: arbitrary
+  reference: JHN.004.035
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: JOS.002.012
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: JOS.002.023
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: JOS.003.002
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: JOS.008.006
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Sheshai, Ahiman and Talmai'
+  subject_identified: Sheshai, Ahiman and Talmai
+  arbitrarity: arbitrary
+  reference: JOS.015.014
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Gilead and Bashan'
+  subject_identified: Gilead and Bashan
+  arbitrarity: arbitrary
+  reference: JOS.017.005
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: JOS.022.033
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: LUK.001.056
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.005.002
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: LUK.005.019
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: LUK.008.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.009.033
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: LUK.009.037
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.010.001
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: LUK.010.035
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: LUK.021.002
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: LUK.022.034
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: LUK.022.058
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: LUK.024.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: MAT.002.016
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: MAT.008.028
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MAT.008.031
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: MAT.015.034
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: MAT.015.036
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MAT.018.020
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MAT.018.020
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: MAT.020.031
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MAT.020.034
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MAT.022.013
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 4.3 (Four Subject)
+  rationale: Subject numbered as four
+  subject_identified: four
+  arbitrarity: arbitrary
+  reference: MAT.024.031
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: MAT.025.023
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: MAT.026.060
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: MAT.026.075
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MAT.027.044
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: MRK.006.007
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: MRK.006.007
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: MRK.009.014
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 4.1 (Two/Both Subject)
+  rationale: Subject numbered as two
+  subject_identified: two/both
+  arbitrarity: arbitrary
+  reference: MRK.010.008
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: MRK.011.004
+- predicted_value: Quadrial
+  confidence: Very High
+  rule_applied: Level 4.3 (Four Subject)
+  rationale: Subject numbered as four
+  subject_identified: four
+  arbitrarity: arbitrary
+  reference: MRK.013.027
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: MRK.014.041
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MRK.014.042
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MRK.014.058
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: MRK.015.032
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: MRK.016.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: PHM.001.003
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: PHM.001.005
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: PHM.001.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: PHM.001.008
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: PHM.001.010
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: PHM.001.010
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: PHM.001.011
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: PHM.001.013
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: PHM.001.013
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: PHM.001.016
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: PHM.001.018
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: PHM.001.019
+- predicted_value: Trial
+  confidence: Very High
+  rule_applied: Level 3.2 (Three Named)
+  rationale: 'Three named: Aristarchus, Demas and Luke'
+  subject_identified: Aristarchus, Demas and Luke
+  arbitrarity: arbitrary
+  reference: PHM.001.024
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: PRO.007.018
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: PRO.014.007
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: REV.001.001
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: REV.001.003
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: REV.001.003
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: REV.001.004
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: REV.001.005
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: REV.001.007
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: REV.001.008
+- predicted_value: Singular
+  confidence: Very Low
+  rule_applied: Level 6.3 (Genre Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: REV.001.009
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 2.1 (Singular Pronoun)
+  rationale: Singular pronoun subject
+  subject_identified: I/he/she/it
+  arbitrarity: arbitrary
+  reference: REV.001.010
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.1 (Narrative Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: RUT.003.012
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Father and Christ'
+  subject_identified: Father and Christ
+  arbitrarity: arbitrary
+  reference: TIT.001.004
+- predicted_value: Dual
+  confidence: Very High
+  rule_applied: Level 3.1 (Two Named)
+  rationale: 'Two individuals: Father and Christ'
+  subject_identified: Father and Christ
+  arbitrarity: arbitrary
+  reference: TIT.001.004
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.005
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.007
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.009
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.011
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.001.012
+- predicted_value: Singular
+  confidence: Very High
+  rule_applied: Level 5.4 (Abstract Noun - Epistle)
+  rationale: Abstract concept in epistle
+  subject_identified: faith/love/etc
+  arbitrarity: arbitrary
+  reference: TIT.001.014
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: TIT.001.015
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.002.006
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.002.008
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.002.009
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.002.009
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: TIT.002.011
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: TIT.002.014
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: TIT.002.014
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 4.5 (Many/All Subject)
+  rationale: Large group marker
+  subject_identified: many/all
+  arbitrarity: arbitrary
+  reference: TIT.002.015
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.003.001
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.003.001
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.003.002
+- predicted_value: Plural
+  confidence: Very High
+  rule_applied: Level 2.2 (Plural Pronoun)
+  rationale: Plural pronoun subject
+  subject_identified: we/they/you
+  arbitrarity: arbitrary
+  reference: TIT.003.005
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.003.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.003.012
+- predicted_value: Plural
+  confidence: Low
+  rule_applied: Level 6.2 (Epistle Default)
+  rationale: Subject unclear
+  subject_identified: unclear
+  arbitrarity: arbitrary
+  reference: TIT.003.013

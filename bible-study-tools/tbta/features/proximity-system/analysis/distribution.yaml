@@ -1,0 +1,34 @@
+# Distribution of Proximity feature values
+# Generated from tbta-extract.jsonl
+
+feature: Proximity
+total_entries: 18958
+
+distribution:
+  - label: "Contextually Near"
+    count: 15355
+    percentage: 80.99
+  - label: "Contextually Near with Focus"
+    count: 2607
+    percentage: 13.75
+  - label: "Near Speaker and Listener"
+    count: 612
+    percentage: 3.23
+  - label: "Near Speaker"
+    count: 135
+    percentage: 0.71
+  - label: "Temporally Remote"
+    count: 123
+    percentage: 0.65
+  - label: "Remote within Sight"
+    count: 65
+    percentage: 0.34
+  - label: "Near Listener"
+    count: 27
+    percentage: 0.14
+  - label: "Remote out of Sight"
+    count: 21
+    percentage: 0.11
+  - label: "Temporally Near"
+    count: 13
+    percentage: 0.07

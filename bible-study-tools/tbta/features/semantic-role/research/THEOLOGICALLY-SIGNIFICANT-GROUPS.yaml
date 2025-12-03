@@ -1,0 +1,411 @@
+feature: semantic-role
+default_classification: arbitrary
+theological_significance: EXISTS
+
+# SECTION 1: NON-ARBITRARY (Theologically Critical)
+
+non_arbitrary_contexts:
+  # ============================================================================
+  # HIGH STAKES: Trinity and Divine Action
+  # ============================================================================
+
+  - verse_pattern: 'Genesis 1:1-3 - Creation account: Who creates? (unverified)'
+    affected_values: ['Most Agent-like', 'Most Patient-like', 'Instrument']
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Trinity (roles within Godhead)
+      - Divine sovereignty (God as ultimate Agent)
+      - Creation ex nihilo
+
+    non_arbitrary_rationale: |
+      The semantic role of "God" in creation determines whether:
+      - God is the **Agent** (active creator) vs Instrument (used by another)
+      - Spirit is **Agent** (co-creator, equal) vs Instrument (mere tool)
+      - Word (Logos) is **Agent** vs **Patient** (created) vs Instrument
+
+      Orthodox doctrine requires:
+      - God (Father) = Most Agent-like (primary creator)
+      - Spirit = Agent-like OR Instrument (hovering, empowering)
+      - Word/Logos = Agent-like (John 1:3 "through him all things were made")
+
+      HERETICAL alternatives:
+      - Arianism: Word as Patient (created being, not co-creator)
+      - Subordinationism: Spirit as mere Instrument (not divine person)
+
+    christian_orthodox_position:
+      preferred_value: 'Most Agent-like'
+      acceptable_alternatives: ['Agent-like']
+      forbidden_values: ['Most Patient-like', 'Instrument (if denies personhood)']
+      theological_basis: 'Trinity: Three Persons, One Essence. All divine persons are active Agents in creation (Gen 1:1-3, John 1:1-3, Heb 1:2).'
+      translator_guidance: |
+        **CRITICAL**: Ensure divine Persons are never reduced to Instruments or Patients.
+        - Father as Agent: "God created" ✅
+        - Spirit as Agent: "Spirit hovered/moved" ✅ (not "was moved")
+        - Word as Agent: "through the Word" (Instrument acceptable ONLY if personal agency preserved)
+        - FORBIDDEN: "God was used to create" ❌ (makes God Instrument of another)
+        - FORBIDDEN: "Spirit was sent forth [passively]" without acknowledging active willing
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Word (Logos) is created being, not co-creator'
+        used_by: ['Jehovah's Witnesses', 'Arianism']
+        christian_assessment: HERETICAL
+        reason: 'John 1:3 "all things were made through him" - Logos is Agent/Instrument of creation, not Patient. Denying Logos as Agent denies deity.'
+
+      - interpretation: 'Spirit is impersonal force/energy (Instrument only)'
+        used_by: ['Jehovah's Witnesses', 'Socinianism']
+        christian_assessment: HERETICAL
+        reason: 'Spirit exhibits personal agency (hovering Gen 1:2, interceding Rom 8:26-27, can be grieved Eph 4:30). Reducing to mere Instrument denies personhood.'
+
+  # ============================================================================
+
+  - verse_pattern: 'John 1:1-3 - "Through him all things were made" (unverified)'
+    affected_values: ['Agent-like', 'Instrument', 'Patient-like']
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Deity of Christ
+      - Logos Christology
+      - Creation theology
+
+    non_arbitrary_rationale: |
+      The preposition "through" (δι' αὐτοῦ, di' autou) marks semantic role:
+      - **Agent**: Word actively creates (co-equal with Father)
+      - **Instrument**: Word is means/tool (but must preserve personhood and agency)
+      - **Patient**: Word is created (HERETICAL)
+
+      Orthodox view: "through" indicates instrumental agency - the Word is both Agent and Instrument
+      (mediates Father's creative will while exercising own divine power).
+
+      Heretical view: "through" means Word is mere passive conduit (Arianism).
+
+    christian_orthodox_position:
+      preferred_value: 'Agent-like (with instrumental function)'
+      acceptable_alternatives: ['Instrument (if personal agency preserved)']
+      forbidden_values: ['Patient-like', 'Instrument (if impersonal)']
+      theological_basis: 'John 1:1-3, Col 1:16, Heb 1:2 - Word is divine Agent through whom creation occurs. "Through" indicates mediation, not subordination.'
+      translator_guidance: |
+        - Preferred: "through the Word [as Agent]" - preserves active role
+        - Acceptable: "by means of the Word" - IF context shows personal agency
+        - FORBIDDEN: "the Word was used" - passive, denies active will
+        - FORBIDDEN: "the Word was created to make" - makes Logos a Patient first
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Word is first created being, then used as Instrument'
+        used_by: ['Jehovah's Witnesses', 'Arianism']
+        christian_assessment: HERETICAL
+        reason: 'John 1:3 excludes Word from "all things made." If Word were created, the verse contradicts itself.'
+
+  # ============================================================================
+
+  - verse_pattern: 'John 3:16 - "God so loved the world that he sent/gave his Son" (unverified)'
+    affected_values: ['Agent-like', 'Patient-like', 'Addressee', 'Beneficiary']
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Atonement
+      - Divine love
+      - Trinitarian relations (sending)
+
+    non_arbitrary_rationale: |
+      Semantic roles determine:
+      - Who is the **Agent** of salvation? (God the Father)
+      - Who is **sent**? (Son - but is He Agent or Patient in the sending?)
+      - Who **receives** salvation? (world - Addressee/Beneficiary)
+
+      Orthodox doctrine:
+      - Father = Agent (initiator of salvation, sender)
+      - Son = Agent (willing participant) AND Patient (sent one, given one)
+      - World = Beneficiary (for whose benefit the Son is given)
+
+      Heretical alternatives:
+      - Son as unwilling Patient (denies voluntary self-sacrifice)
+      - World as Agent (Pelagianism - humanity initiates salvation)
+
+    christian_orthodox_position:
+      preferred_value: 'Father: Agent-like; Son: Agent-like AND Patient-like; World: Beneficiary'
+      acceptable_alternatives: ['Son: Patient-like (if voluntary sending is clear)']
+      forbidden_values: ['Father: Patient-like (receiving from another)', 'World: Agent-like (initiating salvation)']
+      theological_basis: 'John 3:16, Rom 8:32, 1 John 4:9-10. Father sends (Agent); Son willingly goes (Agent) and is sent/given (Patient); world benefits (Beneficiary).'
+      translator_guidance: |
+        - Father's agency: "God sent" ✅ (not "God was compelled to send")
+        - Son's dual role: "he gave his Son" (Patient) + "Son came" (Agent) - both true
+        - World as Beneficiary: "for the world" ✅ (not "at world's request")
+        - FORBIDDEN: Translations implying Father was obligated by world's action
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Humanity's faith initiates/causes God's sending'
+        used_by: ['Pelagianism', 'Semi-Pelagianism']
+        christian_assessment: REJECTED
+        reason: 'Romans 5:8 "while we were still sinners, Christ died for us" - God initiates (Agent), humanity receives (Beneficiary).'
+
+      - interpretation: 'Son was unwilling, forced by Father'
+        used_by: []
+        christian_assessment: HERETICAL
+        reason: 'John 10:18 "No one takes it from me, but I lay it down of my own accord" - Son is voluntary Agent, not coerced Patient.'
+
+  # ============================================================================
+  # HIGH STAKES: Christological Identity (Divine vs Human Nature)
+  # ============================================================================
+
+  - verse_pattern: 'Passion narratives - Christ suffering and dying (unverified)'
+    affected_values: ['Agent-like', 'Patient-like', 'Instrument']
+    theological_stakes: HIGH
+    affected_doctrines:
+      - Hypostatic union (two natures, one person)
+      - Atonement
+      - Christology
+
+    non_arbitrary_rationale: |
+      In crucifixion accounts, Christ's semantic role reveals theological truth:
+      - **Divine nature**: Agent (voluntarily lays down life, John 10:18)
+      - **Human nature**: Patient (suffers, is crucified)
+      - Dual nature: BOTH Agent AND Patient simultaneously
+
+      Orthodox doctrine: Christ is BOTH:
+      - Active Agent (willingly offers himself, controls timing of death)
+      - Passive Patient (genuinely suffers, is acted upon by humans/Satan/wrath)
+
+      Heretical alternatives:
+      - Christ as ONLY Patient (denies deity, portrays as helpless victim)
+      - Christ as ONLY Agent (docetism - denies real suffering)
+
+    christian_orthodox_position:
+      preferred_value: 'Agent-like AND Patient-like (dual nature)'
+      acceptable_alternatives: ['Context-dependent: Agent in some clauses, Patient in others']
+      forbidden_values: ['Patient-like ONLY (denies voluntary sacrifice)', 'Agent-like ONLY (denies real suffering)']
+      theological_basis: 'John 10:18, Phil 2:6-8, Heb 2:14-18. Christ voluntarily (Agent) submits to suffering (Patient). Both natures active in atonement.'
+      translator_guidance: |
+        - Preserve both roles across Passion narrative:
+          - "he gave himself" ✅ (Agent)
+          - "he was crucified" ✅ (Patient)
+          - "he laid down his life" ✅ (Agent)
+          - "he suffered" ✅ (Patient)
+        - FORBIDDEN: Uniformly translate as ONLY Patient (loses voluntary nature)
+        - FORBIDDEN: Uniformly translate as ONLY Agent (loses genuine suffering)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Christ as helpless victim (only Patient)'
+        used_by: []
+        christian_assessment: REJECTED
+        reason: 'John 10:18 - Christ has authority (Agent) to lay down and take up life again.'
+
+      - interpretation: 'Christ only appeared to suffer (only Agent, no real Patienthood)'
+        used_by: ['Docetism', 'Gnosticism']
+        christian_assessment: HERETICAL
+        reason: '1 John 4:2-3 - denial that Christ came in flesh is antichrist. Real suffering requires real Patienthood.'
+
+  # ============================================================================
+  # MEDIUM STAKES: Atonement Mechanics
+  # ============================================================================
+
+  - verse_pattern: 'Sacrifice passages - Christ as offering/priest/victim (unverified)'
+    affected_values: ['Agent-like', 'Patient-like', 'Instrument', 'Beneficiary']
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Substitutionary atonement
+      - Priestly office of Christ
+      - Sacrifice typology
+
+    non_arbitrary_rationale: |
+      In atonement theology, semantic roles clarify:
+      - Who **offers** the sacrifice? (Christ as Priest = Agent)
+      - What is **offered**? (Christ's body = Patient/Instrument)
+      - Who **receives** the sacrifice? (Father = Addressee/Destination)
+      - Who **benefits**? (Humanity = Beneficiary)
+
+      Orthodox view: Christ is simultaneously:
+      - Priest (Agent who offers)
+      - Victim (Patient who is offered)
+      - Altar (Instrument/Location on which offering made)
+
+      This threefold role is unique to Christ.
+
+    christian_orthodox_position:
+      preferred_value: 'Agent-like (as Priest) AND Patient-like (as Victim)'
+      acceptable_alternatives: ['Instrument (as means of propitiation, IF personal agency preserved)']
+      forbidden_values: ['Beneficiary (Christ does not benefit from atonement, we do)']
+      theological_basis: 'Hebrews 9:11-14, Eph 5:2. Christ offers himself (Agent-Priest) as sacrifice (Patient-Victim) to God (Addressee) for us (Beneficiary).'
+      translator_guidance: |
+        - "Christ offered himself" ✅ (Agent + Patient)
+        - "Christ was offered" ✅ (Patient, passive)
+        - "through Christ" (Instrument, acceptable if agency preserved)
+        - FORBIDDEN: "Christ received the sacrifice" ❌ (makes Christ Addressee/Beneficiary)
+        - FORBIDDEN: "Christ benefited from atonement" ❌ (we benefit, not Him)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Father offered Christ (Christ only Patient, unwilling)'
+        used_by: []
+        christian_assessment: REJECTED
+        reason: 'Hebrews 9:14 "Christ offered himself" - self-offering requires Christ as Agent.'
+
+  # ============================================================================
+  # MEDIUM STAKES: Prayer and Mediation
+  # ============================================================================
+
+  - verse_pattern: 'Prayer directed to Christ/Father/Spirit (unverified)'
+    affected_values: ['Addressee', 'Agent-like', 'Beneficiary']
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Prayer (proper direction)
+      - Mediatorship of Christ
+      - Pneumatology (role of Spirit)
+
+    non_arbitrary_rationale: |
+      In prayer passages, semantic roles determine:
+      - Who is **Addressee** (to whom prayer is directed)?
+      - Who is **Agent** (who prays)?
+      - Who is **Mediator/Instrument** (through whom prayer is offered)?
+
+      Orthodox doctrine:
+      - Prayer to Father: Most common (Addressee = Father, Agent = believer, Instrument = Christ/Spirit)
+      - Prayer to Christ: Acceptable (Acts 7:59, Rev 22:20) - Christ is Addressee
+      - Prayer to Spirit: Less common but acceptable (Spirit is personal, can be Addressee)
+
+      Heretical alternatives:
+      - Prayer to saints/Mary as ultimate Addressee (not just as intercessors)
+      - Denying prayer to Christ (denies deity)
+
+    christian_orthodox_position:
+      preferred_value: 'Father as Addressee; Christ as Mediator (Instrument) OR Addressee'
+      acceptable_alternatives: ['Christ as Addressee', 'Spirit as Addressee']
+      forbidden_values: ['Created beings (saints, angels) as ultimate Addressee']
+      theological_basis: 'Matthew 6:9, John 14:6, 1 Tim 2:5, Acts 7:59. Prayer directed to divine Persons (Father, Son, Spirit), mediated through Christ.'
+      translator_guidance: |
+        - "Pray to the Father" ✅ (Addressee)
+        - "Pray in Jesus' name / through Christ" ✅ (Mediator/Instrument)
+        - "Call upon the Lord Jesus" ✅ (Addressee)
+        - Acceptable: "Ask saints to pray [for you]" (saints as intercessory Agents, not ultimate Addressees)
+        - FORBIDDEN: "Pray to saints [as ultimate Addressee]" (violates 1 Tim 2:5 one mediator)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Prayer to saints as ultimate recipients (not just intercessors)'
+        used_by: ['Folk Catholicism (excess)', 'Some Orthodox traditions']
+        christian_assessment: REJECTED
+        reason: '1 Tim 2:5 "one mediator between God and men" - ultimate Addressee must be divine.'
+
+      - interpretation: 'Prayer to Christ is inappropriate (Christ not deity)'
+        used_by: ['Jehovah's Witnesses', 'Arianism']
+        christian_assessment: HERETICAL
+        reason: 'Acts 7:59 Stephen prays to Jesus; Rev 22:20 "Come, Lord Jesus." Prayer to Christ affirms deity.'
+
+  # ============================================================================
+  # MEDIUM STAKES: Human Responsibility vs Divine Sovereignty
+  # ============================================================================
+
+  - verse_pattern: 'Salvation passages - who causes salvation? (unverified)'
+    affected_values: ['Agent-like', 'Patient-like', 'Beneficiary', 'Instrument']
+    theological_stakes: MEDIUM
+    affected_doctrines:
+      - Soteriology (order of salvation)
+      - Divine sovereignty
+      - Human responsibility
+
+    non_arbitrary_rationale: |
+      In salvation passages, semantic roles determine:
+      - Who is **Agent** (who causes/initiates salvation)?
+      - Who is **Patient** (who is saved/acted upon)?
+      - Who is **Beneficiary** (who benefits)?
+      - What is **Instrument** (means of salvation)?
+
+      Orthodox Protestant view (Reformed):
+      - God = Agent (initiates, elects, regenerates)
+      - Humanity = Patient (saved) AND Beneficiary
+      - Faith = Instrument (means, not cause)
+
+      Alternative Christian views:
+      - Arminian: Humanity has initial agency (prevenient grace enables choice)
+      - Synergistic: God and human cooperate (both Agents)
+
+      Non-orthodox:
+      - Pelagian: Humanity is Agent (self-salvation)
+
+    christian_orthodox_position:
+      preferred_value: 'God as Agent; humanity as Patient/Beneficiary; faith as Instrument'
+      acceptable_alternatives: ['Synergistic: God and human as co-Agents (Arminian, Catholic views)']
+      forbidden_values: ['Humanity as sole Agent (Pelagianism)', 'Works as Agent/cause (merit-based salvation)']
+      theological_basis: 'Eph 2:8-9, Rom 9:16, John 1:12-13, Titus 3:5. Salvation is from God (Agent), received by faith (Instrument), not by works (not Agent).'
+      translator_guidance: |
+        - "God saved us" ✅ (God as Agent)
+        - "by grace through faith" ✅ (grace=source, faith=Instrument)
+        - "we are saved" ✅ (passive, humanity as Patient)
+        - Denominational variation acceptable:
+          - Reformed: Emphasize God as sole Agent
+          - Arminian: Allow human response as secondary agent (enabled by prevenient grace)
+        - FORBIDDEN: "We saved ourselves by believing" ❌ (Pelagianism)
+        - FORBIDDEN: "Works earned salvation" ❌ (merit-based, denies grace)
+
+    non_orthodox_alternatives_awareness:
+      - interpretation: 'Human will is ultimate cause (Agent) of salvation'
+        used_by: ['Pelagianism']
+        christian_assessment: HERETICAL
+        reason: 'John 1:13 "not of human will or decision" - denies human will as ultimate Agent.'
+
+      - interpretation: 'Works as Instrument (acceptable) vs Works as Agent/cause (rejected)'
+        used_by: []
+        christian_assessment: 'Nuanced - Works as fruit acceptable, works as cause rejected'
+        reason: 'Eph 2:8-9 "not by works" (not Agent/cause) vs James 2:17 "faith by itself, if not accompanied by action, is dead" (works as evidence/fruit).'
+
+  # ============================================================================
+  # LOW STAKES: Contextual Clarity (Non-Arbitrary-Contextual)
+  # ============================================================================
+
+  - verse_pattern: 'Narratives with multiple participants acting/being acted upon (unverified)'
+    affected_values: ['Agent-like', 'Patient-like']
+    theological_stakes: LOW
+    affected_doctrines: []
+
+    non_arbitrary_rationale: |
+      In narrative contexts with multiple participants:
+      - Wrong Agent/Patient assignment = reader confusion (who did what to whom?)
+      - Example: "Paul and Silas were praying. They said..." (wrong number agreement)
+      - Example: "Jesus healed the man. He went away." (ambiguous: who went away?)
+
+      Not theologically critical, but affects comprehension and textual authority.
+      Wrong role = questioning accuracy of translation.
+
+    christian_orthodox_position:
+      preferred_value: 'Contextually appropriate based on discourse tracking'
+      acceptable_alternatives: []
+      forbidden_values: []
+      theological_basis: 'Accuracy principle: Translations should clearly communicate who acts and who is acted upon.'
+      translator_guidance: |
+        - Track participants across discourse
+        - Ensure Agent/Patient roles match syntactic forms (active vs passive voice)
+        - Avoid ambiguity that obscures clear actions
+
+    non_orthodox_alternatives_awareness: []
+
+# ==============================================================================
+# SECTION 2: ARBITRARY (Stylistic/Contextual)
+# ==============================================================================
+
+arbitrary_contexts:
+  - pattern: "Instrumental phrases where multiple Instruments possible"
+    rationale: 'Whether action is done "by sword" vs "by spear" vs "by hand" - Instrument choice often stylistic if not specified in source text.'
+    estimated_percentage: 15%
+
+  - pattern: "Source vs Destination in spatial metaphors"
+    rationale: 'Abstract concepts expressed spatially: "love from God" vs "God's love" - both acceptable, role choice stylistic.'
+    estimated_percentage: 20%
+
+  - pattern: "Beneficiary vs Addressee in ambiguous contexts"
+    rationale: 'Some verbs allow both readings: "speak to/for someone" - Addressee or Beneficiary? Often context-dependent, not doctrinally critical.'
+    estimated_percentage: 10%
+
+  - pattern: "Crowd sizes, anonymous participants"
+    rationale: 'Exact count or semantic role of anonymous participants rarely matters. "A crowd followed" (Agent) vs "was following" (Agent, different aspect) - stylistic.'
+    estimated_percentage: 25%
+
+  - pattern: "Adjunct roles (Location, Time, Manner)"
+    rationale: 'TBTA marks these as "N" (Not Applicable). Choice of whether to include or omit adjuncts often stylistic, not semantic role proper.'
+    estimated_percentage: 30%
+
+# ==============================================================================
+# SUMMARY STATISTICS (Estimated)
+# ==============================================================================
+
+# Total estimated distribution:
+# - Non-arbitrary-theological: ~5-10% of verses (critical doctrinal passages)
+# - Non-arbitrary-contextual: ~10-15% of verses (narrative clarity)
+# - Arbitrary: ~75-85% of verses (stylistic, non-critical)
+#
+# Note: Percentages are rough estimates based on internal knowledge (unverified).
+# Actual distribution requires Stage 2 corpus analysis.

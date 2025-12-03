@@ -1,0 +1,4 @@
+usage: enrich_extract_with_verses.py [-h] --input INPUT --languages LANGUAGES
+                                     --output OUTPUT [--delay DELAY]
+                                     [--skip-errors]
+enrich_extract_with_verses.py: error: unrecognized arguments:     

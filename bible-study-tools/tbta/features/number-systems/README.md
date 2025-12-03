@@ -2,9 +2,15 @@
 
 **Feature**: Grammatical Number
 **TBTA Tier**: A (Essential)
+<<<<<<< HEAD
 **Stage**: 1 - Research Complete
 **Status**: ✅ Research complete, ready for Stage 2 (Analysis)
 **Last Updated**: 2025-11-24
+=======
+**Stage**: 2 - Analysis Complete
+**Status**: ✅ Analysis complete, ready for Stage 3 (Experimentation)
+**Last Updated**: 2025-11-26
+>>>>>>> origin/feat/self-learning-tbta
 
 ## Overview
 
@@ -157,6 +163,7 @@ Grammatical number encodes the count of entities: singular (1), dual (2), trial 
 
 See [research/README.md](research/README.md) for full summary.
 
+<<<<<<< HEAD
 ## Next Steps
 
 ### Stage 2: Analysis & Hypothesis Validation
@@ -177,6 +184,69 @@ See [research/README.md](research/README.md) for full summary.
 - Stratified sampling: Ensure Trinity contexts in all sets
 - Adversarial set: Edge cases (lexicalized plurals, collectives, ambiguous plurals)
 
+=======
+## Stage 2.1: Extraction & Dataset Creation
+
+### Step 1A: Data Extraction - COMPLETE
+
+**Data extracted**: 174,239 annotations from TBTA.
+
+**Distribution**:
+- Singular: 113,745 (65.29%)
+- Plural: 55,654 (31.94%)
+- Dual: 1,744 (1.00%)
+- Trial: 496 (0.28%)
+- Quadrial: 185 (0.11%)
+- Paucal: 52 (0.03%)
+
+**Files**:
+- `analysis/tbta-extract.jsonl` - Full extraction (174,239 entries)
+- `analysis/distribution.yaml` - Detailed distribution analysis
+
+### Step 1B: Balanced Dataset Creation - COMPLETE
+
+**Total entries**: 986
+
+**Split distribution**:
+- train: 811
+- validate: 88
+- test: 87
+
+**Label distribution**:
+- Singular: 242
+- Plural: 241
+- Dual: 240
+- Trial: 131
+- Quadrial: 99
+- Paucal: 33
+
+**Reason group distribution** (top 10):
+- GENERAL: 207
+- PROPER-NAME: 131
+- OBJECT: 105
+- QUAD-COUNT: 99
+- TIME-UNIT: 96
+- ABSTRACT: 85
+- CROWD: 75
+- BODY-PART: 63
+- KINSHIP: 60
+- COLLECTIVE: 32
+
+**Quality metrics**:
+- strongs_number present: 986/986 (100%)
+- reason_group present: 986/986 (100%)
+- strongs list present: 911/986 (92%)
+
+**Files**:
+- `analysis/tbta-extract.jsonl` - Full extraction (171,876 entries)
+- `analysis/datasets.jsonl` - Balanced dataset with all enrichments (986 entries)
+- `analysis/distribution.yaml` - Label distribution from extraction
+
+**Status**: Ready for Step 1C (Enrich with Translations)
+
+## Next Steps
+
+>>>>>>> origin/feat/self-learning-tbta
 ### Stage 3: Experimentation
 
 **Algorithm Development**:
@@ -210,7 +280,12 @@ See:
 
 ---
 
+<<<<<<< HEAD
 **Lines**: 199 (under 200-line progressive disclosure limit)
 **Status**: Stage 1 complete ✅
 **Ready for**: Stage 2 Analysis
+=======
+**Status**: Stage 2 Step 1B complete - Ready for Step 1C (Translation Enrichment)
+**Ready for**: Step 1C (Enrich with Translations)
+>>>>>>> origin/feat/self-learning-tbta
 

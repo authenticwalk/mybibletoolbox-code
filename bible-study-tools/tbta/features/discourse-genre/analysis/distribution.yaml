@@ -1,0 +1,22 @@
+# Distribution of Discourse Genre Values
+# Total entries: 72,505
+
+distribution:
+  Climactic Narrative Story: 72440  # 99.9%
+  Genealogy: 62                     # 0.1%
+  Expository: 3                     # 0.0%
+
+summary:
+  total_entries: 72505
+  unique_values: 3
+  most_common: "Climactic Narrative Story"
+  least_common: "Expository"
+
+notes: |
+  The data shows extreme imbalance with "Climactic Narrative Story" dominating at 99.9%.
+  This suggests either:
+  1. The TBTA data only annotated certain discourse types
+  2. Most biblical text is narrative-focused
+  3. Other discourse genres may be under-represented in the dataset
+
+  For balanced sampling, we will need to oversample Genealogy and Expository examples.

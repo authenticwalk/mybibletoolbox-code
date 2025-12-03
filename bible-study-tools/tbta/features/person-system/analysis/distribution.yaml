@@ -1,0 +1,14 @@
+# Distribution of Person feature values
+
+feature: Person
+total_entries: 171876
+
+distribution:
+  Third: 141890
+  Second: 16732
+  First: 10207
+  First Inclusive: 1386
+  First Exclusive: 1272
+  First as Third: 330
+  Second as Third: 47
+  First Exclusive as Third: 12

@@ -1,0 +1,27 @@
+# Surface Realization Feature Distribution
+# Generated from TBTA extraction
+
+total_entries: 172168
+unique_values: 3
+
+distribution:
+  Noun:
+    count: 171205
+    percentage: 99.44
+    description: Regular noun (default surface realization)
+
+  "Always a Noun":
+    count: 961
+    percentage: 0.56
+    description: Constituent that must always be realized as a noun
+
+  Personal Pronoun:
+    count: 2
+    percentage: 0.00
+    description: Realized as a personal pronoun (extremely rare)
+
+notes:
+  - The vast majority (99.44%) are regular nouns
+  - "Always a Noun" is a small but significant subset (0.56%)
+  - "Personal Pronoun" is extremely rare with only 2 occurrences
+  - This is a highly imbalanced feature requiring careful sampling

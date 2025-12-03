@@ -1,0 +1,13 @@
+feature: Reflexivity
+extraction_date: 2025-11-29
+total_annotations: 685
+
+distribution:
+  Reciprocal: 287
+  Reflexive: 398
+
+notes: |
+  - Total of 685 annotations across all verses
+  - This is higher than initial verse counts because multiple constituents
+    per verse can be annotated
+  - Reflexive (398) slightly more common than Reciprocal (287)

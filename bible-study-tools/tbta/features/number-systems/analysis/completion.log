@@ -1,0 +1,24 @@
+Waiting for enrichment to complete...
+Enrichment completed! Proceeding with split...
+Running split_dataset.py...
+Loading input: /workspace/bible-study-tools/tbta/features/number-systems/analysis/enriched.jsonl
+  Loaded 165177 entries
+Loading original: /workspace/bible-study-tools/tbta/features/number-systems/analysis/tbta-extract.jsonl
+  Loaded 171876 entries
+Wrote 164867 entries to /workspace/bible-study-tools/tbta/features/number-systems/analysis/data/train.jsonl
+Wrote 310 entries to /workspace/bible-study-tools/tbta/features/number-systems/analysis/data/test.secret.jsonl
+Wrote 310 entries to /workspace/bible-study-tools/tbta/features/number-systems/analysis/data/test.jsonl
+No leftovers found
+
+=== Summary ===
+Train:    164867 entries
+Validate: 0 entries
+Test:     310 entries
+Leftovers: 0 entries
+Split completed!
+Cleaning up intermediate files...
+Cleanup completed!
+Verifying new languages in train.jsonl...
+        "haw-1868": "Ia ia i kamailio ai me lakou, aia hoi, pii mai la ua kanaka koa la, no ko Pilisetia, o Golia kona inoa no Gata, mai ka poe kaua o ko Pilisetia mai, a olelo mai e like me kela olelo: a lohe o Davida.",
+SUCCESS: New languages (haw, meu, ceb, chk) confirmed in dataset!
+All tasks completed successfully!

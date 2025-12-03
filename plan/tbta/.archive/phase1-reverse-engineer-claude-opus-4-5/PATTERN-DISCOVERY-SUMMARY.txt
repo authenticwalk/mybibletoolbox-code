@@ -1,0 +1,344 @@
+================================================================================
+BLIND PATTERN DISCOVERY ANALYSIS: chunk-an.tsv
+================================================================================
+Analysis Date: 2025-12-02
+Dataset: /workspace/plan/tbta/phase1-policy/data/chunk-an.tsv
+Total Verses: 463
+Total Patterns Found: 76 (with 3+ occurrences each)
+
+================================================================================
+OVERVIEW
+================================================================================
+
+The analysis identified a sophisticated 7-layer linguistic annotation system:
+
+Layer 1: STRUCTURAL MARKUP           [2 patterns]      11 occurrences
+Layer 2: GRAMMATICAL RECONSTRUCTION  [5 patterns]      405 occurrences
+Layer 3: PRAGMATIC ANNOTATION        [13 patterns]     284 occurrences
+Layer 4: DISCOURSE TRACKING          [22 patterns]     393 occurrences
+Layer 5: SEMANTIC LINKING            [24 patterns]     166+ occurrences
+Layer 6: SYNTACTIC COMPLEXITY        [4 levels]        282 verses
+LAYER 7: PHRASE-LEVEL ALTERNATIVES   [11 patterns]     93 occurrences
+
+TOTAL: 76 patterns, 1346+ total occurrences
+
+================================================================================
+CATEGORY 1: UNDERSCORE MARKERS (13 patterns)
+================================================================================
+Purpose: Mark word-level transformations and inference needs
+
+Most Frequent:
+  _implicit              87 occurrences (18.8% of verses) - Information inferred
+  _implicitNecessary     28 occurrences (6.0%)             - Critical inference
+  _paragraph             26 occurrences (5.6%)             - Section boundary
+  _implicitActiveAgent   15 occurrences (3.2%)             - Infer actor
+  _1stAs3rd              13 occurrences (2.8%)             - POV transformation
+
+Other patterns: _metonymy, _routinely, _frameInferable, _1stas3rd, _generic,
+_dual, _implicitType, _descriptive
+
+Key Finding: 1 in 5 verses use _implicit marking, indicating heavy reliance
+on reader inference in these annotated verses.
+
+Examples:
+  Matthew 16:14
+    _paragraph Those followers/disciples answered, ["Some people say [that
+    you(Jesus) _implicitNecessary are _implicitNecessary John the Baptist]].
+
+  Mark 11:23
+    I(Jesus) tell the truth to you(followers). A person might say to this
+    mountain _frameInferable...
+
+================================================================================
+CATEGORY 2: SQUARE BRACKET PATTERNS (5 patterns)
+================================================================================
+Purpose: Mark explicit additions and grammatical reconstructions
+
+Distribution by type:
+  Relative clause (that)         184 occurrences  - Most common
+  Relative clause (who/which)     56 occurrences
+  Temporal clause (When)          50 occurrences
+  Purpose clause (in-order)       11 occurrences
+  Nested multi-level              165 occurrences
+
+Nesting Complexity:
+  Single level [...]              82 verses (17.7%)
+  Double nested [[...]]           168 verses (36.3%) - MOST COMMON
+  Triple nested [[[...]]]         29 verses (6.3%)
+  Quadruple [[[[...]]]]           3 verses (0.6%)
+
+Key Finding: 87.5% of verses contain brackets. More than half require
+tracking multiple nested clauses (36% double-nested). Relative clauses
+dominate (240/463 verses with [that/who/which...]).
+
+Examples:
+  Genesis 24:20
+    So Rebekah quickly poured all the water [that was in Rebekah's jar]
+    into the trough for camels.
+
+  Acts 16:24
+    [When the chief guard of the prison heard this command], the chief guard
+    of the prison tied Paul and Silas' legs to a piece of wood with chains.
+
+  Mark 2:1
+    Jesus (title) causes [a man [who is not able [to move that man's legs]]
+    to become healthy].
+
+================================================================================
+CATEGORY 3: PARENTHETICAL MARKERS (22 patterns)
+================================================================================
+Purpose: Functional annotation and discourse participant tracking
+
+Functional Markers:
+  (imp)           70 occurrences  - Imperative/command
+  (paragraph)     25 occurrences  - Paragraph boundary
+  (title)         23 occurrences  - Section heading
+  (footnote)      12 occurrences  - Explanatory note
+  (literal)       12 occurrences  - Literal rendering
+  (dynamic)       12 occurrences  - Dynamic equivalent
+  (rhetorical)    5 occurrences   - Rhetorical question
+
+Agent Identifiers (15 types):
+  (people)        28 occurrences
+  (Jesus)         22 occurrences
+  (David)         22 occurrences
+  (Yahweh)        13 occurrences
+  (God)           11 occurrences
+  (Jacob)         11 occurrences
+  (followers)     11 occurrences
+  Plus: (Israelites), (Joseph), (Saul), (brothers), (Nehemiah), (Paul),
+  (soldiers), (disciples)
+
+Key Finding: 52.5% of verses identify specific participants in parentheses,
+showing critical emphasis on discourse analysis and coreference tracking.
+
+Examples:
+  Matthew 16:14
+    Those followers/disciples answered, ["Some people say [that you(Jesus)
+    _implicitNecessary are _implicitNecessary John the Baptist]].
+
+  Nehemiah 9:33
+    Many things happened to us(people). But you(God) always treated
+    us(people) fairly.
+
+================================================================================
+CATEGORY 4: SLASH ALTERNATIVES (11 patterns)
+================================================================================
+Purpose: Mark semantic equivalence and translation alternatives
+
+Most Frequent Pairs:
+  followers/disciples             39 occurrences (8.4% of verses!)
+  containers/wineskins            5 occurrences
+  follower/disciple               5 occurrences
+  cloth/sponge                    4 occurrences
+
+Others: stories/parables (3), story/parable (3), servants/guards (3),
+buy/redeem (3), upset/troubled (3), people/workers (3), servants/messenger (3)
+
+Key Finding: 1 in 5 verses (20.1%) use slash pairs. The overwhelming
+dominance of followers/disciples (39x) suggests translation variation is
+a major concern in this dataset.
+
+Examples:
+  Mark 6:13
+    The followers/disciples forced [many demons to leave people].
+    The followers/disciples also put oil on many sick people.
+
+================================================================================
+CATEGORY 5: HYPHENATED PATTERN WORDS (24 patterns)
+================================================================================
+Purpose: Link words to form semantic units
+
+Primary Categories:
+
+Semantic/Conceptual (5):
+  in-order                13 occurrences - Purpose/intention
+  just-like               13 occurrences - Comparison
+  in-front                5 occurrences  - Spatial position
+  Holy-Spirit             5 occurrences  - Divine entity
+  Good-News               6 occurrences  - Religious concept
+
+Grammatical/Pragmatic (3):
+  implicit-situational    19 occurrences - Context inference (HIGH)
+  implicit-info           9 occurrences  - Information type
+  Son-of                  22 occurrences - Kinship/identity (HIGH)
+
+Action/Motion (6):
+  run-away                6 occurrences
+  take-away               6 occurrences
+  Plus: pull-out, take-out, throw-away, cut-off (3 each)
+
+Relational (4):
+  daughter-in             6 occurrences
+  servant-B               5 occurrences
+  Plus: Lord-B, return-B (3 each)
+
+Structural/Temporal (2):
+  At-that                 4 occurrences
+  Then-D                  3 occurrences
+
+Grammatical Property (1):
+  is-V                    4 occurrences
+
+Key Finding: 166+ verses use hyphenated patterns. "Son-of" (22x) and
+"implicit-situational" (19x) are key markers. These patterns consolidate
+complex meanings into semantic units.
+
+Examples:
+  Matthew 24:37
+    At the time [that the Son-of-man _1stAs3rd will come again _implicit at]
+    people will be active.
+
+  Mark 4:13
+    Then Jesus said to those people [(implicit-situational) who asked about
+    the stories/parables].
+
+================================================================================
+CATEGORY 6: DASH PREFIX MARKERS (2 patterns)
+================================================================================
+Purpose: Mark structural boundaries at verse start
+
+  -Title              8 occurrences - Section heading
+  -quantity           3 occurrences - Quantity marker
+
+Key Finding: Minimal structural markup (1.7% of verses), suggesting this
+is used selectively for major divisions.
+
+Examples:
+  Genesis 11:10
+    -Title Shem has a family. After the flood -quantity two years Shem was
+    100 years old.
+
+================================================================================
+CATEGORY 7: NESTED BRACKET DEPTH (Complexity Measure)
+================================================================================
+Purpose: Measure information density through nesting levels
+
+Distribution:
+  No brackets              58 verses (12.5%)
+  Single [...]             82 verses (17.7%)
+  Double [[...]]          168 verses (36.3%) <-- MOST COMMON
+  Triple [[[...]]]         29 verses (6.3%)
+  Quadruple [[[[...]]]]    3 verses (0.6%)
+
+Key Finding: 43% of verses use 2+ levels of nesting, indicating substantial
+syntactic complexity requiring multiple clause tracking.
+
+Extreme Example (Quadruple):
+  Genesis 3:17
+    ["Because you(Adam) listened to the wife of you(Adam)] [and because
+    you(Adam) ate [the fruit [that you(Adam) were commanded [not to eat]]]].
+
+================================================================================
+PATTERN CO-OCCURRENCE
+================================================================================
+
+Strong Co-occurrence Patterns:
+  Brackets + Agent identifier:        87% of verses
+  Underscore markers + Brackets:       23% of verses
+  Agent + Functional marker:           15% of verses
+  Hyphenated words + Brackets:         36% of verses
+
+Highest Density Books:
+  Matthew: 41 annotated verses
+  Mark: 28 annotated verses
+  Genesis: 25 annotated verses
+  2 Samuel: 15 annotated verses
+  Acts: 12 annotated verses
+
+================================================================================
+STATISTICAL SUMMARY
+================================================================================
+
+Pattern Universe:
+  Total Unique Patterns: 76
+  Total Pattern Occurrences: 1346+
+  Average Patterns per Verse: 2.9
+  Verses with No Annotation: 12.5%
+  Verses with Heavy Annotation (3+ types): 47%
+
+Pattern Type Distribution:
+  Underscore markers          20% (284 occurrences)
+  Square bracket patterns     30% (405 occurrences)
+  Parenthetical markers       29% (393 occurrences)
+  Slash alternatives          7% (93 occurrences)
+  Hyphenated patterns         12% (166+ occurrences)
+  Dash prefixes               1% (11 occurrences)
+  Nesting levels          61% (282 verses affected)
+
+================================================================================
+KEY INSIGHTS
+================================================================================
+
+1. INFERENCE DEPENDENCY
+   - 18.8% of verses mark _implicit information
+   - 6% explicitly mark _implicitNecessary items
+   - Suggests readers must actively interpret/supply meaning
+
+2. GRAMMATICAL RECONSTRUCTION HEAVY
+   - 87.5% of verses use square brackets
+   - Relative clauses dominate (52% of bracketed verses)
+   - Multi-level nesting common (43% of verses)
+
+3. AGENT TRACKING CENTRAL
+   - 52.5% of verses identify specific participants
+   - 15 distinct agent types tracked
+   - Person/group identification priority
+
+4. TRANSLATION VARIABILITY ACKNOWLEDGED
+   - 20.1% of verses mark semantic alternatives
+   - followers/disciples pair dominates (39x, 8.4% of verses)
+   - Shows awareness of translation/interpretation gaps
+
+5. SEMANTIC UNIT CREATION
+   - 166+ verses use hyphenated patterns
+   - 24 distinct semantic linking patterns
+   - Son-of (22x) and implicit-situational (19x) most critical
+
+6. DISCOURSE STRUCTURE EXPLICIT
+   - Document structure marked with dashes
+   - Paragraph boundaries clearly marked
+   - Section headings integrated
+
+================================================================================
+APPLICATIONS
+================================================================================
+
+This pattern inventory enables:
+
+FOR AI SYSTEMS:
+  - Training on annotated semantic/pragmatic structure
+  - Understanding implicit information that must be inferred
+  - Tracking discourse participants across long passages
+  - Identifying translation/interpretation variability
+
+FOR BIBLE STUDY:
+  - Systematic understanding of grammatical ellipsis
+  - Clear participant tracking in complex narratives
+  - Recognition of semantic equivalence in different translations
+  - Understanding implied cultural/theological context
+
+FOR LINGUISTICS:
+  - Analysis of how meaning is encoded in discourse
+  - Study of inference patterns in theological text
+  - Understanding of ellipsis and agent tracking
+  - Mapping of semantic relationships
+
+FOR TOOL DEVELOPMENT:
+  - Building coreference resolution systems
+  - Creating ellipsis recovery systems
+  - Developing translation equivalence finders
+  - Creating implicit information flagging systems
+
+================================================================================
+DETAILED REFERENCE DOCUMENTS
+================================================================================
+
+See also:
+  PATTERN-ANALYSIS.md      - Full 549-line analysis with examples
+  PATTERN-REFERENCE.md     - Quick lookup tables and cross-reference
+  PATTERN_ANALYSIS.md      - Alternative format (227 lines)
+
+================================================================================
+END SUMMARY
+================================================================================

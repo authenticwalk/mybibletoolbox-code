@@ -51,6 +51,9 @@ This is the myBibleToolbox project - an initiative to create the largest AI-read
  - Prefer calling subagents in parallel, when possible 8 in parallel.
  - **Push after EVERY commit** - Run `git push -u origin <branch>` immediately after EVERY `git commit`. Never batch commits before pushing. Pattern: make change → commit → push → repeat.
 
+### Path Resolution
+ - Sometimes you are running in docker or other but the user instructions may contain /Users/.../bible-study-tools; if your cwd is /workspace replace it
+
 ### The Problem Being Solved
 
 AI text prediction models tend to be more confident than accurate when dealing with Biblical texts. While they perform well on commonly cited passages (like John 3:16) in popular translations (NIV, KJV), accuracy degrades significantly with:
@@ -159,3 +162,4 @@ The data directory uses Git sparse-checkout to limit which files are downloaded.
   - Or disable sparse-checkout temporarily: `cd $DATA_DIR && git sparse-checkout disable`
 - **Check current scope**: `cd $DATA_DIR && git sparse-checkout list`
 - **Re-enable**: `cd $DATA_DIR && git sparse-checkout init --cone` then set patterns again
+
