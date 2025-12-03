@@ -97,3 +97,24 @@ Add learnings here when V2 wins or discovers a new pattern.
 ## Title Clause Names
 - Title clause may use character names from later verses (Ru 1:1)
 - Pattern: `Name (title) and Name verb from Place to Place.` (Ru 1:1)
+
+## Disability Descriptions
+- "paralyzed" → `[who was not able [to move that man's legs]]` — specify body part (Mk 2:3)
+- Use "legs" not generic "body" or simple "sick" (Mk 2:3)
+- Avoid oversimplifying disability vocabulary
+
+## L2 Verb Pairings
+- Verbs also use L2 pairing: `telling/preaching` not just nouns (Mk 2:2)
+
+## Space vs Room
+- "no room" → "no space" — use "space" for capacity (Mk 2:2)
+
+## Address Terms
+- "Son" → "Child" — Greek τέκνον translates as "Child" (Mk 2:5)
+
+## Scribes
+- "teachers of the law" → "scribes" — preserve religious role specificity (Mk 2:6)
+- Do not simplify to just "teachers"
+
+## Numerical Preservation
+- Always preserve numbers as digits: "4 people" not omit (Mk 2:3)
