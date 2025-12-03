@@ -105,22 +105,33 @@ NOTE: Run linter until clean (max 12 iterations) BEFORE returning
 4. **Update** the appropriate learnings file
 
 ### Learnings Format
+
+**CRITICAL**: Learnings must be GENERIC patterns applicable to ANY verse.
+
 ```markdown
-## {Category}
-- {pattern} → `{solution}` — {verse reference}
+## {Generic Category}
+- {pattern} → `{solution}` (Mt 2:1, Ac 10:3)
 ```
+
+**Rules**:
+1. **Headers = Generic categories** — "L2 Word Pairings", "Verb Case Frames", "Quote Structure" — NEVER verse-specific ("Matthew 2:1-10 Learnings")
+2. **Verse refs = Suffix only** — Add `(Mt 2:1)` at END to show evidence, not as headers
+3. **No metadata** — Never add "(V1 Winner)", error counts, iteration counts
+4. **Merge into existing sections** — Find the right category, don't create new verse-specific sections
 
 ### Rule Aggregation
 
-**Before adding a new rule**, check for similar rules in the same section → aggregate into generic rule, keep verse refs as examples.
+**Before adding**, check for similar rules → merge into existing section with combined refs.
 
 ```markdown
-# Before (3 similar):
-- "burnt offering" → `gift [that X burns]` — Gen 22:2
-- "sin offering" → `gift [for sins]` — Lev 4:3
+# BAD (verse-specific section):
+## Matthew 2:1-10 Learnings
+- "Magi" → "wise men"
 
-# After:
-- "{type} offering" → `gift [for/that {purpose}]` — Gen 22:2, Lev 4:3
+# GOOD (merged into generic section):
+## L2 Word Substitutions
+- "Magi" → "wise men" (Mt 2:1)
+- "centurion" → "officer/centurion" (Ac 10:1)
 ```
 
 **Aggregate when**: Same category, same pattern, only specific word differs.
