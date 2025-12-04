@@ -57,7 +57,7 @@ POS_MAPPING = {
 }
 
 
-def parse_tbta_tags(analyzed_verse: str) -> List[Dict[str, str]]:
+def parse_tbta_tags(analyzed_verse: str, include_metadata: bool = False) -> List[Dict[str, str]]:
     """
     Parse TBTA feature tags to extract constituent words and their parts of speech.
     
@@ -72,9 +72,10 @@ def parse_tbta_tags(analyzed_verse: str) -> List[Dict[str, str]]:
     
     Args:
         analyzed_verse: TBTA tagged string from AnalyzedVerse column
+        include_metadata: If True, includes full TBTA tag as 'semantic' field
         
     Returns:
-        List of dicts with keys: constituent, part, tag, sense
+        List of dicts with keys: constituent, part, tag, sense, semantic (if include_metadata=True)
     """
     if not analyzed_verse:
         return []
@@ -139,12 +140,15 @@ def parse_tbta_tags(analyzed_verse: str) -> List[Dict[str, str]]:
             for i, word in enumerate(words):
                 # First word typically has no sense prefix
                 if i == 0:
-                    constituents.append({
+                    item = {
                         'constituent': word,
                         'part': part,
                         'tag': tag,
                         'sense': None
-                    })
+                    }
+                    if include_metadata:
+                        item['semantic'] = tag
+                    constituents.append(item)
                 else:
                     # Subsequent words have sense prefix (e.g., "Acreate" -> sense="A", word="create")
                     sense = None
@@ -156,20 +160,26 @@ def parse_tbta_tags(analyzed_verse: str) -> List[Dict[str, str]]:
                         clean_word = word[1:]
                     
                     if clean_word:
-                        constituents.append({
+                        item = {
                             'constituent': clean_word,
                             'part': part,
                             'tag': tag,
                             'sense': sense
-                        })
+                        }
+                        if include_metadata:
+                            item['semantic'] = tag
+                        constituents.append(item)
         else:
             # Single constituent, no sense info in the constituent itself
-            constituents.append({
+            item = {
                 'constituent': constituent,
                 'part': part,
                 'tag': tag,
                 'sense': None
-            })
+            }
+            if include_metadata:
+                item['semantic'] = tag
+            constituents.append(item)
     
     return constituents
 
@@ -288,26 +298,27 @@ def match_constituent_to_concepts(
     return matches
 
 
-def extract_word_senses_for_verse(analyzed_verse: str) -> List[Dict[str, str]]:
+def extract_word_senses_for_verse(analyzed_verse: str, include_metadata: bool = False) -> List[Dict[str, str]]:
     """
     Extract all word senses from a verse for detailed analysis.
     
     This function returns the full word information including constituent, part of speech,
-    and sense, which can be used to join with the concepts table.
+    sense, and optionally the TBTA semantic feature codes.
     
     Args:
         analyzed_verse: TBTA tagged text
+        include_metadata: If True, includes 'semantic' field with TBTA feature codes
         
     Returns:
-        List of dicts with keys: constituent, part, sense
+        List of dicts with keys: constituent, part, sense, semantic (if include_metadata=True)
         Example: [
-            {'constituent': 'God', 'part': 'Noun', 'sense': None},
-            {'constituent': 'make', 'part': 'Verb', 'sense': None},
-            {'constituent': 'create', 'part': 'Verb', 'sense': 'A'},
-            {'constituent': 'sky', 'part': 'Noun', 'sense': 'B'}
+            {'constituent': 'God', 'part': 'Noun', 'sense': None, 'semantic': 'N-1A1SDAnK3NN........'},
+            {'constituent': 'make', 'part': 'Verb', 'sense': None, 'semantic': 'V-1ArUINAN...........'},
+            {'constituent': 'create', 'part': 'Verb', 'sense': 'A', 'semantic': 'V-1ArUINAN...........'},
+            {'constituent': 'sky', 'part': 'Noun', 'sense': 'B', 'semantic': 'N-1B2SFAnK3NN........'}
         ]
     """
-    return parse_tbta_tags(analyzed_verse)
+    return parse_tbta_tags(analyzed_verse, include_metadata=include_metadata)
 
 
 def extract_concepts_for_verse(
@@ -367,6 +378,140 @@ def extract_concepts_for_verse(
     }
     
     return sorted(list(concept_ids)), stats
+
+
+def populate_word_senses_json(
+    db_path: Path,
+    dry_run: bool = False,
+    book: str = None,
+    limit: int = None
+) -> Dict:
+    """
+    Populate word_senses_json column with detailed word sense information.
+    
+    This creates a JSON column with structure:
+    [
+        {
+            "stem": "God",
+            "sense": null,
+            "part_of_speech": "Noun",
+            "semantic": "N-1A1SDAnK3NN........"
+        },
+        ...
+    ]
+    
+    Args:
+        db_path: Path to Bible_unified.sqlite database
+        dry_run: If True, don't write to database
+        book: Optional book filter (USFM3 code)
+        limit: Optional limit on number of verses to process
+        
+    Returns:
+        Statistics dictionary
+    """
+    logger.info("=" * 60)
+    logger.info("TBTA Word Senses JSON Population")
+    logger.info("=" * 60)
+    logger.info(f"Database: {db_path}")
+    if book:
+        logger.info(f"Book filter: {book}")
+    if limit:
+        logger.info(f"Verse limit: {limit}")
+    if dry_run:
+        logger.info("DRY RUN MODE - No database updates")
+    logger.info("=" * 60)
+    
+    # Connect to database
+    db = sqlite3.connect(db_path)
+    
+    # Check if word_senses_json column exists, create if not
+    if not dry_run:
+        cursor = db.cursor()
+        cursor.execute("PRAGMA table_info(verses)")
+        columns = [col[1] for col in cursor.fetchall()]
+        
+        if 'word_senses_json' not in columns:
+            logger.info("Adding word_senses_json column to verses table...")
+            cursor.execute("ALTER TABLE verses ADD COLUMN word_senses_json TEXT")
+            db.commit()
+            logger.info("✓ Column added")
+    
+    # Get verses to process
+    cursor = db.cursor()
+    query = "SELECT USFM3, ChapterNum, VerseNum, AnalyzedVerse FROM verses WHERE AnalyzedVerse IS NOT NULL"
+    params = []
+    
+    if book:
+        query += " AND USFM3 = ?"
+        params.append(book)
+    
+    if limit:
+        query += " LIMIT ?"
+        params.append(limit)
+    
+    cursor.execute(query, params)
+    verses = cursor.fetchall()
+    
+    total_verses = len(verses)
+    logger.info(f"Processing {total_verses} verses with TBTA data...")
+    
+    # Statistics
+    stats = {
+        'processed': 0,
+        'with_senses': 0,
+        'total_words': 0,
+        'avg_words_per_verse': 0,
+    }
+    
+    all_word_counts = []
+    
+    # Process each verse
+    for idx, (usfm3, chapter, verse_num, analyzed_verse) in enumerate(verses, 1):
+        if idx % 100 == 0 or idx == total_verses:
+            logger.info(f"  Progress: {idx}/{total_verses} ({idx*100//total_verses}%)")
+        
+        # Extract word senses with metadata
+        word_senses = extract_word_senses_for_verse(analyzed_verse, include_metadata=True)
+        
+        if word_senses:
+            # Build JSON array with proper field names
+            json_array = []
+            for ws in word_senses:
+                json_array.append({
+                    'stem': ws['constituent'],
+                    'sense': ws.get('sense'),
+                    'part_of_speech': ws['part'],
+                    'semantic': ws.get('semantic', ws['tag'])
+                })
+            
+            stats['with_senses'] += 1
+            stats['total_words'] += len(json_array)
+            all_word_counts.append(len(json_array))
+            
+            # Store in database
+            if not dry_run:
+                json_str = json.dumps(json_array, ensure_ascii=False)
+                cursor.execute(
+                    "UPDATE verses SET word_senses_json = ? WHERE USFM3 = ? AND ChapterNum = ? AND VerseNum = ?",
+                    (json_str, usfm3, chapter, verse_num)
+                )
+        
+        stats['processed'] += 1
+    
+    # Commit changes
+    if not dry_run:
+        db.commit()
+        logger.info("✓ Database updated")
+    
+    db.close()
+    
+    # Calculate summary statistics
+    if all_word_counts:
+        stats['avg_words_per_verse'] = sum(all_word_counts) / len(all_word_counts)
+        stats['max_words_per_verse'] = max(all_word_counts)
+        stats['min_words_per_verse'] = min(all_word_counts)
+    
+    return stats
 
 
 def process_database(
@@ -575,6 +720,11 @@ Examples:
         type=Path,
         help="Export all word senses to JSON file (for joining with concepts)"
     )
+    parser.add_argument(
+        "--populate-senses-json",
+        action="store_true",
+        help="Populate word_senses_json column in database with full word sense metadata"
+    )
     
     args = parser.parse_args()
     
@@ -664,6 +814,43 @@ Examples:
         
         logger.info(f"Exported {len(all_senses)} word senses from {len(set(s['verse'] for s in all_senses))} verses")
         db.close()
+        sys.exit(0)
+    
+    # Handle populate senses JSON option
+    if args.populate_senses_json:
+        stats = populate_word_senses_json(
+            args.database,
+            dry_run=args.dry_run,
+            book=args.book,
+            limit=args.limit
+        )
+        
+        # Print summary
+        logger.info("=" * 60)
+        logger.info("WORD SENSES JSON SUMMARY")
+        logger.info("=" * 60)
+        logger.info(f"Verses processed: {stats['processed']}")
+        logger.info(f"Verses with word senses: {stats['with_senses']}")
+        logger.info(f"Total words extracted: {stats['total_words']}")
+        if 'avg_words_per_verse' in stats:
+            logger.info(f"Average words per verse: {stats['avg_words_per_verse']:.1f}")
+            logger.info(f"Max words in a verse: {stats['max_words_per_verse']}")
+            logger.info(f"Min words in a verse: {stats['min_words_per_verse']}")
+        logger.info("=" * 60)
+        
+        if not args.dry_run:
+            logger.info("\nExample query to access word senses:")
+            logger.info("""
+SELECT 
+    USFM3, ChapterNum, VerseNum,
+    json_extract(value, '$.stem') as word,
+    json_extract(value, '$.sense') as sense,
+    json_extract(value, '$.part_of_speech') as pos,
+    json_extract(value, '$.semantic') as tbta_features
+FROM verses, json_each(word_senses_json)
+WHERE USFM3 = 'GEN' AND ChapterNum = 1 AND VerseNum = 1;
+            """)
+        
         sys.exit(0)
     
     # Process database
