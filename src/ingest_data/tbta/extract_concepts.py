@@ -68,12 +68,13 @@ def parse_tbta_tags(analyzed_verse: str) -> List[Dict[str, str]]:
     - Lowercase tags (n-, v-, c-, p-) are phrase-level (NP, VP, Clause, Particle)
     - Uppercase tags (N-, V-, A-) are word-level (Noun, Verb, Adjective)
     - Markers like -Begin Scene, {, }, (, ), [, ] are structural, not words
+    - Compound constituents like "make/Acreate" contain alternate words with senses
     
     Args:
         analyzed_verse: TBTA tagged string from AnalyzedVerse column
         
     Returns:
-        List of dicts with keys: constituent, part, tag
+        List of dicts with keys: constituent, part, tag, sense
     """
     if not analyzed_verse:
         return []
@@ -128,11 +129,46 @@ def parse_tbta_tags(analyzed_verse: str) -> List[Dict[str, str]]:
         # Parse part of speech from tag
         part = infer_part_from_tag(tag)
         
-        if constituent and part:
+        if not part:
+            continue
+        
+        # Handle compound constituents with slashes (e.g., "make/Acreate")
+        if '/' in constituent:
+            # Split and extract each word with its sense
+            words = constituent.split('/')
+            for i, word in enumerate(words):
+                # First word typically has no sense prefix
+                if i == 0:
+                    constituents.append({
+                        'constituent': word,
+                        'part': part,
+                        'tag': tag,
+                        'sense': None
+                    })
+                else:
+                    # Subsequent words have sense prefix (e.g., "Acreate" -> sense="A", word="create")
+                    sense = None
+                    clean_word = word
+                    
+                    # Extract sense letter (capital letter at start)
+                    if word and word[0].isupper() and len(word) > 1:
+                        sense = word[0]
+                        clean_word = word[1:]
+                    
+                    if clean_word:
+                        constituents.append({
+                            'constituent': clean_word,
+                            'part': part,
+                            'tag': tag,
+                            'sense': sense
+                        })
+        else:
+            # Single constituent, no sense info in the constituent itself
             constituents.append({
                 'constituent': constituent,
                 'part': part,
-                'tag': tag
+                'tag': tag,
+                'sense': None
             })
     
     return constituents
@@ -186,7 +222,8 @@ def infer_part_from_tag(tag: str) -> str:
 def match_constituent_to_concepts(
     db: sqlite3.Connection,
     constituent: str,
-    part: str
+    part: str,
+    sense: str = None
 ) -> List[int]:
     """
     Match a constituent word to concepts in the database.
@@ -195,13 +232,33 @@ def match_constituent_to_concepts(
         db: Database connection
         constituent: Word to match (e.g., "God", "create")
         part: Part of speech (e.g., "Noun", "Verb")
+        sense: Lexical sense letter (e.g., "A", "B", "C") or None
         
     Returns:
         List of concept IDs that match
     """
     cursor = db.cursor()
     
-    # Try exact match first
+    # If sense is provided, try exact match with sense first
+    if sense:
+        cursor.execute(
+            "SELECT id FROM concepts WHERE stem = ? AND part_of_speech = ? AND sense = ?",
+            (constituent, part, sense)
+        )
+        matches = [row[0] for row in cursor.fetchall()]
+        if matches:
+            return matches
+        
+        # Try case-insensitive with sense
+        cursor.execute(
+            "SELECT id FROM concepts WHERE LOWER(stem) = LOWER(?) AND part_of_speech = ? AND sense = ?",
+            (constituent, part, sense)
+        )
+        matches = [row[0] for row in cursor.fetchall()]
+        if matches:
+            return matches
+    
+    # Try exact match without sense (or if sense didn't match)
     cursor.execute(
         "SELECT id FROM concepts WHERE stem = ? AND part_of_speech = ?",
         (constituent, part)
@@ -229,6 +286,28 @@ def match_constituent_to_concepts(
     matches = [row[0] for row in cursor.fetchall()]
     
     return matches
+
+
+def extract_word_senses_for_verse(analyzed_verse: str) -> List[Dict[str, str]]:
+    """
+    Extract all word senses from a verse for detailed analysis.
+    
+    This function returns the full word information including constituent, part of speech,
+    and sense, which can be used to join with the concepts table.
+    
+    Args:
+        analyzed_verse: TBTA tagged text
+        
+    Returns:
+        List of dicts with keys: constituent, part, sense
+        Example: [
+            {'constituent': 'God', 'part': 'Noun', 'sense': None},
+            {'constituent': 'make', 'part': 'Verb', 'sense': None},
+            {'constituent': 'create', 'part': 'Verb', 'sense': 'A'},
+            {'constituent': 'sky', 'part': 'Noun', 'sense': 'B'}
+        ]
+    """
+    return parse_tbta_tags(analyzed_verse)
 
 
 def extract_concepts_for_verse(
@@ -269,14 +348,16 @@ def extract_concepts_for_verse(
         matches = match_constituent_to_concepts(
             db,
             item['constituent'],
-            item['part']
+            item['part'],
+            item.get('sense')
         )
         
         if matches:
             concept_ids.update(matches)
             matched_count += 1
         else:
-            unmatched.append(f"{item['constituent']}({item['part']})")
+            sense_str = f"[{item.get('sense')}]" if item.get('sense') else ""
+            unmatched.append(f"{item['constituent']}{sense_str}({item['part']})")
     
     stats = {
         'total_constituents': len(constituents),
@@ -485,6 +566,15 @@ Examples:
         action="store_true",
         help="Enable verbose logging"
     )
+    parser.add_argument(
+        "--test-verse",
+        help="Test word sense extraction on a specific verse (format: BOOK-CHAPTER-VERSE, e.g., GEN-1-1)"
+    )
+    parser.add_argument(
+        "--export-senses",
+        type=Path,
+        help="Export all word senses to JSON file (for joining with concepts)"
+    )
     
     args = parser.parse_args()
     
@@ -496,6 +586,85 @@ Examples:
     if not args.database.exists():
         logger.error(f"Database not found: {args.database}")
         sys.exit(1)
+    
+    # Handle test verse option
+    if args.test_verse:
+        parts = args.test_verse.split('-')
+        if len(parts) != 3:
+            logger.error("Invalid verse format. Use BOOK-CHAPTER-VERSE (e.g., GEN-1-1)")
+            sys.exit(1)
+        
+        book, chapter, verse = parts[0], int(parts[1]), int(parts[2])
+        
+        # Connect and test
+        db = sqlite3.connect(args.database)
+        cursor = db.cursor()
+        cursor.execute(
+            "SELECT AnalyzedVerse FROM verses WHERE USFM3 = ? AND ChapterNum = ? AND VerseNum = ?",
+            (book, chapter, verse)
+        )
+        row = cursor.fetchone()
+        
+        if not row or not row[0]:
+            logger.error(f"No TBTA data found for {book} {chapter}:{verse}")
+            sys.exit(1)
+        
+        logger.info(f"Testing word sense extraction for {book} {chapter}:{verse}")
+        word_senses = extract_word_senses_for_verse(row[0])
+        
+        logger.info(f"Found {len(word_senses)} words:")
+        for ws in word_senses:
+            sense_str = f" [sense: {ws['sense']}]" if ws['sense'] else ""
+            logger.info(f"  {ws['constituent']} ({ws['part']}){sense_str}")
+        
+        # Also show matching concepts
+        logger.info("\nMatching to concepts:")
+        for ws in word_senses:
+            matches = match_constituent_to_concepts(db, ws['constituent'], ws['part'], ws.get('sense'))
+            if matches:
+                cursor.execute(
+                    f"SELECT id, stem, sense, gloss FROM concepts WHERE id IN ({','.join('?' * len(matches))})",
+                    matches
+                )
+                for row in cursor.fetchall():
+                    logger.info(f"  {ws['constituent']} -> [{row[0]}] {row[1]} (sense {row[2]}): {row[3][:60]}...")
+            else:
+                sense_str = f" [sense: {ws['sense']}]" if ws['sense'] else ""
+                logger.info(f"  {ws['constituent']}{sense_str} -> NO MATCH")
+        
+        db.close()
+        sys.exit(0)
+    
+    # Handle export senses option
+    if args.export_senses:
+        logger.info(f"Exporting all word senses to {args.export_senses}")
+        db = sqlite3.connect(args.database)
+        cursor = db.cursor()
+        cursor.execute("SELECT USFM3, ChapterNum, VerseNum, AnalyzedVerse FROM verses WHERE AnalyzedVerse IS NOT NULL")
+        
+        all_senses = []
+        for row in cursor.fetchall():
+            usfm3, chapter, verse, analyzed_verse = row
+            word_senses = extract_word_senses_for_verse(analyzed_verse)
+            
+            for ws in word_senses:
+                all_senses.append({
+                    'verse': f"{usfm3}-{chapter:03d}-{verse:03d}",
+                    'usfm3': usfm3,
+                    'chapter': chapter,
+                    'verse_num': verse,
+                    'constituent': ws['constituent'],
+                    'part': ws['part'],
+                    'sense': ws['sense']
+                })
+        
+        args.export_senses.parent.mkdir(parents=True, exist_ok=True)
+        with open(args.export_senses, 'w', encoding='utf-8') as f:
+            json.dump(all_senses, f, ensure_ascii=False, indent=2)
+        
+        logger.info(f"Exported {len(all_senses)} word senses from {len(set(s['verse'] for s in all_senses))} verses")
+        db.close()
+        sys.exit(0)
     
     # Process database
     stats = process_database(
