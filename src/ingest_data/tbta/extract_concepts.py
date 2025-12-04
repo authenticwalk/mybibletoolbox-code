@@ -873,8 +873,9 @@ WHERE USFM3 = 'GEN' AND ChapterNum = 1 AND VerseNum = 1;
         
         sys.exit(0)
     
-    # Process database
-    stats = process_database(
+    # Default to populate-senses-json if no special action specified
+    logger.info("Populating word_senses_json column (use --populate-senses-json flag explicitly in future)")
+    stats = populate_word_senses_json(
         args.database,
         dry_run=args.dry_run,
         book=args.book,
@@ -882,24 +883,29 @@ WHERE USFM3 = 'GEN' AND ChapterNum = 1 AND VerseNum = 1;
     )
     
     # Print summary
-    print_summary(stats)
+    logger.info("=" * 60)
+    logger.info("WORD SENSES JSON SUMMARY")
+    logger.info("=" * 60)
+    logger.info(f"Verses processed: {stats['processed']}")
+    logger.info(f"Verses with word senses: {stats['with_senses']}")
+    logger.info(f"Total words extracted: {stats['total_words']}")
+    if 'avg_words_per_verse' in stats:
+        logger.info(f"Average words per verse: {stats['avg_words_per_verse']:.1f}")
+        logger.info(f"Max words in a verse: {stats['max_words_per_verse']}")
+        logger.info(f"Min words in a verse: {stats['min_words_per_verse']}")
+    logger.info("=" * 60)
     
-    # Show example query
-    if not args.dry_run and stats['with_concepts'] > 0:
-        logger.info("\nExample SQL query to join verses with concepts:")
+    if not args.dry_run:
+        logger.info("\nExample queries:")
         logger.info("""
+# Get words with concepts:
 SELECT 
-    v.USFM3,
-    v.ChapterNum,
-    v.VerseNum,
-    v.NIV,
-    c.stem,
-    c.gloss,
-    c.part_of_speech
-FROM verses v, json_each(v.concept_ids) je
-JOIN concepts c ON c.id = je.value
-WHERE v.USFM3 = '1CH' AND v.ChapterNum = 10
-LIMIT 10;
+    json_extract(value, '$.stem') as word,
+    json_extract(value, '$.semantic') as tbta,
+    c.gloss as meaning
+FROM verses, json_each(word_senses_json) ws
+LEFT JOIN concepts c ON c.id = json_extract(ws.value, '$.concept_id')
+WHERE USFM3 = 'GEN' AND ChapterNum = 1 AND VerseNum = 1;
         """)
 
 
