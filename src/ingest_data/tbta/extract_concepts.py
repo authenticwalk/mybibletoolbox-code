@@ -474,15 +474,26 @@ def populate_word_senses_json(
         word_senses = extract_word_senses_for_verse(analyzed_verse, include_metadata=True)
         
         if word_senses:
-            # Build JSON array with proper field names
+            # Build JSON array with proper field names and concept_ids
             json_array = []
             for ws in word_senses:
-                json_array.append({
+                # Match to concepts to get concept_id
+                concept_ids = match_constituent_to_concepts(
+                    db,
+                    ws['constituent'],
+                    ws['part'],
+                    ws.get('sense')
+                )
+                
+                # Create word sense object with concept_id
+                word_obj = {
                     'stem': ws['constituent'],
                     'sense': ws.get('sense'),
                     'part_of_speech': ws['part'],
-                    'semantic': ws.get('semantic', ws['tag'])
-                })
+                    'semantic': ws.get('semantic', ws['tag']),
+                    'concept_id': concept_ids[0] if concept_ids else None  # Use first match
+                }
+                json_array.append(word_obj)
             
             stats['with_senses'] += 1
             stats['total_words'] += len(json_array)
@@ -839,15 +850,24 @@ Examples:
         logger.info("=" * 60)
         
         if not args.dry_run:
-            logger.info("\nExample query to access word senses:")
+            logger.info("\nExample queries:")
             logger.info("""
+# Get word senses with TBTA features:
 SELECT 
-    USFM3, ChapterNum, VerseNum,
     json_extract(value, '$.stem') as word,
     json_extract(value, '$.sense') as sense,
-    json_extract(value, '$.part_of_speech') as pos,
+    json_extract(value, '$.concept_id') as concept_id,
     json_extract(value, '$.semantic') as tbta_features
 FROM verses, json_each(word_senses_json)
+WHERE USFM3 = 'GEN' AND ChapterNum = 1 AND VerseNum = 1;
+
+# Join with concepts using embedded concept_id:
+SELECT 
+    json_extract(value, '$.stem') as word,
+    json_extract(value, '$.semantic') as tbta,
+    c.gloss as meaning
+FROM verses, json_each(word_senses_json) as ws
+LEFT JOIN concepts c ON c.id = json_extract(ws.value, '$.concept_id')
 WHERE USFM3 = 'GEN' AND ChapterNum = 1 AND VerseNum = 1;
             """)
         
